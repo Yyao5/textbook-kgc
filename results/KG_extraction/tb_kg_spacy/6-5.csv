@@ -1,0 +1,25 @@
+,source,edge,target
+0,managers,cooperate,same power SLAs
+6,processors,support dynamic,dynamic energy saving
+7,Indeed energy dissipation,scales,quadratically supply voltage
+8,management,controls,thus instruction execution
+9,linearly CPU clock effect,decreases,lower clock frequency
+10,frequency,controlled by,blades power manager
+12,firmware,adjusts,clock frequency
+13,approach,based on several,joint utility power
+19,manager,consists of,per blade power
+20,negotiation,manager,two  agents
+23,WebSphere Extended that,use,periodically resource allocation targets
+24,that,supports,individual Web applications
+27,practical utility function,expressed in,U
+28,blade,serve,"1,000 msec limit"
+29,110  processor,runs at,highest  frequency
+30,110  processor,runs,110  Watts
+31,types,conducted,experiments
+32,when response dependency,turned,learning  models
+33,when  dependence,determined,power consumption
+34,power,led to,specifically  experiments
+35,when  pk,decreases,110  watts
+37,rapidly  load,increases,given  powercap
+39,machine learning machine algorithm,based on,third Reinforcement Learning 349
+41,whereas nc pκ,For,example

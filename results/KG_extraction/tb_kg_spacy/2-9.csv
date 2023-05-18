@@ -1,0 +1,41 @@
+,source,edge,target
+2,us,allows,intensive execution Section
+3,us,reduce,intensive execution problem
+6,often  we,have,parallel  algorithm
+8,other  we,use,sequential SPMD paradigm
+9,kernel,exploits,such system processor
+12,current  thread,schedule,I  O
+14,e.g.  application,Avoiding,available address system
+15,e.g.  application,allow,available address system
+16,application,restricted,standard address size
+18,multiple processor threads,used,single  processor
+21,thread,suspended,different context place
+22,state,saved,first  thread
+25,thread,reactivated at,later  time
+26,switching,involve multiple,multiple Virtual Memory Manager
+29,Concurrency,motivated by,often system performance
+34,pipeline,requires,n execution stage
+35,pipeline,requires careful,full speed up
+37,management,shows,concurrent  system
+38,management,increase,concurrent  the
+39,interaction,complicates,further  the
+40,indeed  one,interrupted due,page fault
+41,special  state,requires special,processor
+42,early  concurrency,analyzed,early  computing
+43,controllers,implemented as mixed,software hardware systems
+44,application number,exploited by,service
+48,applications,use,2.13 client server concurrency
+50,Web server,spawns,new
+53,concurrent  activities,allow concurrent,concert
+55,reliable  that,allow,order
+56,us,transform noisy,noisy  channels
+57,concurrent  activities,communicate with,shared  memory
+58,cloud server,provides,service application
+59,applications,communicate via,message passing
+60,Interface,supports,synchronous  communication
+61,Interface,used,parallel  applications
+62,enforces aswe,see in,Section
+64,server,fail without,period
+66,concurrently  all,requires,current  next
+68,Sometimes  one,mediates,activities
+69,individual  threads,communicate,directly  one

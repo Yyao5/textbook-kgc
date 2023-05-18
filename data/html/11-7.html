@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier; color: #000066}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {font: 10.0px Times; color: #000000}
+    span.s4 {color: #000000}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Ubuntu </span>is an open-source operating system for personal computers based on Debian <span class="s1">Linux </span>distribution;</p>
+<p class="p1">the desktop version of <span class="s1">Ubuntu</span><span class="s2">4 </span>supports the Intel <span class="s1">x86 </span>32-bit and 64-bit architectures.</p>
+<p class="p1">The <span class="s1">Simple Notification Service (SNS) </span>is a Web service for: monitoring applications, workflow</p>
+<p class="p1">systems, time-sensitive information updates, mobile applications, and other event-driven applications</p>
+<p class="p1">that require a simple and efficient mechanism for message delivery. SNS “pushes” messages to clients</p>
+<p class="p1">rather than requiring a user to periodically poll a mailbox or another site for messages.</p>
+<p class="p1"><span class="s1">SNS </span>is based on the publish/subscribe paradigm; it allows a user to define the topics, the transport</p>
+<p class="p1">protocol used (HTTP/HTTPS, email, SMS, <span class="s1">SQS</span>), and the endpoint (URL, email address, phone number,</p>
+<p class="p1"><span class="s1">SQS </span>queue) for notifications to be delivered. It supports the following actions:</p>
+<p class="p1">• Add/Remove Permission.</p>
+<p class="p1">• Confirm Subscription.</p>
+<p class="p1">• Create/Delete Topic.</p>
+<p class="p1">• Get/Set Topic Attributes.</p>
+<p class="p1">• List Subscriptions/Topics/Subscriptions by Topic.</p>
+<p class="p1">• Publish/Subscribe/Unsubscribe.</p>
+<p class="p2"><span class="s3">The document at </span>http://awsdocs.s3.amazonaws.com/SNS/latest/sns-qrc.pdf</p>
+<p class="p1">provides detailed information about each one of these actions.</p>
+<p class="p1">To install the <span class="s1">SNS </span>client the following steps must be taken:</p>
+<p class="p1"><span class="s1">1. </span>Install Java in the <span class="s1">root </span>directory and then execute the commands:</p>
+<p class="p2"><span class="s4">deb </span>http://archive.canonical.com/lucidpartner</p>
+<p class="p3">update</p>
+<p class="p3">install sun-java6-jdk</p>
+<p class="p1">Then change the default Java settings:</p>
+<p class="p3">update-alternatives -config java</p>
+<p class="p1"><span class="s1">2. </span>Download the <span class="s1">SNS </span>client, unzip the file, and change permissions:</p>
+<p class="p2"><span class="s4">wget </span>http://sns-public-resources.s3.amazonaws.com/</p>
+<p class="p3">SimpleNotificationServiceCli-2010-03-31.zip</p>
+<p class="p3">chmod 775 /root/ SimpleNotificationServiceCli-1.0.2.3/bin</p>
+<p class="p1"><span class="s1">3. </span>Start the <span class="s1">AWS </span>Management Console and go to <span class="s1">Security Credentials</span>. Check the <span class="s1">Access Key ID </span>and</p>
+<p class="p1">the <span class="s1">Secret Access Key </span>and create a text file <span class="s1">/root/credential.txt </span>with the following content:</p>
+<p class="p3">AWSAccessKeyId= your_Access_Key_ID</p>
+<p class="p3">AWSSecretKey= your_Secret_Access_Key</p>
+<p class="p1"><span class="s1">4. </span>Edit the <span class="s1">.bashrc </span>file and add:</p>
+<p class="p3">export AWS_SNS_HOME=˜/SimpleNotificationServiceCli-1.0.2.3/</p>
+<p class="p3">export AWS_CREDENTIAL_FILE=$HOME/credential.txt</p>
+<p class="p3">export PATH=$AWS_SNS_HOME/bin</p>
+<p class="p3">export JAVA_HOME=/usr/lib/jvm/java-6-sun/</p>
+<p class="p1"><span class="s1">5. </span>Reboot the system.</p>
+<p class="p1"><span class="s1">6. </span>Enter on the command line:</p>
+<p class="p3">sns.cmd</p>
+<p class="p1">If the installation was successful, the list of <span class="s1">SNS </span>commands will be displayed.</p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+,source,edge,target
+1,interfaces,separate different,different  abstraction
+2,Layering,minimizes,subsystems
+3,subsystem,abstracted through,other subsystem subsystems
+5,instruction,set,instructions
+6,Intel architecture,represented by,32 bit addressing
+7,hardware,supports,two execution modes
+8,only kernel that,set,user mode
+9,user that,are,differently  Section
+10,that,executed in,user mode
+12,when  we,consider,a
+13,hardware,consists of,I O one
+14,Applications,call,often object code
+17,security integrity,executed in,security user
+18,privileged  operations,determines,system security
+19,privileged  operations,violate,system security
+20,security integrity,executes,security integrity
+21,binaries,targeted to,specific hardware architecture
+22,"ABI),which",allows,ensemble
+23,ABI,include,privileged  system
+24,instead  ABI,invokes,system calls
+25,hardware,defines,application ISA
+27,HLL library which,includes,often system calls
+29,which,invoke,often  system
+30,code,run on,same  ISA
+33,such performance blocks,converts,significant performance improvement

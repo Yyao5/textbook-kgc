@@ -1,0 +1,17 @@
+,source,edge,target
+0,electronic  computer,based on,challenging  problems
+1,parallel systems that,overview,basic computer clouds
+4,thin client server computations,based on,cloud
+6,systems,represent,such Webbased large
+7,such  applications,run multiple,reliable  messages
+8,noisy communication that,support,out  order
+11,protocols,stamp,message
+12,receiver,sends,own sequence message
+14,clocks,may,sender
+15,so sequence numbers,act as logical,logical  clocks
+16,Timeouts,used,delayed  messages
+19,computation,restarted from,rather  beginning
+21,system that,require,individual state systems
+22,controllers,require accurate,accurate resource state
+23,security,implemented,specialized  monitors
+24,Coordination,is,critical application controller

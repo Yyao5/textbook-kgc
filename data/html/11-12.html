@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">In this section we discuss a cloud application related to data streaming [<span class="s1">288</span>]. Data streaming is the</p>
+<p class="p1">name given to the transfer of data at a high rate with real-time constraints. Multimedia applications such</p>
+<p class="p1">as music and video streaming, high-definition television (HDTV), scientific applications that process a</p>
+<p class="p1">continuous stream of data collected by sensors, the continuous backup copying to a storage medium of</p>
+<p class="p1">the data flow within a computer, and many other applications require the transfer of real-time data at</p>
+<p class="p1">a high rate. For example, to support real-time human perception of the data, multimedia applications</p>
+<p class="p1">have to make sure that enough data is being continuously received without any noticeable time lag.</p>
+<p class="p1">We are concerned with the case when data streaming involves a multimedia application connected to</p>
+<p class="p1">a service running on a computer cloud. The stream could originate from the cloud, as is the case of the</p>
+<p class="p1">iCloud service provided by Apple, or could be directed toward the cloud, as in the case of a real-time</p>
+<p class="p1">data collection and analysis system.</p>
+<p class="p1">Data streaming involves three entities: the sender, a communication network, and a receiver. The</p>
+<p class="p1">resources necessary to guarantee the timing constraints include CPU cycles and buffer space at the</p>
+<p class="p1">sender and the receiver, as well as network bandwidth. Adaptive data streaming determines the data rate</p>
+<p class="p1">based on the available resources. Lower data rates imply lower quality, but they reduce the demands for</p>
+<p class="p1">system resources.</p>
+<p class="p1">Adaptive data streaming is possible only if the application permits tradeoffs between quantity and</p>
+<p class="p1">quality. Such tradeoffs are feasible for audio and video streaming, which allow lossy compression, but</p>
+<p class="p1">are not acceptable for many applications that process a continuous stream of data collected by sensors.</p>
+<p class="p1">Data streaming requires accurate information about all resources involved, and this implies that the</p>
+<p class="p1">network bandwidth has to be constantly monitored; at the same time, the scheduling algorithms should</p>
+<p class="p1">be coordinated with memory management to guarantee the timing constraints. Adaptive data streaming</p>
+<p class="p1">poses additional constraints because the data flow is dynamic. Indeed, once we detect that the network</p>
+<p class="p1">cannot accommodate the data rate required by an audio or video stream, we have to reduce the data</p>
+<p class="p1">rate; thus, to convert to a lower quality audio or video. Data conversion can be done on the fly and, in</p>
+<p class="p1">this case, the data flow on the cloud has to be changed.</p>
+<p class="p1">Accommodating dynamic data flows with timing constraints is nontrivial; only about 18% of the top</p>
+<p class="p1">100 global video Web sites use <span class="s2">adaptive bit rate </span>(ABR) technologies for streaming [<span class="s1">336</span>].</p>
+<p class="p1">This application stores the music files in <span class="s2">S3 </span>buckets, and the audio service runs on the <span class="s2">EC2 </span>platform.</p>
+<p class="p1">In <span class="s2">EC2 </span>each virtual machine functions as a virtual private server and is called an <span class="s2">instance; </span>an instance</p>
+<p class="p1">specifies the maximum amount of resources available to an application, the interface for that instance,</p>
+<p class="p1">and the cost per hour.</p>
+<p class="p1"><span class="s2">EC2 </span>allows the import of virtual machine images from the user environment to an instance through</p>
+<p class="p1">a facility called <span class="s2">VM import. </span>It also distributes automatically the incoming application traffic among</p>
+<p class="p1">multiple instances using the <span class="s2">elastic load-balancing </span>facility. <span class="s2">EC2 </span>associates an <span class="s2">elastic IP address </span>with</p>
+<p class="p1">an account; this mechanism allows a user to mask the failure of an instance and remap a public IP</p>
+<p class="p1">address to any instance of the account, without the need to interact with the software support team.</p>
+<p class="p1">Adaptive audio streaming involves a multi-objective optimization problem. We want to convert the</p>
+<p class="p1">highest-quality audio file stored on the cloud to a resolution corresponding to the rate that can be</p>
+<p class="p1">sustained by the available bandwidth; at the same time, we want to minimize the cost on the cloud site and minimize the buffer requirements for the mobile device to accommodate the transmission jitter.</p>
+<p class="p1">Finally, we want to reduce to a minimum the startup time for the content delivery.</p>
+<p class="p1">A first design decision is whether data streaming should only begin after the conversion from the</p>
+<p class="p1">WAV to MP3 format has been completed or it should proceed concurrently with conversion – in other</p>
+<p class="p1">words, start as soon as several MP3 frames have been generated. Another question is whether the</p>
+<p class="p1">converted music file should be saved for later use or discarded.</p>
+<p class="p1">To answer these questions, we experimented with conversion from the highest-quality audio files,</p>
+<p class="p1">which require a 320 Kbps data rate, to lower-quality files corresponding to 192<span class="s2">, </span>128<span class="s2">, </span>64<span class="s2">, </span>32, and finally</p>
+<p class="p1">16 Kbps. If the conversion time is small and constant there is no justification for pipelining data</p>
+<p class="p1">conversion and streaming, a strategy that complicates the processing flow on the cloud. It makes sense</p>
+<p class="p1">to cache the converted copy for a limited period of time with the hope that it will be reused in the future.</p>
+<p class="p1">Another design decision is how the two services should interact to optimize performance. Two</p>
+<p class="p1">alternatives come to mind:</p>
+<p class="p1"><span class="s2">1. </span>The audio service running on the <span class="s2">EC2 </span>platform requests the data file from the <span class="s2">S3</span>, converts it, and,</p>
+<p class="p1">eventually, sends it back. The solution involves multiple delays and it is far from optimal.</p>
+<p class="p1"><span class="s2">2. </span>Mount the <span class="s2">S3 bucket </span>as an <span class="s2">EC2 </span>drive. This solution reduces considerably the start-up time for audio</p>
+<p class="p1">streaming.</p>
+<p class="p1">The conversion from a high-quality audio file to a lower-quality, thus a lower-bit-rate, file is performed</p>
+<p class="p1">using the LAME library.</p>
+<p class="p1">The conversion time depends on the desired bitrate and the size of the original file. Tables <span class="s1">11.2</span>, <span class="s1">11.3</span>,</p>
+<p class="p1"><span class="s1">11.4</span>, and <span class="s1">11.5 </span>show the conversion time in seconds when the source MP3 files are of 320 Kbps and 192</p>
+<p class="p1">Kbps, respectively. The sizes of the input files are also shown.</p>
+<p class="p1">The platforms used for conversion are (a) the <span class="s2">EC2 t1.micro </span>server for the measurements reported</p>
+<p class="p1">in Tables <span class="s1">11.2 </span>and <span class="s1">11.3 </span>and (b) the <span class="s2">EC2 c1.medium </span>for the measurements reported in Tables <span class="s1">11.4 </span>and</p>
+<p class="p1"><span class="s1">11.5</span>. The instances run the <span class="s2">Ubuntu Linux </span>operating system.</p>
+<p class="p1">The results of our measurements when the instance is the <span class="s2">t1.micro </span>server exhibit a wide range of</p>
+<p class="p1">conversion times, 13–80 seconds, for the large audio file of about 6<span class="s2">.</span>7 MB when we convert from 320</p>
+<p class="p1">to 192 Kbps. A wide range, 13–64 seconds, is also observed for an audio file of about 4<span class="s2">.</span>5 MB when we convert from 320 to 128 Kbps. For poor-quality audio the file size is considerably smaller, about</p>
+<p class="p1">0<span class="s2">.</span>56 MB, and the conversion time is constant and small, 4 seconds. Figure <span class="s1">11.15 </span>shows the average</p>
+<p class="p1">conversion time for the experiments summarized in Tables <span class="s1">11.2 </span>and <span class="s1">11.3</span>. It is somewhat surprising that the average conversion time is larger when the source file is smaller, as is the case when the target bit</p>
+<p class="p1">rates are 64<span class="s2">, </span>32, and 16 Kbps.</p>
+<p class="p1">Figure <span class="s1">11.16 </span>shows the average conversion time for the experiments summarized in Tables <span class="s1">11.4</span></p>
+<p class="p1">and <span class="s1">11.5</span>.</p>
+<p class="p1">The results of our measurements when the instance runs on the <span class="s2">EC2 c1.medium </span>platform show</p>
+<p class="p1">consistent and considerably lower conversion times; Figure <span class="s1">11.16 </span>presents the average conversion time.</p>
+<p class="p1">To understand the reasons for our results, we took a closer look at the two types of <span class="s2">AWS EC2</span></p>
+<p class="p1">instances, “micro” and “medium,” and their suitability for the adaptive data-streaming service. The</p>
+<p class="p1"><span class="s2">t1.micro </span>supports bursty applications, with a high average-to-peak ratio for CPU cycles, e.g., transaction processing</p>
+<p class="p1">systems. The Amazon Elastic Block Store (EBS) provides block-level storage volumes; the</p>
+<p class="p1">“micro” instances are only EBS-backed.</p>
+<p class="p1">The “medium” instances support compute-intensive application with a steady and relatively high</p>
+<p class="p1">demand for CPU cycles. Our application is compute-intensive; thus, there should be no surprise that</p>
+<p class="p1">our measurements for the <span class="s2">EC2 c1.medium </span>platform show consistent and considerably lower conversion</p>
+<p class="p1">times.</p>
+</body>
+</html>

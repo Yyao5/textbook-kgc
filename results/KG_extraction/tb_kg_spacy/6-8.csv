@@ -1,0 +1,26 @@
+,source,edge,target
+1,virtual  machine,support several,several  applications
+2,application,consist of multiple,multiple  threads
+3,scheduling,supports,the
+4,virtual communication link,multiplexed among,virtual  flow
+7,when scheduling access,addressed by,resources
+8,Figure,identifies several,two resource allocation dimensions
+9,systems,require strict,strict
+11,First  we,discuss,min fairness criterion
+12,bandwidth  who,shared among,equal  rights
+13,user,requests,amount Bi
+14,following max min conditions,satisfied by,fair  allocation
+15,condition allocation C1,is,current  allocation
+16,When  we,remove,minimum allocation Bmin
+19,amount,minimize,respectively time the
+20,requirements,differ for different,different scheduling policies
+21,applications,require,such QoS guarantees
+22,applications,have soft,maximum time delay
+23,Applications,use,so time future
+25,thread,given,round robin scheduling
+27,threads,allowed,FCFS SJF algorithms
+29,deadline,used for real,real time applications
+30,Integration,discussed in,three  56
+31,algorithms,proposed,integrated  scheduling
+32,Next  we,discuss several,special computer clouds
+33,algorithms,illustrate,particular multimedia applications

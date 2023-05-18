@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier; color: #000066}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Courier}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {color: #000066}
+    span.s5 {font: 10.0px Courier; color: #000066}
+    span.s6 {font: 10.0px Times; color: #000000}
+    span.s7 {font: 7.5px Helvetica}
+    span.s8 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Even when we assume that a cloud service provider is trustworthy, many users either ignore or underestimate</p>
+<p class="p1">the danger posed by other sources of concern. One of them, especially critical to the <span class="s1">IaaS</span></p>
+<p class="p1">cloud delivery model, is image sharing. For example, a user of <span class="s1">AWS </span>has the option to choose between</p>
+<p class="p1">Amazon Machine Images (AMIs), accessible through the <span class="s1">Quick Start </span>or the <span class="s1">Community AMI </span>menus of</p>
+<p class="p1">the <span class="s1">EC2 </span>service. The option of using one of these AMIs is especially tempting for a first-time or less</p>
+<p class="p1">sophisticated user.</p>
+<p class="p1">First, let’s review the process to create an AMI. We can start from a running system, from another</p>
+<p class="p1">AMI, or from the image of a VM and copy the contents of the file system to the <span class="s1">S3</span>, the so-called</p>
+<p class="p1"><span class="s1">bundling</span>. The first of the three steps in bundling is to create an image, the second step is to compress</p>
+<p class="p1">and encrypt the image, and the last step is to split the image into several segments and then upload the</p>
+<p class="p1">segments to the <span class="s1">S3</span>.</p>
+<p class="p1">Two procedures for the creation of an image are available: <span class="s2">ec2-bundle-image </span>and <span class="s2">ec2-</span></p>
+<p class="p1"><span class="s2">bundle-volume</span>. The first is used for images prepared as loopback files<span class="s3">10 </span>when the data is transferred</p>
+<p class="p1">to the image in blocks. To bundle a running system, the creator of the image can use the second procedure</p>
+<p class="p1">when bundling works at the level of the file system and files are copied recursively to the image.</p>
+<p class="p1">To use an image, a user has to specify the resources, provide the credentials for login, provide a</p>
+<p class="p1">firewall configuration, and specify the region, as discussed in Section 3.1. Once instantiated, the user</p>
+<p class="p1">is informed about the public DNS and the virtual machine is made available. A <span class="s1">Linux </span>system can be</p>
+<p class="p1">accessed using <span class="s2">ssh </span>at port 22, whereas the Remote Desktop at port 3389 is used for <span class="s1">Windows</span>.</p>
+<p class="p1">A recent paper reports on the results of an analysis carried out over a period of several months, from</p>
+<p class="p1">November 2010 to May 2011, of over 5,000 AMIs available through the public catalog at Amazon [<span class="s4">38</span>].<span class="Apple-converted-space"> </span></p>
+<p class="p1">Many of the analyzed images allowed a user to <span class="s1">undelete </span>files and recover credentials, private keys, or</p>
+<p class="p1">other types of sensitive information with little effort and using standard tools. The results of this study</p>
+<p class="p1">were shared with Amazon’s Security Team, which acted promptly to reduce the threats posed to <span class="s1">AWS</span></p>
+<p class="p1">users.</p>
+<p class="p1">The details of the testing methodology can be found in [<span class="s4">38</span>]. Here we only discuss the results. The</p>
+<p class="p1">study was able to audit some 5<span class="s1">,</span>303 images out of the 8<span class="s1">,</span>448 <span class="s1">Linux </span>AMIs and 1<span class="s1">,</span>202 <span class="s1">Windows </span>AMIs at</p>
+<p class="p1">Amazon sites in the United States, Europe, and Asia. The audit covered software vulnerabilities and</p>
+<p class="p1">security and privacy risks.</p>
+<p class="p1">The average duration of an audit was 77 minutes for a <span class="s1">Windows </span>image and 21 minutes for a <span class="s1">Linux</span></p>
+<p class="p1">image; the average disk space used was about 1 GB and 2<span class="s1">.</span>7 GB, respectively. The entire file system of a</p>
+<p class="p1"><span class="s1">Windows </span>AMI was audited because most malware targets<span class="s1">Windows </span>systems. Only directories containing</p>
+<p class="p1">executables for <span class="s1">Linux </span>AMIs were scanned; this strategy and the considerably longer start-up time of</p>
+<p class="p1"><span class="s1">Windows </span>explain the time discrepancy of the audits across the types of AMIs.</p>
+<p class="p1">The <span class="s1">software vulnerability </span>audit revealed that 98% of the <span class="s1">Windows </span>AMIs (249 out of 253) and</p>
+<p class="p1">58% of <span class="s1">Linux </span>AMIs (2<span class="s1">,</span>005 out of 3<span class="s1">,</span>432) audited had critical vulnerabilities. The average number</p>
+<p class="p1">of vulnerabilities per AMI were 46 for <span class="s1">Windows </span>and 11 for <span class="s1">Linux</span>. Some of the images were</p>
+<p class="p1">rather old; 145, 38, and 2 <span class="s1">Windows </span>AMIs and 1,197, 364, and 106 <span class="s1">Linux </span>were older than two,</p>
+<p class="p1">three, and four years, respectively. The tool used to detect vulnerabilities, <span class="s1">Nessus</span>, available from</p>
+<p class="p1"><span class="s5">www.tenable.com/productus/nessus</span>, classifies the vulnerabilities based on their severity</p>
+<p class="p1">in four groups, at levels 0–3. The audit reported only vulnerabilities of the highest severity level, e.g.,</p>
+<p class="p1">remote code execution.</p>
+<p class="p1">Three types of <span class="s1">security risks </span>were analyzed: (1) backdoors and leftover credentials, (2) unsolicited</p>
+<p class="p1">connections, and (3) malware. An astounding finding is that about 22% of the scanned <span class="s1">Linux </span>AMIs</p>
+<p class="p1">contained credentials allowing an intruder to remotely log into the system. Some 100 passwords, 995</p>
+<p class="p1"><span class="s2">ssh </span>keys, and 90 cases in which both passwords and keys could be retrieved were identified.</p>
+<p class="p1">To rent a <span class="s1">Linux </span>AMI, a user must provide the public part of the <span class="s2">ssh </span>key, and this key is stored in</p>
+<p class="p1">the <span class="s2">authorized_keys </span>in the home directory. This opens a backdoor for a malicious creator of an</p>
+<p class="p1">AMI who does not remove his own public key from the image and can remotely log into any instance</p>
+<p class="p1">of this AMI. Another backdoor is opened when the <span class="s2">ssh </span>server allows password-based authentication</p>
+<p class="p1">and the malicious creator of an AMI does not remove his own password. This backdoor is opened even</p>
+<p class="p1">wider as one can extract the password hashes and then crack the passwords using a tool such as John</p>
+<p class="p2"><span class="s6">the Ripper (see </span>www.openwall.com/john<span class="s6">).</span></p>
+<p class="p1">Another threat is posed by the omission of the <span class="s2">cloud-init </span>script that should be invoked when</p>
+<p class="p1">the image is booted. This script, provided by Amazon, regenerates the host key an <span class="s2">ssh </span>server uses to</p>
+<p class="p1">identify itself; the public part of this key is used to authenticate the server. When this key is shared</p>
+<p class="p1">among several systems, these systems become vulnerable to <span class="s1">man-in-the middle</span><span class="s3">11 </span>attacks. When this script does not run, an attacker can use the <span class="s1">NMap </span>tool<span class="s3">12 </span>to match the <span class="s2">ssh </span>keys discovered in the AMI</p>
+<p class="p1">images with the keys obtained via <span class="s1">NMap</span>. The study reports that the authors were able to identify more</p>
+<p class="p1">than 2<span class="s1">,</span>100 instances following this procedure.</p>
+<p class="p1"><span class="s1">Unsolicited connections </span>pose a serious threat to a system. Outgoing connections allow an outside</p>
+<p class="p1">entity to receive privileged information, e.g., the IP address of an instance and events recorded by a</p>
+<p class="p1"><span class="s1">syslog </span>daemon to files in the <span class="s1">var/log </span>directory of a <span class="s1">Linux </span>system. Such information is available only</p>
+<p class="p1">to users with administrative privileges. The audit detected two <span class="s1">Linux </span>instances with modified <span class="s1">syslog</span></p>
+<p class="p1">daemons, which forwarded to an outside agent information about events such as login and incoming</p>
+<p class="p1">requests to aWeb server. Some of the unsolicited connections are legitimate – for example, connections</p>
+<p class="p1">to a software update site. It is next to impossible to distinguish legitimate from malicious connections.</p>
+<p class="p1"><span class="s1">Malware</span>, including viruses, worms, spyware, and trojans, were identified using <span class="s1">ClamAV</span>, a software</p>
+<p class="p1">tool with a database of some 850<span class="s1">,</span>000 malware signatures, available from <span class="s5">www.clamav.net</span>. Two</p>
+<p class="p1">infected<span class="s1">Windows </span>AMIs were discovered, one with a <span class="s1">Trojan-Spy </span>(variant 50112) and a second one with a</p>
+<p class="p1"><span class="s1">Trojan-Agent </span>(variant 173287). The first trojan carries out keylogging and allows stealing data from the</p>
+<p class="p1">files system and monitoring processes; the AMI also included a tool called <span class="s1">Trojan.Firepass </span>to decrypt</p>
+<p class="p1">and recover passwords stored by the <span class="s1">Firefox </span>browser.</p>
+<p class="p1">The creator of a shared AMI assumes some <span class="s1">privacy risks</span>; his private keys, IP addresses, browser</p>
+<p class="p1">history, shell history, and deleted files can be recovered from the published images. A malicious agent</p>
+<p class="p1">can recover the <span class="s1">AWS </span>API keys that are not password protected. Then the malicious agent can start</p>
+<p class="p1">AMIs and run cloud applications at no cost to herself, since the computing charges are passed on to</p>
+<p class="p1">the owner of the API key. The search can target files with names such as <span class="s1">pk − [</span>0 <span class="s1">− </span>9<span class="s1">A − Z]</span><span class="s7">∗</span></p>
+<p class="p3">.pem <span class="s8">or</span></p>
+<p class="p3">cert − [<span class="s8">0 </span>− <span class="s8">9</span>A − Z]<span class="s7">∗</span></p>
+<p class="p1"><span class="s1">.pem </span>used to store API keys.</p>
+<p class="p1">Another avenue for a malicious agent is to recover <span class="s2">ssh </span>keys stored in files named <span class="s1">id_dsa </span>and <span class="s1">id_rsa</span>.</p>
+<p class="p1">Though <span class="s2">ssh </span>keys can be protected by a <span class="s1">passphrase</span>,<span class="s3">13 </span>the audit determined that the majority of <span class="s1">ssh</span></p>
+<p class="p1">keys (54 out of 56) were not password protected.</p>
+<p class="p1">Recovery of IP addresses of other systems owned by the same user requires access to the <span class="s1">lastlog</span></p>
+<p class="p1">or the <span class="s1">lastb </span>databases. The audit found 187 AMIs with a total of more than 66<span class="s1">,</span>000 entries in their</p>
+<p class="p1"><span class="s1">lastb </span>databases. Nine AMIs contained Firefox browser history and allowed the auditor to identify the</p>
+<p class="p1">domains contacted by the user.</p>
+<p class="p1">In addition, 612 AMIs contained at least one shell history file. The audit analyzed 869 history files</p>
+<p class="p1">named <span class="s1">∼/.history</span>, <span class="s1">∼/.bash_history</span>, and <span class="s1">∼/.sh_history</span>, containing some, 160<span class="s1">,</span>000 lines of command</p>
+<p class="p1">history, and identified 74 identification credentials. Users should be aware that when <span class="s1">HTTP </span>is used to</p>
+<p class="p1">transfer information from a user to aWeb site, the <span class="s1">GET </span>requests are stored in the logs of theWeb server.</p>
+<p class="p1">Passwords and credit card numbers communicated via a <span class="s1">GET </span>request can be exploited by a malicious</p>
+<p class="p1">agent with access to such logs. When remote credentials such as the DNS management password are</p>
+<p class="p1">available, a malicious agent can redirect traffic from its original destination to her own system.</p>
+<p class="p1">Recovery of deleted files containing sensitive information poses another risk for the provider of an</p>
+<p class="p1">image. When the sectors on the disk containing sensitive information are actually overwritten by another</p>
+<p class="p1">file, recovery of sensitive information is much harder. To be safe, the creator of the image effort should</p>
+<p class="p1">use utilities such as <span class="s2">shred,scrub,zerofree</span>, or <span class="s2">wipe </span>to make recovery of sensitive information</p>
+<p class="p1">next to impossible. If the image is created with the block-level tool discussed at the beginning of</p>
+<p class="p1">this section, the image will contain blocks of the file system marked as free; such blocks may contain</p>
+<p class="p1">information from deleted files.The audit process was able to recover files from98%of theAMIs using the</p>
+<p class="p1"><span class="s2">exundelete </span>utility. The number of files recovered from an AMI was as low as 6 and as high as 40<span class="s1">,</span>000.</p>
+<p class="p1">We conclude that the users of published AMIs as well as the providers of images may be vulnerable</p>
+<p class="p1">to a wide range of security risks and must be fully aware of the dangers posed by image sharing.</p>
+</body>
+</html>

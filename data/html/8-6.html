@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A wide range of data-intensive applications such as marketing analytics, image processing, machine</p>
+<p class="p1">learning, andWeb crawling use <span class="s1">Apache Hadoop</span>, an open-source, Java-based software system.<span class="s2">6 </span><span class="s1">Hadoop</span></p>
+<p class="p1">supports distributed applications handling extremely large volumes of data. Many members of the</p>
+<p class="p1">community contributed to the development and optimization of <span class="s1">Hadoop </span>and several related Apache</p>
+<p class="p1">projects such as <span class="s1">Hive </span>and <span class="s1">HBase</span>.</p>
+<p class="p1"><span class="s1">Hadoop </span>is used by many organizations from industry, government, and research; the long list of</p>
+<p class="p1"><span class="s1">Hadoop </span>users includes major IT companies such as Apple, IBM, HP, Microsoft, Yahoo!, and Amazon;</p>
+<p class="p1">media companies such as The New York Times and Fox; social networks, including Twitter, Facebook,</p>
+<p class="p1">and LinkedIn; and government agencies, such as the U.S. Federal Reserve. In 2011, the Facebook</p>
+<p class="p1"><span class="s1">Hadoop </span>cluster had a capacity of 30 PB.</p>
+<p class="p1">A <span class="s1">Hadoop </span>system has two components, a <span class="s1">MapReduce </span>engine and a database (see Figure <span class="s3">8.8</span>). The</p>
+<p class="p1">database could be the <span class="s1">Hadoop File System (HDFS)</span>, Amazon <span class="s1">S3</span>, or <span class="s1">CloudStore</span>, an implementation of</p>
+<p class="p1">the Google File System discussed in Section <span class="s3">8.5</span>. <span class="s1">HDFS </span>is a distributed file system written in Java; it is</p>
+<p class="p1">portable, but it cannot be directly mounted on an existing operating system. <span class="s1">HDFS </span>is not fully POSIX</p>
+<p class="p1">compliant, but it is highly performant.</p>
+<p class="p1">The <span class="s1">Hadoop </span>engine on the master of a multinode cluster consists of a <span class="s1">job tracker </span>and a <span class="s1">task tracker</span>,</p>
+<p class="p1">whereas the engine on a slave has only a <span class="s1">task tracker</span>. The <span class="s1">job tracker </span>receives a <span class="s1">MapReduce </span>job from a client and dispatches the work to the <span class="s1">task trackers </span>running on the nodes of a cluster. To</p>
+<p class="p1">increase efficiency, the <span class="s1">job tracker </span>attempts to dispatch the tasks to available slaves closest to the</p>
+<p class="p1">place where it stored the task data. The <span class="s1">task tracker </span>supervises the execution of the work allocated to the</p>
+<p class="p1">node. Several scheduling algorithms have been implemented in <span class="s1">Hadoop </span>engines, including Facebook’s</p>
+<p class="p1">fair scheduler and Yahoo!’s capacity scheduler; see Section 6.8 for a discussion of cloud scheduling</p>
+<p class="p1">algorithms.</p>
+<p class="p1"><span class="s1">HDFS </span>replicates data on multiple nodes.The default is three replicas; a large dataset is distributed over</p>
+<p class="p1">many nodes. The <span class="s1">name node </span>running on the master manages the data distribution and data replication and</p>
+<p class="p1">communicates with <span class="s1">data nodes </span>running on all cluster nodes; it shares with the <span class="s1">job tracker </span>information</p>
+<p class="p1">about data placement to minimize communication between the nodes on which data is located and the</p>
+<p class="p1">ones where it is needed. Although <span class="s1">HDFS </span>can be used for applications other than those based on the</p>
+<p class="p1"><span class="s1">MapReduce </span>model, its performance for such applications is not at par with the ones for which it was</p>
+<p class="p1">originally designed.</p>
+</body>
+</html>

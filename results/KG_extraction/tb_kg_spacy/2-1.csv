@@ -1,0 +1,66 @@
+,source,edge,target
+1,made  entity,learned,modest  ability
+5,that,can,goals
+7,complex  applications,formulated,concert
+8,us,allows,smaller  problems
+9,us,solve large,large  problems
+10,computing,considered for many,many  years
+11,science,required major,several  algorithms
+12,us,allow,same  solution
+13,us,solve,single  system
+15,general speed up,defined as,parallel  S(N
+16,T,carried,sequential execution computation
+17,Law1,gives,potential  speed
+18,that,states,overall speed up
+23,amount,decreases,when processes increases
+24,this,affects,parallel  execution
+26,Law,gives,scaled parallel S(N
+27,we,call,σ
+28,α,given by,Equation
+29,2.7 speed processes,expressed by,same  work
+30,processes,assigned,same
+31,amount,assumes,regardless problem size
+32,same execution number,increase with,problem size
+34,namely  limitations,captures,sequential problem size
+35,namely  limitations,balanced,sequential  code
+37,which,reduces,ultimately  speed
+38,parallel  computation,involves multiple,multiple  stages
+40,barrier synchronization,reduces,further speed up
+41,parallel  threads,called,parallel  program
+42,undesirable race results,lead to,concurrent  events
+43,results,depend,concurrent  execution
+44,shared  resources,protected by,serial  access
+46,other  none,occurs,processes
+50,none,threads,processes
+53,thread,use,given  time
+55,thread,hold,one  others
+60,P2,wait for,P3
+61,Pn,wait,P1
+63,two  processes,change,continually processes threads
+64,we,have,livelock
+65,none,complete,none
+67,higher priority process,occurs,lower priority one
+69,tasks,communicate,messages
+70,shared memory systems,use,modern  supercomputers
+73,discussion,restricted to,communication paradigm
+75,kernel,uses,virtual memory management
+76,threads,communicate via,shared  system
+78,We,distinguish,fine
+79,large  blocks,executed in,parallel
+80,large  blocks,executed,code
+81,development,requires,considerable  effort
+82,numerical analysis problems,requires,differential domain decomposition methods
+83,concurrently  each,based on,thus data paradigm
+84,concurrently  each,running on,different data block
+85,3D  we,assume,n3  points
+86,we,want,3D  n
+89,geometric hardware that,done by,n3  points
+91,search,conducted in,parallel
+92,computational  task,reduced by,appealing cloud computing
+93,multiple design alternatives,compared,several optimization criteria
+97,designer,run,minimum power consumption
+101,configuration,requires,hours
+102,hence  running,reduces,concurrently design time
+105,parallel  computing,itwas clear,specialized  hardware
+106,parallel  computing,requires,specialized
+107,We,nowtake,different  parallelism

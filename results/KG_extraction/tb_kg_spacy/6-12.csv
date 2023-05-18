@@ -1,0 +1,48 @@
+,source,edge,target
+0,when  results,specifies,cloud
+1,when  results,done,computations
+2,us,motivates,real time applications
+3,us,examine,subject cloud a
+4,applications,involve periodic,periodic  deadlines
+5,arrival time,characterized by,tuple
+6,generally data size,satisfy,constraint
+7,We,distinguish hard,soft  deadlines
+8,that,affected,deadline
+11,deadlines,play more,guideline role
+13,deadlines,missed by,days
+14,deadline,expressed in,hours
+17,we,consider,divisible  workloads
+18,virtual  cloud,runs on,n S1
+19,cloud,nodes,head node
+20,node,distributes,worker nodes
+23,tasks,scheduled for,tasks arrival
+24,task,scheduled,earliest  deadline
+25,when nmin nodes,defined as,DCi  nmin
+27,policy,requires,that
+28,tasks,scheduled in,derivative  DCi
+29,number,kept to,minimum  nmin
+30,We,discuss,two worker nodes
+31,optimality,refers,OPR
+32,workload,partitioned,possible completion time
+34,tasks,required,same  time
+36,workload,means,equal  segments
+39,we,use,the
+40,notations,summarized in,Table
+41,6.13  us,allows,execution =
+42,us,determine,execution OPR
+43,We,substitute,σ ρ =
+45,two  we,find,ρ
+48,Next  we,substitute,α1
+49,We,determined,now load distribution vector
+50,we,determine,now execution time
+51,σ completion which,Call,n worker nodes
+52,which,starts,t0
+53,application,meets,application deadline
+54,>  β,− βn,that
+55,application,meet,> D 0
+56,inequality,becomes,=
+61,we,see,that
+62,CA  A,t0,+ ρ A
+63,EPR partitioning rules,given in,reference
+64,MWF MN OPR,uses,minimum MWF nodes
+65,performance,depends on,communication cost

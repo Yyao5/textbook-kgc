@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Courier}
+    span.s3 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Modularity. Modularity is a basic concept in the design of man-made systems. A complex system is</p>
+<p class="p1">made of components, or modules, with well-defined functions. Modularity supports the separation of</p>
+<p class="p1">concerns, encourages specialization, improves maintainability, reduces costs, and decreases the development</p>
+<p class="p1">time of a system. Hence, it is no surprise that the hardware as well as the software systems are</p>
+<p class="p1">composed of modules that interact with one another through well-defined interfaces.</p>
+<p class="p1">In this section we are only concerned with software modularity.We distinguish <span class="s1">soft modularity </span>from</p>
+<p class="p1"><span class="s1">enforced modularity</span>. The former means to divide a program into modules that call each other and</p>
+<p class="p1">communicate using shared memory or follow the procedure call convention. The steps involved in the</p>
+<p class="p1">transfer of the flowof control between the caller and the callee are: (i) The caller saves its state, including</p>
+<p class="p1">the registers, the arguments, and the return address, on the stack; (ii) the callee loads the arguments</p>
+<p class="p1">from the stack, carries out the calculations, and then transfers control back to the caller; (iii) the caller</p>
+<p class="p1">adjusts the stack, restores its registers, and continues its processing.</p>
+<p class="p1">Soft modularity hides the details of the implementation of a module and has many advantages. Once</p>
+<p class="p1">the interfaces of the modules are defined, the modules can be developed independently, and a module</p>
+<p class="p1">can be replaced with a more elaborate or a more efficient one as long as its interfaces with the other</p>
+<p class="p1">modules are not changed. The modules can be written using different programming languages and can</p>
+<p class="p1">be tested independently.</p>
+<p class="p1">Softmodularity presents a number of challenges. It increases the difficulty of debugging; for example,</p>
+<p class="p1">a call to a module with an infinite loop will never return. There could be naming conflicts and wrong</p>
+<p class="p1">context specifications. The caller and the callee are in the same address space and may misuse the stack</p>
+<p class="p1">(e.g., the callee may use registers that the caller has not saved on the stack, and so on). A strongly typed</p>
+<p class="p1">language may enforce soft modularity by ensuring type safety at compile or at run time, it may reject</p>
+<p class="p1">operations or function classes that disregard the data types, or it may not allow class instances to have</p>
+<p class="p1">their classes altered. Soft modularity may be affected by errors in the run-time system, errors in the</p>
+<p class="p1">compiler, or by the fact that different modules are written in different programming languages.</p>
+<p class="p1">TheClient-ServerParadigm. The ubiquitous client-server paradigm is based on enforced modularity;</p>
+<p class="p1">this means that themodules are forced to interact only by sending and receiving messages. This paradigm</p>
+<p class="p1">leads to a more robust design where the clients and the servers are independent modules and may fail</p>
+<p class="p1">separately. Moreover, the servers are stateless; they do not have to maintain state information. The server</p>
+<p class="p1">may fail and then come up without the clients being affected or even noticing the failure of the server.</p>
+<p class="p1">The system is more robust since it does not allow errors to propagate. Enforced modularity makes an</p>
+<p class="p1">attack less likely because it is difficult for an intruder to guess the format of themessages or the sequence</p>
+<p class="p1">numbers of segments when messages are transported by Transport Control Protocol (TCP).</p>
+<p class="p1">Last but not least, resources can be managed more efficiently; for example, a server typically consists</p>
+<p class="p1">of an ensemble of systems: a <span class="s1">front-end </span>system that dispatches the requests to multiple <span class="s1">back-end </span>systems that process the requests. Such an architecture exploits the elasticity of a computer cloud infrastructure.</p>
+<p class="p1">The larger the request rate, the larger the number of back-end systems activated.</p>
+<p class="p1">The client-server paradigm allows systems with different processor architecture (e.g., 32-bit or</p>
+<p class="p1">64-bit), different operating systems (e.g., multiple versions of operating systems such as <span class="s1">Linux</span>, <span class="s1">Mac</span></p>
+<p class="p1"><span class="s1">OS</span>, or <span class="s1">MicrosoftWindows</span>), different libraries and other system software to cooperate. The client-server</p>
+<p class="p1">paradigm increases flexibility and choice; the same service could be available from multiple providers,</p>
+<p class="p1">or a server may use services provided by other servers, a client may use multiple servers, and so on.</p>
+<p class="p1">System heterogeneity is a blessing in disguise. The problems it creates outweigh its appeal. It adds</p>
+<p class="p1">to the complexity of the interactions between a client and a server because it may require conversion</p>
+<p class="p1">from one data format to another (e.g., from <span class="s1">little-endian </span>to <span class="s1">big-endian </span>or vice versa), or it may require</p>
+<p class="p1">conversion to a canonical data representation. There is also uncertainty in terms of response time because</p>
+<p class="p1">some servers may be more performant than others or may have a lower workload.</p>
+<p class="p1">A major difference between the basic models of grid and cloud computing is that the former do</p>
+<p class="p1">not impose any restrictions regarding heterogeneity of the computing platforms. On the other hand, a</p>
+<p class="p1">computer cloud is a collection of homogeneous systems, systems with similar architecture and running</p>
+<p class="p1">under the same or very similar system software.</p>
+<p class="p1">The clients and the servers communicate through a network that itself can be congested. Transferring</p>
+<p class="p1">large volumes of data through the network can be time consuming; this is a major concern for dataintensive</p>
+<p class="p1">applications in cloud computing. Communication through the network adds additional delay</p>
+<p class="p1">to the response time. Security becomes a major concern because the traffic between a client and a server</p>
+<p class="p1">can be intercepted.</p>
+<p class="p1">Remote Procedure Call (RPC). RPC is often used for the implementation of client-server systems</p>
+<p class="p1">interactions. The RPC standard is described in RFC 1831. To use an RPC, a process may use special</p>
+<p class="p1">services <span class="s2">PORTMAP </span>or <span class="s2">RPCBIND</span>, available at port 111, to register and for service lookup. RPCmessages</p>
+<p class="p1">must be well structured; they identify the RPC and are addressed to an RPC demon listening at an RPC</p>
+<p class="p1">port. <span class="s1">XDP </span>is a machine-independent representation standard for RPC.</p>
+<p class="p1">RPCs reduce the so-called <span class="s1">fate sharing </span>between caller and callee but take longer than local calls due</p>
+<p class="p1">to communication delays. Several RPC semantics are implemented:</p>
+<p class="p1">• At least once. A message is resent several times and an answer is expected. The server may end</p>
+<p class="p1">up executing a request more than once, but an answer may never be received. These semantics are</p>
+<p class="p1">suitable for operations free of side effects.</p>
+<p class="p1">• At most once. A message is acted on at most once. The sender sets up a time-out for receiving the</p>
+<p class="p1">response; when the time-out expires, an error code is delivered to the caller. These semantics require</p>
+<p class="p1">the sender to keep a history of the time stamps of all messages because messages may arrive out of</p>
+<p class="p1">order. These semantics are suitable for operations that have side effects.</p>
+<p class="p1">• Exactly once. It implements the <span class="s1">at most once </span>semantics and requests an acknowledgment from the</p>
+<p class="p1">server.</p>
+<p class="p1">Applications of the Client-Server Paradigm. The large spectrum of applications attests to the role</p>
+<p class="p1">played by the client-server paradigm in the modern computing landscape. Examples of popular applications</p>
+<p class="p1">of the client-server paradigm are numerous and include the World Wide Web, the Domain Name</p>
+<p class="p1">System (DNS), <span class="s1">X-windows</span>, electronic mail [see Figure <span class="s3">2.21</span>(a)], event services [see Figure <span class="s3">2.21</span>(b)],</p>
+<p class="p1">and so on.</p>
+<p class="p1">TheWorldWideWeb illustrates the power of the client-server paradigm and its effects on society. As</p>
+<p class="p1">of June 2011 therewere close to 350 millionWeb sites. TheWeb allows users to access <span class="s1">resources </span>such as</p>
+<p class="p1">text, images, digitalmusic, and any imaginable type of information previously stored in a digital format.</p>
+<p class="p1">A <span class="s1">Web page </span>is created using a description language called Hypertext Markup Language (HTML). The</p>
+<p class="p1">information in each Web page is encoded and formatted according to some standard (e.g., GIF, JPEG</p>
+<p class="p1">for images, MPEG for videos, MP3 or MP4 for audio, and so on).</p>
+<p class="p1">The Web is based on a “pull” paradigm; the resources are stored at the server’s site and the client</p>
+<p class="p1">pulls them from the server. SomeWeb pages are created “on the fly”; others are fetched from disk. The</p>
+<p class="p1">client, called a <span class="s1">Web browser</span>, and the server communicate using an application-level protocol HyperText</p>
+<p class="p1">Transfer Protocol (HTTP) built on top of the Transport Control Protocol (TCP).</p>
+<p class="p1">from clients. Figure <span class="s3">2.22 </span>shows the sequence of events when a client sends an HTTP request to a</p>
+<p class="p1">server to retrieve some information and the server constructs the page on the fly; then it requests an</p>
+<p class="p1">image stored on the disk. First a TCP connection between the client and the server is established using</p>
+<p class="p1">a process called a <span class="s1">three-way handshake</span>; the client provides an arbitrary initial sequence number in a</p>
+<p class="p1">special segment with the <span class="s2">SYN </span>control bit on. Then the server acknowledges the segment and adds its</p>
+<p class="p1">own arbitrarily chosen initial sequence number. Finally the client sends its own acknowledgment <span class="s2">ACK</span></p>
+<p class="p1">as well as the HTTP request, and the connection is established. The time elapsed from the initial request</p>
+<p class="p1">until the server’s acknowledgment reaches the client is the RTT.</p>
+<p class="p1">The <span class="s1">response time</span>, defined as the time from the instance the first bit of the request is sent until the last</p>
+<p class="p1">bit of the response is received, consists of several components: the RTT, the <span class="s1">server residence time</span>, the</p>
+<p class="p1">time it takes the server to construct the response, and the data transmission time. RTT depends on the</p>
+<p class="p1">network latency, the time it takes a packet to cross the network from the sender to the receiver; the data</p>
+<p class="p1">transmission time is determined by the network bandwidth. In turn, the server residence time depends</p>
+<p class="p1">on the server load.</p>
+<p class="p1">Often the client and the server do not communicate directly but through a proxy server, as shown in</p>
+<p class="p1">Figure <span class="s3">2.23</span>. Proxy servers can provide multiple functions; for example, they may filter client requests and decide whether or not to forward the request based on some filtering rules. The proxy server may</p>
+<p class="p1">redirect the request to a server in close proximity to the client or to a less loaded server. A proxy can</p>
+<p class="p1">also act as a cache and provide a local copy of a resource rather than forward the request to the server.</p>
+<p class="p1">Another type of client-server communication is <span class="s1">HTTP tunneling</span>, used most often as a means for</p>
+<p class="p1">communication from network locations with restricted connectivity. Tunneling means encapsulation of</p>
+<p class="p1">a network protocol. In our case HTTP acts as a wrapper for the communication channel between the</p>
+<p class="p1">client and the server (see Figure <span class="s3">2.23</span>).</p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 7.5px Times; color: #000066}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Helvetica}
+    span.s4 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">Can virtualization empower the creators of malware<span class="s1">16 </span>to carry out their mischievous activities with</p>
+<p class="p1">impunity and with minimal danger of being detected? How difficult is it to implement such a system?</p>
+<p class="p1">What are the means to prevent this type of malware to be put in place? The answers to these questions</p>
+<p class="p1">are discussed in this section.</p>
+<p class="p1">It is well understood that in a layered structure a defense mechanism at some layer can be disabled</p>
+<p class="p1">by malware running a layer below it. Thus, the winner in the continuous struggle between the attackers</p>
+<p class="p1">and the defenders of a computing system is the one in control of the lowest layer of the software stack</p>
+<p class="p1">– the one that controls the hardware (see Figure <span class="s2">5.10</span>).</p>
+<p class="p1">Recall that a VMM allows a guest operating system to run on virtual hardware. The VMM offers to</p>
+<p class="p1">the guest operating systems a hardware abstraction and mediates its access to the physical hardware.We</p>
+<p class="p1">argued that a VMM is simpler and more compact than a traditional operating system; thus, it is more</p>
+<p class="p1">secure. But what if the VMM itself is forced to run above another software layer so that it is prevented</p>
+<p class="p1">from exercising direct control of the physical hardware?</p>
+<p class="p1">A 2006 paper [<span class="s2">194</span>] argues that it is feasible to insert a “rogue VMM” between the physical hardware</p>
+<p class="p1">and an operating system. Such a rogue VMM is called a <span class="s3">virtual machine-based rootkit </span>(VMBR). The</p>
+<p class="p1">term <span class="s3">rootkit </span>refers to malware with privileged access to a system. The name comes from <span class="s3">root</span>, themost</p>
+<p class="p1">privileged account on a <span class="s3">Unix </span>system, and <span class="s3">kit</span>, a set of software components.</p>
+<p class="p1">It is also feasible to insert the VMBR between the physical hardware and a “legitimate VMM.” As</p>
+<p class="p1">a virtual machine running under a legitimate VMM sees virtual hardware, the guest OS will not notice</p>
+<p class="p1">any change of the environment; so the only trick is to present the legitimate VMM with a hardware</p>
+<p class="p1">abstraction, rather than allow it to run on the physical hardware.</p>
+<p class="p1">Before we address the question of how such an insertion is possible, we should point out that in this</p>
+<p class="p1">approach the malware runs either inside a VMM or with the support of a VMM; but a VMM is a very potent engine for the malware. It prevents the software of the guest operating system or the application</p>
+<p class="p1">from detecting malicious activities. A VMBR can record key strokes, system state, data buffers sent to</p>
+<p class="p1">or received from the network, and data to be written to or <span class="s4">read </span>from the disk with impunity; moreover,</p>
+<p class="p1">it can change any data at will.</p>
+<p class="p1">The only way for a VMBR to take control of a system is to modify the boot sequence and to first load</p>
+<p class="p1">the malware and only then load the legitimate VMM or the operating system. This is only possible if</p>
+<p class="p1">the attacker has root privileges. Once the VMBR is loaded it must also store its image on the persistent</p>
+<p class="p1">storage.</p>
+<p class="p1">The VMBR can enable a separate malicious OS to run surreptitiously and make this malicious</p>
+<p class="p1">OS invisible to the guest OS and to the application running under it. Under the protection of the</p>
+<p class="p1">VMBR, the malicious OS could (i) observe the data, the events, or the state of the target system;</p>
+<p class="p1">(ii) run services such as spam relays or distributed denial-of-service attacks; or (iii) interfere with the</p>
+<p class="p1">application.</p>
+<p class="p1">Proof-of-concept VMBRs to subvert <span class="s3">Windows XP </span>and <span class="s3">Linux </span>and several services based on this</p>
+<p class="p1">platform are described in [<span class="s2">194</span>]. We should stress that modifying the boot sequence is by no means an</p>
+<p class="p1">easy task, and once an attacker has root privileges he or she is in total control of a system.</p>
+</body>
+</html>

@@ -1,0 +1,63 @@
+,source,edge,target
+0,paper,describes,comparative Computing EC2
+1,NERSC,located at,Berkeley National Laboratory
+2,community,has,600  codes
+4,weather climate code,uses,dimensional  domain
+6,second,decomposed over,longitude/ latitude
+7,long MPI13 that,movement,point  point
+9,System,used for,chemistry calculations
+10,Iowa State University,has,SPMD execution model
+12,DDI,presents,distributed data memory
+13,cluster program,uses,socket
+14,other processors half,uses,half processors compute
+15,field lines,uses,toroidal fusion plasma
+16,that,follows,field lines
+17,version,uses,64 domain domains
+18,nearestneighbor that,dominated by,nearestneighbor exchanges
+19,parts,involve,particle  steps
+21,charge deposition,uses,indirect
+22,Time models,solver,spectral integratedGreen function
+25,code,uses,dynamic y−z domains
+26,algorithm,used,boundary  conditions
+27,solve,’s,Poisson
+28,different grid scheme,uses,multigrid solver
+29,code,embedded,astrophysical integration scheme
+30,topology,tends,simple topology interconnects
+32,code,has,low  computational
+33,code,stresses,memory latency
+34,solver,stresses global,global  communications
+35,sizes,range from short,relatively  moderate
+36,algorithm,discretizes,dimensional space time
+38,integration,requires,sparse time matrix
+42,inversion,translates into tridimensional,complex matrix vector multiplications
+43,multiplication,requires,dot
+44,dot product,consists of,five  operations
+46,model,based on,dimensional domain decomposition
+48,algorithm,requires,separated gather memory
+49,that,performs,total ab energy
+50,FFTs,transform,real wave space
+51,FFT,dominates,run
+52,code,uses,MPI
+53,code,uses,short  messages
+54,code,parallelizes over,fine grain parallelism
+57,authors,use,large Performance Computing NERSC
+59,that,quantify basic,basic  system
+60,code,does,results
+63,that,solves,linear  system
+65,whereby  pairs,exercises,other
+66,whereby  pairs,communicate with,other
+68,node,has,two  sockets
+69,that,connects,dimensional  mesh
+70,codes,compiled with,Group suite version
+71,XT4  node,has,8 Budapest RAM
+72,processor,connected through,s bidirectional Cray SeaStar-2 ASIC
+73,tridimensional torus node,interconnected in,direct  node
+74,Codes,compiled with,Pathscale
+75,node,connected to,blocking Rate InfiniBand factor
+76,Codes,compiled,Intel
+77,cluster,had,7.5 Amazon parlance
+78,nodes,connected with,gigabit Ethernet
+79,binaries,compiled on,Lawrencium
+80,results,reported in,Table
+82,results,give,efficiently  cloud
+83,applications,affected by,smaller  Carver

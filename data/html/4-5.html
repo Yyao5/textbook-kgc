@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier; color: #000066}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {font: 10.0px Times; color: #000000}
+    span.s4 {color: #000066}
+    span.s5 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">Cloud computing elasticity requires the ability to distribute computations and data across multiple</p>
+<p class="p1">systems. Coordination among these systems is one of the critical functions to be exercised in a distributed</p>
+<p class="p1">environment. The coordinationmodel depends on the specific task, such as coordination of data storage,</p>
+<p class="p1">orchestration of multiple activities, blocking an activity until an event occurs, reaching consensus for</p>
+<p class="p1">the next action, or recovery after an error.</p>
+<p class="p1">The entities to be coordinated could be processes running on a set of cloud servers or even running</p>
+<p class="p1">on multiple clouds. Servers running critical tasks are often replicated, so when one primary server fails,</p>
+<p class="p1">a backup automatically continues the execution. This is only possible if the backup is in a <span class="s1">hot standby</span></p>
+<p class="p1">mode – in other words, the standby server shares the same state at all times with the primary.</p>
+<p class="p1">For example, in the distributed data store model discussed in Section 3.5, the access to data is</p>
+<p class="p1">mitigated by a proxy. This proxy is a single point of failure; thus, an architecture with multiple proxies</p>
+<p class="p1">is desirable. These proxies should be in the same state so that, whenever one of them fails, the client</p>
+<p class="p1">could seamlessly continue to access the data using another proxy.</p>
+<p class="p1">Consider nowan advertising service that involves a large number of servers in a cloud. The advertising</p>
+<p class="p1">service runs on a number of servers specialized for tasks such as database access, monitoring, accounting,</p>
+<p class="p1">event logging, installers, customer dashboards,<span class="s2">5 </span>advertising campaign planners, scenario testing, and</p>
+<p class="p1">so on. A solution to coordinate these activities is through configuration files shared by all systems.</p>
+<p class="p1">When the service starts or after a system failure, all servers use the configuration file to coordinate their</p>
+<p class="p1">actions. This solution is static. Any change requires an update and redistribution of the configuration</p>
+<p class="p1">file. Moreover, in case of a system failure the configuration file does not allow recovery from the state</p>
+<p class="p1">of each server prior to the system crash, which is a more desirable alternative.</p>
+<p class="p1">A solution for the proxy coordination problem is to consider a proxy as a deterministic finite state</p>
+<p class="p1">machine that performs the commands sent by clients in some sequence. The proxy has thus a definite</p>
+<p class="p1">state and, when a command is received, it transitions to another state. When <span class="s1">P </span>proxies are involved,</p>
+<p class="p1">all of them must be synchronized and must execute the same sequence of state machine commands;</p>
+<p class="p1">this can be ensured if all proxies implement a version of the Paxos consensus algorithm described in</p>
+<p class="p1">Section 2.11.</p>
+<p class="p1"><span class="s1">ZooKeeper </span>is a distributed coordination service based on this model. The high-throughput and</p>
+<p class="p1">low-latency service is used for coordination in large-scale distributed systems. The open-source software</p>
+<p class="p1">is written in Java and has bindings for Java and C. Information about the project is available at</p>
+<p class="p2">http://zookeeper.apache.org/<span class="s3">.</span></p>
+<p class="p1">The <span class="s1">ZooKeeper </span>software must first be downloaded and installed on several servers; then clients can</p>
+<p class="p1">connect to any one of these servers and access the coordination service. The service is available as long</p>
+<p class="p1">as the majority of servers in the pack are available.</p>
+<p class="p1">The organization of the service is shown in Figure <span class="s4">4.4</span>. The servers in the pack communicate with</p>
+<p class="p1">one another and elect a <span class="s1">leader</span>. A database is replicated on each one of them and the consistency of the replicas is maintained. Figure <span class="s4">4.4</span>(a) shows that the service provides a single system image. A client</p>
+<p class="p1">can connect to any server of the pack.</p>
+<p class="p1">A client uses TCP to connect to a single server. Through the TCP connection a client sends requests</p>
+<p class="p1">and receives responses and watches events. A client synchronizes its clock with the server. If the server</p>
+<p class="p1">fails, the TCP connections of all clients connected to it time out and the clients detect the failure of the</p>
+<p class="p1">server and connect to other servers.</p>
+<p class="p1">Figures <span class="s4">4.4</span>(b) and (c) show that a <span class="s5">read </span>operation directed to any server in the pack returns the same</p>
+<p class="p1">result, whereas the processing of a <span class="s5">write </span>operation is more involved; the servers elect a <span class="s1">leader</span>, and</p>
+<p class="p1">any <span class="s1">follower </span>receiving a request from one of the clients connected to it forwards it to the leader. The</p>
+<p class="p1">leader uses atomic broadcast to reach consensus. When the leader fails, the servers elect a new leader.</p>
+<p class="p1">The system is organized as a shared hierarchical namespace similar to the organization of a file</p>
+<p class="p1">system. A name is a sequence of path elements separated by a backslash. Every name in <span class="s1">Zookeper</span>’s</p>
+<p class="p1">namespace is identified by a unique path (see Figure <span class="s4">4.5</span>).</p>
+<p class="p1">In <span class="s1">ZooKeeper </span>the <span class="s1">znodes</span>, the equivalent of the <span class="s1">inodes </span>of a file system, can have data associated with</p>
+<p class="p1">them. Indeed, the system is designed to store state information. The data in each node includes version numbers for the data, changes of ACLs,<span class="s2">6 </span>and time stamps. A client can set a watch on a <span class="s1">znode </span>and</p>
+<p class="p1">receive a notification when the <span class="s1">znode </span>changes. This organization allows coordinated updates. The data</p>
+<p class="p1">retrieved by a client also contains a version number. Each update is stamped with a number that reflects</p>
+<p class="p1">the order of the transition.</p>
+<p class="p1">The data stored in each node is <span class="s5">read </span>and written atomically. A <span class="s5">read </span>returns all the data stored in</p>
+<p class="p1">a <span class="s1">znode</span>, whereas a <span class="s5">write </span>replaces all the data in the <span class="s1">znode. </span>Unlike in a file system, <span class="s1">Zookeeper </span>data,</p>
+<p class="p1">the image of the state, is stored in the server memory. Updates are logged to disk for recoverability, and</p>
+<p class="p1"><span class="s1">writes </span>are serialized to disk before they are applied to the in-memory database that contains the entire</p>
+<p class="p1">tree. The <span class="s1">ZooKeeper </span>service guarantees:</p>
+<p class="p1"><span class="s1">1. Atomicity</span>. A transaction either completes or fails.</p>
+<p class="p1"><span class="s1">2. Sequential consistency of updates</span>.Updates are applied strictly in the order in which they are received.</p>
+<p class="p1"><span class="s1">3. Single system image for the clients</span>. A client receives the same response regardless of the server it</p>
+<p class="p1">connects to.</p>
+<p class="p1"><span class="s1">4. Persistence of updates</span>. Once applied, an update persists until it is overwritten by a client.</p>
+<p class="p1"><span class="s1">5. Reliability</span>. The system is guaranteed to function correctly as long as the majority of servers function</p>
+<p class="p1">correctly.</p>
+<p class="p1">To reduce the response time, <span class="s5">read </span>requests are serviced from the local replica of the server that is</p>
+<p class="p1">connected to the client.When the leader receives a <span class="s5">write </span>request, it determines the state of the system</p>
+<p class="p1">where the <span class="s5">write </span>will be applied and then it transforms the state into a transaction that captures this</p>
+<p class="p1">new state.</p>
+<p class="p1">The messaging layer is responsible for the election of a new leader when the current leader fails. The</p>
+<p class="p1">messaging protocol uses <span class="s1">packets </span>(sequences of bytes sent through a FIFO channel), <span class="s1">proposals </span>(units</p>
+<p class="p1">of agreement), and <span class="s1">messages </span>(sequences of bytes atomically broadcast to all servers). A message is</p>
+<p class="p1">included in a proposal and it is agreed on before it is delivered. Proposals are agreed on by exchanging</p>
+<p class="p1">packets with a quorum of servers, as required by the Paxos algorithm.</p>
+<p class="p1">An atomic messaging system keeps all the servers in a pack in synch. This system guarantees (a)</p>
+<p class="p1">reliable delivery: if message <span class="s1">m </span>is delivered to one server, it will be eventually delivered to all servers;</p>
+<p class="p1">(b) total order: if message <span class="s1">m </span>is delivered before message <span class="s1">n </span>to one server, <span class="s1">m </span>will be delivered before <span class="s1">n</span></p>
+<p class="p1">to all servers; and (c) causal order: if message <span class="s1">n </span>is sent after <span class="s1">m </span>has been delivered by the sender of <span class="s1">n</span>,</p>
+<p class="p1">then <span class="s1">m </span>must be ordered before <span class="s1">n</span>.</p>
+<p class="p1">The application programming interface (API) to the <span class="s1">ZooKeeper </span>service is very simple and consists</p>
+<p class="p1">of seven operations:</p>
+<p class="p1">• <span class="s1">create </span>– add a node at a given location on the tree.</p>
+<p class="p1">• <span class="s1">delete </span>– delete a node.</p>
+<p class="p1">• <span class="s1">get data </span>– <span class="s5">read </span>data from a node.</p>
+<p class="p1">• <span class="s1">set data </span>– <span class="s5">write </span>data to a node.</p>
+<p class="p1">• <span class="s1">get children </span>– retrieve a list of the children of the node.</p>
+<p class="p1">• <span class="s1">synch </span>– wait for the data to propagate.</p>
+<p class="p1">The system also supports the creation of <span class="s1">ephemeral </span>nodes, which are nodes that are created when a</p>
+<p class="p1">session starts and deleted when the session ends.</p>
+<p class="p1">This brief description shows that the <span class="s1">ZooKeeper </span>service supports the finite state machine model of</p>
+<p class="p1">coordination. In this case a <span class="s1">znode </span>stores the state. The <span class="s1">ZooKeeper </span>service can be used to implement</p>
+<p class="p1">higher-level operations such as group membership, synchronization, and so on. The system is used by</p>
+<p class="p1">Yahoo!’s Message Broker and by several other applications.</p>
+</body>
+</html>

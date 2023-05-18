@@ -1,0 +1,16 @@
+,source,edge,target
+1,virtual  cluster,has,bound interconnect applications
+2,other machine instances,require,PVM  image
+4,other  instances,use,paravirtual
+6,MPI,used for,placement group
+8,MPI,supports,point  point
+9,it,used by parallel,multiple  data
+11,process,identified by,process rank
+12,total  number,ranks in,MPI_COM_PROCESS_GROUP
+13,0  #,include,int main(int int char
+14,#,include,#
+15,MPI_SEND,blocking,send
+17,process,sends,other process group
+19,% d my_processId,have,<  d
+20,i,receive from,else  rank
+24,example,located at,MPI http://rc.fas.harvard.edu/faq/amazonec2

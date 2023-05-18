@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {color: #000066}
+    span.s4 {font: 10.0px Times}
+    span.s5 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">We often hear that virtualization enhances security because a virtual machine monitor or hypervisor is</p>
+<p class="p1">considerably smaller than an operating system. For example, the <span class="s1">Xen</span>VMMdiscussed in Section 5.8 has</p>
+<p class="p1">approximately 60<span class="s1">,</span>000 lines of code, one to two orders of magnitude fewer than a traditional operating</p>
+<p class="p1">system.<span class="s2">14</span></p>
+<p class="p1">Ahypervisor supports stronger isolation between theVMs running under it than the isolation between</p>
+<p class="p1">processes supported by a traditional operating system.Yet the hypervisormust rely on amanagement OS</p>
+<p class="p1">to create VMs and to transfer data in and out from a guest VMto storage devices and network interfaces.</p>
+<p class="p1">A small VMM can be carefully analyzed; thus, one could conclude that the security risks in a virtual</p>
+<p class="p1">environment are diminished.We have to be cautious with such sweeping statements. Indeed, the trusted</p>
+<p class="p1">computer base (TCB)<span class="s2">15 </span>of a cloud computing environment includes not only the hypervisor but also</p>
+<p class="p1">the management OS. The management OS supports administrative tools, live migration, device drivers,</p>
+<p class="p1">and device emulators.</p>
+<p class="p1">For example, the TCB of an environment based on <span class="s1">Xen </span>includes not only the hardware and the</p>
+<p class="p1">hypervisor but also the management operating system running in the so-called <span class="s1">Dom0 </span>(see Figure <span class="s3">9.3</span>).</p>
+<p class="p1">System vulnerabilities can be introduced by both software components, <span class="s1">Xen</span>, and the management</p>
+<p class="p1">operating system. An analysis of <span class="s1">Xen </span>vulnerabilities reports that 21 of the 23 attacks were against</p>
+<p class="p1">service components of the control VM [<span class="s3">90</span>]; 11 attacks were attributed to problems in the guest OS</p>
+<p class="p1">caused by buffer overflow<span class="s2">16 </span>and 8 were denial-of-service attacks.</p>
+<p class="p1"><span class="s1">Dom0 </span>manages the building of all user domains (<span class="s1">DomU</span>), a process consisting of several steps:</p>
+<p class="p1"><span class="s1">1. </span>Allocate memory in the <span class="s1">Dom0 </span>address space and load the kernel of the guest operating system from</p>
+<p class="p1">secondary storage.</p>
+<p class="p1"><span class="s1">2. </span>Allocate memory for the new VM and use foreign mapping<span class="s2">17 </span>to load the kernel to the new VM.</p>
+<p class="p1"><span class="s1">3. </span>Set up the initial page tables for the new VM.</p>
+<p class="p1"><span class="s1">4. </span>Release the foreign mapping on the new VM memory, set up the virtual CPU registers, and launch</p>
+<p class="p1">the new VM.</p>
+<p class="p1">A malicious <span class="s1">Dom0 </span>can play several nasty tricks at the time when it creates a <span class="s1">DomU </span>[<span class="s3">215</span>]:</p>
+<p class="p1">• Refuse to carry out the steps necessary to start the new VM, an action that can be considered a</p>
+<p class="p2">denial-of-service <span class="s4">attack.</span></p>
+<p class="p1">• Modify the kernel of the guest operating system in ways that will allow a third party to monitor and</p>
+<p class="p1">control the execution of applications running under the new VM.</p>
+<p class="p1">• Undermine the integrity of the new VM by setting the wrong page tables and/or setting up incorrect</p>
+<p class="p1">virtual CPU registers.</p>
+<p class="p1">• Refuse to release the foreign mapping and access the memory while the new VM is running.</p>
+<p class="p1">Let us now turn our attention to the run-time interaction between <span class="s1">Dom0 </span>and a <span class="s1">DomU</span>. Recall that</p>
+<p class="p1"><span class="s1">Dom0 </span>exposes a set of abstract devices to the guest operating systems using <span class="s1">split drivers</span>. The front end</p>
+<p class="p1">of such a driver is in the <span class="s1">DomU </span>and its back end in <span class="s1">Dom0</span>, and the two communicate via a ring in shared</p>
+<p class="p1">memory (see Section 5.8).</p>
+<p class="p1">In the original implementation of <span class="s1">Xen </span>a service running in a <span class="s1">DomU </span>sends data to or receives data</p>
+<p class="p1">from a client located outside the cloud using a network interface in <span class="s1">Dom0</span>; it transfers the data to I/O</p>
+<p class="p1">devices using a device driver in <span class="s1">Dom0</span>.<span class="s2">18 </span>Therefore, we have to ensure that run-time communication through <span class="s1">Dom0 </span>is encrypted. Yet, <span class="s1">Transport Layer Security </span>(TLS) does not guarantee that <span class="s1">Dom0 </span>cannot</p>
+<p class="p1">extract cryptographic keys from the memory of the OS and applications running in <span class="s1">DomU</span>.</p>
+<p class="p1">A significant security weakness of <span class="s1">Dom0 </span>is that the entire state of the system is maintained by</p>
+<p class="p1"><span class="s1">XenStore </span>(see Section 5.8). A malicious VM can deny access to this critical element of the system to</p>
+<p class="p1">other VMs; it can also gain access to the memory of a <span class="s1">DomU</span>. This brings us to additional requirements</p>
+<p class="p1">for confidentiality and integrity imposed on <span class="s1">Dom0</span>.</p>
+<p class="p1"><span class="s1">Dom0 </span>should be prohibited from using foreign mapping for sharing memory with a <span class="s1">DomU </span>unless</p>
+<p class="p1">a <span class="s1">DomU </span>initiates the procedure in response to a hypercall from <span class="s1">Dom0</span>. When this happens, <span class="s1">Dom0</span></p>
+<p class="p1">should be provided with an encrypted copy of the memory pages and of the virtual CPU registers. The</p>
+<p class="p1">entire process should be closely monitored by the hypervisor, which, after the access, should check the</p>
+<p class="p1">integrity of the affected <span class="s1">DomU</span>.</p>
+<p class="p1">A virtualization architecture that guarantees confidentiality, integrity, and availability for the TCB of</p>
+<p class="p1">a <span class="s1">Xen</span>-based system is presented in [<span class="s3">215</span>]. A secure environment when <span class="s1">Dom0 </span>cannot be trusted can only</p>
+<p class="p1">be ensured if the guest application is able to store, communicate, and process data safely. Thus, the guest</p>
+<p class="p1">software should have access to secure secondary storage on a remote storage server for keeping sensitive</p>
+<p class="p1">data and network interfaces to communicate with the user. We also need a secure run-time system.</p>
+<p class="p1">To implement a secure run-time system we have to intercept and control the hypercalls used for communication</p>
+<p class="p1">between a <span class="s1">Dom0 </span>that cannot be trusted and a <span class="s1">DomU </span>wewant to protect. Hypercalls issued by</p>
+<p class="p1"><span class="s1">Dom0 </span>that do not <span class="s5">read </span>or <span class="s5">write </span>to the memory of a <span class="s1">DomU </span>or to its virtual registers should be allowed.</p>
+<p class="p1">Other hypercalls should be restricted either completely or during specific time <span class="s1">windows</span>. For example,</p>
+<p class="p1">hypercalls used by <span class="s1">Dom0 </span>for debugging or for the control of the IOMMU<span class="s2">19 </span>should be prohibited.</p>
+<p class="p1">We cannot restrict some of the hypercalls issued by <span class="s1">Dom0</span>, even though they can be harmful to the</p>
+<p class="p1">security of a <span class="s1">DomU</span>. For example, foreign mapping and access to the virtual registers are needed to save</p>
+<p class="p1">and restore the state of a <span class="s1">DomU</span>. We should check the integrity of a <span class="s1">DomU </span>after the execution of such</p>
+<p class="p1">security-critical hypercalls.</p>
+<p class="p1">New hypercalls are necessary to protect:</p>
+<p class="p1">• The privacy and integrity of the virtual CPU of a VM. When <span class="s1">Dom0 </span>wants to save the state of the</p>
+<p class="p1">VM, the hypercall should be intercepted and the contents of the virtual CPU registers should be</p>
+<p class="p1">encrypted. When a <span class="s1">DomU </span>is restored, the virtual CPU context should be decrypted and then an</p>
+<p class="p1">integrity check should be carried out.</p>
+<p class="p1">• The privacy and integrity of the VM virtual memory. The <span class="s1">page table update </span>hypercall should be</p>
+<p class="p1">intercepted and the page should be encrypted so that <span class="s1">Dom0 </span>handles only encrypted pages of the</p>
+<p class="p1">VM. To guarantee integrity, the hypervisor should calculate a hash of all the memory pages before</p>
+<p class="p1">they are saved by <span class="s1">Dom0</span>. Because a restored <span class="s1">DomU </span>may be allocated a different memory region, an</p>
+<p class="p1">address translation is necessary (see [<span class="s3">215</span>]).</p>
+<p class="p1">• The freshness of the virtual CPU and the memory of the VM. The solution is to add to the hash a</p>
+<p class="p1">version number.</p>
+<p class="p1">As expected, the increased level of security and privacy leads to increased overhead. Measurements</p>
+<p class="p1">reported in [<span class="s3">215</span>] show increases by factors of 1.7 to 2.3 for the domain build time, 1.3 to 1.5 for the</p>
+<p class="p1">domain save time, and 1.7 to 1.9 for the domain restore time.</p>
+</body>
+</html>

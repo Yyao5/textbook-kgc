@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 8.5px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">Private clouds provide a cost-effective alternative for very large organizations. A private cloud has</p>
+<p class="p1">essentially the same structural components as a commercial one: the servers, the network, virtual</p>
+<p class="p1">machines monitors (VMMs) running on individual systems, an archive containing disk images of virtual</p>
+<p class="p1">machines (VMs), a front end for communication with the user, and a cloud control infrastructure. Opensource</p>
+<p class="p1">cloud computing platforms such as <span class="s1">Eucalyptus </span>[<span class="s2">269</span>], <span class="s1">OpenNebula</span>, and <span class="s1">Nimbus </span>can be used as</p>
+<p class="p1">a control infrastructure for a private cloud.</p>
+<p class="p1">Schematically, a cloud infrastructure carries out the following steps to run an application:</p>
+<p class="p1">• Retrieves the user input from the front end.</p>
+<p class="p1">• Retrieves the disk image of a VM from a repository.</p>
+<p class="p1">• Locates a system and requests the VMM running on that system to set up a VM.</p>
+<p class="p1">• Invokes the DHCP<span class="s3">7 </span>and the IP bridging software to set up a MAC and IP address for the VM.</p>
+<p class="p1">We discuss briefly the three open-source software systems, <span class="s1">Eucalyptus, OpenNebula</span>, and <span class="s1">Nimbus</span>.</p>
+<p class="p1"><span class="s1">Eucalyptus </span><span class="s2">(</span><span class="s4">www.eucalyptus.com</span>) can be regarded as an open-source counterpart of Amazon’s <span class="s1">EC2</span>,</p>
+<p class="p1">(see Figure <span class="s2">3.4</span>). The systems supports several operating systems including CentOS 5 and 6, RHEL 5</p>
+<p class="p1">and 6, <span class="s1">Ubuntu </span>10.04 LTS, and 12.04 LTS.</p>
+<p class="p1">The components of the system are:</p>
+<p class="p1"><span class="s1">Virtual machine. </span>Runs under several VMMs, including <span class="s1">Xen, KVM</span>, and <span class="s1">Vmware</span>.</p>
+<p class="p1">• <span class="s1">Node controller. </span>Runs on every server or node designated to host a VM and controls the activities</p>
+<p class="p1">of the node. Reports to a cluster controller.</p>
+<p class="p1">• <span class="s1">Cluster controller. </span>Controls a number of servers. Interacts with the node controller on each server</p>
+<p class="p1">to schedule requests on that node. Cluster controllers are managed by the cloud controller.</p>
+<p class="p1">• <span class="s1">Cloud controller. </span>Provides the cloud access to end users, developers, and administrators. It is accessible</p>
+<p class="p1">through command-line tools compatible with <span class="s1">EC2</span>and through aWeb-based Dashboard. Manages</p>
+<p class="p1">cloud resources, makes high-level scheduling decisions, and interacts with cluster controllers.</p>
+<p class="p1">• <span class="s1">Storage controller. </span>Provides persistent virtual hard drives to applications. It is the correspondent</p>
+<p class="p1">of <span class="s1">EBS</span>. Users can create snapshots from EBS volumes. Snapshots are stored in <span class="s1">Walrus </span>and made</p>
+<p class="p1">available across availability zones.</p>
+<p class="p1">• <span class="s1">Storage service (Walrus). </span>Provides persistent storage and, similarly to <span class="s1">S3</span>, allows users to store</p>
+<p class="p1">objects in buckets.</p>
+<p class="p1">The system supports a strong separation between the user space and the administrator space; users</p>
+<p class="p1">access the system via a Web interface, whereas administrators need root access. The system supports</p>
+<p class="p1">a decentralized resource management of multiple clusters with multiple cluster controllers, but a single</p>
+<p class="p1">head node for handling user interfaces. It implements a distributed storage system, the analog of</p>
+<p class="p1">Amazon’s <span class="s1">S3 </span>system, called <span class="s1">Walrus</span>. The procedure to construct a virtual machine is based on the generic</p>
+<p class="p1">one described in [<span class="s2">323</span>]:</p>
+<p class="p1">• The<span class="s1">euca2ools </span>front end is used to request a VM.</p>
+<p class="p1">• The VM disk image is transferred to a compute node.</p>
+<p class="p1">• This disk image is modified for use by the VMM on the compute node.</p>
+<p class="p1">• The compute node sets up network bridging to provide a virtual network interface controller (NIC)<span class="s3">8</span></p>
+<p class="p1">with a virtual Media Access Control (MAC) address.<span class="s3">9</span></p>
+<p class="p1">• In the head node the DHCP is set up with the MAC/IP pair.</p>
+<p class="p1">• VMM activates the VM.</p>
+<p class="p1">• The user can now <span class="s4">ssh</span><span class="s3">10 </span>directly into the VM.</p>
+<p class="p1">The system can support a large number of users in a corporate enterprise environment. Users are</p>
+<p class="p1">shielded from the complexity of disk configurations and can choose their VM from a set of five configurations</p>
+<p class="p1">for available processors, memory, and hard drive space set up by the system administrators.</p>
+<p class="p1"><span class="s1">Open-Nebula </span><span class="s2">(</span><span class="s4">www.opennebula.org</span>) is a private cloud with users actually logging into the head node</p>
+<p class="p1">to access cloud functions. The system is centralized and its default configuration uses NFS (Network</p>
+<p class="p1">File System). The procedure to construct a virtual machine consists of several steps: (i) the user signs</p>
+<p class="p1">into the head node using <span class="s4">ssh</span>; (ii) the system uses the <span class="s4">onevm </span>command to request a VM; (iii) the VM template disk image is transformed to fit the correct size and configuration within the NFS directory</p>
+<p class="p1">on the head node; (iv) the <span class="s4">oned </span>daemon on the head node uses <span class="s4">ssh </span>to log into a compute node; (v) the</p>
+<p class="p1">compute node sets up network bridging to provide a virtual NIC with a virtual MAC; (vi) the files</p>
+<p class="p1">needed by the VMM are transferred to the compute node via the NFS; (vii) the VMM on the compute</p>
+<p class="p1">node starts the VM; and (viii) the user is able to <span class="s4">ssh </span>directly to the VM on the compute node.</p>
+<p class="p1">According to the analysis in [<span class="s2">323</span>], the system is best suited for an operation involving a small-to</p>
+<p class="p1">medium-sized group of trusted and knowledgeable users who are able to configure this versatile system</p>
+<p class="p1">based on their needs.</p>
+<p class="p1"><span class="s1">Nimbus </span><span class="s2">(</span><span class="s4">www.nimbusproject.org</span>) is a cloud solution for scientific applications based on the Globus</p>
+<p class="p1">software. The system inherits from Globus the image storage, the credentials for user authentication,</p>
+<p class="p1">and the requirement that a running Nimbus process can <span class="s4">ssh </span>into all compute nodes. Customization in</p>
+<p class="p1">this system can only be done by the system administrators.</p>
+<p class="p1">Table <span class="s2">3.5 </span>summarizes the features of the three systems [<span class="s2">323</span>]. The conclusions of the comparative</p>
+<p class="p1">analysis are as follows: <span class="s1">Eucalyptus </span>is best suited for a large corporation with its own private cloud</p>
+<p class="p1">because it ensures a degree of protection from user malice and mistakes. <span class="s1">OpenNebula </span>is best suited</p>
+<p class="p1">for a testing environment with a few servers. <span class="s1">Nimbus </span>is more adequate for a scientific community less</p>
+<p class="p1">interested in the technical internals of the system than with broad customization requirements.</p>
+<p class="p1"><span class="s1">OpenStack </span>is an open-source project started in 2009 at the National Aeronautics and Space Administration</p>
+<p class="p1">(NASA) in collaboration with Rackspace <span class="s2">(</span><span class="s4">www.rackspace.com</span>) to develop a scalable cloud</p>
+<p class="p1">operating system for farms of servers using standard hardware. Though recently NASA has moved its</p>
+<p class="p1">cloud infrastructure to <span class="s1">AWS </span>in addition to Rackspace, several other companies, including HP, Cisco,</p>
+<p class="p1">IBM, and Red Hat, have an interest in <span class="s1">OpenStack</span>. The current version of the system supports a wide</p>
+<p class="p1">range of features such as application programming interfaces (APIs) with rate limiting and authentication;</p>
+<p class="p1">live VM management to run, reboot, suspend, and terminate instances; role-based access control;</p>
+<p class="p1">and the ability to allocate, track, and limit resource utilization. The administrators and the users control</p>
+<p class="p1">their resources using an extensible Web application called the <span class="s1">Dashboard</span>.</p>
+</body>
+</html>

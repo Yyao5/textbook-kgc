@@ -1,0 +1,24 @@
+,source,edge,target
+0,Indeed run time behavior,competing,other  applications
+1,run time behavior,affected by other,other  applications
+4,systems,support,QLinux performance isolation
+5,still  one,exist,often QoS crosstalk
+7,virtualization,presents multiple,same  processor
+8,hardware instructions,executed,slowly  virtualization
+9,processor emulation,presents,a
+11,Mac Apple,used,Intel chips
+12,Apple,adopted,Intel
+14,Obviously performance OS,is,more context switching
+16,subset,includes arithmetic,arithmetic  instructions
+17,systems,use,also resource isolation
+20,attacker,penetrate,entire
+21,other  software,has,virtual  the
+22,a,access virtual,virtual  software
+23,layer,has,physical  systems
+25,Thus  virtualization,used,cloud computing environment
+27,Xen VMM,discussed,example
+28,Denali VMM,lines of,"30,000  code"
+30,considerably  systems,reduced,privileged  functions
+31,systems,expose,much  smaller
+32,e.g. Linux 2.6.11,accessed through,28  hypercalls
+35,traditional operating system,supports special,third  party

@@ -1,0 +1,40 @@
+,source,edge,target
+0,large  organization,are several,single cloud provider
+2,potential,poses,great system danger
+3,Last Cloud Service Provider,decide,other network CSPs
+6,alternative,switching to,provider
+9,chapter,discusses,storage
+10,Chapter,covers,8 storage systems
+11,that,discuss,vendor lock storage reliability
+16,solution,based on,reliable data storage
+17,system,uses,distributed disk Figure
+19,disk controller,distributes,wise data blocks
+21,when parity blocks,written on,dedicated RAID-4 systems
+22,file,avoid,the
+23,when parity blocks,written to,dedicated  disk
+24,us,allows,single disk loss
+25,us,recover,data
+26,3.5  we,have,third  file
+28,we,recover,missing
+30,Obviously  we,detect,same  procedure
+31,concurrently  a3,allows parallel,write  performance
+32,blocks  a1,read,example
+33,a3,aggregate multiple,multiple  write
+35,system,strips,four  clusters
+36,that,controlled,RAID controller
+37,proxy,ensures,before  atomicity
+38,proxy,buffers,data
+42,idea,raises several,immediately  several
+43,single storage system?Howmuch overhead,introduced by,single  failure
+44,experiment,reported,question
+45,Redundant Array,uses,same data AWS
+46,3.1  bucket,stores,arbitrary  size
+48,cost increases,discussed in,RACS systems
+50,paper,suggests,several  proxies
+52,single  clients,connected to several,multiple  clouds
+54,solution,remains,limited data storage
+57,nature,dominates,all
+59,Experiments,produce inconclusive,inconclusive test bed results
+62,poses,conclude,service users
+65,providers,have,service resource Chapter
+68,same cloud application developers,have,cloud computing model

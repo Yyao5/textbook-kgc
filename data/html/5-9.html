@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A virtual machine monitor introduces a significant network communication overhead. For example, it</p>
+<p class="p1">is reported that the CPU utilization of a <span class="s1">VMware Workstation 2.0 </span>system running <span class="s1">Linux </span>2.2.17 was 5</p>
+<p class="p1">to 6 times higher than that of the native system (<span class="s1">Linux </span>2.2.17) in saturating a 100 Mbps network [<span class="s2">338</span>]. In other words, handling the same amount of traffic as the native system to saturate the network, the</p>
+<p class="p1">VMM executes a much larger number of instructions – 5 to 6 times larger.</p>
+<p class="p1">Similar overheads are reported for other VMMs and, in particular, for <span class="s1">Xen </span>2.0 [<span class="s2">241</span>,<span class="s2">242</span>]. To understand</p>
+<p class="p1">the sources of the network overhead, we examine the basic network architecture of <span class="s1">Xen </span>[see</p>
+<p class="p1">Figure <span class="s2">5.8</span>(a)]. Recall that privileged operations, including I/O, are executed by <span class="s1">Dom0 </span>on behalf of</p>
+<p class="p1">a guest operating system. In this context we shall refer to it as the <span class="s1">driver domain </span>called to execute</p>
+<p class="p1">networking operations on behalf of the <span class="s1">guest domain</span>. The <span class="s1">driver domain </span>uses the native <span class="s1">Linux </span>driver</p>
+<p class="p1">for the network interface controller, which in turn communicates with the physical NIC, also called the</p>
+<p class="p1">network adapter. Recall from Section <span class="s2">5.8 </span>that the <span class="s1">guest domain </span>communicates with the <span class="s1">driver domain</span></p>
+<p class="p1">through an I/O channel; more precisely, the guest OS in the <span class="s1">guest domain </span>uses a virtual interface to</p>
+<p class="p1">send/receive data to/from the back-end interface in the <span class="s1">driver domain</span>.</p>
+<p class="p1">Recall that a <span class="s1">bridge </span>in a LAN uses broadcast to identify the <span class="s1">MAC </span>address of a destination system.</p>
+<p class="p1">Once this address is identified, it is added to a table. When the next packet for the same destination</p>
+<p class="p1">arrives, the bridge uses the link layer protocol to send the packet to the proper <span class="s1">MAC </span>address rather than</p>
+<p class="p1">broadcast it. The bridge in the driver domain performs a multiplexing/demultiplexing function; packets</p>
+<p class="p1">received from the NIC have to be demultiplexed and sent to different VMs running under the VMM.</p>
+<p class="p1">Similarly, packets arriving from multiple VMs have to be multiplexed into a single stream before being</p>
+<p class="p1">transmitted to the network adaptor. In addition to bridging, <span class="s1">Xen </span>supports IP routing based on network</p>
+<p class="p1">address translation (NAT).</p>
+<p class="p1">Table <span class="s2">5.3 </span>shows the ultimate effect of this longer processing chain for the <span class="s1">Xen </span>VMM as well as the</p>
+<p class="p1">effect of optimizations [<span class="s2">242</span>]. The receiving and sending rates from a guest domain are roughly 30%</p>
+<p class="p1">and 20%, respectively, of the corresponding rates of a native <span class="s1">Linux </span>application. Packet multiplexing/demultiplexing accounts for about 40% and 30% of the communication overhead for the incoming</p>
+<p class="p1">traffic and for the outgoing traffic, respectively.</p>
+<p class="p1">The <span class="s1">Xen </span>network optimization discussed in [<span class="s2">242</span>] covers optimization of (i) the virtual interface;</p>
+<p class="p1">(ii) the I/O channel; and (iii) the virtual memory. The effects of these optimizations are significant for</p>
+<p class="p1">the send data rate from the optimized <span class="s1">Xen </span>guest domain, an increase from 750 to 3<span class="s1">, </span>310 Mbps, and</p>
+<p class="p1">rather modest for the receive data rate, 970 versus 820 Mbps.</p>
+<p class="p1">Next we examine briefly each optimization area, starting with the virtual interface. There is a tradeoff</p>
+<p class="p1">between generality and flexibility on one hand and performance on the other hand. The original virtual</p>
+<p class="p1">network interface provides the guest domain with the abstraction of a simple low-level network interface</p>
+<p class="p1">supporting sending and receiving primitives. This design supports a wide range of physical devices</p>
+<p class="p1">attached to the driver domain but does not take advantage of the capabilities of some physical NICs</p>
+<p class="p1">such as checksum offload (e.g., TSO<span class="s3">12</span>) and scatter-gather DMA support.<span class="s3">13 </span>These features are supported</p>
+<p class="p1">by the high-level virtual interface of the optimized system [see Figure <span class="s2">5.8</span>(b)].</p>
+<p class="p1">The next target of the optimization effort is the communication between the guest domain and the</p>
+<p class="p1">driver domain. Rather than copying a data buffer holding a packet, each packet is allocated in a new</p>
+<p class="p1">page and then the physical page containing the packet is remapped into the target domain. For example,</p>
+<p class="p1">when a packet is received, the physical page is remapped to the guest domain. The optimization is</p>
+<p class="p1">based on the observation that there is no need to remap the entire packet; for example, when sending a</p>
+<p class="p1">packet, the network bridge needs to know only the <span class="s1">MAC </span>header of the packet. As a result, the optimized</p>
+<p class="p1">implementation is based on an “out-of-band” channel used by the guest domain to provide the bridge</p>
+<p class="p1">with the packet <span class="s1">MAC </span>header. This strategy contributed to a better than four times increase in the send</p>
+<p class="p1">data rate compared with the nonoptimized version.</p>
+<p class="p1">The third optimization covers virtual memory. Virtual memory in <span class="s1">Xen </span>2.0 takes advantage of the</p>
+<p class="p1"><span class="s1">superpage </span>and <span class="s1">global page-mapping </span>hardware features available on Pentium and Pentium Pro processors.</p>
+<p class="p1">A superpage increases the granularity of the dynamic address translation; a superpage entry covers</p>
+<p class="p1">1<span class="s1">, </span>024 pages of physical memory, and the address translation mechanism maps a set of contiguous</p>
+<p class="p1">pages to a set of contiguous physical pages. This helps reduce the number of TLB misses. Obviously, all pages of a superpage belong to the same guest OS. When new processes are created, the guest OS</p>
+<p class="p1">must allocate <span class="s1">read-only </span>pages for the page tables of the address spaces running under the guest OS, and</p>
+<p class="p1">that forces the system to use traditional page mapping rather than superpage mapping. The optimized</p>
+<p class="p1">version uses a special memory allocator to avoid this problem.</p>
+</body>
+</html>

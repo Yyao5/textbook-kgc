@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 7.5px Times}
+  </style>
+</head>
+<body>
+<p class="p1">We start our discussion of energy use by data centers and its economic and ecological impact with a</p>
+<p class="p1">brief analysis of the concept of <span class="s1">energy-proportional systems</span>. This is a very important concept because a</p>
+<p class="p1">strategy for resource management in a computing cloud is to concentrate the load on a subset of servers</p>
+<p class="p1">and switching the rest of the servers to a standby mode whenever possible [7]. This strategy aims to</p>
+<p class="p1">reduce power consumption and, implicitly, the cost of providing computing and storage services; we</p>
+<p class="p1">analyze this subject in depth in Chapter 6.</p>
+<p class="p1">The operating efficiency of a system is captured by an expression of “performance per Watt of</p>
+<p class="p1">power.” It is widely reported that, during the last two decades, the performance of computing systems</p>
+<p class="p1">has increased much faster than their operating efficiency; for example, during the period 1998–2007,</p>
+<p class="p1">the performance of supercomputers increased by 7<span class="s1">,</span>000% whereas their operating efficiency increased</p>
+<p class="p1">by only 2<span class="s1">,</span>000%.</p>
+<p class="p2">In an ideal world, the energy consumed by an idle system should be near zero and should grow</p>
+<p class="p1"><span class="s1">linearly with the system load. </span>In real life, even machines whose power requirements scale linearly, use</p>
+<p class="p1">more than half the power when idle than they use at full load (see Figure <span class="s2">3.6</span>) [<span class="s2">42</span>].</p>
+<p class="p1">Energy-proportional systems could lead to large savings in energy costs for computing clouds. An</p>
+<p class="p1"><span class="s1">energy-proportional </span>system consumes no power when idle, very little power under a light load, and</p>
+<p class="p1">gradually more power as the load increases. By definition, an ideal energy-proportional system is always</p>
+<p class="p1">operating at 100% efficiency. Humans are a good approximation of an ideal energy proportional system;</p>
+<p class="p1">human energy consumption is about 70W at rest and 120W on average on a daily basis and can go as</p>
+<p class="p1">high as 1<span class="s1">,</span>000–2<span class="s1">,</span>000W during a strenuous, short effort [<span class="s2">42</span>].</p>
+<p class="p1">Different subsystems of a computing system behave differently in terms of energy efficiency. Many</p>
+<p class="p1">processors have reasonably good energy-proportional profiles, but significant improvements in memory and disk subsystems are necessary. The processors used in servers consume less than one-third of their</p>
+<p class="p1">peak power at very lowload and have a dynamic range<span class="s3">15 </span>of more than 70% of peak power; the processors</p>
+<p class="p1">used in mobile and/or embedded applications are better in this respect. According to [<span class="s2">42</span>] the dynamic</p>
+<p class="p1">power range of other components of a system is much narrower: less than 50% for dynamic random</p>
+<p class="p1">access memory (DRAM), 25% for disk drives, and 15% for networking switches.</p>
+<p class="p1">A number of proposals have emerged for <span class="s1">energy-proportional </span>networks; the energy consumed by</p>
+<p class="p1">such networks is proportional to the communication load. For example, in [<span class="s2">6</span>] the authors argue that a</p>
+<p class="p1">data center network based on a flattened butterfly topology is more energy and cost efficient than one</p>
+<p class="p1">using a different type of interconnect.</p>
+<p class="p1">High-speed channels typically consist of multiple serial lanes with the same data rate; a physical unit</p>
+<p class="p1">is stripped across all the active lanes. Channels commonly operate plesiochronously<span class="s3">16 </span>and are always</p>
+<p class="p1">on, regardless of the load, because they must still send idle packets to maintain byte and lane alignment across the multiple lanes. An example of an <span class="s1">energy-proportional </span>network is <span class="s1">InfiniBand</span>, discussed in</p>
+<p class="p1">Section 3.1.</p>
+<p class="p1">Energy saving in large-scale storage systems is also of concern. A strategy to reduce energy consumption</p>
+<p class="p1">is to concentrate the workload on a small number of disks and allow the others to operate in</p>
+<p class="p1">a low-power mode. One of the techniques to accomplish this task is based on replication. A replication</p>
+<p class="p1">strategy based on a sliding window is reported in [<span class="s2">364</span>]; measurement results indicate that it performs</p>
+<p class="p1">better than LRU, MRU, and LFU<span class="s3">17 </span>policies for a range of file sizes, file availability, and number of</p>
+<p class="p1">client nodes, and the power requirements are reduced by as much as 31%.</p>
+<p class="p1">Another technique is based on data migration. The system in [<span class="s2">158</span>] uses data storage in virtual nodes</p>
+<p class="p1">managed with a distributed hash table; the migration is controlled by two algorithms, a short-term optimization</p>
+<p class="p1">algorithm, used for gathering or spreading virtual nodes according to the daily variation of the</p>
+<p class="p1">workload so that the number of active physical nodes is reduced to aminimum, and a long-term optimization</p>
+<p class="p1">algorithm, used for coping with changes in the popularity of data over a longer period (e.g., a week).</p>
+<p class="p1">The energy consumption of large-scale data centers and their costs for energy and for cooling are</p>
+<p class="p1">significant now and are expected to increase substantially in the future. In 2006, the 6<span class="s1">,</span>000 data centers</p>
+<p class="p1">in the United States reportedly consumed 61<span class="s1"> </span>10<span class="s4">9 </span>KWh of energy, 1<span class="s1">.</span>5% of all electricity consumption</p>
+<p class="p1">in the country, at a cost of $4<span class="s1">.</span>5 billion [<span class="s2">364</span>].</p>
+<p class="p1">The predictions have been dire: The energy consumed by the data centers was expected to double</p>
+<p class="p1">from 2006 to 2011; peak instantaneous demand was expected to increase from 7 GW in 2006 to 12 GW</p>
+<p class="p1">in 2011, requiring the construction of 10 new power plants. The energy consumption of data centers</p>
+<p class="p1">and the network infrastructure is predicted to reach 10<span class="s1">, </span>300 TWh/year<span class="s3">18 </span>in 2030, based on 2010 levels</p>
+<p class="p1">of efficiency [<span class="s2">295</span>]. These increases are expected in spite of the extraordinary reduction in energy</p>
+<p class="p1">requirements for computing activities; over the past 30 years the energy efficiency per transistor on a</p>
+<p class="p1">chip has improved by six orders of magnitude.</p>
+<p class="p1">The effort to reduce energy use is focused on the computing, networking, and storage activities of</p>
+<p class="p1">a data center. A 2010 report shows that a typical Google cluster spends most of its time within the</p>
+<p class="p1">10–50% CPU utilization range; there is a mismatch between server workload profile and server energy</p>
+<p class="p1">efficiency [<span class="s2">6</span>]. A similar behavior is also seen in the data center networks; these networks operate in a</p>
+<p class="p1">very narrow dynamic range, and the power consumed when the network is idle is significant compared</p>
+<p class="p1">to the power consumed when the network is fully utilized.</p>
+<p class="p1">Many proposals argue that dynamic resource provisioning is necessary to minimize power consumption.</p>
+<p class="p1">Twomain issues are critical for energy saving: the amount of resources allocated to each application</p>
+<p class="p1">and the placement of individual workloads. For example, a resource management framework combining</p>
+<p class="p1">a utility-based dynamic virtual machine provisioning manager with a dynamic VM placement manager</p>
+<p class="p1">to minimize power consumption and reduce SLA violations is presented in [<span class="s2">358</span>].</p>
+<p class="p1">The support for network-centric content consumes a very large fraction of the network bandwidth;</p>
+<p class="p1">according to the CISCO VNI forecast, consumer traffic was responsible for around 80% of bandwidth</p>
+<p class="p1">use in 2009 and is expected to grow at a faster rate than business traffic. Data intensity for various</p>
+<p class="p1">activities ranges from 20MB/minute for HDTV streaming to 10MB/minute for standard TV streaming, 1<span class="s1">.</span>3MB/minute for music streaming, 0<span class="s1">.</span>96 MB/minute for Internet radio, 0<span class="s1">.</span>35 MB/minute for Internet</p>
+<p class="p1">browsing, and 0<span class="s1">.</span>0025 MB/minute for ebook reading [<span class="s2">295</span>].</p>
+<p class="p1">The same study reports that if the energy demand for bandwidth is 4 Watts-hour per MB<span class="s3">19 </span>and</p>
+<p class="p1">if the demand for network bandwidth is 3<span class="s1">.</span>2 GB/day/person or 2<span class="s1">,</span>572 EB/year for the entire world</p>
+<p class="p1">population, then the energy required for this activity will be 1<span class="s1">, </span>175 GW. These estimates do not count</p>
+<p class="p1">very high-bandwidth applications that may emerge in the future, such as 3D TV, personalized immersive</p>
+<p class="p1">entertainment such as Second Life, or massively multiplayer online games.</p>
+<p class="p1">The power consumption required by different types of human activities is partially responsible for</p>
+<p class="p1">the world’s greenhouse gas emissions. According to a recent study [<span class="s2">295</span>], the greenhouse gas emissions</p>
+<p class="p1">due to data centers are estimated to increase from 116 <span class="s1">  </span>10<span class="s4">6 </span>tons of <span class="s1">CO</span><span class="s4">2 </span>in 2007 to 257 tons in 2020,</p>
+<p class="p1">due primarily to increased consumer demand. Environmentally opportunistic computing is a macroscale</p>
+<p class="p1">computing idea that exploits the physical and temporal mobility of modern computer processes.</p>
+<p class="p1">A prototype called a Green Cloud is described in [<span class="s2">376</span>].</p>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Recall from Section 3.1 that <span class="s1">SQS </span>is a system for supporting automated workflows; multiple components</p>
+<p class="p1">can communicate with messages sent and received via <span class="s1">SQS </span>. An example showing the use of message</p>
+<p class="p1">queues is presented in Section 4.7. Figure <span class="s2">11.8 </span>shows the actions available for a given queue in <span class="s1">SQS</span>.</p>
+<p class="p1">The following steps can be used to create a queue, send a message, receive a message, and delete a</p>
+<p class="p1">message, and delete the queue in C#:</p>
+<p class="p1"><span class="s1">1. </span>Authenticate an <span class="s1">SQS </span>connection:</p>
+<p class="p2">NameValueCollection appConfig =</p>
+<p class="p2">ConfigurationManager.AppSettings;</p>
+<p class="p2">AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient</p>
+<p class="p2">(appConfig["AWSAccessKey"], appConfig["AWSSecretKey"]);</p>
+<p class="p1"><span class="s1">2. </span>Create a queue:</p>
+<p class="p2">CreateQueueRequest sqsRequest = new CreateQueueRequest();</p>
+<p class="p2">sqsRequest.QueueName = "MyQueue";</p>
+<p class="p2">CreateQueueResponse createQueueResponse =</p>
+<p class="p2">sqs.CreateQueue(sqsRequest);</p>
+<p class="p2">String myQueueUrl;</p>
+<p class="p2">myQueueUrl = createQueueResponse.CreateQueueResult.QueueUrl;</p>
+<p class="p1"><span class="s1">3. </span>Send a message:</p>
+<p class="p2">SendMessageRequest sendMessageRequest =</p>
+<p class="p2">new SendMessageRequest();</p>
+<p class="p2">sendMessageRequest.QueueUrl =</p>
+<p class="p2">myQueueUrl; //URL from initial queue</p>
+<p class="p2">sendMessageRequest.MessageBody = "This is my message text.";</p>
+<p class="p2">sqs.SendMessage(sendMessageRequest);</p>
+<p class="p1"><span class="s1">4. </span>Receive a message:</p>
+<p class="p2">ReceiveMessageRequest receiveMessageRequest =</p>
+<p class="p2">new ReceiveMessageRequest();</p>
+<p class="p2">receiveMessageRequest.QueueUrl = myQueueUrl;</p>
+<p class="p2">ReceiveMessageResponse receiveMessageResponse =</p>
+<p class="p2">sqs.ReceiveMessage(receiveMessageRequest);</p>
+<p class="p1"><span class="s1">5. </span>Delete a message:</p>
+<p class="p2">DeleteMessageRequest deleteRequest =</p>
+<p class="p2">new DeleteMessageRequest();</p>
+<p class="p2">deleteRequest.QueueUrl = myQueueUrl;</p>
+<p class="p2">deleteRequest.ReceiptHandle = messageRecieptHandle;</p>
+<p class="p2">DeleteMessageResponse DelMsgResponse =</p>
+<p class="p2">sqs.DeleteMessage(deleteRequest);</p>
+<p class="p1"><span class="s1">6. </span>Delete a queue:</p>
+<p class="p2">DeleteQueueRequest sqsDelRequest = new DeleteQueueRequest();</p>
+<p class="p2">sqsDelRequest.QueueUrl =</p>
+<p class="p2">CreateQueueResponse.CreateQueueResult.QueueUrl;</p>
+<p class="p2">DeleteQueueResponse delQueueResponse =</p>
+<p class="p2">sqs.DeleteQueue(sqsDelRequest);</p>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 10.0px Courier; color: #000066}
+    span.s4 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Social networks play an increasingly important role in people’s lives. In recent years they have expanded</p>
+<p class="p1">in terms of the size of the population involved and in terms of the functions performed. A promising</p>
+<p class="p1">solution for analyzing large-scale social network data is to distribute the computation workload over a</p>
+<p class="p1">large number of nodes of a cloud. Traditionally, determining the importance of a node or a relationship</p>
+<p class="p1">in a network is done using sampling and surveying, but in a very large network structural properties</p>
+<p class="p1">cannot be inferred by scaling up the results from small networks. It turns out that the evaluation of social</p>
+<p class="p1">closeness is computationally intensive.</p>
+<p class="p1">Social intelligence is another area where social and cloud computing intersect. Indeed, the process of</p>
+<p class="p1">knowledge discovery and techniques based on pattern recognition demand high-performance computing</p>
+<p class="p1">and resources that can be provided by computing clouds. Case-based reasoning (CBR), the process</p>
+<p class="p1">of solving new problems based on the solutions of similar past problems, is used by context-aware</p>
+<p class="p1">recommendation systems. It requires similarity-based retrieval. As the case base accumulates, such</p>
+<p class="p1">applications must handle massive amounts of history data, which can be done by developing new</p>
+<p class="p1">reasoning platforms running on the cloud. CBR is preferable to rule-based recommendation systems</p>
+<p class="p1">for large-scale social intelligence applications. Indeed, the rules can be difficult to generalize or apply</p>
+<p class="p1">to some domains. All triggering conditions must be strictly satisfied, scalability is a challenge as data</p>
+<p class="p1">accumulate, and the systems are hard to maintain because new rules have to be added as the amount of</p>
+<p class="p1">data increases.</p>
+<p class="p1">A system based on CBR is described in [<span class="s1">171</span>]. The <span class="s2">BetterLife 2.0 </span>system consists of a cloud layer,</p>
+<p class="p1">a case-based reasoning engine, and an API. The cloud layer uses the <span class="s2">Hadoop Distributed File System</span></p>
+<p class="p1">clusters to store application data represented by cases as well as social network information, such as</p>
+<p class="p1">relationship topology and pairwise social closeness information. The CBR engine calculates similarity</p>
+<p class="p1">measures between cases to retrieve the most similar ones and stores new cases back to the cloud layer.</p>
+<p class="p1">The API connects to a master node, which is responsible for handling user queries, distributes the</p>
+<p class="p1">queries to server machines, and receives results.</p>
+<p class="p1">A case consists of a problem description, a solution, and optional annotations about the path to</p>
+<p class="p1">derive the solution. The CBR uses <span class="s2">MapReduce</span>; all the cases are grouped by their <span class="s2">userId</span>, and then a</p>
+<p class="p1"><span class="s2">breadth first search </span>(BFS) algorithm is applied to the graph, where each node corresponds to one user.</p>
+<p class="p1"><span class="s2">MapReduce </span>is used to calculate the closeness according to pairwise relationship weight. A reasoning</p>
+<p class="p1">cycle has four steps: (a) Retrieve the most relevant or similar cases from memory to solve the case; (b)</p>
+<p class="p1">reuse: map the solution from the prior case to the new problem; (c) revise: test the new solution in the</p>
+<p class="p1">real world or in a simulation and, if necessary, revise; and (d) retain: if the solution was adapted to the</p>
+<p class="p1">target problem, store the result as a new case.</p>
+<p class="p1">In the past, social networks have been constructed for a specific application domain (e.g., <span class="s2">MyExperiment</span></p>
+<p class="p1">and <span class="s2">nanoHub </span>for biology and nanoscience, respectively). These networks enable researchers</p>
+<p class="p1">to share data and provide a virtual environment supporting remote execution of workflows. Another</p>
+<p class="p1">form of social computing is <span class="s2">volunteer computing</span>, when a large population of users donates resources</p>
+<p class="p1">such as CPU cycles and storage space for a specific project – for example, the Mersenne Prime Search</p>
+<p class="p1">initiated in 1996, followed in the late 1990s by SETI@Home, Folding@Home, and Storage@Home, a</p>
+<p class="p1">project to back up and share huge data sets from scientific research. Information about these projects is available online at <span class="s3">www.myExperiment.org</span>, <span class="s3">www.nanoHub.org</span>, <span class="s3">www.mersenne.org</span>,</p>
+<p class="p2">setiathome.berkeley.edu<span class="s4">, and </span>folding.stanford.edu.</p>
+<p class="p1">Such platforms cannot be used in an environment where users require some level of accountability</p>
+<p class="p1">because there are no SLAs. The <span class="s2">PlanetLab </span>project is a credit-based system in which users earn credits</p>
+<p class="p1">by contributing resources and then spend those credits when using other resources. The Berkeley</p>
+<p class="p1">Open Infrastructure for Network Computing (BOINC) aims to develop middleware for a distributed</p>
+<p class="p1">infrastructure suitable for different applications.</p>
+<p class="p1">An architecture designed as a Facebook application for a social cloud is presented in [<span class="s1">76</span>]. Methods</p>
+<p class="p1">to get a range of data, including friends, events, groups, application users, profile information, and</p>
+<p class="p1">photos, are available through a Facebook API. The Facebook Markup Language (FBML) is a subset</p>
+<p class="p1">of HTML with proprietary extensions, and the Facebook JavaScript (FBJS) is a version of JavaScript</p>
+<p class="p1">parsed, when a page is loaded, to create a virtual application scope. The prototype uses Web Services</p>
+<p class="p1">to create a distributed and decentralized infrastructure.</p>
+<p class="p1">There are numerous examples of cloud platforms for social networks. There are scalable cloud</p>
+<p class="p1">applications hosted by commercial clouds (e.g., Facebook applications are hosted by Amazon Web</p>
+<p class="p1">Services). Today some organizations use the Facebook credentials of an individual for authentication.</p>
+<p class="p1">The new technologies supported by cloud computing favor the creation of digital content. <span class="s2">Data</span></p>
+<p class="p1"><span class="s2">mashups </span>or <span class="s2">composite services </span>combine data extracted by different sources; <span class="s2">event-driven mashups</span>, also</p>
+<p class="p1">called <span class="s2">Svc</span>, interact through events rather than the request/response traditional method. A recent paper</p>
+<p class="p1">[<span class="s1">331</span>] argues that “the <span class="s2">mashup </span>and the cloud computing worlds are strictly related because very often</p>
+<p class="p1">the services combined to create new <span class="s2">Mashups </span>follow the <span class="s2">SaaS </span>model and more, in general, rely on</p>
+<p class="p1">cloud systems.” The paper also argues that the <span class="s2">Mashup </span>platforms rely on cloud computing systems –</p>
+<p class="p3"><span class="s4">for example, the IBM </span>Mashup Center <span class="s4">and the </span>JackBe Enterprise Mashup <span class="s4">server.</span></p>
+<p class="p1">There are numerous examples of monitoring, notification, presence, location, and map services based</p>
+<p class="p3"><span class="s4">on the </span>Svc <span class="s4">approach, including </span>Monitor Mail, Monitor RSSFeed, Send SMS, Make Phone Call, GTalk,</p>
+<p class="p1"><span class="s2">FireEagle, </span>and <span class="s2">Google Maps</span>. For example, consider a service to send a phone call when a specific email</p>
+<p class="p1">is received; the <span class="s2">Mail Monitor Svc </span>uses input parameters such as User Id, Sender Address Filter, and</p>
+<p class="p1">email Subject Filter to identify an email and generates an event that triggers the <span class="s2">Make TTS Call </span>action</p>
+<p class="p3"><span class="s4">of a </span>Text To Speech Call Svc <span class="s4">linked to it.</span></p>
+<p class="p1">The system in [<span class="s1">331</span>] supports creation, deployment, activation, execution, and management of eventdriven</p>
+<p class="p1">mashups. It has a user interface, a graphics tool called Service Creation Environment that easily</p>
+<p class="p1">supports the creation of new mashups, and a platform called <span class="s2">Mashup Container </span>that manages mashup</p>
+<p class="p1">deployment and execution. The system consists of two subsystems: the <span class="s2">service execution platform </span>for</p>
+<p class="p1">mashups execution and the <span class="s2">deployer </span>module that manages the installation of mashups and <span class="s2">Svc</span>s. A</p>
+<p class="p1">new mashup is created using the graphical development tool and saved as an XML file. It can then be</p>
+<p class="p1">deployed into a <span class="s2">Mashup Container </span>following the <span class="s2">Platform-as-a-Service </span>(PaaS) approach. The <span class="s2">Mashup</span></p>
+<p class="p1"><span class="s2">Container </span>supports a primitive SLA that allows the delivery of different levels of service.</p>
+<p class="p1">The prototype uses the <span class="s2">Java Message Service </span>(JMS), which supports asynchronous communication.</p>
+<p class="p1">Each component sends and receives messages, and the sender does not block while waiting for the</p>
+<p class="p1">recipient to respond. The system’s fault tolerance was tested on a system based on the <span class="s2">VMware vSphere</span>.</p>
+<p class="p1">In this environment, the fault tolerance is provided transparently by the VMM, and neither the VMs</p>
+<p class="p1">nor the applications are aware of the fault-tolerance mechanism. Two VMs, a primary and a secondary</p>
+<p class="p1">one, run on distinct hosts and execute the same set of instructions such that, when the primary fails, the</p>
+<p class="p1">secondary continues the execution seamlessly.</p>
+</body>
+</html>

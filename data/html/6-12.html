@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Helvetica}
+    span.s3 {font: 7.5px Times}
+    span.s4 {font: 10.0px Times}
+    span.s5 {color: #000066}
+    span.s6 {font: 8.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Often, an SLA specifies the time when the results of computations done on the cloud should be available.</p>
+<p class="p1">This motivates us to examine cloud scheduling subject to deadlines, a topic drawing on a vast body of</p>
+<p class="p1">literature devoted to real-time applications.</p>
+<p class="p1">Task Characterization and Deadlines. Real-time applications involve periodic or aperiodic tasks</p>
+<p class="p1">with deadlines. A task is characterized by a tuple <span class="s1">(A</span><span class="s2">i</span><span class="s1">, σ</span><span class="s2">i </span><span class="s1">, D</span><span class="s2">i </span><span class="s1">)</span>, where <span class="s1">A</span><span class="s2">i </span>is the arrival time, <span class="s1">σ</span><span class="s2">i </span><span class="s1">&gt; </span>0 is the</p>
+<p class="p1">data size of the task, and <span class="s1">D</span><span class="s2">i </span>is the <span class="s1">relative deadline</span>. Instances of a <span class="s1">periodic task</span>,<span class="Apple-converted-space"> </span></p>
+<p class="p2">q</p>
+<p class="p1"><span class="s2">i </span>, with period <span class="s1">q </span>are</p>
+<p class="p1">identical,<span class="Apple-converted-space"> </span></p>
+<p class="p2">q</p>
+<p class="p2">i</p>
+<p class="p3">≡<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="s2">q </span>, and arrive at times <span class="s1">A</span><span class="s3">0</span><span class="s1">, A</span><span class="s3">1</span><span class="s1">, . . . A</span><span class="s2">i </span><span class="s1">, . . . , </span>with <span class="s1">A</span><span class="s2">i+</span><span class="s3">1 </span><span class="s1">− A</span><span class="s2">i </span><span class="s1">= q</span>. The deadlines satisfy</p>
+<p class="p1">the constraint <span class="s1">D</span><span class="s2">i </span><span class="s1">  A</span><span class="s2">i+</span><span class="s3">1 </span>and generally the data size is the same, <span class="s1">σ</span><span class="s2">i </span><span class="s1">= σ</span>. The individual instances of</p>
+<p class="p3">aperiodic tasks<span class="s4">,<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s2">i </span>, are different. Their arrival times <span class="s1">A</span><span class="s2">i </span>are generally uncorrelated, and the amount of</p>
+<p class="p1">data <span class="s1">σ</span><span class="s2">i </span>is different for different instances. The <span class="s1">absolute deadline </span>for the aperiodic task<span class="Apple-converted-space"> </span></p>
+<p class="p2">i <span class="s4">is </span><span class="s1">(A</span>i <span class="s1">+ D</span>i <span class="s1">)</span><span class="s4">.</span></p>
+<p class="p1">We distinguish <span class="s1">hard deadlines </span>from <span class="s1">soft deadlines</span>. In the first case, if the task is not completed by the</p>
+<p class="p1">deadline, other tasks that depend on it may be affected and there are penalties; a hard deadline is strict</p>
+<p class="p1">and expressed precisely as milliseconds or possibly seconds. Soft deadlines play more of a guideline</p>
+<p class="p1">role and, in general, there are no penalties. Soft deadlines can be missed by fractions of the units used to</p>
+<p class="p1">express them, e.g., minutes if the deadline is expressed in hours, or hours if the deadlines is expressed</p>
+<p class="p1">in days. The scheduling of tasks on a cloud is generally subject to soft deadlines, though occasionally</p>
+<p class="p1">applications with hard deadlines may be encountered.</p>
+<p class="p1">SystemModel. In our discussion we consider only aperiodic tasks with arbitrarily divisible workloads.</p>
+<p class="p1">The application runs on a partition of a cloud, a virtual cloud with a <span class="s1">head node </span>called <span class="s1">S</span><span class="s3">0 </span>and <span class="s1">n worker</span></p>
+<p class="p1"><span class="s1">nodes S</span><span class="s3">1</span><span class="s1">, S</span><span class="s3">2</span><span class="s1">, . . . , S</span><span class="s2">n</span>. The system is homogeneous, all workers are identical, and the communication</p>
+<p class="p1">time from the head node to any worker node is the same. The head node distributes the workload to</p>
+<p class="p1">worker nodes, and this distribution is done sequentially. In this context there are two important problems:</p>
+<p class="p1"><span class="s1">1. </span>The order of execution of the tasks<span class="Apple-converted-space"> </span></p>
+<p class="p2">i <span class="s4">.</span></p>
+<p class="p1"><span class="s1">2. </span>The workload partitioning and the task mapping to worker nodes.</p>
+<p class="p1">Scheduling Policies. The most common scheduling policies used to determine the order of execution</p>
+<p class="p1">of the tasks are:</p>
+<p class="p1">• First in, first out (FIFO). The tasks are scheduled for execution in the order of their arrival.</p>
+<p class="p1">• Earliest deadline first (EDF). The task with the earliest deadline is scheduled first.</p>
+<p class="p1">• Maximum workload derivative first (MWF).</p>
+<p class="p3"><span class="s4">The </span>workload derivative DC<span class="s2">i </span>(n<span class="s2">min</span>) <span class="s4">of a task<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s2">i </span>when <span class="s1">n</span><span class="s2">min </span>nodes are assigned to the application,</p>
+<p class="p1">is defined as</p>
+<p class="p3">DC<span class="s2">i </span>(n<span class="s2">min</span>) = W<span class="s2">i</span></p>
+<p class="p3"> </p>
+<p class="p2"><span class="s1">n</span>min</p>
+<p class="p2">i</p>
+<p class="p3">+ <span class="s4">1</span></p>
+<p class="p3"> </p>
+<p class="p3">− W<span class="s2">i</span></p>
+<p class="p3"> </p>
+<p class="p2"><span class="s1">n</span>min</p>
+<p class="p2">i</p>
+<p class="p3"> </p>
+<p class="p1"><span class="s1">, </span>(6.69)</p>
+<p class="p1">with <span class="s1">W</span><span class="s2">i </span><span class="s1">(n) </span>the workload allocated to task<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="s2">i </span>when <span class="s1">n </span>nodes of the cloud are available; if <span class="s1">E(σ</span><span class="s2">i </span><span class="s1">, n) </span>is the</p>
+<p class="p1">execution time of the task, then <span class="s1">W</span><span class="s2">i </span><span class="s1">(n) = n   E(σ</span><span class="s2">i </span><span class="s1">, n)</span>. The MWF policy requires that:</p>
+<p class="p1"><span class="s1">1. </span>The tasks are scheduled in the order of their derivatives, the one with the highest derivative <span class="s1">DC</span><span class="s2">i </span>first.</p>
+<p class="p1"><span class="s1">2. </span>The number <span class="s1">n </span>of nodes assigned to the application is kept to a minimum, <span class="s1">n</span><span class="s2">min</span></p>
+<p class="p2">i <span class="s4">.</span></p>
+<p class="p1">We discuss two workload partitioning and task mappings to worker nodes, optimal and the equal</p>
+<p class="p1">partitioning.</p>
+<p class="p1">Optimal Partitioning Rule (OPR). The optimality in OPR refers to the execution time; in this case,</p>
+<p class="p1">the workload is partitioned to ensure the earliest possible completion time, and all tasks are required to complete at the same time. EPR, as the name suggests, means that the workload is partitioned in equal</p>
+<p class="p1">segments. In our discussion we use the derivations and some of the notations in [<span class="s5">218</span>]; these notations</p>
+<p class="p1">are summarized in Table <span class="s5">6.7</span>.</p>
+<p class="p1">The timing diagram in Figure <span class="s5">6.13 </span>allows us to determine the execution time <span class="s1">E(n, σ) </span>for the OPR as</p>
+<p class="p3">E(n, σ) =  <span class="s3">1 </span>+  <span class="s3">1</span></p>
+<p class="p3">=  <span class="s3">1 </span>+  <span class="s3">2 </span>+  <span class="s3">2</span></p>
+<p class="p3">=  <span class="s3">1 </span>+  <span class="s3">2 </span>+  <span class="s3">3 </span>+  <span class="s3">3</span></p>
+<p class="p3">...</p>
+<p class="p3">=  <span class="s3">1 </span>+  <span class="s3">2 </span>+  <span class="s3">3 </span>+     + <span class="s2">n </span>+  <span class="s2">n</span>.</p>
+<p class="p1">(6.70)</p>
+<p class="p1">We substitute the expressions of <span class="s1"> </span><span class="s2">i</span><span class="s1">, </span><span class="s2">i </span><span class="s1">, </span>1 <span class="s1">  i   n</span>, and rewrite these equations as</p>
+<p class="p3">E(n, σ) = α<span class="s3">1 </span>  σ   τ + α<span class="s3">1 </span>  σ   ρ</p>
+<p class="p3">= α<span class="s3">1 </span>  σ   τ + α<span class="s3">2 </span>  σ   τ + α<span class="s3">2 </span>  σ   ρ</p>
+<p class="p3">= α<span class="s3">1 </span>  σ   τ + α<span class="s3">2 </span>  σ   τ + α<span class="s3">3 </span>  σ   τ + α<span class="s3">3 </span>  σ   ρ</p>
+<p class="p3">=</p>
+<p class="p3">...</p>
+<p class="p3">= α<span class="s3">1 </span>  σ   τ + α<span class="s3">2 </span>  σ   τ + α<span class="s3">3 </span>  σ   τ +     +α<span class="s2">n </span>  σ   τ + α<span class="s2">n </span>  σ   ρ.</p>
+<p class="p1">From the first two equations we find the relation between <span class="s1">α</span><span class="s3">1 </span>and <span class="s1">α</span><span class="s3">2 </span>as</p>
+<p class="p3">α<span class="s3">1 </span>= α<span class="s3">2</span></p>
+<p class="p3">β</p>
+<p class="p3"><span class="s4">with </span>β = ρ</p>
+<p class="p3">τ + ρ</p>
+<p class="p3">, <span class="s4">0 </span>  β   <span class="s4">1</span>. <span class="s4">(6.72)</span></p>
+<p class="p1">This implies that <span class="s1">α</span><span class="s3">2 </span><span class="s1">= β   α</span><span class="s3">1</span>. It is easy to see that in the general case</p>
+<p class="p3">α<span class="s2">i </span>= β   α<span class="s2">i−</span><span class="s3">1 </span>= β<span class="s2">i−</span><span class="s3">1 </span>  α<span class="s3">1</span>. <span class="s4">(6.73)</span></p>
+<p class="p1">But <span class="s1">α</span><span class="s2">i </span>are the components of the load distribution vector; thus,</p>
+<p class="p2"><span class="s1"> </span>n</p>
+<p class="p2">i=<span class="s3">1</span></p>
+<p class="p1"><span class="s1">α</span><span class="s2">i </span><span class="s1">= </span>1<span class="s1">. </span>(6.74)</p>
+<p class="p1">Next, we substitute the values of <span class="s1">α</span><span class="s2">i </span>and obtain the expression for <span class="s1">α</span><span class="s3">1</span>:</p>
+<p class="p3">α<span class="s3">1 </span>+ β   α<span class="s3">1 </span>+ β<span class="s3">2 </span>  α<span class="s3">1 </span>+ β<span class="s3">3 </span>  α<span class="s3">1 </span>. . . β<span class="s2">n−</span><span class="s3">1 </span>  α<span class="s3">1 </span>=<span class="s4">1 or </span>α<span class="s3">1 </span>= <span class="s4">1 </span>− β</p>
+<p class="p1">1 <span class="s1">− β</span><span class="s2">n </span><span class="s1">. </span>(6.75)</p>
+<p class="p1">We have now determined the load distribution vector and we can now determine the execution time as</p>
+<p class="p3">E(n, σ) = α<span class="s3">1 </span>  σ   τ + α<span class="s3">1 </span>  σ   ρ = <span class="s4">1 </span>− β</p>
+<p class="p3"><span class="s4">1 </span>− β<span class="s2">n </span>σ(τ + ρ). <span class="s4">(6.76)</span></p>
+<p class="p1">Call <span class="s1">C</span><span class="s6">A</span></p>
+<p class="p1"><span class="s1">(n) </span>the completion time of an application <span class="s1">A = (A, σ, D)</span>, which starts processing at time <span class="s1">t</span><span class="s3">0</span></p>
+<p class="p1">and runs on <span class="s1">n </span>worker nodes; then</p>
+<p class="p4"><span class="s1">C</span>A</p>
+<p class="p3">(n) = t<span class="s3">0 </span>+ E(n, σ) = t<span class="s3">0 </span>+ <span class="s4">1 </span>− β</p>
+<p class="p3"><span class="s4">1 </span>− β<span class="s2">n </span>σ(τ + ρ). <span class="s4">(6.77)</span></p>
+<p class="p1">The application meets its deadline if and only if</p>
+<p class="p4"><span class="s1">C</span>A</p>
+<p class="p3">(n)   A + D, <span class="s4">(6.78)</span></p>
+<p class="p1">or</p>
+<p class="p3">t<span class="s3">0 </span>+ E(n, σ) = t<span class="s3">0 </span>+ <span class="s4">1 </span>− β</p>
+<p class="p3"><span class="s4">1 </span>− β<span class="s2">n </span>σ(τ + ρ)   A + D. <span class="s4">(6.79)</span></p>
+<p class="p1">But 0 <span class="s1">&lt; β &lt; </span>1 thus, 1 <span class="s1">− β</span><span class="s2">n </span><span class="s1">&gt; </span>0, and it follows that</p>
+<p class="p3">(<span class="s4">1 </span>− β)σ(τ + ρ)   (<span class="s4">1 </span>− β<span class="s2">n</span>)(A + D − t<span class="s3">0</span>). <span class="s4">(6.80)</span></p>
+<p class="p1">The application can meet its deadline only if <span class="s1">(A+ D −t</span><span class="s3">0</span><span class="s1">) &gt; </span>0, and under this condition this inequality</p>
+<p class="p1">becomes</p>
+<p class="p3">β<span class="s2">n </span>  γ <span class="s4">with </span>γ = <span class="s4">1 </span>− σ   τ</p>
+<p class="p3">A + D − t<span class="s3">0</span></p>
+<p class="p1"><span class="s1">. </span>(6.81)</p>
+<p class="p1">If <span class="s1">γ   </span>0, there is not enough time even for data distribution and the application should be rejected.</p>
+<p class="p1">When<span class="s1">γ &gt; </span>0, then <span class="s1">n   </span><span class="s3">ln </span><span class="s2">γ</span></p>
+<p class="p1"><span class="s3">ln </span><span class="s2">β </span>. Thus, the minimum number of nodes for the OPR strategy is</p>
+<p class="p2"><span class="s1">n</span>min <span class="s1">=<span class="Apple-converted-space"> </span></span></p>
+<p class="p1">ln <span class="s1">γ</span></p>
+<p class="p1">ln <span class="s1">β</span></p>
+<p class="p1"><span class="s1"> . </span>(6.82)</p>
+<p class="p1">EqualPartitioning Rule (EPR). EPRassigns an equalworkload to individualworker nodes,<span class="s1">α</span><span class="s2">i </span><span class="s1">= </span>1<span class="s1">/n</span>.</p>
+<p class="p1">From the diagram in Figure <span class="s5">6.14 </span>we see that</p>
+<p class="p3">E(n, σ) =</p>
+<p class="p2"><span class="s1"> </span>n</p>
+<p class="p2">i=<span class="s3">1</span></p>
+<p class="p3"> <span class="s2">i </span>+  <span class="s2">n </span>= n   σ</p>
+<p class="p3">n</p>
+<p class="p3">  τ + σ</p>
+<p class="p3">n</p>
+<p class="p3">  ρ = σ   τ + σ</p>
+<p class="p3">n</p>
+<p class="p1"><span class="s1">  ρ. </span>(6.83)</p>
+<p class="p1">The condition for meeting the deadline, <span class="s1">C</span><span class="s6">A</span></p>
+<p class="p3">(n)   A + D<span class="s4">, leads to</span></p>
+<p class="p3">t<span class="s3">0 </span>+ σ   τ + σ</p>
+<p class="p3">n</p>
+<p class="p3">  ρ   A + D <span class="s4">or </span>n   σ   ρ</p>
+<p class="p3">A + D − t<span class="s3">0 </span>− σ   τ</p>
+<p class="p1"><span class="s1">. </span>(6.84)</p>
+<p class="p1">Thus,</p>
+<p class="p2"><span class="s1">n</span>min <span class="s1">=</span></p>
+<p class="p3"> </p>
+<p class="p3">σ   ρ</p>
+<p class="p3">A + D − t<span class="s3">0 </span>− σ   τ</p>
+<p class="p3"> </p>
+<p class="p1"><span class="s1">. </span>(6.85)</p>
+<p class="p1">The pseudocode for a general schedulability test for FIFO, EDF, and MWF scheduling policies, for</p>
+<p class="p1">two-node allocation policies, MN (minimum number of nodes) and AN (all nodes), and for OPR and</p>
+<p class="p1">EPR partitioning rules is given in reference [<span class="s5">218</span>]. The same paper reports on a simulation study for 10</p>
+<p class="p1">algorithms. The generic format of the names of the algorithms is Sp-No-Pa, with Sp=FIFO/EDF/MWF,</p>
+<p class="p1">No = MN/AN, and Pa = OPR/EPR. For example, MWF-MN-OPR uses MWF scheduling, minimum</p>
+<p class="p1">number of nodes, and OPR partitioning. The relative performance of the algorithms depends on the</p>
+<p class="p1">relations between the unit cost of communication <span class="s1">τ </span>and the unit cost of computing <span class="s1">ρ</span>.</p>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 8.5px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">Cloud interoperability could alleviate the concern that users could become hopelessly dependent on a</p>
+<p class="p1">single cloud service provider, the so-called vendor lock-in discussed in Section <span class="s1">3.5</span>. It seems natural to</p>
+<p class="p1">ask the question whether an Intercloud – a “cloud of clouds,” a federation of clouds that cooperate to</p>
+<p class="p1">provide a better user experience – is technically and economically feasible. The Internet is a network</p>
+<p class="p1">of networks; hence, it appears that an Intercloud seems plausible [<span class="s1">47</span>–<span class="s1">49</span>].</p>
+<p class="p1">Closer scrutiny shows that the extension of the concept of interoperability from networks to clouds</p>
+<p class="p1">is far from trivial. A network offers one high-level service, the transport of digital information from</p>
+<p class="p1">a source, a host outside a network, to a destination, another host, or another network that can deliver</p>
+<p class="p1">the information to its final destination. This transport of information through a network of networks is feasible because before the Internet was born, agreements on basic questions were reached: (a) how</p>
+<p class="p1">to uniquely identify the source and the destination of the information; (b) how to navigate through a</p>
+<p class="p1">maze of networks; and (c) how to actually transport the data between a source and a destination. The</p>
+<p class="p1">three elements on which agreements were reached are, respectively, the IP address, the IP protocol, and</p>
+<p class="p1">transport protocols such as TCP and UDP.</p>
+<p class="p1">The situation is quite different in cloud computing. First, there are no standards for storage of</p>
+<p class="p1">processing; second, the clouds we have seen so far are based on different delivery models: <span class="s2">SaaS, PaaS,</span></p>
+<p class="p1">and <span class="s2">IaaS</span>. Moreover, the set of services supported by each of these delivery models is not only large, it</p>
+<p class="p1">is open; new services are offered every few months. For example, in October 2012 Amazon announced</p>
+<p class="p1">a new service, the <span class="s2">AWS GovCloud (US)</span>.</p>
+<p class="p1">The question ofwhether cloud service providers (CSPs) are willing to cooperate to build an Intercloud</p>
+<p class="p1">is open. Some CSPs may think that they have a competitive advantage due to the uniqueness of the added</p>
+<p class="p1">value of their services. Thus, exposing how they store and process information may adversely affect</p>
+<p class="p1">their business. Moreover, no CSP will be willing to change its internal operation, so a first question is</p>
+<p class="p1">whether an Intercloud could be built under these conditions.</p>
+<p class="p1">Following the concepts borrowed from the Internet, a federation of clouds that does not dictate the</p>
+<p class="p1">internal organization or the structure of a cloud but only the means to achieve cloud interoperability</p>
+<p class="p1">is feasible. Nevertheless, building such an infrastructure seems a formidable task. First, we need a set</p>
+<p class="p1">of standards for interoperability covering items such as naming, addressing, identity, trust, presence,</p>
+<p class="p1">messaging, multicast, and time. Indeed, we need common standards for identifying all the objects</p>
+<p class="p1">involved as well as the means to transfer, store, and process information, and we also need a common</p>
+<p class="p1">clock to measure the time between two events.</p>
+<p class="p1">An Intercloud would then require the development of an <span class="s2">ontology</span><span class="s3">11 </span>for cloud computing. Then</p>
+<p class="p1">each cloud service provider would have to create a description of all resources and services using this</p>
+<p class="p1">ontology. Due to the very large number of systems and services, the volume of information provided by</p>
+<p class="p1">individual cloud service providers would be so large that a distributed database not unlike the Domain</p>
+<p class="p1">Name Service (DNS) would have to be created and maintained. According to [<span class="s1">47</span>] this vast amount of</p>
+<p class="p1">information would be stored in Intercloud <span class="s2">root </span>nodes, analogous to the root nodes of the DNS.</p>
+<p class="p1">Each cloud would then require an interface, a so-called Intercloud <span class="s2">exchange</span>, to translate the common</p>
+<p class="p1">language describing all objects and actions included in a request originating from another cloud in terms</p>
+<p class="p1">of its internal objects and actions. To bemore precise, a request originated in one cloud would have to be</p>
+<p class="p1">translated from the internal representation in that cloud to a common representation based on the shared</p>
+<p class="p1">ontology and then, at the destination, it would be translated into an internal representation that can be</p>
+<p class="p1">acted on by the destination cloud. This raises immediately the question of efficiency and performance.</p>
+<p class="p1">This question cannot be fully answered now, since an Intercloud exists only on paper, but there is little</p>
+<p class="p1">doubt that performance will be greatly affected.</p>
+<p class="p1">Security is a major concern for cloud users, and an Intercloud could only create new threats. The</p>
+<p class="p1">primary concern is that tasks will cross from one administrative domain to another and that sensitive</p>
+<p class="p1">information about the tasks and users could be disclosed during this migration. A seamless migration</p>
+<p class="p1">of tasks in an Intercloud requires a well-thought-out trust model.</p>
+<p class="p1">The Public Key Infrastructure (PKI),<span class="s3">12 </span>an all-or-nothing trust model, is not adequate for an Intercloud,</p>
+<p class="p1">where the trust must be nuanced. A nuanced model for handling digital certificates means that</p>
+<p class="p1">one cloud acting on behalf of a user may grant access to another cloud to <span class="s4">read </span>data in storage, but not</p>
+<p class="p1">to start new instances.</p>
+<p class="p1">The solution advocated in [<span class="s1">48</span>] for trust management is based on dynamic <span class="s2">trust indexes </span>that can</p>
+<p class="p1">change in time. The Intercloud roots play the role of Certificate Authority, whereas the Intercloud</p>
+<p class="p1">exchanges determine the trust indexes between clouds.</p>
+<p class="p1">Encryption must be used to protect the data in storage and in transit in the Intercloud. The OASIS<span class="s3">13</span></p>
+<p class="p1">Key Management Interoperability Protocol (KMIP)<span class="s3">14 </span>is proposed for key management.</p>
+<p class="p1">In summary, the idea of an Intercloud opens up awide range of interesting research topics. The practicality</p>
+<p class="p1">of the concepts can only be discussed after the standardization efforts underway at NIST bear fruit.</p>
+</body>
+</html>

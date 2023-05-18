@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">The elements involved in a control system are sensors, monitors, and actuators. The <span class="s1">sensors </span>measure the</p>
+<p class="p1">parameter(s) of interest, then transmit the measured values to a <span class="s1">monitor</span>, which determines whether the</p>
+<p class="p1">system behavior must be changed, and, if so, it requests that the <span class="s1">actuators </span>carry out the necessary actions.</p>
+<p class="p1">Often the parameter used for admission control policy is the current system load; when a threshold,</p>
+<p class="p1">e.g., 80%, is reached, the cloud stops accepting additional load.</p>
+<p class="p1">In practice, the implementation of such a policy is challenging or outright infeasible. First, due to</p>
+<p class="p1">the very large number of servers and to the fact that the load changes rapidly in time, the estimation</p>
+<p class="p1">of the current system load is likely to be inaccurate. Second, the ratio of average to maximal resource</p>
+<p class="p1">requirements of individual users specified in a service-level agreement is typically very high. Once an</p>
+<p class="p1">agreement is in place, user demands must be satisfied; user requests for additional resources within the</p>
+<p class="p1">SLA limits cannot be denied.</p>
+<p class="p1">Thresholds. A <span class="s1">threshold </span>is the value of a parameter related to the state of a system that triggers a</p>
+<p class="p1">change in the system behavior. Thresholds are used in control theory to keep critical parameters of a</p>
+<p class="p1">system in a predefined range. The threshold could be <span class="s1">static</span>, defined once and for all, or it could be</p>
+<p class="p1"><span class="s1">dynamic</span>. A dynamic threshold could be based on an average of measurements carried out over a time</p>
+<p class="p1">interval, a so-called <span class="s1">integral control</span>. The dynamic threshold could also be a function of the values of</p>
+<p class="p1">multiple parameters at a given time or a mix of the two.</p>
+<p class="p1">To maintain the system parameters in a given range, a <span class="s1">high </span>and a <span class="s1">low </span>threshold are often defined.</p>
+<p class="p1">The two thresholds determine different actions; for example, a high threshold could force the system to</p>
+<p class="p1">limit its activities and a low threshold could encourage additional activities. <span class="s1">Control granularity </span>refers</p>
+<p class="p1">to the level of detail of the information used to control the system. <span class="s1">Fine control </span>means that very detailed</p>
+<p class="p1">information about the parameters controlling the system state is used, whereas <span class="s1">coarse control </span>means</p>
+<p class="p1">that the accuracy of these parameters is traded for the efficiency of implementation.</p>
+<p class="p1">Proportional Thresholding. Application of these ideas to cloud computing, in particular to the <span class="s1">IaaS</span></p>
+<p class="p1">delivery model, and a strategy for resource management called <span class="s1">proportional thresholding </span>are discussed</p>
+<p class="p1">in [<span class="s2">217</span>]. The questions addressed are:</p>
+<p class="p1">• Is it beneficial to have two types of controllers, (1) <span class="s1">application controllers </span>that determine whether</p>
+<p class="p1">additional resources are needed and (2) <span class="s1">cloud controllers </span>that arbitrate requests for resources and</p>
+<p class="p1">allocate the physical resources?</p>
+<p class="p1">• Is it feasible to consider <span class="s1">fine control</span>? Is <span class="s1">course control </span>more adequate in a cloud computing</p>
+<p class="p1">environment?</p>
+<p class="p1">• Are dynamic thresholds based on time averages better than static ones?</p>
+<p class="p1">• Is it better to have a high and a low threshold, or it is sufficient to define only a high threshold?</p>
+<p class="p1">The first two questions are related to one another. It seems more appropriate to have two controllers,</p>
+<p class="p1">one with knowledge of the application and one that’s aware of the state of the cloud. In this case a coarse</p>
+<p class="p1">control is more adequate for many reasons. As mentioned earlier, the cloud controller can only have a</p>
+<p class="p1">very rough approximation of the cloud state. Moreover, to simplify its resource management policies,</p>
+<p class="p1">the service provider may want to hide some of the information it has. For example, it may not allow a</p>
+<p class="p1">VM to access information available to VMM-level sensors and actuators.</p>
+<p class="p1">To answer the last two questions, we have to define a measure of “goodness.” In the experiments</p>
+<p class="p1">reported in [<span class="s2">217</span>], the parameter measured is the average CPU utilization, and one strategy is better than</p>
+<p class="p1">another if it reduces the number of requests made by the application controllers to add or remove virtual</p>
+<p class="p1">machines to the pool of those available to the application.</p>
+<p class="p1">Devising a control theoretical approach to address these questions is challenging. The authors of</p>
+<p class="p1">[<span class="s2">217</span>] adopt a pragmatic approach and provide qualitative arguments; they also report simulation results</p>
+<p class="p1">using a synthetic workload for a transaction-oriented application, a Web server.</p>
+<p class="p1">The essence of the proportional thresholding is captured by the following algorithm:</p>
+<p class="p1"><span class="s1">1. </span>Compute the integral value of the high and the low thresholds as averages of the maximum and,</p>
+<p class="p1">respectively, the minimum of the processor utilization over the process history.</p>
+<p class="p1"><span class="s1">2. </span>Request additional VMs when the average value of the CPU utilization over the current time slice</p>
+<p class="p1">exceeds the high threshold.</p>
+<p class="p1"><span class="s1">3. </span>Release a VM when the average value of the CPU utilization over the current time slice falls below</p>
+<p class="p1">the low threshold.</p>
+<p class="p1">The conclusions reached based on experiments with threeVMs are as follows: (a) dynamic thresholds</p>
+<p class="p1">perform better than static ones and (b) two thresholds are better than one. Though conforming to</p>
+<p class="p1">our intuition, such results have to be justified by experiments in a realistic environment. Moreover,</p>
+<p class="p1">convincing results cannot be based on empirical values for some of the parameters required by integral</p>
+<p class="p1">control equations.</p>
+</body>
+</html>

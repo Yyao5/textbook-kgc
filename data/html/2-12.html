@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times}
+    span.s4 {font: 10.0px Courier}
+    span.s5 {font: 7.5px Times; color: #000066}
+    span.s6 {font: 7.5px Helvetica}
+    span.s7 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">In 1962 Carl Adam Petri introduced a family of graphs, the so-called Petri nets (PNs) [<span class="s1">291</span>]. PNs are</p>
+<p class="p1">bipartite graphs populated with tokens that flow through the graph that are used to model the dynamic</p>
+<p class="p1">rather than static behavior of systems (e.g., detecting synchronization anomalies).</p>
+<p class="p1">A <span class="s2">bipartite graph </span>is one with two classes of nodes; arcs always connect a node in one class with</p>
+<p class="p1">one or more nodes in the other class. In the case of Petri nets the two classes of nodes are <span class="s2">places </span>and</p>
+<p class="p1"><span class="s2">transitions</span>; thus, the name place-transition (P/T) nets is often used for this class of bipartite graphs.</p>
+<p class="p1">Arcs connect one place with one or more transitions or a transition with one or more places.</p>
+<p class="p1">To model the dynamic behavior of systems, the places of a Petri net contain tokens. Firing of</p>
+<p class="p1">transitions removes tokens from the <span class="s2">input places </span>of the transition and adds them to its <span class="s2">output places</span></p>
+<p class="p1">(see Figure <span class="s1">2.17</span>).</p>
+<p class="p1">Petri nets can model different activities in a distributed system. A <span class="s2">transition </span>may model the occurrence</p>
+<p class="p1">of an event, the execution of a computational task, the transmission of a packet, a logic statement,</p>
+<p class="p1">and so on. The <span class="s2">input places </span>of a transition model the pre-conditions of an event, the input data for the computational task, the presence of data in an input buffer, or the pre-conditions of a logic</p>
+<p class="p1">statement. The <span class="s2">output places </span>of a transition model the post-conditions associated with an event, the</p>
+<p class="p1">results of the computational task, the presence of data in an output buffer, or the conclusions of a logic</p>
+<p class="p1">statement.</p>
+<p class="p1">The distribution of a token in place of a PN at a given time is called the <span class="s2">marking </span>of the net and</p>
+<p class="p1">reflects the state of the system being modeled. PNs are very powerful abstractions and can express both</p>
+<p class="p1">concurrency and choice, as we can see in Figure <span class="s1">2.18</span>.</p>
+<p class="p1">Petri nets can model concurrent activities. For example, the net in Figure <span class="s1">2.18</span>(a) models conflict</p>
+<p class="p1">or choice; only one of the transitions <span class="s2">t</span><span class="s3">1 </span>and <span class="s2">t</span><span class="s3">2 </span>may fire, but not both. Two transitions are said to be</p>
+<p class="p1"><span class="s2">concurrent </span>if they are causally independent. Concurrent transitions may fire before, after, or in parallel</p>
+<p class="p1">with each other; examples of concurrent transitions are <span class="s2">t</span><span class="s3">1 </span>and <span class="s2">t</span><span class="s3">3 </span>in Figure <span class="s1">2.18</span>(b) and (c).</p>
+<p class="p1">When choice and concurrency are mixed, we end up with a situation called <span class="s2">confusion</span>. <span class="s2">Symmetric</span></p>
+<p class="p1"><span class="s2">confusion </span>means that two or more transitions are concurrent and, at the same time, they are in conflict</p>
+<p class="p1">with another one. For example, transitions <span class="s2">t</span><span class="s3">1 </span>and <span class="s2">t</span><span class="s3">3 </span>in Figure <span class="s1">2.18</span>(b) are concurrent and, at the same</p>
+<p class="p1">time, they are in conflict with <span class="s2">t</span><span class="s3">2</span>. If <span class="s2">t</span><span class="s3">2 </span>fires, either one or both of them will be disabled. <span class="s2">Asymmetric</span></p>
+<p class="p1"><span class="s2">confusion </span>occurs when a transition <span class="s2">t</span><span class="s3">1 </span>is concurrent with another transition <span class="s2">t</span><span class="s3">3 </span>and will be in conflict with</p>
+<p class="p1"><span class="s2">t</span><span class="s3">2 </span>if <span class="s2">t</span><span class="s3">3 </span>fires before <span class="s2">t</span><span class="s3">1</span>, as shown in Figure <span class="s1">2.18</span>(c).</p>
+<p class="p1">The concurrent transitions <span class="s2">t</span><span class="s3">2 </span>and <span class="s2">t</span><span class="s3">3 </span>in Figure <span class="s1">2.19</span>(a) model concurrent execution of two processes.</p>
+<p class="p1">A <span class="s2">marked graph </span>can model concurrency but not choice; transitions <span class="s2">t</span><span class="s3">2 </span>and <span class="s2">t</span><span class="s3">3 </span>in Figure <span class="s1">2.19</span>(b) are concurrent,</p>
+<p class="p1">so there is no causal relationship between them. Transition <span class="s2">t</span><span class="s3">4 </span>and its input places <span class="s2">p</span><span class="s3">3 </span>and <span class="s2">p</span><span class="s3">4 </span>in</p>
+<p class="p1">Figure <span class="s1">2.19</span>(b) model synchronization; <span class="s2">t</span><span class="s3">4 </span>can only fire if the conditions associated with <span class="s2">p</span><span class="s3">3 </span>and <span class="s2">p</span><span class="s3">4 </span>are</p>
+<p class="p1">satisfied.</p>
+<p class="p1">Petri nets can be used to model <span class="s2">priorities</span>. The net in Figure <span class="s1">2.19</span>(c) models a system with two</p>
+<p class="p1">processes modeled by transitions <span class="s2">t</span><span class="s3">1 </span>and <span class="s2">t</span><span class="s3">2</span>; the process modeled by <span class="s2">t</span><span class="s3">2 </span>has a higher priority than the</p>
+<p class="p1">one modeled by <span class="s2">t</span><span class="s3">1</span>. If both processes are ready to run, places <span class="s2">p</span><span class="s3">1 </span>and <span class="s2">p</span><span class="s3">2 </span>hold tokens. When the two</p>
+<p class="p1">processes are ready, transition <span class="s2">t</span><span class="s3">2 </span>will fire first, modeling the activation of the second process. Only after</p>
+<p class="p1"><span class="s2">t</span><span class="s3">2 </span>is activated will transition <span class="s2">t</span><span class="s3">1 </span>fire, modeling the activation of the first process.</p>
+<p class="p1">Petri nets are able to model <span class="s2">exclusion</span>. For example, the net in Figure <span class="s1">2.19</span>(d), models a group of <span class="s2">n</span></p>
+<p class="p1">concurrent processes in a shared-memory environment.At any given time only one processmay <span class="s4">write</span>,</p>
+<p class="p1">but any subset of the <span class="s2">n </span>processes may <span class="s4">read </span>at the same time, provided that no process writes. Place <span class="s2">p</span><span class="s3">3</span></p>
+<p class="p1">models the process allowed to <span class="s4">write</span>, <span class="s2">p</span><span class="s3">4 </span>the ones allowed to <span class="s4">read</span>, <span class="s2">p</span><span class="s3">2 </span>the ones ready to access the</p>
+<p class="p1">shared memory, and <span class="s2">p</span><span class="s3">1 </span>the running tasks. Transition <span class="s2">t</span><span class="s3">2 </span>models the initialization/selection of the process</p>
+<p class="p1">allowed to <span class="s4">write </span>and <span class="s2">t</span><span class="s3">1 </span>of the processes allowed to <span class="s4">read</span>, whereas <span class="s2">t</span><span class="s3">3 </span>models the completion of a</p>
+<p class="p1"><span class="s4">write </span>and <span class="s2">t</span><span class="s3">4 </span>the completion of a <span class="s4">read</span>. Indeed, <span class="s2">p</span><span class="s3">3 </span>may have at most one token, whereas <span class="s2">p</span><span class="s3">4 </span>may have</p>
+<p class="p1">at most <span class="s2">n</span>. If all <span class="s2">n </span>processes are ready to access the shared memory, all <span class="s2">n </span>tokens in <span class="s2">p</span><span class="s3">2 </span>are consumed when</p>
+<p class="p1">transition <span class="s2">t</span><span class="s3">1 </span>fires.However, place <span class="s2">p</span><span class="s3">4 </span>may contain <span class="s2">n </span>tokens obtained by successive firings of transition <span class="s2">t</span><span class="s3">2</span>.</p>
+<p class="p1">After this informal discussion of Petri nets we switch to a more formal presentation and give several</p>
+<p class="p1">definitions.</p>
+<p class="p1">Labeled Petri Net. A tuple <span class="s2">N = (p, t, f , l) </span>such that:</p>
+<p class="p1">• <span class="s2">p ⊆ U </span>is a finite set of <span class="s2">places</span>,</p>
+<p class="p1">• <span class="s2">t ⊆ U </span>is a finite set of <span class="s2">transitions</span>,</p>
+<p class="p1">• <span class="s2">f ⊆ (p   t) ∪ (t   p) </span>is a set of directed arcs, called <span class="s2">flow relations</span>, and</p>
+<p class="p1">• <span class="s2">l : t → L </span>is a labeling or a weight function,</p>
+<p class="p1">with<span class="s2">U </span>a universe of identifiers and <span class="s2">L </span>a set of labels. The weight function describes the number of tokens</p>
+<p class="p1">necessary to enable a transition. Labeled PNs describe a static structure; places may contain <span class="s2">tokens</span>,</p>
+<p class="p1">and the distribution of tokens over places defines the state, or the markings of the PN. The dynamic</p>
+<p class="p1">behavior of a PN is described by the structure together with the markings of the net.</p>
+<p class="p1">Marked Petri Net. A pair <span class="s2">(N, s) </span>where <span class="s2">N = (p, t, f , l) </span>is a labeled PN and <span class="s2">s </span>is a bag<span class="s5">7 </span>over <span class="s2">p</span></p>
+<p class="p1">denoting the markings of the net.</p>
+<p class="p1">Preset and Postset of Transitions and Places. The preset of transition <span class="s2">t</span><span class="s6">i </span>denoted as <span class="s2">•t</span><span class="s6">i </span>is the set of</p>
+<p class="p1">input places of <span class="s2">t</span><span class="s6">i </span>, and the postset denoted by <span class="s2">t</span><span class="s6">i</span><span class="s2">• </span>is the set of the output places of <span class="s2">t</span><span class="s6">i </span>. The preset of place</p>
+<p class="p1"><span class="s2">p </span><span class="s6">j </span>denoted as <span class="s2">•p </span><span class="s6">j </span>is the set of input transitions of <span class="s2">p </span><span class="s6">j </span>, and the postset denoted by <span class="s2">p </span><span class="s6">j</span><span class="s2">• </span>is the set of the</p>
+<p class="p1">output transitions of <span class="s2">p </span><span class="s6">j </span>.</p>
+<p class="p1">Figure <span class="s1">2.17</span>(a) shows a PN with three places, <span class="s2">p</span><span class="s3">1</span><span class="s2">, p</span><span class="s3">2</span>, and <span class="s2">p</span><span class="s3">3</span>, and one transition, <span class="s2">t</span><span class="s3">1</span>. The weights of</p>
+<p class="p1">the arcs from <span class="s2">p</span><span class="s3">1 </span>and <span class="s2">p</span><span class="s3">2 </span>to <span class="s2">t</span><span class="s3">1 </span>are two and one, respectively; the weight of the arc from <span class="s2">t</span><span class="s3">1 </span>to <span class="s2">p</span><span class="s3">3 </span>is three.</p>
+<p class="p1">The preset of transition <span class="s2">t</span><span class="s3">1 </span>in Figure <span class="s1">2.17</span>(a) consists of two places, <span class="s2">•t</span><span class="s3">1 </span><span class="s2">= {p</span><span class="s3">1</span><span class="s2">, p</span><span class="s3">2</span><span class="s2">}</span>, and its postset</p>
+<p class="p1">consist of only one place, <span class="s2">t</span><span class="s3">1</span><span class="s2">• = {p</span><span class="s3">3</span><span class="s2">}</span>. The preset of place <span class="s2">p</span><span class="s3">4 </span>in Figure <span class="s1">2.19</span>(a) consists of transitions <span class="s2">t</span><span class="s3">3</span></p>
+<p class="p1">and <span class="s2">t</span><span class="s3">4</span><span class="s2">, •p</span><span class="s3">4 </span><span class="s2">= {t</span><span class="s3">3</span><span class="s2">, t</span><span class="s3">4</span><span class="s2">}</span>, and the postset of <span class="s2">p</span><span class="s3">1 </span>is <span class="s2">p</span><span class="s3">1</span><span class="s2">• = {t</span><span class="s3">1</span><span class="s2">, t</span><span class="s3">2</span><span class="s2">}</span>.</p>
+<p class="p1">Ordinary Net. A PN is ordinary if the weights of all arcs are 1.</p>
+<p class="p1">The nets in Figure <span class="s1">2.19 </span>are ordinary nets since, the weights of all arcs are 1.</p>
+<p class="p1">Enabled Transition. A transition <span class="s2">t</span><span class="s6">i </span><span class="s2">∈ t </span>of the ordinary PN <span class="s2">(N, s)</span>, with <span class="s2">s </span>the initial marking of <span class="s2">N</span>,</p>
+<p class="p1">is <span class="s2">enabled </span>if and only if each of its input places contain a token, <span class="s2">(N, s)[t</span><span class="s6">i </span><span class="s2">&gt;⇔ •t</span><span class="s6">i </span><span class="s2">∈ s</span>. The notation</p>
+<p class="p1"><span class="s2">(N, s)[t</span><span class="s6">i </span><span class="s2">&gt; </span>means that <span class="s2">t</span><span class="s6">i </span>is enabled.</p>
+<p class="p1">Themarking of a PNchanges as a result of transition firing; a transitionmust be enabled in order to fire.</p>
+<p class="p1">Firing Rule. The firing of the transition <span class="s2">t</span><span class="s6">i </span>of the ordinary net <span class="s2">(N, s) </span>means that a token is removed</p>
+<p class="p1">from each of its input places and one token is added to each of its output places, so its marking changes</p>
+<p class="p1"><span class="s2">s  → (s − •t</span><span class="s6">i </span><span class="s2">+ t</span><span class="s6">i </span><span class="s2">• )</span>. Thus, firing of transition <span class="s2">t</span><span class="s6">i </span>changes a marked net <span class="s2">(N, s) </span>into another marked</p>
+<p class="p2"><span class="s7">net </span>(N, s − •t<span class="s6">i </span>+ t<span class="s6">i </span>• )<span class="s7">.</span></p>
+<p class="p1">Firing Sequence. A nonempty sequence of transitions <span class="s2">σ ∈ t</span><span class="s6">∗ </span>of the marked net <span class="s2">(N, s</span><span class="s3">0</span><span class="s2">) </span>with <span class="s2">N =</span></p>
+<p class="p2">(p, t, f , l) <span class="s7">is called a </span>firing sequence <span class="s7">if and only if there exist markings </span>s<span class="s3">1</span>, s<span class="s3">2</span>, . . . , s<span class="s6">n </span>∈ B(p) <span class="s7">and</span></p>
+<p class="p2"><span class="s7">transitions </span>t<span class="s3">1</span>, t<span class="s3">2</span>, . . . , t<span class="s6">n </span>∈ t <span class="s7">such that </span>σ = t<span class="s3">1</span>, t<span class="s3">2</span>, . . . , t<span class="s6">n </span><span class="s7">and for </span>i ∈ (<span class="s7">0</span>, n), (N, s<span class="s6">i </span>)t<span class="s6">i+</span><span class="s3">1 </span>&gt; <span class="s7">and </span>s<span class="s6">i+</span><span class="s3">1 </span>=</p>
+<p class="p1"><span class="s2">s</span><span class="s6">i </span><span class="s2">− •t</span><span class="s6">i </span><span class="s2">+ t</span><span class="s6">i</span><span class="s2">•</span>. All firing sequences that can be initiated from marking <span class="s2">s</span><span class="s3">0 </span>are denoted as <span class="s2">σ(s</span><span class="s3">0</span><span class="s2">)</span>.</p>
+<p class="p1">Reachability. The problem of finding whether marking <span class="s2">s</span><span class="s6">n </span>is reachable from the initialmarking <span class="s2">s</span><span class="s3">0</span><span class="s2">, s</span><span class="s6">n </span><span class="s2">∈</span></p>
+<p class="p1"><span class="s2">σ(s</span><span class="s3">0</span><span class="s2">)</span>.Reachability is a fundamental concern for dynamic systems; the reachability problem is decidable,</p>
+<p class="p1">but reachability algorithms require exponential time and space.</p>
+<p class="p1">Liveness. Amarked Petri net <span class="s2">(N, s</span><span class="s3">0</span><span class="s2">) </span>is said to be <span class="s2">live </span>if it is possible to fire any transition starting from</p>
+<p class="p1">the initialmarking, <span class="s2">s</span><span class="s3">0</span>. The absence of deadlock in a system is guaranteed by the liveness of its net model.</p>
+<p class="p1">Incidence Matrix. Given a Petri net with <span class="s2">n </span>transitions and<span class="s2">m </span>places, the incidence matrix <span class="s2">F = [ f</span><span class="s6">i , j </span><span class="s2">] </span>is</p>
+<p class="p1">an integer matrix with <span class="s2">f</span><span class="s6">i , j </span><span class="s2">= w(i , j )−w( j , i )</span>. Here <span class="s2">w(i , j ) </span>is theweight of the flowrelation (arc) from</p>
+<p class="p1">transition <span class="s2">t</span><span class="s6">i </span>to its output place <span class="s2">p </span><span class="s6">j </span>, and <span class="s2">w( j , i ) </span>is theweight of the arc from the input place <span class="s2">p </span><span class="s6">j </span>to transition</p>
+<p class="p1"><span class="s2">t</span><span class="s6">i </span>. In this expression <span class="s2">w(i , j ) </span>represents the number of tokens added to the output place <span class="s2">p </span><span class="s6">j </span>and <span class="s2">w( j , i ) </span>the</p>
+<p class="p1">ones removed from the input place <span class="s2">p </span><span class="s6">j </span>when transition <span class="s2">t</span><span class="s6">i </span>fires. <span class="s2">F</span><span class="s6">T </span>is the transpose of the incidence matrix.</p>
+<p class="p1">A marking <span class="s2">s</span><span class="s6">k </span>can be written as an <span class="s2">m   </span>1 column vector, and its <span class="s2">j </span>-th entry denotes the number of</p>
+<p class="p1">tokens in place <span class="s2">j </span>after some transition firing. The necessary and sufficient condition for transition <span class="s2">t</span><span class="s6">i </span>to</p>
+<p class="p1">be enabled at a marking <span class="s2">s </span>is that <span class="s2">w( j , i )   s( j ) ∀s </span><span class="s6">j </span><span class="s2">∈ •t</span><span class="s6">i </span>, the weight of the arc from every input place</p>
+<p class="p1">of the transition, be smaller or equal to the number of tokens in the corresponding input place.</p>
+<p class="p1">Extended Nets. PNs with inhibitor arcs; an <span class="s2">inhibitor arc </span>prevents the enabling of a transition. For</p>
+<p class="p1">example, the arc from <span class="s2">p</span><span class="s3">2 </span>to <span class="s2">t</span><span class="s3">1 </span>in the net in Figure <span class="s1">2.19</span>(a) is an inhibitor arc; the process modeled by</p>
+<p class="p1">transition <span class="s2">t</span><span class="s3">1 </span>can be activated only after the process modeled by transition <span class="s2">t</span><span class="s3">2 </span>is activated.</p>
+<p class="p1">Modified Transition Enabling Rule for Extended Nets. A transition is not enabled if one of the</p>
+<p class="p1">places in its preset is connected with the transition with an inhibitor arc and if the place holds a token.</p>
+<p class="p1">For example, transition <span class="s2">t</span><span class="s3">1 </span>in the net in Figure <span class="s1">2.19 </span>(c) is not enabled while place <span class="s2">p</span><span class="s3">2 </span>holds a token.</p>
+<p class="p1">Based on their structural properties, Petri nets can be partitioned in several classes:</p>
+<p class="p1">• State machines are used to model finite state machines and cannot model concurrency and synchronization.</p>
+<p class="p1">• Marked graphs cannot model choice and conflict.</p>
+<p class="p1">• Free-choice nets cannot model confusion.</p>
+<p class="p1">• Extended free-choice nets cannot model confusion but they do allow inhibitor arcs.</p>
+<p class="p1">• Asymmetric choice nets can model asymmetric confusion but not symmetric ones.</p>
+<p class="p1">This partitioning is based on the number of input and output flow relations from/to a transition or</p>
+<p class="p1">a place and by the manner in which transitions share input places. The relationships between different</p>
+<p class="p1">classes of Petri nets are illustrated in Figure <span class="s1">2.20</span>.</p>
+<p class="p1">State Machine. A Petri net is a <span class="s2">state machine </span>if and only if <span class="s2">∀t</span><span class="s6">i </span><span class="s2">∈ t </span>then <span class="s2">(| • t</span><span class="s6">i</span><span class="s2">| = </span>1 <span class="s2">∧ |t</span><span class="s6">i </span><span class="s2">• | = </span>1<span class="s2">)</span>.</p>
+<p class="p1">All transitions of a state machine have exactly one incoming and one outgoing arc. This topological</p>
+<p class="p1">constraint limits the expressiveness of a state machine, so no concurrency is possible. For example, the</p>
+<p class="p1">transitions <span class="s2">t</span><span class="s3">1</span><span class="s2">, t</span><span class="s3">2</span><span class="s2">, t</span><span class="s3">3</span>, and <span class="s2">t</span><span class="s3">4 </span>of the state machine in Figure <span class="s1">2.19</span>(a) have only one input and one output arc,</p>
+<p class="p1">so the cardinality of their presets and postsets is one. No concurrency is possible; once a choicewasmade</p>
+<p class="p1">by firing either <span class="s2">t</span><span class="s3">1</span>, or <span class="s2">t</span><span class="s3">2</span>, the evolution of the system is entirely determined. This state machine has four</p>
+<p class="p1">places <span class="s2">p</span><span class="s3">1</span><span class="s2">, p</span><span class="s3">2</span><span class="s2">, p</span><span class="s3">3</span>, and <span class="s2">p</span><span class="s3">4 </span>and themarking is a 4-tuple <span class="s2">(p</span><span class="s3">1</span><span class="s2">, p</span><span class="s3">2</span><span class="s2">, p</span><span class="s3">3</span><span class="s2">, p</span><span class="s3">4</span><span class="s2">)</span>; the possiblemarkings of this net</p>
+<p class="p1">are <span class="s2">(</span>1<span class="s2">, </span>0<span class="s2">, </span>0<span class="s2">, </span>0<span class="s2">), (</span>0<span class="s2">, </span>1<span class="s2">, </span>0<span class="s2">, </span>0<span class="s2">), (</span>0<span class="s2">, </span>0<span class="s2">, </span>1<span class="s2">, </span>0<span class="s2">), (</span>0<span class="s2">, </span>0<span class="s2">, </span>0<span class="s2">, </span>1<span class="s2">)</span>,with a token in places <span class="s2">p</span><span class="s3">1</span><span class="s2">, p</span><span class="s3">2</span><span class="s2">, p</span><span class="s3">3</span>, or <span class="s2">p</span><span class="s3">4</span>, respectively.</p>
+<p class="p1">Marked Graph. A Petri net is a <span class="s2">marked graph </span>if and only if <span class="s2">∀p</span><span class="s6">i </span><span class="s2">∈ p </span>then (<span class="s2">|• p</span><span class="s6">i</span><span class="s2">| = </span>1<span class="s2">∧|p</span><span class="s6">i </span><span class="s2">•| = </span>1). In</p>
+<p class="p1">a marked graph each place has only one incoming and one outgoing flow relation; thus, marked graphs</p>
+<p class="p1">do no not allow modeling of choice.</p>
+<p class="p1">Free Choice, Extended Free Choice, and Asymmetric Choice Petri Nets. The marked net, <span class="s2">(N, s</span><span class="s3">0</span><span class="s2">)</span></p>
+<p class="p2"><span class="s7">with </span>N = (p, t, f , l) <span class="s7">is a </span>free-choice net <span class="s7">if and only if</span></p>
+<p class="p2">( • t<span class="s6">i </span>) ∩ ( • t <span class="s6">j </span>) = ∅ ⇒ |• t<span class="s6">i</span>| = | • t <span class="s6">j</span>| ∀t<span class="s6">i </span>, <span class="s6">j </span>∈ t. <span class="s7">(2.38)</span></p>
+<p class="p2">N <span class="s7">is an </span>extended free-choice net <span class="s7">if </span>∀t<span class="s6">i </span>, t <span class="s6">j </span>∈ t <span class="s7">then </span>( • t<span class="s6">i </span>) ∩ ( • t <span class="s6">j </span>) = ∅ ⇒ •t<span class="s6">i </span>= •t <span class="s6">j </span><span class="s7">.</span></p>
+<p class="p2">N <span class="s7">is an </span>asymmetric choice net <span class="s7">if and only if </span>(•t<span class="s6">i </span>)∩(•t <span class="s6">j </span>)  = ∅⇒(•t<span class="s6">i </span>⊆ •t <span class="s6">j </span>) <span class="s7">or </span>(•t<span class="s6">i </span>⊇ •t <span class="s6">j </span>), ∀t<span class="s6">i </span>, t <span class="s6">j </span>∈ t<span class="s7">.</span></p>
+<p class="p1">In an extended free-choice net, if two transitions share an input place they must share all places in</p>
+<p class="p1">their presets. In an asymmetric choice net, two transitions may share only a subset of their input places.</p>
+<p class="p1">Several extensions of Petri nets have been proposed. For example, colored Petri nets (CPSs) allow</p>
+<p class="p1">tokens of different colors, thus increasing the expressivity of the PNs but not simplifying their analysis.</p>
+<p class="p1">Several extensions of Petri nets to support performance analysis by associating a random time with each</p>
+<p class="p1">transition have been proposed. In case of stochastic Petri nets (SPNs), a random time elapses between</p>
+<p class="p1">the time a transition is enabled and the moment it fires. This random time allows the model to capture</p>
+<p class="p1">the service time associated with the activity modeled by the transition.</p>
+<p class="p1">Applications of stochastic Petri nets to performance analysis of complex systems is generally limited</p>
+<p class="p1">by the explosion of the state space of the models. Stochastic high-level Petri nets (SHLPNs) were</p>
+<p class="p1">introduced in 1988 [<span class="s1">219</span>]; they allow easy identification of classes of equivalent markings even when the</p>
+<p class="p1">corresponding aggregation of states in the Markov domain is not obvious. This aggregation could reduce</p>
+<p class="p1">the size of the state space by one or more orders of magnitude, depending on the system being modeled.</p>
+</body>
+</html>

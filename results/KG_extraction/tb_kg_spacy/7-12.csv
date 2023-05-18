@@ -1,0 +1,17 @@
+,source,edge,target
+0,algorithms,mimic,e.g. topology information
+4,classes,exist,distributed epidemic system
+7,system,know,specific  information
+11,system,knows,specific  information
+16,system,knows,specific  information
+20,entire  population,remains in,state
+23,individuals,have,equal
+25,algorithms,based on,1927
+26,model,assumes,following
+27,infectious  size,assumes,population
+28,dynamics,captured,model
+29,SIS epidemic models,expressed as,λ E X2
+31,still  epidemics,allows,outside  infections
+33,such γ networks,follows,infinitely epidemic algorithms
+34,such γ networks,become,other γ words
+35,property,is,such control networks

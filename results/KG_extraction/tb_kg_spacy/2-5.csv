@@ -1,0 +1,49 @@
+,source,edge,target
+2,two  processes,reach,channel failures
+3,how  probability,exists,agreement
+8,last messages one,be able,messages destination
+10,protocol,leads,correctly  messages
+12,error processes,allow,digital  channels
+14,redundancy,increased by more,more  bits
+16,sequence,decide,bits
+17,code,satisfies,distance
+18,protocols,implement,also error control control
+20,only  receiver,forces,only  data
+22,offered  load,ensures,network capacity
+23,offered  load,exceed,network
+24,packetswhen  network,drop,store  networks
+26,sender,detect,transmission rate
+27,implementation,requires,the
+29,global  that,need,one
+30,computer chip,has,internal  clock
+31,set,occurs at,clock tick
+32,chip,has,interval
+33,predefined  action,repeated,predefined  interval
+34,when  effects,sensed,action
+35,modern state processors,run at,2–4 GHz clock rate
+36,system,goes through,state changes
+38,indeed  we,have atomic,10−6  year
+39,accuracy event,characterized by,system
+41,timers,provide relative,relative  timemeasurements
+42,description,adds to,local  timer
+44,Messages,lost,transmission
+49,two  entities,need,common  time
+50,is  that,provide,one  another
+52,several power circuits,switched,same  time
+55,emergency procedure,ensure,event
+58,event,determine,state alarm
+59,several  replicas,log,consistent  manner
+60,stamps,used for,virtual time clocks
+64,First  granularity,observe,precision
+66,one,tell,which
+68,order discrimination,follows,driven  protocols
+69,specification,require,cause  relationships
+70,state that,view,one  another
+71,that,need,certain  state
+73,activity,ismodeled,process
+74,cause,expressed in,effects
+76,Again  we,need,local  events
+78,events,affect more,global  processes
+80,relationship,1,following  properties
+81,Causality,derived from,local process history
+82,such  events,said,other

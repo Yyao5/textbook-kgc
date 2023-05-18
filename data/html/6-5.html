@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Helvetica}
+    span.s4 {font: 10.0px Times}
+    span.s5 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Can specialized autonomic performance managers cooperate to optimize power consumption and, at</p>
+<p class="p1">the same time, satisfy the requirements of SLAs? This is the question examined by a group from IBM</p>
+<p class="p1">Research in a 2007 paper [<span class="s1">187</span>]. The paper reports on actual experiments carried out on a set of blades</p>
+<p class="p1">mounted on a chassis (see Figure <span class="s1">6.3 </span>for the experimental setup). Extending the techniques discussed</p>
+<p class="p1">in this report to a large-scale farm of servers poses significant problems; computational complexity is</p>
+<p class="p1">just one of them.</p>
+<p class="p1">Virtually all modern processors support dynamic voltage scaling (DVS) as a mechanism for energy</p>
+<p class="p1">saving. Indeed, the energy dissipation scales quadratically with the supply voltage. The power management</p>
+<p class="p1">controls the CPU frequency and, thus, the rate of instruction execution. For some compute-intensive</p>
+<p class="p1">workloads the performance decreases linearly with the CPU clock frequency, whereas for others the</p>
+<p class="p1">effect of lower clock frequency is less noticeable or nonexistent. The clock frequency of individual blades/servers is controlled by a power manager, typically implemented in the firmware; it adjusts the</p>
+<p class="p1">clock frequency several times a second.</p>
+<p class="p1">The approach to coordinating power and performance management in [<span class="s1">187</span>] is based on several ideas:</p>
+<p class="p1">• Use a joint utility function for power and performance. The joint performance-power utility function,</p>
+<p class="p1"><span class="s2">U</span><span class="s3">pp</span><span class="s2">(R, P)</span>, is a function of the response time, <span class="s2">R</span>, and the power, <span class="s2">P</span>, and it can be of the form</p>
+<p class="p2">U<span class="s3">pp</span>(R, P) = U(R) −     P <span class="s4">or </span>U<span class="s3">pp</span>(R, P) = U(R)</p>
+<p class="p2">P</p>
+<p class="p1"><span class="s2">, </span>(6.18)</p>
+<p class="p1">with<span class="s2">U(R) </span>the utility function based on response time only and <span class="s2">  </span>a parameter to weight the influence</p>
+<p class="p1">of the two factors, response time and power.</p>
+<p class="p1">• Identify a minimal set of parameters to be exchanged between the two managers.</p>
+<p class="p1">• Set up a power cap for individual systems based on the utility-optimized power management policy.</p>
+<p class="p1">• Use a standard performance manager modified only to accept input from the power manager regarding</p>
+<p class="p1">the frequency determined according to the power management policy. The power manager</p>
+<p class="p1">consists of Tcl (Tool Command Language) and C programs to compute the per-server (per-blade)</p>
+<p class="p1">power caps and send them via IPMI<span class="s5">5 </span>to the firmware controlling the blade power. The power manager</p>
+<p class="p1">and the performance manager interact, but no negotiation between the two agents is involved.<span class="Apple-converted-space"> </span></p>
+<p class="p1">• Use standard software systems. For example, use the WebSphere Extended Deployment (WXD),</p>
+<p class="p1">middleware that supports setting performance targets for individual Web applications and for the</p>
+<p class="p1">monitor response time, and periodically recompute the resource allocation parameters to meet the</p>
+<p class="p1">targets set. Use the Wide-Spectrum Stress Tool from the IBM Web Services Toolkit as a workload</p>
+<p class="p1">generator.</p>
+<p class="p1">For practical reasons the utility function was expressed in terms of <span class="s2">n</span><span class="s3">c</span>, the number of clients, and <span class="s2">p</span><span class="s3">κ </span>,</p>
+<p class="p1">the powercap, as in</p>
+<p class="p3"><span class="s2">U</span> </p>
+<p class="p2">(p<span class="s3">κ </span>, n<span class="s3">c</span>) = U<span class="s3">pp</span>(R(p<span class="s3">κ </span>, n<span class="s3">c</span>), P(p<span class="s3">κ </span>, n<span class="s3">c</span>)). <span class="s4">(6.19)</span></p>
+<p class="p1">The optimal powercap <span class="s2">p</span><span class="s3">opt</span></p>
+<p class="p1"><span class="s3">κ </span>is a function of the workload intensity expressed by the number of</p>
+<p class="p1">clients, <span class="s2">n</span><span class="s3">c</span>,</p>
+<p class="p3"><span class="s2">p</span>opt</p>
+<p class="p2"><span class="s3">κ </span>(n<span class="s3">c</span>) = <span class="s4">argmax</span>U<span class="s3"> </span></p>
+<p class="p2">(p<span class="s3">κ </span>, n<span class="s3">c</span>). <span class="s4">(6.20)</span></p>
+<p class="p1">The hardware devices used for these experiments were the Goldensbridge blades each with an Intel</p>
+<p class="p1">Xeon processor running at 3GHzwith 1GBof level 2 cache and 2GB of DRAM and with hyperthreading</p>
+<p class="p1">enabled. A blade could serve 30 to 40 clients with a response time at or better than a 1,000 msec limit.</p>
+<p class="p1">When <span class="s2">p</span><span class="s3">k </span>is lower than 80 Watts, the processor runs at its lowest frequency, 375 MHz, whereas for <span class="s2">p</span><span class="s3">k</span></p>
+<p class="p1">at or larger than 110 Watts, the processor runs at its highest frequency, 3 GHz.</p>
+<p class="p1">Three types of experiments were conducted: (i) with the power management turned off; (ii) when</p>
+<p class="p1">the dependence of the power consumption and the response time were determined through a set of</p>
+<p class="p1">exhaustive experiments; and (iii) when the dependency of the powercap <span class="s2">p</span><span class="s3">κ </span>on <span class="s2">n</span><span class="s3">c </span>was derived via</p>
+<p class="p1">reinforcement-learning models.</p>
+<p class="p1">The second type of experiment led to the conclusion that both the response time and the power</p>
+<p class="p1">consumed are nonlinear functions of the powercap, <span class="s2">p</span><span class="s3">κ </span>, and the number of clients, <span class="s2">n</span><span class="s3">c</span>; more specifically,</p>
+<p class="p1">the conclusions of these experiments are:</p>
+<p class="p1">• At a low load the response time is well below the target of 1,000 msec.</p>
+<p class="p1">• At medium and high loads the response time decreases rapidly when <span class="s2">p</span><span class="s3">k </span>increases from 80 to</p>
+<p class="p1">110 watts.</p>
+<p class="p1">• For a given value of the powercap, the consumed power increases rapidly as the load increases.</p>
+<p class="p1">The machine learning algorithm used for the third type of experiment was based on the Hybrid</p>
+<p class="p1">Reinforcement Learning algorithm described in [<span class="s1">349</span>]. In the experiments using the machine learning</p>
+<p class="p1">model, the powercap required to achieve a response time lower than 1,000 msec for a given number of</p>
+<p class="p1">clients was the lowest when <span class="s2">  = </span>0<span class="s2">.</span>05 and the first utility function given by Eq. (<span class="s1">6.18</span>) was used. For</p>
+<p class="p1">example, when <span class="s2">n</span><span class="s3">c </span><span class="s2">= </span>50, then <span class="s2">p</span><span class="s3">κ </span><span class="s2">= </span>109 Watts when <span class="s2">  = </span>0<span class="s2">.</span>05, whereas <span class="s2">p</span><span class="s3">κ </span><span class="s2">= </span>120 when <span class="s2">  = </span>0<span class="s2">.</span>01.</p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+,source,edge,target
+0,users,perceive,integrated computing facility
+1,system,has several,several
+2,multiple  resources,are multiple,multiple  failure
+4,systems,scaled by,software network reliability
+10,local file system,allow,larger communication costs
+11,local file system,accessed,remote file system
+12,call,supports inter,remote address system
+13,RPCs,introduced in,early Bruce Nelson
+14,Network File System,based on,RPC
+15,Invocation,provides,similar UNIX RPC methods
+16,RPC,uses,based  calls
+17,middleware,support,distributed  system
+18,objects,accessed,identical  operations
+19,objects,accessed without,objects location
+20,processes,run,shared information objects
+22,instances,used,information users
+24,objects,moved without,faults
+25,system,reconfigured based,service requirements
+27,system,scale without,system applications

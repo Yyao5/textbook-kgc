@@ -1,0 +1,40 @@
+,source,edge,target
+0,then destination datagram,allows,then destination which
+2,network,identify,first destination network
+3,logical network interface,has,physical  address
+5,IP address,assigned,dynamically  network
+7,different  phone,get,different differentWi Fi networks
+8,addresswhen,connected to different,different  networks
+9,phone,get different,different  IP
+10,when IP host,have multiple,multiple  networks
+12,Internet,based on,TCP IP protocol Figure
+14,packets,captures,Internet destination
+15,packets,reach,Internet the
+16,IP,ensures,datagrams destination datagrams
+19,when  packet,means,packet
+20,when  packet,drop,packet
+21,Internet,uses,two connectionless datagram protocol
+22,header,contains,sufficient  destination
+24,error checking,assumes,either error application
+25,Datagrams,arrive out,order
+28,Applications,include,such Internet Protocol television
+29,packet,reaches,destination
+30,that,delivered to,logical communication Figure
+31,processes,use,abstraction  network
+34,socket,manages,outgoing  messages
+35,TCP,provides reliable,one destination system
+36,application,sends,logical communication link
+37,sliding flow control sender,uses,receiver
+38,receiver,allows,process segments
+40,network,has,finite data
+41,we,witness undesirable,capacity
+42,routers,start,packets
+45,TCP,uses several,several congestion Section
+47,data that,control,max min fair flows
+49,acknowledgment,used,network sender
+51,policies,based on,four  algorithms
+52,algorithms,use local,round congestion control policies
+54,process networking communication,shows,significant  overhead
+55,process  communication,incurs,significant
+56,raw  speed,reach,fiber optic fiber channels
+57,This,has important,important computer clouds

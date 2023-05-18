@@ -1,0 +1,27 @@
+,source,edge,target
+1,different  systems,vary in,"bandwidth,1 latency,2 reliability"
+2,management,grows,well system increase
+5,external resource management,affected by internal,different failure components
+10,virtual  running,saved,virtual machine load
+11,state,running,virtual  machine
+13,users,allows,idiosyncratic  environments
+15,sharing,requires,multilevel hardware control
+16,Indeed  resources,shared,such CPU cycles
+17,resources,shared among multiple,multiple  application
+18,We,start,virtualization virtualization
+19,that,discuss,binary application programming architecture
+20,that,define,system
+21,We,discuss,performance security Section
+23,full  virtualization,discussed,Section
+24,operating system,run without,VMM
+25,hardware,requires,functions
+26,hardware abstraction,support,the
+27,one  architectures,conceived for,two execution modes
+28,architectures,support,two  execution
+29,level,exercised by,guest operating system
+30,two level scheduling,implemented,CPU cycles
+31,x86 processor architecture,extended,hardware Section
+34,We,analyze,5.8 VMM network Section
+35,processors,have multiple,explicit  Section
+40,We,analyze,potential security Section
+41,Finally  we,discuss,software fault Section

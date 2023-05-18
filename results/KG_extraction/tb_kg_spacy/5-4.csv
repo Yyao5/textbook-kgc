@@ -1,0 +1,26 @@
+,source,edge,target
+2,same  all,appears,physical  system
+6,when  IBM,operating,IBM VM/370
+7,We,distinguish,two system Figure
+9,that,provide,different  instruction
+10,VM,supports,many user processes
+11,When  VM,runs under,normal  OS
+13,we,have,virtual  machine
+14,search,reveals,the
+15,Table,lists,5.1  companies
+16,machine,provides,complete
+17,VM which,run,multiple  applications
+18,which,run multiple,multiple
+20,server,run multiple,isolated system instances
+21,instances,known as,containers
+22,OpenVZ,requires,host
+23,systems,claim,performance
+25,OpenVZ,licensed under,GPL version
+31,VMM,shares,existing  Figure
+34,VM,runs on,existing  Figure
+36,VMM,use several,several
+37,page faults,handled,directly guest VMM
+38,complete  solution,make,less cloud computing environment
+39,gap,exists between,added  services
+41,services,operate below,virtual guest operating system
+43,VMMs,discussed,physical resource system

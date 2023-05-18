@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Times}
+    span.s3 {color: #000066}
+    span.s4 {font: 10.0px Courier}
+    span.s5 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Xen </span>is a VMM or hypervisor developed by the Computing Laboratory at the University of Cambridge,</p>
+<p class="p1">United Kingdom, in 2003. Since 2010 <span class="s1">Xen </span>has been free software, developed by the community of users</p>
+<p class="p1">and licensed under the GNU General Public License (GPLv2). Several operating systems, including</p>
+<p class="p2">Linux, Minix, NetBSD, FreeBSD, NetWare<span class="s2">, and </span>OZONE<span class="s2">, can operate as paravirtualized </span>Xen <span class="s2">guest</span></p>
+<p class="p1">operating systems running on <span class="s1">x86</span>, <span class="s1">x86</span>-64, <span class="s1">Itanium</span>, and <span class="s1">ARM </span>architectures.</p>
+<p class="p1">The goal of the Cambridge group, led by Ian Pratt, was to design a VMM capable of scaling to about</p>
+<p class="p1">100 VMs running standard applications and services without anymodifications to the application binary</p>
+<p class="p1">interface (ABI). Fully aware that the <span class="s1">x86 </span>architecture does not support efficiently full virtualization, the</p>
+<p class="p1">designers of <span class="s1">Xen </span>opted for paravirtualization.</p>
+<p class="p1">Next we analyze the original implementation of <span class="s1">Xen </span>for the <span class="s1">x86 </span>architecture discussed in [<span class="s3">41</span>]. The</p>
+<p class="p1">creators of <span class="s1">Xen </span>used the concept of <span class="s1">domain </span>(<span class="s1">Dom</span>) to refer to the ensemble of address spaces hosting a guest OS and address spaces for applications running under this guest OS. Each domain runs on a virtual</p>
+<p class="p1"><span class="s1">x86 </span>CPU. <span class="s1">Dom0 </span>is dedicated to the execution of <span class="s1">Xen </span>control functions and privileged instructions, and</p>
+<p class="p1"><span class="s1">DomU </span>is a user domain (see Figure <span class="s3">5.6</span>) .</p>
+<p class="p1">The most important aspects of the <span class="s1">Xen </span>paravirtualization for virtual memory management, CPU</p>
+<p class="p1">multiplexing, and I/O device management are summarized in Table <span class="s3">5.2 </span>[<span class="s3">41</span>]. Efficient management</p>
+<p class="p1">of the translation look-aside buffer (TLB), a cache for page table entries, requires either the ability to</p>
+<p class="p1">identify the OS and the address space of every entry or to allow software management of the TLB.</p>
+<p class="p1">Unfortunately, the <span class="s1">x86 </span>architecture does not support either the tagging of TLB entries or the software</p>
+<p class="p1">management of the TLB. As a result, address space switching, when the VMMactivates a different OS,</p>
+<p class="p1">requires a complete TLB flush. This has a negative impact on performance.</p>
+<p class="p1">The solution that was adopted was to load <span class="s1">Xen </span>in a 64MB segment at the top of each address space</p>
+<p class="p1">and delegate the management of hardware page tables to the guest OS with minimal intervention from</p>
+<p class="p1"><span class="s1">Xen</span>. The 64 MB region occupied by <span class="s1">Xen </span>at the top of every address space is not accessible or not</p>
+<p class="p1">remappable by the guest OS. When a new address space is created, the guest OS allocates and initializes</p>
+<p class="p1">a page from its own memory, registers it with <span class="s1">Xen</span>, and relinquishes control of the <span class="s4">write </span>operations to</p>
+<p class="p1">the VMM. Thus, a guest OS could only map pages it owns. On the other hand, it has the ability to batch</p>
+<p class="p1">multiple page-update requests to improve performance. A similar strategy is used for segmentation.</p>
+<p class="p1">The <span class="s1">x86 </span>Intel architecture supports four protection rings or privilege levels; virtually all OS kernels</p>
+<p class="p1">run at Level 0, the most privileged one, and applications at Level 3. In <span class="s1">Xen </span>the VMM runs at Level 0,</p>
+<p class="p1">the guest OS at Level 1, and applications at Level 3.</p>
+<p class="p1">Applications make system calls using the so-called <span class="s1">hypercalls </span>processed by <span class="s1">Xen</span>. Privileged instructions</p>
+<p class="p1">issued by a guest OS are <span class="s1">paravirtualized </span>and must be validated by <span class="s1">Xen</span>.When a guest OS attempts</p>
+<p class="p1">to execute a privileged instruction directly, the instruction fails silently.</p>
+<p class="p1">Memory is statically partitioned between domains to provide strong isolation. To adjust domain</p>
+<p class="p1">memory, <span class="s4">XenoLinux </span>implements a <span class="s1">balloon driver</span>, which passes pages between <span class="s1">Xen </span>and its own page</p>
+<p class="p1">allocator. For the sake of efficiency, page faults are handled directly by the guest OS.</p>
+<p class="p1"><span class="s1">Xen </span>schedules individual domains using the borrowed virtual time (BVT) scheduling algorithm</p>
+<p class="p1">discussed in Section 6.11. BVT is a work conserving<span class="s5">7 </span>and low-latency wake-up scheduling algorithm.</p>
+<p class="p1">BVT uses a virtual-time warping mechanism to support low-latency dispatch to ensure timely execution</p>
+<p class="p1">when this is needed – for example, for timely delivery of TCP acknowledgments.</p>
+<p class="p1">A guest OS must register with <span class="s1">Xen </span>a <span class="s1">description table </span>with the addresses of exception handlers for</p>
+<p class="p1">validation. Exception handlers are identical to the native <span class="s1">x86 </span>handlers. The only one that does not follow</p>
+<p class="p1">this rule is the page fault handler, which uses an extended stack frame to retrieve the faulty address</p>
+<p class="p1">because the privileged register <span class="s4">CR2</span>, where this address is found, is not available to a guest OS. Each guest OS can validate and then register a “fast” exception handler executed directly by the processor</p>
+<p class="p1">without the interference of <span class="s1">Xen</span>. A lightweight event system replaces hardware interrupts. Notifications</p>
+<p class="p1">are delivered using this asynchronous event system. Each guest OS has a timer interface and is aware</p>
+<p class="p1">of “real” and “virtual” time.</p>
+<p class="p1"><span class="s1">XenStore </span>is a <span class="s1">Dom0 </span>process that supports a system-wide registry and naming service. It is implemented</p>
+<p class="p1">as a hierarchical key-value storage; a <span class="s1">watch </span>function of the process informs listeners of changes</p>
+<p class="p1">to the key in storage to which they have subscribed. <span class="s1">XenStore </span>communicates with guest VMs via shared</p>
+<p class="p1">memory using <span class="s1">Dom0 </span>privileges rather than grant tables.</p>
+<p class="p1">The <span class="s1">Toolstack </span>is another <span class="s1">Dom0 </span>component responsible for creating, destroying, and managing the</p>
+<p class="p1">resources and privileges of VMs. To create a new VM a user provides a configuration file describing</p>
+<p class="p1">memory and CPU allocations as well as device configuration. Then the <span class="s1">Toolstack </span>parses this file and</p>
+<p class="p1">writes this information in the <span class="s1">XenStore</span>. <span class="s1">Toolstack </span>takes advantage of <span class="s1">Dom0 </span>privileges to map guest</p>
+<p class="p1">memory, to load a kernel and virtual BIOS, and to set up initial communication channels with the</p>
+<p class="p1"><span class="s1">XenStore </span>and with the virtual console when a new VM is created.</p>
+<p class="p1"><span class="s1">Xen </span>defines abstractions for networking and I/O devices. <span class="s1">Split drivers </span>have a front-end in the <span class="s1">DomU</span></p>
+<p class="p1">and a back-end in <span class="s1">Dom0</span>; the two communicate via a ring in shared memory. <span class="s1">Xen </span>enforces access control</p>
+<p class="p1">for the shared memory and passes synchronization signals. Access control lists (ACLs) are stored in</p>
+<p class="p1">the form of <span class="s1">grant tables</span>, with permissions set by the owner of the memory.</p>
+<p class="p1">Data for I/O and network operations move vertically through the system very efficiently using a</p>
+<p class="p1">set of I/O rings (see Figure <span class="s3">5.7</span>). A <span class="s1">ring </span>is a circular queue of descriptors allocated by a domain and</p>
+<p class="p1">accessible within <span class="s1">Xen</span>. Descriptors do not contain data; the data buffers are allocated off-band by the</p>
+<p class="p1">guest OS. Memory committed for I/O and network operations is supplied in a manner designed to</p>
+<p class="p1">avoid “cross-talk,” and the I/O buffers holding the data are protected by preventing page faults of the</p>
+<p class="p1">corresponding page frames.</p>
+<p class="p1">Each domain has one or more virtual network interfaces (VIFs) that support the functionality of</p>
+<p class="p1">a network interface card. A VIF is attached to a virtual firewall-router (VFR). Two rings of buffer</p>
+<p class="p1">descriptors, one for packet sending and one for packet receiving, are supported. To transmit a packet,</p>
+<p class="p1">a guest OS enqueues a buffer descriptor to the send ring, then <span class="s1">Xen </span>copies the descriptor and checks</p>
+<p class="p1">safety and finally copies only the packet header, not the payload, and executes the matching</p>
+<p class="p1">rules.</p>
+<p class="p1">The rules of the form <span class="s1">(&lt;pattern&gt;,&lt;action&gt;) </span>require the <span class="s1">action </span>to be executed if the <span class="s1">pattern </span>is</p>
+<p class="p1">matched by the information in the packet header. The rules can be added or removed by <span class="s1">Dom0</span>; they</p>
+<p class="p1">ensure the demultiplexing of packets based on the destination IP address and port and, at the same time,</p>
+<p class="p1">prevent spoofing of the source IP address. <span class="s1">Dom0 </span>is the only one allowed to directly access the physical</p>
+<p class="p1">IDE (Integrated Drive Electronics) or SCSI (Small Computer System Interface) disks. All domains</p>
+<p class="p1">other than <span class="s1">Dom0 </span>access persistent storage through a virtual block device (VBD) abstraction created and</p>
+<p class="p1">managed under the control of <span class="s1">Dom0</span>.</p>
+<p class="p1"><span class="s1">Xen </span>includes a device emulator, <span class="s1">Qemu</span>, to support unmodified commodity operating systems. <span class="s1">Qemu</span></p>
+<p class="p1">emulates a DMA<span class="s5">8 </span>and can map any page of the memory in a <span class="s1">DomU</span>. Each VM has its own instance of</p>
+<p class="p1"><span class="s1">Qemu </span>that can run either as a <span class="s1">Dom0 </span>process or as a process of the VM.</p>
+<p class="p1"><span class="s1">Xen</span>, initially released in 2003, underwent significant changes in 2005, when Intel released the <span class="s1">VT-x</span></p>
+<p class="p1">processors. In 2006 <span class="s1">Xen </span>was adopted by Amazon for its <span class="s1">EC2 </span>service, and in 2008 <span class="s1">Xen </span>running on Intel’s</p>
+<p class="p1"><span class="s1">VT-d </span>passed the <span class="s1">ACPI S3 </span><span class="s5">9 </span>test. <span class="s1">Xen </span>support for <span class="s1">Dom0 </span>and <span class="s1">DomU </span>was added to the <span class="s1">Linux </span>kernel in 2011.</p>
+<p class="p1">In 2008 the PCI pass-through was incorporated for <span class="s1">Xen </span>running on <span class="s1">VT-d </span>architectures. The PCI<span class="s5">10</span></p>
+<p class="p1">pass-through allows a PCI device, whether a disk controller, network interface card (NIC), graphic card,</p>
+<p class="p1">or Universal Serial Bus (USB), to be assigned to a VM. This avoids the overhead of copying and allows</p>
+<p class="p1">setting up of a <span class="s1">driver domain </span>to increase security and system reliability. A guest OS can exploit this</p>
+<p class="p1">facility to access the 3D acceleration capability of a graphics card. To prepare a device for pass-through,</p>
+<p class="p1">one must know its BDF.<span class="s5">11</span></p>
+<p class="p1">An analysis of VM performance for I/O-bound applications under <span class="s1">Xen </span>is reported in [<span class="s3">298</span>]. Two</p>
+<p class="p1">Apache Web servers, each under a different VM, share the same server running <span class="s1">Xen</span>. The workload</p>
+<p class="p1">generator sends requests for files of fixed size ranging from 1KB to 100 KB.When the file size increases</p>
+<p class="p1">from 1 KB to 10 KB and to 100 KB, the CPU utilization, throughput, data rate, and response time are,</p>
+<p class="p1">respectively: <span class="s1">(</span>97<span class="s1">.</span>5%<span class="s1">; </span>70<span class="s1">.</span>44%<span class="s1">; </span>44<span class="s1">.</span>4%<span class="s1">), (</span>1<span class="s1">,</span>900<span class="s1">; </span>1<span class="s1">,</span>104<span class="s1">; </span>112<span class="s1">) </span>requests/s, <span class="s1">(</span>2<span class="s1">,</span>018<span class="s1">; </span>11<span class="s1">,</span>048<span class="s1">; </span>11<span class="s1">,</span>208<span class="s1">) </span>KBps,</p>
+<p class="p1">and <span class="s1">(</span>1<span class="s1">.</span>52<span class="s1">; </span>2<span class="s1">.</span>36<span class="s1">; </span>2<span class="s1">.</span>08<span class="s1">) </span>msec. From the first group of results we see that for files 10 KB or larger the</p>
+<p class="p1">system is I/O bound; the second set of results shows that the throughput measured in requests/s decreases</p>
+<p class="p1">by less than 50% when the system becomes I/O bound, but the data rate increases by a factor of five</p>
+<p class="p1">over the same range. The variation of the response time is quite small; it increases about 10% when the</p>
+<p class="p1">file size increases by two orders of magnitude.</p>
+<p class="p1">The paravirtualization strategy in <span class="s1">Xen </span>is different from the one adopted by a group at the University</p>
+<p class="p1">of Washington, the creators of the <span class="s4">Denali </span>system [<span class="s3">372</span>]. <span class="s4">Denali </span>was designed to support a number</p>
+<p class="p1">of virtual machines running network services one or more orders of magnitude larger than <span class="s1">Xen</span>. The</p>
+<p class="p1">design of the <span class="s4">Denali </span>system did not target existing ABI. It does not support some features of potential</p>
+<p class="p1">guest operating systems – for example, it does not support segmentation. <span class="s4">Denali </span>does not support</p>
+<p class="p1">application multiplexing, running multiple applications under a guest OS, whereas <span class="s1">Xen </span>does.</p>
+<p class="p1">Finally, a few words regarding the complexity of porting commodity operating systems to <span class="s1">Xen. </span>It is</p>
+<p class="p1">reported that a total of about 3<span class="s1">,</span>000 lines of <span class="s1">Linux </span>code, or 1<span class="s1">.</span>36%<span class="s1">, </span>had to be modified; for <span class="s1">Windows XP</span></p>
+<p class="p1">this figure is 4<span class="s1">,</span>620, or about 0<span class="s1">.</span>04% [<span class="s3">41</span>].</p>
+</body>
+</html>

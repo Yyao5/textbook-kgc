@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Biology, one of the scientific fields that needs vast amounts of computing power, was one of the first</p>
+<p class="p1">to take advantage of cloud computing. Molecular dynamics computations are CPU-intensive, whereas</p>
+<p class="p1">protein alignment is data-intensive.</p>
+<p class="p1">An experiment carried out by a group from Microsoft Research illustrates the importance of cloud</p>
+<p class="p1">computing for biology research [<span class="s1">223</span>]. The authors carried out an “all-by-all” comparison to identify</p>
+<p class="p1">the interrelationship of the 10 million protein sequences (4.2 GB size) in the National Center for</p>
+<p class="p1">Biotechnology Information (NCBI) non redundant protein database using <span class="s2">AzureBLAST</span>, a version of the</p>
+<p class="p1"><span class="s2">BLAST</span><span class="s3">23 </span>program running on the Azure platform [<span class="s1">223</span>].</p>
+<p class="p1"><span class="s2">Azure </span>offers VMs with four levels of computing power, depending on the number of cores: small</p>
+<p class="p1">(1 core), medium (2 cores), large (8 cores), and extra large (<span class="s2">&gt;</span>8 cores). The experiment used 8 core</p>
+<p class="p1">CPUs with 14 GB RAM and a 2 TB local disk. It was estimated that the computation would take six to</p>
+<p class="p1">seven CPU-years; thus, the experiment was allocated 3,700 weighted instances or 475 extra-large VMs</p>
+<p class="p1">from three data centers. Each data center hosted three <span class="s2">AzureBLAST </span>deployments, each with 62 extra large</p>
+<p class="p1">instances. The 10 million sequences were divided into multiple segments, and each segment was</p>
+<p class="p1">submitted for execution by one <span class="s2">AzureBLAST </span>deployment.With this vast amount of resources allocated,</p>
+<p class="p1">it took 14 days to complete the computations, which produced 260 GB of compressed data spread across</p>
+<p class="p1">more than 400,000 output files.</p>
+<p class="p1">A few observations and conclusions useful for many scientific applications running on Azure were</p>
+<p class="p1">drawn after a post-experiment analysis. A first observation is that when a task runs for more than</p>
+<p class="p1">two hours, a message will automatically reappear in the queue requesting the task to be scheduled,</p>
+<p class="p1">thus leading to repeated computations; a simple solution is to check whether the result of a task has been generated before launching it. Many applications, including <span class="s2">BLAST</span>, allow for the setting of some</p>
+<p class="p1">parameters, but the computational effort to find optimal parameters is prohibitive. A user is also expected</p>
+<p class="p1">to decide on an optimal balance between the cost and the number of instances to meet budget limitations.</p>
+<p class="p1">A number of inefficiencies were observed: many VMs were idle for extended periods of time; when</p>
+<p class="p1">a task finished execution, all worker instances waited for the next task; and when all jobs use the</p>
+<p class="p1">same set of instances, resources are either under- or over-utilized. Load imbalance is another source</p>
+<p class="p1">of inefficiency; some of the tasks of a job take considerably longer than others and delay the job’s</p>
+<p class="p1">completion time.</p>
+<p class="p1">The analysis of the logs shows unrecoverable instance failures. Some 50% of active instances lost</p>
+<p class="p1">connection to the storage service but were automatically recovered by the fabric controller. System</p>
+<p class="p1">updates caused several ensembles of instances to fail.</p>
+<p class="p1">Another observation is that a computational science experiment requires the execution of several</p>
+<p class="p1">binaries; thus the creation of workflows, a challenging task for many domain scientists. To address this</p>
+<p class="p1">challenge, the authors of [<span class="s1">215</span>] developed a general platform for executing legacy<span class="s2">Windows </span>applications</p>
+<p class="p1">on the cloud. In the <span class="s2">Cirrus </span>system a job has a description consisting of a prologue, a set of commands,</p>
+<p class="p1">and a set of parameters. The prologue sets up the running environment; the commands are sequences of</p>
+<p class="p1">shell scripts, including Azure-storage-related commands to transfer data between Azure blob storage</p>
+<p class="p1">and the instance.</p>
+<p class="p1">After the <span class="s2">Windows </span>Live ID service authenticates the user, it can submit and track a job through the</p>
+<p class="p1">portal provided by the Web role (see Figure <span class="s1">4.8</span>). The job is added to a table called <span class="s2">job registry</span>. The</p>
+<p class="p1">execution of each job is controlled by a <span class="s2">job manager instance </span>that first scales the size of the worker</p>
+<p class="p1">based on the job configuration; then the parametric engine starts exploring the parameter space. If this</p>
+<p class="p1">is a test run, the parameter-sweeping result is sent to the sampling filter.</p>
+<p class="p1">Each task is associated with a record in the task table, and this state record is updated periodically</p>
+<p class="p1">by the worker instance running the task. The progress of the task is monitored by the manager. The dispatch queue feeds into a set of worker instances. A worker periodically updates the task state in the</p>
+<p class="p1">task table and listens for any control signals from the manager.</p>
+<p class="p1">We continue our discussion of biology applications of the <span class="s2">Azure </span>infrastructure applied to a loosely</p>
+<p class="p1">coupled workload for an ensemble-based simulation reported in [<span class="s1">224</span>]. A <span class="s2">role </span>in Azure is an encapsulation</p>
+<p class="p1">of an application; as noted earlier, there are two kinds of role: (i) theWeb roles forWeb applications</p>
+<p class="p1">and front-end code and (ii) the worker roles for background processing. Scientific applications such as</p>
+<p class="p1"><span class="s2">AzureBLAST </span>use worker roles for the compute tasks and to implement their APIs, that provide a run</p>
+<p class="p1">method and an entry point for the application and the state or configuration change notifications. The</p>
+<p class="p1">applications use the Blob Storage (ABS) for large raw data sets, the Table Storage (ATS) for semistructured</p>
+<p class="p1">data, and theQueue Storage (AQS) for message queues. These services provide strong consistency</p>
+<p class="p1">guarantees, but the complexity is moved to the application space.</p>
+<p class="p1">Figure <span class="s1">4.9 </span>illustrates the use of a software system called <span class="s2">BigJob </span>to decouple resource allocation</p>
+<p class="p1">from resource binding for the execution of loosely coupled workloads on an Azure platform [<span class="s1">224</span>]. This</p>
+<p class="p1">software eliminates the need for the application to manage individual VMs. The results of measurements</p>
+<p class="p1">show a noticeable overhead for starting VMs and for launching the execution of an application task</p>
+<p class="p1">on a remote resource. Increasing the computing power of the VM decreases the completion time for</p>
+<p class="p1">long-running tasks.</p>
+</body>
+</html>

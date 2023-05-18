@@ -1,0 +1,32 @@
+,source,edge,target
+0,demand,depends,heavily network application
+3,new Web service,experience,low  request
+6,service,experience,natural FEMA)will disaster
+9,large  number,exhibit,this
+10,external cloud resource management,make,server failures
+11,We,distinguish,two scaling modes
+12,scaling,keeps,application resources
+13,This,done,same CPU time
+15,alternative,involves additional,additional
+16,file,transported to,powerful  server
+18,finally  VM,restated at,new  site
+19,when  load,done by,VMs
+21,Often  this,leads to,communication application
+23,multiple load balancers,need,one
+25,front end that,done by,back end servers
+26,application,designed,scaling
+31,system,allocate additional,additional  workload
+34,horizontal  scaling,belong to,statement
+37,intensive  application,mapped to,powerful network traffic
+39,This,increase,CPU usage
+40,This,decrease,overall  user
+42,same  This,reduce,desirable cloud service provider
+45,relatively  overhead,is,instance
+48,scaling,uses,scaling  decisions
+52,controllers,make,often decision making
+54,Amazon,offer automatic,automatic  scaling
+55,applications user,supports,automatic  migrations
+57,single load balancers,used for horizontal,horizontal  scaling
+58,service,distributes incoming,multiple EC2 instances
+59,service,allows dynamic,high Elastic Section
+60,user,has,such Elastic Beanstalk

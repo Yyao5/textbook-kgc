@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Three classes of fundamental abstractions – interpreters, memory, and communications links – are necessary</p>
+<p class="p1">to describe the operation of a computing system [<span class="s1">312</span>]. The physical realization of each one of</p>
+<p class="p1">these abstractions, such as processors that transform information, primary and secondary memory for</p>
+<p class="p1">storing information, and communication channels that allow different systems to communicate with one</p>
+<p class="p1">another, can vary in terms of bandwidth,<span class="s2">1 </span>latency,<span class="s2">2 </span>reliability, and other physical characteristics. Software</p>
+<p class="p1">systems such as operating systems are responsible for the management of the system resources –</p>
+<p class="p1">the physical implementations of the three abstractions.</p>
+<p class="p1">Resource management, discussed in depth in Chapter 6, grows increasingly complex as the scale</p>
+<p class="p1">of a system as well as the number of users and the diversity of applications using the system increase.</p>
+<p class="p1">Resource management for a community of users with a wide range of applications running under</p>
+<p class="p1">different operating systems is a very difficult problem. Resource management becomes even more</p>
+<p class="p1">complex when resources are oversubscribed and users are uncooperative. In addition to external factors,</p>
+<p class="p1">resource management is affected by internal factors, such as the heterogeneity of the hardware and</p>
+<p class="p1">software systems, the ability to approximate the global state of the system and to redistribute the load,</p>
+<p class="p1">the failure rates of different components, and many other factors.</p>
+<p class="p1">The traditional solution for a data center is to install standard operating systems on individual</p>
+<p class="p1">systems and rely on conventional OS techniques to ensure resource sharing, application protection,</p>
+<p class="p1">and performance isolation. System administration, accounting, security, and resource management are</p>
+<p class="p1">very challenging for the providers of service in this setup; application development and performance</p>
+<p class="p1">optimization are equally challenging for the users.</p>
+<p class="p1">The alternative is <span class="s3">resource virtualization</span>, a technique analyzed in this chapter. Virtualization is a</p>
+<p class="p1">basic tenet of cloud computing – that simplifies some of the resource management tasks. For example,</p>
+<p class="p1">the state of a virtual machine (VM) running under a virtual machine monitor (VMM) can be saved</p>
+<p class="p1">and migrated to another server to balance the load. At the same time, virtualization allows users to</p>
+<p class="p1">operate in environments with which they are familiar rather than forcing them to work in idiosyncratic</p>
+<p class="p1">environments.</p>
+<p class="p1">Resource sharing in a virtual machine environment requires not only ample hardware support and, in</p>
+<p class="p1">particular, powerful processors but also architectural support for multilevel control. Indeed, resources such as CPU cycles, memory, secondary storage, and I/O and communication bandwidth are shared</p>
+<p class="p1">among several virtual machines; for each VM, resources must be shared among multiple instances of</p>
+<p class="p1">an application.</p>
+<p class="p1">We start our discussion with a look at virtualization principles and the motivation for virtualization.</p>
+<p class="p1">Then we discuss the interfaces that define the properties of the system at different levels</p>
+<p class="p1">of abstraction: the application programming interface (API), the application binary interface (ABI),</p>
+<p class="p1">and instruction set architecture (ISA). We discuss alternatives for the implementation of virtualization</p>
+<p class="p1">in Sections <span class="s1">5.3 </span>and <span class="s1">5.4</span>, then analyze their impact on performance and security isolation in</p>
+<p class="p1">Section <span class="s1">5.5</span>.</p>
+<p class="p1">Two distinct approaches for virtualization, the full virtualization and the paravirtualization, are discussed</p>
+<p class="p1">in Section <span class="s1">5.6</span>. Full virtualization is feasible when the hardware abstraction provided by the</p>
+<p class="p1">VMM is an exact replica of the physical hardware. In this case any operating system running on the</p>
+<p class="p1">hardware will run without modifications under the VMM. In contrast, paravirtualization requires some</p>
+<p class="p1">modifications of the guest operating systems because the hardware abstraction provided by the VMM</p>
+<p class="p1">does not support all the functions the hardware does.</p>
+<p class="p1">Traditional processor architectures were conceived for one level of control because they support two</p>
+<p class="p1">execution modes, the kernel and the user mode. In a virtualized environment all resources are under the</p>
+<p class="p1">control of a VMM and a second level of control is exercised by the guest operating system. Although</p>
+<p class="p1">two-level scheduling for sharing CPU cycles can be easily implemented, sharing of resources such as</p>
+<p class="p1">cache, memory, and I/O bandwidth is more intricate. In 2005 and 2006 the <span class="s3">x86 </span>processor architecture</p>
+<p class="p1">was extended to provide hardware support for virtualization, as discussed in Section <span class="s1">5.7</span>.</p>
+<p class="p1">We analyze the <span class="s3">Xen </span>VMM in Section <span class="s1">5.8 </span>and discuss an optimization of its network performance</p>
+<p class="p1">in Section <span class="s1">5.9</span>. High-performance processors (e.g., <span class="s3">Itanium</span>) have multiple functional units but do not</p>
+<p class="p1">provide explicit support for virtualization, as shown in Section <span class="s1">5.10</span>.</p>
+<p class="p1">The system functions critical for the performance of a VM environment are cache and memory</p>
+<p class="p1">management, handling of privileged instructions, and input/output (I/O) handling. Important sources for</p>
+<p class="p1">the performance degradation in a VMenvironment are the cache misses, as we shall see in Section <span class="s1">5.11</span>.</p>
+<p class="p1">We analyze the security advantages of virtualization in Section 9.6 and some of the potential risks in</p>
+<p class="p1">Section <span class="s1">5.12</span>. Finally, we discuss software fault isolation in Section <span class="s1">5.13</span>.</p>
+</body>
+</html>

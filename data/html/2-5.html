@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 7.5px Times}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 10.0px Helvetica}
+    span.s5 {font: 7.5px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">A major concern in any parallel and distributed system is communication in the presence of channel</p>
+<p class="p1">failures. There are multiple modes for a channel to fail, and some lead to messages being lost. In the</p>
+<p class="p1">general case, it is impossible to guarantee that two processes will reach an agreement in case of channel</p>
+<p class="p1">failures (see Figure <span class="s1">2.4</span>.)</p>
+<p class="p2">Given two processes p<span class="s2">1 </span>and p<span class="s2">2 </span>connected by a communication channel that can lose a message with</p>
+<p class="p2">probability  &gt; <span class="s3">0</span>, no protocol capable of guaranteeing that two processes will reach agreement exists,</p>
+<p class="p2">regardless of how small the probability   is.</p>
+<p class="p1">The proof of this statement is by contradiction. Assume that such a protocol exists and it consists of</p>
+<p class="p1"><span class="s4">n </span>messages; recall that a protocol is a finite sequence of messages. Since anymessage might be lost with</p>
+<p class="p1">probability <span class="s4"> </span>, the protocol should be able to function when only <span class="s4">n −</span>1 messages reach their destination,</p>
+<p class="p1">the last one being lost. Induction on the number of messages proves that indeed no such protocol exists;</p>
+<p class="p1">indeed, the same reasoning leads us to conclude that the protocol should function correctly with <span class="s4">(n−</span>2<span class="s4">)</span></p>
+<p class="p1">messages, and so on.</p>
+<p class="p1">In practice, error detection and error correction allow processes to communicate reliably though</p>
+<p class="p1">noisy digital channels. The redundancy of a message is increased by more bits and packaging a message</p>
+<p class="p1">as a code word; the recipient of the message is then able to decide if the sequence of bits received is a</p>
+<p class="p1">valid code word and, if the code satisfies some distance properties, then the recipient of the message is</p>
+<p class="p1">able to extract the original message from a bit string in error.</p>
+<p class="p1">Communication protocols implement not only <span class="s4">error control </span>mechanisms, but also flow control and</p>
+<p class="p1">congestion control. <span class="s4">Flow control </span>provides feedback from the receiver; it forces the sender to transmit</p>
+<p class="p1">only the amount of data the receiver is able to buffer and then process. <span class="s4">Congestion control </span>ensures that</p>
+<p class="p1">the offered load of the network does not exceed the network capacity. In store-and-forward networks,</p>
+<p class="p1">individual routersmay drop packetswhen the network is congested and the sender is forced to retransmit.</p>
+<p class="p1">Based on the estimation of the <span class="s4">round-trip-time </span>(RTT), the sender can detect congestion and reduce the</p>
+<p class="p1">transmission rate.</p>
+<p class="p1">The implementation of thesemechanisms requires the measurement of <span class="s4">time intervals</span>, the time elapsed</p>
+<p class="p1">between two events; we also need a <span class="s4">global concept of time </span>shared by all entities that cooperate with one</p>
+<p class="p1">another. For example, a computer chip has an <span class="s4">internal clock</span>, and a predefined set of actions occurs at</p>
+<p class="p1">each clock tick. Each chip has an <span class="s4">interval timer </span>that helps enhance the system’s fault tolerance; when</p>
+<p class="p1">the effects of an action are not sensed after a predefined interval, the action is repeated.</p>
+<p class="p1">When the entities communicating with each other are networked computers, the precision of the</p>
+<p class="p1">clock synchronization is critical [<span class="s1">205</span>]. The event rates are very high and each system goes through</p>
+<p class="p1">state changes at a very fast pace; modern processors run at a 2–4 GHz clock rate. That explains why we</p>
+<p class="p1">need to measure time very accurately; indeed, we have atomic clocks with an accuracy of about 10<span class="s5">−</span><span class="s2">6</span></p>
+<p class="p1">seconds per year.</p>
+<p class="p1">An isolated system can be characterized by its <span class="s4">history</span>, expressed as a sequence of events, each event</p>
+<p class="p1">corresponding to a change of the state of the system. Local timers provide relative timemeasurements.A</p>
+<p class="p1">more accurate description adds to the system’s history the time of occurrence of each event as measured</p>
+<p class="p1">by the local timer.</p>
+<p class="p1">Messages sent by processes may be lost or distorted during transmission.Without additional restrictions</p>
+<p class="p1">regarding message delays and errors, there are no means to ensure a perfect synchronization of</p>
+<p class="p1">local clocks and there are no obvious methods to ensure a global ordering of events occurring in different</p>
+<p class="p1">processes. Determining the global state of a large-scale distributed system is a very challenging</p>
+<p class="p1">problem.</p>
+<p class="p1">Themechanisms described here are insufficient onceweapproach the problem of cooperating entities.</p>
+<p class="p1">To coordinate their actions, two entities need a common perception of time. Timers are not enough.</p>
+<p class="p1">Clocks provide the only way to measure distributed duration, that is, actions that start in one process</p>
+<p class="p1">and terminate in another. <span class="s4">Global agreement on time </span>is necessary to <span class="s4">trigger actions </span>that should occur</p>
+<p class="p1">concurrently (e.g., in a real-time control system of a power plant, several circuits must be switched</p>
+<p class="p1">on at the same time). Agreement on <span class="s4">the time when events occur </span>is necessary for distributed recording</p>
+<p class="p1">of events – for example, to determine a precedence relation through a temporal ordering of events.</p>
+<p class="p1">To ensure that a system functions correctly, we need to determine that the event causing a change of</p>
+<p class="p1">state occurred before the state change – for instance, the sensor triggering an alarm has to change its</p>
+<p class="p1">value before the emergency procedure to handle the event is activated. Another example of the need for</p>
+<p class="p1">agreement on the time of occurrence of events is in replicated actions. In this case several replicas of a</p>
+<p class="p1">process must log the time of an event in a consistent manner.</p>
+<p class="p1"><span class="s4">Time stamps </span>are often used for event ordering using a global time base constructed on local virtual</p>
+<p class="p1">clocks [<span class="s1">235</span>]. The <span class="s4"> </span>-protocols [<span class="s1">94</span>] achieve total temporal order using a global time base. Assume that</p>
+<p class="p1">local virtual clock readings do not differ by more than <span class="s4">π</span>, called <span class="s4">precision </span>of the global time base. Call</p>
+<p class="p1"><span class="s4">g </span>the <span class="s4">granularity of physical clocks</span>. First, observe that the granularity should not be smaller than the</p>
+<p class="p1">precision; given two events <span class="s4">a </span>and <span class="s4">b </span>occurring in different processes, if <span class="s4">t</span><span class="s5">b </span><span class="s4">− t</span><span class="s5">a </span><span class="s4">  π + g </span>we cannot tell which one occurred first [<span class="s1">361</span>]. Based on these observations, it follows that the order discrimination of</p>
+<p class="p1">clock-driven protocols cannot be better than twice the clock granularity.</p>
+<p class="p1">System specification, design, and analysis require a clear understanding of <span class="s4">cause-effect relationships</span>.</p>
+<p class="p1">During the system specification phase we view the system as a state machine and define the actions that</p>
+<p class="p1">cause transitions from one state to another. During the system analysis phase we need to determine the</p>
+<p class="p1">cause that brought the system to a certain state.</p>
+<p class="p1">The activity of any process ismodeled as a sequence of <span class="s4">events</span>; hence, the binary relation cause-effect</p>
+<p class="p1">relationship should be expressed in terms of events and should express our intuition that <span class="s4">the cause must</span></p>
+<p class="p1"><span class="s4">precede the effects</span>. Again, we need to distinguish between local events and communication events.</p>
+<p class="p1">The latter events affect more than one process and are essential for constructing a global history of an</p>
+<p class="p1">ensemble of processes. Let <span class="s4">h</span><span class="s5">i </span>denote the local history of process <span class="s4">p</span><span class="s5">i </span>and let <span class="s4">e</span><span class="s5">k</span></p>
+<p class="p1"><span class="s5">i </span>denote the <span class="s4">k</span>-th event in</p>
+<p class="p1">this history.</p>
+<p class="p1">The binary cause-effect relationship between two events has the following properties:</p>
+<p class="p1"><span class="s4">1. </span>Causality of local events can be derived from the process history:</p>
+<p class="p1">if <span class="s4">e</span><span class="s5">k</span></p>
+<p class="p3">i <span class="s4">, e</span>l</p>
+<p class="p3">i</p>
+<p class="p2">∈ h<span class="s5">i </span><span class="s3">and </span>k &lt; l <span class="s3">then </span>e<span class="s5">k</span></p>
+<p class="p3">i</p>
+<p class="p2">→ e<span class="s5">l</span></p>
+<p class="p1"><span class="s5">i </span><span class="s4">. </span>(2.20)</p>
+<p class="p1"><span class="s4">2. </span>Causality of communication events:</p>
+<p class="p1">if <span class="s4">e</span><span class="s5">k</span></p>
+<p class="p3">i</p>
+<p class="p2">= send(m) <span class="s3">and </span>e<span class="s5">l</span></p>
+<p class="p3">j</p>
+<p class="p2">= receive(m) <span class="s3">then </span>e<span class="s5">k</span></p>
+<p class="p3">i</p>
+<p class="p2">→ e<span class="s5">l</span></p>
+<p class="p1"><span class="s5">j </span><span class="s4">. </span>(2.21)</p>
+<p class="p1"><span class="s4">3. </span>Transitivity of the causal relationship:</p>
+<p class="p1">if <span class="s4">e</span><span class="s5">k</span></p>
+<p class="p3">i</p>
+<p class="p2">→ e<span class="s5">l</span></p>
+<p class="p1"><span class="s5">j </span>and <span class="s4">e</span><span class="s5">l</span></p>
+<p class="p3">j</p>
+<p class="p2">→ e<span class="s5">nm</span></p>
+<p class="p1">then <span class="s4">e</span><span class="s5">k</span></p>
+<p class="p3">i</p>
+<p class="p2">→ e<span class="s5">nm</span></p>
+<p class="p1"><span class="s4">. </span>(2.22)</p>
+<p class="p1">Two events in the global history may be unrelated. If so, neither one is the cause of the other; such</p>
+<p class="p1">events are said to be <span class="s4">concurrent events</span>.</p>
+</body>
+</html>

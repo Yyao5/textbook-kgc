@@ -1,0 +1,153 @@
+chapter 1 introduction,seg_1
+chapter 2 parallel and distributed systems,seg_23
+chapter 3 cloud infrastructure,seg_57
+chapter 4 cloud computing: applications and paradigms,seg_87
+chapter 5 cloud resource virtualization,seg_115
+chapter 6 cloud resource management and scheduling,seg_149
+chapter 7 networking support,seg_183
+chapter 8 storage systems,seg_215
+chapter 9 cloud security,seg_243
+chapter 10 complex systems and self-organization,seg_271
+chapter 11 cloud application development,seg_293
+literature,seg_323
+glossary,seg_325
+index,seg_327
+1.1 network-centric computing and network-centric content,seg_3
+1.2 peer-to-peer systems,seg_5
+1.3 cloud computing: an old idea whose time has come,seg_7
+1.4 cloud computing delivery models and services,seg_9
+1.5 ethical issues in cloud computing,seg_11
+1.6 cloud vulnerabilities,seg_13
+1.7 major challenges faced by cloud computing,seg_15
+1.8 further reading,seg_17
+1.9 history notes,seg_19
+2.1 parallel computing,seg_25
+2.2 parallel computer architecture,seg_27
+2.3 distributed systems,seg_29
+2.4 global state of a process group,seg_31
+2.5 communication protocols and process coordination,seg_33
+2.6 logical clocks,seg_35
+2.7 message delivery rules; causal delivery,seg_37
+2.8 runs and cuts; causal history,seg_39
+2.9 concurrency,seg_41
+2.10 atomic actions,seg_43
+2.11 consensus protocols,seg_45
+2.12 modeling concurrency with petri nets,seg_47
+2.13 enforced modularity: the client-server paradigm,seg_49
+2.14 further reading,seg_51
+2.15 history notes,seg_53
+3.1 cloud computing at amazon,seg_59
+3.2 cloud computing: the google perspective,seg_61
+3.3 microsoft windows azure and online services,seg_63
+3.4 open-source software platforms for private clouds,seg_65
+3.5 cloud storage diversity and vendor lock-in,seg_67
+3.6 cloud computing interoperability: the intercloud,seg_69
+3.7 energy use and ecological impact of large-scale data centers,seg_71
+3.8 service- and compliance-level agreements,seg_73
+3.9 responsibility sharing between user and cloud service provider,seg_75
+3.10 user experience,seg_77
+3.11 software licensing,seg_79
+3.12 further reading,seg_81
+3.13 history notes,seg_83
+4.1 challenges for cloud computing,seg_89
+4.2 existing cloud applications and new application opportunities,seg_91
+4.3 architectural styles for cloud applications,seg_93
+4.4 workflows: coordination of multiple activities,seg_95
+4.5 coordination based on a state machine model: the zookeeper,seg_97
+4.6 the mapreduce programming model,seg_99
+4.7 a case study: the greptheweb application,seg_101
+4.8 clouds for science and engineering,seg_103
+4.9 high-performance computing on a cloud,seg_105
+4.10 cloud computing for biology research,seg_107
+4.11 social computing, digital content, and cloud computing,seg_109
+4.12 further reading,seg_111
+5.1 virtualization,seg_117
+5.2 layering and virtualization,seg_119
+5.3 virtual machine monitors,seg_121
+5.4 virtual machines,seg_123
+5.5 performance and security isolation,seg_125
+5.6 full virtualization and paravirtualization,seg_127
+5.7 hardware support for virtualization,seg_129
+5.8 case study: xen, a vmm based on paravirtualization,seg_131
+5.9 optimization of network virtualization in xen 2.0,seg_133
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,seg_135
+5.11 a performance comparison of virtual machines,seg_137
+5.12 the darker side of virtualization,seg_139
+5.13 software fault isolation,seg_141
+5.14 further reading,seg_143
+5.15 history notes,seg_145
+6.1 policies and mechanisms for resource management,seg_151
+6.2 applications of control theory to task scheduling on a cloud,seg_153
+6.3 stability of a two-level resource allocation architecture,seg_155
+6.4 feedback control based on dynamic thresholds,seg_157
+6.5 coordination of specialized autonomic performance managers,seg_159
+6.6 a utility-based model for cloud-based web services,seg_161
+6.7 resource bundling: combinatorial auctions for cloud resources,seg_163
+6.8 scheduling algorithms for computing clouds,seg_165
+6.9 fair queuing,seg_167
+6.10 start-time fair queuing,seg_169
+6.11 borrowed virtual time,seg_171
+6.12 cloud scheduling subject to deadlines,seg_173
+6.13 scheduling mapreduce applications subject to deadlines,seg_175
+6.14 resource management and dynamic application scaling,seg_177
+6.15 further reading,seg_179
+7.1 packet-switched networks,seg_185
+7.2 the internet,seg_187
+7.3 internet migration to ipv6,seg_189
+7.4 the transformation of the internet,seg_191
+7.5 web access and the tcp congestion control window,seg_193
+7.6 network resource management,seg_195
+7.7 interconnection networks for computer clouds,seg_197
+7.8 storage area networks,seg_199
+7.9 content-delivery networks,seg_201
+7.10 overlay networks and small-world networks,seg_203
+7.11 scale-free networks,seg_205
+7.12 epidemic algorithms,seg_207
+7.13 further reading,seg_209
+7.14 history notes,seg_211
+8.1 the evolution of storage technology,seg_217
+8.2 storage models, file systems, and databases,seg_219
+8.3 distributed file systems: the precursors,seg_221
+8.4 general parallel file system,seg_223
+8.5 google file system,seg_225
+8.6 apache hadoop,seg_227
+8.7 locks and chubby: a locking service,seg_229
+8.8 transaction processing and nosql databases,seg_231
+8.9 bigtable,seg_233
+8.10 megastore,seg_235
+8.11 history notes,seg_237
+8.12 further reading,seg_239
+9.1 cloud security risks,seg_245
+9.2 security: the top concern for cloud users,seg_247
+9.3 privacy and privacy impact assessment,seg_249
+9.4 trust,seg_251
+9.5 operating system security,seg_253
+9.6 virtual machine security,seg_255
+9.7 security of virtualization,seg_257
+9.8 security risks posed by shared images,seg_259
+9.9 security risks posed by a management os,seg_261
+9.10 xoar: breaking the monolithic design of the tcb,seg_263
+9.11 a trusted virtual machine monitor,seg_265
+9.12 further reading,seg_267
+10.1 complex systems,seg_273
+10.2 abstraction and physical reality,seg_275
+10.3 quantifying complexity,seg_277
+10.4 emergence and self-organization,seg_279
+10.5 composability bounds and scalability,seg_281
+10.6 modularity, layering, and hierarchy,seg_283
+10.7 more on the complexity of computing and communication systems,seg_285
+10.8 systems of systems: challenges and solutions,seg_287
+10.9 further reading,seg_289
+11.1 amazon web services: ec2 instances,seg_295
+11.2 connecting clients to cloud instances through firewalls,seg_297
+11.3 security rules for application and transport layer protocols in ec2,seg_299
+11.4 how to launch an ec2 linux instance and connect to it,seg_301
+11.5 how to use s3 in java,seg_303
+11.6 how to manage sqs services in c#,seg_305
+11.7 how to install the simple notification service on ubuntu 10.04,seg_307
+11.8 how to create an ec2 placement group and use mpi,seg_309
+11.9 how to install hadoop on eclipse on a windows system,seg_311
+11.10 cloud-based simulation of a distributed trust algorithm,seg_313
+11.11 a trust management service,seg_315
+11.12 a cloud service for adaptive data streaming,seg_317
+11.13 cloud-based optimal fpga synthesis,seg_319

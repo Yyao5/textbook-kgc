@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 10.0px Courier; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">In this section we discuss another class of application that could benefit from cloud computing. In</p>
+<p class="p1">Chapter 4 we discussed cloud applications in computational science and engineering. The benchmarks</p>
+<p class="p1">presented in Section 4.9 compared the performance of several codes running on a cloud with runs</p>
+<p class="p1">on supercomputers; as expected, the results showed that a cloud is not an optimal environment for</p>
+<p class="p1">applications exhibiting fine- or medium-grained parallelism. Indeed, the communication latency is</p>
+<p class="p1">considerably larger on a cloud than on a supercomputer with a more expensive, custom interconnect.</p>
+<p class="p1">This means that we have to identify cloud applications that do not involve extensive communication or</p>
+<p class="p1">applications exhibiting coarse-grained parallelism.</p>
+<p class="p1">A cloud is an ideal running environment for scientific applications that involve model development.</p>
+<p class="p1">In this case, multiple cloud instances could concurrently run slightly different models of the system.</p>
+<p class="p1">When the model is described by a set of parameters, the application can be based on the SPMD paradigm</p>
+<p class="p1">combined with an analysis phase when the results from the multiple instances are ranked based on a</p>
+<p class="p1">well-defined metric. In this case there is no communication during the first phase of the application,</p>
+<p class="p1">when partial results are produced and then written to the storage server. Then individual instances</p>
+<p class="p1">signal the completion and a new instance to carry out the analysis and display the results is started. A</p>
+<p class="p1">similar strategy can be used by engineering applications of mechanical, civil, electrical, electronic, or</p>
+<p class="p1">any other system design area. In this case, the multiple instances run concurrent design for different</p>
+<p class="p1">sets of parameters of the system.</p>
+<p class="p1">A cloud application for optimal design of Field-Programmable Gate Arrays (FPGAs) is discussed</p>
+<p class="p1">next. As the name suggests, an FPGA is an integrated circuit designed to be configured, adapted, or</p>
+<p class="p1">programmed in the field to perform a well-defined function [<span class="s1">311</span>]. Such a circuit consists of <span class="s2">logic blocks</span></p>
+<p class="p1">and <span class="s2">interconnects </span>that can be “programmed” to carry out logical and/or combinatorial functions (see</p>
+<p class="p1">Figure <span class="s1">11.17</span>).</p>
+<p class="p1">The first commercially viable FPGA, the XC2064, was produced in 1985 by Xilinx. Today FPGAs are</p>
+<p class="p1">used in many areas, including digital signal processing, CRNs, aerospace, medical imaging, computer</p>
+<p class="p1">vision, speech recognition, cryptography, and computer hardware emulation. FPGAs are less energy</p>
+<p class="p1">efficient and slower than application-specific integrated circuits (ASICs). The widespread use of FPGAs</p>
+<p class="p1">is due to their flexibility and the ability to reprogram them.</p>
+<p class="p1">Hardware description languages (HDLs) such as VHDL and Verilog are used to program FPGAs.</p>
+<p class="p1">HDLs are used to specify a register-transfer level (RTL) description of the circuit. Multiple stages are</p>
+<p class="p1">used to synthesize FPGAs.</p>
+<p class="p1">A cloud-based system was designed to optimize the routing and placement of components. The basic</p>
+<p class="p1">structure of the tool is shown in Figure <span class="s1">11.18</span>. The system uses the PlanAhead tool from Xilinx (see</p>
+<p class="p1"><span class="s3">www.xilinx.com</span>) to place system components and route chips on the FPGA logical fabric. The</p>
+<p class="p1">computations involved are fairly complex and take a considerable amount of time; for example, a fairly</p>
+<p class="p1">simple system consisting of a software core processor (Microblaze), a block random access memory</p>
+<p class="p1">(BRAM), and a couple of peripherals can take up to 40 minutes to synthesize on a powerful workstation.</p>
+<p class="p1">Running <span class="s2">N </span>design options in parallel on a cloud speeds up the optimization process by a factor close toN.</p>
+</body>
+</html>

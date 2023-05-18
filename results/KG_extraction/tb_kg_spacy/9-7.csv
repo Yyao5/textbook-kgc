@@ -1,0 +1,60 @@
+,source,edge,target
+0,5.1  we,praised,virtualization
+1,We,discussed,virtual  machines
+3,we,take,closer  virtualization
+4,complete  state,captured,virtual operating machine
+5,state,saved in,file
+9,user,selects,then  image
+12,system,replicated,hot system failure
+14,when resource management load,moved to,high water mark
+16,when  load,exceeds,high  water
+17,power load,moved to other,other  servers
+19,then  servers,turned,standby  mode
+20,virtual  clone,look for,known system intrusion
+29,multitude,allows,physical OS systems
+33,serious  implications,argued,system security
+34,serious  implications,can,system security
+35,297  who,revisited in,similar  conclusions
+37,diminished track systems number,leads to,physical  cost
+38,number,is,physical  organization
+41,Traditionally  organizations,install,same system software
+42,such  homogeneity,can,virtual  environment
+43,heterogeneity,tax,support team
+44,one,related to,critical software life cycle
+45,straight patch management,is,forward  progress
+46,different  patches,created,instances
+47,then  one,can,instances
+49,serious  we,has,serious  security
+51,us,concentrate,now  our
+53,infection,expect,virtual computer environment
+55,later  measures,wake,other  systems
+56,infection,repeat,scenario
+58,infected  systems,quarantined,nonvirtual  environments
+61,next  episode,behave,infection
+64,some,brought,undesirable  behavior
+65,state,reached by,latest system systems
+67,virtual  environment,reach,steady  state
+68,when  virus,compromised,removable  media
+69,infected  laptop,connected to,firewall
+71,virtual  system,reach,steady  state
+72,This,opens wide,new  attacker
+73,situations,discussed in,132
+74,one time passwords,transmitted in,clear
+76,system,runs,S KEY password
+77,attacker,replay,sniffed  passwords
+79,situation,related to,cryptographic  protocols
+80,random  number,occurs,back  which
+82,use,affected by,random rollback scenario
+83,door,left open,TCP hijacking
+84,effect,affects,virtual  trust
+86,system,has,unique  physical
+87,infected  system,guarantees,then network access
+89,when  VMs,breaks,virtual  systems
+91,random MAC address,assigned to,new  VM
+93,effect,discussed at,length
+96,sensitive  data,undermines,minimum
+97,sensitive  data,reduced,system
+98,First  owner,has,very  limited
+99,it,spread across many,many  servers
+101,back  VMM,records,VM
+102,sensitive  owner,allows,sensitive  data

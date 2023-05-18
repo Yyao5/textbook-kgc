@@ -1,0 +1,19 @@
+,source,edge,target
+1,scalable Fabric which,has,Controller interconnects servers
+3,Network,maintains,cache computations
+5,subsystem,supports,users Windows Azure
+6,interface,built on,Windows REST
+7,platform,includes,five  services
+8,library,provided for,also Visual Studio
+11,application,runs multiple,multiple  role
+12,based VM role that,distinguish,2008 R2 image
+13,that,run,2008  R2
+16,controller,chooses,physical Windows Azure application
+19,many configuration VMs,uses,configuration file
+21,Blobs,used as scalable,scalable  storage
+22,Ablob,contains,binary
+23,container,consists of,one  blobs
+24,Blobs,have,associated  metadata
+25,persistent  instance,allow,persistent  storage
+27,Queues,enable,asynchronously Worker role instances
+29,platform,provide,based job scheduling

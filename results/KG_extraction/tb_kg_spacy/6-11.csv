@@ -1,0 +1,37 @@
+,source,edge,target
+1,BVT algorithm,supports,best time effort
+2,Thread  i,has,virtual  time
+3,thread,maintains,virtual  thread
+4,threads,dispatched in,threads
+5,thread,allows,future CPU allocation
+10,real  thread,measures,other  mcu
+12,thread,charged,integer  mcu
+22,longer  policy,prevents,longer  time
+25,threads,allowed,virtual  time
+28,thread,consumes,larger  thread
+29,τi,maintains,time ki weight run
+31,virtual  time,switch from,current running thread
+33,example,illustrates,best effort applications
+34,thread,has,twice  second
+35,We,consider,9 time mcu
+36,threads,allowed,6  mcu
+38,Threads,activated at,times
+39,switches,occur at real,real  times
+40,time,expressed in,mcu
+42,which,occurs,2  mcu
+44,Table,shows,two  context
+46,equal  thread,incremented by,switch time allocation
+49,virtual  first,compares,virtual  time
+53,running time thread,appears as,diagonal  line
+55,period,displayed as,horizontal  line
+56,two  threads,see,real  time
+57,two  threads,allocated equal,virtual  time
+59,Next  we,consider,previous  example
+61,c,wakes,periodically  times
+62,best b. Context switches,summarizes,real  =
+66,thread which,triggered by,running  thread
+67,warp,gives,Wc thread
+70,scheduler,have,b
+71,scheduler,chooses,b
+73,Figure,shows,three  threads
+75,c.,preempts,current running thread

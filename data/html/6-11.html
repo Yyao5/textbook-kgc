@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 7.5px Helvetica}
+    span.s5 {font: 7.5px Times}
+  </style>
+</head>
+<body>
+<p class="p1">The objective of the <span class="s1">borrowed virtual time (BVT) </span>algorithm is to support low-latency dispatching of</p>
+<p class="p1">real-time applications as well as a weighted sharing of the CPU among several classes of applications</p>
+<p class="p1">[<span class="s2">107</span>]. Like SFQ, the BVT algorithm supports scheduling of a mix of applications, some with hard,</p>
+<p class="p1">some with soft real-time constraints, and applications demanding only a best effort.</p>
+<p class="p2"><span class="s3">Thread </span>i <span class="s3">has an </span>effective virtual time<span class="s3">, </span>E<span class="s4">i</span><span class="s3">, an </span>actual virtual time<span class="s3">, </span>A<span class="s4">i </span><span class="s3">, and a </span>virtual time warp<span class="s3">, </span>W<span class="s4">i </span><span class="s3">.</span></p>
+<p class="p1">The scheduler thread maintains its own <span class="s1">scheduler virtual time (SVT)</span>, defined as the minimum actual</p>
+<p class="p1">virtual time <span class="s1">A</span><span class="s4">j </span>of any thread. The threads are dispatched in the order of their effective virtual time, E<span class="s5">i</span>,</p>
+<p class="p1">a policy called the earliest virtual time (EVT).</p>
+<p class="p1">The virtual time warp allows a thread to acquire an earlier effective virtual time – in other words, to</p>
+<p class="p1">borrow virtual time from its future CPU allocation. The virtual warp time is enabled when the variable</p>
+<p class="p1"><span class="s1">warpBack </span>is set. In this case a latency-sensitive thread gains dispatching preference as</p>
+<p class="p2">E<span class="s4">i </span>←</p>
+<p class="p2"> </p>
+<p class="p2">A<span class="s4">i </span><span class="s3">if </span>warpBack = OFF</p>
+<p class="p2">A<span class="s4">i </span>− W<span class="s4">i </span><span class="s3">if </span>warpBack = ON.</p>
+<p class="p1">(6.59)</p>
+<p class="p1">The algorithm measures the time in <span class="s1">minimum charging units </span>(<span class="s1">mcu</span>) and uses a time quantum called</p>
+<p class="p1"><span class="s1">context switch allowance (C)</span>, which measures the real time a thread is allowed to run when competing</p>
+<p class="p1">with other threads, measured in multiples of <span class="s1">mcu</span>. Typical values for the two quantities are</p>
+<p class="p1"><span class="s1">mcu = </span>100 <span class="s1">μsec </span>and <span class="s1">C = </span>100 <span class="s1">msec</span>. A thread is charged an integer number of <span class="s1">mcu</span>.</p>
+<p class="p1">Context switches are triggered by traditional events, the running thread is blocked waiting for an</p>
+<p class="p1">event to occur, the time quantum expires, and an interrupt occurs. Context switching also occurs when a</p>
+<p class="p1">thread becomes runnable after sleeping. When the thread <span class="s1">τ</span><span class="s4">i </span>becomes runnable after sleeping, its actual</p>
+<p class="p1">virtual time is updated as follows:</p>
+<p class="p2">A<span class="s4">i </span>← <span class="s3">max</span>[A<span class="s4">i </span>, SV T]. <span class="s3">(6.60)</span></p>
+<p class="p1">This policy prevents a thread sleeping for a long time to claim control of the CPU for a longer period</p>
+<p class="p1">of time than it deserves.</p>
+<p class="p1">If there are no interrupts, threads are allowed to run for the same amount of virtual time. Individual</p>
+<p class="p1">threads have weights; a thread with a larger weight consumes its virtual time more slowly. In practice,</p>
+<p class="p1">each thread <span class="s1">τ</span><span class="s4">i </span>maintains a constant <span class="s1">k</span><span class="s4">i </span>and uses its weight <span class="s1">w</span><span class="s4">i </span>to compute the amount <span class="s1">  </span>used to advance</p>
+<p class="p1">its actual virtual time upon completion of a run:</p>
+<p class="p2">A<span class="s4">i </span>← A<span class="s4">i </span>+  . <span class="s3">(6.61)</span></p>
+<p class="p1">Given two threads <span class="s1">a </span>and <span class="s1">b</span>,</p>
+<p class="p2">  = k<span class="s4">a</span></p>
+<p class="p3"><span class="s1">w</span>a</p>
+<p class="p2">= k<span class="s4">b</span></p>
+<p class="p3"><span class="s1">w</span>b</p>
+<p class="p1"><span class="s1">. </span>(6.62)</p>
+<p class="p1">The EVT policy requires that every time the actual virtual time is updated, a context switch from the</p>
+<p class="p1">current running thread <span class="s1">τ</span><span class="s4">i </span>to a thread <span class="s1">τ </span><span class="s4">j </span>occurs if</p>
+<p class="p2">A<span class="s4">j </span>  A<span class="s4">i </span>− C</p>
+<p class="p3"><span class="s1">w</span>i</p>
+<p class="p1"><span class="s1">. </span>(6.63)</p>
+<p class="p1">Example 1. The following example illustrates the application of the BVT algorithm for scheduling</p>
+<p class="p1">two threads <span class="s1">a </span>and <span class="s1">b </span>of best-effort applications. The first thread has a weight twice that of the second,</p>
+<p class="p1"><span class="s1">w</span><span class="s4">a </span><span class="s1">= </span>2<span class="s1">w</span><span class="s4">b</span>; when <span class="s1">k</span><span class="s4">a </span><span class="s1">= </span>180 and <span class="s1">k</span><span class="s4">b </span><span class="s1">= </span>90, then <span class="s1">  = </span>90.</p>
+<p class="p1">We consider periods of real-time allocation of <span class="s1">C = </span>9 <span class="s1">mcu</span>. The two threads <span class="s1">a </span>and <span class="s1">b </span>are allowed to</p>
+<p class="p1">run for 2<span class="s1">C/</span>3 <span class="s1">= </span>6 <span class="s1">mcu </span>and <span class="s1">C/</span>3 <span class="s1">= </span>3 <span class="s1">mcu</span>, respectively.</p>
+<p class="p1">Threads <span class="s1">a </span>and <span class="s1">b </span>are activated at times</p>
+<p class="p2">a : <span class="s3">0</span>, <span class="s3">5</span>, <span class="s3">5 </span>+ <span class="s3">9 </span>= <span class="s3">14</span>, <span class="s3">14 </span>+ <span class="s3">9 </span>= <span class="s3">23</span>, <span class="s3">23 </span>+ <span class="s3">9 </span>= <span class="s3">32</span>, <span class="s3">32 </span>+ <span class="s3">9 </span>= <span class="s3">41</span>, . . .</p>
+<p class="p2">b : <span class="s3">2</span>, <span class="s3">2 </span>+ <span class="s3">9 </span>= <span class="s3">11</span>, <span class="s3">11 </span>+ <span class="s3">9 </span>= <span class="s3">20</span>, <span class="s3">20 </span>+ <span class="s3">9 </span>= <span class="s3">29</span>, <span class="s3">29 </span>+ <span class="s3">9 </span>= <span class="s3">38</span>, . . .</p>
+<p class="p1">(6.64)</p>
+<p class="p1">The context switches occur at real times:</p>
+<p class="p2"><span class="s3">2</span>, <span class="s3">5</span>, <span class="s3">11</span>, <span class="s3">14</span>, <span class="s3">20</span>, <span class="s3">23</span>, <span class="s3">29</span>, <span class="s3">32</span>, <span class="s3">38</span>, <span class="s3">41</span>, . . . <span class="s3">(6.65)</span></p>
+<p class="p1">The time is expressed in units of <span class="s1">mcu</span>. The initial run is a shorter one, consists of only 3 <span class="s1">mcu</span>; a context</p>
+<p class="p1">switch occurs when <span class="s1">a</span>, which runs first, exceeds <span class="s1">b </span>by 2 <span class="s1">mcu</span>.</p>
+<p class="p1">Table <span class="s2">6.5 </span>shows the effective virtual time of the two threads at the time of each context switch. At</p>
+<p class="p1">that moment, its actual virtual time is incremented by an amount equal to <span class="s1">  </span>if the thread was allowed to run for its time allocation. The scheduler compares the effective virtual time of the threads and first</p>
+<p class="p1">runs the one with the minimum effective virtual time.</p>
+<p class="p1">Figure <span class="s2">6.11 </span>displays the effective virtual time and the real time of threads <span class="s1">a </span>and <span class="s1">b</span>. When a thread</p>
+<p class="p1">is running, its effective virtual time increases as the real time increases; a running thread appears as a</p>
+<p class="p1">diagonal line. When a thread is runnable but not running, its effective virtual time is constant. A runnable</p>
+<p class="p1">period is displayed as a horizontal line.We see that the two threads are allocated equal amounts of virtual</p>
+<p class="p1">time, but thread <span class="s1">a</span>, with a larger weight, consumes its real time more slowly.</p>
+<p class="p1">Example 2. Next we consider the previous example, but this time there is an additional thread, <span class="s1">c</span>, with</p>
+<p class="p1">real-time constraints. Thread <span class="s1">c </span>wakes up at time <span class="s1">t = </span>9 and then periodically at times <span class="s1">t = </span>18<span class="s1">, </span>27<span class="s1">, </span>36<span class="s1">, . . .</span></p>
+<p class="p1">for 3 units of time.</p>
+<p class="p1">Table <span class="s2">6.6 </span>summarizes the evolution of the system when the real-time application thread <span class="s1">c </span>competes</p>
+<p class="p1">with the two best-effort threads <span class="s1">a </span>and <span class="s1">b</span>. Context switches occur now at real times</p>
+<p class="p2">t = <span class="s3">2</span>, <span class="s3">5</span>, <span class="s3">9</span>, <span class="s3">12</span>, <span class="s3">14</span>, <span class="s3">18</span>, <span class="s3">21</span>, <span class="s3">23</span>, <span class="s3">27</span>, <span class="s3">30</span>, <span class="s3">32</span>, <span class="s3">36</span>, <span class="s3">39</span>, <span class="s3">41</span>, . . . <span class="s3">(6.66)</span></p>
+<p class="p1">The context switches at times</p>
+<p class="p1"><span class="s1">t = </span>9<span class="s1">, </span>18<span class="s1">, </span>27<span class="s1">, </span>36<span class="s1">, . . . </span>(6.67) are triggered by the waking up of thread <span class="s1">c</span>, which preempts the currently running thread. At <span class="s1">t = </span>9 the</p>
+<p class="p1">time warp <span class="s1">W</span><span class="s4">c </span><span class="s1">= −</span>60 gives priority to thread <span class="s1">c</span>. Indeed,</p>
+<p class="p2">E<span class="s4">c</span>(<span class="s3">9</span>) = A<span class="s4">c</span>(<span class="s3">9</span>) − W<span class="s4">c </span>= <span class="s3">0 </span>− <span class="s3">60 </span>= −<span class="s3">60 (6.68)</span></p>
+<p class="p1">compared with <span class="s1">E</span><span class="s4">a</span><span class="s1">(</span>9<span class="s1">) = </span>90 and <span class="s1">E</span><span class="s4">b</span><span class="s1">(</span>9<span class="s1">) = </span>90. The same conditions occur every time the real-time thread</p>
+<p class="p1"><span class="s1">c </span>wakes up. The best-effort application threads have the same effective virtual time when the real-time</p>
+<p class="p1">application thread finishes and the scheduler chooses <span class="s1">b </span>to be dispatched first. Note that the ratio of real</p>
+<p class="p1">times used by <span class="s1">a </span>and <span class="s1">b </span>is the same, as <span class="s1">w</span><span class="s4">a </span><span class="s1">= </span>2<span class="s1">w</span><span class="s4">b</span>.</p>
+<p class="p1">Figure <span class="s2">6.12 </span>shows the effective virtual times for the three threads <span class="s1">a, b</span>, and <span class="s1">c</span>. Every time thread <span class="s1">c</span></p>
+<p class="p1">wakes up, it preempts the current running thread and is immediately scheduled to run.</p>
+</body>
+</html>

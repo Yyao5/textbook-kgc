@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 7.5px Times; color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">The Internet is a collection of separate and distinct networks, each one operating under a common</p>
+<p class="p1">framework consisting of globally unique IP addressing and using IP routing and global Border Gateway</p>
+<p class="p1">Routing (BGP) protocols.<span class="s1">1 </span>An<span class="s2">IP address </span>is a string of integers uniquely identifying every host connected</p>
+<p class="p1">to the Internet; the IP address allows the network to identify first the destination network and then the</p>
+<p class="p1">host in that network to which a datagram should be delivered.</p>
+<p class="p1">In addition to the IP or logical address, each network interface, the hardware connecting a host with a</p>
+<p class="p1">network, has a unique <span class="s2">physical </span>or <span class="s2">MAC address</span>. Although theMAC address is permanently assigned to</p>
+<p class="p1">a network interface of the device, the IP address may be dynamically assigned and changes depending</p>
+<p class="p1">on the network. For example, a laptop will get a different IP addresswhen it is connected to different networks</p>
+<p class="p1">and a phone will get different IP addresses in differentWi-Fi networks. A host may have multiple</p>
+<p class="p1">network interfaces and, consequently, multiple IP addresses when it is connected to multiple networks.</p>
+<p class="p1">The Internet is based on a hourglass network architecture and the TCP/IP protocol family (see</p>
+<p class="p1">Figure <span class="s3">7.2</span>). The hourglass model captures the fact that all packets transported through the Internet use</p>
+<p class="p1">Internet Protocol (IP) to reach the destination. IP ensures datagrams’ delivery from the source host to</p>
+<p class="p1">the destination host based on their IP addresses. A host could be a supercomputer, a workstation, a</p>
+<p class="p1">laptop, a mobile phone, a network printer, or any other physical device with a network interface.</p>
+<p class="p1">IP only provides <span class="s2">best-effort delivery </span>and its service is characterized as unreliable. Best-effort delivery</p>
+<p class="p1">means that any router on the path from the source to the destination may drop a packet when it is</p>
+<p class="p1">overloaded.</p>
+<p class="p1">The Internet uses two transport protocols: a connectionless datagram protocol, User Datagram</p>
+<p class="p1">Protocol (UDP), and a connection-oriented protocol, Transport Control Protocol (TCP). The header</p>
+<p class="p1">of a datagram contains information sufficient for routing through the network from the source to the</p>
+<p class="p1">destination.</p>
+<p class="p1">To ensure efficient communication, the UDP transport protocol assumes that error checking and</p>
+<p class="p1">error correction are either not necessary or performed by the application. Datagrams may arrive out of</p>
+<p class="p1">order or duplicated, or may not arrive at all. Applications using UDP include the Domain Name System</p>
+<p class="p1">(DNS), Voice over IP (VoIP), Trivial File Transfer Protocol (TFTP), streaming media applications such</p>
+<p class="p1">as Internet Protocol television (IPTV), and online games.</p>
+<p class="p1">Once a packet reaches the destination host, it is delivered to the proper transport protocol daemon,</p>
+<p class="p1">which, in turn, delivers it to the application that listens to an abstraction of the endpoint of a logical</p>
+<p class="p1">communication channel called a <span class="s2">port </span>(see Figure <span class="s3">7.3</span>). The processes or threads running an application use an abstraction called <span class="s2">socket </span>to send and receive data through the network. A socket manages a queue</p>
+<p class="p1">of incoming messages and one of outgoing messages.</p>
+<p class="p1">TCP provides reliable, ordered delivery of a stream of bytes from an application on one system to</p>
+<p class="p1">its peer on the destination system. An application sends/receives data units called <span class="s2">segments </span>to/from</p>
+<p class="p1">a specific port, an abstraction of and endpoint of a logical communication link. TCP is the transport</p>
+<p class="p1">protocol used by the World Wide Web, email, file transfer, remote administration, and many other</p>
+<p class="p1">important applications.</p>
+<p class="p1">TCP uses an end-to-end <span class="s2">flow control mechanism </span>based on a sliding window, a range of packets the</p>
+<p class="p1">sender can send before receiving an acknowledgment from the receiver. This mechanism allows the</p>
+<p class="p1">receiver to control the rate of segments sent and process them reliably.</p>
+<p class="p1">A network has a finite capacity to transport data, and when its load is approaching this capacity, we</p>
+<p class="p1">witness undesirable effects: The routers start dropping packets, and the delays and the jitter increase. An</p>
+<p class="p1">obvious analogy is a highway on which the time to travel from point A to point B increases dramatically</p>
+<p class="p1">when the highway becomes congested; a solution for traffic management is to introduce traffic lights</p>
+<p class="p1">limiting the rate at which new traffic is allowed to enter the highway, and this is precisely what the TCP</p>
+<p class="p1">emulates.</p>
+<p class="p1">TCP uses several mechanisms for <span class="s2">congestion control </span>(see Section <span class="s3">7.5</span>). These mechanisms control</p>
+<p class="p1">the rate of data entering the network, keeping the data flow below a rate that would lead to a network collapse and enforce a max/min fair allocation between flows. Section acknowledgment coupled to</p>
+<p class="p1">timers is used to infer network conditions between the sender and receiver.</p>
+<p class="p1">TCP congestion control policies are based on four algorithms: <span class="s2">slow-start, congestion avoidance, fast</span></p>
+<p class="p1"><span class="s2">retransmit</span>, and <span class="s2">fast recovery</span>. These algorithms use local information, such as the retransmission timeout</p>
+<p class="p1">(RTO) based on the estimated round-trip time (RTT) between the sender and receiver as well as the</p>
+<p class="p1">variance in this round-trip time to implement the congestion control policies. UDP is a connectionless</p>
+<p class="p1">protocol, so there are no means to control the UDP traffic.</p>
+<p class="p1">The review of basic networking concepts in this section shows why process-to-process communication</p>
+<p class="p1">incurs a significant overhead. Though raw speed of fiber optic channels can reach Tbps,<span class="s1">2 </span>the actual</p>
+<p class="p1">transmission rate for end-to-end communication over a wide area network can only be of the order of</p>
+<p class="p1">tens of Mbps and the latency is of the order of milliseconds. This has important consequences for the</p>
+<p class="p1">development of computer clouds.</p>
+</body>
+</html>

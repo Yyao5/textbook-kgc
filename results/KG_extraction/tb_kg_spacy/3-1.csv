@@ -1,0 +1,138 @@
+,source,edge,target
+0,computing that,introduced,last  decade
+1,that,changed,face
+2,First  platform,installed,powerful gourmet foods
+5,infrastructure,discovered,well enterprise masses
+8,Amazon,introduced,IaaS delivery model
+9,high speed that,offers,resources
+10,businesses,reported,international computing paradigm
+11,businesses,used,200  AWS
+12,number,take,well AWS infrastructure
+13,up,spend more,own  infrastructure
+15,own computing Amazon,employs,computing
+18,Amazon,reshapes,computing
+19,first cloud Amazon,announced,beta Elastic Computing August
+20,Figure,shows,late Management 2011
+21,instance,created,defined Amazon Machine image
+22,image,includes,run time user
+23,images,create,such  hostname
+24,i,Launch,existingAMI
+27,iv,add,image
+28,EC2,based on,Xen virtualization Section
+29,instance,specifies,available  hour
+30,user,interact with,running console output
+33,user,has,elastic computing EC2
+34,instances,placed in multiple,different  regions
+35,EC2,allows,virtual user facility
+36,EC2,distributes,balancing application facility
+37,EC2,associates,elastic  IP
+38,user,allows,public software support team
+41,System,supports,minimal  functions
+43,S3,allows,five  terabytes
+45,object,stored in,assigned  key
+46,bucket,stored in,user
+47,S3,maintains,defined access control object
+50,rights,granted,other  users
+51,S3,supports,one  another
+55,MD52,computes,field
+56,MD52,written,object
+60,then  object,corrupted during,transmission
+62,SLA,guarantees,reliability
+64,interface,provided,high scale distribution
+65,Store,provides persistent,persistent Amazon EC2 instances
+67,size,ranges from,one storage terabyte
+68,volumes,grouped,automatically availability zone
+70,instance,mount multiple,multiple  volumes
+71,volume,shared among multiple,multiple  instances
+72,EBS,supports,then  instance
+76,DB,supports,relational  databases
+78,DB,creates multiple,distributed data item
+80,same  DB,manages,hardware data items
+81,automated  SQS,allows multiple,multiple SQS messages
+83,computer,add,installed  software
+85,Applications,run,same  technologies
+92,Developers,access,based  SOAP
+93,anonymously queue sharing,shared with other,also IP day
+95,example,presented in,message Section
+97,user,monitor,then  metrics
+100,user,start,type
+103,service,used,other RDS DB applications
+105,Cloud,provides,existing IT organization
+106,infrastructure,connected via,isolated AWS compute resources
+107,existing management capabilities,allows,seamlessly intrusion detection cloud
+109,Scaling,exploits,automatic EC2 instances
+111,size,of,group
+113,Typically  maximum,specified,regular  group
+114,group,consists of,static launch configurations
+116,new  instances,started,launch configuration
+119,instances,terminated,older launch configurations
+120,function,carries,Auto Scaling health
+121,user,specify,health
+122,then Auto Scaling,terminate,new  one
+123,Triggers,use,CloudWatch
+125,CPU  utilization,detect,new  instances
+126,CPU  utilization,goes above,90  %
+132,which,supports,workflow
+134,that,handles,automatically application monitoring 356
+135,service,scales,default Auto Scaling settings
+137,Java developer,create,such Web Application type
+139,short Management application,will,short Management time
+141,CloudFormation,allows,application
+142,text file,creates,configuration resources
+144,template,parameterized,e.g.  instances
+147,Amazon that,allows,AWS
+148,AMI Key SSH,running,Type
+149,provider,terminate,reason
+151,AWSLA,prohibits,direct  sellers
+152,that,prohibits,otherwise  person
+154,illegal  that,prohibits,race
+155,that,used,illegal  activities
+156,Users,have several,several Microsoft 1
+158,tools,see,http://aws.amazon.com/developertools
+160,Today  Amazon,offers,several data Table
+163,regions,communicate through,resources
+165,Aservermay,runmultiple,virtual  machines
+166,instance,use,other Simple Figure
+168,systems,allows,same availability region
+171,EBS volumes,replicated within,same availability zone
+173,when  servers,advised,catastrophic  events
+175,user,request virtual,virtual  regions
+176,user,request,virtual availability region
+177,user,allows,virtual  servers
+180,rates,determined by,operating energy
+181,Thus  choice,reduce,communication reliability
+182,limited instance that,chooses,I O application
+183,instance,provided with,DNS name
+184,e.g. Amazon that,maps to,internal IP ones
+185,address,assigned for,instance
+186,when IP instance,returned to,public IP addresses
+188,instance,request,public IP address
+193,Amazon,charges,EC2 instances
+194,Charges,differ from,one  another
+199,reservation,required for,popular  model
+200,reserved  user,pays,hourly time rate
+203,substantial CPU amount,require,substantial CPU cycles
+204,when market price,bid on unused,user
+206,when market price,reaches,a
+207,system,offers several,several instance types
+208,Table,summarizes,3.2  instance
+209,power,measured in,virtual EC2 compute units
+212,charges,depend on,outside AWS region
+213,charges,shown in,USWest  Table
+214,Garfinkel,reported,early Amazon Web Services
+216,new  instance,started in less,two  minutes
+217,unscheduled  reboot,experienced,testing
+218,data,lost during,reboot
+219,data,recovered from,frozen  instance
+221,bucket,created,1  byte
+223,transaction,reflected,successfully  next
+225,transaction,resolved before,successfully  next
+226,user,showed,overlapping S3 transactions
+228,maximum S3 system,measured,single client thread
+230,data throughput,concluded,high  transaction
+231,concurrent  requests,designed,S3
+232,concurrent  requests,improve,the
+233,experiment,involved,100 MB GET
+236,number,increased from,one
+237,bandwidth,cut in,six  threads
+238,four read retries,encountered,errors

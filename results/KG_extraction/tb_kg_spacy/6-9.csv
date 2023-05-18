@@ -1,0 +1,27 @@
+,source,edge,target
+1,cloud servers,allow,users
+3,networks,consist of,limited communication capacity
+4,When  load,exceeds,load
+5,dropping  load,starts,limited CPU cycles
+6,load,limited,input
+7,switch,handle multiple,multiple source destination traffic
+10,when  packets,allowed,individual buffer flow
+11,when  packets,flows,individual
+15,greedy flow sources,transmit at,larger  bandwidth
+17,separate  queues,proposed in,round robin manner
+18,queues,maintained by,switch
+19,algorithm,guarantees,bandwidth buffer space allocation
+21,Indeed  flow,benefit from,larger  Figure
+22,queuing,proposes,FQ  problem
+23,First  algorithm,introduces,round robin round BR
+24,single  bit,transmitted,queue
+26,queues,visited in,robin  fashion
+28,a,transmitted,flow
+32,a,provided,only Nactive(t transmission
+33,i,depend,only arrival i
+34,max j,|ta,i
+36,transmission,interrupted as,current  packet
+38,allocation,have,transmission
+40,paper,proposes,i Ba value
+41,bid,defined as,Ba i
+42,properties,analyzed in,nonpreemptive FQ 102

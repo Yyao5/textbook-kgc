@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">The efforts to support large-scale distributed computing have encountered major difficulties over the</p>
+<p class="p1">years. The users of these systems discovered how difficult it was to locate the systems able to run an</p>
+<p class="p1">application. They soon realized that it is equally difficult to scale up and down to accommodate a dynamic</p>
+<p class="p1">load, to recover after a system failure, and to efficiently support checkpoint or restarting procedures.</p>
+<p class="p1">At the same time, the providers of computing cycles and storage realized the difficulties in managing</p>
+<p class="p1">a large number of systems and providing guarantees for the quality of service. Any economic advantage</p>
+<p class="p1">offered by resource concentration was offset by the cost of management and the relatively low utilization</p>
+<p class="p1">of costly resources.</p>
+<p class="p1">Cloud computing is very attractive to users for several economic reasons: It requires a very low</p>
+<p class="p1">infrastructure investment because there is no need to assemble and maintain a large-scale system and</p>
+<p class="p1">it has low <span class="s1">utility-based computing costs </span>because customers are only billed for the infrastructure used.</p>
+<p class="p1">At the same time, users benefit from the potential to reduce the execution time of compute-intensive</p>
+<p class="p1">and data-intensive applications through parallelization. If an application can partition the workload in</p>
+<p class="p1"><span class="s1">n </span>segments and spawn <span class="s1">n </span>instances of itself, the execution time could be reduced by a factor close to <span class="s1">n</span>.</p>
+<p class="p1">Moreover, because application developers enjoy the advantages of a <span class="s1">just-in-time infrastructure</span>, they</p>
+<p class="p1">are free to design an application without being concerned with the system where the application will</p>
+<p class="p1">run. Often, an application becomes the victim of its own success, attracting a user population larger than</p>
+<p class="p1">the system can support. Cloud elasticity allows such an application to absorb the additional workload</p>
+<p class="p1">without any effort from application developers.</p>
+<p class="p1">Cloud computing is also beneficial for the providers of computing cycles because it typically leads</p>
+<p class="p1">to more efficient resource utilization. The future success of cloud computing rests on the ability of</p>
+<p class="p1">companies promoting utility computing to convince an increasingly large segment of the user population</p>
+<p class="p1">of the advantages of network-centric computing and content. This translates into the ability to provide</p>
+<p class="p1">satisfactory solutions to critical aspects of security, scalability, reliability, quality of service, and the</p>
+<p class="p1">requirements enforced by SLAs.</p>
+<p class="p1">The appeal of cloud computing is its focus on enterprise applications. This clearly differentiates it</p>
+<p class="p1">from the grid computing effort, which was largely focused on scientific and engineering applications.</p>
+<p class="p1">Of course, the other major advantage of the cloud computing approach over grid computing is the</p>
+<p class="p1">concentration of resources in large data centers in a single administrative domain.</p>
+<p class="p1">It is expected that utility computing providers such as Amazon, Apple, Google, HP, IBM,Microsoft,</p>
+<p class="p1">Oracle, and others will in the future develop application suites to attract customers. Microsoft seems</p>
+<p class="p1">well positioned in the effort to attract customers to its Azure platform since it already has many applications</p>
+<p class="p1">for enterprise customers, while Red Hat and Amazon may choose to stay with their “infrastructure</p>
+<p class="p1">only” approach [<span class="s2">27</span>].</p>
+<p class="p1">The main attraction of cloud computing is the ability to use as many servers as necessary to optimally</p>
+<p class="p1">respond to the cost and the timing constraints of an application. This is possible only if the workload</p>
+<p class="p1">can be partitioned in segments of arbitrary size and can be processed in parallel by the servers available</p>
+<p class="p1">in the cloud. In Section <span class="s2">4.6 </span>we discuss <span class="s1">arbitrarily divisible </span>workloads that can be partitioned into an</p>
+<p class="p1">arbitrarily large number of segments; the <span class="s1">arbitrarily divisible load-sharing model </span>is common to many</p>
+<p class="p1">applications, and these are precisely the applications suitable for cloud computing.</p>
+<p class="p1">Web services, database services, and transaction-based services are ideal applications for cloud</p>
+<p class="p1">computing. The resource requirements of transaction-oriented services are dependent on the current</p>
+<p class="p1">load, which itself is very dynamic; the cost/performance profile of such applications benefits from an</p>
+<p class="p1">elastic environment in which resources are available when needed and users pay only for the resources</p>
+<p class="p1">they consume.</p>
+<p class="p1">Not all applications are suitable for cloud computing; applications for which the workload cannot be</p>
+<p class="p1">arbitrarily partitioned or that require intensive communication among concurrent instances are unlikely</p>
+<p class="p1">to perform well on a cloud. An application with a complex workflow and multiple dependencies, as</p>
+<p class="p1">is often the case in high-performance computing, could require longer execution times and higher</p>
+<p class="p1">costs on a cloud. The benchmarks for high-performance computing discussed in Section <span class="s2">4.9 </span>show that</p>
+<p class="p1">communication and memory-intensive applications may not exhibit the performance levels shown when</p>
+<p class="p1">running on supercomputers with low latency and high-bandwidth interconnects.</p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+,source,edge,target
+2,expectation,motivated by several,several data Internet
+8,Thus  it,seems reasonable,external  entity
+13,former,detects unused,unused  spectrum
+14,latter,decides,available  spectrum
+17,nodes,compete for,free  channels
+19,Research,reveals,allocated  spectrum
+22,reconfigurable wireless reconfigurable transceiver,proposed at,automatically user demands
+24,We,recognize,two  CRN
+25,devices,have exclusive,exclusive
+26,dynamic spectrum primary,enjoy,channel
+27,primary,is,channel
+28,secondary,required,free channel operation
+31,mode,called,operation
+32,CRNs,based on,sensing  strategy
+33,node,determines,"own node 129,339,340"
+35,node,determine,true  spectrum
+36,secondary  node,has,limited  transmission
+37,node mobility,add to,single channel node
+39,nodes,send,central spectrum entity
+40,entity,uses,then spectrum occupancy jurisdiction
+44,secondary  node,is,primary power one
+45,μ  that,share,threshold
+49,secondary  node,maintains,occupancy
+50,nodes,sense,available  channels
+51,nodes,compete for free,free  channels
+52,one  node,provide to,information neighbors
+53,nodes,send false,centralized fusion CRN
+54,secondary  nodes,attempt,spectrum allocation rules
+58,free  channels,report,primary
+62,channels,show,primary
+65,then  one,assume,channel
+66,senders,follow,channel access
+67,sender,senses,channel
+69,routers,assumes,forward packets destination
+70,routers,follow,best effort policy
+72,own status case,assessed by,several  literature
+76,Algorithm,computes,preliminary j ∈ steps
+77,node  i,’s,K channels
+79,node  i,measures,K channels
+81,nodes,respond with,Node nodes
+87,X,determined,use
+95,when  inference,number of,matches
+99,instances,run,concurrently AWS cloud
+100,secondary  nodes,partitioned into,several overlapping Figure
+103,nodes,identified by,instance
+104,primary  nodes,cover,entire
+105,simulation,involves,controller
+106,initial  controller,runs on,10.04  LTS
+107,controller,supplies,trust program
+108,cloud  instances,run under,bit Linux AWS
+110,instances,run,actual trust program
+111,results,processed by,average trust neighbors
+113,S3 controller,runs on,also  cloud
+114,here  nodes,programmed,gId =
+115,nodes,have,maliciously  trust
+118,node density,affects,the
+119,algorithm,predicts,populated  areas
+121,secondary  we,indicates,higher density areas
+122,secondary  we,expect higher,higher

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Times}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica; min-height: 12.0px}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Helvetica}
+    span.s3 {font: 6.0px Times}
+    span.s4 {font: 7.5px Times}
+    span.s5 {font: 6.0px Helvetica}
+    span.s6 {color: #000066}
+    span.s7 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Knowledge of the state of several, and possibly all, processes in a distributed system is often needed.</p>
+<p class="p1">For example, a supervisory process must be able to detect when a subset of processes is deadlocked; a</p>
+<p class="p1">process might migrate from one location to another or be replicated only after an agreement with others.</p>
+<p class="p1">In all these examples a process needs to evaluate a predicate function of the global state of the system.</p>
+<p class="p1">We call the process responsible for constructing the global state of the system the <span class="s1">monitor</span>. A monitor</p>
+<p class="p1">sends messages requesting information about the local state of every process and gathers the replies to</p>
+<p class="p1">construct the global state. Intuitively, the construction of the global state is equivalent to taking snapshots</p>
+<p class="p1">of individual processes and then combining these snapshots into a global view.Yet, combining snapshots</p>
+<p class="p1">is straightforward if and only if all processes have access to a global clock and the snapshots are taken</p>
+<p class="p1">at the same time; hence, the snapshots are consistent with one another.</p>
+<p class="p1">A<span class="s1">run </span>is a total ordering <span class="s1">R </span>of all the events in the global history of a distributed computation consistent</p>
+<p class="p1">with the local history of each participant process; a run</p>
+<p class="p2">R =</p>
+<p class="p2"> </p>
+<p class="p2">e <span class="s2">j</span><span class="s3">1</span></p>
+<p class="p2"><span class="s4">1 </span>, e <span class="s2">j</span><span class="s3">2</span></p>
+<p class="p2"><span class="s4">2 </span>, . . . , e <span class="s2">j</span><span class="s5">n</span></p>
+<p class="p3">n</p>
+<p class="p2"> </p>
+<p class="p1">(2.30)</p>
+<p class="p1">implies a sequence of events as well as a sequence of global states.</p>
+<p class="p1">For example, consider the three processes in Figure <span class="s6">2.8</span>.We can construct a three-dimensional lattice</p>
+<p class="p1">of global states following a procedure similar to the one in Figure <span class="s6">2.2</span>, starting from the initial state</p>
+<p class="p1"><span class="s1"> </span><span class="s2">(</span><span class="s4">000</span><span class="s2">) </span>and proceeding to any reachable state <span class="s1"> </span><span class="s2">(i jk) </span>with <span class="s1">i , j , k </span>the events in processes <span class="s1">p</span><span class="s4">1</span><span class="s1">, p</span><span class="s4">2</span><span class="s1">, p</span><span class="s4">3</span>,</p>
+<p class="p1">respectively. The run <span class="s1">R</span><span class="s4">1 </span><span class="s1">=</span></p>
+<p class="p2"> </p>
+<p class="p4"><span class="s1">e</span>1</p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">1</span></p>
+<p class="p2"><span class="s4">2</span>, e<span class="s4">1</span></p>
+<p class="p2"><span class="s4">3</span>, e<span class="s4">2</span></p>
+<p class="p4">1</p>
+<p class="p2"> </p>
+<p class="p1">is consistent with both the local history of each process and the global history; this run is valid, and the system has traversed the global states</p>
+<p class="p4"><span class="s1"> </span>000<span class="s1">, </span>100<span class="s1">, </span>110<span class="s1">, </span>111<span class="s1">, </span>211<span class="s1">. </span><span class="s7">(2.31)</span></p>
+<p class="p1">On the other hand, the run <span class="s1">R</span><span class="s4">2 </span><span class="s1">= (e</span><span class="s4">1</span></p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">2</span></p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">1</span></p>
+<p class="p2"><span class="s4">3</span>, e<span class="s4">3</span></p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">2</span></p>
+<p class="p1"><span class="s4">3</span><span class="s1">) </span>is invalid because it is inconsistent with the global</p>
+<p class="p1">history. The system cannot ever reach the state <span class="s1"> </span><span class="s4">301</span>; message <span class="s1">m</span><span class="s4">1 </span>must be sent before it is received, so</p>
+<p class="p1">event <span class="s1">e</span><span class="s4">1</span></p>
+<p class="p1"><span class="s4">2 </span>must occur in any run before event <span class="s1">e</span><span class="s4">3</span></p>
+<p class="p1"><span class="s4">1</span>.</p>
+<p class="p1">A <span class="s1">cut </span>is a subset of the local history of all processes. If <span class="s1">h </span><span class="s2">j</span></p>
+<p class="p1"><span class="s2">i </span>denotes the history of process <span class="s1">p</span><span class="s2">i </span>up to</p>
+<p class="p1">and including its <span class="s1">j</span>-th event, <span class="s1">e </span><span class="s2">j</span></p>
+<p class="p1"><span class="s2">i </span>, then a cut <span class="s1">C </span>is an <span class="s1">n</span>-tuple</p>
+<p class="p2">C = {h <span class="s2">j</span></p>
+<p class="p3">i</p>
+<p class="p2">} <span class="s7">with </span>i ∈ {<span class="s7">1</span>, n} <span class="s7">and </span>j ∈ {<span class="s7">1</span>, n<span class="s2">i </span>}. <span class="s7">(2.32)</span></p>
+<p class="p1"><span class="s1">The frontier of the cut </span>is an <span class="s1">n</span>-tuple consisting of the last event of every process included in the cut.</p>
+<p class="p1">Figure <span class="s6">2.8 </span>illustrates a <span class="s1">space-time diagram </span>for a group of three processes, <span class="s1">p</span><span class="s4">1</span><span class="s1">, p</span><span class="s4">2</span><span class="s1">, p</span><span class="s4">3</span>, and it shows two</p>
+<p class="p1">cuts, <span class="s1">C</span><span class="s4">1 </span>and <span class="s1">C</span><span class="s4">2</span>. <span class="s1">C</span><span class="s4">1 </span>has the frontier <span class="s1">(</span>4<span class="s1">, </span>5<span class="s1">, </span>2<span class="s1">)</span>, frozen after the fourth event of process <span class="s1">p</span><span class="s4">1</span>, the fifth event</p>
+<p class="p1">of process <span class="s1">p</span><span class="s4">2</span>, and the second event of process <span class="s1">p</span><span class="s4">3</span>, and <span class="s1">C</span><span class="s4">2 </span>has the frontier <span class="s1">(</span>5<span class="s1">, </span>6<span class="s1">, </span>3<span class="s1">)</span>.</p>
+<p class="p1">Cuts provide the necessary intuition to generate global states based on an exchange of messages</p>
+<p class="p1">between a monitor and a group of processes. The cut represents the instance when requests to report</p>
+<p class="p1">individual states are received by the members of the group. Clearly not all cuts are meaningful. For</p>
+<p class="p1">example, the cut <span class="s1">C</span><span class="s4">1 </span>with the frontier <span class="s1">(</span>4<span class="s1">, </span>5<span class="s1">, </span>2<span class="s1">) </span>in Figure <span class="s6">2.8 </span>violates our intuition regarding causality; it</p>
+<p class="p1">includes <span class="s1">e</span><span class="s4">4</span></p>
+<p class="p1"><span class="s4">2</span>, the event triggered by the arrival of message <span class="s1">m</span><span class="s4">3 </span>at process <span class="s1">p</span><span class="s4">2 </span>but does not include <span class="s1">e</span><span class="s4">3</span></p>
+<p class="p1"><span class="s4">3</span>, the</p>
+<p class="p1">event triggered by process <span class="s1">p</span><span class="s4">3 </span>sending<span class="s1">m</span><span class="s4">3</span>. In this snapshot <span class="s1">p</span><span class="s4">3 </span>was frozen after its second event, <span class="s1">e</span><span class="s4">2</span></p>
+<p class="p1"><span class="s4">3</span>, before</p>
+<p class="p1">it had the chance to send message<span class="s1">m</span><span class="s4">3</span>. Causality is violated and the system cannot ever reach such a state.</p>
+<p class="p1">Next we introduce the concepts of consistent and inconsistent cuts and runs. A cut closed under the</p>
+<p class="p1"><span class="s1">causal precedence relationship </span>is called a <span class="s1">consistent cut</span>. <span class="s1">C </span>is a consistent cut if and only if for all events</p>
+<p class="p2">∀e, e<span class="s2"> </span></p>
+<p class="p2">, (e ∈ C) ∧ (e<span class="s2">  </span>→ e) ⇒ e<span class="s2">  </span>∈ C. <span class="s7">(2.33)</span></p>
+<p class="p1">A consistent cut establishes an “instance” of a distributed computation. Given a consistent cut we</p>
+<p class="p1">can determine if an event <span class="s1">e </span>occurred before the cut.</p>
+<p class="p1">A run <span class="s1">R </span>is said to be consistent if the total ordering of events imposed by the run is consistent with the</p>
+<p class="p1">partial order imposed by the causal relation; for all events, <span class="s1">e → e</span><span class="s2">  </span>implies that <span class="s1">e </span>appears before <span class="s1">e</span><span class="s2">  </span>in <span class="s1">R</span>.</p>
+<p class="p1">Consider a distributed computation consisting of a group of communicating processes</p>
+<p class="p2">G = {p<span class="s4">1</span>, p<span class="s4">2</span>, . . . , p<span class="s2">n</span>}<span class="s7">. The </span>causal history of event e, γ (e), <span class="s7">is the smallest consistent cut of </span>G <span class="s7">including</span></p>
+<p class="p1">event <span class="s1">e</span></p>
+<p class="p2">γ (e) = {e<span class="s2">  </span>∈ G|e<span class="s2">  </span>→ e} ∪ {e}. <span class="s7">(2.34)</span></p>
+<p class="p1">The causal history of event <span class="s1">e</span><span class="s4">5</span></p>
+<p class="p1"><span class="s4">2 </span>in Figure <span class="s6">2.9 </span>is:</p>
+<p class="p2">γ</p>
+<p class="p2"> </p>
+<p class="p4"><span class="s1">e</span>5</p>
+<p class="p4">2</p>
+<p class="p2"> </p>
+<p class="p2">=</p>
+<p class="p2"> </p>
+<p class="p4"><span class="s1">e</span>1</p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">2</span></p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">3</span></p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">4</span></p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">5</span></p>
+<p class="p2"><span class="s4">1</span>, e<span class="s4">1</span></p>
+<p class="p2"><span class="s4">2</span>, e<span class="s4">2</span></p>
+<p class="p2"><span class="s4">2</span>, e<span class="s4">3</span></p>
+<p class="p2"><span class="s4">2</span>, e<span class="s4">4</span></p>
+<p class="p2"><span class="s4">2</span>, e<span class="s4">5</span></p>
+<p class="p2"><span class="s4">2</span>, e<span class="s4">1</span></p>
+<p class="p2"><span class="s4">3</span>, e<span class="s4">2</span></p>
+<p class="p2"><span class="s4">3</span>, e<span class="s4">3</span></p>
+<p class="p4">3</p>
+<p class="p5"><br></p>
+<p class="p1"><span class="s1">. </span>(2.35)</p>
+<p class="p1">This is the smallest consistent cut including <span class="s1">e</span><span class="s4">5</span></p>
+<p class="p1"><span class="s4">2</span>; indeed, if we omit <span class="s1">e</span><span class="s4">3</span></p>
+<p class="p1"><span class="s4">3</span>, then the cut <span class="s1">(</span>5<span class="s1">, </span>5<span class="s1">, </span>2<span class="s1">) </span>would be</p>
+<p class="p1">inconsistent; it would include <span class="s1">e</span><span class="s4">4</span></p>
+<p class="p1"><span class="s4">2</span>, the communication event for receiving <span class="s1">m</span><span class="s4">3</span>, but not <span class="s1">e</span><span class="s4">3</span></p>
+<p class="p1"><span class="s4">3</span>, the sending of</p>
+<p class="p1"><span class="s1">m</span><span class="s4">3</span>. If we omit <span class="s1">e</span><span class="s4">5</span></p>
+<p class="p1"><span class="s4">1</span>, the cut <span class="s1">(</span>4<span class="s1">, </span>5<span class="s1">, </span>3<span class="s1">) </span>would also be inconsistent and it would include <span class="s1">e</span><span class="s4">3</span></p>
+<p class="p1"><span class="s4">2 </span>but not <span class="s1">e</span><span class="s4">5</span></p>
+<p class="p1"><span class="s4">1</span>.</p>
+<p class="p1">Causal histories can be used as clock values and satisfy the strong clock condition, provided that we</p>
+<p class="p1">equate clock comparison with set inclusion. Indeed,</p>
+<p class="p2">e → e<span class="s2">  </span>≡ γ (e) ⊂ γ (e<span class="s2"> </span></p>
+<p class="p1"><span class="s1">). </span>(2.36)</p>
+<p class="p1">The following algorithm can be used to construct causal histories:</p>
+<p class="p1">• Each <span class="s1">p</span><span class="s2">i </span><span class="s1">∈ G </span>starts with <span class="s1">θ = ∅</span>.</p>
+<p class="p1">• Every time <span class="s1">p</span><span class="s2">i </span>receives a message <span class="s1">m </span>from <span class="s1">p </span><span class="s2">j </span>it constructs</p>
+<p class="p2">γ (e<span class="s2">i </span>) = γ (e <span class="s2">j </span>) ∪ γ (e<span class="s2">k </span>) <span class="s7">(2.37)</span></p>
+<p class="p1">with <span class="s1">e</span><span class="s2">i </span>the <span class="s1">receive </span>event, <span class="s1">e </span><span class="s2">j </span>the previous local event of <span class="s1">p</span><span class="s2">i </span>, <span class="s1">e</span><span class="s2">k </span>the <span class="s1">send </span>event of process <span class="s1">p </span><span class="s2">j </span>.</p>
+<p class="p1">Unfortunately, this concatenation of histories is impractical because the causal histories grow very fast.</p>
+<p class="p1">Now we present a protocol to construct consistent global states based on the monitoring concepts</p>
+<p class="p1">discussed in this section. We assume a fully connected network; recall that given two processes <span class="s1">p</span><span class="s2">i </span>and</p>
+<p class="p1"><span class="s1">p </span><span class="s2">j </span>, the state <span class="s1">ξ</span><span class="s2">i , j </span>of the channel from <span class="s1">p</span><span class="s2">i </span>to <span class="s1">p </span><span class="s2">j </span>consists of messages sent by <span class="s1">p</span><span class="s2">i </span>but not yet received by</p>
+<p class="p1"><span class="s1">p </span><span class="s2">j </span>. The snapshot protocol of Chandy and Lamport consists of three steps [<span class="s6">72</span>]:</p>
+<p class="p1"><span class="s1">1. </span>Process <span class="s1">p</span><span class="s4">0 </span>sends to itself a “take snapshot” message.</p>
+<p class="p1"><span class="s1">2. </span>Let <span class="s1">p </span><span class="s2">f </span>be the process from which <span class="s1">p</span><span class="s2">i </span>receives the “take snapshot” message for the first time. Upon</p>
+<p class="p1">receiving the message, the process <span class="s1">p</span><span class="s2">i </span>records its local state, <span class="s1">σ</span><span class="s2">i </span>, and relays the “take snapshot” along</p>
+<p class="p1">all its outgoing channels without executing any events on behalf of its underlying computation.</p>
+<p class="p1">Channel state <span class="s1">ξ </span><span class="s2">f ,i </span>is set to empty, and process <span class="s1">p</span><span class="s2">i </span>starts recording messages received over each of</p>
+<p class="p1">its incoming channels.</p>
+<p class="p1"><span class="s1">3. </span>Let <span class="s1">p</span><span class="s2">s </span>be the process fromwhich <span class="s1">p</span><span class="s2">i </span>receives the “take snapshot”message after the first time. Process</p>
+<p class="p1"><span class="s1">p</span><span class="s2">i </span>stops recording messages along the incoming channel from <span class="s1">p</span><span class="s2">s </span>and declares channel state <span class="s1">ξ</span><span class="s2">s,i </span>as</p>
+<p class="p1">those messages that have been recorded.</p>
+<p class="p1">Each “take snapshot” message crosses each channel exactly once, and every process <span class="s1">p</span><span class="s2">i </span>has made its</p>
+<p class="p1">contribution to the global state. A process records its state the first time it receives a “take snapshot” message and then stops executing the underlying computation for some time. Thus, in a fully connected</p>
+<p class="p1">network with <span class="s1">n </span>processes, the protocol requires <span class="s1">n   (n − </span>1<span class="s1">) </span>messages, one on each channel.</p>
+<p class="p1">For example, consider a set of six processes, each pair of processes being connected by two unidirectional</p>
+<p class="p1">channels, as shown in Figure <span class="s6">2.10</span>. Assume that all channels are empty, <span class="s1">ξ</span><span class="s2">i , j </span><span class="s1">= </span>0<span class="s1">, i ∈ {</span>0<span class="s1">, </span>5<span class="s1">},</span></p>
+<p class="p1"><span class="s1">j ∈ {</span>0<span class="s1">, </span>5<span class="s1">}</span>, at the time when process <span class="s1">p</span><span class="s4">0 </span>issues the “take snapshot” message. The actual flow of messages</p>
+<p class="p1">is:</p>
+<p class="p1">• In step 0<span class="s1">, p</span><span class="s4">0 </span>sends to itself the “take snapshot” message.</p>
+<p class="p1">• In step 1, process <span class="s1">p</span><span class="s4">0 </span>sends five “take snapshot” messages, labeled <span class="s1">(</span>1<span class="s1">) </span>in Figure <span class="s6">2.10</span>.</p>
+<p class="p1">• In step 2, each of the five processes <span class="s1">p</span><span class="s4">1</span><span class="s1">, p</span><span class="s4">2</span><span class="s1">, p</span><span class="s4">3</span><span class="s1">, p</span><span class="s4">4</span>, and <span class="s1">p</span><span class="s4">5 </span>sends a “take snapshot” message labeled</p>
+<p class="p1"><span class="s1">(</span>2<span class="s1">) </span>to every other process.</p>
+<p class="p1">A “take snapshot” message crosses each channel from process <span class="s1">p</span><span class="s2">i </span>to <span class="s1">p </span><span class="s2">j </span>, <span class="s1">i </span>, <span class="s1">j ∈ {</span>0<span class="s1">, </span>5<span class="s1">} </span>exactly once</p>
+<p class="p1">and 6 <span class="s1">  </span>5 <span class="s1">= </span>30 messages are exchanged.</p>
+</body>
+</html>

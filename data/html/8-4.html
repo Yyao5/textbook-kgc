@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Courier}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 10.0px Helvetica}
+    span.s5 {font: 7.5px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Parallel I/O implies execution of multiple input/output operations concurrently. Support for parallel</p>
+<p class="p1">I/O is essential to the performance of many applications [<span class="s1">236</span>]. Therefore, once distributed file systems</p>
+<p class="p1">became ubiquitous, the natural next step in the evolution of the file system was to support parallel access.</p>
+<p class="p1">Parallel file systems allow multiple clients to <span class="s2">read </span>and <span class="s2">write </span>concurrently from the same file.</p>
+<p class="p1">Concurrency control is a critical issue for parallel file systems. Several semantics for handling the</p>
+<p class="p1">shared access are possible. For example, when the clients share the file pointer, successive reads issued</p>
+<p class="p1">by multiple clients advance the file pointer; another semantic is to allow each client to have its own file pointer. Early supercomputers such as the Intel Paragon<span class="s3">4 </span>took advantage of parallel file systems to</p>
+<p class="p1">support applications based on the same program, multiple data (SPMD) paradigm.</p>
+<p class="p1">The General Parallel File System (GPFS) [<span class="s1">317</span>] was developed at IBM in the early 2000s as a</p>
+<p class="p1">successor to the TigerShark multimedia file system [<span class="s1">159</span>]. GPFS is a parallel file system that emulates</p>
+<p class="p1">closely the behavior of a general-purpose POSIX system running on a single system. GPFS was designed</p>
+<p class="p1">for optimal performance of large clusters; it can support a file system of up to 4 PB consisting of up to</p>
+<p class="p1">4<span class="s4">, </span>096 disks of 1 TB each (see Figure <span class="s1">8.6</span>).</p>
+<p class="p1">Themaximum file size is (2<span class="s5">63</span><span class="s4">−</span>1) bytes.Afile consists of blocks of equal size, ranging from 16 KBto</p>
+<p class="p1">1MB striped across several disks. The system could support not only very large files but also a very large</p>
+<p class="p1">number of files. The directories use <span class="s4">extensible hashing </span>techniques<span class="s3">5 </span>to access a file. The systemmaintains</p>
+<p class="p1">user data, file metadata such as the time when last modified, and file system metadata such as allocation</p>
+<p class="p1">maps. Metadata, such as file attributes and data block addresses, is stored in inodes and indirect blocks.</p>
+<p class="p1">Reliability is a major concern in a system with many physical components. To recover from system</p>
+<p class="p1">failures, GPFS records all metadata updates in a <span class="s4">write-ahead </span>log file. <span class="s4">Write-ahead </span>means that updates</p>
+<p class="p1">are written to persistent storage only after the log records have been written. For example, when a new</p>
+<p class="p1">file is created, a directory block must be updated and an inode for the file must be created. These records</p>
+<p class="p1">are transferred from cache to disk after the log records have been written. When the directory block is</p>
+<p class="p1">written and then the I/O node fails before writing the inode, then the system ends up in an inconsistent</p>
+<p class="p1">state and the log file allows the system to recreate the inode record.</p>
+<p class="p1">The log files are maintained by each I/O node for each file system it mounts; thus, any I/O node</p>
+<p class="p1">is able to initiate recovery on behalf of a failed node. Disk parallelism is used to reduce access time.</p>
+<p class="p1">Multiple I/O <span class="s2">read </span>requests are issued in parallel and data is prefetched in a buffer pool.</p>
+<p class="p1">Data striping allows concurrent access and improves performance but can have unpleasant sideeffects.</p>
+<p class="p1">Indeed, when a single disk fails, a large number of files are affected. To reduce the impact of</p>
+<p class="p1">such undesirable events, the system attempts to mask a single disk failure or the failure of the access path</p>
+<p class="p1">to a disk. The system uses RAID devices with the stripes equal to the block size and dual-attached RAID</p>
+<p class="p1">controllers. To further improve the fault tolerance of the system, GPFS data files as well as metadata</p>
+<p class="p1">are replicated on two different physical disks.</p>
+<p class="p1">Consistency and performance, critical to any distributed file system, are difficult to balance. Support</p>
+<p class="p1">for concurrent access improves performance but faces serious challenges in maintaining consistency.</p>
+<p class="p1">In GPFS, consistency and synchronization are ensured by a distributed locking mechanism; a <span class="s4">central</span></p>
+<p class="p1"><span class="s4">lock manager </span>grants <span class="s4">lock tokens </span>to <span class="s4">local lock managers </span>running in each I/O node. Lock tokens are also</p>
+<p class="p1">used by the cache management system.</p>
+<p class="p1">Lock granularity has important implications in the performance of a file system, and GPFS uses</p>
+<p class="p1">a variety of techniques for various types of data. <span class="s4">Byte-range tokens </span>are used for <span class="s2">read </span>and <span class="s2">write</span></p>
+<p class="p1">operations to data files as follows: The first node attempting to <span class="s2">write </span>to a file acquires a token</p>
+<p class="p1">covering the entire file, <span class="s4">[</span>0<span class="s4">,∞]</span>. This node is allowed to carry out all <span class="s2">reads </span>and <span class="s2">writes </span>to the file</p>
+<p class="p1">without any need for permission until a second node attempts to write to the same file. Then the range</p>
+<p class="p1">of the token given to the first node is restricted. More precisely, if the first node writes sequentially</p>
+<p class="p1">at offset <span class="s4">f p</span><span class="s5">1 </span>and the second one at offset <span class="s4">f p</span><span class="s5">2 </span><span class="s4">&gt; f p</span><span class="s5">1</span>, the range of the tokens for the two tokens are</p>
+<p class="p1"><span class="s4">[</span>0<span class="s4">, f p</span><span class="s5">2</span><span class="s4">] </span>and <span class="s4">[ f p</span><span class="s5">2</span><span class="s4">,∞]</span>, respectively, and the two nodes can operate concurrently, without the need for</p>
+<p class="p1">further negotiations. Byte-range tokens are rounded to block boundaries.</p>
+<p class="p1">Byte-range token negotiations among nodes use the <span class="s4">required range </span>and the <span class="s4">desired range </span>for the</p>
+<p class="p1">offset and for the length of the current and future operations, respectively. <span class="s4">Data shipping</span>, an alternative</p>
+<p class="p1">to byte-range locking, allows fine-grained data sharing. In this mode the file blocks are controlled by</p>
+<p class="p1">the I/O nodes in a round-robin manner. A node forwards a <span class="s2">read </span>or <span class="s2">write </span>operation to the node</p>
+<p class="p1">controlling the target block, the only one allowed to access the file.</p>
+<p class="p1">A <span class="s4">token manager </span>maintains the state of all tokens; it creates and distributes tokens, collects tokens</p>
+<p class="p1">once a file is closed, and downgrades or upgrades tokens when additional nodes request access to a file.</p>
+<p class="p1">Token management protocols attempt to reduce the load placed on the token manager; for example,</p>
+<p class="p1">when a node wants to revoke a token, it sends messages to all the other nodes holding the token and</p>
+<p class="p1">forwards the reply to the token manager.</p>
+<p class="p1">Access to metadata is synchronized. For example, when multiple nodes <span class="s2">write </span>to the same file, the</p>
+<p class="p1">file size and the modification dates are updated using a <span class="s4">shared write lock </span>to access an inode. One of the</p>
+<p class="p1">nodes assumes the role of a <span class="s4">metanode</span>, and all updates are channeled through it. The file size and the last</p>
+<p class="p1">update time are determined by the metanode after merging the individual requests. The same strategy</p>
+<p class="p1">is used for updates of the indirect blocks. GPFS global data such as access control lists (ACLs), quotas,</p>
+<p class="p1">and configuration data are updated using the distributed locking mechanism.</p>
+<p class="p1">GPFS uses <span class="s4">disk maps </span>to manage the disk space. The GPFS block size can be as large as 1 MB,</p>
+<p class="p1">and a typical block size is 256 KB. A block is divided into 32 subblocks to reduce disk fragmentation</p>
+<p class="p1">for small files; thus, the block map has 32 bits to indicate whether a subblock is free or used. The</p>
+<p class="p1">system disk map is partitioned into <span class="s4">n </span>regions, and each disk map region is stored on a different I/O</p>
+<p class="p1">node. This strategy reduces conflicts and allows multiple nodes to allocate disk space at the same time.</p>
+<p class="p1">An <span class="s4">allocation manager </span>running on one of the I/O nodes is responsible for actions involving multiple</p>
+<p class="p1">disk map regions. For example, it updates free space statistics and helps with deallocation by sending</p>
+<p class="p1">periodic hints of the regions used by individual nodes.</p>
+<p class="p1">A detailed discussion of system utilities and the lessons learned from the deployment of the file system</p>
+<p class="p1">at several installations in 2002 can be found in [<span class="s1">317</span>]; the documentation of the GPFS is available</p>
+<p class="p1">from [<span class="s1">177</span>].</p>
+</body>
+</html>

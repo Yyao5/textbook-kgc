@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {font: 10.0px Courier; color: #000066}
+    span.s4 {font: 10.0px Helvetica}
+    span.s5 {font: 7.5px Times}
+  </style>
+</head>
+<body>
+<p class="p1">The distributed systems discussed in Chapter 2 allow access to resources in a tightly controlled environment.</p>
+<p class="p1">System administrators enforce security rules and control the allocation of physical rather than</p>
+<p class="p1">virtual resources. In all models of network-centric computing prior to utility computing, a usermaintains</p>
+<p class="p1">direct control of the software and the data residing on remote systems.</p>
+<p class="p1">This user-centric model, in place since the early 1960s, was challenged in the 1990s by the peer-topeer</p>
+<p class="p1">(P2P) model. P2P systems can be regarded as one of the precursors of today’s clouds. This new</p>
+<p class="p1">model for distributed computing promoted the idea of low-cost access to storage and central processing</p>
+<p class="p1">unit (CPU) cycles provided by participant systems; in this case, the resources are located in different</p>
+<p class="p1">administrative domains. Often the P2P systems are self-organizing and decentralized, whereas the</p>
+<p class="p1">servers in a cloud are in a single administrative domain and have a central management.</p>
+<p class="p1">P2P systems exploit the network infrastructure to provide access to distributed computing resources.</p>
+<p class="p1">Decentralized applications developed in the 1980s, such as Simple Mail Transfer Protocol (SMTP), a</p>
+<p class="p1">protocol for email distribution, and Network News Transfer Protocol (NNTP), an application protocol</p>
+<p class="p1">for dissemination of news articles, are early examples of P2P systems. Systems developed in the late</p>
+<p class="p1">1990s, such as the music-sharing system Napster, gave participants access to storage distributed over</p>
+<p class="p1">the network, while the first volunteer-based scientific computing, SETI@home, used free cycles of</p>
+<p class="p1">participating systems to carry out compute-intensive tasks.</p>
+<p class="p1">The P2P model represents a significant departure from the client-server model, the cornerstone of</p>
+<p class="p1">distributed applications for several decades. P2P systems have several desirable properties [<span class="s1">306</span>]:</p>
+<p class="p1">• They require a minimally dedicated infrastructure, since resources are contributed by the participating</p>
+<p class="p1">systems.</p>
+<p class="p1">• They are highly decentralized.</p>
+<p class="p1">• They are scalable; the individual nodes are not required to be aware of the global state.</p>
+<p class="p1">• They are resilient to faults and attacks, since few of their elements are critical for the delivery of</p>
+<p class="p1">service and the abundance of resources can support a high degree of replication.</p>
+<p class="p1">• Individual nodes do not require excessive network bandwidth the way servers used in case of the</p>
+<p class="p1">client-server model do.</p>
+<p class="p1">• Last but not least, the systems are shielded from censorship due to the dynamic and often unstructured</p>
+<p class="p1">system architecture.</p>
+<p class="p1">The undesirable properties of peer-to-peer systems are also notable: Decentralization raises the</p>
+<p class="p1">question of whether P2P systems can be managed effectively and provide the security required by</p>
+<p class="p1">various applications. The fact that they are shielded from censorship makes them a fertile ground for</p>
+<p class="p1">illegal activities, including distribution of copyrighted content.</p>
+<p class="p1">In spite of its problems, the newparadigmwas embraced by applications other than file sharing. Since</p>
+<p class="p1">1999 new P2P applications such as the ubiquitous Skype, a Voice-over-Internet Protocol (VoIP) telephony</p>
+<p class="p1">service,<span class="s2">5 </span>data-streaming applications such as Cool Streaming [<span class="s1">386</span>] and BBC’s online video service, content distribution networks such as CoDeeN [<span class="s1">368</span>], and volunteer computing applications</p>
+<p class="p1">based on the Berkeley Open Infrastructure for Networking Computing (BOINC) platform [<span class="s1">21</span>]</p>
+<p class="p1">have proved their appeal to users. For example, Skype reported in 2008 that 276 million registered</p>
+<p class="p1">Skype users have used more than 100 billion minutes for voice and video calls. The site</p>
+<p class="p1"><span class="s3">www.boinc.berkeley.edu </span>reports that at the end of June 2012 volunteer computing involved</p>
+<p class="p1">more than 275,000 individuals and more than 430,000 computers providing a monthly average of</p>
+<p class="p1">almost 6.3 petaFLOPS. It is also reported that peer-to-peer traffic accounts for a very large fraction of</p>
+<p class="p1">Internet traffic, with estimates ranging from 40% to more than 70%.</p>
+<p class="p1">Many groups from industry and academia rushed to develop and test new ideas, taking advantage</p>
+<p class="p1">of the fact that P2P applications do not require a dedicated infrastructure. Applications such as <span class="s4">Chord</span></p>
+<p class="p1">[<span class="s1">334</span>] and <span class="s4">Credence </span>[<span class="s1">366</span>] address issues critical to the effective operation of decentralized systems.</p>
+<p class="p1"><span class="s4">Chord </span>is a distributed lookup protocol to identify the node where a particular data item is stored. The</p>
+<p class="p1">routing tables are distributed and, whereas other algorithms for locating an object require the nodes to</p>
+<p class="p1">be aware of most of the nodes of the network, <span class="s4">Chord </span>maps a key related to an object to a node of the</p>
+<p class="p1">network using routing information about a few nodes only.</p>
+<p class="p1"><span class="s4">Credence </span>is an object reputation and ranking scheme for large-scale P2P file-sharing systems. Reputation</p>
+<p class="p1">is of paramount importance for systems that often include many unreliable and malicious nodes.</p>
+<p class="p1">In the decentralized algorithm used by <span class="s4">Credence</span>, each client uses local information to evaluate the reputation</p>
+<p class="p1">of other nodes and shares its own assessment with its neighbors. The credibility of a node depends</p>
+<p class="p1">only on the votes it casts; each node computes the reputation of another node based solely on the degree</p>
+<p class="p1">of matching with its own votes and relies on like-minded peers. <span class="s4">Overcite </span>[<span class="s1">337</span>] is a P2P application to</p>
+<p class="p1">aggregate documents based on a three-tier design. The Web front-ends accept queries and display the</p>
+<p class="p1">results while servers crawl through the Web to generate indexes and to perform keyword searches; the</p>
+<p class="p1">Web back-ends store documents, meta-data, and coordination state on the participating systems.</p>
+<p class="p1">The rapid acceptance of the new paradigm triggered the development of a new communication</p>
+<p class="p1">protocol allowing hosts at the network periphery to cope with the limited network bandwidth available</p>
+<p class="p1">to them. <span class="s4">BitTorrent </span>is a peer-to-peer file-sharing protocol that enables a node to download/upload large</p>
+<p class="p1">files from/to several hosts simultaneously.</p>
+<p class="p1">The P2P systems differ in their architecture. Some do not have any centralized infrastructure, whereas</p>
+<p class="p1">others have a dedicated controller, but this controller is not involved in resource-intensive operations.</p>
+<p class="p1">For example, Skype has a central site to maintain user accounts; users sign in and pay for specific</p>
+<p class="p1">activities at this site. The controller for a BOINC platform maintains membership and is involved in</p>
+<p class="p1">task distribution to participating systems. The nodes with abundant resources in systems without any</p>
+<p class="p1">centralized infrastructure often act as <span class="s4">supernodes </span>and maintain information useful to increasing the</p>
+<p class="p1">system efficiency, such as indexes of the available content.</p>
+<p class="p1">Regardless of the architecture, P2P systems are built around an <span class="s4">overlay network</span>, a virtual network</p>
+<p class="p1">superimposed over the real network. Methods to construct such an overlay, discussed in Section 7.10,</p>
+<p class="p1">consider a graph <span class="s4">G = (V, E)</span>, where <span class="s4">V </span>is the set of <span class="s4">N </span>vertices and <span class="s4">E </span>is the set of links between them.</p>
+<p class="p1">Each node maintains a table of <span class="s4">overlay links </span>connecting it with other nodes of this virtual network,</p>
+<p class="p1">each node being identified by its IP address. Two types of overlay networks, unstructured and structured,</p>
+<p class="p1">are used by P2P systems. Random walks starting from a few bootstrap nodes are usually used by</p>
+<p class="p1">systems desiring to join an unstructured overlay. Each node of a structured overlay has a unique key that</p>
+<p class="p1">determines its position in the structure; the keys are selected to guarantee a uniform distribution in a very large name space. Structured overlay networks use <span class="s4">key-based routing </span>(KBR); given a starting node</p>
+<p class="p1"><span class="s4">v</span><span class="s5">0 </span>and a key <span class="s4">k</span>, the function <span class="s4">KBR(v</span><span class="s5">0</span><span class="s4">, k) </span>returns the path in the graph from <span class="s4">v</span><span class="s5">0 </span>to the vertex with key <span class="s4">k</span>.</p>
+<p class="p1">Epidemic algorithms discussed in Section 7.12 are often used by unstructured overlays to disseminate</p>
+<p class="p1">network topology.</p>
+</body>
+</html>

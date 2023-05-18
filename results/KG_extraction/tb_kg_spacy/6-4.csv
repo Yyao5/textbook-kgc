@@ -1,0 +1,32 @@
+,source,edge,target
+0,sensors,measure,the
+1,actuators,transmit,necessary  actions
+2,actuators,carry,necessary
+3,80  cloud,stops,additional  load
+5,user requests,denied,additional SLA limits
+6,Thresholds,used in,predefined control range
+8,threshold,based on,time interval
+12,high  threshold,force,threshold activities
+14,threshold,encourage additional,additional  activities
+15,granularity,refers,system
+16,accuracy,means,implementation
+17,detailed  information,used,system state
+18,accuracy,means,parameters
+19,Application,discussed,proportional resource 217
+23,questions,related to,one
+24,two  that,seems,cloud
+27,cloud controller,have,rough cloud state
+28,some,has,information
+31,VM,allow,available VMM level sensors
+34,we,have,goodness
+36,strategy,reduces,the
+37,authors,adopt,pragmatic  approach
+38,arguments,report,oriented Web server
+39,essence,1,following  algorithm
+41,average  value,VMs,high time threshold
+42,average  value,exceeds,current time high
+43,average  value,Release,low time threshold
+44,average  value,falls,current CPU slice
+46,thresholds,perform,static  ones
+48,such  results,have,realistic  environment
+50,Moreover  results,convincing,integral control equations

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 7.5px Times}
+    span.s5 {font: 7.5px Helvetica}
+    span.s6 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">This section presents high-speed interconnects for cloud computing. A cloud, sometimes referred to as</p>
+<p class="p1">a <span class="s1">warehouse-scale computer </span>(WSC), has an infrastructure consisting of a very large number of servers</p>
+<p class="p1">interconnected by high-speed networks. This infrastructure is homogeneous in terms of the hardware</p>
+<p class="p1">and software running on individual servers.</p>
+<p class="p1">Although processor and memory technology have followedMoore’s law (i.e., that computer processors</p>
+<p class="p1">double in complexity every two years), the interconnection networks have evolved at a slower pace</p>
+<p class="p1">and have become a major factor in determining the overall performance and cost of the system. The</p>
+<p class="p1">speed of the Ethernet has increased from 1 Gbps in 1997 to 100 Gbps in 2010; this increase is slightly</p>
+<p class="p1">slower than Moore’s law for traffic [<span class="s2">251</span>], which would require 1 Tbps Ethernet by 2013.</p>
+<p class="p1"><span class="s1">InfiniBand </span>is another interconnection network used by supercomputers as well as computer clouds.</p>
+<p class="p1"><span class="s1">InfiniBand </span>has a switched fabric topology designed to be scalable. It supports several signaling rates,</p>
+<p class="p1">and the energy consumption depends on the throughput. Links can be bonded together for additional</p>
+<p class="p1">throughput; <span class="s1">InfiniBand </span>’s architectural specification defines multiple operational data rates: single data</p>
+<p class="p1">rate (SDR), double data rate (DDR), quad data rate (QDR), fourteen data rate (FDR), and enhanced data</p>
+<p class="p1">rated (EDR). The signaling rates are: 2<span class="s1">.</span>5 Gbps in each direction per connection for an SDR connection;</p>
+<p class="p1">5 Gbps for DDR; 10Gbps for QDR; 14<span class="s1">.</span>0625 Gbps for FDR; and 25<span class="s1">.</span>78125 Gbps per lane for EDR. SDR,</p>
+<p class="p1">DDR, and QDR link encoding is 8 B/10 B, every 10 bits sent carry 8 bits of data. Thus single, double,</p>
+<p class="p1">and quad data rates carry 2<span class="s1">, </span>4, or 8 Gbps useful data, respectively. The effective data transmission rate</p>
+<p class="p1">is four-fifths of the raw rate.</p>
+<p class="p1"><span class="s1">InfiniBand </span>allows links to be configured for a specified speed and width; the reactivation time of</p>
+<p class="p1">the link can vary from several nanoseconds to several microseconds. Exadata and Exalogic systems</p>
+<p class="p1">from Oracle implement the <span class="s1">InfiniBand </span>QDR with 40 Gbps (32 Gbps effective) using Sun switches; the</p>
+<p class="p1"><span class="s1">InifiniBand </span>fabric is used to connect compute nodes, compute nodes with storage servers, and Exadata</p>
+<p class="p1">and Exalogic systems.</p>
+<p class="p1"><span class="s1">InfiniBand </span>has high throughput and low latency and supports QoS guarantees and failover, the</p>
+<p class="p1">capability to switch to a redundant or standby system. It offers point-to-point bidirectional serial links</p>
+<p class="p1">intended for the connection of processors with high-speed peripherals, such as disks, as well as multicast</p>
+<p class="p1">operations.</p>
+<p class="p1">The networking infrastructure of a cloud must satisfy several requirements, including scalability,</p>
+<p class="p1">cost, and performance. The network should allow low-latency, high-speed communication and, at the</p>
+<p class="p1">same time, provide <span class="s1">location transparent communication </span>between servers; in other words, every server</p>
+<p class="p1">should be able to communicate with every other server with similar speed and latency. This requirement</p>
+<p class="p1">ensures that <span class="s1">applications need not be location aware </span>and, at the same time, it reduces the complexity</p>
+<p class="p1">of the system management.</p>
+<p class="p1">Important elements of the interconnection fabric are routers and switches. Routers are switches with</p>
+<p class="p1">a very specific function: joining multiple networks, LANs, and WANs. They receive IP packets, look</p>
+<p class="p1">inside each packet to identify the source and target IP addresses, then forward these packets as needed</p>
+<p class="p1">to ensure that data reaches its final destination.</p>
+<p class="p1">Typically, the networking infrastructure is organized hierarchically. The servers are packed into racks</p>
+<p class="p1">and interconnected by a top-of-the-rack router; then rack routers are connected to cluster routers, which</p>
+<p class="p1">in turn are interconnected by a local communication fabric. Finally, interdata center networks connect</p>
+<p class="p1">multiple WSCs [<span class="s2">197</span>]. The switching fabric must have sufficient bidirectional bandwidth for cloud</p>
+<p class="p1">computing. Clearly, in a hierarchical organization, true location transparency is not feasible and cost</p>
+<p class="p1">considerations ultimately decide the actual organization and performance of the communication fabric.</p>
+<p class="p1">The cost of routers and the number of cables interconnecting the routers are major components of</p>
+<p class="p1">the overall cost of the interconnection network. We should note that the wire density has scaled up at</p>
+<p class="p1">a slower rate than processor speed, and the wire delay has remained constant over time; thus, better performance and lower costs can only be achieved with innovative router architecture. This motivates</p>
+<p class="p1">us to take a closer look at the actual design of routers.</p>
+<p class="p1">The number of ports of a router distinguishes <span class="s1">low-radix </span>routers, with a small number of ports, from</p>
+<p class="p1"><span class="s1">high-radix </span>routers, with a large number of ports. High-radix chips divide the bandwidth into a larger</p>
+<p class="p1">number of narrow ports; low-radix chips divide the bandwidth into a smaller number of wide ports.</p>
+<p class="p1">The number of intermediate routers in high-radix networks is greatly reduced, and such networks</p>
+<p class="p1">enjoy a lower latency and reduced power consumption. As a result of the increase in the signaling</p>
+<p class="p1">rate and in the number of signals, the pin bandwidth of the chips used for switching has increased by</p>
+<p class="p1">approximately an order of magnitude every five years during the past two decades.</p>
+<p class="p1">The topology of an interconnection network determines the <span class="s1">network diameter</span><span class="s3">5 </span>and its <span class="s1">bisection</span></p>
+<p class="p1"><span class="s1">bandwidth</span><span class="s3">6</span>, as well as the cost and power consumption [<span class="s2">193</span>]. First, we introduce informally the <span class="s1">Clos</span></p>
+<p class="p1">and the <span class="s1">flattened butterfly </span>topologies. The name <span class="s1">butterfly </span>comes from the pattern of inverted triangles</p>
+<p class="p1">created by the interconnections, which look like butterfly wings. A butterfly network transfers the data</p>
+<p class="p1">using the most efficient route, but it is blocking, so it cannot handle a conflict between two packets</p>
+<p class="p1">attempting to reach the same port at the same time.</p>
+<p class="p1">A <span class="s1">Clos network </span>is a multistage nonblocking network with an odd number of stages (see</p>
+<p class="p1">Figure <span class="s2">7.11</span>(a)). The network consists of two butterfly networks, and the last stage of the input is</p>
+<p class="p1">fused with the first stage of the output. In a <span class="s1">Clos network </span>all packets overshoot their destination and</p>
+<p class="p1">then hop back to it. Most of the time the overshoot is not necessary and increases the latency, meaning</p>
+<p class="p1">that a packet takes twice as many hops as it really needs. In a <span class="s1">folded Clos </span>topology the input and output</p>
+<p class="p1">networks share switch modules Figure <span class="s2">7.11</span>(b). Such networks are sometimes called <span class="s1">fat tree</span>; many</p>
+<p class="p1">commercial high-performance interconnects such as <span class="s1">Myrinet</span>, <span class="s1">InfiniBand</span>, and <span class="s1">Quadrics </span>implement a</p>
+<p class="p1">fat-tree topology. Some folded Clos networks use low-radix routers (e.g., the Cray XD1 uses radix-24</p>
+<p class="p1">routers). The latency and the cost of the network can be lowered using high-radix routers.</p>
+<p class="p1">The <span class="s1">Black Widow </span>topology extends the folded Clos topology and has a lower cost and latency. It</p>
+<p class="p1">adds side links, which permit a statical partitioning of the global bandwidth among peer subtrees [<span class="s2">321</span>].</p>
+<p class="p1">The Black Widow topology is used in Cray computers.</p>
+<p class="p1">The <span class="s1">flattened butterfly </span>topology [<span class="s2">192</span>] is similar to the <span class="s1">generalized hypercube </span>that was proposed in</p>
+<p class="p1">the early 1980s, but the wiring complexity is reduced and this topology is able to exploit high-radix</p>
+<p class="p1">routers. When constructing a <span class="s1">flattened butterfly</span>, we start with a conventional butterfly and combine the</p>
+<p class="p1">switches in each row into a single, higher-radix one; each router is linked to more processors, and this</p>
+<p class="p1">halves the number of router-to-router connections.</p>
+<p class="p1">The latency is reduced because data from one processor can reach another processor with fewer</p>
+<p class="p1">hops, though the physical path may be longer. For example, in Figure <span class="s2">7.12</span>(b) we see a 2-ary 4-fly</p>
+<p class="p1">butterfly. We combine the four switches <span class="s1">S</span><span class="s4">0</span>, <span class="s1">S</span><span class="s4">1</span>, <span class="s1">S</span><span class="s4">2</span>, and <span class="s1">S</span><span class="s4">3 </span>in the first row into a single switch <span class="s1">S</span><span class="s5"> </span></p>
+<p class="p1"><span class="s4">0</span>. The</p>
+<p class="p1"><span class="s1">flattened butterfly </span>adaptively senses congestion and overshoots only when it needs to. On adversarial</p>
+<p class="p1">traffic patterns, the <span class="s1">flattened butterfly </span>has similar performance to that of the <span class="s1">folded Clos </span>but provides</p>
+<p class="p1">over an order of magnitude increase in performance compared to the conventional butterfly.</p>
+<p class="p1">The authors of [<span class="s2">193</span>] argue that the cost of the networks in storage area networks (SANs) and computer</p>
+<p class="p1">clusters can be reduced by a factor of two when high-radix routers (radix-64 or higher) and the <span class="s1">flattened</span></p>
+<p class="p1"><span class="s1">butterfly </span>topology are used. The <span class="s1">flattened butterfly </span>does not reduce the number of local cables, (e.g.,</p>
+<p class="p1">backplane wires from the processors to routers), but it reduces the number of global cables. The cost of</p>
+<p class="p1">the cables represents as much as 80% of the total network cost (e.g., for a 4 K system the cost savings</p>
+<p class="p2"><span class="s6">of the </span>flattened butterfly <span class="s6">exceed 50%).</span></p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Virtualization simulates the interface to a physical object by any one of four means:</p>
+<p class="p1"><span class="s1">1. Multiplexing. </span>Create multiple virtual objects from one instance of a physical object. For example, a</p>
+<p class="p1">processor is multiplexed among a number of processes or threads.</p>
+<p class="p1"><span class="s1">2. Aggregation. </span>Create one virtual object from multiple physical objects. For example, a number of</p>
+<p class="p1">physical disks are aggregated into a RAID disk.</p>
+<p class="p1"><span class="s1">3. Emulation. </span>Construct a virtual object from a different type of physical object. For example, a physical</p>
+<p class="p1">disk emulates a random access memory.</p>
+<p class="p1"><span class="s1">4. Multiplexing and emulation. </span>Examples: Virtual memory with paging multiplexes real memory and</p>
+<p class="p1">disk, and a Virtual address emulates a real address; TCP emulates a reliable bit pipe and multiplexes</p>
+<p class="p1">a physical communication channel and a processor.</p>
+<p class="p1">Virtualization abstracts the underlying resources and simplifies their use, isolates users from one</p>
+<p class="p1">another, and supports replication, which, in turn, increases the elasticity of the system. Virtualization is</p>
+<p class="p1">a critical aspect of cloud computing, equally important to the providers and consumers of cloud services,</p>
+<p class="p1">and plays an important role in:</p>
+<p class="p1">• System security because it allows isolation of services running on the same hardware.</p>
+<p class="p1">• Performance and reliability because it allows applications to migrate from one platform to another.</p>
+<p class="p1">• The development and management of services offered by a provider.</p>
+<p class="p1">• Performance isolation.</p>
+<p class="p1">Virtualization has been used successfully since the late 1950s. A virtual memory based on paging</p>
+<p class="p1">was first implemented on the Atlas computer at the University of Manchester in the United Kingdom in</p>
+<p class="p1">1959. In a cloud computing environment a VMM runs on the physical hardware and exports hardware level</p>
+<p class="p1">abstractions to one or more guest operating systems.A guest OS interacts with the virtual hardware</p>
+<p class="p1">in the same way it would interact with the physical hardware, but under the watchful eye of the VMM</p>
+<p class="p1">which traps all privileged operations and mediates the interactions of the guest OS with the hardware.</p>
+<p class="p1">For example, a VMM can control I/O operations to two virtual disks implemented as two different sets</p>
+<p class="p1">of tracks on a physical disk. New services can be added without the need to modify an operating system.</p>
+<p class="p1">User convenience is a necessary condition for the success of the utility computing paradigms. One</p>
+<p class="p1">of the multiple facets of user convenience is the ability to run remotely using the system software and</p>
+<p class="p2"><span class="s2">libraries required by the application. </span>User convenience is a major advantage of a VM architecture over</p>
+<p class="p2">a traditional operating system. <span class="s2">For example, a user of the </span>AmazonWeb Services <span class="s2">(AWS) could submit an</span></p>
+<p class="p1">Amazon Machine Image (AMI) containing the applications, libraries, data, and associated configuration</p>
+<p class="p1">settings. The user could choose the operating system for the application, then start, terminate, and</p>
+<p class="p1">monitor as many instances of the AMI as needed, using the Web Service APIs and the performance</p>
+<p class="p1">monitoring and management tools provided by the <span class="s1">AWS</span>.</p>
+<p class="p1">There are side effects of virtualization, notably the <span class="s1">performance penalty </span>and the <span class="s1">hardware costs</span>. As</p>
+<p class="p1">we shall see shortly, all privileged operations of a VM must be trapped and validated by theVMM, which</p>
+<p class="p1">ultimately controls system behavior; the increased overhead has a negative impact on performance. The</p>
+<p class="p1">cost of the hardware for a VM is higher than the cost for a system running a traditional operating system</p>
+<p class="p1">because the physical hardware is shared among a set of guest operating systems and it is typically</p>
+<p class="p1">configured with faster and/or multicore processors, more memory, larger disks, and additional network</p>
+<p class="p1">interfaces compared with a system running a traditional operating system.</p>
+</body>
+</html>

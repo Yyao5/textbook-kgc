@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Nature creates complex systems from simple components. For example, a vast variety of proteins are</p>
+<p class="p1">linear chains assembled from 21 amino acids, the building blocks of proteins. Twenty amino acids are</p>
+<p class="p1">naturally incorporated into polypeptides and are encoded in the genetic code.</p>
+<p class="p1">Imitating nature, man-made systems are assembled from subassemblies; in turn, a subassembly is</p>
+<p class="p1">made from several modules, each of which could consist of submodules, and so on. Composability</p>
+<p class="p1">has natural bounds imposed by the laws of physics, as we saw when discussing heat dissipation of</p>
+<p class="p1">solid-state devices. As the number of components increases, the complexity of a system also increases</p>
+<p class="p1">for the reasons discussed in Section <span class="s1">10.1</span>.</p>
+<p class="p1">The limits of composability can be reached because new physical phenomena could affect the system</p>
+<p class="p1">when the physical size of the individual components changes. A recent paper with the suggestive</p>
+<p class="p1">title, “When Every Atom Counts” [<span class="s1">245</span>], discusses the fact that even the most modern solidstate</p>
+<p class="p1">fabrication facilities cannot produce chips with consistent properties. The percentage of defective</p>
+<p class="p1">or substandard chips has been constantly increasing as the components have become smaller and</p>
+<p class="p1">smaller.</p>
+<p class="p1">The lack of consistency in the manufacturing process of solid-state devices is attributed to the increasingly</p>
+<p class="p1">small size of the physical components of a chip. This problem is identified by the International</p>
+<p class="p1">Technology Roadmap for Semiconductors as “a red brick,” a problem without a clear solution – a wall</p>
+<p class="p1">that could prevent further progress. Chip consistency is no longer feasible because the transistors and</p>
+<p class="p1">“wires” on a chip are so small that random differences in the placement of an atom can have a devastating</p>
+<p class="p1">effect, e.g., can increase power consumption by an order of magnitude and slow the chip by as much</p>
+<p class="p1">as 30%.</p>
+<p class="p1">As the features become smaller and smaller, the range of the <span class="s2">threshold voltage </span>– the voltage needed</p>
+<p class="p1">to turn a transistor on and off – has been widening, and many transistors have this threshold voltage</p>
+<p class="p1">at or near zero. Thus, they cannot operate as switches. Although the range for 28 nm technology was</p>
+<p class="p1">approximately between <span class="s2">+</span>0<span class="s2">.</span>01 and <span class="s2">+</span>0<span class="s2">.</span>4 V, the range for 20 nm technology is between <span class="s2">−</span>0<span class="s2">.</span>05 and</p>
+<p class="p1"><span class="s2">+</span>0<span class="s2">.</span>45 V, and the range becomes even wider, from <span class="s2">−</span>0<span class="s2">.</span>18 to <span class="s2">+</span>0<span class="s2">.</span>55, for 14 nm technology.</p>
+<p class="p1">There are physical bounds on the composition of analog systems; noise accumulation, heat dissipation,</p>
+<p class="p1">cross-talk, the interference of signals on multiple communication channels, and several other</p>
+<p class="p1">factors limit the number of components of an analog system. Digital systems have more distant bounds,</p>
+<p class="p1">but composability is still limited by physical laws.</p>
+<p class="p1">There are virtually no bounds on composition of digital computing and communication systems</p>
+<p class="p1">controlled by software. The Internet is a network of networks and a prime example of composability</p>
+<p class="p1">with distant bounds. Computer clouds are another example; a cloud is composed of a very large number</p>
+<p class="p1">of servers and interconnects with each server made up of multiple processors and each processor made</p>
+<p class="p1">up of multiple cores. Software is the ingredient that pushes the composability bounds and liberates</p>
+<p class="p1">computer and communication systems from the limits imposed by physical laws.</p>
+<p class="p1">In the physical world the laws that are valid at one scale break down at a different scale, e.g., the</p>
+<p class="p1">laws of classical mechanics are replaced at atomic and subatomic scales by quantum mechanics. Thus,</p>
+<p class="p1">we should not be surprised that scale really matters in the design of computing and communication</p>
+<p class="p1">systems. Indeed, architectures, algorithms, and policies that work well for systems with a small number</p>
+<p class="p1">of components very seldom scale up.</p>
+<p class="p1">For example, many computer clusters have a front-end that acts as the nerve center of a system,</p>
+<p class="p1">manages communication with the outside world, monitors the entire system, and supports system</p>
+<p class="p1">administration and software maintenance. A computer cloud has multiple nerve centers of this kind, and</p>
+<p class="p1">new algorithms to support collaboration among these centers must be developed. Scheduling algorithms</p>
+<p class="p1">that work well within the confines of a single system cannot be extended to collections of autonomous systems where each system manages local resources; in this case, as in the previous example, entities</p>
+<p class="p1">must collaborate with one another, and this requires communication and consensus.</p>
+<p class="p1">Another manifestation of this phenomenon is in the vulnerabilities of large-scale distributed systems.</p>
+<p class="p1">The implementation of Google <span class="s2">BigTable </span>revealed that many distributed protocols designed to protect</p>
+<p class="p1">against network partitions and fail-stop are unable to cope with failures due to scale [<span class="s1">73</span>]. Memory and</p>
+<p class="p1">network corruption, extended and asymmetric network partitions, systems that fail to respond, and large</p>
+<p class="p1">clock skews occur with increased frequency in a large-scale system and interact with one another in a</p>
+<p class="p1">manner that greatly affects overall system availability.</p>
+<p class="p1">Scaling has other dimensions than just the number of components. The space plays an important</p>
+<p class="p1">role; the communication latency is small when the component systems are clustered together within a</p>
+<p class="p1">small area and allows us to implement efficient algorithms for global decision making, e.g., consensus</p>
+<p class="p1">algorithms. When, for the reasons discussed in Section 1.6, the data centers of a cloud provider are</p>
+<p class="p1">distributed over a large geographic area, transactional database systems are of little use for most online</p>
+<p class="p1">transaction-oriented systems, and a new type of data store must be introduced in the computational</p>
+<p class="p1">ecosystem, as shown in Section 8.8.</p>
+<p class="p1">Societal scaling means that a service is used by a very large segment of the population and/or is</p>
+<p class="p1">a critical element of the infrastructure. There is no better example to illustrate how societal scaling</p>
+<p class="p1">affects system complexity than communication supported by the Internet. The infrastructure supporting</p>
+<p class="p1">the service must be highly available. A consequence of redundancy and of the measures to maintain</p>
+<p class="p1">consistency is increased system complexity.</p>
+<p class="p1">At the same time, the popularity of the service demands simple and intuitive means to access the</p>
+<p class="p1">infrastructure. Again, system complexity increases due to the need to hide the intricate mechanisms</p>
+<p class="p1">from a layperson who has little understanding of the technology. Another consequence of the desire</p>
+<p class="p1">to design wireless devices that operate efficiently in terms of power consumption and present the user</p>
+<p class="p1">with a simple interface and few choices and satisfy a host of other popular attributes is an increased</p>
+<p class="p1">vulnerability to attacks from a few individuals who can discover and exploit system weaknesses. Few</p>
+<p class="p1">smartphone and tablet users understand the security risks of wireless communication.</p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Courier}
+    span.s3 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Megastore </span>is scalable storage for online services. The system, distributed over several data centers, has a</p>
+<p class="p1">very large capacity, 1PBin 2011, and it is highly available.<span class="s1">Megastore </span>is widely used internally at Google;</p>
+<p class="p1">it handles some 23 billion transactions daily: 3 billion <span class="s2">write </span>and 20 billion <span class="s2">read </span>transactions [<span class="s3">37</span>].</p>
+<p class="p1">The basic design philosophy of the system is to partition the data into <span class="s1">entity groups </span>and replicate</p>
+<p class="p1">each partition independently in data centers located in different geographic areas. The system supports</p>
+<p class="p1">full ACID semantics within each partition and provides limited consistency guarantees across partitions</p>
+<p class="p1">(see Figure <span class="s3">8.12</span>). <span class="s1">Megastore </span>supports only those traditional database features that allow the system to</p>
+<p class="p1">scale well and that do not drastically affect the response time.</p>
+<p class="p1">Another distinctive feature of the system is the use of the Paxos consensus algorithm, discussed in</p>
+<p class="p1">Section 2.11, to replicate primary user data, metadata, and system configuration information across data</p>
+<p class="p1">centers and for locking. The version of the Paxos algorithm used by <span class="s1">Megastore </span>does not require a single</p>
+<p class="p1">master. Instead, any node can initiate <span class="s2">read </span>and <span class="s2">write </span>operations to a write-ahead log replicated to a</p>
+<p class="p1">group of symmetric peers.</p>
+<p class="p1">The entity groups are application-specific and store together logically related data. For example, an</p>
+<p class="p1">email account could be an entity group for an email application. Data should be carefully partitioned</p>
+<p class="p1">to avoid excessive communication between entity groups. Sometimes it is desirable to form multiple</p>
+<p class="p1">entity groups, as in the case of blogs [<span class="s3">37</span>].</p>
+<p class="p1">The middle ground between traditional and <span class="s1">NoSQL </span>databases taken by the <span class="s1">Megastore </span>designers is</p>
+<p class="p1">also reflected in the data model. The data model is declared in a <span class="s1">schema </span>consisting of a set of <span class="s1">tables</span></p>
+<p class="p1">composed of <span class="s1">entries</span>, each entry being a collection of named and typed <span class="s1">properties</span>. The unique primary</p>
+<p class="p1">key of an entity in a table is created as a composition of entry properties. A <span class="s1">Megastore </span>table can be</p>
+<p class="p1">a <span class="s1">root </span>or a <span class="s1">child </span>table. Each <span class="s1">child entity </span>must reference a special entity, called a <span class="s1">root entity </span>in its root</p>
+<p class="p1">table. An entity group consists of the primary entity and all entities that reference it.</p>
+<p class="p1">The system makes extensive use of <span class="s1">BigTable</span>. Entities from different <span class="s1">Megastore </span>tables can be mapped</p>
+<p class="p1">to the same <span class="s1">BigTable </span>row without collisions. This is possible because the <span class="s1">BigTable </span>column name is a</p>
+<p class="p1">concatenation of the <span class="s1">Megastore </span>table name and the name of a property. A <span class="s1">BigTable </span>row for the root</p>
+<p class="p1">entity stores the transaction and all metadata for the entity group. As we saw in Section <span class="s3">8.9</span>, multiple</p>
+<p class="p1">versions of the data with different time stamps can be stored in a cell. <span class="s1">Megastore </span>takes advantage of</p>
+<p class="p1">this feature to implement <span class="s1">multi-version concurrency control </span>(MVCC); when a mutation of a transaction</p>
+<p class="p1">occurs, this mutation is recorded along with its time stamp, rather than marking the old data as obsolete and adding the new version. This strategy has several advantages: <span class="s2">read </span>and <span class="s2">write </span>operations can</p>
+<p class="p1">proceed concurrently, and a <span class="s2">read </span>always returns the last fully updated version.</p>
+<p class="p1">A <span class="s2">write </span>transaction involves the following steps: (1) Get the timestamp and the log position of</p>
+<p class="p1">the last committed transaction. (2) Gather the <span class="s2">write </span>operations in a log entry. (3) Use the consensus</p>
+<p class="p1">algorithm to <span class="s2">append </span>the log entry and then commit. (4) Update the <span class="s1">BigTable </span>entries. (5) Clean up.</p>
+</body>
+</html>

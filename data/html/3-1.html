@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.5px Courier}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.5px Courier; color: #000066}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 8.5px Courier}
+    span.s5 {font: 8.5px Courier; color: #000066}
+    span.s6 {font: 10.0px Helvetica; color: #000000}
+    span.s7 {font: 10.0px Times; color: #000000}
+  </style>
+</head>
+<body>
+<p class="p1">Amazon introduced a computing platform that has changed the face of computing in the last decade.</p>
+<p class="p1">First, it installed a powerful computing infrastructure to sustain its core business, e-commerce, selling</p>
+<p class="p1">a variety of goods ranging from books and CDs to gourmet foods and home appliances. Then Amazon</p>
+<p class="p1">discovered that this infrastructure could be further extended to provide affordable and easy-to-use</p>
+<p class="p1">resources for enterprise computing as well as computing for the masses.</p>
+<p class="p1">In mid-2000 Amazon introduced <span class="s1">Amazon Web Services </span>(AWS), based on the <span class="s1">IaaS </span>delivery model.</p>
+<p class="p1">In this model the cloud service provider offers an infrastructure consisting of compute and storage</p>
+<p class="p1">servers interconnected by high-speed networks that support a set of services to access these resources.</p>
+<p class="p1">An application developer is responsible for installing applications on a platform of his or her choice</p>
+<p class="p1">and managing the resources provided by Amazon.</p>
+<p class="p1">It is reported that in 2012, businesses in 200 countries used the <span class="s1">AWS</span>, demonstrating the international</p>
+<p class="p1">appeal of this computing paradigm. A significant number of large corporations as well as start-ups take</p>
+<p class="p1">advantage of computing services supported by the <span class="s1">AWS </span>infrastructure. For example, one start-up reports</p>
+<p class="p1">that its monthly computing bills at Amazon are in the range of $100<span class="s1">,</span>000, whereas it would spend more</p>
+<p class="p1">than $2<span class="s1">,</span>000<span class="s1">,</span>000 to compute using its own infrastructure, without benefit of the speed and flexibility</p>
+<p class="p1">offered by <span class="s1">AWS</span>. The start-up employs 10 engineers rather than the 60 it would need to support its own</p>
+<p class="p1">computing infrastructure (“Active in cloud, Amazon reshapes computing,” <span class="s1">New York Times</span>, August</p>
+<p class="p1">28<span class="s1">, </span>2012).</p>
+<p class="p1">Amazon Web Services. Amazon was the first provider of cloud computing; it announced a limited</p>
+<p class="p1">public beta release of its Elastic Computing platform called <span class="s1">EC2 </span>in August 2006. Figure <span class="s2">3.1 </span>shows the</p>
+<p class="p1">palette of <span class="s1">AWS </span>services accessible via the <span class="s1">Management Console </span>in late 2011 [13–18].</p>
+<p class="p1"><span class="s1">Elastic Compute Cloud (EC2)</span><span class="s3">1 </span>is a Web service with a simple interface for launching instances of</p>
+<p class="p1">an application under several operating systems, such as several <span class="s1">Linux </span>distributions, <span class="s1">Microsoft Windows</span></p>
+<p class="p1">Server 2003 and 2008, <span class="s1">OpenSolaris</span>, <span class="s1">FreeBSD</span>, and <span class="s1">NetBSD</span>.</p>
+<p class="p1">An instance is created either from a predefined <span class="s1">Amazon Machine Image </span>(AMI) digitally signed</p>
+<p class="p1">and stored in <span class="s1">S3 </span>or from a user-defined image. The image includes the operating system, the run-time</p>
+<p class="p1">environment, the libraries, and the application desired by the user. AMI images create an exact copy of</p>
+<p class="p1">the original image but without configuration-dependent information such as the <span class="s1">hostname </span>or the MAC</p>
+<p class="p1">address. A user can: (i) Launch an instance from an existingAMI and terminate an instance; (ii) start and</p>
+<p class="p1">stop an instance; (iii) create a new image; (iv) add tags to identify an image; and (v) reboot an instance.</p>
+<p class="p1"><span class="s1">EC2 </span>is based on the <span class="s1">Xen </span>virtualization strategy discussed in detail in Section 5.8. In <span class="s1">EC2 </span>each virtual</p>
+<p class="p1">machine or instance functions as a virtual private server. An instance specifies the maximum amount of</p>
+<p class="p1">resources available to an application, the interface for that instance, and the cost per hour.</p>
+<p class="p1">A user can interact with <span class="s1">EC2 </span>using a set of SOAP messages (see Section 4.3) and can list available</p>
+<p class="p1">AMI images, boot an instance from an image, terminate an image, display the running instances of a</p>
+<p class="p1">user, display console output, and so on. The user has root access to each instance in the elastic and</p>
+<p class="p1">secure computing environment of <span class="s1">EC2</span>. The instances can be placed in multiple locations in different</p>
+<p class="p1">regions and availability zones.</p>
+<p class="p1"><span class="s1">EC2 </span>allows the import of virtual machine images from the user environment to an instance through</p>
+<p class="p1">a facility called <span class="s1">VM import. </span>It also automatically distributes the incoming application traffic among</p>
+<p class="p1">multiple instances using the <span class="s1">elastic load-balancing </span>facility. <span class="s1">EC2 </span>associates an <span class="s1">elastic IP address </span>with</p>
+<p class="p1">an account; this mechanism allows a user to mask the failure of an instance and remap a public IP</p>
+<p class="p1">address to any instance of the account without the need to interact with the software support team.</p>
+<p class="p1"><span class="s1">Simple Storage System (S3) </span>is a storage service designed to store large objects. It supports a minimal</p>
+<p class="p1">set of functions: <span class="s4">write</span>, <span class="s4">read</span>, and <span class="s4">delete</span>.</p>
+<p class="p1"><span class="s1">S3 </span>allows an application to handle an unlimited number of objects ranging in size from one byte</p>
+<p class="p1">to five terabytes. An object is stored in a <span class="s1">bucket </span>and retrieved via a unique developer-assigned key. A</p>
+<p class="p1">bucket can be stored in a region selected by the user. <span class="s1">S3 </span>maintains the name, modification time, an</p>
+<p class="p1">access control list, and up to four kilobytes of user-defined metadata for each object. The object names are global. Authentication mechanisms ensure that data is kept secure; objects can be made public, and</p>
+<p class="p1">rights can be granted to other users.</p>
+<p class="p1"><span class="s1">S3 </span>supports <span class="s4">PUT</span>, <span class="s4">GET</span>, and <span class="s4">DELETE </span>primitives to manipulate objects but does not support primitives</p>
+<p class="p1">to copy, rename, or move an object from one bucket to another. Appending to an object requires a <span class="s4">read</span></p>
+<p class="p1">followed by a <span class="s4">write </span>of the entire object.</p>
+<p class="p1"><span class="s1">S3 </span>computes the <span class="s1">MD5</span><span class="s3">2 </span>of every object written and returns it in a field called <span class="s1">ETag</span>. A user is expected</p>
+<p class="p1">to compute the <span class="s1">MD5 </span>of an object stored or written and compare this with the <span class="s1">ETag</span>; if the two values</p>
+<p class="p1">do not match, then the object was corrupted during transmission or storage.</p>
+<p class="p1">The <span class="s1">Amazon S3 SLA </span>guarantees reliability. <span class="s1">S3 </span>uses standards-based REST and SOAP interfaces (see</p>
+<p class="p1">Section 4.3); the default download protocol is HTTP, but BitTorrent<span class="s3">3 </span>protocol interface is also provided</p>
+<p class="p1">to lower costs for high-scale distribution.</p>
+<p class="p1"><span class="s1">Elastic Block Store (EBS) </span>provides persistent block-level storage volumes for use with Amazon <span class="s1">EC2</span></p>
+<p class="p1">instances. A volume appears to an application as a raw, unformatted, and reliable physical disk; the size</p>
+<p class="p1">of the storage volumes ranges from one gigabyte to one terabyte. The volumes are grouped together in</p>
+<p class="p1">availability zones and are automatically replicated in each zone. An <span class="s1">EC2 </span>instance may mount multiple</p>
+<p class="p1">volumes, but a volume cannot be shared among multiple instances. The <span class="s1">EBS </span>supports the creation of</p>
+<p class="p1">snapshots of the volumes attached to an instance and then uses them to restart an instance. The storage</p>
+<p class="p1">strategy provided by <span class="s1">EBS </span>is suitable for database applications, file systems, and applications using raw</p>
+<p class="p1">data devices.</p>
+<p class="p1"><span class="s1">Simple DB </span>is a nonrelational data store that allows developers to store and query data items via</p>
+<p class="p1">Web services requests. It supports store-and-query functions traditionally provided only by relational</p>
+<p class="p1">databases. <span class="s1">Simple DB </span>creates multiple geographically distributed copies of each data item and supports</p>
+<p class="p1">high-performanceWeb applications; at the same time, it automatically manages infrastructure provisioning,</p>
+<p class="p1">hardware and software maintenance, replication and indexing of data items, and performance tuning.</p>
+<p class="p1"><span class="s1">Simple Queue Service (SQS) </span>is a hosted message queue. <span class="s1">SQS </span>is a system for supporting automated</p>
+<p class="p1">workflows; it allows multiple Amazon <span class="s1">EC2 </span>instances to coordinate their activities by sending and</p>
+<p class="p1">receiving <span class="s1">SQS </span>messages. Any computer connected to the Internet can add or <span class="s4">read </span>messages without</p>
+<p class="p1">any installed software or special firewall configurations.</p>
+<p class="p1">Applications using <span class="s1">SQS </span>can run independently and asynchronously and do not need to be developed</p>
+<p class="p1">with the same technologies. A received message is “locked” during processing; if processing fails, the</p>
+<p class="p1">lock expires and the message is available again. The time-out for locking can be changed dynamically</p>
+<p class="p1">via the <span class="s1">ChangeMessageVisibility </span>operation. Developers can access <span class="s1">SQS </span>through standards-based <span class="s1">SOAP</span></p>
+<p class="p1">and Query interfaces. Queues can be shared with other <span class="s1">AWS </span>accounts and <span class="s1">anonymously</span>; queue sharing</p>
+<p class="p1">can also be restricted by IP address and time-of-day. An example showing the use of message queues</p>
+<p class="p1">is presented in Section 4.7.</p>
+<p class="p1"><span class="s1">CloudWatch </span>is a monitoring infrastructure used by application developers, users, and system administrators</p>
+<p class="p1">to collect and track metrics important for optimizing the performance of applications and</p>
+<p class="p1">for increasing the efficiency of resource utilization.Without installing any software, a user can monitor</p>
+<p class="p1">approximately a dozen preselected metrics and then view graphs and statistics for these</p>
+<p class="p1">metrics.</p>
+<p class="p1">When launching an Amazon Machine Image (AMI), a user can start the <span class="s1">CloudWatch </span>and specify the</p>
+<p class="p1">type of monitoring. <span class="s1">Basic Monitoring </span>is free of charge and collects data at five-minute intervals for up to 10 metrics; <span class="s1">Detailed Monitoring </span>is subject to a charge and collects data at one-minute intervals. This</p>
+<p class="p1">service can also be used to monitor the latency of access to <span class="s1">EBS </span>volumes, the available storage space for</p>
+<p class="p1"><span class="s1">RDS </span>DB instances, the number of messages in <span class="s1">SQS</span>, and other parameters of interest for applications.</p>
+<p class="p1"><span class="s1">Virtual Private Cloud (VPC) </span>provides a bridge between the existing IT infrastructure of an organization</p>
+<p class="p1">and the <span class="s1">AWS </span>cloud. The existing infrastructure is connected via a virtual private network (VPN) to</p>
+<p class="p1">a set of isolated <span class="s1">AWS </span>compute resources. <span class="s1">VPC </span>allows existing management capabilities such as security</p>
+<p class="p1">services, firewalls, and intrusion detection systems to operate seamlessly within the cloud.</p>
+<p class="p1"><span class="s1">Auto Scaling </span>exploits cloud elasticity and provides automatic scaling of <span class="s1">EC2 </span>instances. The service</p>
+<p class="p1">supports grouping of instances,monitoring of the instances in a group, and defining <span class="s1">triggers </span>and pairs of</p>
+<p class="p1"><span class="s1">CloudWatch alarms and policies</span>, which allow the size of the group to be scaled up or down. Typically,</p>
+<p class="p1">a maximum, a minimum, and a regular size for the group are specified.</p>
+<p class="p1">An <span class="s1">Auto Scaling group </span>consists of a set of instances described in a static fashion by <span class="s1">launch configurations</span>.</p>
+<p class="p1">When the group scales up, new instances are started using the parameters for the <span class="s4">runInstances</span></p>
+<p class="p1"><span class="s1">EC2 </span>call provided by the launch configuration. When the group scales down, the instances with older</p>
+<p class="p1">launch configurations are terminated first. The monitoring function of the <span class="s1">Auto Scaling </span>service carries</p>
+<p class="p1">out <span class="s1">health checks </span>to enforce the specified policies; for example, a user may specify a <span class="s1">health check for</span></p>
+<p class="p1"><span class="s1">elastic load balancing </span>and then <span class="s1">Auto Scaling </span>will terminate an instance exhibiting a low performance</p>
+<p class="p1">and start a new one. Triggers use <span class="s1">CloudWatch </span>alarms to detect events and then initiate specific actions;</p>
+<p class="p1">for example, a trigger could detect when the CPU utilization of the instances in the group goes above</p>
+<p class="p1">90% and then scale up the group by starting new instances. Typically, triggers to scale up and down are</p>
+<p class="p1">specified for a group.</p>
+<p class="p1">Several new <span class="s1">AWS </span>services were introduced in 2012; some of them are in a beta stage at the time of</p>
+<p class="p1">this writing. Among the new services we note: <span class="s1">Route 53</span>, a low-latency DNS service used to manage</p>
+<p class="p1">user’s DNS public records; <span class="s1">Elastic MapReduce (EMR)</span>, a service supporting processing of large amounts</p>
+<p class="p1">of data using a hosted <span class="s1">Hadoop </span>running on <span class="s1">EC2 </span>and based on the <span class="s1">MapReduce </span>paradigm discussed in</p>
+<p class="p1">Section 4.6; <span class="s1">Simple Workflow Service (SWF)</span>, which supports workflow management (see Section 4.4)</p>
+<p class="p1">and allows scheduling, management of dependencies, and coordination of multiple <span class="s1">EC2 </span>instances;</p>
+<p class="p1"><span class="s1">ElastiCache</span>, a service enabling Web applications to retrieve data from a managed in-memory caching</p>
+<p class="p1">system rather than a much slower disk-based database; <span class="s1">DynamoDB</span>, a scalable and low-latency fully</p>
+<p class="p1">managed NoSQL database service; <span class="s1">CloudFront</span>, a Web service for content delivery; and <span class="s1">Elastic Load</span></p>
+<p class="p1"><span class="s1">Balancer</span>, a cloud service to automatically distribute the incoming requests across multiple instances of</p>
+<p class="p1">the application. Two new services, the <span class="s1">Elastic Beanstalk </span>and the <span class="s1">CloudFormation</span>, are discussed next.</p>
+<p class="p1"><span class="s1">Elastic Beanstalk</span>, a service that interacts with other <span class="s1">AWS </span>services, including <span class="s1">EC2, S3, SNS, Elastic</span></p>
+<p class="p1"><span class="s1">Load Balance</span>, and <span class="s1">Auto Scaling</span>, automatically handles the deployment, capacity provisioning, load</p>
+<p class="p1">balancing, <span class="s1">Auto Scaling</span>, and application monitoring functions [<span class="s2">356</span>]. The service automatically scales</p>
+<p class="p1">the resources as required by the application, either up, or down based on default Auto Scaling settings.</p>
+<p class="p1">Some of the management functions provided by the service are: (i) deployment of a new application</p>
+<p class="p1">version (or rollback to a previous version); (ii) access to the results reported by <span class="s1">CloudWatch </span>monitoring</p>
+<p class="p1">service; (iii) email notifications when application status changes or application servers are added or</p>
+<p class="p1">removed; and (iv) access to server login files without needing to login to the application servers.</p>
+<p class="p1">The <span class="s1">Elastic Beanstalk </span>service is available to developers using a <span class="s1">Java </span>platform, the <span class="s1">PHP </span>server-side</p>
+<p class="p1">description language, or <span class="s1">.NET </span>framework. For example, a Java developer can create the application using any Integrated Development Environment (IDE) such as <span class="s1">Eclipse </span>and package the code into a Java</p>
+<p class="p1">Web Application Archive (a file of type “.war”) file. The “.war” file should then be uploaded to the</p>
+<p class="p1"><span class="s1">Elastic Beanstalk </span>using the <span class="s1">Management Console </span>and then deployed, and in a short time the application</p>
+<p class="p1">will be accessible via a URL.</p>
+<p class="p1"><span class="s1">CloudFormation </span>allows the creation of a <span class="s1">stack </span>describing the infrastructure for an application. The</p>
+<p class="p1">user creates a template, a text file formatted as in <span class="s1">Javascript Object Notation </span>(JSON), describing the</p>
+<p class="p1">resources, the configuration values, and the interconnection among these resources. The template can</p>
+<p class="p1">be parameterized to allow customization at run time, (e.g., to specify the types of instances, database</p>
+<p class="p1">port numbers, or RDS size). A template for the creation of an <span class="s1">EC2 </span>instance follows:</p>
+<p class="p2">{</p>
+<p class="p2">"Description" : "Create instance running Ubuntu Server 12.04 LTS</p>
+<p class="p2">64 bit AMI</p>
+<p class="p2">"Parameters" : {</p>
+<p class="p2">"KeyPair" : {</p>
+<p class="p2">"Description" : "Key Pair to allow SSH access to the instance",</p>
+<p class="p2">"Type" : "String"</p>
+<p class="p2">}</p>
+<p class="p1"><span class="s4">}</span>,</p>
+<p class="p2">"Resources" : {</p>
+<p class="p2">"Ec2Instance" : {</p>
+<p class="p2">"Type" : "AWS::EC2::Instance",</p>
+<p class="p2">"Properties" : {</p>
+<p class="p2">"KeyName" : {"Ref" : "KeyPair"},</p>
+<p class="p2">"ImageId" : "aki-004ec330"</p>
+<p class="p2">}</p>
+<p class="p2">}</p>
+<p class="p1"><span class="s4">}</span>,</p>
+<p class="p2">"Outputs" : {</p>
+<p class="p2">"InstanceId" : {</p>
+<p class="p2">"Description" : "The InstanceId of the newly created</p>
+<p class="p2">instance",</p>
+<p class="p2">"Value" : { "Ref" : "Ec2InstDCM"}</p>
+<p class="p2">}</p>
+<p class="p1"><span class="s4">}</span>,</p>
+<p class="p2">"AWSTemplateFormatVersion" : "2012-03-09"</p>
+<p class="p2">}</p>
+<p class="p1">The Amazon Web Services Licensing Agreement (AWSLA) allows the cloud service provider to</p>
+<p class="p1">terminate service to any customer at any time for any reason and contains a covenant not to sue Amazon</p>
+<p class="p1">or its affiliates for any damages that might arise out of the use of <span class="s1">AWS</span>. As noted in [<span class="s2">133</span>], the AWSLA</p>
+<p class="p1">prohibits the use of “other information obtained through <span class="s1">AWS </span>for the purpose of direct marketing,</p>
+<p class="p1">spamming, contacting sellers or customers.” It prohibits <span class="s1">AWS </span>from being used to store any content that is “obscene, libelous, defamatory or otherwise malicious or harmful to any person or entity.” It</p>
+<p class="p1">also prohibits <span class="s1">S3 </span>from being used “in any way that is otherwise illegal or promotes illegal activities,</p>
+<p class="p1">including without limitation in any manner that might be discriminatory based on race, sex, religion,</p>
+<p class="p1">nationality, disability, sexual orientation, or age.”</p>
+<p class="p1">Users have several choices for interacting with and managing <span class="s1">AWS </span>resources from either a Web</p>
+<p class="p1">browser or from a system running <span class="s1">Linux </span>or <span class="s1">Microsoft Windows</span>:</p>
+<p class="p1"><span class="s1">1. </span>The <span class="s1">AWS</span>WebManagement Console, available at <span class="s5">http://aws.amazon.com/console/</span>; this is the</p>
+<p class="p1">easiest way to access all services, but not all options may be available in this mode.</p>
+<p class="p3"><span class="s6">2. </span><span class="s7">Command-line tools; see </span>http://aws.amazon.com/developertools<span class="s7">.</span></p>
+<p class="p1"><span class="s1">3. </span>AWS SDK libraries and toolkits provided for several programming languages, including Java, PHP,<span class="s3">4</span></p>
+<p class="p1">C#, and Obj C.</p>
+<p class="p1"><span class="s1">4. </span>Raw REST requests (see Section 4.3 for a discussion of architectural styles for cloud applications).</p>
+<p class="p1">Regions and Availability Zones. Today Amazon offers cloud services through a network of data</p>
+<p class="p1">centers on several continents, (see Table <span class="s2">3.1</span><span class="s3">5</span>). In each <span class="s1">region </span>there are several <span class="s1">availability zones</span></p>
+<p class="p1">interconnected by high-speed networks; regions communicate through the Internet and do not share</p>
+<p class="p1">resources.</p>
+<p class="p1">An availability zone is a data center consisting of a large number of servers.Aservermay runmultiple</p>
+<p class="p1">virtual machines or instances, started by one or more users; an instance may use storage services, <span class="s1">S3</span>,</p>
+<p class="p1"><span class="s1">EBS)</span>, and <span class="s1">Simple DB</span>, as well as other services provided by <span class="s1">AWS </span>(see Figure <span class="s2">3.2</span>). A cloud interconnect</p>
+<p class="p1">allows all systems in an availability zone to communicate with one another and with systems in other</p>
+<p class="p1">availability zones of the same region.</p>
+<p class="p1">Storage is automatically replicated within a region; <span class="s1">S3 </span>buckets are replicated within an availability</p>
+<p class="p1">zone and between the availability zones of a region, whereas <span class="s1">EBS </span>volumes are replicated only within the same availability zone. Critical applications are advised to replicate important information in multiple</p>
+<p class="p1">regions to be able to function when the servers in one region are unavailable due to catastrophic events.</p>
+<p class="p1">A user can request virtual servers and storage located in one of the regions. The user can also request</p>
+<p class="p1">virtual servers in one of the availability zones of that region. The <span class="s1">Elastic Compute Cloud (EC2) </span>service</p>
+<p class="p1">allows a user to interact and to manage the virtual servers.</p>
+<p class="p1">The billing rates in each region are determined by the components of the operating costs, including</p>
+<p class="p1">energy, communication, and maintenance costs. Thus, the choice of the region ismotivated by the desire</p>
+<p class="p1">to minimize costs, reduce communication latency, and increase reliability and security.</p>
+<p class="p1">An <span class="s1">instance </span>is a virtual server. The user chooses the region and the availability zone where this virtual</p>
+<p class="p1">server should be placed and selects from a limited menu of instance types: the one that provides the</p>
+<p class="p1">resources, CPU cycles, main memory, secondary storage, communication, and I/O bandwidth needed</p>
+<p class="p1">by the application.</p>
+<p class="p1">When launched, an instance is provided with a <span class="s1">DNS name</span>. This name maps to a <span class="s1">private IP address</span></p>
+<p class="p1">for internal communication within the internal <span class="s1">EC2 </span>communication network and a <span class="s1">public IP address</span></p>
+<p class="p1">for communication outside the internal Amazon network, (e.g., for communication with the user that</p>
+<p class="p1">launched the instance).Network Address Translation (NAT) maps external IP addresses to internal ones.</p>
+<p class="p1">The public IP address is assigned for the lifetime of an instance and it is returned to the pool of</p>
+<p class="p1">available public IP addresses when the instance is either stopped or terminated. An instance can request</p>
+<p class="p1">an <span class="s1">elastic IP address</span>, rather than a public IP address. The elastic IP address is a static public IP address</p>
+<p class="p1">allocated to an instance from the available pool of the availability zone. An elastic IP address is not</p>
+<p class="p1">released when the instance is stopped or terminated and must be released when no longer needed.</p>
+<p class="p1">The Charges for Amazon Web Services. Amazon charges a fee for <span class="s1">EC2 </span>instances, <span class="s1">EBS </span>storage,</p>
+<p class="p1">data transfer, and several other services. The charges differ from one region to another and depend on</p>
+<p class="p1">the pricing model; see <span class="s5">http://aws.amazon.com/ec2/pricing </span>for the current pricing structure.</p>
+<p class="p1">There are three pricing models for <span class="s1">EC2 </span>instances: on-demand, reserved, and spot. <span class="s1">On-demand</span></p>
+<p class="p1"><span class="s1">instances </span>use a flat hourly rate, and the user is charged for the time an instance is running; no reservation</p>
+<p class="p1">is required for this most popular model. For <span class="s1">reserved instances </span>a user pays a one-time fee to lock in a</p>
+<p class="p1">typically lower hourly rate. This model is advantageous when a user anticipates that the application will</p>
+<p class="p1">require a substantial number of CPU cycles and this amount is known in advance. Additional capacity</p>
+<p class="p1">is available at the larger standard rate. In case of <span class="s1">spot instances</span>, users bid on unused capacity and their</p>
+<p class="p1">instances are launched when the market price reaches a threshold specified by the user.</p>
+<p class="p1">The <span class="s1">EC2 </span>system offers several instance types:</p>
+<p class="p1">• <span class="s1">Standard instances. </span>Micro (StdM), small (StdS), large (StdL), extra large (StdXL); small is the</p>
+<p class="p1">default.</p>
+<p class="p1">• <span class="s1">High memory instances. </span>High-memory extra-large (HmXL), high-memory double extra-large</p>
+<p class="p1">(Hm2XL), and high-memory quadruple extra-large (Hm4XL).</p>
+<p class="p1">• <span class="s1">High CPU instances. </span>High-CPU extra-large (HcpuXL).</p>
+<p class="p1">• <span class="s1">Cluster computing. </span>Cluster computing quadruple extra-large (Cl4XL).</p>
+<p class="p1">Table <span class="s2">3.2 </span>summarizes the features and the amount of resources supported by each instance. The</p>
+<p class="p1">resources supported by each configuration are main memory, virtual computers (VCs) with a 32- or 64-bit</p>
+<p class="p1">architecture, instance memory (I-memory) on persistent storage, and I/O performance at two levels: moderate</p>
+<p class="p1">(M) or high (H). The computing power of a virtual core is measured in <span class="s1">EC2 compute units (CUs)</span>.</p>
+<p class="p1">A main attraction of Amazon cloud computing is the low cost. The dollar amounts charged for one</p>
+<p class="p1">hour of running Amazon’s services under <span class="s1">Linux </span>or <span class="s1">Unix </span>and <span class="s1">Microsoft Windows </span>in mid-2012 are summarized</p>
+<p class="p1">in Table <span class="s2">3.3</span>. There are no charges for data transfers from the user’s site to the Amazon network</p>
+<p class="p1">or within the Amazon network; the charges for data transfer from the <span class="s1">AWS </span>network to the outside world</p>
+<p class="p1">depend on the region. For example, the charges for the USWest (Oregon) region are shown in Table <span class="s2">3.4</span>.</p>
+<p class="p1">An Evaluation of Amazon Web Services. In 2007 Garfinkel reported the results of an early evaluation</p>
+<p class="p1">of Amazon Web Services [<span class="s2">133</span>]. The paper reports that <span class="s1">EC2 </span>instances are fast, responsive, and very reliable; a new instance could be started in less than two minutes. During the year of testing, one</p>
+<p class="p1">unscheduled reboot and one instance freeze were experienced. No data was lost during the reboot, but</p>
+<p class="p1">no data could be recovered from the virtual disks of the frozen instance.</p>
+<p class="p1">To test the <span class="s1">S3 </span>service, a bucket was created and loaded with objects in sizes of 1 byte, 1 KB, 1MB,</p>
+<p class="p1">16 MB, and 100 MB. The measured throughput for the 1-byte objects reflected the transaction speed</p>
+<p class="p1">of <span class="s1">S3 </span>because the testing program required that each transaction be successfully resolved before the</p>
+<p class="p1">next was initiated. The measurements showed that a user could execute at most 50 non-overlapping</p>
+<p class="p1"><span class="s1">S3 </span>transactions. The 100 MB probes measured the maximum data throughput that the <span class="s1">S3 </span>system could</p>
+<p class="p1">deliver to a single client thread. From the measurements, the author concluded that the data throughput</p>
+<p class="p1">for large objects was considerably larger than for small objects due to a high transaction overhead. The</p>
+<p class="p1">write bandwidth for 1 MB data was roughly 5 MB/s, whereas the <span class="s4">read </span>bandwidth was five times lower</p>
+<p class="p1">at 1MB/s.</p>
+<p class="p1">Another test was designed to see if concurrent requests could improve the throughput of <span class="s1">S3</span>. The</p>
+<p class="p1">experiment involved two virtual machines running on two different clusters and accessing the same</p>
+<p class="p1">bucket with repeated 100 MB <span class="s4">GET </span>and <span class="s4">PUT </span>operations. The virtual machines were coordinated, with</p>
+<p class="p1">each one executing one to six threads for 10 min and then repeating the pattern for 11 h. As the number</p>
+<p class="p1">of threads increased from one to six, the bandwidth received by each thread was roughly cut in half and</p>
+<p class="p1">the aggregate bandwidth of the six threads was 30MB/s, about three times the aggregate bandwidth of</p>
+<p class="p1">one thread. In 107,556 tests of <span class="s1">EC2</span>, each one consisting of multiple <span class="s4">read </span>and <span class="s4">write </span>probes, only six</p>
+<p class="p1"><span class="s4">write </span>retries, three <span class="s4">write </span>errors, and four <span class="s4">read </span>retries were encountered.</p>
+</body>
+</html>

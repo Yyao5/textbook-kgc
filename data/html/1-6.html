@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier; color: #000066}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Times; color: #000000}
+    span.s3 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Clouds are affected by malicious attacks and failures of the infrastructure (e.g., power failures). Such</p>
+<p class="p1">events can affect Internet domain name servers and prevent access to a cloud or can directly affect</p>
+<p class="p1">the clouds. For example, an attack at Akamai on June 15, 2004 caused a domain name outage and a</p>
+<p class="p1">major blackout that affected Google, Yahoo!, and many other sites. In May 2009 Google was the target</p>
+<p class="p1">of a serious denial-of-service (DoS) attack that took down services such Google News and Gmail for</p>
+<p class="p1">several days.</p>
+<p class="p1">Lightning caused a prolonged downtime at Amazon on June 29 and 30, 2012; the <span class="s1">AWS </span>cloud in the</p>
+<p class="p1">Eastern region of the United States, which consists of 10 data centers across four availability zones,</p>
+<p class="p1">was initially troubled by utility power fluctuations, probably caused by an electrical storm. A June 29,</p>
+<p class="p1">2012 storm on the East Coast took down some Virginia-based Amazon facilities and affected companies</p>
+<p class="p1">using systems exclusively in this region. <span class="s1">Instagram</span>, a photo-sharing service, was one of the victims of</p>
+<p class="p2"><span class="s2">this outage, according to </span>http://mashable.com/2012/06/30/aws-instagram/<span class="s2">.</span></p>
+<p class="p1">The recovery from the failure took a very long time and exposed a range of problems. For example,</p>
+<p class="p1">one of the 10 centers failed to switch to backup generators before exhausting the power that could be</p>
+<p class="p1">supplied by <span class="s1">uninterruptible power supply </span>(UPS) units. <span class="s1">AWS </span>uses “control planes” to allow users to</p>
+<p class="p1">switch to resources in a different region, and this software component also failed. The booting process</p>
+<p class="p1">was faulty and extended the time to restart <span class="s1">EC2 </span>(<span class="s1">Elastic Computing</span>) and <span class="s1">EBS </span>(<span class="s1">Elastic Block Store</span>)</p>
+<p class="p1">services. Another critical problem was a bug in the elastic load balancer (ELB), which is used to route</p>
+<p class="p1">traffic to servers with available capacity. A similar bug affected the recovery process of the Relational</p>
+<p class="p1">Database Service (RDS). This event brought to light “hidden” problems that occur only under special</p>
+<p class="p1">circumstances.</p>
+<p class="p1">Arecent paper [<span class="s3">126</span>] identifies stability risks due to interacting services.Acloud application provider,</p>
+<p class="p1">a cloud storage provider, and a network provider could implement different policies, and the unpredictable</p>
+<p class="p1">interactions between load-balancing and other reactive mechanisms could lead to dynamic</p>
+<p class="p1">instabilities. The unintended coupling of independent controllers that manage the load, the power consumption, and the elements of the infrastructure could lead to undesirable feedback and instability</p>
+<p class="p1">similar to the ones experienced by the policy-based routing in the Internet Border Gateway Protocol</p>
+<p class="p1">(BGP). For example, the load balancer of an application provider could interact with the power optimizer</p>
+<p class="p1">of the infrastructure provider. Some of these couplings may onlymanifest under extreme conditions and</p>
+<p class="p1">be very hard to detect under normal operating conditions, but they could have disastrous consequences</p>
+<p class="p1">when the system attempts to recover from a hard failure, as in the case of the <span class="s1">AWS </span>2012 failure.</p>
+<p class="p1">Clustering the resources in data centers located in different geographical areas is one of the means</p>
+<p class="p1">used today to lower the probability of catastrophic failures. This geographic dispersion of resources could</p>
+<p class="p1">have additional positive side effects; it can reduce communication traffic and energy costs by dispatching</p>
+<p class="p1">the computations to sites where the electric energy is cheaper, and it can improve performance by an</p>
+<p class="p1">intelligent and efficient load-balancing strategy. Sometimes a user has the option to decide where to</p>
+<p class="p1">run an application; we shall see in Section 3.1 that an <span class="s1">AWS </span>user has the option to choose the regions</p>
+<p class="p1">where the instances of his or her applications will run, as well as the regions of the storage sites. System</p>
+<p class="p1">objectives (e.g., maximize throughput, resource utilization, and financial benefits) have to be carefully</p>
+<p class="p1">balanced with user needs (e.g., low cost and response time and maximum availability).</p>
+<p class="p1">The price to pay for any system optimization is increased system complexity, as we shall see in</p>
+<p class="p1">Section 10.7. For example, the latency of communication over a wide area network (WAN) is considerably</p>
+<p class="p1">larger than the one over a local area network (LAN) and requires the development of new</p>
+<p class="p1">algorithms for global decision making.</p>
+</body>
+</html>

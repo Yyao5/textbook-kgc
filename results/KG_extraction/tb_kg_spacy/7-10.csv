@@ -1,0 +1,38 @@
+,source,edge,target
+0,virtual overlay that,connected by virtual,physical  links
+2,distributed  systems,communicate through,Internet
+3,network,support,improved QoS Internet
+9,that,manages,overlay network
+10,We,discussed,extensively  processors
+11,virtualization,makes,cloud  interconnect
+13,networks,used,efficient resource management
+15,we,discuss several,such cloud networks
+16,virtual cloud interconnects,construct such,such
+18,we,start,few graph theory
+19,biological computing vertices,described by,vertices  interactions
+20,number,called,edges vertex
+21,types,investigated,graphs
+23,number,in,vertices
+25,Thismodel,produces,exponential  tail
+26,connectivity,follows,exponentially Poisson k
+27,number,increases,vertices
+28,vertex,connected,vertices
+30,fraction,rewired,edges
+31,degree distribution,called,power law
+32,degree distribution,follows,power
+33,models,referred to,Erd R ny
+34,Traditionally connection topology,assumed,network
+35,random path graphs,clustered,characteristic path length
+37,random  graphs,exhibit low,low  clustering
+38,most = ma(ma −1)/2,defined,edges
+40,connected ma network,have,neighbors
+41,fraction,Ca,Ea
+42,Clearly  C,measures,network
+43,D. Watts,studied,small Watts Strogatz 370
+44,=  graph,proposed,regular p 1
+48,structural  properties,quantified by,1
+50,networks,have many,sparse  danger
+52,that,caused by,vertices
+53,small  addition,has,highly  nonlinear
+54,addition,affects,also distance distance neighbors
+55,shortcut,replaces,clustered  neighborhood

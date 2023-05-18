@@ -1,0 +1,37 @@
+,source,edge,target
+1,privileged  access,assumes,only system administrators
+3,privileged  access,granted,system
+4,also  administrators,assumes,financial  user
+5,administrators,have,financial
+6,that,come from,same guest guest
+9,Xoar,based on,microkernel20 design principles
+10,explicit  guests,makes,guests needs
+12,designers,allows,critical  components
+13,designers,reduce,permanent  footprint
+17,component,have,only component function
+18,component,reduce,attacker
+20,when time component,Eliminate,meaningful time window
+23,principles,aim,based TCB system
+25,Inevitably  strategy,has,performance
+26,implementation,attempted,minimum
+28,longer  system,shows,booting
+29,modules,needed,booting
+30,5.8  we,saw,Section
+31,ToolStack,used for,only management request
+33,system,has,permanent self Figure
+35,State,maintains,system
+36,Components,used,system
+39,components,discover,then PCI system
+41,Components,restarted on,request
+43,Builder,requests,new user request
+46,Components,restarted on,timer
+48,very  Builder,destroyed,"13,000  code"
+51,XenStore,broken into,two  components
+52,checks,done by,small XenStore State
+53,machines,share,only XenStore Figure
+57,VMs,specify,VMs
+60,action,recorded in,secure append channel
+61,virtual  machine,means,good  state
+64,Xoar,uses,snapshots
+65,immediately snapshots snapshots,taken,other  services
+67,Snapshots,implemented,copy  page

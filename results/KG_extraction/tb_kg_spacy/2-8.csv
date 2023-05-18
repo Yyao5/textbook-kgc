@@ -1,0 +1,56 @@
+,source,edge,target
+0,possibly  processes,needed,distributed  system
+1,process,migrate from,only  others
+3,process,needs,global predicate system
+5,We,call,global  monitor
+6,monitor,sends,global  state
+9,global  snapshots,have,global  clock
+11,e,implies,global  states
+12,three  processes,consider,i Figure i
+13,processes,construct,similar Figure Figure
+15,system,traversed,global  states
+16,system,reach,ever  state
+17,so event e1 2,sent,event
+19,2,occur in,event
+20,h j i,denotes,i j th event
+21,Figure,illustrates,two space time cuts
+22,C1,has,the
+24,second  event,event,process frontier
+25,Cuts,provide,global  processes
+27,when  requests,represents,individual  group
+28,when  requests,received,individual  states
+29,cut  C1,violates,2.8  our
+30,intuition,includes,process p3 sendingm3
+32,second e2 p3,frozen after,messagem3
+33,p3,had,the
+35,system,reach,ever  state
+36,Next  we,introduce,consistent  cuts
+40,event e,determine,cut
+42,R,said,total  run
+43,e,implies,distributed G =
+44,e,appears before,e
+46,cut,include,3 communication m3
+49,strong clock we,used as,set clock inclusion
+51,we,equate,clock
+52,algorithm,used,causal  histories
+54,pi ∈ G,starts with,=
+55,time  pi,receives,message
+59,Now  we,present,global monitoring section
+65,protocol,1,three  steps
+66,p0,sends to,snapshot  message
+67,pi,be,first  time
+68,process pi,records,underlying take computation
+71,pi,starts,incoming  channels
+72,fromwhich pi,be,first  time
+73,incoming channel that,stops,incoming channel messages
+76,message,crosses,channel
+77,pi,made,global pi state
+78,time pi pi,records,underlying  time
+79,pi,receives,snapshot  message
+80,connected  protocol,requires,1  channel
+84,when j process,are empty,snapshot  message
+85,process,issues,snapshot
+86,0  p0,sends to,snapshot  message
+87,1  process,sends,snapshot  Figure
+89,2  each,sends,other  process
+91,message,crosses,p j

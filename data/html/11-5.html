@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {color: #000066}
+    span.s4 {font: 10.0px Courier}
+    span.s5 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">The Java API for Amazon Web Services is provided by the <span class="s1">AWS </span>SDK.<span class="s2">3</span></p>
+<p class="p1"><span class="s1">Create an S3 client. S3 </span>access is handled by the class <span class="s1">AmazonS3Client </span>instantiated with the account</p>
+<p class="p1">credentials of the <span class="s1">AWS </span>user:</p>
+<p class="p2">AmazonS3Client s3 = new AmazonS3Client(</p>
+<p class="p2">new BasicAWSCredentials("your_access_key", "your_secret_key"));</p>
+<p class="p1">The access and the secret keys can be found on the user’s <span class="s1">AWS </span>account homepage, as mentioned in</p>
+<p class="p1">Section <span class="s3">11.3</span>.</p>
+<p class="p1"><span class="s1">Buckets. </span>An <span class="s1">S3 bucket </span>is analogous to a file folder or directory, and it is used to store <span class="s1">S3 objects</span>. Bucket</p>
+<p class="p1">names must be <span class="s1">globally unique</span>; hence, it is advisable to check first to see whether the name exists:</p>
+<p class="p2">s3.doesBucketExist("bucket_name");</p>
+<p class="p1">This function returns “true” if the name exists and “false” otherwise. Buckets can be created and deleted</p>
+<p class="p1">either directly from the <span class="s1">AWS </span>Management Console or programmatically as follows:</p>
+<p class="p2">s3.createBucket("bucket_name");</p>
+<p class="p2">s3.deleteBucket("bucket_name");</p>
+<p class="p1"><span class="s1">S3 objects. </span>An <span class="s1">S3 object </span>stores the actual data and it is indexed by a key string. A single key points</p>
+<p class="p1">to only one <span class="s1">S3 </span>object in one bucket. Key names do not have to be globally unique, but if an existing</p>
+<p class="p1">key is assigned to a new object, the original object indexed by that key is lost. To upload an object in a</p>
+<p class="p1">bucket, we can use the <span class="s1">AWS Management Console </span>or, programmatically, a file <span class="s1">local</span>_ <span class="s1">f ile</span>_<span class="s1">name </span>can</p>
+<p class="p1">be uploaded from the local machine to the bucket <span class="s1">bucket</span>_<span class="s1">name </span>under the key <span class="s1">key </span>using</p>
+<p class="p2">File f = new File("local_file_name");</p>
+<p class="p2">s3.putObject("bucket_name", "key", f);</p>
+<p class="p1">A versioning feature for the objects in <span class="s1">S3 </span>was made available recently; it allows us to preserve, retrieve,</p>
+<p class="p1">and restore every version of an <span class="s1">S3 </span>object. To avoid problems in uploading large files, e.g., dropped</p>
+<p class="p1">connections, use the <span class="s1">.initiateMultipartUpload() </span>with an API described at the <span class="s1">AmazonS3Client</span>. To access</p>
+<p class="p1">this object with key <span class="s1">key </span>from the bucket <span class="s1">bucket</span>_<span class="s1">name </span>use:</p>
+<p class="p2">S3Object myFile = s3.getObject("bucket_name", "key");</p>
+<p class="p1">To <span class="s4">read </span>this file, you must use the S3Object’s <span class="s1">InputStream</span>:</p>
+<p class="p2">InputStream in = myFile.getObjectContent();</p>
+<p class="p1">The <span class="s1">InputStream </span>can be accessed using <span class="s1">Scanner, BufferedReader</span>, or any other supported method.</p>
+<p class="p1">Amazon recommends closing the stream as early as possible, since the content is not buffered and it is</p>
+<p class="p1">streamed directly from the <span class="s1">S3</span>. An open <span class="s1">InputStream </span>means an open connection to <span class="s1">S3</span>. For example, the</p>
+<p class="p1">following code will <span class="s4">read </span>an entire object and print the contents to the screen:</p>
+<p class="p2">AmazonS3Client s3 = new AmazonS3Client(</p>
+<p class="p2">new BasicAWSCredentials("access_key", "secret_key"));</p>
+<p class="p2">InputStream input = s3.getObject("bucket_name", "key")</p>
+<p class="p2">.getObjectContent();</p>
+<p class="p2">Scanner in = new Scanner(input);</p>
+<p class="p2">while (in.hasNextLine())</p>
+<p class="p2">{</p>
+<p class="p2">System.out.println(in.nextLine());</p>
+<p class="p2">}</p>
+<p class="p2">in.close();</p>
+<p class="p2">input.close();</p>
+<p class="p1"><span class="s1">Batch upload/download. </span>Batch upload requires repeated calls of <span class="s1">s3.putObject() </span>while iterating over</p>
+<p class="p1">local files.</p>
+<p class="p1">To view the keys of all objects in a specific bucket, use</p>
+<p class="p2">ObjectListing listing = s3.listObjects("bucket_name");</p>
+<p class="p3">ObjectListing <span class="s5">supports several useful methods, including </span>getObjectSummaries(). S3ObjectSummary</p>
+<p class="p1">encapsulates most of an <span class="s1">S3 </span>object properties (excluding the actual data), including the key to access the</p>
+<p class="p1">object directly,</p>
+<p class="p2">List&lt;S3ObjectSummary&gt; summaries = listing.getObjectSummaries();</p>
+<p class="p1">For example, the following code will create a list of all keys used in a particular bucket and all of the</p>
+<p class="p1">keys will be available in string form in <span class="s1">List &lt; String &gt;allKeys</span>:</p>
+<p class="p2">AmazonS3Client s3 = new AmazonS3Client(</p>
+<p class="p2">new BasicAWSCredentials("access_key", "secret_key"));</p>
+<p class="p2">List&lt;String&gt; allKeys = new ArrayList&lt;String&gt;();</p>
+<p class="p2">ObjectListing listing = s3.listObjects("bucket_name");</p>
+<p class="p2">for (S3ObjectSummary summary:listing.getObjectSummaries())</p>
+<p class="p2">{</p>
+<p class="p2">allKeys.add(summary.getKey());</p>
+<p class="p2">}</p>
+<p class="p1">Note that if the bucket contains a very large number of objects, then <span class="s1">s3.listObjects() </span>will return a</p>
+<p class="p1">truncated list. To test if the list is truncated, we could use <span class="s1">listing.isTruncated()</span>; to get the next batch of</p>
+<p class="p1">objects, use</p>
+<p class="p2">s3.listNextBatchOfObjects(listing)};</p>
+<p class="p1">To account for a large number of objects in the bucket, the previous example becomes</p>
+<p class="p2">AmazonS3Client s3 = new AmazonS3Client(</p>
+<p class="p2">new BasicAWSCredentials("access_key", "secret_key"));</p>
+<p class="p2">List&lt;String&gt; allKeys = new ArrayList&lt;String&gt;();</p>
+<p class="p2">ObjectListing listing = s3.listObjects("bucket_name");</p>
+<p class="p2">while (true)</p>
+<p class="p2">{</p>
+<p class="p2">for (S3ObjectSummary summary :</p>
+<p class="p2">listing.getObjectSummaries())</p>
+<p class="p2">{</p>
+<p class="p2">allKeys.add(summary.getKey());</p>
+<p class="p2">}</p>
+<p class="p2">if (!listing.isTruncated())</p>
+<p class="p2">{</p>
+<p class="p2">break;</p>
+<p class="p2">}</p>
+<p class="p2">listing = s3.listNextBatchOfObjects(listing);</p>
+<p class="p2">}</p>
+</body>
+</html>

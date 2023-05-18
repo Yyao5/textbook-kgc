@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 7.5px Times}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">The Internet addressing capabilities and the migration of IPv6 are important for cloud computing, as we</p>
+<p class="p1">shall see in this section. The Internet Protocol, Version 4 (IPv4), provides an addressing capability of</p>
+<p class="p1">2<span class="s1">32</span>, or approximately 4<span class="s2">.</span>3 billion addresses, a number that proved to be insufficient. Indeed, the Internet</p>
+<p class="p1">Assigned Numbers Authority (IANA) assigned the last batch of five address blocks to the Regional</p>
+<p class="p1">Internet Registries in February 2011, officially depleting the global pool of completely fresh blocks of</p>
+<p class="p1">addresses. Each of the address blocks represents approximately 16<span class="s2">.</span>7 million possible addresses.</p>
+<p class="p1">The Internet Protocol, Version 6 (IPv6), provides an addressing capability of 2<span class="s1">128</span>, or 3<span class="s2">.</span>4 <span class="s2">  </span>10<span class="s1">38</span></p>
+<p class="p1">addresses. There are other major differences between IPv4 and IPv6:</p>
+<p class="p1">• <span class="s2">Multicasting. </span>IPv6 does not implement traditional IP broadcast, (i.e., the transmission of a packet</p>
+<p class="p1">to all hosts on the attached link using a special broadcast address) and, therefore, does not define</p>
+<p class="p1">broadcast addresses. IPv6 supports new multicast solutions, including embedding rendezvous point</p>
+<p class="p1">addresses in an IPv6 multicast group address, which simplifies the deployment of interdomain</p>
+<p class="p1">solutions.</p>
+<p class="p1">• <span class="s2">Stateless address auto configuration (SLAAC). </span>IPv6 hosts can configure themselves automatically</p>
+<p class="p1">when they are connected to a routed IPv6 network using the Internet Control Message Protocol</p>
+<p class="p1">version 6 (ICMPv6) router discovery messages. When first connected to a network, a host sends a</p>
+<p class="p1">link-local router solicitation multicast request for its configuration parameters; if configured suitably,</p>
+<p class="p1">routers respond to such a request with a router advertisement packet that contains network-layer</p>
+<p class="p1">configuration parameters.</p>
+<p class="p1">• <span class="s2">Mandatory support for network security. </span>Internet Network Security (IPsec) is an integral part of the</p>
+<p class="p1">base protocol suite in IPv6; it is optional for IPv4. IPsec is a protocol suite operating at the IP layer.</p>
+<p class="p1">Each IP packet is authenticated and encrypted. Other security protocols operate at the upper layers</p>
+<p class="p1">of the TCP/IP suite (e.g., the Secure Sockets Layer (SSL), the Transport Layer Security (TLS), and</p>
+<p class="p1">the Secure Shell (SSH)). IPsec uses several protocols: (1) Authentication Headers (AH) – supports</p>
+<p class="p1">connectionless integrity, data origin authentication for IP datagrams, and protection against replay</p>
+<p class="p1">attacks; (2) Encapsulating Security Payloads (ESP) – supports confidentiality, data-origin authentication,</p>
+<p class="p1">connectionless integrity, an anti-replay service, and limited traffic-flow confidentiality; and</p>
+<p class="p1">(3) Security Associations (SA) – provides the parameters necessary to operate the AH and/or ESP</p>
+<p class="p1">operations.</p>
+<p class="p1">Unfortunately, migration to IPv6 is a very challenging and costly proposition. A simple analogy</p>
+<p class="p1">allows us to explain the difficulties related to migration to IPv6. The telephone numbers inNorth America</p>
+<p class="p1">consist of 10 decimal digits; this scheme supports up to 10 billion phones, but, in practice, we have fewer</p>
+<p class="p1">available numbers than that. Indeed, some phone numbers are wasted because we use area codes based</p>
+<p class="p1">on geographic proximity and, on the other hand, not all available numbers in a given area are allocated.</p>
+<p class="p1">To overcome the limited number of phone numbers in this scheme, large organizations use private</p>
+<p class="p1">phone extensions of typically three to five digits. Thus, a single public phone number can translate</p>
+<p class="p1">to 1,000 phones for an organization using a three-digit extension. Analogously, Network Address</p>
+<p class="p1">Translation (NAT) allows a single public IP address to support hundreds or even thousands of private</p>
+<p class="p1">IP addresses. In the past NAT did not work well with applications such as VoIP and virtual private networking (VPN). Nowadays Skype and STUN VoIP applications work well with NAT and NAT-T,</p>
+<p class="p1">and SSLVPN supports VPN NAT.</p>
+<p class="p1">If the telephone companies decide to promote a new system based on 40-decimal-digit phone numbers,</p>
+<p class="p1">we will need new telephones; at the same time we will need new phone books that are much</p>
+<p class="p1">thicker because each phone number is 40 characters instead of 10. Each individual will need a new</p>
+<p class="p1">personal address book, and virtually all the communication and switching equipment and software will</p>
+<p class="p1">need to be updated. Similarly, the IPv6 migration involves upgrading all applications, hosts, routers, and</p>
+<p class="p1">DNS infrastructure. Also, moving to IPv6 requires backward compatibility, because any organization</p>
+<p class="p1">migrating to IPv6 should maintain a complete IPv4 infrastructure.</p>
+<p class="p1">In 2009 a group from Google investigated the adoption of IPv6 [<span class="s3">89</span>] and concluded that “… the</p>
+<p class="p1">IPv6 deployment is small but growing steadily, and that adoption is still heavily influenced by a small</p>
+<p class="p1">number of large deployments. While we see IPv6 adoption in research and education networks, IPv6</p>
+<p class="p1">deployment is, with one notable exception, largely absent from consumer access networks.”</p>
+</body>
+</html>

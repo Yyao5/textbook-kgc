@@ -1,0 +1,8 @@
+,source,edge,target
+0,Debian desktop version,supports,64  architectures
+1,SNS,pushes,periodically  messages
+4,transport protocol,allows,HTTP SQS notifications
+7,SNS,supports,Add Remove Permission
+8,document,provides detailed,detailed  actions
+11,then root http://archive.canonical.com/lucidpartner,deb http://archive.canonical.com/lucidpartner,Then Java settings
+26,list,displayed,SNS commands

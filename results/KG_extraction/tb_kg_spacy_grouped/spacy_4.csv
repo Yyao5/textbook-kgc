@@ -1,0 +1,1018 @@
+,source,edge,target
+4000,enforcer,gather,together policy decision
+4001,Finally  information,carry,decider
+4002,mechanism,required,authorized policy rules
+4003,path,required,also decider agent
+4004,cryptography which,proposed,cryptographic invocation mechanism
+4005,Manager,uses,unauthorized type safety sandbox
+4006,Java Virtual Machine,accepts,byte code
+4007,moreover  code,protect,other  applications
+4008,good  security,relies_on,Java class code
+4009,approach,fail_due,all security model
+4010,keys,embedded_cryptographic,remote  systems
+4011,that,allow,keys
+4012,that,requires,digital
+4013,commodity operating systems,conclude,low  assurance
+4014,commodity operating systems,offer_low,low
+4015,OS,isolates,one  another
+4016,physical  platform,affected,application
+4017,level,reduced_to,vulnerable security platform
+4018,systems,provide,trusted  users
+4019,shortcomings,add_to,computing  environment
+4020,financial  application,can,example
+4021,human  user,distinguish,malicious service service
+4022,when  computer,isolated_in,room
+4023,wide  computers,opened,one
+4024,various  embodiments,migrate,all  globe
+4025,new  society,takes,increasingly information infrastructure
+4026,critical  infrastructure,attacked_by,computer security
+4027,Malware,targets_industrial,industrial control software
+4028,Recently term cyberwarfare,entered,nation damage
+4029,3.10  we,identified,Section
+4030,9.1  we,elaborate_on,topic
+4031,Some,shared_with_other,network  content
+4032,how life technology,are_many,on life technology
+4033,concerns,represent,acceptance
+4034,especially value proposition,fade,time
+4035,moving,accepted_by,internal IT community
+4036,moving,liberates,technical computer security
+4037,rather  outsourcing,seems,security  concerns
+4038,outsourcing,generates_major,new  security
+4039,cloud computer who,provide_adequate,often  users
+4040,pool,dispersed_over_several,several cloud service countries
+4041,information,cross_national,freely  national
+4042,where data centers,is,cloud computing providers
+4043,thus  we,analyze,models
+4044,where system VM VMM,restricted_to,hardware
+4045,services,provided_by,typically  Figure
+4046,security,affected,entire  system
+4047,VM technology,provides,virtual  machines
+4048,Indeed  VMM,controls,thus memory isolation
+4049,VMM,sees,raw operating system
+4050,security services,operate_at,logical  level
+4051,VMM,has,same  hardware
+4052,state,saved,virtual  VMM
+4053,cloned  replication,support,cloned  system
+4054,We,clone,dangerous running applications
+4055,such  files,have,cryptographic  keys
+4056,thus  we,expect,better  virtualization
+4057,such host operating VMM,includes,privileged  operations
+4058,virtual  system,requires_more,such CPU cycles
+4059,VMM,means,guest VMs
+4060,VMM,has,the
+4061,VMM,means,privileged  guest
+4062,paper,discusses,such intrusion prevention SVFS
+4063,Terra,uses,virtual partition machines
+4064,group,identified,based theNIST threats
+4065,users,create_insecure,existing  VMs
+4066,Sections,discuss_in,various  virtualization
+4067,virtual machine monitor,hear,considerably operating system
+4068,virtualization,enhances,virtual machine monitor
+4069,traditional system.14 Ahypervisor,has,traditional operating system
+4070,hypervisormust,rely_on_amanagement,amanagement VMto storage devices
+4071,security risks,conclude,virtual  environment
+4072,We,have,sweeping  statements
+4073,trusted computer base,includes,only cloud computing hypervisor
+4074,OS,supports_administrative,administrative  tools
+4075,TCB,includes,called management operating Figure
+4076,vulnerabilities,introduced_by,software components
+4077,11  attacks,attributed_to,denial guest service
+4078,new  that,play_several,denial  service
+4079,third  party,modify,new  VM
+4080,new  VM,refuse,foreign  memory
+4081,us,turn,now  attention
+4082,that,exposes,abstract guest operating systems
+4083,two,communicate_via,shared  Section
+4084,original  service,sends,data
+4085,run time communication,have,Dom0
+4086,entire  state,guarantee,Section
+4087,Dom0,extract_cryptographic,significant  security
+4088,entire  state,maintained,system
+4089,VM,deny,critical  system
+4090,also  This,gain,additional  Dom0
+4091,foreign  DomU,prohibited_from,Dom0
+4092,DomU,initiates,procedure
+4093,Dom0,provided_with,virtual CPU registers
+4094,affected virtualization that,monitored_by,based  215
+4095,only guest application,ensured,data
+4096,Thus guest software,have,sensitive network user
+4097,We,need,secure run time system
+4098,that,implement,wewant
+4099,that,allowed,virtual  registers
+4100,hypercalls,restricted,specific  time
+4101,hypercalls,prohibited,IOMMU19
+4102,virtual  We,restrict,critical  hypercalls
+4103,We,check,DomU
+4104,contents,encrypted,virtual CPU registers
+4105,Dom0,encrypted,encrypted  VM
+4106,memory pages,calculate,Dom0
+4107,restored  DomU,allocated,different memory region
+4108,increased  level,leads_to,increased  overhead
+4109,Measurements,reported_in,to domain build time
+4110,1.7,restore,time
+4111,TVMM,support,open box platforms
+4112,VM abstraction,does,closed box platform
+4113,contents,manipulated,system
+4114,application,allowed,application needs
+4115,Applications,run,only voting application
+4116,such OS applications,need,commodity operating system
+4117,path,allows,human  user
+4118,same  VM,allows,human  user
+4119,VM,selected_by,platform owner
+4120,guest that,formulates,I VMs CPU
+4121,guest that,access_to,guest VMs
+4122,VMs,expose,virtual network devices
+4123,TVMM,runs_at,highest privilege level
+4124,TVMM,provides,closed box platform
+4125,challenge,comes_from,different  platform
+4126,many,written,new hardware features
+4127,thus operating components,pose,highest security risks
+4128,drivers,limited_by_different,different hardware protection mechanisms
+4129,devices,use_different,such hardware kernel
+4130,privileged  access,assumes,only system administrators
+4131,privileged  access,granted,system
+4132,also  administrators,assumes,financial  user
+4133,administrators,have,financial
+4134,that,come_from,same guest guest
+4135,Xoar,based_on,microkernel20 design principles
+4136,explicit  guests,makes,guests needs
+4137,designers,allows,critical  components
+4138,designers,reduce,permanent  footprint
+4139,component,have,only component function
+4140,component,reduce,attacker
+4141,when time component,eliminate,meaningful time window
+4142,principles,aim,based TCB system
+4143,Inevitably  strategy,has,performance
+4144,implementation,attempted,minimum
+4145,longer  system,shows,booting
+4146,modules,needed,booting
+4147,5.8  we,saw,Section
+4148,ToolStack,used_for,only management request
+4149,system,has,permanent self Figure
+4150,State,maintains,system
+4151,Components,used,system
+4152,components,discover,then PCI system
+4153,Components,restarted_on,request
+4154,Builder,requests,new user request
+4155,Components,restarted_on,timer
+4156,very  Builder,destroyed,"13,000  code"
+4157,XenStore,broken_into,two  components
+4158,checks,done_by,small XenStore State
+4159,machines,share,only XenStore Figure
+4160,VMs,specify,VMs
+4161,action,recorded_in,secure append channel
+4162,virtual  machine,means,good  state
+4163,Xoar,uses,snapshots
+4164,immediately snapshots snapshots,taken,other  services
+4165,Snapshots,implemented,copy  page
+4166,Alliance,aims,cloud security standards incubator
+4167,reports,are,available Web site
+4168,original  report,published,2009
+4169,reports,followed,"97,98"
+4170,that,paper_on,similar  conclusions
+4171,paper,presents,services life cycle
+4172,issues,vary_depending,cloud 273
+4173,book,gives,comprehensive cloud security
+4174,Privacy,discussed_in,available European ec.europa.eu/justice/policies/privacy
+4175,paper,analyzes,current risk cloud
+4176,collaborations,discussed_in,51
+4177,paper,presents,untrusted management OS
+4178,impact,analyzed_in,cloud 118
+4179,scheme,presented_in,182
+4180,study,found_at,virtualized security taviso.decsystem.org/virtsec.pdf
+4181,approach,presented_in,cloud 384
+4182,aspects,covered_in,152
+4183,5.1  we,praised,virtualization
+4184,We,discussed,virtual  machines
+4185,we,take,closer  virtualization
+4186,complete  state,captured,virtual operating machine
+4187,state,saved_in,file
+4188,user,selects,then  image
+4189,system,replicated,hot system failure
+4190,when resource management load,moved_to,high water mark
+4191,when  load,exceeds,high  water
+4192,power load,moved_to_other,other  servers
+4193,then  servers,turned,standby  mode
+4194,virtual  clone,look_for,known system intrusion
+4195,multitude,allows,physical OS systems
+4196,serious  implications,argued,system security
+4197,serious  implications,can,system security
+4198,297  who,revisited_in,similar  conclusions
+4199,diminished track systems number,leads_to,physical  cost
+4200,number,is,physical  organization
+4201,Traditionally  organizations,install,same system software
+4202,such  homogeneity,can,virtual  environment
+4203,heterogeneity,tax,support team
+4204,one,related_to,critical software life cycle
+4205,straight patch management,is,forward  progress
+4206,different  patches,created,instances
+4207,then  one,can,instances
+4208,serious  we,has,serious  security
+4209,us,concentrate,now  our
+4210,infection,expect,virtual computer environment
+4211,later  measures,wake,other  systems
+4212,infection,repeat,scenario
+4213,infected  systems,quarantined,nonvirtual  environments
+4214,next  episode,behave,infection
+4215,some,brought,undesirable  behavior
+4216,state,reached_by,latest system systems
+4217,virtual  environment,reach,steady  state
+4218,when  virus,compromised,removable  media
+4219,infected  laptop,connected_to,firewall
+4220,virtual  system,reach,steady  state
+4221,This,opens_wide,new  attacker
+4222,situations,discussed_in,132
+4223,one time passwords,transmitted_in,clear
+4224,system,runs,S KEY password
+4225,attacker,replay,sniffed  passwords
+4226,situation,related_to,cryptographic  protocols
+4227,random  number,occurs,back  which
+4228,use,affected_by,random rollback scenario
+4229,door,left_open,TCP hijacking
+4230,effect,affects,virtual  trust
+4231,system,has,unique  physical
+4232,infected  system,guarantees,then network access
+4233,when  VMs,breaks,virtual  systems
+4234,random MAC address,assigned_to,new  VM
+4235,effect,discussed_at,length
+4236,sensitive  data,undermines,minimum
+4237,sensitive  data,reduced,system
+4238,First  owner,has,very  limited
+4239,it,spread_across_many,many  servers
+4240,back  VMM,records,VM
+4241,sensitive  owner,allows,sensitive  data
+4242,many  users,ignore,other  concern
+4243,user,has,EC2 service
+4244,We,start_from,file S3
+4245,when loopback data,used_for,blocks
+4246,creator,use,second
+4247,user,has,firewall Section
+4248,22 Remote Desktop,accessed,3389  Windows
+4249,Remote Desktop,used,port
+4250,Many,allowed,standard  tools
+4251,Security which,shared_with,promptly AWS users
+4252,details,found_in,testing 38
+4253,Here  we,discuss,only  results
+4254,audit,covered,software vulnerabilities
+4255,most malware targetsWindows,audited,Windows
+4256,strategy,explain,start time AMIs
+4257,58 Linux audited,revealed,critical  vulnerabilities
+4258,Nessus,classifies,four vulnerabilities levels
+4259,audit,reported,highest severity level
+4260,types,analyzed,security risks
+4261,passwords,cases_in,which
+4262,user,provide,public ssh key
+4263,key,stored_in,home directory
+4264,malicious  who,opens,remotely  AMI
+4265,based  authentication,opened,own  password
+4266,authentication,remove,malicious  user
+4267,wider  one,opened,such John www.openwall.com/john
+4268,one,extract,password hashes
+4269,when  image,posed_by,cloud init script
+4270,script,regenerates,host
+4271,public  part,used,server
+4272,systems,become_vulnerable,middle11  attacks
+4273,attacker,use,NMap AMI NMap
+4274,authors,reports,"2,100  procedure"
+4275,connections,pose,serious  system
+4276,outside  entity,allow,var Linux system
+4277,modified syslog which,detected,incoming aWeb server
+4278,Malware,identified,available malware www.clamav.net
+4279,AMIs,infectedwindows,second Trojan Agent
+4280,trojan,carries,keylogging
+4281,AMI,included,also  tool
+4282,creator,assumes,shared  privacy
+4283,private  keys,shell,browser history
+4284,files,recovered_from,published  images
+4285,AWS API that,recover,AWS API keys
+4286,cloud computing charges,start,API key
+4287,majority,determined,ssh 56
+4288,Recovery,requires,same IP lastlog
+4289,audit,found,lastb AMIs databases
+4290,Firefox browser auditor,contained,user
+4291,auditor,identify,the
+4292,612  AMIs,contained,one shell history file
+4293,audit,analyzed,74 identification credentials
+4294,GET requests,stored,aWeb site
+4295,Passwords,exploited_by,such GET logs
+4296,malicious  agent,are,own  system
+4297,Recovery,poses,sensitive  image
+4298,When  sectors,containing_sensitive,sensitive
+4299,actually  recovery,overwritten_by,sensitive  information
+4300,creator,use,next image impossible
+4301,such  blocks,contain,deleted  files
+4302,theAMIs,using,exundelete
+4303,users,conclude,fully image sharing
+4304,abstractions,drive,physical  reality
+4305,physical transport properties,forget,such  systems
+4306,we,distinguish,such scripting languages
+4307,interpreter,recognize,next  action
+4308,when  we,design,an
+4309,Information,has,physical  support
+4310,one,acts_on,physical  system
+4311,we,encode,electromagnetic  waves
+4312,we,have,electromagnetic communication media
+4313,free communication we,want,detecting error rate
+4314,delicate  that,have,physical  systems
+4315,balance,shifted_in_recent,cyberphysical  systems
+4316,systems,allow,same systems systems environment
+4317,dimension,related_to,operational  environment
+4318,precisely  who,captures,system
+4319,design,consider,only  technological
+4320,complex  we,topic_of,next system section
+4321,chapter,emphasizes,computing  systems
+4322,physical principles principles,exhibit_different,environment
+4323,thinking,has,rather ab initio afterthought
+4324,we,add,the
+4325,estimate,puts,January
+4326,number,expected,early 2.4 2013
+4327,desirable  properties,migrate_from,system
+4328,desirable  properties,are,system
+4329,number,estimated,human  brain
+4330,Indeed  behavior,explained_without_precise,precise behavior components
+4331,solar  system,make,gravitational  planets
+4332,we,undertaken,physical  us
+4333,Sometimes  we,forced,better  systems
+4334,other interaction that,aim,failure
+4335,certain  gain,suffered,case
+4336,when  device,gripped_in,certain  way
+4337,gain,was,case
+4338,effect,foreseen,retrospect
+4339,Discovery,required_for,physical building knowledge
+4340,we,increase,number components
+4341,solution,exists,computing  systems
+4342,7.10we  systems,showed,desirable  property
+4343,free  this,have,free  networks
+4344,degrees,enjoy,power law
+4345,vast  majority,have,one
+4346,Thus  scalability,assured,large scale principle
+4347,unfortunately system dimension,ignored,important system complexity
+4348,complexity,increases_with,interaction capabilities
+4349,Indeed simulation program,has,well  components
+4350,help,decrease,the
+4351,multiple  components,share,multiple  same
+4352,irregularities,have,opposite  effect
+4353,length,captured_by,Kolmogorov Section
+4354,Symmetry,imply,computing  homogeneity
+4355,distributed computing systems,cited,hardware  reasons
+4356,we,the,versatility
+4357,we,add_new,new  features
+4358,we,increase,system
+4359,where effort routers,designed_as,freely  packets
+4360,retransmission,when,discarded  packets
+4361,changes,increased,Internet
+4362,when time we,saw_in,real time constraints
+4363,management,increases,cloud resources
+4364,real time we,attempt,real time constraints
+4365,Nature,creates_complex,simple  components
+4366,acids,incorporated_into,genetic  code
+4367,several  each,made_from_several,submodules
+4368,natural  we,has_natural,solid state devices
+4369,components complexity,increases,also  Section
+4370,physical  phenomena,reached,individual components changes
+4371,physical  phenomena,affect,system
+4372,modern fabrication facilities,discusses,consistent  properties
+4373,modern fabrication facilities,produce,chips
+4374,constantly  components,increasing,defective  chips
+4375,lack,attributed_to,physical state chip
+4376,problem,identified_by,Technology Semiconductors
+4377,range,widening,threshold transistor
+4378,transistors,have,threshold zero
+4379,Thus  transistors,operate_as,switches
+4380,range,becomes,14 nm technology
+4381,accumulation,limit,other analog system
+4382,systems,have,distant  bounds
+4383,composability,limited_by_physical,physical  laws
+4384,cloud,composed_of,large  servers
+4385,processor,made,multiple  cores
+4386,that,pushes,composability bounds
+4387,that,break,one  scale
+4388,e.g.  laws,replaced_at_atomic,atomic quantum mechanics
+4389,that,scale,small  components
+4390,many computer clusters,have,front
+4391,new nerve algorithms,has_multiple,centers
+4392,that,extended,single  system
+4393,previous  entities,collaborate_with,one
+4394,this,requires,communication
+4395,fail stop,revealed,scale  73
+4396,large scale that,occur_with,overall system availability
+4397,Scaling,has_other,just  components
+4398,space,plays,important
+4399,when component systems,clustered,small  area
+4400,1.6 data centers,distributed,cloud provider
+4401,type,introduced_in,computational data Section
+4402,service,means,critical  infrastructure
+4403,service,used_by,large  population
+4404,societal  scaling,is,system Internet
+4405,societal  scaling,affects,system complexity
+4406,same  popularity,demands_simple,simple  infrastructure
+4407,intricate  who,increases_due,little  technology
+4408,users,understand,wireless security communication
+4409,Modularity,represent,system
+4410,Modularity,used,electronic steam airplanes
+4411,power train,includes,engine assembly
+4412,Modularity,reduce,manufacturers
+4413,defective  consumer,used_by,entire  product
+4414,individual  modules,encourages,particular  field
+4415,also  module,supports,better  system
+4416,Spartan Constitution,described,social  system
+4417,that,surrounded_by,organizations
+4418,such  actions,have,social  system
+4419,defined communication patterns,demands,layering
+4420,layer,fulfills,well  defined
+4421,layer,expected,adjacent  layers
+4422,clearly communication it,reduces,complexity behavior
+4423,large  programs,split_into,defined  functionality
+4424,Modules,grouped,other  libraries
+4425,that,helps,optimal design decisions
+4426,that,define,clear  layers
+4427,that,address,concern
+4428,it,recognized,case
+4429,thus  we,need,physical  layer
+4430,Next  we,decided,that
+4431,so  we,had,network layer
+4432,how source information,recognized,network
+4433,we,want,information
+4434,thus  we,needed,application layer
+4435,Layering,prevent,some
+4436,wireless  applications,allow_wireless,Access Control data link layer
+4437,layering,shows,basic protocol stack
+4438,layering,gives,insight
+4439,cloud  that,could,future computing clouds
+4440,too  we,argue,better cloud infrastructure
+4441,we,need,one  another
+4442,other  it,are_other,individual  modules
+4443,operating that,system,privileged processor operations
+4444,management,interacts_with,other  subsystems
+4445,layered  organization,seems_unlikely,case
+4446,when  components,classified_as_monolithic,limited supervising interactions
+4447,when  components,work_in,concert
+4448,analysis,appeared_in,defining  1998
+4449,system,has,important  attributes
+4450,components,enjoy_managerial,managerial  independence
+4451,others,evolves_in,continually  time
+4452,other system system,has,emergent  behavior
+4453,thus  components,distributed_over,large  area
+4454,control,distinguishes_several,several  systems
+4455,system,has,central
+4456,systems,operate,common  goal
+4457,individual  components,operate,which
+4458,such component systems,collaborate,agreed  rules
+4459,virtual  systems,have,central systems operations
+4460,naming conventions,may,documents
+4461,textbook,devotes,first system complexity
+4462,existing  systems,is,largely  topic
+4463,other  factors,limit_in,practice
+4464,mean  time,becomes_smaller,entire  system
+4465,so components the,does,components increases
+4466,us,allows,complex system structures
+4467,us,develop_individual,individual system components
+4468,Inmany,instances,the
+4469,number,limited_by,solid state heat
+4470,finite  speed,expose,new  limit
+4471,finite  speed,expose,new
+4472,systems,have,unique
+4473,us,pushed,physical  hardware
+4474,us,overcome,physical
+4475,multiprocessor processor,allows,multiple  cores
+4476,us,build,multiprocessor
+4477,multiple  clusters,interconnected,next computer software
+4478,abstract system concepts,lend,computing design systems
+4479,well system design,understood,physics
+4480,system design,obey,the
+4481,that,controlled_by,multiple  scales
+4482,Systems,have,predefined  bottom
+4483,that,have_unwanted,unwanted  level
+4484,Systems,entangled_with,Systems environment
+4485,selection,result_in,unintended  consequences
+4486,Systems,expected,individual  systems
+4487,computing  systems,deployed,same  time
+4488,number,contribute_to,computing  Figure
+4489,which,demands,turn
+4490,one,have,side effects
+4491,communication,creates_new,complex security software
+4492,we,continue,computing communication systems
+4493,factors,require,new systems integration
+4494,questions,preoccupied,millennia
+4495,Greek  philosopher,stated,that
+4496,Greek philosopher Plato,introduced,total  knowledge
+4497,172  this,exists,complex  systems
+4498,172  this,exists,axioms
+4499,we,turn_for,heat system energy
+4500,Thermodynamics,defines,such  systems
+4501,thus Shannon states,reflect_to,complexity
+4502,pure  states,log,mixed  state
+4503,complexity,reflects,certain  abstraction
+4504,scale,plays,predictive  efficiency
+4505,time,becomes,equilibrium
+4506,patterns,vary,such  gases
+4507,that,use,system
+4508,This,reflect,also  states
+4509,generally  we,has,exact  ones
+4510,generally  we,use_approximate,approximate
+4511,[  emergence,argues,long  history
+4512,emergence,requires,long
+4513,we,need,physical  history
+4514,many  steps,reflects,efficient  process
+4515,long  system,remains_in,equilibrium
+4516,rate,reflect,communication system
+4517,Yet galaxy formation,occurs_at,light  years
+4518,time,measured,hurricane formation
+4519,Complexity,related_to,important  system
+4520,question,addressed_by,independently  328
+4521,application,discussed_in,computational Kolmogorov 229
+4522,universal computer V,defined,string respect
+4523,roots,traced,back  wisdom
+4524,what,means,351
+4525,what,translates,fewer
+4526,Emergence,lacks,widely  definition
+4527,generally  that,understood_as,individual system components
+4528,complex  emergence,argue,far  matter
+4529,simple  emergence,occurs_in,systems
+4530,complex  emergence,occurs,far  matter
+4531,that,manifest,microscopic  scales
+4532,laws,viewed_as,large quantum objects
+4533,Jones Industrial Average,dropped,which
+4534,independently trading that,attributed_to,independently trading organizations
+4535,actions,motivated_by,self interest
+4536,dynamic  coalitions,points,individual trading systems
+4537,dynamic  coalitions,pose_serious,financial  activities
+4538,failures,attributed,Northeastern U.S. 2003
+4539,few  cause,identified_due,independent  systems
+4540,multiple  causes,established,power failure
+4541,causes,contributed,power grid
+4542,single  element,means_synergetic,global  behavior
+4543,meaning,captured_by,mathematician Alan Turing
+4544,Global  order,arise_from_local,local  interactions
+4545,self organization,proposed_for,computing sensor networks
+4546,attributes,summarized_in,complex self Table
+4547,Nonlinearity,used,countless  manifestations
+4548,power dissipation,increases_from,solid state technology
+4549,when  we,means,speed
+4550,when  we,use,different  technology
+4551,few  we,seen,general purpose microprocessors
+4552,example,illustrates,complex  systems
+4553,when  size,means,different scaling rules
+4554,computing  systems,illustrated,clearly  Internet
+4555,concept,comes_from,one phase environment
+4556,transition which,freezing,gas
+4557,when avalanche process,occur_in,further system state
+4558,intensive  which,thrashing_due,excessive page faults
+4559,congestion avoidance,start,packets
+4560,retransmit congestion,increases_as,retransmit packets
+4561,form,has,negative  system
+4562,intriguing  systems,exhibit,free  organization
+4563,systems,enjoy,scale  free
+4564,few self that,reflects,few self organization
+4565,organization,explained_in,vertices network links
+4566,other ≈ m−γ,decays_as,regardless identity vertices
+4567,data,confirm,scientific power trend
+4568,two  actors,consider,same  case
+4569,grid,has,generating γ ≈
+4570,m pages,means,one  page
+4571,studies,indicate,scientific γ papers
+4572,closer power law,approximates,3 γ distribution
+4573,that,discuss,cloud computing
+4574,4  we,discussed_cloud,computational cloud science
+4575,cloud,showed,fine-  parallelism
+4576,cloud that,means,grained  parallelism
+4577,cloud  instances,run,different  system
+4578,when analysis results,based_on,defined  metric
+4579,partial  results,is,then storage server
+4580,new  results,signal,new  analysis
+4581,strategy,used_by,other system design area
+4582,multiple  instances,run_concurrent,different  system
+4583,application,discussed,optimal Programmable Gate Arrays
+4584,logic that,consists_of,logical  Figure
+4585,FPGA,produced_in,Xilinx
+4586,FPGAs,used_in_many,digital signal processing
+4587,languages,used,such  FPGAs
+4588,HDLs,used,RTL register transfer circuit
+4589,stages,used,FPGAs
+4590,system,designed,components
+4591,structure,shown_in,Figure
+4592,system,uses,logical route fabric
+4593,random access couple,take,powerful  workstation
+4594,options,speeds,optimization factor
+4595,services,grouped_into_several,several  categories
+4596,when  someone,designed,first  AWS
+4597,space we,chosen,large programming AWS
+4598,new  services,mentioned,continually Web pages time
+4599,new  services,added_to,continually  AWS
+4600,one,create,first  account
+4601,user,allows,then  instance
+4602,availability zone,selected,region
+4603,few  class,grouped_into,such CPU cycles
+4604,systems,supported_by,several Microsoft Figure
+4605,application,needs_more,than  20
+4606,instance,persist,Elastic Block Storage
+4607,then  instance,restarted,later  time
+4608,user,perform_several,current EBS AMI
+4609,user,terminate,also  Figure
+4610,11.3 EBS panel,allows,snapshots
+4611,EBS panel,allows,the
+4612,previous  discussion,focused_on,cloud computing
+4613,Now  we,examine,application developer
+4614,few  that,presents,basic cloud functions
+4615,users,developed,easy  cloud
+4616,Many,view,minimum computing equipment
+4617,we,are_different,cloud service Figure
+4618,SaaS applications,designed_for,end users
+4619,IaaS,provides,operating systems
+4620,thus  we,restrict,popular Amazon Web Services
+4621,we,report,section
+4622,each,asked,cloud Services
+4623,Here  we,discuss,first  several
+4624,then  we,present,few cloud applications
+4625,finally  we,analyze_several,three cloud months
+4626,second  we,discuss,several  applications
+4627,networks,investigated_in,distributed trust management Section
+4628,11.11  we,discuss,based CRN trust algorithm
+4629,we,analyze_adaptive,adaptive audio Section
+4630,generation,deployed_in,late  1980s
+4631,individual  that,discarded_individual,acceptance rules
+4632,generation,operate_at,transport connections
+4633,filtering  solution,opened,service
+4634,attack,targets,illegitimate connection entries
+4635,attacks,prevent,legitimate  service
+4636,generation,understand,such application layer FTP
+4637,firewalls,examine,intrusion detection systems
+4638,Firewalls,screen_incoming,outgoing  traffic
+4639,local area network,connected_to,router
+4640,firewall,hides,NAT Address mechanism
+4641,hosts,assigned,private address range
+4642,external IP addresses,uses,private  router
+4643,packets,discarded_by,firewall
+4644,Table,summarizes,various operating router
+4645,when MAC filtering,specifies,destination source MAC address
+4646,Linux  firewall,configured,only sudo command
+4647,firewall,controlled_by,kernel data structure
+4648,command,used,Linux kernel
+4649,table,contains,defined  chains
+4650,INPUT  rule,controls,incoming
+4651,FORWARD rule,controls,host
+4652,rule,controls,outgoing  host
+4653,rule,specifies,what
+4654,Drop,discharge,the
+4655,Queue,pass,next user chain
+4656,OUTPUT  chains,displayed,INPUT
+4657,outgoing  traffic,iptables,unfiltered
+4658,FORWARD,set,specific rule chain
+4659,rule,has,number
+4660,virtual  machines,accept,incoming  connections
+4661,when  user,ability,then EC2 following
+4662,default behavior,provided_by,incoming Local Computer
+4663,behavior,displayed,incoming  connections
+4664,Access,provided_by,graphical Control Panel
+4665,Exceptions connections,blocked_by,Exceptions tab
+4666,user,define,given  port
+4667,XP,provide,outgoing  connections
+4668,software,provide,additional  defense
+4669,Avast antivirus software,supports_several,real time shields
+4670,incoming  traffic,blocks,malicious Web sites
+4671,shield,scans,browsing HTTP activities
+4672,antivirus,provides,also antivirus monitoring activities
+4673,API,provided_by,S3 client
+4674,access,found_on,secret AWS account Section
+4675,it,used,S3 objects
+4676,object,stores,actual
+4677,original  object,have,key
+4678,we,use,programmatically AWS Management file
+4679,us,allows,S3 object
+4680,you,use,the
+4681,#NAME?,accessed,Scanner
+4682,content,recommends,directly  S3
+4683,InputStream,means,open  S3
+4684,following  code,read,entire  object
+4685,upload,requires,local  files
+4686,ObjectListing,supports_several,useful  getObjectSummaries
+4687,S3ObjectSummary,encapsulates_most,actual S3 object object
+4688,particular  all,create,List String
+4689,S3ObjectSummary ObjectListing bucket,note,truncated  list
+4690,bucket,return,then  truncated
+4691,bucket,contains,large  objects
+4692,previous  example,becomes,large  bucket
+4693,Debian desktop version,supports,64  architectures
+4694,SNS,pushes,periodically  messages
+4695,transport protocol,allows,HTTP SQS notifications
+4696,SNS,supports,Add Remove Permission
+4697,document,provides_detailed,detailed  actions
+4698,list,displayed,SNS commands
+4699,multiple  components,communicate_with,SQS
+4700,example  use,presented_in,message Section
+4701,Figure,shows,given  SQS
+4702,AppSettings,amazonsqs,sqs  AWSClientFactory
+4703,section,gives,step Linux platform
+4704,press,continue,default settings
+4705,it,hidden,unauthorized  access
+4706,option,create,New Security Group
+4707,we,change,new  rule
+4708,review which,continue,instance
+4709,Launch,press,Close confirmation page
+4710,Instances,tab_on,navigation instance
+4711,it,needed,Linux terminal
+4712,permanent IP address,assign,Elastic IP address
+4713,ssh traffic,rule_to,TCP protocol
+4714,when error you,denied,instance
+4715,you,get,the
+4716,DNS name,appear,known  hosts
+4717,icon,displayed,Amazon Linux AMI
+4718,thus root user,install,software
+4719,user,have,root
+4720,when ssh connection,terminated,Linux
+4721,virtual  cluster,has,bound interconnect applications
+4722,other machine instances,require,PVM  image
+4723,other  instances,use,paravirtual
+4724,MPI,used_for,placement group
+4725,MPI,supports,point  point
+4726,it,used_by_parallel,multiple  data
+4727,process,identified_by,process rank
+4728,total  number,ranks_in,MPI_COM_PROCESS_GROUP
+4729,MPI_SEND,blocking,send
+4730,process,sends,other process group
+4731,expectation,motivated_by_several,several data Internet
+4732,Thus  it,seems_reasonable,external  entity
+4733,former,detects_unused,unused  spectrum
+4734,latter,decides,available  spectrum
+4735,nodes,compete_for,free  channels
+4736,Research,reveals,allocated  spectrum
+4737,reconfigurable wireless reconfigurable transceiver,proposed_at,automatically user demands
+4738,We,recognize,two  CRN
+4739,devices,have_exclusive,exclusive
+4740,dynamic spectrum primary,enjoy,channel
+4741,primary,is,channel
+4742,secondary,required,free channel operation
+4743,mode,called,operation
+4744,CRNs,based_on,sensing  strategy
+4745,node,determines,"own node 129,339,340"
+4746,node,determine,true  spectrum
+4747,secondary  node,has,limited  transmission
+4748,node mobility,add_to,single channel node
+4749,nodes,send,central spectrum entity
+4750,entity,uses,then spectrum occupancy jurisdiction
+4751,secondary  node,is,primary power one
+4752,μ  that,share,threshold
+4753,secondary  node,maintains,occupancy
+4754,nodes,sense,available  channels
+4755,nodes,compete_for_free,free  channels
+4756,one  node,provide_to,information neighbors
+4757,nodes,send_false,centralized fusion CRN
+4758,secondary  nodes,attempt,spectrum allocation rules
+4759,free  channels,report,primary
+4760,channels,show,primary
+4761,then  one,assume,channel
+4762,senders,follow,channel access
+4763,sender,senses,channel
+4764,routers,assumes,forward packets destination
+4765,routers,follow,best effort policy
+4766,own status case,assessed_by,several  literature
+4767,Algorithm,computes,preliminary j ∈ steps
+4768,node  i,measures,K channels
+4769,nodes,respond_with,Node nodes
+4770,when  inference,number_of,matches
+4771,instances,run,concurrently AWS cloud
+4772,secondary  nodes,partitioned_into,several overlapping Figure
+4773,nodes,identified_by,instance
+4774,primary  nodes,cover,entire
+4775,simulation,involves,controller
+4776,initial  controller,runs_on,10.04  LTS
+4777,controller,supplies,trust program
+4778,cloud  instances,run_under,bit Linux AWS
+4779,instances,run,actual trust program
+4780,results,processed_by,average trust neighbors
+4781,S3 controller,runs_on,also  cloud
+4782,here  nodes,programmed,gId =
+4783,nodes,have,maliciously  trust
+4784,node density,affects,the
+4785,algorithm,predicts,populated  areas
+4786,secondary  we,indicates,higher density areas
+4787,secondary  we,expect_higher,higher
+4788,we,discuss,data streaming
+4789,other data applications,require,high time rate
+4790,enough  data,have,noticeable  time
+4791,when data streaming,involves,multimedia
+4792,case,originate_from,collection iCloud system
+4793,streaming,involves,three  entities
+4794,resources,include_cpu,necessary buffer sender
+4795,streaming,determines,available data resources
+4796,rates,imply_lower,lower  quality
+4797,rates,reduce,system resources
+4798,streaming,requires_accurate,accurate  resources
+4799,memory timing,coordinated_with,constraints
+4800,same scheduling algorithms,coordinated_with,memory management
+4801,additional data flow,poses_additional,additional  constraints
+4802,audio data we,have,lower quality audio
+4803,network,accommodate,data
+4804,conversion,done_on,fly
+4805,data flow,has,cloud
+4806,Accommodating,flows,dynamic  data
+4807,application,stores,audio EC2 platform
+4808,private  instance,specifies,available  hour
+4809,EC2,allows,virtual user facility
+4810,EC2,distributes,balancing application facility
+4811,EC2,associates,elastic  IP
+4812,user,allows,public software support team
+4813,streaming,involves,objective optimization problem
+4814,same  we,want,mobile transmission jitter
+4815,Finally  we,want,content delivery
+4816,conversion,completed,MP3 format
+4817,converted music file,saved_for_later,later  use
+4818,lower quality files,experimented_with,16  Kbps
+4819,which,require,320 Kbps data rate
+4820,pipelining data that,is_small,processing cloud
+4821,limited  justification,makes,future
+4822,service,requests,eventually data file
+4823,solution,involves_multiple,far  optimal
+4824,solution,reduces,audio  streaming
+4825,bit rate bit file,performed,LAME library
+4826,time,depends_on,original  file
+4827,when source MP3 files,tables,320  Kbps
+4828,sizes,shown,input files
+4829,EC2 t1.micro server,reported,measurements
+4830,instances,run,Linux operating system
+4831,server,exhibit,wide conversion times
+4832,when  we,observed_for,128  Kbps
+4833,when  we,convert_from,320
+4834,Figure,shows,average conversion Tables
+4835,Figure,shows,average conversion Tables
+4836,considerably conversion Figure,presents,average conversion time
+4837,when  instance,show,considerably EC2 c1.medium conversion
+4838,we,took,streaming AWS EC2 service
+4839,t1.micro,supports,transaction processing systems
+4840,Store,provides,block level storage
+4841,instances,support,relatively CPU cycles
+4842,thus  measurements,be,EC2 c1.medium platform
+4843,measurements,show_consistent,considerably EC2 c1.medium conversion
+4844,see,is,distributed management Section
+4845,Clouds,emerging_as,wide  applications
+4846,large computer clouds,consume,mobile  device
+4847,computer clouds,have,the
+4848,we,propose,wireless cloud networks
+4849,thus  it,seems_reasonable,intensive  cloud
+4850,when communication trust,based_on_past,mobile  device
+4851,algorithms,require_massive,high  probability
+4852,wireless  communication,assumes,cognitive Wi Fi radio
+4853,mobile  device,uses,wireless  cloud
+4854,communication,based,Wi Fi channel
+4855,amount,limited_by,cellular data plan
+4856,limitation,exists_for,Wi Fi network
+4857,mobile  devices,allow_mobile,cognitive end users
+4858,we,used_for,bandwidth  management
+4859,thus  nodes,analyzes,same channel occupancy
+4860,we,consider_several,primary  tower
+4861,we,assume,discussion
+4862,Pk,transmits_on,primary  channel
+4863,algorithm,based_on_several,malicious  system
+4864,others,report,global positioning system
+4865,clocks,synchronized,mobile  devices
+4866,transmission range,depends_on,mobile  device
+4867,minority  behavior,assume,following  assumptions
+4868,minority  behavior,captured_by,following  assumptions
+4869,uniformly  we,distributed_in,uniformly  area
+4870,malicious  nodes,collaborate_in,nodes attack strategies
+4871,malicious  nodes,change,successive time slots
+4872,attacker,motivated,detection
+4873,geometry,captured_by,Figure
+4874,We,distinguish_primary,secondary cell cloud
+4875,We,use,primary majority voting transmitter
+4876,decision,requires,votes
+4877,nodes,required,well K channels
+4878,then  transmit,nodes_current,current power level
+4879,secondary  nodes,connect_to,cellular  network
+4880,cloud application,requests,cellular application location
+4881,mobile  that,detect,10  meters
+4882,mobile time location,reported_to,occupancy report
+4883,location,provides,occupancy
+4884,that,register,trust computation
+4885,thus  nodes,get,free occupancy channels
+4886,node,influence_other,busy  channels
+4887,secondary registration node,transmits,node MAC address
+4888,cloud,responds_with,tuple
+4889,secondary  nodes,transmit,previous status report
+4890,data,provides,same  time
+4891,cloud,computes,primary dk transmitter
+4892,where  ring,conceptualize,1 ring number
+4893,radius,based_on,primary dk transmitter
+4894,dk  i,included_in,nodes dk distance
+4895,dk  i,included_in,dk ring
+4896,tq report cloud,computes,primary transmitter Pk
+4897,Node  i,report,αi k ∈ tq
+4898,trust,determined,similar  one
+4899,only channels information,contains,previous reporting cycle
+4900,information,report,channels strategy
+4901,us,allows,moments
+4902,us,compute,the
+4903,when  we,assess,next occupancy cycle
+4904,when information behavior,continue,node j
+4905,exponential  that,use,old  observations
+4906,that,gives,decreasing  weight
+4907,We,choose,malicious k1 node
+4908,misbehavior,affect,good  actions
+4909,trust,requires,two  quantities
+4910,trust,based,full nw observations
+4911,cellular  infrastructure,used_in,also  which
+4912,that,allow,based  service
+4913,that,nodes,cellular  network
+4914,We,expect,important node decision
+4915,thus node density,increases,four
+4916,so nodes we,want,same  area
+4917,when nodes we,behaves,when nodes increases
+4918,density,allow,four
+4919,nodes,contribute,different  subarea
+4920,cloud  instances,have,fair  information
+4921,also  which,complicate,primary nodes one
+4922,Instead  we,allocate_to,channels
+4923,instances,share,geographic  node
+4924,distance,computed,primary  one
+4925,well node density,expect,important  decision
+4926,well node density,play,important  role
+4927,when node number,report,nodes
+4928,algorithm,computed,two  nodes
+4929,us,determine,algorithm
+4930,density,does,nodes increases
+4931,First  we,consider,two  extreme
+4932,malicious  nodes,represent,total  nodes
+4933,malicious  nodes,report_on,total  nodes
+4934,when  number,fixed,nodes
+4935,nodes,represent,increasing
+4936,malicious  nodes,reported_in,two  groups
+4937,malicious  nodes,show,20  nodes
+4938,nodes,have,average  0.28
+4939,nodes,have,regardless trust nodes
+4940,malicious  nodes,represent,60
+4941,number,plays,significant
+4942,honest  nodes,distinguished,average trust value
+4943,honest  nodes,have,average  trust
+4944,When  number,increases_to,"2,000"
+4945,honest group trust,decreases_to,about  0.68
+4946,we,shows,practice
+4947,extreme  average,expect,two  groups
+4948,strategy,works,malicious  node
+4949,results,confirm,behavior
+4950,malicious  nodes,see,minority
+4951,When  density,approaches,high  value
+4952,algorithm,performs,still  figures
+4953,Thus  trusts,allows,malicious  nodes
+4954,when  number,observe,network
+4955,service,have_multiple,economic trust 74
+4956,many  decisions,used,nodes
+4957,mobile  device,reduces,primary  transmitters
+4958,mobile  device,reduces,primary  transmitters
+4959,soon channel node,node,later  demand
+4960,thus  accuracy,increases,results
+4961,historic  data,help,malicious  nodes
+4962,higher node density,increases,predictions
+4963,reports,based_on,secondary communication primary
+4964,scheme,has_several,other  advantages
+4965,First  it,used,free channel occupancy channels
+4966,situation,avoided_in,centralized  case
+4967,malicious  nodes,identified_with,high occupancy report
+4968,server,collect_historic,free  channels
+4969,specific requests service,attempt,likely  time
+4970,strategy,be,malicious  nodes
+4971,IDE,written,other plug languages
+4972,IDE,called,C Eclipse PHP
+4973,that,supports,intensive  distributed
+4974,Hadoop,inspired_by,MapReduce
+4975,extensive software that,consists_of,Unix like Unix look
+4976,that,provide,Unix like
+4977,Hadoop plugin,note,Europa Hadoop plugin
+4978,when  prompted,installed,sshd
+4979,Control Services,start,cygwin service
+4980,files,contain,recent authorization keys
+4981,you,warned,host
+4982,authenticity,established,host
+4983,you,see,cygwin prompt
+4984,you,have,that
+4985,that,window,downloaded Hadoop archive
+4986,You,ls,created  directory
+4987,You,see,newly  created
+4988,You,ls,Figure
+4989,You,see,the
+4990,cd  cd,conf,explorer
+4991,Explorer window,cause,conf  directory
+4992,message,appears,Figure
+4993,Aclient,knowthe,virtual IP cloud
+4994,Service,used,private IP networks
+4995,late  Amazon,announced,53 AWS AWS
+4996,strict  who,scattered,AWS Identity
+4997,several IP addresses,mapped,private IP addresses
+4998,Address,used_for,only EC2 cloud
+4999,traffic,use,elastic IP instance
+5000,instance,translated,private IP address
+5001,Traffic,forwarded_to,private IP instance
+5002,address,originated,AWS AWS
+5003,NAT,used,private IP address
+5004,cloud user,allow,public IP account
+5005,This,allows_fast,fast system failure
+5006,public Web service provider,remap,elastic replacement instance
+5007,Amazon,charges,Elastic IP addresses
+5008,Services,use,virtual security machines
+5009,only  instance,belongs_to,one security group
+5010,one  instance,belong_to,single security group
+5011,rules,control_inbound,inbound outbound instance
+5012,other  rule,blocked,otherwise security instance
+5013,where TCP port B,assume,security group
+5014,instance Wizard,use,key value Figures
+5015,Linux port numbers,assigned_by,only  root
+5016,called  services,map,textual port numbers

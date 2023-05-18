@@ -1,0 +1,46 @@
+,source,edge,target
+1,generation,deployed in,late  1980s
+3,individual  that,discarded individual,acceptance rules
+4,that,match,a
+6,generation,operate at,transport connections
+7,filtering  solution,opened,service
+9,attack,targets,illegitimate connection entries
+11,attacks,prevent,legitimate  service
+12,generation,understand,such application layer FTP
+13,firewalls,examine,intrusion detection systems
+14,Firewalls,screen incoming,outgoing  traffic
+17,local area network,connected to,router
+18,firewall,hides,NAT Address mechanism
+19,hosts,assigned,private address range
+20,external IP addresses,uses,private  router
+24,packets,discarded by,firewall
+27,Now  ’s,let,several operating systems
+29,Table,summarizes,various operating router
+30,when MAC filtering,specifies,destination source MAC address
+32,Linux  firewall,configured,only sudo command
+33,firewall,controlled by,kernel data structure
+34,command,used,Linux kernel
+38,table,contains,defined  chains
+40,INPUT  rule,controls,incoming
+41,FORWARD rule,controls,host
+42,rule,controls,outgoing  host
+43,rule,specifies,what
+44,Drop,discharge,the
+45,Queue,pass,next user chain
+50,OUTPUT  chains,displayed,INPUT
+53,outgoing  traffic,iptables,unfiltered
+57,FORWARD,set,specific rule chain
+59,rule,has,number
+60,virtual  machines,accept,incoming  connections
+61,when  user,ability,then EC2 following
+63,> default behavior,provided by,incoming Local Computer
+64,behavior,displayed,incoming  connections
+65,Access,provided by,graphical Control Panel
+66,Exceptions connections,blocked by,Exceptions tab
+68,user,define,given  port
+69,XP,provide,outgoing  connections
+70,software,provide,additional  defense
+71,Avast antivirus software,supports several,real time shields
+73,incoming  traffic,blocks,malicious Web sites
+74,shield,scans,browsing HTTP activities
+75,antivirus,provides,also antivirus monitoring activities

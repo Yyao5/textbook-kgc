@@ -1,0 +1,26 @@
+,source,edge,target
+2,it,implement,such  a
+4,answers,discussed in,section
+5,layered defense mechanism,understood,malware
+6,layered defense mechanism,disabled,layer
+10,VMM,offers to,physical abstraction hardware
+12,software VMM,forced,physical  hardware
+15,194  it,argues,physical rogue hardware
+19,rootkit,refers to,privileged  system
+20,name,comes from,privileged software components
+22,virtual  machine,sees virtual,legitimate  virtual
+23,guest OS,notice,any
+25,we,address,the
+26,malware,point,VMM
+27,malware,runs,approach
+28,VMM,prevents,malicious guest operating activities
+29,VMBR,record,key
+31,data,be,network
+32,moreover  impunity,change,will
+37,attacker,has,root
+40,malicious  OS,enable,guest OS
+42,i,observe,the
+43,ii,run,denial spam application
+44,VMBRs,described in,several Windows 194
+46,once boot attacker,stress,total root privileges system
+47,once  attacker,has,root privileges attacker

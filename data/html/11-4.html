@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Times}
+    span.s3 {color: #000066}
+    span.s4 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">This section gives a step-by-step process to launch an <span class="s1">EC2 Linux </span>instance from a <span class="s1">Linux </span>platform.</p>
+<p class="p2">A. Launch an instance</p>
+<p class="p2">1. <span class="s2">From the </span>AWS Management Console<span class="s2">, select </span>EC2 <span class="s2">and, once signed in, go to </span>Launch Instance Tab<span class="s2">.</span></p>
+<p class="p1"><span class="s1">2. </span>To determine the processor architecture when you want to match the instance with the hardware,</p>
+<p class="p1">enter the command</p>
+<p class="p3">uname -m</p>
+<p class="p1">and choose an appropriate <span class="s1">Amazon Linux AMI </span>by pressing <span class="s1">Select</span>.</p>
+<p class="p1"><span class="s1">3. </span>Choose <span class="s1">Instance Details </span>to control the number, size, and other settings for instances.</p>
+<p class="p1"><span class="s1">4. </span>To learn how the system works, press <span class="s1">Continue </span>to select the default settings.</p>
+<p class="p1"><span class="s1">5. </span>Define the instance’s security, as discussed in Section <span class="s3">11.3</span>: In the <span class="s1">Create Key Pair </span>page enter a</p>
+<p class="p1">name for the pair and then press <span class="s1">Create and Download Key Pair</span>.</p>
+<p class="p1"><span class="s1">6. </span>The key-pair file downloaded in the previous step is a <span class="s1">.pem </span>file, and it <span class="s1">must </span>be hidden to prevent</p>
+<p class="p1">unauthorized access. If the file is in the directory <span class="s1">awcdir/dada.pem </span>enter the commands</p>
+<p class="p3">cd awcdir</p>
+<p class="p3">chmod 400 dada.pem</p>
+<p class="p1"><span class="s1">7. </span>Configure the firewall. Go to the page <span class="s1">Configure firewall</span>, select the option <span class="s1">Create a New Security</span></p>
+<p class="p1"><span class="s1">Group</span>, and provide a <span class="s1">Group Name</span>. Normally we use <span class="s4">ssh </span>to communicate with the instance; the</p>
+<p class="p1">default port for communication is port 8080, and we can change the port and other rules by creating</p>
+<p class="p1">a new rule.</p>
+<p class="p1"><span class="s1">8. </span>Press <span class="s1">Continue </span>and examine the review page, which gives a summary of the instance.</p>
+<p class="p1"><span class="s1">9. </span>Press <span class="s1">Launch </span>and examine the confirmation page, then press <span class="s1">Close </span>to end the examination of the</p>
+<p class="p1">confirmation page.</p>
+<p class="p1"><span class="s1">10. </span>Press the <span class="s1">Instances </span>tab on the navigation panel to view the instance.</p>
+<p class="p1"><span class="s1">11. </span>Look for your <span class="s1">Public DNS </span>name. Because by default some details of the instance are hidden, click</p>
+<p class="p1">on the <span class="s1">Show/Hide </span>tab on the top of the console and select <span class="s1">Public DNS</span>.</p>
+<p class="p1"><span class="s1">12. </span>Record the <span class="s1">Public DNS </span>as <span class="s1">PublicDNSname</span>; it is needed to connect to the instance from the <span class="s1">Linux</span></p>
+<p class="p1">terminal.</p>
+<p class="p1"><span class="s1">13. </span>Use the <span class="s1">ElasticIP </span>panel to assign an Elastic IP address if a permanent IP address is required.</p>
+<p class="p1"><span class="s1">B. Connect to the instance </span>using <span class="s1">ssh </span>and the TCP transport protocol.</p>
+<p class="p1"><span class="s1">1. </span>Add a rule to the <span class="s1">iptables </span>to allow <span class="s4">ssh </span>traffic using the TCP <span class="s1">protocol</span>. Without this step, either</p>
+<p class="p1">an <span class="s1">access denied </span>or <span class="s1">permission denied </span>error message appears when you’re trying to connect to</p>
+<p class="p1">the instance.</p>
+<p class="p3">sudo iptables -A iptables -p -tcp -dport ssh -j ACCEPT</p>
+<p class="p1"><span class="s1">2. </span>Enter the <span class="s1">Linux </span>command:</p>
+<p class="p3">ssh -i abc.pem ec2-user@PublicDNSname</p>
+<p class="p1">If you get the prompt <span class="s1">You want to continue connecting? </span>respond <span class="s1">Yes</span>. A warning that the DNS</p>
+<p class="p1">name was added to the list of known hosts will appear.</p>
+<p class="p1"><span class="s1">3. </span>An icon of the <span class="s4">Amazon Linux AMI </span>will be displayed.</p>
+<p class="p2">C. Gain root access to the instance</p>
+<p class="p1">By default the user does not have <span class="s1">root </span>access to the instance; thus, the user cannot install any software.</p>
+<p class="p1">Once connected to the <span class="s1">EC2 </span>instance, use the following command to gain <span class="s1">root </span>privileges:</p>
+<p class="p3">sudo -i</p>
+<p class="p1">Then use <span class="s4">yum </span>install commands to install software, e.g., <span class="s1">gcc </span>to compile C programs on the cloud.</p>
+<p class="p2">D. Run the service ServiceName</p>
+<p class="p1">If the instance runs under <span class="s1">Linux </span>or <span class="s1">Unix</span>, the service is terminated when the <span class="s1">ssh </span>connection is closed.</p>
+<p class="p1">To avoid the early termination, use the command</p>
+<p class="p3">nohup ServiceName</p>
+<p class="p1">To run the service in the background and redirect <span class="s1">stdout </span>and <span class="s1">stderr </span>to files <span class="s1">p.out </span>and <span class="s1">p.err</span>, respectively,</p>
+<p class="p1">execute the command</p>
+<p class="p3">nohup ServiceName &gt; p.out 2 &gt; p.err &amp;</p>
+</body>
+</html>

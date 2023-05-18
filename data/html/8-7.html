@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Courier}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Helvetica}
+    span.s4 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Locks support the implementation of reliable storage for loosely coupled distributed systems; they enable</p>
+<p class="p1">controlled access to shared storage and ensure atomicity of <span class="s1">read </span>and <span class="s1">write </span>operations. Furthermore,</p>
+<p class="p1">critically important to the design of reliable distributed storage systems are distributed consensus problems,</p>
+<p class="p1">such as the election of a master from a group of data servers. A master has an important role</p>
+<p class="p1">in system management; for example, in GFS the master maintains state information about all system</p>
+<p class="p1">components.</p>
+<p class="p1">Locking and the election of a master can be done using a version of the Paxos algorithm for asynchronous</p>
+<p class="p1">consensus, discussed in Section 2.11. The algorithm guarantees safety without any timing</p>
+<p class="p1">assumptions, a necessary condition in a large-scale system when communication delays are unpredictable.</p>
+<p class="p1">Nevertheless, the algorithm must use clocks to ensure liveliness and to overcome the impossibility</p>
+<p class="p1">of reaching consensus with a single faulty process [<span class="s2">123</span>]. Coordination using the Paxos algorithm</p>
+<p class="p1">is discussed in Section 4.5.</p>
+<p class="p1">Distributed systems experience communication problems such as lost messages, messages out of</p>
+<p class="p1">sequence, or corrupted messages. There are solutions for handling these undesirable phenomena; for</p>
+<p class="p1">example, one can use virtual time, that is, sequence numbers, to ensure that messages are processed</p>
+<p class="p1">in an order consistent with the time they were sent by all processes involved, but this complicates the</p>
+<p class="p1">algorithms and increases the processing time.</p>
+<p class="p1"><span class="s3">Advisory locks </span>are based on the assumption that all processes play by the rules. Advisory locks do</p>
+<p class="p1">not have any effect on processes that circumvent the locking mechanisms and access the shared objects</p>
+<p class="p1">directly. <span class="s3">Mandatory locks </span>block access to the locked objects to all processes that do not hold the locks,</p>
+<p class="p1">regardless of whether they use locking primitives.</p>
+<p class="p1">Locks that can be held for only a very short time are called <span class="s3">fine-grained</span>, whereas <span class="s3">coarse-grained</span></p>
+<p class="p1">locks are held for a longer time. Some operations require meta-information about a lock, such as the</p>
+<p class="p1">name of the lock, whether the lock is shared or held in exclusivity, and the generation number of the</p>
+<p class="p1">lock. This meta-information is sometimes aggregated into an opaque byte string called a <span class="s3">sequencer</span>.</p>
+<p class="p1">The question of how to most effectively support a locking and consensus component of a large-scale</p>
+<p class="p1">distributed system demands several design decisions. A first design decision is whether the locks should</p>
+<p class="p1">be mandatory or advisory. <span class="s3">Mandatory locks </span>have the obvious advantage of enforcing access control; a</p>
+<p class="p1">traffic analogy is that a mandatory lock is like a drawbridge. Once it is up, all traffic is forced to stop.</p>
+<p class="p1">An <span class="s3">advisory lock </span>is like a stop sign; those who obey the traffic laws will stop, but some might not. The</p>
+<p class="p1">disadvantages of mandatory locks are added overhead and less flexibility. Once a data item is locked,</p>
+<p class="p1">even a high-priority task related to maintenance or recovery cannot access the data unless it forces the</p>
+<p class="p1">application holding the lock to terminate. This is a very significant problem in large-scale systems where</p>
+<p class="p1">partial system failures are likely.</p>
+<p class="p1">A second design decision is whether the system should be based on fine-grained or coarse-grained</p>
+<p class="p1">locking. <span class="s3">Fine-grained locks </span>allow more application threads to access shared data in any time interval,</p>
+<p class="p1">but they generate a larger workload for the lock server.Moreover, when the lock server fails for a period</p>
+<p class="p1">of time, a larger number of applications are affected. Advisory locks and <span class="s3">coarse-grained locks </span>seem</p>
+<p class="p1">to be a better choice for a system expected to scale to a very large number of nodes distributed in data</p>
+<p class="p1">centers that are interconnected via wide area networks.</p>
+<p class="p1">A third design decision is how to support a systematic approach to locking. Two alternatives come</p>
+<p class="p1">to mind: (i) delegate to the clients the implementation of the consensus algorithm and provide a library</p>
+<p class="p1">of functions needed for this task, or (ii) create a locking service that implements a version of the</p>
+<p class="p1">asynchronous Paxos algorithm and provide a library to be linked with an application client to support</p>
+<p class="p1">service calls. Forcing application developers to invoke calls to a Paxos library is more cumbersome and</p>
+<p class="p1">more prone to errors than the service alternative. Of course, the lock service itself has to be scalable to</p>
+<p class="p1">support a potentially heavy load.</p>
+<p class="p1">Another design consideration is flexibility, the ability of the system to support a variety of applications.</p>
+<p class="p1">A name service comes immediately to mind because many cloud applications <span class="s1">read </span>and <span class="s1">write</span></p>
+<p class="p1">small files. The names of small files can be included in the namespace of the service to allow atomic</p>
+<p class="p1">file operations. The choice should also consider the performance; a service can be optimized and clients</p>
+<p class="p1">can cache control information. Finally, we should consider the overhead and resources for reaching</p>
+<p class="p1">consensus. Again, the service seems to be more advantageous because it needs fewer replicas for high</p>
+<p class="p1">availability.</p>
+<p class="p1">In the early 2000s, when Google started to develop a lock service called <span class="s3">Chubby </span>[<span class="s2">61</span>], it was decided</p>
+<p class="p1">to use advisory and coarse-grained locks. The service is used by several Google systems, including the</p>
+<p class="p1">GFS discussed in Section <span class="s2">8.5 </span>and <span class="s3">BigTable </span>(see Section <span class="s2">8.9</span>).</p>
+<p class="p1">The basic organization of the system is shown in Figure <span class="s2">8.9</span>. A <span class="s3">Chubby </span>cell typically serves one</p>
+<p class="p1">data center. The cell server includes several <span class="s3">replicas</span>, the standard number of which is five. To reduce</p>
+<p class="p1">the probability of correlated failures, the servers hosting replicas are distributed across the campus of a</p>
+<p class="p1">data center.</p>
+<p class="p1">The replicas use a distributed consensus protocol to elect a new <span class="s3">master </span>when the current one fails.</p>
+<p class="p1">The master is elected by a majority, as required by the asynchronous Paxos algorithm, accompanied by</p>
+<p class="p1">the commitment that a new master will not be elected for a period called a <span class="s3">master lease. </span>A <span class="s3">session </span>is a</p>
+<p class="p1">connection between a client and the cell server maintained over a period of time; the data cached by the</p>
+<p class="p1">client, the locks acquired, and the handles of all files locked by the client are valid for only the duration</p>
+<p class="p1">of the session.</p>
+<p class="p1">Clients use RPCs to request services from the master. When it receives a <span class="s1">write </span>request, the master</p>
+<p class="p1">propagates the request to all replicas and waits for a reply from a majority of replicas before responding.</p>
+<p class="p1">When it receives a <span class="s1">read </span>request the master responds without consulting the replicas. The client interface</p>
+<p class="p1">of the system is similar to, yet simpler than, the one supported by the <span class="s3">Unix </span>File System. In addition, it</p>
+<p class="p1">includes notification of events related to file or system status. A client can subscribe to events such as</p>
+<p class="p1">file content modification, change or addition of a child node, master failure, lock acquired, conflicting</p>
+<p class="p1">lock requests, and invalid file handle.</p>
+<p class="p1">The files and directories of the <span class="s3">Chubby </span>service are organized in a tree structure and use a naming</p>
+<p class="p1">scheme similar to that of <span class="s3">Unix</span>. Each file has a <span class="s3">file handle </span>similar to the file descriptor. The master of a</p>
+<p class="p1">cell periodically writes a snapshot of its database to a GFS file server.</p>
+<p class="p1">Each file or directory can act as a lock. To <span class="s1">write </span>to a file the client must be the only one holding</p>
+<p class="p1">the file handle, whereas multiple clients may hold the file handle to <span class="s1">read </span>from the file. Handles are</p>
+<p class="p1">created by a call to <span class="s3">open () </span>and destroyed by a call to <span class="s3">close ()</span>. Other calls supported by the service</p>
+<p class="p1">are <span class="s3">GetContentsAndStat ()</span>, to get the file data and meta-information, <span class="s3">SetContents</span>, and <span class="s3">Delete () </span>and</p>
+<p class="p1">several calls allow the client to acquire and release locks. Some applications may decide to create and</p>
+<p class="p1">manipulate a sequencer with calls to <span class="s3">SetSequencer ()</span>, which associates a sequencer with a handle, <span class="s3">Get-</span></p>
+<p class="p1"><span class="s3">Sequencer () </span>to obtain the sequencer associated with a handle, or check the validity of a sequencer with</p>
+<p class="p2">CheckSequencer ()<span class="s4">.</span></p>
+<p class="p2"><span class="s4">The sequence of calls </span>SetContents()<span class="s4">, </span>SetSequencer()<span class="s4">, </span>GetContentsAndStat()<span class="s4">, and </span>CheckSequencer()</p>
+<p class="p1">can be used by an application for the election of a master as follows: all candidate threads attempt to</p>
+<p class="p1">open a lock file, call it <span class="s3">lfile</span>, in exclusive mode; the one that succeeds in acquiring the lock for <span class="s3">lfile</span></p>
+<p class="p1">becomes the master, writes its identity in <span class="s3">lfile</span>, creates a sequencer for the lock of <span class="s3">lfile</span>, call it <span class="s3">lfseq</span>, and</p>
+<p class="p1">passes it to the server. The other threads read the <span class="s3">lfile </span>and discover that they are replicas; periodically</p>
+<p class="p1">they check the sequencer <span class="s3">lfseq </span>to determine whether the lock is still valid. The example illustrates the</p>
+<p class="p1">use of <span class="s3">Chubby </span>as a name server. In fact, this is one of the most frequent uses of the system.</p>
+<p class="p1">We now take a closer look at the actual implementation of the service. As pointed out earlier, <span class="s3">Chubby</span></p>
+<p class="p1">locks and <span class="s3">Chubby </span>files are stored in a database, and this database is replicated. The architecture of</p>
+<p class="p1">these replicas shows that the stack consists of the Chubby component, which implements the Chubby</p>
+<p class="p1">protocol for communication with the clients, and the active components, which <span class="s1">write </span>log entries and</p>
+<p class="p1">files to the local storage of the replica see (Figure <span class="s2">8.10</span>).</p>
+<p class="p1">Recall that an <span class="s3">atomicity log </span>for a transaction-processing system allows a crash recovery procedure</p>
+<p class="p1">to undo all-or-nothing actions that did not complete or to finish all-or-nothing actions that committed but did not record all of their effects. Each replica maintains its own copy of the log; a new log entry is</p>
+<p class="p1">appended to the existing log and the Paxos algorithm is executed repeatedly to ensure that all replicas</p>
+<p class="p1">have the same sequence of log entries.</p>
+<p class="p1">The next element of the stack is responsible for the maintenance of a fault-tolerant database – in</p>
+<p class="p1">other words, making sure that all local copies are consistent. The database consists of the actual data,</p>
+<p class="p1">or the <span class="s3">local snapshot </span>in <span class="s3">Chubby </span>speak, and a <span class="s3">replay log </span>to allow recovery in case of failure. The state</p>
+<p class="p1">of the system is also recorded in the database.</p>
+<p class="p1">The Paxos algorithm is used to reach consensus on sets of values (e.g., the sequence of entries in</p>
+<p class="p1">a replicated log). To ensure that the Paxos algorithm succeeds in spite of the occasional failure of a</p>
+<p class="p1">replica, the following three phases of the algorithm are executed repeatedly:</p>
+<p class="p1"><span class="s3">1. </span>Elect a replica to be the master/coordinator. When a master fails, several replicas may decide to</p>
+<p class="p1">assume the role of a master. To ensure that the result of the election is unique, each replica generates</p>
+<p class="p1">a sequence number larger than any sequence number it has seen, in the range <span class="s3">(</span>1<span class="s3">, r )</span>, where <span class="s3">r </span>is the</p>
+<p class="p1">number of replicas, and broadcasts it in a <span class="s3">propose </span>message. The replicas that have not seen a higher</p>
+<p class="p1">sequence number broadcast a <span class="s3">promise </span>reply and declare that they will reject proposals from other</p>
+<p class="p1">candidate masters. If the number of respondents represents a majority of replicas, the one that sent</p>
+<p class="p1">the <span class="s3">propose </span>message is elected master.</p>
+<p class="p1"><span class="s3">2. </span>The master broadcasts to all replicas an <span class="s3">accept </span>message, including the value it has selected, and</p>
+<p class="p1">waits for replies, either <span class="s3">acknowledge </span>or <span class="s3">reject</span>.</p>
+<p class="p1"><span class="s3">3. </span>Consensus is reached when the majority of the replicas send an <span class="s3">acknowledge </span>message; then the</p>
+<p class="p1">master broadcasts the <span class="s3">commit </span>message.</p>
+<p class="p1">Implementation of the Paxos algorithm is far from trivial. Although the algorithm can be expressed in</p>
+<p class="p1">as few as ten lines of pseudocode, its actual implementation could be several thousand lines of C++ code</p>
+<p class="p1">[<span class="s2">71</span>]. Moreover, practical use of the algorithm cannot ignore the wide variety of failure modes, including</p>
+<p class="p1">algorithm errors and bugs in its implementation, and testing a software system of a few thousands lines</p>
+<p class="p1">of codes is challenging.</p>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 10.0px Times}
+    span.s5 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Xoar </span>is a modified version of <span class="s1">Xen </span>that is designed to boost system security [<span class="s2">90</span>]. The security model</p>
+<p class="p1">of <span class="s1">Xoar </span>assumes that the system is professionally managed and that privileged access to the system</p>
+<p class="p1">is granted only to system administrators. The model also assumes that the administrators have neither</p>
+<p class="p1">financial incentives nor the desire to violate the trust of the user. The security threats come from a guest</p>
+<p class="p1">VM that could attempt to violate the data integrity or the confidentiality of another guest VM on the</p>
+<p class="p1">same platform or exploit the code of the guest. Another source of threats are bugs in the initialization</p>
+<p class="p1">code of the management virtual machine.</p>
+<p class="p1"><span class="s1">Xoar </span>is based on microkernel<span class="s3">20 </span>design principles. <span class="s1">Xoar </span>modularity makes exposure to risk explicit</p>
+<p class="p1">and allows guests to configure access to services based on their needs. Modularity allows the designers</p>
+<p class="p1">of <span class="s1">Xoar </span>to reduce the size of the system’s permanent footprint and increase the level of security of</p>
+<p class="p1">critical components. The ability to record a secure audit log is another critical function of a hypervisor</p>
+<p class="p1">facilitated by a modular design. The design goals of <span class="s1">Xoar </span>are:</p>
+<p class="p1">• Maintain the functionality provided by <span class="s1">Xen</span>.</p>
+<p class="p1">• Ensure transparency with existing management and VM interfaces.</p>
+<p class="p1">• Maintain tight control of privileges; each component should only have the privileges required by its</p>
+<p class="p1">function.</p>
+<p class="p1">• Minimize the interfaces of all components to reduce the possibility that a component can be used</p>
+<p class="p1">by an attacker.</p>
+<p class="p1">• Eliminate sharing and make sharing explicit whenever it cannot be eliminated to allow meaningful</p>
+<p class="p1">logging and auditing.</p>
+<p class="p1">• Reduce the opportunity of an attack targeting a system component by limiting the time window</p>
+<p class="p1">when the component runs.</p>
+<p class="p1">These design principles aim to break the monolithic TCB design of a <span class="s1">Xen</span>-based system. Inevitably,</p>
+<p class="p1">this strategy has an impact on performance, but the implementation attempted to keep the modularization</p>
+<p class="p1">overhead to a minimum.</p>
+<p class="p1">A close analysis shows that booting the system is a complex activity, but the fairly large modules</p>
+<p class="p1">used during booting are no longer needed once the system is up and running. In Section 5.8 we saw that</p>
+<p class="p1"><span class="s1">XenStore </span>is a critical system component because it maintains the state of the system; thus, it is a prime</p>
+<p class="p1">candidate for hardening. The <span class="s1">ToolStack </span>is only used for management functions and can only be loaded</p>
+<p class="p1">upon request.</p>
+<p class="p1">The <span class="s1">Xoar </span>system has four types of components: permanent, self-destructing, restarted upon request,</p>
+<p class="p1">and restarted on timer (see Figure <span class="s2">9.4</span>):</p>
+<p class="p1"><span class="s1">1. </span>Permanent components. <span class="s1">XenStore-State </span>maintains all information regarding the state of the system.</p>
+<p class="p1"><span class="s1">2. </span>Components used to boot the system. These components self-destruct before any user VMis started.</p>
+<p class="p1">Two components discover the hardware configuration of the server, including the PCI drivers, and</p>
+<p class="p1">then boot the system:</p>
+<p class="p1">• <span class="s1">PCIBack</span>. Virtualizes access to PCI bus configuration.</p>
+<p class="p1">• <span class="s1">Bootstrapper</span>. Coordinates booting of the system.</p>
+<p class="p1"><span class="s1">3. </span>Components restarted on each request:</p>
+<p class="p2"><span class="s4">• </span>XenStore-Logic<span class="s4">.</span></p>
+<p class="p1">• <span class="s1">Toolstack</span>. Handles VM management requests, e.g., it requests the <span class="s1">Builder </span>to create a new guest</p>
+<p class="p1">VM in response to a user request.</p>
+<p class="p1">• <span class="s1">Builder</span>. Initiates user VMs.</p>
+<p class="p1"><span class="s1">4. </span>Components restarted on a timer. Two components export physical storage device drivers and the</p>
+<p class="p1">physical network driver to a guest VM:</p>
+<p class="p1">• <span class="s1">Blk-Back</span>. Exports physical storage device drivers using <span class="s1">udev</span><span class="s3">21 </span>rules.</p>
+<p class="p1">• <span class="s1">NetBack</span>. Exports the physical network driver.</p>
+<p class="p1">Another component, <span class="s5">QEMU</span>, is responsible for device emulation. <span class="s1">Bootstrapper, PCIBack</span>, and <span class="s1">Builder</span></p>
+<p class="p1">are the most privileged components, but the first two are destroyed once <span class="s1">Xoar </span>is initialized, and the <span class="s1">Builder </span>is very small; it consists of only 13<span class="s1">,</span>000 lines of code. <span class="s1">XenStore </span>is broken into two components:</p>
+<p class="p1"><span class="s1">XenStore-Logic </span>and <span class="s1">XenStore-State</span>. Access control checks are done by a small monitor module in</p>
+<p class="p2">XenStore-State<span class="s4">. Guest virtual machines share only the </span>Builder<span class="s4">, </span>XenStore-Logic<span class="s4">, and </span>XenStore-State</p>
+<p class="p1">(see Figure <span class="s2">9.5</span>).</p>
+<p class="p1">Users of <span class="s1">Xoar </span>are able to only share service VMs with guest VMs that they control. To do so, they</p>
+<p class="p1">specify a tag on all the devices of their hosted VMs. Auditing is more secure; whenever aVMis created,</p>
+<p class="p1">deleted, stopped, or restarted by <span class="s1">Xoar</span>, the action is recorded in an <span class="s5">append</span>-only database on a different</p>
+<p class="p1">server accessible via a secure channel.</p>
+<p class="p1">Rebooting provides the means to ensure that a virtual machine is in a known-good state. To reduce</p>
+<p class="p1">the overhead and the increased start-up time demanded by a reboot, <span class="s1">Xoar </span>uses <span class="s1">snapshots </span>instead of</p>
+<p class="p1">rebooting. The service VM snapshots itself when it is ready to service a request; similarly, snapshots of</p>
+<p class="p1">all components are taken immediately after their initialization and before they start interacting with other</p>
+<p class="p1">services or guest VMs. Snapshots are implemented using a <span class="s1">copy-on-write </span>mechanism<span class="s3">22 </span>to preserve any</p>
+<p class="p1">page about to be modified.</p>
+</body>
+</html>

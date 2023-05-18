@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">Some believe that it is very easy, possibly too easy, to start using cloud services without a proper</p>
+<p class="p1">understanding of the security risks and without the commitment to follow the ethics rules for cloud</p>
+<p class="p1">computing. A first question is: What are the security risks faced by cloud users? There is also the</p>
+<p class="p1">possibility that a cloud could be used to launch large-scale attacks against other components of the</p>
+<p class="p1">cyber infrastructure. The next question is: How can the nefarious use of cloud resources be prevented?</p>
+<p class="p1">There are multiple ways to look at the security risks for cloud computing. A recent paper identifies</p>
+<p class="p1">three broad classes of risk [<span class="s1">83</span>]: traditional security threats, threats related to system availability, and</p>
+<p class="p1">threats related to third-party data control.</p>
+<p class="p1"><span class="s2">Traditional threats </span>are those experienced for some time by any system connected to the Internet, but</p>
+<p class="p1">with some cloud-specific twists. The impact of traditional threats is amplified due to the vast amount of</p>
+<p class="p1">cloud resources and the large user population that can be affected. The fuzzy bounds of responsibility</p>
+<p class="p1">between the providers of cloud services and users and the difficulties in accurately identifying the cause</p>
+<p class="p1">of a problem add to cloud users’ concerns.</p>
+<p class="p1">The traditional threats begin at the user site. The user must protect the infrastructure used to connect</p>
+<p class="p1">to the cloud and to interact with the application running on the cloud. This task is more difficult because</p>
+<p class="p1">some components of this infrastructure are outside the firewall protecting the user.</p>
+<p class="p1">The next threat is related to the authentication and authorization process. The procedures in place</p>
+<p class="p1">for one individual do not extend to an enterprise. In this case the cloud access of the members of an</p>
+<p class="p1">organization must be nuanced; individuals should be assigned distinct levels of privilege based on their</p>
+<p class="p1">roles in the organization. It is also nontrivial to merge or adapt the internal policies and security metrics</p>
+<p class="p1">of an organization with the ones of the cloud.</p>
+<p class="p1">Moving from the user to the cloud, we see that the traditional types of attack have already affected</p>
+<p class="p1">cloud service providers. The favorite means of attack are distributed denial-of-service (DDoS) attacks,</p>
+<p class="p1">which prevent legitimate users accessing cloud services; phishing;<span class="s3">2 </span>SQL injection;<span class="s3">3 </span>or cross-site</p>
+<p class="p1">scripting.<span class="s3">4</span></p>
+<p class="p1">Cloud servers hostmultiple VMs, and multiple applications may run under each VM.Multitenency in</p>
+<p class="p1">conjunction with VMM vulnerabilities could open new attack channels for malicious users. Identifying</p>
+<p class="p1">the path followed by an attacker is much more difficult in a cloud environment. Traditional investigation</p>
+<p class="p1">methods based on digital forensics cannot be extended to a cloud, where the resources are shared among</p>
+<p class="p1">a large user population and the traces of events related to a security incident are wiped out due to the</p>
+<p class="p1">high rate of <span class="s4">write </span>operations on any storage media.</p>
+<p class="p1"><span class="s2">Availability of cloud services </span>is another major concern. System failures, power outages, and other</p>
+<p class="p1">catastrophic events could shut down cloud services for extended periods of time. When such an event</p>
+<p class="p1">occurs, data lock-in, discussed in Section 3.5, could prevent a large organization whose business model</p>
+<p class="p1">depends on that data from functioning properly.</p>
+<p class="p1">Clouds could also be affected by phase transition phenomena and other effects specific to complex</p>
+<p class="p1">systems (see Chapter 10). Another critical aspect of availability is that users cannot be assured that an</p>
+<p class="p1">application hosted on the cloud will return correct results.</p>
+<p class="p1"><span class="s2">Third-party control </span>generates a spectrum of concerns caused by the lack of transparency and limited</p>
+<p class="p1">user control. For example, a cloud provider may subcontract some resources from a third party whose</p>
+<p class="p1">level of trust is questionable. There are examples when subcontractors failed to maintain the customer</p>
+<p class="p1">data. There are also examples when the third party was not a subcontractor but a hardware supplier and</p>
+<p class="p1">the loss of data was caused by poor-quality storage devices [<span class="s1">83</span>].</p>
+<p class="p1">Storing proprietary data on a cloud is risky because cloud provider espionage poses real dangers.</p>
+<p class="p1">The terms of contractual obligations usually place all responsibilities for data security with the user.</p>
+<p class="p1">The Amazon Web Services customer agreement, for example, does not help boost user confidence as</p>
+<p class="p1">it states: “We <span class="s2">. . . </span>will not be liable to you for any direct, indirect, incidental <span class="s2">. . . </span>damages <span class="s2">. . . </span>nor <span class="s2">. . . </span>be</p>
+<p class="p1">responsible for any compensation, reimbursement, arising in connection with: (A) your inability to use</p>
+<p class="p1">the services <span class="s2">. . . </span>(B) the cost of procurement of substitute goods or services <span class="s2">. . . </span>or (D) any unauthorized</p>
+<p class="p1">access to, alteration of, or deletion, destruction, damage, loss or failure to store any of your content or</p>
+<p class="p1">other data.”</p>
+<p class="p1">It is very difficult for a cloud user to prove that data has been deleted by the service provider. The lack</p>
+<p class="p1">of transparencymakes auditability a very difficult proposition for cloud computing. Auditing guidelines</p>
+<p class="p1">elaborated by the National Institute of Standards and Technology (NIST), such as the Federal Information</p>
+<p class="p1">Processing Standard (FIPS) and the Federal Information Security Management Act (FISMA), are</p>
+<p class="p1">mandatory for U.S. government agencies.</p>
+<p class="p1">The first release of the Cloud Security Alliance (CSA) report in 2010 identifies seven top threats to</p>
+<p class="p1">cloud computing. These threats are the abuse of the cloud, APIs that are not fully secure, malicious</p>
+<p class="p1">insiders, shared technology, account hijacking, data loss or leakage, and unknown risk profiles [<span class="s1">97</span>].</p>
+<p class="p1">According to this report, the <span class="s2">IaaS </span>delivery model can be affected by all threats. <span class="s2">PaaS </span>can be affected</p>
+<p class="p1">by all but the shared technology, whereas <span class="s2">SaaS </span>is affected by all but abuse and shared technology.</p>
+<p class="p1">The term <span class="s2">abuse of the cloud </span>refers to the ability to conduct nefarious activities from the cloud – for</p>
+<p class="p1">example, using multiple <span class="s2">AWS </span>instances or applications supported by <span class="s2">IaaS </span>to launch DDoS attacks or to</p>
+<p class="p1">distribute spam and malware. <span class="s2">Shared technology </span>considers threats due to multitenant access supported</p>
+<p class="p1">by virtualization. VMMs can have flaws allowing a guest operating system to affect the security of the</p>
+<p class="p1">platform shared with other virtual machines.</p>
+<p class="p1"><span class="s2">Insecure APIs </span>may not protect users during a range of activities, starting with authentication and</p>
+<p class="p1">access control to monitoring and control of the application during runtime. The cloud service providers do not disclose their hiring standards and policies; thus, the risks of <span class="s2">malicious insiders </span>cannot be ignored.</p>
+<p class="p1">The potential harm due to this particular form of attack is great.</p>
+<p class="p1"><span class="s2">Data loss or leakage </span>are two risks with devastating consequences for an individual or an organization</p>
+<p class="p1">using cloud services. Maintaining copies of the data outside the cloud is often unfeasible due to the</p>
+<p class="p1">sheer volume of data. If the only copy of the data is stored on the cloud, sensitive data is permanently</p>
+<p class="p1">lost when cloud data replication fails and is followed by a storage media failure. Because some of the</p>
+<p class="p1">data often includes proprietary or sensitive data, access to such information by third parties could have</p>
+<p class="p1">severe consequences.</p>
+<p class="p1"><span class="s2">Account or service hijacking </span>is a significant threat, and cloud users must be aware of and guard against</p>
+<p class="p1">all methods of stealing credentials. Finally, <span class="s2">unknown risk profile </span>refers to exposure to the ignorance or</p>
+<p class="p1">underestimation of the risks of cloud computing.</p>
+<p class="p1">The 2011 version of the CSA report, “Security Guidance for Critical Area of Focus in Cloud Computing</p>
+<p class="p1">V3.0,” provides a comprehensive analysis of and makes recommendations to minimize the risks</p>
+<p class="p1">inherent in cloud computing [<span class="s1">98</span>].</p>
+<p class="p1">An attempt to identify and classify the attacks in a cloud computing environment is presented in [<span class="s1">147</span>].</p>
+<p class="p1">The three actors involved in the model considered are the user, the service, and the cloud infrastructure,</p>
+<p class="p1">and there are six types of attacks possible (see Figure <span class="s1">9.1</span>). The user can be attacked from two directions:</p>
+<p class="p1">from the service and from the cloud. SSL certificate spoofing, attacks on browser caches, or phishing</p>
+<p class="p1">attacks are examples of attacks that originate at the service. The user can also be a victim of attacks that</p>
+<p class="p1">either originate at the cloud or spoofs that originate from the cloud infrastructure.</p>
+<p class="p1">The service can be attacked from the user. Buffer overflow, SQL injection, and privilege escalation</p>
+<p class="p1">are the common types of attacks from the service. The service can also be subject to attack by the cloud</p>
+<p class="p1">infrastructure; this is probably the most serious line of attack. Limiting access to resources, privilege related</p>
+<p class="p1">attacks, data distortion, and injecting additional operations are only a few of the many possible</p>
+<p class="p1">lines of attack originated at the cloud.</p>
+<p class="p1">The cloud infrastructure can be attacked by a user who targets the cloud control system. The types of</p>
+<p class="p1">attack are the same ones that a user directs toward any other cloud service. The cloud infrastructure may</p>
+<p class="p1">also be targeted by a service requesting an excessive amount of resources and causing the exhaustion</p>
+<p class="p1">of the resources.</p>
+</body>
+</html>

@@ -1,0 +1,58 @@
+,source,edge,target
+0,hardware support,became obvious,virtualization
+1,Intel,started,3 generation virtualization architecture
+2,Intel,released,4 VT x
+3,AMD,announced,Pacifica
+4,paper,analyzes,x86 virtualization architectures
+6,solutions,addressed,challenges
+7,solutions,improve,same software systems
+9,We,examine,x86  architecture
+10,VMM,means,greater privilege 0
+11,VMM,forces,guest
+12,x86  architecture,provides,four protection rings
+13,VMM,run,which
+18,current privilege level,stored on,also  stack
+19,VMM,uses,interrupt descriptor table
+21,guest software,protected,structures
+22,software,have,structures
+23,data that,executed by,CPU operation
+24,that,load,registers
+26,that,fail,other privilege 0
+28,instruction,implies,instructions
+29,executing,realize,instructions
+32,instructions,support low,low latency system calls
+33,0 privilege second,causes,higher privilege 0
+34,second,causes,privilege level
+35,then guest which,emulate,negative  performance
+36,physical  VMM,generates,later  target
+38,OS,has,the
+39,when  interrupt,delivered to,only  guestOS
+46,Systems,use,only bit paging
+47,0 guest OS,distinguish among,privilege level
+48,so guest OS,run,privilege level
+50,Frequent  access,increases,privileged  VMM
+51,register,used by,frequently guest OS
+52,VMM,protect,access
+53,This,cause,significant performance degradation
+54,problems,exist for,Itanium Section
+60,then  control,transferred from,VM
+61,exit,saves,processor state
+62,then  state,loads,finally host state VMM
+64,VM exit operations,use,common entry point
+65,operation,saves,eventually  VMCS
+66,Some,stored as,bitmaps
+67,one,caused,possible  exit
+68,bitmap,contains,I O space
+70,layout,fixed by,particular  implementation
+72,control that,includes,virtual  interrupts
+73,that,facilitate,the
+74,interrupt  exiting,causes,example
+75,moreover  guest,allowed,interrupts
+78,guest,triggered,interrupts
+79,Processors,developed,new virtualization architectures
+80,I memory management second,supports,network virtualization
+81,second,supports,network
+83,I MMU virtualization,gives,peripheral  devices
+84,DMA address which,supports,address device
+85,administrator,assign,VM
+86,Next  we,discuss,Xen

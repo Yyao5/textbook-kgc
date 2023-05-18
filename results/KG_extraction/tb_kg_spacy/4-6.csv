@@ -1,0 +1,45 @@
+,source,edge,target
+0,front end system,distributes,back end systems
+2,back end systems,added to,pool
+3,Only  data,partitioned into,arbitrary  cloud
+5,We,distinguish,divisible  workloads
+6,partitioning,defined,priori
+7,workload,partitioned into,very  size
+8,applications,obey,sharing  model
+10,Theory,analyzed in,Section
+11,MapReduce,based on,intensive  applications
+16,computations,start,second  phase
+19,program,based on,partial master instance results
+21,LISP,conceived for,large computing clusters
+23,pairs,transformed into,output
+24,applications,implemented,easily  model
+25,one,process,URL access frequency
+26,pairs Reduce function,totalcount,pairs  URL
+27,function,produces,pairs
+28,function,distributed,record  pair
+29,function,extracts,record
+31,defined  that,shows,documents
+36,When user program,invokes,MapReduce
+37,sequence,take,Figure
+39,library,splits,input files
+41,master,assigns to,idle  Map
+42,considerations,limit,the
+43,same efficiency considerations,require,M
+44,worker,assigned,Map
+47,pairs,buffered in,local partitioning function
+50,back  who,passed,Reduce workers
+51,worker,uses remote,intermediate worker sorts keys
+53,intermediate  key,passed to,defined Reduce function
+54,output,appended to,final output file
+55,When  Map,have,tasks
+57,master,wakes,user program
+58,master,stores,worker machine
+59,periodically master worker,pings,periodically master worker
+61,task,reset,failed  idle
+62,it,writes periodic,last  checkpoint
+65,data,stored,Google File Section
+68,environment,described,MapReduce
+69,cluster,consists of,machines
+70,Data,stored on,individual IDE7 machines
+71,system,uses,unreliable  hardware
+74,input data,stored on,local  system

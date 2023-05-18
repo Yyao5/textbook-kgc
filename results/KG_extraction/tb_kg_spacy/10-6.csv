@@ -1,0 +1,40 @@
+,source,edge,target
+0,Modularity,represent,system
+5,Modularity,used,electronic steam airplanes
+8,power train,includes,engine assembly
+9,Modularity,reduce,manufacturers
+10,defective  consumer,used by,entire  product
+12,individual  modules,encourages,particular  field
+14,also  module,supports,better  system
+16,Spartan Constitution,described,social  system
+17,that,surrounded by,organizations
+18,such  actions,have,social  system
+22,defined communication patterns,demands,layering
+23,layer,fulfills,well  defined
+24,layer,expected,adjacent  layers
+26,clearly communication it,reduces,complexity behavior
+27,large  programs,split into,defined  functionality
+28,Modules,grouped,other  libraries
+29,that,helps,optimal design decisions
+33,that,define,clear  layers
+34,that,address,concern
+35,it,recognized,case
+37,thus  we,need,physical  layer
+39,Next  we,decided,that
+40,so  we,had,network layer
+43,how source information,recognized,network
+44,we,want,information
+46,Finally  information,has,a
+47,thus  we,needed,application layer
+48,Layering,prevent,some
+49,wireless  applications,allow wireless,Access Control data link layer
+51,layering,shows,basic protocol stack
+52,layering,gives,insight
+53,cloud  that,could,future computing clouds
+54,too  we,argue,better cloud infrastructure
+56,we,need,one  another
+58,other  it,are other,individual  modules
+59,operating that,system,privileged processor operations
+60,that,has,a
+61,management,interacts with,other  subsystems
+63,layered  organization,seems unlikely,case

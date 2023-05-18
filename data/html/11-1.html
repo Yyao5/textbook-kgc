@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 10.0px Courier; color: #000066}
+    span.s4 {font: 10.0px Times}
+    span.s5 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Figure <span class="s1">11.2 </span>displays the <span class="s2">Amazon Management Console </span>(AMC) window listing the Amazon Web Services</p>
+<p class="p1">offered at the time of this writing. The services are grouped into several categories: computing</p>
+<p class="p1">and networking, storage and content delivery, deployment and management, databases, and application</p>
+<p class="p1">services.</p>
+<p class="p1">In spite of the wealth of information available from the providers of cloud services, the learning</p>
+<p class="p1">curve of an application developer is still relatively steep. The examples discussed in this chapter are</p>
+<p class="p1">designed to help overcome some of the hurdles faced when someone first attempts to use the <span class="s2">AWS</span>. Due</p>
+<p class="p1">to space limitations we have chosen to cover only a few of the very large number of combinations of</p>
+<p class="p1">services, operating systems, and programming environments supported by <span class="s2">AWS</span>.</p>
+<p class="p1">In Section 3.1 we mentioned that new services are continually added to <span class="s2">AWS</span>; the look and feel of</p>
+<p class="p1">the Web pages changes over time. The screen shots we’ve selected reflect the state of the system at the</p>
+<p class="p1">time of the writing of this book, the second half of 2012.</p>
+<p class="p1">To access<span class="s2">AWS </span>one must first create an account at <span class="s3">http://aws.amazon.com/</span>.Once the account</p>
+<p class="p1">is created, the AMC allows the user to select one of the services, e.g., <span class="s2">EC2</span>, and then start an instance.</p>
+<p class="p1">Recall that an <span class="s2">AWS EC2 instance </span>is a virtual server started in a region and the availability zone is</p>
+<p class="p1">selected by the user. Instances are grouped into a few classes, and each class has available to it a specific</p>
+<p class="p1">amount of resources, such as: CPU cycles, main memory, secondary storage, and communication and</p>
+<p class="p1">I/O bandwidth. Several operating systems are supported by <span class="s2">AWS</span>, including <span class="s2">Amazon Linux, Red Hat</span></p>
+<p class="p2">Enterprise Linux, 6.3, SUSE Linux Enterprise Server 11, Ubuntu Server 12.04.1<span class="s4">, and several versions</span></p>
+<p class="p1">of <span class="s2">Microsoft Windows </span>(see Figure <span class="s1">11.3</span>).</p>
+<p class="p1">The next step is to create an (AMI)<span class="s5">1 </span>on one of the platforms supported by <span class="s2">AWS </span>and start an instance</p>
+<p class="p1">using the <span class="s2">RunInstance </span>API. If the application needs more than 20 instances, a special form must be filled out. The local instance store persists only for the duration of an instance; the data will persist if an</p>
+<p class="p1">instance is started using the Amazon Elastic Block Storage (EBS) and then the instance can be restarted</p>
+<p class="p1">at a later time.</p>
+<p class="p1">Once an instance is created, the user can perform several actions – for example, connect to the</p>
+<p class="p1">instance, launch more instances identical to the current one, or create an EBS AMI. The user can also</p>
+<p class="p1">terminate, reboot, or stop the instance (see Figure <span class="s1">11.4</span>). The <span class="s2">Network &amp; Security </span>panel allows the</p>
+<p class="p2"><span class="s4">creation of </span>Security Groups, Elastic IP addresses, Placement Groups, Load Balancers<span class="s4">, and </span>Key Pairs</p>
+<p class="p1">(see the discussion in Section <span class="s1">11.3</span>), whereas the EBS panel allows the specification of volumes and the</p>
+<p class="p1">creation of snapshots.</p>
+</body>
+</html>

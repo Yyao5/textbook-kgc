@@ -1,0 +1,107 @@
+,source,edge,target
+0,we,discuss,distributed software companies
+4,systems,35,same  time
+5,workstations,appealing due,lower hardware maintenance
+6,distributed file system,became obvious,large  workstations
+7,Microsystems,proceeded,early  1980s
+9,development,NFSwas,local area network
+10,majority,running,workstations
+11,many design decisions,influenced by,Unix File System
+12,NFS designers,aimed to,same  semantics
+17,we,examine,NFS
+18,important Unix File that,have,remote file management
+20,design,provides,necessary
+21,layering,allows,necessary  system
+22,vnode Unix File System,allowed,local file access
+25,indeed  design,allows,called file systems
+27,structure,reflected by,naming  convention
+28,metadata,supports,hoc file system
+29,inodes,contain,individual  files
+30,inodes,kept on,together  data
+31,where storage device data,includes,last file file
+32,Metadata,supports,rapid technology development
+33,organization,reflects,data application
+34,storage file,reflects,given storage medium
+37,UFS,allows,logical file one
+40,pointer,identifies,starting operation
+42,file,stored on,physical  media
+43,layers,reflect,physical inode organization
+45,file layer,reflects,files
+46,layer,provides,objects
+47,layers,reflect,logical path name organization
+50,structures,maintained in,only kernel mode
+53,process,establish,first file file
+54,new  entry,added to,file description table
+55,information,brought into,control structure
+56,path,specifies,the
+57,relative  path,specifies,working  process
+60,file,identified by,open file table
+61,System,based on,client server paradigm
+62,local  server,runs on,remote procedure Figure
+63,interface,distinguishes,remote file file
+65,Figure,shows,well RPC call
+66,NFS,uses,local  Figure
+69,file,identified by,file handle file fh
+71,multiple inode clients,allows,remote  file
+75,then  call,repeated without,side effects
+78,error call,returns,error user
+83,close  action,is,remote file file
+85,action,makes,open file structure
+86,NFS,undergone significant,significant  years
+87,NFS,evolved from,4  Section
+91,designers,envisioned,system
+92,individual,anticipated,Andrew workstation
+93,individual,have,Andrew
+94,system,connect,"10,000  workstations"
+95,set,forms,trusted  structure
+96,user level which,calls to,back  calls
+100,Venus,communicate with,Vice
+103,local  disks,used as persistent,persistent  cache
+104,when  file,updated,servers
+106,strategy,reduces,better system performance
+108,communications,encrypted,clients
+109,operations,require secure,secure network connections
+110,password,used,authentication server
+112,time file operation,used,secure network connection
+113,operation,requires,secure  network
+114,AFS,uses,control data
+117,set,supports,ACL management
+118,files,accessed from,automatically user involvement
+120,only  workstations,reduces,administrative  intervention
+121,operations,affect,only  servers
+123,SFS,supports non,write  client
+124,Processes,enjoy,same
+125,Processes,run on,single  system
+127,latency,reduces,obviously response time
+130,there  it,passed,local file client
+132,then  request,be satisfied,remote  server
+134,it,sent to,file server
+135,typical Sprite workstation,influenced by,physical 4–14 memory
+136,diskless  workstations,allowed diskless,caching  clients
+138,intensive benchmark SFS,show,%  NFS
+140,cache block,has,unique block file
+141,clients,allows,new  server
+142,clients,create new,new  blocks
+143,servers,map virtual,physical disk addresses
+145,Sprite operating system,ensures optimal,optimal
+146,system,manage separate,last memory block
+148,strict LRU order,uses,operation
+150,system,implements,strict LRU order
+151,order,knows,the
+152,Whenever file system,experiences,virtual memory file
+153,miss,compares,oldest cache block
+154,oldest cache block,forced,real memory frame
+156,first  writing,means,tens  seconds
+158,block,written to,first  cache
+159,writing,delayed,disk
+160,when  data,speeds,disk
+163,soon  alternative,guarantees,cache
+164,soon  alternative,written to,cache
+165,alternative,increases,write operation
+166,server,guarantee,persistent  storage
+167,server,have,newest
+169,multiple write clients,distinguish sequential,same  time
+171,when  file,opened,several  clients
+172,multiple  clients,modify,file
+173,Sprite,allows,cache servers
+176,Table,presents,8.1 writing NFS

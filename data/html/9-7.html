@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">The relationship between virtualization and security is a complex one and has two distinct aspects: virtualization</p>
+<p class="p1">for security and the security of virtualization [<span class="s1">215</span>]. In Section 5.1 we praised the virtues of</p>
+<p class="p1">virtualization.We also discussed two of the problems associated with virtual environments: (a) the negative</p>
+<p class="p1">effect on performance due to the additional overhead; and (b) the need for more powerful systems</p>
+<p class="p1">to run multiple virtual machines. In this section we take a closer look at the security of virtualization.</p>
+<p class="p1">One of the most important virtues of virtualization is that the complete state of an operating system</p>
+<p class="p1">running under a virtual machine is captured by the VM. <span class="s2">This state can be saved in a file and then the</span></p>
+<p class="p1"><span class="s2">file can be copied and shared</span>. There are several useful implications regarding this fact:</p>
+<p class="p1"><span class="s2">1. </span>Ability to support the <span class="s2">IaaS </span>delivery model. In this model a user selects an image matching the local</p>
+<p class="p1">environment used by the application and then uploads and runs the application on the cloud using</p>
+<p class="p1">this image.</p>
+<p class="p1"><span class="s2">2. </span>Increased reliability. An operating system with all the applications running under it can be replicated</p>
+<p class="p1">and switched to a hot standby<span class="s3">7 </span>in case of a system failure.</p>
+<p class="p1"><span class="s2">3. </span>Straightforward mechanisms to implement resource management policies:</p>
+<p class="p1">• To balance the load of a system, an OS and the applications running under it can be moved to</p>
+<p class="p1">another server when the load on the current server exceeds a high-water mark.</p>
+<p class="p1">• To reduce power consumption, the load of lightly loaded servers can be moved to other servers</p>
+<p class="p1">and then these servers can be turned off or set on standby mode.</p>
+<p class="p1"><span class="s2">4. </span>Improved intrusion prevention and detection. In a virtual environment a clone can look for known</p>
+<p class="p1">patterns in system activity and detect intrusion. The operator can switch to a hot standby when</p>
+<p class="p1">suspicious events are detected.</p>
+<p class="p1"><span class="s2">5. </span>Secure logging and intrusion protection. Intrusion detection can be disabled and logging can be</p>
+<p class="p1">modified by an intruder when implemented at the OS level. When these services are implemented</p>
+<p class="p1">at the VMM/hypervisor layer, the services cannot be disabled or modified. In addition, the VMM</p>
+<p class="p1">may be able to log <span class="s2">only </span>events of interest for a post-attack analysis.</p>
+<p class="p1"><span class="s2">6. </span>More efficient and flexible software testing. Instead of a very large number of dedicated systems</p>
+<p class="p1">running under different operating systems, different versions of each operating system, and different</p>
+<p class="p1">patches for each version, virtualization allows the multitude of OS instances to share a small number</p>
+<p class="p1">of physical systems.</p>
+<p class="p1">Is there a price to pay for the benefits of virtualization outlined here? There is always the other side</p>
+<p class="p1">of a coin, so we should not be surprised that the answer to this question is a resounding “yes.” In a</p>
+<p class="p1">2005 paper [<span class="s1">132</span>] Garfinkel and Rosenblum argued that the serious implications of virtualization on</p>
+<p class="p1">system security cannot be ignored. This theme was revisited in 2008 by Price [<span class="s1">297</span>], who reaches similar</p>
+<p class="p1">conclusions.</p>
+<p class="p1">A first type of undesirable effects of virtualization leads to the diminished ability of an organization</p>
+<p class="p1">to manage its systems and track their status:</p>
+<p class="p1">• The number of physical systems in the inventory of an organization is limited by cost, space, energy</p>
+<p class="p1">consumption, and human support. Creating a VM reduces ultimately to copying a file; therefore the</p>
+<p class="p1">explosion in the number of VMs is a fact of life. The only limitation for the number of VMs is the</p>
+<p class="p1">amount of storage space available.</p>
+<p class="p1">• In addition to quantity, there is also a qualitative aspect to the explosion in the number of VMs.</p>
+<p class="p1">Traditionally, organizations install and maintain the same version of system software. In a virtual</p>
+<p class="p1">environment such homogeneity cannot be enforced; thus, the number of different operating systems,</p>
+<p class="p1">their versions, and the patch status of each version will be very diverse, and this heterogeneity will</p>
+<p class="p1">tax the support team.</p>
+<p class="p1">• Probably one of themost critical problems posed by virtualization is related to the software life cycle.</p>
+<p class="p1">The traditional assumption is that the software life cycle is a straight line, so patch management is based on a monotonic forward progress. However, the virtual execution model <span class="s2">maps to a tree</span></p>
+<p class="p1"><span class="s2">structure </span>rather than a line; indeed, at any point in time multiple instances of the VM can be created</p>
+<p class="p1">and then each one of them can be updated, different patches installed, and so on. This problem has</p>
+<p class="p1">serious implications for security, as we shall see shortly.</p>
+<p class="p1">Let us now concentrate our discussion on direct implications of virtualization on security. A first</p>
+<p class="p1">question is: How can the support team deal with the consequences of an attack in a virtual environment?</p>
+<p class="p1">Do we expect the infection from a computer virus or a worm to be less manageable in a virtual</p>
+<p class="p1">environment? The surprising answer to this question is that an infection may last indefinitely.</p>
+<p class="p1">Some of the infected VMs may be dormant at the time when the measures to clean up the systems</p>
+<p class="p1">are taken and then, at a later time, they could wake up and infect other systems. This scenario can repeat</p>
+<p class="p1">itself and guarantee that infection will last indefinitely. This is in stark contrast to the manner in which</p>
+<p class="p1">an infection is treated in nonvirtual environments; once an infection is detected, the infected systems</p>
+<p class="p1">are quarantined and then cleaned up. The systems will then behave normally until the next episode of</p>
+<p class="p1">infection occurs.</p>
+<p class="p1">The more general observation is that in a traditional computing environment a steady state can be</p>
+<p class="p1">reached. In this steady state all systems are brought up to a “desirable” state, whereas “undesirable”</p>
+<p class="p1">states – states in which some of the systems are either infected by a virus or display an undesirable pattern</p>
+<p class="p1">of behavior – are only transient. This desirable state is reached by installing the latest version of the</p>
+<p class="p1">system software and then applying the latest patches to all systems. Due to the lack of control, a virtual</p>
+<p class="p1">environment may never reach such a steady state. In a nonvirtual environment the security can be compromised</p>
+<p class="p1">when an infected laptop is connected to the network protected by a firewall or when a virus is</p>
+<p class="p1">brought in on removable media. But unlike a virtual environment, the system can still reach a steady state.</p>
+<p class="p1">A side effect of the ability to record in a file the complete state of a VMis the possibility to roll back a</p>
+<p class="p1">VM. This opens wide the door for a new type of vulnerability caused by events recorded in the memory</p>
+<p class="p1">of an attacker. Two such situations are discussed in [<span class="s1">132</span>]. The first is that one-time passwords are</p>
+<p class="p1">transmitted in the clear and the protection is guaranteed only if the attacker does not have the possibility</p>
+<p class="p1">to access passwords used in previous sessions. If a system runs the S/KEY password system<span class="s3">8 </span>an attacker</p>
+<p class="p1">can replay rolled-back versions and access past sniffed passwords.</p>
+<p class="p1">The second situation is related to the requirement of some cryptographic protocols, and even noncryptographic</p>
+<p class="p1">protocols, regarding the “freshness” of the random-number source used for session keys</p>
+<p class="p1">and nonces.<span class="s3">9 </span>This situation occurs when a VM is rolled back to a state in which a random number has</p>
+<p class="p1">been generated but not yet used.</p>
+<p class="p1">Even noncryptographic use of random numbers may be affected by the rollback scenario. For example,</p>
+<p class="p1">the initial sequence number for a new TCP connection must be “fresh”; when it is not, the door to</p>
+<p class="p1">TCP hijacking is left open.</p>
+<p class="p1">Another undesirable effect of the virtual environment affects the trust. Recall from Section <span class="s1">9.4 </span>that</p>
+<p class="p2">trust is conditioned by the ability to guarantee the identity of entities involved. <span class="s4">Each computer system</span></p>
+<p class="p1">in a network has a unique physical, or <span class="s2">MAC</span>, address; the uniqueness of this address guarantees that an</p>
+<p class="p1">infected or malicious system can be identified and then cleaned, shut down, or denied network access.</p>
+<p class="p1">This process breaks down for virtual systems when VMs are created dynamically. Often, to avoid name</p>
+<p class="p1">collision, a random <span class="s2">MAC </span>address is assigned to a new VM. The other effect discussed at length in</p>
+<p class="p1">Section <span class="s1">9.8 </span>is that popular VM images are shared by many users.</p>
+<p class="p1">The ability to guarantee confidentiality of sensitive data is yet another pillar of security affected by</p>
+<p class="p1">virtualization. Virtualization undermines the basic principle that the time-sensitive data stored on any</p>
+<p class="p1">system should be reduced to a minimum. First, the owner has very limited control over where sensitive</p>
+<p class="p1">data is stored; it could be spread across many servers and may be left on some of them indefinitely.</p>
+<p class="p1">To be able to roll it back, a VMM records the state of a VM. This process allows an attacker to access</p>
+<p class="p1">sensitive data the owner attempted to destroy.</p>
+</body>
+</html>

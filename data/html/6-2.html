@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica; min-height: 12.0px}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times}
+    span.s4 {font: 7.5px Helvetica}
+    span.s5 {font: 10.0px Times}
+    span.s6 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Control theory has been used to design adaptive resource management for many classes of applications,</p>
+<p class="p1">including power management [<span class="s1">187</span>], task scheduling [<span class="s1">222</span>], QoS adaptation in Web servers [<span class="s1">3</span>], and</p>
+<p class="p1">load balancing. The classical feedback control methods are used in all these cases to regulate the key</p>
+<p class="p1">operating parameters of the system based on measurement of the system output; the feedback control in</p>
+<p class="p1">thesemethods assumes a linear time-invariant system model and a closed-loop controller. This controller</p>
+<p class="p1">is based on an open-loop system transfer function that satisfies stability and sensitivity constraints.</p>
+<p class="p1">A technique to design self-managing systems based on concepts from control theory is discussed</p>
+<p class="p1">in [<span class="s1">369</span>]. The technique allows multiple QoS objectives and operating constraints to be expressed</p>
+<p class="p1">as a cost function and can be applied to stand-alone or distributed Web servers, database servers,</p>
+<p class="p1">high-performance application servers, and even mobile/embedded systems. The following discussion</p>
+<p class="p1">considers a single processor serving a stream of input requests.We attempt to minimize a cost function</p>
+<p class="p1">that reflects the response time and the power consumption. Our goal is to illustrate the methodology for</p>
+<p class="p1">optimal resource management based on control theory concepts. The analysis is intricate and cannot be</p>
+<p class="p1">easily extended to a collection of servers.</p>
+<p class="p1">Control Theory Principles. We start our discussion with a brief overview of control theory principles</p>
+<p class="p1">one could use for optimal resource allocation. Optimal control generates a sequence of control inputs</p>
+<p class="p1">over a look-ahead horizon while estimating changes in operating conditions. A convex cost function has</p>
+<p class="p1">arguments <span class="s2">x(k)</span>, the state at step <span class="s2">k</span>, and <span class="s2">u(k)</span>, the control vector; this cost function is minimized, subject</p>
+<p class="p1">to the constraints imposed by the system dynamics. The discrete-time optimal control problem is to</p>
+<p class="p1">determine the sequence of control variables <span class="s2">u(i ), u(i + </span>1<span class="s2">), . . . , u(n − </span>1<span class="s2">) </span>to minimize the expression</p>
+<p class="p2">J (i ) =  (n, x(n)) +</p>
+<p class="p3"><span class="s2"> </span>n−<span class="s3">1</span></p>
+<p class="p3">k=i</p>
+<p class="p2">L<span class="s4">k </span>(x(k), u(k)), <span class="s5">(6.1)</span></p>
+<p class="p1">where <span class="s2"> (n, x(n)) </span>is the cost function of the final step, <span class="s2">n</span>, and <span class="s2">L</span><span class="s4">k </span><span class="s2">(x(k), u(k)) </span>is a time-varying cost</p>
+<p class="p1">function at the intermediate step <span class="s2">k </span>over the horizon <span class="s2">[i , n]</span>. The minimization is subject to the constraints</p>
+<p class="p1"><span class="s2">x(k + </span>1<span class="s2">) = f </span><span class="s4">k </span><span class="s2">(x(k), u(k)), </span>(6.2) where <span class="s2">x(k +</span>1<span class="s2">)</span>, the system state at time <span class="s2">k +</span>1, is a function of <span class="s2">x(k)</span>, the state at time <span class="s2">k</span>, and of <span class="s2">u(k)</span>, the</p>
+<p class="p1">input at time <span class="s2">k</span>; in general, the function <span class="s2">f </span><span class="s4">k </span>is time-varying; thus, its superscript.</p>
+<p class="p1">One of the techniques to solve this problem is based on the <span class="s2">Lagrange multiplier </span>method of finding</p>
+<p class="p1">the extremes (minima or maxima) of a function subject to constrains. More precisely, if we want to</p>
+<p class="p1">maximize the function <span class="s2">g(x, y) </span>subject to the constraint <span class="s2">h(x, y) = k</span>, we introduce a Lagrange multiplier</p>
+<p class="p1"><span class="s2">λ</span>. Then we study the function</p>
+<p class="p2"> (x, y, λ) = g(x, y) + λ   [h(x, y) − k]. <span class="s5">(6.3)</span></p>
+<p class="p1">A necessary condition for the optimality is that <span class="s2">(x, y, λ) </span>is a stationary point for <span class="s2"> (x, y, λ)</span>. In other</p>
+<p class="p1">words,</p>
+<p class="p2">∇<span class="s4">x,y,λ</span> (x, y, λ) = <span class="s5">0 or</span></p>
+<p class="p2"> </p>
+<p class="p2">∂ (x, y, λ)</p>
+<p class="p2">∂x</p>
+<p class="p2">,</p>
+<p class="p2">∂ (x, y, λ)</p>
+<p class="p2">∂ y</p>
+<p class="p2">,</p>
+<p class="p2">∂ (x, y, λ)</p>
+<p class="p2">∂λ</p>
+<p class="p2"> </p>
+<p class="p1"><span class="s2">= </span>0<span class="s2">. </span>(6.4)</p>
+<p class="p1">The Lagrange multiplier at time step <span class="s2">k </span>is <span class="s2">λ</span><span class="s4">k </span>and we solve Eq. (<span class="s1">6.4</span>) as an unconstrained optimization</p>
+<p class="p1">problem.We define an adjoint cost function that includes the original state constraints as the Hamiltonian</p>
+<p class="p1">function <span class="s2">H</span>, then we construct the adjoint system consisting of the original state equation and the <span class="s2">costate</span></p>
+<p class="p1"><span class="s2">equation </span>governing the Lagrange multiplier. Thus, we define a two-point boundary problem<span class="s6">3</span>; the state</p>
+<p class="p1"><span class="s2">x</span><span class="s4">k </span>develops forward in time whereas the costate occurs backward in time.</p>
+<p class="p1">A Model Capturing Both QoS and Energy Consumption for a Single-Server System. Now we</p>
+<p class="p1">turn our attention to the case of a single processor serving a stream of input requests. To compute the</p>
+<p class="p1">optimal inputs over a finite horizon, the controller in Figure <span class="s1">6.1 </span>uses feedback regarding the current</p>
+<p class="p1">state, as well as an estimation of the future disturbance due to the environment. The control task is</p>
+<p class="p1">solved as a state regulation problem updating the initial and final states of the control horizon.</p>
+<p class="p1">We use a simple queuing model to estimate the response time. Requests for service at processor <span class="s2">P </span>are</p>
+<p class="p1">processed on a first-come, first-served (FCFS) basis.We do not assume a priori distributions of the arrival process and of the service process; instead, we use the estimate <span class="s2">ˆ  (k) </span>of the arrival rate <span class="s2"> (k) </span>at time <span class="s2">k</span>.</p>
+<p class="p1">We also assume that the processor can operate at frequencies <span class="s2">u(k) </span>in the range <span class="s2">u(k) ∈ [u</span><span class="s4">min</span><span class="s2">, u</span><span class="s4">max </span><span class="s2">] </span>and</p>
+<p class="p1">call <span class="s2">ˆ c(k) </span>the time to process a request at time <span class="s2">k </span>when the processor operates at the highest frequency</p>
+<p class="p1">in the range, <span class="s2">u</span><span class="s4">max </span>. Then we define the scaling factor <span class="s2">α(k) = u(k)/u</span><span class="s4">max </span>and we express an estimate of</p>
+<p class="p1">the processing rate <span class="s2">N(k) </span>as <span class="s2">α(k)/ ˆ c(k)</span>.</p>
+<p class="p1">The behavior of a single processor is modeled as a nonlinear, time-varying, discrete-time state equation.</p>
+<p class="p1">If <span class="s2">T</span><span class="s4">s </span>is the sampling period, defined as the time difference between two consecutive observations of</p>
+<p class="p1">the system, e.g., the one at time <span class="s2">(k+</span>1<span class="s2">) </span>and the one at time <span class="s2">k</span>, then the size of the queue at time <span class="s2">(k+</span>1<span class="s2">) </span>is</p>
+<p class="p2">q(k + <span class="s5">1</span>) = <span class="s5">max</span></p>
+<p class="p2">  </p>
+<p class="p2">q(k) +</p>
+<p class="p2"> </p>
+<p class="p2">ˆ  (k) − u(k)</p>
+<p class="p2">ˆ c(k)   u<span class="s4">max</span></p>
+<p class="p2"> </p>
+<p class="p2">  T<span class="s4">s</span></p>
+<p class="p2"> </p>
+<p class="p2">, <span class="s5">0</span></p>
+<p class="p2"> </p>
+<p class="p1"><span class="s2">. </span>(6.5)</p>
+<p class="p1">The first term, <span class="s2">q(k)</span>, is the size of the input queue at time <span class="s2">k</span>, and the second one is the difference between</p>
+<p class="p1">the number of requests arriving during the sampling period, <span class="s2">T</span><span class="s4">s </span>, and those processed during the same</p>
+<p class="p1">interval.</p>
+<p class="p1">The response time <span class="s2">ω(k) </span>is the sum of the waiting time and the processing time of the requests</p>
+<p class="p2">ω(k) = (<span class="s5">1 </span>+ q(k))  ˆc(k). <span class="s5">(6.6)</span></p>
+<p class="p1">Indeed, the total number of requests in the system is <span class="s2">(</span>1 <span class="s2">+ q(k)) </span>and the departure rate is 1<span class="s2">/ˆ c(k)</span>.</p>
+<p class="p1">We want to capture both the QoS and the energy consumption, since both affect the cost of providing</p>
+<p class="p1">the service. A utility function, such as the one depicted in Figure <span class="s1">6.4</span>, captures the rewards as well as the</p>
+<p class="p1">penalties specified by the service-level agreement for the response time. In our queuing model the utility</p>
+<p class="p1">is a function of the size of the queue; it can be expressed as a quadratic function of the response time</p>
+<p class="p2">S(q(k)) = <span class="s5">1</span>/<span class="s5">2</span>(s   (ω(k) − ω<span class="s3">0</span>)<span class="s3">2</span>), <span class="s5">(6.7)</span></p>
+<p class="p1">with <span class="s2">ω</span><span class="s3">0</span>, the response time set point and <span class="s2">q(</span>0<span class="s2">) = q</span><span class="s3">0</span>, the initial value of the queue length. The energy</p>
+<p class="p1">consumption is a quadratic function of the frequency</p>
+<p class="p2">R(u(k)) = <span class="s5">1</span>/<span class="s5">2</span>(r   u(k)<span class="s3">2</span>). <span class="s5">(6.8)</span></p>
+<p class="p1">The two parameters <span class="s2">s </span>and <span class="s2">r </span>are weights for the two components of the cost, the one derived from the</p>
+<p class="p1">utility function and the second from the energy consumption.We have to pay a penalty for the requests</p>
+<p class="p1">left in the queue at the end of the control horizon, a quadratic function of the queue length</p>
+<p class="p2"> (q(N)) = <span class="s5">1</span>/<span class="s5">2</span>(v   q(n)<span class="s3">2</span>). <span class="s5">(6.9)</span></p>
+<p class="p1">The performance measure of interest is a cost expressed as</p>
+<p class="p2">J =  (q(N)) +</p>
+<p class="p3">N<span class="s2"> </span>−<span class="s3">1</span></p>
+<p class="p3">k=<span class="s3">1</span></p>
+<p class="p2">[S(q(k)) + R(u(k))]. <span class="s5">(6.10)</span></p>
+<p class="p1">The problem is to find the optimal control <span class="s2">u</span><span class="s4">∗ </span>and the finite time horizon <span class="s2">[</span>0<span class="s2">, N] </span>such that the trajectory</p>
+<p class="p1">of the system subject to optimal control is <span class="s2">q</span><span class="s4">∗</span>, and the cost <span class="s2">J </span>in Eq. (<span class="s1">6.10</span>) is minimized subject to the following constraints</p>
+<p class="p2">q(k + <span class="s5">1</span>) =</p>
+<p class="p2"> </p>
+<p class="p2">q(k) +</p>
+<p class="p2"> </p>
+<p class="p2">ˆ  (k) − u(k)</p>
+<p class="p2">ˆ c(k)   u<span class="s4">max</span></p>
+<p class="p2"> </p>
+<p class="p2">  T<span class="s4">s</span></p>
+<p class="p2"> </p>
+<p class="p2">, q(k)   <span class="s5">0</span>, <span class="s5">and </span>u<span class="s4">min </span>  u(k)   u<span class="s4">max </span>. <span class="s5">(6.11)</span></p>
+<p class="p1">When the state trajectory <span class="s2">q( ) </span>corresponding to the control <span class="s2">u( ) </span>satisfies the constraints</p>
+<p class="p2"> <span class="s5">1 </span>: q(k) &gt; <span class="s5">0</span>,  <span class="s5">2 </span>: u(k)   u<span class="s4">min</span>,  <span class="s5">3 </span>: u(k)   u<span class="s4">max </span>, <span class="s5">(6.12)</span></p>
+<p class="p1">then the pair</p>
+<p class="p2"> </p>
+<p class="p2">q( ), u( )</p>
+<p class="p4"><br></p>
+<p class="p1">is called a <span class="s2">feasible state</span>. If the pair minimizes Eq. (<span class="s1">6.10</span>), then the pair is</p>
+<p class="p2">optimal<span class="s5">.</span></p>
+<p class="p1">The Hamiltonian <span class="s2">H </span>in our example is</p>
+<p class="p2">H = S(q(k)) + R(u(k)) + λ(k + <span class="s5">1</span>)  </p>
+<p class="p2"> </p>
+<p class="p2">q(k) +</p>
+<p class="p2"> </p>
+<p class="p2"> (k) − u(k)</p>
+<p class="p2">c   u<span class="s4">max</span></p>
+<p class="p2"> </p>
+<p class="p3"><span class="s2">T</span>s</p>
+<p class="p2"> </p>
+<p class="p2">+ μ<span class="s3">1</span>(k)   (−q(k)) + μ<span class="s3">2</span>(k)   (−u(k) + u<span class="s4">min</span>) + μ<span class="s3">3</span>(k)   (u(k) − u<span class="s4">max </span>).</p>
+<p class="p1">(6.13)</p>
+<p class="p1">According to Pontryagin’s minimum principle,<span class="s6">4 </span>the necessary condition for a sequence of feasible</p>
+<p class="p1">pairs to be optimal pairs is the existence of a sequence of costates <span class="s2">λ </span>and a Lagrange multiplier</p>
+<p class="p2">μ = [μ<span class="s3">1</span>(k),μ<span class="s3">2</span>(k),μ<span class="s3">3</span>(k)] <span class="s5">such that</span></p>
+<p class="p2">H(k, q<span class="s4">∗</span></p>
+<p class="p2">, u<span class="s4">∗</span></p>
+<p class="p2">, λ</p>
+<p class="p3">∗</p>
+<p class="p2">,μ</p>
+<p class="p3">∗</p>
+<p class="p2">)   H(k, q, u<span class="s4">∗</span></p>
+<p class="p2">, λ</p>
+<p class="p3">∗</p>
+<p class="p2">,μ</p>
+<p class="p3">∗</p>
+<p class="p1"><span class="s2">), ∀q   </span>0 (6.14)</p>
+<p class="p1">where the Lagrange multipliers, <span class="s2">μ</span><span class="s3">1</span><span class="s2">(k),μ</span><span class="s3">2</span><span class="s2">(k),μ</span><span class="s3">3</span><span class="s2">(k)</span>, reflect the sensitivity of the cost function to the</p>
+<p class="p1">queue length at time <span class="s2">k </span>and the boundary constraints and satisfy several conditions</p>
+<p class="p2">μ<span class="s3">1</span>(k)   <span class="s5">0</span>, μ<span class="s3">1</span>(k)(−q(k)) = <span class="s5">0</span>, <span class="s5">(6.15)</span></p>
+<p class="p2">μ<span class="s3">2</span>(k)   <span class="s5">0</span>, μ<span class="s3">2</span>(k)(−u(k) + u<span class="s4">min</span>) = <span class="s5">0</span>, <span class="s5">(6.16)</span></p>
+<p class="p2">μ<span class="s3">3</span>(k)   <span class="s5">0</span>, μ<span class="s3">3</span>(k)(u(k) − u<span class="s4">max </span>) = <span class="s5">0</span>. <span class="s5">(6.17)</span></p>
+<p class="p1">A detailed analysis of the methods to solve this problem and the analysis of the stability conditions is</p>
+<p class="p1">beyond the scope of our discussion and can be found in [<span class="s1">369</span>].</p>
+<p class="p1">The extension of the techniques for optimal resource management from a single system to a cloud</p>
+<p class="p1">with a very large number of servers is a rather challenging area of research. The problem is even harder</p>
+<p class="p1">when, instead of transaction-based processing, the cloud applications require the implementation of a</p>
+<p class="p1">complex workflow.</p>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">The hybrid and the hosted VM models in Figures 5.3(c) and (d), respectively, expose the entire system</p>
+<p class="p1">to the vulnerability of the host operating system; thus, we will not analyze these models. Our discussion</p>
+<p class="p1">of virtual machine security is restricted to the traditional system VM model in Figure 5.3(b), where the</p>
+<p class="p1">VMM controls access to the hardware.</p>
+<p class="p1">Virtual security services are typically provided by the VMM, as shown in Figure <span class="s1">9.2</span>(a). Another</p>
+<p class="p1">alternative is to have a dedicated security services VM, as shown in Figure <span class="s1">9.2</span>(b). A secure <span class="s2">trusted computing base </span>(TCB) is a necessary condition for security in a virtual machine environment; if the</p>
+<p class="p1">TCB is compromised, the security of the entire system is affected.</p>
+<p class="p1">The analysis of <span class="s2">Xen </span>and <span class="s2">vBlades </span>in Sections 5.8 and 5.10 shows that VM technology provides a</p>
+<p class="p1">stricter isolation of virtual machines from one another than the isolation of processes in a traditional</p>
+<p class="p1">operating system. Indeed, a VMM controls the execution of privileged operations and can thus enforce</p>
+<p class="p1">memory isolation as well as disk and network access. The VMMs are considerably less complex and</p>
+<p class="p1">better structured than traditional operating systems; thus, they are in a better position to respond to</p>
+<p class="p1">security attacks. A major challenge is that a VMM sees only raw data regarding the state of a guest</p>
+<p class="p1">operating system, whereas security services typically operate at a higher logical level, e.g., at the level</p>
+<p class="p1">of a file rather than a disk block.</p>
+<p class="p1">A guest OS runs on simulated hardware, and the VMM has access to the state of all virtual machines</p>
+<p class="p1">operating on the same hardware. The state of a guest virtual machine can be saved, restored, cloned,</p>
+<p class="p1">and encrypted by the VMM. Not only can replication ensure reliability, it can also support security,</p>
+<p class="p1">whereas cloning could be used to recognize a malicious application by testing it on a cloned system</p>
+<p class="p1">and observing whether it behaves normally.We can also clone a running system and examine the effect</p>
+<p class="p1">of potentially dangerous applications. Another interesting possibility is to have the guest VM’s files</p>
+<p class="p1">moved to a dedicated VM and thus, protect it from attacks [<span class="s1">389</span>]; this is possible because inter-VM</p>
+<p class="p1">communication is faster than communication between two physical machines.</p>
+<p class="p1">Sophisticated attackers are able to fingerprint virtual machines and avoid VM <span class="s2">honeypots </span>designed to</p>
+<p class="p1">study the methods of attack. They can also attempt to access VM-logging files and thus recover sensitive</p>
+<p class="p1">data; such files have to be very carefully protected to prevent unauthorized access to cryptographic keys</p>
+<p class="p1">and other sensitive data.</p>
+<p class="p1">There is no free lunch; thus, we expect to pay some price for the better security provided by virtualization.</p>
+<p class="p1">This price includes: higher hardware costs, because a virtual system requires more resources, such</p>
+<p class="p1">as CPU cycles, memory, disk, and network bandwidth; the cost of developing VMMs and modifying</p>
+<p class="p1">the host operating systems in case of paravirtualization; and the overhead of virtualization because the</p>
+<p class="p1">VMM is involved in privileged operations.</p>
+<p class="p1">A recent paper [<span class="s1">389</span>] surveysVM-based intrusion detection systems such as <span class="s3">Livewire </span>and <span class="s3">Siren</span>,</p>
+<p class="p1">which exploit the three capabilities of a virtual machine for intrusion detection: isolation, inspection, and</p>
+<p class="p1">interposition. We have examined isolation; inspection means that the VMM has the ability to review</p>
+<p class="p1">the state of the guest VMs, and interposition means that the VMM can trap and emulate the privileged</p>
+<p class="p1">instruction issued by the guest VMs. The paper also discusses VM-based intrusion prevention</p>
+<p class="p1">systems such as <span class="s3">SVFS, NetTop</span>, and <span class="s3">IntroVirt </span>and surveys <span class="s3">Terra</span>, a VM-based trust computing</p>
+<p class="p1">platform. <span class="s3">Terra </span>uses a <span class="s2">trusted virtual machine monitor </span>to partition resources among virtual</p>
+<p class="p1">machines.</p>
+<p class="p1">The security group involved with theNIST project has identified the followingVMM-and VM-based</p>
+<p class="p1">threats:</p>
+<p class="p1">• VMM-based threats:</p>
+<p class="p1"><span class="s2">1. </span>Starvation of resources and denial of service for someVMs. Probable causes: (a) badly configured</p>
+<p class="p1">resource limits for some VMs; (b) a rogue VM with the capability to bypass resource limits set</p>
+<p class="p1">in the VMM.</p>
+<p class="p1"><span class="s2">2. </span>VM side-channel attacks.Malicious attacks on one or more VMs by a rogue VM under the same</p>
+<p class="p1">VMM. Probable causes: (a) lack of proper isolation of inter-VM traffic due to misconfiguration</p>
+<p class="p1">of the virtual network residing in the VMM; (b) limitation of packet inspection devices to</p>
+<p class="p1">handle high-speed traffic, e.g., video traffic; (c) presence of VM instances built from insecure</p>
+<p class="p1">VM images, e.g., a VM image having a guest OS without the latest patches.</p>
+<p class="p1"><span class="s2">3. </span>Buffer overflow attacks.</p>
+<p class="p1">• VM-based threats:</p>
+<p class="p1"><span class="s2">1. </span>Deployment of rogue or insecure VM. Unauthorized users may create insecure instances from</p>
+<p class="p1">images or may perform unauthorized administrative actions on existing VMs. Probable cause:</p>
+<p class="p1">improper configuration of access controls on VM administrative tasks such as instance creation,</p>
+<p class="p1">launching, suspension, reactivation, and so on.</p>
+<p class="p1"><span class="s2">2. </span>Presence of insecure and tampered VM images in the VM image repository. Probable causes:</p>
+<p class="p1">(a) lack of access control to the VM image repository; (b) lack of mechanisms to verify the</p>
+<p class="p1">integrity of the images, e.g., digitally signed image.</p>
+<p class="p1">Sections <span class="s1">9.7</span>, <span class="s1">9.8</span>, <span class="s1">9.9</span>, and <span class="s1">9.10 </span>discuss in depth various aspects related to virtualization and security.</p>
+</body>
+</html>

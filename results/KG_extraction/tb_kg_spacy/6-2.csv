@@ -1,0 +1,43 @@
+,source,edge,target
+0,theory,used,222 Web servers
+4,feedback control,assumes,invariant system model
+5,open system transfer that,based on,stability  constraints
+6,technique,discussed,managing control 369
+8,operating constraints,allows multiple,alone Web servers
+9,objectives,expressed,cost function
+11,discussion,considers,single input requests
+12,cost that,attempt,response time
+16,brief control theory one,start,optimal resource allocation
+18,control,generates,operating look ahead conditions
+21,cost function,minimized,system dynamics
+24,One,based on,subject  constrains
+26,=  we,introduce,Lagrange  λ
+27,Then  we,study,function
+28,we,solve,Eq
+29,We,define,adjoint  cost
+30,then  we,construct,costate state Lagrange
+31,Thus  we,define,two point boundary
+32,forward  costate,develops,backward  time
+34,Now  we,turn,single input requests
+36,controller,uses,future  environment
+37,task,solved as,initial state regulation control
+38,We,use,simple queuing model
+40,Requests,processed on,FCFS processor basis
+41,We,assume,priori
+42,instead  we,use,arrival time
+43,also  processor,assume,u(k  range
+44,processor,operate at,frequencies
+46,when  processor,operates at,highest  range
+47,Then  we,define,scaling α(k
+48,we,express,α(k)/ ˆ α(k)/ c(k
+49,behavior,modeled as,discrete time state equation
+50,energy both,want,service
+52,both,affect,the
+53,function,captures,well response time
+54,it,expressed as,quadratic response time
+55,We,have,control quadratic
+58,6.10,minimized subject,following  constraints
+59,trajectory,corresponding to,control u
+62,pair,minimizes,Eq
+65,based cloud applications,is,complex  workflow
+66,based cloud applications,require,the

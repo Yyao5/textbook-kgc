@@ -1,0 +1,21 @@
+,source,edge,target
+0,Now  ’s,let,virtual machine monitor
+2,TVMM,support,open box platforms
+3,VM abstraction,does,closed box platform
+4,contents,manipulated,system
+5,application,allowed,application needs
+7,Applications,run,only voting application
+9,such OS applications,need,commodity operating system
+14,path,allows,human  user
+15,same  VM,allows,human  user
+18,VM,selected by,platform owner
+19,guest that,formulates,I VMs CPU
+20,guest that,access to,guest VMs
+21,VMs,expose,virtual network devices
+22,TVMM,runs at,highest privilege level
+23,TVMM,provides,closed box platform
+24,challenge,comes from,different  platform
+27,many,written,new hardware features
+29,thus operating components,pose,highest security risks
+31,drivers,limited by different,different hardware protection mechanisms
+33,devices,use different,such hardware kernel

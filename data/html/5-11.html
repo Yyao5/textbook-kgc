@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 10.0px Times; color: #000066}
+    span.s5 {font: 7.5px Times; color: #000066}
+    span.s6 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">We have seen that aVMMsuch as <span class="s1">Xen </span>introduces additional overhead and negatively affects performance</p>
+<p class="p1">[<span class="s2">41</span>,<span class="s2">241</span>,<span class="s2">242</span>]. The topic of this section is a quantitative analysis of the performance of VMs.We compare</p>
+<p class="p1">the performance of two virtualization techniques with a standard operating system: a plain-vanilla</p>
+<p class="p1"><span class="s1">Linux </span>referred to as “the base” system. The two VM systems are <span class="s1">Xen</span>, based on paravirtualization, and</p>
+<p class="p2">OpenVZ <span class="s3">[</span><span class="s4">281</span><span class="s3">].</span></p>
+<p class="p1">First we take a closer look at <span class="s1">OpenVZ</span>, a system based on OS-level virtualization. <span class="s1">OpenVZ </span>uses a</p>
+<p class="p1">single patched <span class="s1">Linux </span>kernel. The guest operating systems in different containers<span class="s5">15 </span>may be different</p>
+<p class="p1">distributions but must use the same <span class="s1">Linux </span>kernel version that the host uses. The lack of flexibility of the</p>
+<p class="p1">approach for virtualization in <span class="s1">OpenVZ </span>is compensated by lower overhead.</p>
+<p class="p1">The memory allocation in <span class="s1">OpenVZ </span>is more flexible than in the case of paravirtualization; memory</p>
+<p class="p1">not used in one virtual environment can be used by others. The system uses a common file system. Each</p>
+<p class="p1">virtual environment is a directory of files isolated using <span class="s6">chroot</span>. To start a new virtual machine, one</p>
+<p class="p1">needs to copy the files from one directory to another, create a <span class="s6">config </span>file for the virtual machine, and</p>
+<p class="p1">launch the VM.</p>
+<p class="p1"><span class="s1">OpenVZ </span>has a two-level scheduler: At the first level, the fair-share scheduler allocates CPU time</p>
+<p class="p1">slices to containers based on <span class="s6">cpuunits </span>values; the second level is a standard <span class="s1">Linux </span>scheduler that</p>
+<p class="p1">decides what process to run in that container. The I/O scheduler also has two levels; each container has</p>
+<p class="p1">an I/O priority, and the scheduler distributes the available I/O bandwidth according to the priorities.</p>
+<p class="p1">The discussion in [<span class="s2">281</span>] is focused on the user’s perspective, thus the performance measures analyzed</p>
+<p class="p1">are the throughput and the response time. The general question is whether consolidation of the</p>
+<p class="p1">applications and servers is a good strategy for cloud computing. The specific questions examined are:</p>
+<p class="p1">• How does the performance scale up with the load?</p>
+<p class="p1">• What is the impact of a mix of applications?</p>
+<p class="p1">• What are the implications of the load assignment on individual servers?</p>
+<p class="p1">There is ample experimental evidence that the load placed on system resources by a single application</p>
+<p class="p1">varies significantly in time. A time series displaying CPU consumption of a single application in time</p>
+<p class="p1">clearly illustrates this fact. As we all know, this phenomenon justifies the need for CPU multiplexing</p>
+<p class="p1">among threads/processes supported by an operating system. The concept of <span class="s1">application and server</span></p>
+<p class="p1"><span class="s1">consolidation </span>is an extension of the idea of creating an aggregate load consisting of several applications</p>
+<p class="p1">and aggregating a set of servers to accommodate this load. Indeed, the peak resource requirements of</p>
+<p class="p1">individual applications are very unlikely to be synchronized, and the aggregate load tends to lead to a</p>
+<p class="p1">better average resource utilization.</p>
+<p class="p1">The application used in [<span class="s2">281</span>] is a two-tier system consisting of an ApacheWeb server and aMySQL</p>
+<p class="p1">database server. A client of this application starts a session as the user browses through different items in</p>
+<p class="p1">the database, requests information about individual items, and buys or sells items. Each session requires</p>
+<p class="p1">the creation of a new thread; thus, an increased load means an increased number of threads. To understand</p>
+<p class="p1">the potential discrepancies in performance among the three systems, a performance-monitoring tool reports the counters that allow the estimation of (i) the CPU time used by a binary; (ii) the number of</p>
+<p class="p1">L2-cache misses; and (iii) the number of instructions executed by a binary.</p>
+<p class="p1">The experimental setups for three different experiments are shown in Figure <span class="s2">5.9 </span>. In the first group</p>
+<p class="p1">of experiments the two tiers of the application, the Web and the DB, run on a single server for the</p>
+<p class="p1"><span class="s1">Linux</span>, the <span class="s1">OpenVZ</span>, and the <span class="s1">Xen </span>systems. When the workload increases from 500 to 800 threads, the</p>
+<p class="p1">throughput increases linearly with the workload. The response time increases only slightly for the base</p>
+<p class="p1">system and for the <span class="s1">OpenVZ </span>system, whereas it increases 600% for the <span class="s1">Xen </span>system. For 800 threads the</p>
+<p class="p1">response time of the <span class="s1">Xen </span>system is four times longer than the time for <span class="s1">OpenVZ</span>. The CPU consumption</p>
+<p class="p1">grows linearly with the load in all three systems; the DB consumption represents only 1–4% of it. For a given workload, the Web-tier CPU consumption for the <span class="s1">OpenVZ </span>system is close to that of the</p>
+<p class="p1">base system and is about half of that for the <span class="s1">Xen </span>system. The performance analysis tool shows that the</p>
+<p class="p1"><span class="s1">OpenVZ </span>execution has two times more L2-cache misses than the base system, whereas the <span class="s1">Xen Dom0</span></p>
+<p class="p1">has 2<span class="s1">.</span>5 times more and the <span class="s1">Xen </span>application domain has 9 times more. Recall that the base system and the</p>
+<p class="p1"><span class="s1">OpenVZ </span>run a <span class="s1">Linux </span>OS and the sources of cache misses can be compared directly, whereas <span class="s1">Xen </span>runs a</p>
+<p class="p1">modified <span class="s1">Linux </span>kernel. For the <span class="s1">Xen</span>-based system the procedure <span class="s1">hypervisor</span>_<span class="s1">callback</span>, invoked when</p>
+<p class="p1">an event occurs, and the procedure <span class="s1">evtchn</span>_<span class="s1">do</span>_<span class="s1">upcall</span>, invoked to process an event, are responsible for</p>
+<p class="p1">32% and 44%, respectively, of the L2-cache misses. The percentage of the instructions invoked by these</p>
+<p class="p1">two procedures are 40% and 8%, respectively. Most of the L2-cache misses in <span class="s1">OpenVZ </span>and the base</p>
+<p class="p1">system occur in (i) a procedure called <span class="s1">do</span>_<span class="s1">anonymous</span>_<span class="s1">pages</span>, used to allocate pages for a particular</p>
+<p class="p1">application with the percentage of cache misses 32% and 25%, respectively; (ii) the procedures called</p>
+<p class="p1">_<span class="s1">copy</span>_<span class="s1">to</span>_<span class="s1">user</span>_<span class="s1">ll </span>and _<span class="s1">copy</span>_ <span class="s1">f rom</span>_<span class="s1">user</span>_<span class="s1">ll</span>, used to copy data from <span class="s1">user </span>to <span class="s1">system </span>buffers and back</p>
+<p class="p1">with the percentage of cache misses <span class="s1">(</span>12<span class="s1">+</span>7<span class="s1">)</span>%and <span class="s1">(</span>10<span class="s1">+</span>1<span class="s1">)</span>%, respectively. The first figure refers to the</p>
+<p class="p1">copying from <span class="s1">user </span>to <span class="s1">system </span>buffers and the second to copying from <span class="s1">system </span>buffers to the <span class="s1">user </span>space.</p>
+<p class="p1">The second group of experiments uses two servers, one for the Web and the other for the DB</p>
+<p class="p1">application, for each one of the three systems. When the load increases from 500 to 800 threads the</p>
+<p class="p1">throughput increases linearly with the workload. The response time of the <span class="s1">Xen </span>system increases only</p>
+<p class="p1">114%, compared with 600% reported for the first experiments. The CPU time of the base system, the</p>
+<p class="p1"><span class="s1">OpenVZ </span>system, the <span class="s1">Xen Dom0</span>, and the <span class="s1">User Domain </span>are similar for the Web application. For the DB</p>
+<p class="p1">application, the CPU time of the <span class="s1">OpenVZ </span>system is twice as long as that of the base system, whereas</p>
+<p class="p1"><span class="s1">Dom0 </span>and the <span class="s1">User Domain </span>require CPU times of 1<span class="s1">.</span>1 and 2<span class="s1">.</span>5 times longer than the base system. The</p>
+<p class="p1">L2-cache misses for theWeb application relative to the base system are the same for <span class="s1">OpenVZ</span>, 1<span class="s1">.</span>5 times</p>
+<p class="p1">larger for <span class="s1">Dom0 </span>of <span class="s1">Xen</span>, and 3<span class="s1">.</span>5 times larger for the <span class="s1">User Domain</span>. The L2-cache misses for the DB</p>
+<p class="p1">application relative to the base system are 2 times larger for the <span class="s1">OpenVZ</span>, 3<span class="s1">.</span>5 larger for <span class="s1">Dom0 </span>of <span class="s1">Xen</span>,</p>
+<p class="p1">and 7 times larger for the <span class="s1">User Domain</span>.</p>
+<p class="p1">The third group of experiments uses two servers, one for theWeb and the other for the DB application,</p>
+<p class="p1">for each one of the three systems but runs four instances of the Web and the DB application on the two</p>
+<p class="p1">servers. The throughput increases linearly with the workload for the range used in the previous two</p>
+<p class="p1">experiments, from 500 to 800 threads. The response time remains relatively constant for <span class="s1">OpenVZ </span>and</p>
+<p class="p1">increases 5 times for <span class="s1">Xen</span>.</p>
+<p class="p1">The main conclusion drawn from these experiments is that the virtualization overhead of <span class="s1">Xen </span>is considerably</p>
+<p class="p1">higher than that of <span class="s1">OpenVZ </span>and that this is due primarily to L2-cache misses. The performance</p>
+<p class="p1">degradation when the workload increases is also noticeable for <span class="s1">Xen</span>. Another important conclusion is</p>
+<p class="p1">that hosting multiple tiers of the same application on the same server is not an optimal solution.</p>
+</body>
+</html>

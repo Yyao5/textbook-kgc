@@ -1,0 +1,30 @@
+,source,edge,target
+0,Gerald J. Popek,gave,Robert P. a
+1,computer architecture,support,virtualization
+3,when  program,exhibit,equivalent  machine
+4,significant  fraction,executed without,machine VMM
+7,formulation,based on,efficient machine instructions
+8,set,constructed,privileged  machine
+10,one,resort to,Binary  translation
+11,VMM,monitors,the
+12,nonvirtualizable  instructions,replaced with other,other guest operating instructions
+13,only  that,modified,only  instructions
+15,virtual  machine,are,actual  Figure
+18,aspects,virtualized,hardware
+20,Section,covers,5.8 hardware Xen
+22,virtualization,requires,virtualizable
+23,fully guest which,exposed to,fully guest OS
+25,architectures,done,such  x86
+27,furthermore guest OS code,ported for individual,individual hardware platforms
+28,privileged  instructions,pose,guest OS
+31,privileged  instructions,insert,traps
+32,system,maintain,such page tables
+33,that,adds,negatively  performance
+34,that,affects,negatively  the
+35,application,performs,classical  OS
+36,one  process,partitioned,better cache other
+37,one  process,use,cache space
+38,read  cache,filled by,aggressively  first
+39,cache isolation cache,Under,VMs
+40,I  performance,depends on,competing O VMs
+41,optimal  default,are,optimal  choice

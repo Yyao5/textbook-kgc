@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A March 16, 2012, posting on <span class="s1">ZDNet </span>reveals that <span class="s1">EC2 </span>was made up of 454<span class="s1">,</span>600 servers; if we add the</p>
+<p class="p1">number of servers supporting other <span class="s1">AWS </span>services, the total number of Amazon systems dedicated to</p>
+<p class="p1">cloud computing is much larger. An unofficial estimate puts the number of servers used by Google in</p>
+<p class="p1">January 2012 close to 1<span class="s1">.</span>8 million; this number is expected to be close to 2<span class="s1">.</span>4 million by early 2013</p>
+<p class="p1">[<span class="s2">289</span>].</p>
+<p class="p1">The complexity of such systems is unquestionable and raises questions such as:What are the generic</p>
+<p class="p1">properties of complex systems?Howcan we manage such systems?Dowe have to consider radically new</p>
+<p class="p1">ideas, such as self-management and self-repair, for future clouds consisting of millions of components?</p>
+<p class="p1">Should we migrate from a strictly deterministic view of such systems to a nondeterministic one when</p>
+<p class="p1">the desirable properties of a system are statistically assured? These are some of the questions examined</p>
+<p class="p1">in this chapter.</p>
+<p class="p1">When we think about complex systems, the human brain comes immediately to mind; the number</p>
+<p class="p1">of neurons in the human brain is estimated to be between 80 and 120 billion. Technology systems with</p>
+<p class="p1">a very large number of components, such as the space shuttle,<span class="s3">1 </span>a modern microprocessor with several million transistors,<span class="s3">2 </span>or the Internet with some 800 million hosts as of January 2010, are examples of</p>
+<p class="p1">complex man-made systems.</p>
+<p class="p1">A very large number of interaction channels among the components of a system is another defining</p>
+<p class="p1">characteristic of a complex system. Indeed, the behavior of any system cannot be explained without precise</p>
+<p class="p1">knowledge of the interactions among its components. Even systems with a relatively small number</p>
+<p class="p1">of components can be complex; for example, the complexity of interactions between the gravitational</p>
+<p class="p1">fields of the planets make our solar system a very complex one.</p>
+<p class="p1">Discovering all possible interactions among the components of a system is a formidable task. Such</p>
+<p class="p1">an effort is undertaken whenever we need to make progress in our understanding of the behavior of a</p>
+<p class="p1">system we engineer or of the physical world surrounding us. Sometimes we are forced to discover such</p>
+<p class="p1">interactions to build better systems. For example, the investigations following the failure of an aircraft,</p>
+<p class="p1">the space shuttle, or any other system aim to discover the interaction channels that contributed to the</p>
+<p class="p1">failure.</p>
+<p class="p1">Predicting all possible interactions among the components of a system during the design process</p>
+<p class="p1">is an even more daunting task. A good illustration of this problem is the so-called “death grip” effect</p>
+<p class="p1">manifested by a smartphone released not long ago. The signal suffered a significant attenuation when</p>
+<p class="p1">the device was gripped in a certain way, because the gain of the antenna embedded in the smartphone’s</p>
+<p class="p1">case was drastically reduced. In retrospect, such an effect should have been foreseen, but during the</p>
+<p class="p1">design process it was either overlooked or considered very unlikely.</p>
+<p class="p1">Discovery of the interactions among the basic building blocks of a physical system is required for</p>
+<p class="p1">the advancement of our knowledge. A major step in understanding the human brain is the development</p>
+<p class="p1">of a comprehensive map of neural connections in the brain. The goal of the <span class="s1">Human Connectome Project</span></p>
+<p class="p1">sponsored by the National Institutes of Health (NIH) is to build a network map of the human brain in</p>
+<p class="p1">healthy individuals.</p>
+<p class="p1">Can we increase the number of components of a system while limiting the number of interaction paths</p>
+<p class="p1">among its components? Though there is no positive answer to this question for most complex systems, a</p>
+<p class="p1">solution applicable in the case of some computing and communication systems exists. In Section 7.10we</p>
+<p class="p1">showed that systems interconnected by scale-free networks have this highly desirable property. Because</p>
+<p class="p1">the degrees of the nodes enjoy a power-law distribution, the number of highly connected components is</p>
+<p class="p1">very small, whereas the vast majority of components have one or a few connections. Thus, scalability</p>
+<p class="p1">of large-scale systems can, in principle, be assured.</p>
+<p class="p1">Interaction with the environment is an important dimension of system complexity; unfortunately</p>
+<p class="p1">this dimension is often ignored. The more complex the interactions with the environment, the more</p>
+<p class="p1">difficult it is to satisfy the often contradictory requirements of a dynamic environment, and the more</p>
+<p class="p1">complex the system becomes. Moreover, changes in a dynamic environment are difficult to predict and</p>
+<p class="p1">to accommodate in the original design of a system. For example, a system might not be able to perform</p>
+<p class="p1">additional checks when the environment acquires new capabilities to challenge the system’s integrity.</p>
+<p class="p1">Whenever we simulate a system, the complexity of the simulation increases with the number of</p>
+<p class="p1">components and with the number of interaction paths among them. Indeed, the simulation program has to describe the properties of each component as well as the effect of each interaction on all components</p>
+<p class="p1">involved. Symmetry and regularity help decrease the complexity of the simulation as multiple</p>
+<p class="p1">components and multiple interactions share the same description; irregularities have the opposite effect.</p>
+<p class="p1">The length of the description of all the system components is captured by the concept of Kolmogorov</p>
+<p class="p1">complexity, discussed in Section <span class="s2">10.3</span>.</p>
+<p class="p1">Symmetry and regularity of computing and communication systems imply homogeneity; the hardware</p>
+<p class="p1">and the software of individual components are identical or very similar. Large-scale systems</p>
+<p class="p1">designed as collections of homogeneous systems are easier to assemble, their properties are better</p>
+<p class="p1">understood, and they are more effectively managed than collections of heterogeneous systems. In</p>
+<p class="p1">Section 1.3 we cited the hardware and software homogeneity of a cloud as one of the reasons we believe</p>
+<p class="p1">that cloud computing could be successful, whereas heterogeneous large-scale distributed computing</p>
+<p class="p1">systems could not be.</p>
+<p class="p1">Because we want to increase the versatility and usefulness, as well as the performance of manmade</p>
+<p class="p1">systems, we add new features and we increase the complexity of the system. This is especially</p>
+<p class="p1">true whenever we try to accommodate changes that were not envisioned by the original design. For</p>
+<p class="p1">example, the Internet was originally designed as a data network based on a best-effort model where</p>
+<p class="p1">routers could freely discard packets. Major changes were necessary to support data streaming and</p>
+<p class="p1">other types of communication with real-time delivery constraints when the retransmission of discarded</p>
+<p class="p1">packets could not be tolerated. These changes have increased the complexity of the Internet. We also</p>
+<p class="p1">saw in Chapter 6 that the management of cloud resources increases in complexity when we attempt to</p>
+<p class="p1">mix best-effort applications with applications that have soft real-time constraints and when we add to</p>
+<p class="p1">the mix applications with real-time constraints.</p>
+</body>
+</html>

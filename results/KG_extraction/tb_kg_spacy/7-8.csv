@@ -1,0 +1,33 @@
+,source,edge,target
+1,SAN,consists of,communication infrastructure
+3,responsible transmission FC-0,uses,point fiber connections
+5,necessary handshake procedures,send,pulses
+8,FC-1,controls,serial clock information
+9,FC-1,ensures,data transport characters
+11,FC-2,handles,communication fabric
+12,frames,supports multiple,available  set
+13,sets,assigned,associated  alias
+18,FC,supports several,several  service
+21,same  frames,ensure,two  devices
+27,fabric,guarantee,order
+28,fabric,relies on upper,upper frame sequence
+32,QoS,intended for,multimedia applications
+35,device,has,unique  physical
+37,FC device,has,unique  ID
+39,area,bits,physical  07–00
+40,switch,assigns,dynamically port addresses
+41,fabric operating which,assigns,switch
+43,format,shown inFigure,inFigure
+44,Zoning,permits finer,switched  fabric
+45,members,communicate within,same  zone
+46,It,used,NT UNIX environment
+48,protocols,used for,SANs
+49,IP  transmission,allows,IP tunneling
+50,transmission,using,IP network
+52,network protocol,allows,untrusted delivery network
+55,normally  firewall,allows,normally  protocol
+57,often proxy that,used for,restricted  connectivity
+59,that,supports,FC storage Internet
+60,iFCP,replaces,TCP Fibre Channel IP
+61,Fibre Channel devices,connect,iFCP gateway
+62,session,terminated at,TCP IP iFCP

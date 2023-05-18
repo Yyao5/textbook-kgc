@@ -1,0 +1,29 @@
+,source,edge,target
+2,solutions,based,QoS data streaming
+3,data packet flow,discuss,equal  data
+4,which,takes into,data packet sizes
+6,high data rate flow,ensures,fair link capacity
+8,Packets,classified into,first  system
+10,queues,serviced,round robin Figure
+13,first  this,maximizes,minimum data data
+14,then  any,maximizes,minimum data rate
+15,Starvation,avoided,expensive  flows
+16,Next  we,review,based Van 1995
+19,same  CBQ,supports,such video streaming
+20,CBQ,aggregates,different  priorities
+22,that,uses several,class link allocation
+24,7.8  we,see,two  traffic
+25,leaves,considered,tree
+27,two  root,are,Level
+29,then time interior,aims,allocated leaf bandwidth
+30,then time interior,receives,leaf class
+31,distribution,follows,excess congestion avoidance
+33,recent period class,used more,class bandwidth second
+35,class,used,exactly  class
+41,class,continue,two  examples
+42,kernel,implements,token  CBQ
+44,class,has,assured
+45,class,has,also  ceil
+48,class C,needs,a
+51,then  parent,examines,advantage children
+53,parent,borrow from,children

@@ -1,0 +1,12 @@
+,source,edge,target
+0,papers,authored by,distributed Leslie Lamport
+1,collection,includes,Sape papers
+2,nets,introduced in,291
+3,discussion,found in,system 292
+4,distributed  analysis,leads to,formal communicating framework
+5,Hoare,realized,execution traces
+6,recently  Milner,initiated,axiomatic Communicating Systems
+8,behavior,modeled as,equational  operators
+9,approach,approach own,own  limitations
+10,true  concurrency,escapes,still  axiomatization
+11,text,covers basic,basic computer system design

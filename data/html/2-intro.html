@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Cloud computing is based on a large number of ideas and the experience accumulated since the first electronic</p>
+<p class="p1">computer was used to solve computationally challenging problems. In this chapter we overview</p>
+<p class="p1">parallel and distributed systems concepts that are important to understanding the basic challenges in the</p>
+<p class="p1">design and use of computer clouds.</p>
+<p class="p1">Cloud computing is intimately tied to parallel and distributed computing. Cloud applications are</p>
+<p class="p1">based on the client-server paradigm with relatively simple software, a <span class="s1">thin client</span>, running on the user’s</p>
+<p class="p1">machine while the computations are carried out on the cloud. Many cloud applications are data-intensive</p>
+<p class="p1">and use a number of instances that run concurrently. Transaction processing systems, such as Webbased</p>
+<p class="p1">services, represent a large class of applications hosted by computing clouds; such applications</p>
+<p class="p1">run multiple instances of the service and require reliable and in-order delivery of messages.</p>
+<p class="p1">The concepts introduced in this section are very important in practice. Communication protocols</p>
+<p class="p1">support coordination of distributed processes and transport information through noisy and unreliable</p>
+<p class="p1">communication channels that may lose messages or deliver duplicate, distorted, or out-of-order messages.</p>
+<p class="p1">To ensure reliable and in-order delivery of messages, the protocols stamp each message with</p>
+<p class="p1">a sequence number; in turn, a receiver sends an acknowledgment with its own sequence number to</p>
+<p class="p1">confirm the receipt of a message. The clocks of a sender and a receiver may not be synchronized, so</p>
+<p class="p1">these sequence numbers act as logical clocks. Timeouts are used to request the retransmission of lost</p>
+<p class="p1">or delayed messages.</p>
+<p class="p1">The concept of consistent cuts and distributed snapshots are at the heart of <span class="s1">checkpoint-restart </span>procedures</p>
+<p class="p1">for long-lasting computations. Indeed, many cloud computations are data-intensive and run for</p>
+<p class="p1">extended periods of time on multiple computers in the cloud. Checkpoints are taken periodically in</p>
+<p class="p1">anticipation of the need to restart a software process when one or more systems fail; when a failure</p>
+<p class="p1">occurs, the computation is restarted from the last checkpoint rather than from the beginning.</p>
+<p class="p1">Many functions of a computer cloud require information provided by <span class="s1">monitors</span>, system components</p>
+<p class="p1">that collect state information from the individual systems. For example, controllers for cloud resource</p>
+<p class="p1">management, discussed in Chapter 6, require accurate state information; security and reliability can</p>
+<p class="p1">only be implemented using information provided by specialized monitors. Coordination of multiple</p>
+<p class="p1">instances is a critical function of an application controller.</p>
+</body>
+</html>

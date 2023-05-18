@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">The access to a cloud is provided by the Internet, a packet-switched network; thus,we start our discussion</p>
+<p class="p1">with an overview of this important concept. A <span class="s1">packet-switched network </span>transports data units called</p>
+<p class="p1"><span class="s1">packets </span>through a maze of <span class="s1">switches</span>, where packets are queued and routed toward their destination.</p>
+<p class="p1">Packets are subject to a variable delay and loss and possibly arrive at their final destination out of order.</p>
+<p class="p1">A <span class="s1">datagram </span>is a basic transfer unit in a packet-switched network; it consists of a header, which contains</p>
+<p class="p1">control information necessary for its transport through the network, and a payload or data.</p>
+<p class="p1">A packet-switched network has a <span class="s1">network core </span>consisting of routers and control systems interconnected</p>
+<p class="p1">by very high-bandwidth communication channels and a <span class="s1">network edge </span>where the end-user systems</p>
+<p class="p1">reside. A <span class="s1">network architecture </span>describes the protocol stack used for communication. A <span class="s1">protocol </span>is a</p>
+<p class="p1">discipline for communication that specifies the actions taken by the sender and the receiver of a data</p>
+<p class="p1">unit. We use the term <span class="s1">host </span>to describe a system located at the network edge and capable of initiating</p>
+<p class="p1">and receiving communication, whether a computer, a mobile device such as an phone, or a sensor.</p>
+<p class="p1">This very concise description hints that a packet-switched network is a complex system consisting of</p>
+<p class="p1">a very large number of autonomous components and subject to complex and sometimes contradictory</p>
+<p class="p1">requirements. Basic strategies for implementing a complex system are <span class="s1">layering </span>and <span class="s1">modularization</span>; this</p>
+<p class="p1">means decomposing a complex function into components that interact through well-defined channels</p>
+<p class="p1">(e.g., a layer can only communicate with its two adjacent layers).</p>
+<p class="p1">All network architectures are based on layering; this justifies the term <span class="s1">protocol stack</span>, as shown in</p>
+<p class="p1">Figure <span class="s2">7.1</span>. In the Internet architecture the <span class="s1">network layer </span>is responsible for routing packets through</p>
+<p class="p1">the packet-switched network from the source to the destination. The <span class="s1">transport layer </span>is responsible for</p>
+<p class="p1">end-to-end communication, from an application running on the sending host to its peer running on the</p>
+<p class="p1">destination host.</p>
+<p class="p1">Physically, at the sender site the data flows down the protocol stack from the application layer to the</p>
+<p class="p1">transport, network, and data link layers; the streams of bits are pushed through a physical communication</p>
+<p class="p1">link encoded as electrical, optical, or electromagnetic signals. Once they reach a router, the bits are passed</p>
+<p class="p1">to the data link and then to the network layer.</p>
+<p class="p1">The network layer decides where the packet should be sent, either to another router or to a destination</p>
+<p class="p1">host connected to a local area network connected to the router. Then the data link layer encapsulates</p>
+<p class="p1">the packet for the communication link to the next hop, and then the bit stream is passed to the next</p>
+<p class="p1">physical channel (see Figure <span class="s2">7.1</span>). At the receiving end the data flows upward from the data link to the</p>
+<p class="p1">application layer.</p>
+<p class="p1">A protocol on one system <span class="s1">communicates logically </span>with its <span class="s1">peer </span>on another system. For example,</p>
+<p class="p1">the transport protocol on the sender, host A, communicates with the transport protocol on the receiver,</p>
+<p class="p1">hostB.On the sending side, A, the transport protocol encapsulates the data from the application layer and</p>
+<p class="p1">adds control information as headers that can only be understood by its peer, the transport layer on host B.</p>
+<p class="p1">When the peer receives the data unit, it carries out a decapsulation, retrieves the control information,</p>
+<p class="p1">removes the headers, then passes the payload to the next layer up, the application layer on host B.</p>
+<p class="p1">The payload for the data link layer at the sending side includes the network header and the payload at</p>
+<p class="p1">the network layer. In turn, the network layer payload includes a transport layer header and its payload,</p>
+<p class="p1">consisting of the application layer header and application data.</p>
+</body>
+</html>

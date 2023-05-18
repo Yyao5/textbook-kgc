@@ -1,0 +1,47 @@
+,source,edge,target
+0,when  agents,restrict,proposed  value
+1,protocol,guarantee,123
+2,that,developed,inconsistencies
+5,number,discussed in,Paxos literature
+6,Lamport,proposed several,Cheap Stoppable Refinement
+8,Lamport,published,fictional part time protocol
+9,service,consists of,processes
+10,Clients,send,processes
+14,protocol,based on several,several  processors
+15,Byzantine  i,experience,other  processor
+17,asynchronously  that,sends,times  destination
+18,i,lose,messages
+20,then replication request,considers several,then replication action
+21,acceptors,c,forward  conflicts
+23,proposal,has,Several proposal number system
+24,typical  entity,plays,three  roles
+25,Then  flow,described as,messages
+26,Clients,send,messages
+27,normal  leader,i,then acceptor processes
+29,i  instance,begins,consensus algorithm
+30,protocol,collapses,master replica style protocol
+31,simple  majority,consists of,accepted  value
+32,multiple  proposals,propose,same  value
+33,simple  majority,chosen,acceptors
+36,phases,described,algorithm
+37,proposer,sends,a
+38,prepare = proposal,chooses,already number acceptor
+41,acceptor,remember,highest proposal number
+43,acceptor,accept,a
+45,then  pn,reply,>  k
+47,that,treated as,acceptor
+48,proposer,chooses,value
+52,proposer,sends,accept request acceptors
+53,acceptor,receives,accept
+57,pn,accepts,the
+58,pn,register,value
+60,pn,ignore,request
+61,pn,accept,the
+62,two  sets,have,common Phase algorithm
+64,value,illustrates,2.15 consensus protocol
+65,only safety that,found in,three safety properties
+66,sufficient  processors,learned,value
+67,eventually  learner,learn,value
+69,Figure,shows,2.16 message exchange
+71,4.5  we,present,Paxos protocol
+72,8.7  we,discuss,locking algorithm

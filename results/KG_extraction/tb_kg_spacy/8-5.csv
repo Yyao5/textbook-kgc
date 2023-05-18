@@ -1,0 +1,66 @@
+,source,edge,target
+0,System,developed in,late  1990s
+1,System,uses,diverse user 136
+3,system,designed after,careful access models
+4,critical  features,considered from,rather  design
+5,vast  majority,range in,few  TB
+8,users,process,less response time
+9,consistency model,relaxed,additional application developers
+12,decisions,made as,analysis
+23,critical file that,consistency by,entire  system
+30,fixed file chunk,assigned,unique chunk handle
+31,chunk,consists of,64 KB blocks
+32,block,has,32 bit checksum
+33,Chunks,stored on,Linux files systems
+35,user,change,desired  value
+36,64  choice,motivated by,large  system
+37,size,increases,the
+38,thus  likelihood,reduces,chunk
+39,where network chunk,allows,persistent network server
+40,infrequently  chunk,occurs,large  file
+41,chunk,are,large  file
+42,architecture,illustrated in,GFS Figure
+43,master,controls,large
+44,master,maintains,individual chunk servers
+45,e.g. operation log,stored in persistent,file file chunk
+46,e.g. operation log,records,file
+47,new chunk server,stored,cluster
+49,new chunk server,joins,the
+50,master,allows,up  chunks
+51,master,have,date
+52,log,maintains,historical metadata failure
+54,changes,made visible,persistent  storage
+57,master,replays,operation log
+59,master,checkpoints,last log checkpoint
+60,commodity Linux server,receives,status information
+63,application,sends to,chunk the
+64,chunk,responds with,chunk
+65,directly chunk server,communicates,desired file operation
+69,such file that,has minimal,such file write
+70,such  master,grants,particular chunk servers
+71,then  primary,creates,serial  chunk
+72,When  data,straddles,chunk
+73,two  operations,carried,one  chunk
+74,write  that,1,data efficiency
+75,that,buffers,control
+78,then  master,replies with,secondary chunk chunk
+79,client,caches,information
+80,client,sends,data
+81,one,stores,then LRU client
+83,write  request,sends,chunk chunk
+84,once  request,received,the
+85,primary,identifies,consecutive sequence numbers
+86,primary,sends,write  secondaries
+87,secondary,applies,then sequence primary
+89,Finally  primary,informs,client
+90,system,supports,checkpointing system snapshots
+92,strategy,used,file deletion
+94,first  filename,changed to,hidden  name
+96,master,scans,periodically  namespace
+98,who,gives,little  effort
+99,Periodically chunk servers,exchange with,master
+100,chunk server,supplies,next heartbeat master
+103,chunk server,carry,housecleaning
+104,server,maintains in,stored data integrity
+106,open source C++ that,is,also client Java
+107,that,allows,client

@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Courier; color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 10.0px Courier}
+    span.s5 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">The software packages used are:</p>
+<p class="p1">• <span class="s1">Eclipse </span>(<span class="s2">www.eclipse.org</span>) is a software development environment that consists of an integrated</p>
+<p class="p1">development environment (IDE) and an extensible plug-in system. It is written mostly in Java and</p>
+<p class="p1">can be used to develop applications in Java and, by means of various plug-ins, in C, C++, Perl, PHP,</p>
+<p class="p1">Python, R, Ruby, and several other languages. The IDE is often called Eclipse CDT for C/C++,</p>
+<p class="p1">Eclipse JDT for Java, and Eclipse PDT for PHP.</p>
+<p class="p1">• Apache <span class="s1">Hadoop </span>is a software framework that supports data-intensive distributed applications under</p>
+<p class="p1">a free license. <span class="s1">Hadoop </span>was inspired by Google’s <span class="s1">MapReduce</span>. See Section 4.6 for a discussion of</p>
+<p class="p1"><span class="s1">MapReduce </span>and Section 4.7 for an application using <span class="s1">Hadoop</span>.</p>
+<p class="p1">• <span class="s1">Cygwin </span>is a <span class="s1">Unix</span>-like environment for <span class="s1">MicrosoftWindows</span>. It is open-source software released under</p>
+<p class="p1">the GNU General Public License version 2. The <span class="s1">cygwin </span>environment consists of (1) a dynamic-link</p>
+<p class="p1">library (DLL) as an API compatibility layer providing a substantial part of the POSIX API functionality;</p>
+<p class="p1">and (2) an extensive collection of software tools and applications that provide a <span class="s1">Unix</span>-like</p>
+<p class="p1">look and feel.</p>
+<p class="p2">A. Prerequisites</p>
+<p class="p1">• <span class="s1">Java 1.6</span>; set JAVA_Home = path where <span class="s1">JDK </span>is installed</p>
+<p class="p2"><span class="s3">• </span>Eclipse Europa 3.3.2</p>
+<p class="p1">Note: the <span class="s1">Hadoop </span>plugin was specially designed for Europa and newer releases of <span class="s1">Eclipse </span>might</p>
+<p class="p1">have some issues with the <span class="s1">Hadoop </span>plugin.</p>
+<p class="p2">B. SSH Installation</p>
+<p class="p1"><span class="s1">1. </span>Install <span class="s1">cygwin </span>using the installer downloaded from <span class="s2">www.cygwin.com</span>. From the <span class="s1">Select Packages</span></p>
+<p class="p1">window, select the <span class="s1">openssh </span>and <span class="s1">openssl </span>under Net.</p>
+<p class="p1">Note: Create a desktop icon when asked during installation.</p>
+<p class="p1"><span class="s1">2. </span>Display the “Environment Variables” panel:</p>
+<p class="p3">Computer -&gt; System Properties -&gt; Advanced System Settings</p>
+<p class="p3">-&gt; Environment Variables</p>
+<p class="p1">Click on the variable named <span class="s1">Path </span>and press <span class="s1">Edit</span>; <span class="s4">append </span>the following value to the path</p>
+<p class="p1">variable:</p>
+<p class="p3">;c:<span class="s1">Ä</span>cygwin<span class="s1">Ä</span>bin;c:<span class="s1">Ä</span>cygwin<span class="s1">Ä</span>usr<span class="s1">Ä</span>bin</p>
+<p class="p1"><span class="s1">3. </span>Configure the <span class="s1">ssh daemon </span>using <span class="s1">cygwin</span>. Left-click on the <span class="s1">cygwin </span>icon on the desktop and click</p>
+<p class="p1">“Run as Administrator.” Type in the command window of <span class="s1">cygwin</span>:</p>
+<p class="p3">ssh-host-config.</p>
+<p class="p1"><span class="s1">4. </span>Answer “Yes” when prompted with <span class="s1">sshd should be installed as a service</span>; answer “No” to all</p>
+<p class="p1">other questions.</p>
+<p class="p1"><span class="s1">5. </span>Start the <span class="s1">cygwin </span>service by navigating to:</p>
+<p class="p3">Control Panel -&gt; Administrative Tools -&gt; Services</p>
+<p class="p1">Look for <span class="s1">cygwin sshd </span>and start the service.</p>
+<p class="p1"><span class="s1">6. </span>Open the <span class="s1">cygwin </span>command prompt and execute the following command to generate keys:</p>
+<p class="p3">ssh-keygen</p>
+<p class="p1"><span class="s1">7. </span>When prompted for filenames and passphrases, press Enter to accept default values. After the</p>
+<p class="p1">command has finished generating keys, enter the following command to change into your <span class="s1">.ssh</span></p>
+<p class="p1">directory:</p>
+<p class="p3">cd˜.ssh</p>
+<p class="p1"><span class="s1">8. </span>Check to see whether the keys were indeed generated:</p>
+<p class="p3">ls -l</p>
+<p class="p1"><span class="s1">9. </span>The two files <span class="s1">id_rsa.pub </span>and <span class="s1">id_rsa </span>with recent creation dates contain authorization keys.</p>
+<p class="p1"><span class="s1">10. </span>To register the new authorization keys, enter the following command (note: the sharply-angled</p>
+<p class="p1">double brackets are very important):</p>
+<p class="p3">cat id_rsa.pub <span class="s1">  </span>authorized_keys</p>
+<p class="p1"><span class="s1">11. </span>Check to see whether the keys were set up correctly:</p>
+<p class="p3">ssh localhost</p>
+<p class="p1"><span class="s1">12. </span>Since it is a new <span class="s1">ssh </span>installation, you will be warned that authenticity of the host could not be</p>
+<p class="p1">established and will be asked whether you really want to connect. Answer Yes and press Enter.</p>
+<p class="p1">You should see the <span class="s4">cygwin </span>prompt again, which means that you have successfully connected.</p>
+<p class="p1"><span class="s1">13. </span>Now execute again the command:</p>
+<p class="p3">ssh localhost</p>
+<p class="p1">This time no prompt should appear.</p>
+<p class="p2">C. Download Hadoop</p>
+<p class="p1"><span class="s1">1. </span>Download <span class="s1">Hadoop 0.20.1 </span>and place it in a directory such as:</p>
+<p class="p3">C:Java</p>
+<p class="p1"><span class="s1">2. </span>Open the <span class="s1">cygwin </span>command prompt and execute:</p>
+<p class="p3">cd</p>
+<p class="p1"><span class="s1">3. </span>Enable the home directory folder to be shown in the <span class="s1">Windows </span>Explorer window:</p>
+<p class="p3">explorer</p>
+<p class="p1"><span class="s1">4. </span>Open another <span class="s1">Windows </span>Explorer window and navigate to the folder that contains the downloaded</p>
+<p class="p1"><span class="s1">Hadoop </span>archive.</p>
+<p class="p1"><span class="s1">5. </span>Copy the <span class="s1">Hadoop </span>archive into the home directory folder.</p>
+<p class="p2">D. Unpack Hadoop</p>
+<p class="p1"><span class="s1">1. </span>Open a new <span class="s1">cygwin </span>window and execute:</p>
+<p class="p3">tar -xzf hadoop-0.20.1.tar.gz</p>
+<p class="p1"><span class="s1">2. </span>List the contents of the home directory:</p>
+<p class="p3">ls -l</p>
+<p class="p1">You should see a newly created directory called <span class="s1">Hadoop-0.20.1</span>. Execute:</p>
+<p class="p3">cd hadoop-0.20.1</p>
+<p class="p3">ls -l</p>
+<p class="p1">You should see the files listed in Figure <span class="s5">11.9</span>.</p>
+<p class="p2">E. Set properties in configuration file</p>
+<p class="p1"><span class="s1">1. </span>Open a new <span class="s1">cygwin </span>window and execute the following commands:</p>
+<p class="p3">cd hadoop-0.20.1</p>
+<p class="p3">cd conf</p>
+<p class="p3">explorer</p>
+<p class="p1"><span class="s1">2. </span>The last command will cause the Explorer window for the <span class="s1">conf </span>directory to pop up. Minimize it</p>
+<p class="p1">for now or move it to the side.</p>
+<p class="p1"><span class="s1">3. </span>Launch <span class="s1">Eclipse </span>or a text editor such as <span class="s1">Notepad ++ </span>and navigate to the <span class="s1">conf </span>directory. Open the</p>
+<p class="p1"><span class="s1">Hadoop</span>-site file to insert the following lines between the <span class="s1">&lt;configuration&gt; </span>and <span class="s1">&lt;/configuration&gt;</span></p>
+<p class="p1">tags:</p>
+<p class="p3">&lt;property&gt;</p>
+<p class="p3">&lt;name&gt;fs.default.name&lt;/name&gt;</p>
+<p class="p3">&lt;value&gt;hdfs://localhost:9100&lt;/value&gt;</p>
+<p class="p3">&lt;/property&gt; &lt;property&gt;</p>
+<p class="p3">&lt;name&gt;mapred.job.tracker&lt;/name&gt;</p>
+<p class="p3">&lt;value&gt;localhost:9101&lt;/value&gt;</p>
+<p class="p3">&lt;/property&gt; &lt;property&gt;</p>
+<p class="p3">&lt;name&gt;dfs.replication&lt;/name&gt;</p>
+<p class="p3">&lt;value&gt;1&lt;/value&gt;</p>
+<p class="p3">&lt;/property&gt;</p>
+<p class="p2">F. Format the Namenode</p>
+<p class="p1">Format the <span class="s1">namenode </span>to create a <span class="s1">Hadoop </span>Distributed File System (HDFS). Open a new <span class="s1">cygwin</span></p>
+<p class="p1">window and execute the following commands:</p>
+<p class="p3">cd hadoop-0.20.1</p>
+<p class="p3">mkdir logs</p>
+<p class="p3">bin/hadoop namenode -format</p>
+<p class="p1">When the formatting of the <span class="s1">namenode </span>is finished, the message in Figure <span class="s5">11.10 </span>appears.</p>
+</body>
+</html>

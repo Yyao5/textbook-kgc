@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">In Section <span class="s1">6.2 </span>we saw that we can assimilate a server with a closed-loop control system and we can</p>
+<p class="p1">apply control theory principles to resource allocation. In this section we discuss a two-level resource allocation architecture based on control theory concepts for the entire cloud. The automatic resource</p>
+<p class="p1">management is based on two levels of controllers, one for the service provider and one for the application,</p>
+<p class="p1">see Figure <span class="s1">6.2</span>.</p>
+<p class="p1">The main components of a control system are the inputs, the control system components, and the</p>
+<p class="p1">outputs. The inputs in such models are the offered workload and the policies for admission control, the</p>
+<p class="p1">capacity allocation, the load balancing, the energy optimization, and the QoS guarantees in the cloud.</p>
+<p class="p1">The system components are <span class="s2">sensors </span>used to estimate relevant measures of performance and <span class="s2">controllers</span></p>
+<p class="p1">that implement various policies; the output is the resource allocations to the individual applications .</p>
+<p class="p1">The controllers use the feedback provided by sensors to stabilize the system; stability is related to</p>
+<p class="p1">the change of the output. If the change is too large, the system may become unstable. In our context the</p>
+<p class="p1">system could experience thrashing, the amount of useful time dedicated to the execution of applications</p>
+<p class="p1">becomes increasingly small and most of the system resources are occupied by management functions.</p>
+<p class="p1">There are three main sources of instability in any control system:</p>
+<p class="p1"><span class="s2">1. </span>The delay in getting the system reaction after a control action.</p>
+<p class="p1"><span class="s2">2. </span>The granularity of the control, the fact that a small change enacted by the controllers leads to very</p>
+<p class="p1">large changes of the output.</p>
+<p class="p1"><span class="s2">3. </span>Oscillations, which occur when the changes of the input are too large and the control is too weak,</p>
+<p class="p1">such that the changes of the input propagate directly to the output.</p>
+<p class="p1">Two types of policies are used in autonomic systems: (i) threshold-based policies and (ii) sequential</p>
+<p class="p1">decision policies based on Markovian decision models. In the first case, upper and lower bounds on</p>
+<p class="p1">performance trigger adaptation through resource reallocation. Such policies are simple and intuitive but</p>
+<p class="p1">require setting per-application thresholds.</p>
+<p class="p1">Lessons learned from the experiments with two levels of controllers and the two types of policies are</p>
+<p class="p1">discussed in [<span class="s1">109</span>]. A first observation is that the actions of the control system should be carried out in a rhythm that does not lead to instability. Adjustments should be carried out only after the performance</p>
+<p class="p1">of the system has stabilized. The controller should measure the time for an application to stabilize and</p>
+<p class="p1">adapt to the manner in which the controlled system reacts.</p>
+<p class="p1">If upper and lower thresholds are set, instability occurs when they are too close to one another if the</p>
+<p class="p1">variations of the workload are large enough and the time required to adapt does not allow the system</p>
+<p class="p1">to stabilize. The actions consist of allocation/deallocation of one or more virtual machines; sometimes</p>
+<p class="p1">allocation/deallocation of a single VM required by one of the thresholds may cause crossing of the other</p>
+<p class="p1">threshold and this may represent, another source of instability.</p>
+</body>
+</html>

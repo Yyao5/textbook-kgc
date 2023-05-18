@@ -1,0 +1,27 @@
+,source,edge,target
+0,Aclient,knowthe,virtual IP cloud
+1,Service,used,private IP networks
+3,late  Amazon,announced,53 AWS AWS
+5,strict  who,scattered,AWS Identity
+8,several IP addresses,mapped,private IP addresses
+9,machine,1,several IP addresses
+10,Address,used for,only EC2 cloud
+11,traffic,use,elastic IP instance
+12,instance,translated,private IP address
+15,Traffic,forwarded to,private IP instance
+16,address,originated,AWS AWS
+18,NAT,used,private IP address
+20,cloud user,allow,public IP account
+22,This,allows fast,fast system failure
+23,public Web service provider,remap,elastic replacement instance
+24,Amazon,charges,Elastic IP addresses
+25,Services,use,virtual security machines
+27,only  instance,belongs to,one security group
+31,one  instance,belong to,single security group
+32,rules,control inbound,inbound outbound instance
+34,other  rule,blocked,otherwise security instance
+36,where TCP port B,assume,security group
+42,user,1,security rule
+46,instance Wizard,Use,key value Figures
+56,Linux port numbers,assigned by,only  root
+57,called  services,maps friendly,textual port numbers

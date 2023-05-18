@@ -1,0 +1,13 @@
+,source,edge,target
+0,introduction,found in,recent virtualization 141
+1,machines,dissected in,Smith
+2,discussion,provided by,virtual machine Rosenblum
+3,papers,discuss in,XenVMM performance
+4,system,presented in,372
+5,paper,compares,standard operating system
+6,project,presented in,HP 228
+7,new  services,argues,operating system
+10,services,added below,operating system level
+11,process,creates,virtual  machine
+12,survey,provided by,virtual security 389
+15,references,discuss,virtualization  architecture

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Courier}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {color: #000066}
+    span.s4 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Parallel and distributed applications must take special precautions for handling shared resources. For</p>
+<p class="p1">example, consider a financial application in which the shared resource is an account record. A thread</p>
+<p class="p1">running on behalf of a transaction first accesses the account to <span class="s1">read </span>the current balance, then updates</p>
+<p class="p1">the balance, and finally, writes back the new balance. When a thread is interrupted before being able</p>
+<p class="p1">to complete the three steps of the process, the results of the financial transactions are incorrect if</p>
+<p class="p1">another thread operating on the same account is allowed to proceed. Another challenge is to deal with</p>
+<p class="p1">a transaction involving the transfer from one account to another. A system crash after the completion</p>
+<p class="p1">of the operation on the first account will again lead to an inconsistency – the amount debited from the</p>
+<p class="p1">first account is not credited to the second.</p>
+<p class="p1">In these cases, as inmany other similar situations, a multistep operation should be allowed to proceed</p>
+<p class="p1">to completion without any interruptions, and the operation should be <span class="s2">atomic</span>. An important observation</p>
+<p class="p1">is that such atomic actions should not expose the state of the system until the action is completed. Hiding</p>
+<p class="p1">the internal state of an atomic action reduces the number of states a system can be in; thus, it simplifies</p>
+<p class="p1">the design and maintenance of the system. An atomic action is composed of several steps, each of which</p>
+<p class="p1">may fail; therefore, we have to take additional precautions to avoid exposing the internal state of the</p>
+<p class="p1">system in case of such a failure.</p>
+<p class="p1">The discussion of the transaction system suggests that an analysis of atomicity should pay special</p>
+<p class="p1">attention to the basic operation of updating the value of an object in storage. Even to modify the contents</p>
+<p class="p1">of amemory location, severalmachine instructions must be executed: load the current value in a register,</p>
+<p class="p1">modify the contents of the register, and store back the result.</p>
+<p class="p1">Atomicity cannot be implemented without some hardware support; indeed, the instruction sets of</p>
+<p class="p1">most processors support the <span class="s2">test-and-set </span>instruction, which writes to a memory location and returns the old content of that memory cell as noninterruptible operations. Other architectures support</p>
+<p class="p1"><span class="s2">compare-and-swap</span>, an atomic instruction that compares the contents of a memory location to a given</p>
+<p class="p1">value and, only if the two values are the same, modifies the contents of that memory location to a given</p>
+<p class="p1">new value.</p>
+<p class="p1">Two flavors of atomicity can be distinguished: <span class="s2">all-or-nothing </span>and <span class="s2">before-or-after </span>atomicity. <span class="s2">Allor-</span></p>
+<p class="p1"><span class="s2">nothing </span>means that either the entire atomic action is carried out, or the system is left in the same</p>
+<p class="p1">state it was before the atomic action was attempted. In our examples a transaction is either carried out</p>
+<p class="p1">successfully, or the record targeted by the transaction is returned to its original state. The states of an</p>
+<p class="p1"><span class="s2">all-or-nothing </span>action are shown in Figure <span class="s3">2.12</span>.</p>
+<p class="p1">To guarantee the all-or-nothing property of an action we have to distinguish preparatory actions</p>
+<p class="p1">that can be undone from irreversible ones, such as the alteration of the only copy of an object. Such</p>
+<p class="p1">preparatory actions are as follows: allocation of a resource, fetching a page from secondary storage,</p>
+<p class="p1">allocation of memory on the stack, and so on. One of the golden rules of data management is never to</p>
+<p class="p1">change the only copy; maintaining the history of changes and a log of all activities allows us to deal</p>
+<p class="p1">with system failures and to ensure consistency.</p>
+<p class="p1">An all-or-nothing action consists of a <span class="s2">pre-commit </span>and a <span class="s2">post-commit </span>phase; during the former it</p>
+<p class="p1">should be possible to back up from it without leaving any trace, whereas the latter phase should be</p>
+<p class="p1">able to run to completion. The transition from the first to the second phase is called a <span class="s2">commit point</span>.</p>
+<p class="p1">During the <span class="s2">pre-commit </span>phase all steps necessary to prepare the post-commit phase – for example, check</p>
+<p class="p1">permissions, swap in main memory all pages that may be needed, mount removable media, and allocate</p>
+<p class="p1">stack space – must be carried out; during this phase no results should be exposed and no irreversible</p>
+<p class="p1">actions should be carried out. Shared resources allocated during the pre-commit phase cannot be released</p>
+<p class="p1">until after the commit point. The commit step should be the last step of an all-or-nothing action.</p>
+<p class="p1">A discussion of storage models illustrates the effort required to support all-or-nothing atomicity (see</p>
+<p class="p1">Figure <span class="s3">2.13</span>). The common storage model implemented by hardware is the so-called <span class="s2">cell storage</span>, a</p>
+<p class="p1">collection of cells each capable of holding an object (e.g., the primary memory of a computer where</p>
+<p class="p1">each cell is addressable). Cell storage does not support all-or-nothing actions. Once the content of a cell</p>
+<p class="p1">is changed by an action, there is no way to abort the action and restore the original content of the cell.</p>
+<p class="p1">To be able to restore a previous value we have to maintain a <span class="s2">version history </span>for each variable in the</p>
+<p class="p1">cell storage. The storage model that supports all-or-nothing actions is called <span class="s2">journal storage</span>. Now the</p>
+<p class="p1">cell storage is no longer accessible to the action because the access is mitigated by a <span class="s2">storage manager</span>.</p>
+<p class="p1">In addition to the basic primitives to <span class="s1">read </span>an existing value and to <span class="s1">write </span>a new value in cell storage,</p>
+<p class="p1">the storage manager uniquely identifies an action that changes the value in cell storage and, when the action is aborted, is able to retrieve the version of the variable before the action and restore it. When</p>
+<p class="p1">the action is committed, then the new value should be written to the cell.</p>
+<p class="p1">Figure <span class="s3">2.13 </span>shows that for a journal storage, in addition to the version histories of all variables</p>
+<p class="p1">affected by the action, we have to implement a catalog of variables and maintain a record to identify</p>
+<p class="p1">each new action. Anew action first invokes the <span class="s2">Action </span>primitive; at that time an outcome record uniquely</p>
+<p class="p1">identifying the action is created. Then, every time the action accesses a variable, the version history is</p>
+<p class="p1">modified. Finally, the action invokes either a <span class="s2">Commit </span>or an <span class="s2">Abort </span>primitive. In the journal storage model</p>
+<p class="p1">the action is atomic and follows the state transition diagram in Figure <span class="s3">2.12</span>.</p>
+<p class="p1"><span class="s2">Before-or-after atomicity </span>means that, from the point of view of an external observer, the effect of</p>
+<p class="p1">multiple actions is as though these actions have occurred one after another, in some order. A stronger</p>
+<p class="p1">condition is to impose a sequential order among transitions. In our example the transaction acting on</p>
+<p class="p1">two accounts should either debit the first account and then credit the second one or leave both accounts</p>
+<p class="p1">unchanged. The order is important because the first account cannot be left with a negative balance.</p>
+<p class="p1">Atomicity is a critical concept in our efforts to build reliable systems from unreliable components and,</p>
+<p class="p1">at the same time, to support as much parallelism as possible for better performance. Atomicity allows</p>
+<p class="p1">us to deal with unforseen events and to support coordination of concurrent activities. The unforseen</p>
+<p class="p1">event could be a system crash, a request to share a control structure, the need to suspend an activity, and so on; in all these cases we have to save the state of the process or of the entire system to be able</p>
+<p class="p1">to restart it at a later time.</p>
+<p class="p1">Because atomicity is required in many contexts, it is desirable to have a systematic approach rather</p>
+<p class="p1">than an ad hoc one. A systematic approach to atomicity must address several delicate questions:</p>
+<p class="p1">• How to guarantee that only one atomic action has access to a shared resource at any given time.</p>
+<p class="p1">• How to return to the original state of the system when an atomic action fails to complete.</p>
+<p class="p1">• How to ensure that the order of several atomic actions leads to consistent results.</p>
+<p class="p1">Answers to these questions increase the complexity of the system and often generate additional</p>
+<p class="p1">problems. For example, access to shared resources can be protected by locks, but when there are</p>
+<p class="p1">multiple shared resources protected by locks, concurrent activities may deadlock. A <span class="s2">lock </span>is a construct</p>
+<p class="p1">that enforces sequential access to a shared resource; such actions are packaged in the <span class="s2">critical sections </span>of</p>
+<p class="p1">the code. If the lock is not set, a thread first locks the access, then enters the critical section, and finally</p>
+<p class="p1">unlocks it; a thread that wants to enter the critical section finds the lock set and waits for the lock to be</p>
+<p class="p1">reset. A lock can be implemented using the hardware instructions supporting atomicity.</p>
+<p class="p1">Semaphores and monitors are more elaborate structures ensuring serial access. Semaphores force</p>
+<p class="p1">processes to queue when the lock is set and are released from this queue and allowed to enter the critical</p>
+<p class="p1">section one by one. Monitors provide special procedures to access the shared data (see Figure <span class="s3">2.14</span>).</p>
+<p class="p2">The mechanisms for the process coordination we described require the cooperation of all activities, <span class="s4">the</span></p>
+<p class="p1">same way traffic lights prevent accidents only as long as drivers follow the rules.</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">A <span class="s1">virtual machine monitor (VMM)</span>, also called a <span class="s1">hypervisor</span>, is the software that securely partitions</p>
+<p class="p1">the resources of a computer system into one or more virtual machines. A <span class="s1">guest operating system </span>is an</p>
+<p class="p1">operating system that runs under the control of a VMM rather than directly on the hardware. The VMM</p>
+<p class="p1">runs in kernel mode, whereas a guest OS runs in user mode. Sometimes the hardware supports a third</p>
+<p class="p1">mode of execution for the guest OS.</p>
+<p class="p1">VMMs allow several operating systems to run concurrently on a single hardware platform; at the</p>
+<p class="p1">same time, VMMs enforce isolation among these systems, thus enhancing security. A VMM controls</p>
+<p class="p1">how the guest operating system uses the hardware resources. The events occurring in one VM do not</p>
+<p class="p1">affect any other VM running under the same VMM. At the same time, the VMM enables:</p>
+<p class="p1">• Multiple services to share the same platform.</p>
+<p class="p1">• The movement of a server from one platform to another, the so-called live migration.</p>
+<p class="p1">• System modification while maintaining backward compatibility with the original system.</p>
+<p class="p1">When a guest OS attempts to execute a privileged instruction, the VMM traps the operation and</p>
+<p class="p1">enforces the correctness and safety of the operation. The VMM guarantees the isolation of the individual</p>
+<p class="p1">VMs, and thus ensures security and encapsulation, a major concern in cloud computing. At the same time,</p>
+<p class="p1">the VMM monitors system performance and takes corrective action to avoid performance degradation;</p>
+<p class="p1">for example, the VMM may swap out a VM(copies all pages of that VM from real memory to disk and</p>
+<p class="p1">makes the real memory frames available for paging by other VMs) to avoid thrashing.</p>
+<p class="p1">A VMM virtualizes the CPU and memory. For example, the VMM traps interrupts and dispatches</p>
+<p class="p1">them to the individual guest operating systems. If a guest OS disables interrupts, the VMM buffers such</p>
+<p class="p1">interrupts until the guest OS enables them. The VMM maintains a <span class="s1">shadow page table </span>for each guest</p>
+<p class="p1">OS and replicates any modification made by the guest OS in its own shadow page table. This shadow</p>
+<p class="p1">page table points to the actual page frame and is used by the hardware component called the <span class="s1">memory</span></p>
+<p class="p1"><span class="s1">management unit (MMU) </span>for dynamic address translation.</p>
+<p class="p1">Memory virtualization has important implications on performance. VMMs use a range of optimization</p>
+<p class="p1">techniques; for example, <span class="s1">VMware </span>systems avoid page duplication among different virtual machines;</p>
+<p class="p1">they maintain only one copy of a shared page and use copy-on-write policies whereas Xen imposes total</p>
+<p class="p1">isolation of the VM and does not allow page sharing. VMMs control the virtual memory management</p>
+<p class="p1">and decide what pages to swap out; for example, when the <span class="s1">ESX VMware </span>server wants to swap out</p>
+<p class="p1">pages, it uses a <span class="s1">balloon process </span>inside a guest OS and requests it to allocate more pages to itself, thus</p>
+<p class="p1">swapping out pages of some of the processes running under that VM. Then it forces the balloon process</p>
+<p class="p1">to relinquish control of the free page frames.</p>
+</body>
+</html>

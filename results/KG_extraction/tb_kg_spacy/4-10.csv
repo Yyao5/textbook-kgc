@@ -1,0 +1,48 @@
+,source,edge,target
+1,experiment,illustrates,biology research
+3,authors,carried,BLAST23 Azure platform
+5,Azure,offers,four computing cores
+6,experiment,used,14 GB RAM
+8,computation,take,seven  CPU
+9,thus  experiment,allocated,three data centers
+10,center,hosted,large AzureBLAST instances
+11,sequences,divided into multiple,multiple  segments
+12,segment,submitted for,one AzureBLAST deployment
+13,14  which,took,"400,000 output files"
+15,observations,drawn after,post experiment analysis
+16,two  message,reappear in,automatically  task
+17,result,generated,task
+18,computational  effort,allow for,optimal  parameters
+19,user,expected,optimal budget limitations
+22,same  resources,waited for,same  instances
+23,when  jobs,use,same
+24,some,take,longer completion time
+25,analysis,shows unrecoverable,unrecoverable instance failures
+26,%,lost,automatically fabric controller
+28,several  ensembles,caused several,instances
+30,computational science experiment,requires,the
+32,authors,developed,general  cloud
+33,Cirrus job,has,parameters
+34,prologue,sets,running
+35,Windows Live ID service,authenticates,user
+36,service,submit,Web Figure
+39,job,added to,table
+40,execution,controlled,job
+42,parametric  engine,starts,parameter space
+43,sweeping test result,sent to,sampling filter
+45,task,associated with,task table
+46,record,updated,periodically worker task
+47,progress,monitored by,manager
+48,queue,feeds into,worker instances
+49,worker,updates,periodically control manager
+50,We,continue,based Azure 224
+51,front end worker,are,background processing
+52,theWeb,roles,forWeb
+54,such compute that,use,state change notifications
+56,that,provide,run
+57,applications,use,semistructured message queues
+58,services,provide strong,strong consistency guarantees
+59,complexity,moved to,application space
+60,Figure,illustrates,coupled Azure platform
+61,software,eliminates,individual  VMs
+62,results,show,remote application resource

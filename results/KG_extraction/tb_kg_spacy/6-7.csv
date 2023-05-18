@@ -1,0 +1,59 @@
+,source,edge,target
+0,users,allocated in,specific  resources
+1,users,get maximum,maximum  benefit
+2,Indeed CPU application,needs specific,specific ofmain memory
+3,models,generated,economic  models
+5,participants,called combinatorial,items
+6,participants,bid,which
+7,auctions,provide,simple cloud resource allocation
+8,333,discussed in,chapter
+10,current  price,represented by,auction
+11,prices,consider,auction
+12,prices,set,which
+13,users,provide,desirable  bundles
+14,We,assume,U users
+15,user Bu,vector,total  πu
+19,user,expresses,user =
+20,prices,given by,individual vector p
+21,total user bid,represents,time
+23,process,aims,objective  function
+25,net  value,tailored,maximum amount users
+27,value,measure,total
+28,functions,considered for,e.g. security risks
+29,algorithm,partitions,two disjoint W
+31,such Vickey Clarke- criteria,fail,such Vickey Clarke- criteria
+34,price,exceeds,the
+36,winners,pay,same resource price
+37,clearly  unit,at,resource pool
+40,system awards,expresses,only  resources
+42,bid,exceeds,final
+43,winners,states,expensive  bundles
+44,winners,get,least  expensive
+45,losers,states,final  price
+48,ASCA participants,specify,time slot
+51,demand,mean,offer
+52,demand,exceed,the
+53,0  auctioneer,is larger,new  price
+54,algorithm,satisfies,conditions
+55,6.3  users,discover,uniform resource prices
+57,slight  algorithm,is,multiple user rounds
+58,algorithm,involves,user
+59,user proxies,address,actual proxies Figure
+60,proxies,adjust,automatically  proxies
+62,Qu ˆ ˆ,modeled as,u qu ∈ u
+63,1,is,=
+64,=,collect,3  bids
+67,else  prices,update,7
+69,function,correlated with,excess  g(x(t
+70,notation,means,max
+72,only optimization participants,guaranteed,same  time
+73,Nevertheless clock algorithm,finds,only  feasible
+74,algorithm,guarantee,optimality
+75,authors,implemented,internal  Google
+77,system,show,substantial  improvements
+81,algorithm,supports,resource bundling
+83,random  participants,arrive at random,same  time
+84,participants,react,bid
+86,this,adds to,response
+87,demand,is,periodic  auctions
+88,which,guarantees,existing  application

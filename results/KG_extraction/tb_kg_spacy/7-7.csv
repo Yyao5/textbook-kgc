@@ -1,0 +1,64 @@
+,source,edge,target
+0,section,presents high,high cloud computing
+4,interconnection networks,evolved at,overall  system
+6,speed,increased from,1  1997
+7,InfiniBand,has,switched fabric topology
+8,InfiniBand,supports several,several signaling rates
+9,consumption,depends on,throughput
+11,architectural  specification,defines multiple,operational data rates
+12,bits,carry,8
+13,double data rates,carry,useful  data
+14,specified reactivation time,allows,several  microseconds
+16,reactivation time,vary,link
+17,systems,implement,InfiniBand QDR
+18,InifiniBand fabric,used,storage servers
+20,InfiniBand,has high,redundant QoS system
+22,InfiniBand,offers,such speed disks
+23,infrastructure,satisfy several,several  scalability
+24,other speed server,allow low,similar  speed
+26,same  requirement,ensures,system management
+27,same  requirement,reduces,the
+28,then IP data,receive,final  destination
+32,servers,packed into,racks
+33,cluster which,connected to,local communication fabric
+34,Finally interdata center networks,connect,multiple  WSCs
+35,fabric,have sufficient,bidirectional cloud computing
+39,slower wire delay,scaled,slower processor speed
+40,better  performance,achieved with innovative,innovative router architecture
+41,This,motivates,actual  routers
+43,number,distinguishes low,large radix ports
+44,chips,divide,bandwidth
+45,radix  chips,divide,wide  ports
+46,number,reduced,high radix networks
+47,networks,enjoy,lower  latency
+48,signaling pin bandwidth,increased by,two  decades
+49,topology,determines,diameter5 interconnection bisection
+50,First  we,introduce,informally  Clos
+51,inverted  which,comes from,butterfly wings
+52,network,transfers,efficient  route
+53,network,handle,same  time
+54,network,handle,a
+56,network,consists of,two butterfly networks
+57,stage,fused with,first  output
+63,high performance interconnects,implement,fat tree topology
+64,e.g. Cray XD1,use low,routers
+65,e.g. Cray XD1,uses,radix-24
+66,latency,lowered,radix  routers
+67,topology,extends,lower Clos cost
+68,side which,adds,global peer subtrees
+69,which,permit,statical
+70,topology,used in,Cray computers
+73,we,start with,conventional  butterfly
+75,router,linked to more,more  processors
+77,physical  path,reduced,fewer  hops
+78,physical  path,reach,fewer  hops
+79,we,see,4  butterfly
+80,We,combine,single switch S
+81,when  butterfly,senses,adaptively  congestion
+83,flattened traffic butterfly,has similar,conventional magnitude butterfly
+85,computer clusters,argue,two
+86,cost,reduced,storage area networks
+87,butterfly,reduce,e.g. backplane routers
+88,number,reduces,global  cables
+89,cost,represents,as  80
+90,4 cost savings,exceed,50  %

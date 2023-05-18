@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier; color: #000066}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Times}
+    span.s3 {color: #000066}
+    span.s4 {font: 7.5px Times; color: #000066}
+    span.s5 {font: 10.0px Times; color: #000000}
+    span.s6 {font: 10.0px Helvetica; color: #000000}
+    span.s7 {font: 10.0px Courier; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A firewall is a software system based on a set of rules for filtering network traffic. Its function is to</p>
+<p class="p1">protect a computer in a local area network from unauthorized access. The first generation of firewalls,</p>
+<p class="p1">deployed in the late 1980s, carried out <span class="s1">packet filtering</span>; they discarded individual packets that did not</p>
+<p class="p1">match a set of acceptance rules. Such firewalls operated below the transport layer and discarded packets</p>
+<p class="p1">based on the information in the headers of physical, data link, and transport layer protocols.</p>
+<p class="p1">The second generation of firewalls operate at the transport layer and maintain the state of all connections</p>
+<p class="p1">passing through them. Unfortunately, this traffic-filtering solution opened the possibility of</p>
+<p class="p1"><span class="s1">denial-of-service (DoS) attacks</span>. A DoS attack targets a widely used network service and forces the</p>
+<p class="p1">operating system of the host to fill the connection tables with illegitimate entries. DoS attacks prevent</p>
+<p class="p1">legitimate access to the service.</p>
+<p class="p1">The third generation of firewalls “understand” widely used application layer protocols such as <span class="s1">FTP,</span></p>
+<p class="p1"><span class="s1">HTTP, TELNET, SSH, </span>and <span class="s1">DNS</span>. These firewalls examine the header of application layer protocols and</p>
+<p class="p2"><span class="s2">support </span>intrusion detection systems <span class="s2">(IDSs).</span></p>
+<p class="p1">Firewalls screen incoming traffic and sometimes filter outgoing traffic as well. A first filter encountered</p>
+<p class="p1">by the incoming traffic in a typical network is a firewall provided by the operating system of the</p>
+<p class="p1">router; the second filter is a firewall provided by the operating system running on the local computer</p>
+<p class="p1">(see Figure <span class="s3">11.5</span>).</p>
+<p class="p1">Typically, the local area network (LAN) of an organization is connected to the Internet via a router.</p>
+<p class="p1">A router firewall often hides the true address of hosts in the local network using the Network Address</p>
+<p class="p1">Translation (NAT) mechanism. The hosts behind a firewall are assigned addresses in a “private address</p>
+<p class="p1">range,” and the router uses theNAT tables to filter the incoming traffic and translate external IP addresses</p>
+<p class="p1">to private ones.<span class="s4">2</span></p>
+<p class="p1">not cross a router. Once a client from a different LAN attempts to use the service, the packets may</p>
+<p class="p1">be discarded by the router’s firewall. The application may no longer work if the router is not properly</p>
+<p class="p1">configured.</p>
+<p class="p1">Now let’s examine the firewall support in several operating systems. Table <span class="s3">11.1 </span>summarizes the</p>
+<p class="p1">options supported by various operating systems running on a host or on a router.</p>
+<p class="p1">A <span class="s1">rule </span>specifies a filtering option at (i) the network layer, when filtering is based on the destination/</p>
+<p class="p1">source IP address; (ii) the transport layer, when filtering is based on destination/source port</p>
+<p class="p1">number; or (iii) the MAC layer, when filtering is based on the destination/source MAC address.</p>
+<p class="p1">In <span class="s1">Linux </span>or <span class="s1">Unix </span>systems the firewall can be configured only as a <span class="s1">root </span>using the <span class="s1">sudo </span>command. The</p>
+<p class="p1">firewall is controlled by a kernel data structure, the <span class="s1">iptables</span>. The <span class="s1">iptables </span>command is used to set up, maintain, and inspect the tables of the <span class="s1">IPv4 </span>packet filter rules in the <span class="s1">Linux </span>kernel. Several tables may</p>
+<p class="p1">be defined; each table contains a number of built-in chains and may also contain user-defined chains. A</p>
+<p class="p1"><span class="s1">chain </span>is a list of rules that can match a set of packets: The <span class="s1">INPUT </span>rule controls all incoming connections;</p>
+<p class="p1">the <span class="s1">FORWARD </span>rule controls all packets passing through this host; and the <span class="s1">OUTPUT </span>rule controls all outgoing connections from the host. A <span class="s1">rule </span>specifies what to do with a packet that matches: <span class="s1">Accept</span>, let</p>
+<p class="p1">the packet pass; <span class="s1">Drop</span>, discharge the packet; <span class="s1">Queue</span>, pass the packet to the user space; or <span class="s1">Return</span>, stop</p>
+<p class="p1">traversing this chain and resume processing at the head of the next chain. For complete information on</p>
+<p class="p3"><span class="s5">the </span><span class="s6">iptables</span><span class="s5">, see </span>http://linux.die.net/man/8/iptables<span class="s5">.</span></p>
+<p class="p1">To get the status of the firewall, specify the L (List) action of the <span class="s1">iptables </span>command:</p>
+<p class="p4">sudo iptables -L</p>
+<p class="p1">As a result of this command the status of the <span class="s1">INPUT, FORWARD, </span>and <span class="s1">OUTPUT </span>chains will be displayed.</p>
+<p class="p1">To change the default behavior for the entire chain, specify the action P (Policy), the chain name,</p>
+<p class="p1">and the target name; e.g., to allow all outgoing traffic to pass unfiltered, use</p>
+<p class="p4">sudo iptables -P OUTPUT ACCEPT <span class="s2">s</span></p>
+<p class="p1">To add a new security rule, specify: the action, A (add), the chain, the transport protocol, TCP or UDP,</p>
+<p class="p1">and the target ports, as in:</p>
+<p class="p4">sudo iptables -A INPUT -p -tcp -dport ssh -j ACCEPT</p>
+<p class="p4">sudo iptables -A OUTPUT -p -udp -dport 4321 -j ACCEPT</p>
+<p class="p4">sudo iptables -A FORWARD -p -tcp -dport 80 -j DROP</p>
+<p class="p1">To delete a specific security rule from a chain, set the action D (Delete) and specify the chain name</p>
+<p class="p1">and the rule number for that chain. The top rule in a chain has number 1:</p>
+<p class="p4">sudo iptables -D INPUT 1</p>
+<p class="p4">sudo iptables -D OUTPUT 1</p>
+<p class="p4">sudo iptables -D FORWARD 1</p>
+<p class="p1">By default, the <span class="s1">Linux </span>virtual machines on Amazon’s <span class="s1">EC2 </span>accept all incoming connections.</p>
+<p class="p1">The ability to access that virtual machine will be permanently lost when a user accesses an <span class="s1">EC2</span></p>
+<p class="p1">virtual machine using <span class="s1">ssh </span>and then issues the following command:</p>
+<p class="p4">sudo iptables -P INPUT DROP.</p>
+<p class="p1">The access to the <span class="s1">Windows 7 </span>firewall is provided by a GUI accessed as follows:</p>
+<p class="p4">Control Panel -&gt; System &amp; Security -&gt; Windows Firewall -&gt; Advanced</p>
+<p class="p4">Settings</p>
+<p class="p1">The default behavior for incoming and/or outgoing connections can be displayed and changed from</p>
+<p class="p2"><span class="s2">the window </span>Windows Firewall with Advanced Security on Local Computer<span class="s2">.</span></p>
+<p class="p1">Access to the <span class="s1">Windows XP </span>firewall is provided by a graphical user interface (GUI) accessed by</p>
+<p class="p1">selecting <span class="s1">Windows Firewall </span>in the <span class="s1">Control Panel</span>. If the status is <span class="s1">ON</span>, incoming traffic is blocked by</p>
+<p class="p1">default and a list of Exceptions (as noted on the <span class="s1">Exceptions </span>tab) defines the connections allowed. The</p>
+<p class="p1">user can only define exceptions for TCP on a given port, UDP on a given port, and a specific program.</p>
+<p class="p1"><span class="s1">Windows XP </span>does not provide any control over outgoing connections.</p>
+<p class="p1">Antivirus software running on a local host may provide an additional line of defense. For example,</p>
+<p class="p1">the <span class="s1">Avast </span>antivirus software (see <span class="s7">www.avast.com</span>) supports several real-time shields. The <span class="s1">Avast network shield </span>monitors all incoming traffic; it also blocks access to known malicious Web sites. The</p>
+<p class="p1"><span class="s1">Avast Web shield </span>scans the HTTP traffic and monitors all Web browsing activities. The antivirus also</p>
+<p class="p1">provides statistics related to its monitoring activities.</p>
+</body>
+</html>

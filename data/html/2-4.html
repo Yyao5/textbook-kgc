@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 6.0px Helvetica}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 6.0px Times}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times}
+    span.s3 {font: 7.5px Helvetica}
+    span.s4 {font: 10.0px Times}
+    span.s5 {color: #000066}
+    span.s6 {font: 6.0px Times}
+    span.s7 {font: 6.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">To understand the important properties of distributed systems, we use a model, an abstraction based on</p>
+<p class="p1">two critical components: processes and communication channels. A <span class="s1">process </span>is a program in execution,</p>
+<p class="p1">and a <span class="s1">thread </span>is a lightweight process. A thread of execution is the smallest unit of processing that can</p>
+<p class="p1">be scheduled by an operating system.</p>
+<p class="p1">A process is characterized by its <span class="s1">state</span>; the state is the ensemble of information we need to restart</p>
+<p class="p1">a process after it was suspended. An <span class="s1">event </span>is a change of state of a process. The events affecting the</p>
+<p class="p1">state of process <span class="s1">p</span><span class="s2">1 </span>are numbered sequentially as <span class="s1">e</span><span class="s2">1</span></p>
+<p class="p2"><span class="s3">i </span>, e<span class="s2">2</span></p>
+<p class="p2"><span class="s3">i </span>, e<span class="s2">3</span></p>
+<p class="p2"><span class="s3">i </span>, . . .<span class="s4">, as shown in the </span>space-time diagram <span class="s4">in</span></p>
+<p class="p1">Figure <span class="s5">2.1</span>(a). A process <span class="s1">p</span><span class="s2">1 </span>is in state <span class="s1">σ</span></p>
+<p class="p3">j</p>
+<p class="p1"><span class="s3">i </span>immediately after the occurrence of event <span class="s1">e </span><span class="s3">j</span></p>
+<p class="p1"><span class="s3">i </span>and remains in</p>
+<p class="p1">that state until the occurrence of the next event, <span class="s1">e </span><span class="s3">j+</span><span class="s2">1</span></p>
+<p class="p3">i <span class="s4">.</span></p>
+<p class="p1">A <span class="s1">process group </span>is a collection of cooperating processes; these processes work in concert and</p>
+<p class="p1">communicate with one another to reach a common goal. For example, a parallel algorithm to solve</p>
+<p class="p1">a system of partial differential equations (PDEs) over a domain <span class="s1">D </span>may partition the data in several</p>
+<p class="p1">segments and assign each segment to one of the members of the process group. The processes in the</p>
+<p class="p1">group must cooperate with one another and iterate until the common boundary values computed by one</p>
+<p class="p1">process agree with the common boundary values computed by another.</p>
+<p class="p1">A <span class="s1">communication channel </span>provides the means for processes or threads to communicate with one</p>
+<p class="p1">another and coordinate their actions by exchanging messages.Without loss of generality,we assume that</p>
+<p class="p1">communication among processes is done only by means of <span class="s1">send (m) </span>and <span class="s1">receive (m) </span>communication</p>
+<p class="p1">events, where <span class="s1">m </span>is a message.We use the term <span class="s1">message </span>for a structured unit of information, which can</p>
+<p class="p1">be interpreted only in a semantic context by the sender and the receiver. The <span class="s1">state of a communication</span></p>
+<p class="p1"><span class="s1">channel </span>is defined as follows: Given two processes <span class="s1">p</span><span class="s3">i </span>and <span class="s1">p </span><span class="s3">j </span>, the state of the channel, <span class="s1">ξ</span><span class="s3">i , j</span>, from <span class="s1">p</span><span class="s3">i </span>to</p>
+<p class="p1"><span class="s1">p </span><span class="s3">j </span>consists of messages sent by <span class="s1">p</span><span class="s3">i </span>but not yet received by <span class="s1">p </span><span class="s3">j </span>.</p>
+<p class="p1">These two abstractions allow us to concentrate on critical properties of distributed systems without</p>
+<p class="p1">the need to discuss the detailed physical properties of the entities involved. Themodel presented is based</p>
+<p class="p1">on the assumption that a channel is a unidirectional bit pipe of infinite bandwidth and zero latency, but</p>
+<p class="p1">unreliable; messages sent through a channel may be lost or distorted or the channel may fail, losing its</p>
+<p class="p1">ability to deliver messages.We also assume that the time a process needs to traverse a set of states is of</p>
+<p class="p1">no concern and that processes may fail or be aborted.</p>
+<p class="p1">A <span class="s1">protocol </span>is a finite set of messages exchanged among processes to help them coordinate their</p>
+<p class="p1">actions. Figure <span class="s5">2.1</span>(c) illustrates the case when communication events are dominant in the local history</p>
+<p class="p1">of processes, <span class="s1">p</span><span class="s2">1</span><span class="s1">, p</span><span class="s2">2</span>, and <span class="s1">p</span><span class="s2">3</span>. In this case only <span class="s1">e</span><span class="s2">5</span></p>
+<p class="p1"><span class="s2">1 </span>is a local event; all others are communication events.</p>
+<p class="p1">The particular protocol illustrated in Figure <span class="s5">2.1</span>(c) requires processes <span class="s1">p</span><span class="s2">2 </span>and <span class="s1">p</span><span class="s2">3 </span>to send messages to</p>
+<p class="p1">the other processes in response to a message from process <span class="s1">p</span><span class="s2">1</span>.</p>
+<p class="p1">The informal definition of the state of a single process can be extended to collections of communicating</p>
+<p class="p1">processes. The <span class="s1">global state of a distributed system </span>consisting of several processes and communication</p>
+<p class="p1">channels is the union of the states of the individual processes and channels [<span class="s5">34</span>].</p>
+<p class="p1">Call <span class="s1">h </span><span class="s3">j</span></p>
+<p class="p1"><span class="s3">i </span>the history of process <span class="s1">p</span><span class="s3">i </span>up to and including its <span class="s1">j </span>-th event, <span class="s1">e </span><span class="s3">j</span></p>
+<p class="p1"><span class="s3">i </span>, and call <span class="s1">σ</span></p>
+<p class="p3">j</p>
+<p class="p1"><span class="s3">i </span>the local state</p>
+<p class="p1">of process <span class="s1">p</span><span class="s3">i </span>following event <span class="s1">e </span><span class="s3">j</span></p>
+<p class="p1"><span class="s3">i </span>. Consider a system consisting of <span class="s1">n </span>processes, <span class="s1">p</span><span class="s2">1</span><span class="s1">, p</span><span class="s2">2</span><span class="s1">, . . . , p</span><span class="s3">i </span><span class="s1">, . . . , p</span><span class="s3">n</span></p>
+<p class="p1">with <span class="s1">σ</span></p>
+<p class="p4"><span class="s3">j</span>i</p>
+<p class="p1"><span class="s3">i </span>the local state of process <span class="s1">p</span><span class="s3">i </span>; then the global state of the system is an <span class="s1">n</span>-tuple of local states</p>
+<p class="p3"><span class="s1"> </span>( j<span class="s6">1</span>, j<span class="s6">2</span>,..., j<span class="s7">n </span>) <span class="s1">=</span></p>
+<p class="p2"> </p>
+<p class="p2">σ</p>
+<p class="p5"><span class="s3">j</span>1</p>
+<p class="p2"><span class="s2">1 </span>, σ</p>
+<p class="p5"><span class="s3">j</span>2</p>
+<p class="p2"><span class="s2">2 </span>, . . . , σ</p>
+<p class="p4"><span class="s3">j</span>i</p>
+<p class="p2"><span class="s3">i </span>, . . . , σ</p>
+<p class="p4"><span class="s3">j</span>n</p>
+<p class="p3">n</p>
+<p class="p2"> </p>
+<p class="p1"><span class="s1">. </span>(2.10)</p>
+<p class="p1">The state of the channels does not appear explicitly in this definition of the global state because the</p>
+<p class="p1">state of the channels is encoded as part of the local state of the processes communicating through the</p>
+<p class="p1">channels.</p>
+<p class="p1">The global states of a distributed computation with <span class="s1">n </span>processes form an <span class="s1">n</span>-dimensional lattice. The</p>
+<p class="p1">elements of this lattice are global states <span class="s1"> </span><span class="s3">( j</span><span class="s6">1</span><span class="s3">, j</span><span class="s6">2</span><span class="s3">,..., j</span><span class="s7">n </span><span class="s3">)</span></p>
+<p class="p2"> </p>
+<p class="p2">σ</p>
+<p class="p5"><span class="s3">j</span>1</p>
+<p class="p2"><span class="s2">1 </span>, σ</p>
+<p class="p5"><span class="s3">j</span>2</p>
+<p class="p2"><span class="s2">2 </span>, . . . , σ</p>
+<p class="p4"><span class="s3">j</span>n</p>
+<p class="p3">n</p>
+<p class="p2"> </p>
+<p class="p1">.</p>
+<p class="p1">Figure <span class="s5">2.2</span>(a) shows the lattice of global states of the distributed computation in Figure <span class="s5">2.2</span>(b) This</p>
+<p class="p1">is a two-dimensional lattice because we have two processes, <span class="s1">p</span><span class="s2">1 </span>and <span class="s1">p</span><span class="s2">2</span>. The lattice of global states for</p>
+<p class="p1">the distributed computation in Figure <span class="s5">2.1</span>(c) is a three-dimensional lattice, and the computation consists</p>
+<p class="p1">of three concurrent processes, <span class="s1">p</span><span class="s2">1</span><span class="s1">, p</span><span class="s2">2</span>, and <span class="s1">p</span><span class="s2">3</span>.</p>
+<p class="p1">The initial state of the system in Figure <span class="s5">2.2</span>(b) is the state before the occurrence of any event and it is</p>
+<p class="p1">denoted by<span class="s1"> </span><span class="s3">(</span><span class="s2">0</span><span class="s3">,</span><span class="s2">0</span><span class="s3">)</span>; the only global states reachable from<span class="s1"> </span><span class="s3">(</span><span class="s2">0</span><span class="s3">,</span><span class="s2">0</span><span class="s3">) </span>are<span class="s1"> </span><span class="s3">(</span><span class="s2">1</span><span class="s3">,</span><span class="s2">0</span><span class="s3">) </span>and<span class="s1"> </span><span class="s3">(</span><span class="s2">0</span><span class="s3">,</span><span class="s2">1</span><span class="s3">)</span>. The communication</p>
+<p class="p1">events limit the global states the system may reach; in this example the system cannot reach the state</p>
+<p class="p1"><span class="s1"> </span><span class="s3">(</span><span class="s2">4</span><span class="s3">,</span><span class="s2">0</span><span class="s3">) </span>because process <span class="s1">p</span><span class="s2">1 </span>enters state <span class="s1">σ</span><span class="s2">4 </span>only after process <span class="s1">p</span><span class="s2">2 </span>has entered the state <span class="s1">σ</span><span class="s2">1</span>. Figure <span class="s5">2.2</span>(b)</p>
+<p class="p1">shows the six possible sequences of events to reach the global state <span class="s1"> </span><span class="s3">(</span><span class="s2">2</span><span class="s3">,</span><span class="s2">2</span><span class="s3">)</span>:</p>
+<p class="p2"> </p>
+<p class="p6"><span class="s1">e</span>1</p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">2</span></p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">1</span></p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">2</span></p>
+<p class="p6">2</p>
+<p class="p2"> </p>
+<p class="p2">,</p>
+<p class="p2"> </p>
+<p class="p6"><span class="s1">e</span>1</p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">1</span></p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">2</span></p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">2</span></p>
+<p class="p6">2</p>
+<p class="p2"> </p>
+<p class="p2">,</p>
+<p class="p2"> </p>
+<p class="p6"><span class="s1">e</span>1</p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">1</span></p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">2</span></p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">2</span></p>
+<p class="p6">1</p>
+<p class="p2"> </p>
+<p class="p2">,</p>
+<p class="p2"> </p>
+<p class="p6"><span class="s1">e</span>1</p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">2</span></p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">1</span></p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">2</span></p>
+<p class="p6">1</p>
+<p class="p2"> </p>
+<p class="p2">,</p>
+<p class="p2"> </p>
+<p class="p6"><span class="s1">e</span>1</p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">1</span></p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">2</span></p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">2</span></p>
+<p class="p6">2</p>
+<p class="p2"> </p>
+<p class="p2">,</p>
+<p class="p2"> </p>
+<p class="p6"><span class="s1">e</span>1</p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">1</span></p>
+<p class="p2"><span class="s2">1</span>, e<span class="s2">2</span></p>
+<p class="p2"><span class="s2">2</span>, e<span class="s2">2</span></p>
+<p class="p6">1</p>
+<p class="p2"> </p>
+<p class="p2">.</p>
+<p class="p1">(2.11)</p>
+<p class="p1">An interesting question is how many paths does it take to reach a global state. The more paths exist,</p>
+<p class="p1">the harder it is to identify the events leading to a state when we observe an undesirable behavior of the</p>
+<p class="p1">system. A large number of paths increases the difficulty of debugging the system.</p>
+<p class="p1">We conjecture that in the case of two threads in Figure <span class="s5">2.2</span>(b) the number of paths from the global</p>
+<p class="p1">state <span class="s1"> </span><span class="s3">(</span><span class="s2">0</span><span class="s3">,</span><span class="s2">0</span><span class="s3">) </span>to <span class="s1"> </span><span class="s3">(m,n) </span>is</p>
+<p class="p3"><span class="s1">N</span>(m,n)</p>
+<p class="p3">p</p>
+<p class="p2">= (m + n)!</p>
+<p class="p2">m!n! . <span class="s4">(2.12)</span></p>
+<p class="p1">We have already seen that there are six paths leading to state <span class="s1"> </span><span class="s3">(</span><span class="s2">2</span><span class="s3">,</span><span class="s2">2</span><span class="s3">)</span>; indeed,</p>
+<p class="p3"><span class="s1">N</span>(<span class="s2">2</span>,<span class="s2">2</span>)</p>
+<p class="p3">p</p>
+<p class="p2">= (<span class="s4">2 </span>+ <span class="s4">2</span>)!</p>
+<p class="p2"><span class="s4">2</span>!<span class="s4">2</span>!</p>
+<p class="p1"><span class="s1">= </span>24</p>
+<p class="p1">4</p>
+<p class="p1"><span class="s1">= </span>6<span class="s1">. </span>(2.13)</p>
+<p class="p1">To prove Equation <span class="s5">2.12 </span>we use a method resembling induction; we notice first that the global state</p>
+<p class="p1"><span class="s1"> </span><span class="s3">(</span><span class="s2">1</span><span class="s3">,</span><span class="s2">1</span><span class="s3">) </span>can only be reached from the states <span class="s1"> </span><span class="s3">(</span><span class="s2">1</span><span class="s3">,</span><span class="s2">0</span><span class="s3">) </span>and <span class="s1"> </span><span class="s3">(</span><span class="s2">0</span><span class="s3">,</span><span class="s2">1</span><span class="s3">) </span>and that <span class="s1">N</span><span class="s3">(</span><span class="s2">1</span><span class="s3">,</span><span class="s2">1</span><span class="s3">)</span></p>
+<p class="p1"><span class="s3">p </span><span class="s1">= (</span>2<span class="s1">)!/</span>1<span class="s1">!</span>1<span class="s1">! = </span>2. Thus, the</p>
+<p class="p1">formula is true for <span class="s1">m = n = </span>1. Then we show that if the formula is true for the <span class="s1">(m − </span>1<span class="s1">, n − </span>1<span class="s1">) </span>case it</p>
+<p class="p1">will also be true for the <span class="s1">(m, n) </span>case. If our conjecture is true, then</p>
+<p class="p3"><span class="s1">N</span>[(m−<span class="s2">1</span>),n]</p>
+<p class="p3">p</p>
+<p class="p2">=</p>
+<p class="p2">[(m − <span class="s4">1</span>) + n]!</p>
+<p class="p2">(m − <span class="s4">1</span>)!n! . <span class="s4">(2.14)</span></p>
+<p class="p1">and</p>
+<p class="p3"><span class="s1">N</span>[m,(n−<span class="s2">1</span>)]</p>
+<p class="p3">p</p>
+<p class="p2">=</p>
+<p class="p2">[m + (n − <span class="s4">1</span>)]!</p>
+<p class="p2">m!(n − <span class="s4">1</span>)! . <span class="s4">(2.15)</span></p>
+<p class="p1">We observe that the global state <span class="s1"> </span><span class="s3">(m,n)</span><span class="s1">, ∀(m, n)   </span>1 can only be reached from two states, <span class="s1"> </span><span class="s3">(m−</span><span class="s2">1</span><span class="s3">,n)</span></p>
+<p class="p1">and <span class="s1"> </span><span class="s3">(m,n−</span><span class="s2">1</span><span class="s3">) </span>(see Figure <span class="s5">2.3</span>), thus:</p>
+<p class="p3"><span class="s1">N</span>(m,n)</p>
+<p class="p3">p</p>
+<p class="p3"><span class="s1">= N</span>(m−<span class="s2">1</span>,n)</p>
+<p class="p3">p</p>
+<p class="p3"><span class="s1">+ N</span>(m,n−<span class="s2">1</span>)</p>
+<p class="p1"><span class="s3">p </span><span class="s1">. </span>(2.16)</p>
+<p class="p1">It is easy to see that indeed,</p>
+<p class="p2">[(m − <span class="s4">1</span>) + n]!</p>
+<p class="p2">(m − <span class="s4">1</span>)!n!</p>
+<p class="p2">+</p>
+<p class="p2">[m + (n − <span class="s4">1</span>)]!</p>
+<p class="p2">m!(n − <span class="s4">1</span>)!</p>
+<p class="p2">= (m + n − <span class="s4">1</span>)!</p>
+<p class="p2"> </p>
+<p class="p1">1</p>
+<p class="p2">(m − <span class="s4">1</span>)!n!</p>
+<p class="p2">+ <span class="s4">1</span></p>
+<p class="p2">m!(n − <span class="s4">1</span>)!</p>
+<p class="p2"> </p>
+<p class="p2">= (m + n)!</p>
+<p class="p2">m!n! .</p>
+<p class="p1">(2.17)</p>
+<p class="p1">This shows that our conjecture is true; thus, Equation <span class="s5">2.12 </span>gives the number of paths to reach the global</p>
+<p class="p1">state <span class="s1"> </span><span class="s3">(m,n) </span>from <span class="s1"> </span><span class="s3">(</span><span class="s2">0</span><span class="s3">,</span><span class="s2">0</span><span class="s3">) </span>when two threads are involved. This expression can be generalized for the case</p>
+<p class="p1">of <span class="s1">q </span>threads; using the same strategy, it is easy to see that the number of path from the state <span class="s1"> </span><span class="s3">(</span><span class="s2">0</span><span class="s3">,</span><span class="s2">0</span><span class="s3">,...,</span><span class="s2">0</span><span class="s3">)</span></p>
+<p class="p1">to the global state <span class="s1"> </span><span class="s3">(n</span><span class="s6">1</span><span class="s3">,n</span><span class="s6">2</span><span class="s3">,...,n</span><span class="s7">q </span><span class="s3">) </span>is</p>
+<p class="p3"><span class="s1">N</span>(n<span class="s6">1</span>,n<span class="s6">2</span>,...,n<span class="s7">q </span>)</p>
+<p class="p2"><span class="s3">p </span>= (n<span class="s2">1 </span>+ n<span class="s2">2 </span>+     +n<span class="s3">q </span>)!</p>
+<p class="p2">n<span class="s2">1</span>!n<span class="s2">2</span>! . . . n<span class="s3">q </span>! . <span class="s4">(2.18)</span></p>
+<p class="p1">Indeed, it is easy to see that</p>
+<p class="p3"><span class="s1">N</span>(n<span class="s6">1</span>,n<span class="s6">2</span>,...,n<span class="s7">q </span>)</p>
+<p class="p3">p <span class="s1">= N</span>(n<span class="s6">1</span>−<span class="s2">1</span>,n<span class="s6">2</span>,...,n<span class="s7">q </span>)</p>
+<p class="p3">p <span class="s1">+ N</span>(n<span class="s6">1</span>,n<span class="s6">2</span>−<span class="s2">1</span>,...,n<span class="s7">q </span>)</p>
+<p class="p3">p <span class="s1">+     + N</span>(n<span class="s6">1</span>,n<span class="s6">2</span>,...,n<span class="s7">q</span>−<span class="s2">1</span>)</p>
+<p class="p1"><span class="s3">p </span><span class="s1">. </span>(2.19)</p>
+<p class="p1">Equation <span class="s5">2.18 </span>gives us an indication of how difficult it is to debug a system with a large number of</p>
+<p class="p1">concurrent threads.</p>
+<p class="p1">Many problems in distributed systems are instances of the <span class="s1">global predicate evaluation problem</span></p>
+<p class="p1">(GPE), where the goal is to evaluate a Boolean expression whose elements are functions of the global</p>
+<p class="p1">state of the system.</p>
+</body>
+</html>

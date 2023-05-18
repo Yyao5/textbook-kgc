@@ -1,0 +1,59 @@
+,source,edge,target
+0,we,discuss,data streaming
+1,other data applications,require,high time rate
+2,enough  data,have,noticeable  time
+5,when data streaming,involves,multimedia
+6,case,originate from,collection iCloud system
+8,streaming,involves,three  entities
+9,resources,include CPU,necessary buffer sender
+10,streaming,determines,available data resources
+11,rates,imply lower,lower  quality
+12,rates,reduce,system resources
+14,streaming,requires accurate,accurate  resources
+15,memory timing,coordinated with,constraints
+17,same scheduling algorithms,coordinated with,memory management
+18,additional data flow,poses additional,additional  constraints
+19,audio data we,have,lower quality audio
+21,network,accommodate,data
+24,conversion,done on,fly
+25,data flow,has,cloud
+27,Accommodating,flows,dynamic  data
+28,18  %,use adaptive,ABR bit 336
+29,application,stores,audio EC2 platform
+31,private  instance,specifies,available  hour
+33,EC2,allows,virtual user facility
+34,EC2,distributes,balancing application facility
+35,EC2,associates,elastic  IP
+36,user,allows,public software support team
+39,streaming,involves,objective optimization problem
+41,same  we,want,mobile transmission jitter
+44,Finally  we,want,content delivery
+47,conversion,completed,MP3 format
+48,converted music file,saved for later,later  use
+50,lower quality files,experimented with,16  Kbps
+51,which,require,320 Kbps data rate
+52,pipelining data that,is small,processing cloud
+53,limited  justification,makes,future
+58,alternatives,1,mind
+59,service,requests,eventually data file
+62,solution,involves multiple,far  optimal
+63,solution,reduces,audio  streaming
+65,bit rate bit file,performed,LAME library
+66,time,depends on,original  file
+67,when source MP3 files,Tables,320  Kbps
+68,sizes,shown,input files
+69,EC2 t1.micro server,reported,measurements
+70,instances,run,Linux operating system
+71,server,exhibit,wide conversion times
+73,when  we,observed for,128  Kbps
+74,when  we,convert from,320
+75,Figure,shows,average conversion Tables
+76,Figure,shows,average conversion Tables
+77,considerably conversion Figure,presents,average conversion time
+78,when  instance,show,considerably EC2 c1.medium conversion
+80,we,took,streaming AWS EC2 service
+81,t1.micro,supports,transaction processing systems
+82,Store,provides,block level storage
+84,instances,support,relatively CPU cycles
+85,thus  measurements,be,EC2 c1.medium platform
+86,measurements,show consistent,considerably EC2 c1.medium conversion

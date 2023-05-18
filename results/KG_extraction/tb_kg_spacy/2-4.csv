@@ -1,0 +1,43 @@
+,source,edge,target
+1,we,use,critical  components
+5,events,numbered,sequentially e1 i
+9,cooperating processes,work in,common  goal
+12,boundary  values,cooperate with,boundary  another
+13,boundary  values,agree,one  process
+14,processes,provides,processes threads messages
+16,where communication m,assume,m communication events
+17,communication,done,only  send
+19,structured term which,use,semantic  sender
+22,j,consists of,yet p j
+23,us,allow,physical  entities
+24,us,concentrate on critical,distributed  systems
+25,channel,based,infinite bit bandwidth
+26,messages,lost,channel
+27,channel,fail,channel messages
+28,processes,assume,concern
+30,when communication events,illustrates,local  processes
+31,protocol,illustrated in,Figure
+34,definition,extended to,single communicating processes
+37,global  state,appear,local  channels
+38,state,encoded,channels
+39,states,form,dimensional  lattice
+40,Figure,shows,distributed  Figure
+41,we,have,two
+42,computation,consists,concurrent  processes
+44,events,limit,global
+45,process p1,reach,p2 state state
+46,process p1,enters,only state process
+48,Figure,shows,global  state
+51,when  we,observe,undesirable
+52,number,increases,system
+53,We,conjecture,two  Figure
+54,We,seen,six  state
+57,we,use,a
+58,global  state,notice,only  states
+59,global  state,reached from,only  states
+60,1  it,show,m  case
+61,n  1,observe,two  states
+62,1,reached from,two  states
+66,two  threads,gives,"n  0,0"
+71,how  it,gives,concurrent  threads
+72,Boolean  elements,are,global  system

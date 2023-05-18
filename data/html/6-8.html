@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Helvetica}
+    span.s4 {font: 7.5px Times}
+    span.s5 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Scheduling is a critical component of cloud resource management. Scheduling is responsible for resource</p>
+<p class="p1">sharing/multiplexing at several levels. A server can be shared among several virtual machines, each virtual</p>
+<p class="p1">machine could support several applications, and each application may consist of multiple threads.</p>
+<p class="p1">CPU scheduling supports the virtualization of a processor, the individual threads acting as virtual processors;</p>
+<p class="p1">a communication link can be multiplexed among a number of virtual channels, one for each flow.</p>
+<p class="p1">In addition to the requirement to meet its design objectives, a scheduling algorithm should be efficient,</p>
+<p class="p1">fair, and starvation-free. The objectives of a scheduler for a batch system are to maximize the throughput</p>
+<p class="p1">(the number of jobs completed in one unit of time, e.g., in one hour) and to minimize the turnaround</p>
+<p class="p1">time (the time between job submission and its completion). For a real-time system the objectives are to</p>
+<p class="p1">meet the deadlines and to be predictable. Schedulers for systems supporting a mix of tasks – some with</p>
+<p class="p1">hard real-time constraints, others with soft, or no timing constraints – are often subject to contradictory</p>
+<p class="p1">requirements. Some schedulers are <span class="s1">preemptive</span>, allowing a high-priority task to interrupt the execution</p>
+<p class="p1">of a lower-priority one; others are <span class="s1">nonpreemptive</span>.</p>
+<p class="p1">Two distinct dimensions of resource management must be addressed by a scheduling policy: (a) the</p>
+<p class="p1">amount or quantity of resources allocated and (b) the timing when access to resources is granted.</p>
+<p class="p1">Figure <span class="s2">6.7 </span>identifies several broad classes of resource allocation requirements in the space defined by</p>
+<p class="p1">these two dimensions: best-effort, soft requirements, and hard requirements. Hard-real time systems are</p>
+<p class="p1">the most challenging because they require strict timing and precise amounts of resources.</p>
+<p class="p1">There are multiple definitions of a fair scheduling algorithm. First, we discuss the <span class="s1">max-min fairness</span></p>
+<p class="p1"><span class="s1">criterion </span>[<span class="s2">128</span>]. Consider a resource with bandwidth <span class="s1">B </span>shared among <span class="s1">n </span>users who have equal rights.</p>
+<p class="p1">Each user requests an amount <span class="s1">b</span><span class="s3">i </span>and receives <span class="s1">B</span><span class="s3">i </span>. Then, according to the max-min criterion, the following</p>
+<p class="p1">conditions must be satisfied by a fair allocation:</p>
+<p class="p1"><span class="s1">C</span><span class="s4">1</span><span class="s1">. </span>The amount received by any user is not larger than the amount requested, <span class="s1">B</span><span class="s3">i </span><span class="s1">  b</span><span class="s3">i </span>.</p>
+<p class="p1"><span class="s1">C</span><span class="s4">2</span><span class="s1">. </span>If the minimum allocation of any user is <span class="s1">B</span><span class="s3">min </span>no allocation satisfying condition <span class="s1">C</span><span class="s4">1 </span>has a higher</p>
+<p class="p1"><span class="s1">B</span><span class="s3">min </span>than the current allocation.</p>
+<p class="p1"><span class="s1">C</span><span class="s4">3</span><span class="s1">. </span>When we remove the user receiving the minimum allocation <span class="s1">B</span><span class="s3">min </span>and then reduce the total amount</p>
+<p class="p1">of the resource available from <span class="s1">B </span>to <span class="s1">(B − B</span><span class="s3">min</span><span class="s1">)</span>, the condition <span class="s1">C</span><span class="s4">2 </span>remains recursively true.</p>
+<p class="p1">A fairness criterion for CPU scheduling [<span class="s2">142</span>] requires that the amount of work in the time interval</p>
+<p class="p1">from <span class="s1">t</span><span class="s4">1 </span>to <span class="s1">t</span><span class="s4">2 </span>of two runnable threads <span class="s1">a </span>and <span class="s1">b</span>, <span class="s1"> </span><span class="s3">a</span><span class="s1">(t</span><span class="s4">1</span><span class="s1">, t</span><span class="s4">2</span><span class="s1">) </span>and <span class="s1"> </span><span class="s3">b</span><span class="s1">(t</span><span class="s4">1</span><span class="s1">, t</span><span class="s4">2</span><span class="s1">)</span>, respectively, minimize the</p>
+<p class="p1">expression <span class="s1">    </span></p>
+<p class="p2"> <span class="s3">a</span>(t<span class="s4">1</span>, t<span class="s4">2</span>)</p>
+<p class="p3"><span class="s1">w</span>a</p>
+<p class="p2">−  <span class="s3">b</span>(t<span class="s4">1</span>, t<span class="s4">2</span>)</p>
+<p class="p3"><span class="s1">w</span>b</p>
+<p class="p2">    </p>
+<p class="p1"><span class="s1">, </span>(6.27)</p>
+<p class="p1">where <span class="s1">w</span><span class="s3">a </span>and <span class="s1">w</span><span class="s3">b </span>are the weights of the threads <span class="s1">a </span>and <span class="s1">b</span>, respectively.</p>
+<p class="p1">The quality-of-service (QoS) requirements differ for different classes of cloud applications and</p>
+<p class="p1">demand different scheduling policies. Best-effort applications such as batch applications and analytics<span class="s5">7</span></p>
+<p class="p1">do not require QoS guarantees. Multimedia applications such as audio and video streaming have soft</p>
+<p class="p1">real-time constraints and require statistically guaranteed maximum delay and throughput. Applications</p>
+<p class="p1">with hard real-time constraints do not use a public cloud at this time but may do so in the future.</p>
+<p class="p1">Round-robin, FCFS, shortest-job-first (SJF), and priority algorithms are among the most common</p>
+<p class="p1">scheduling algorithms for best-effort applications. Each thread is given control of the CPU for a definite</p>
+<p class="p1">period of time, called a <span class="s1">time-slice</span>, in a circular fashion in the case of round-robin scheduling. The</p>
+<p class="p1">algorithm is fair and starvation-free. The threads are allowed to use the CPU in the order in which they</p>
+<p class="p1">arrive in the case of the FCFS algorithms and in the order of their running time in the case of SJF</p>
+<p class="p1">algorithms. Earliest deadline first (EDF) and rate monotonic algorithms (RMA) are used for real-time</p>
+<p class="p1">applications. Integration of scheduling for the three classes of application is discussed in [<span class="s2">56</span>], and two new algorithms for integrated scheduling, resource allocation/dispatching (RAD) and rate-based earliest</p>
+<p class="p1">deadline (RBED) are proposed.</p>
+<p class="p1">Next we discuss several algorithms of special interest for computer clouds. These algorithms illustrate</p>
+<p class="p1">the evolution in thinking regarding the fairness of scheduling and the need to accommodate multiobjective</p>
+<p class="p1">scheduling – in particular, scheduling for multimedia applications.</p>
+</body>
+</html>

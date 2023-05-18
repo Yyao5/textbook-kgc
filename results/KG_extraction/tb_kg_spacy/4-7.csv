@@ -1,0 +1,31 @@
+,source,edge,target
+1,We,use,cloud computing
+3,regular  that,allows,Web
+6,large  that,performs,regular  expression
+10,ofmultiple controller that,initiate,billing records
+12,when acrossmultiple processing,uses,final  result
+15,details,captured in,following  steps
+19,when thread input message,polls,required parses actions
+22,then launch message,enqueued in,launch queue
+23,thread,picks,message
+24,then  message,updates,Simple DB domain
+25,Finally  message,enqueues,launch queue
+27,phase,consists of,following  steps
+28,task,starts,Amazon EC2 instances
+29,task,uses,Java Runtime
+32,Hadoop,runs,EC2 slave parallel
+33,task,takes,five match matches
+36,Then  combine,reduce,task output
+37,results,stored on,output bucket
+38,thread,retrieves,status themonitor task
+40,error,updates,Amazon billing queues
+41,when monitor processing,deletes,monitor queue
+43,shutdown which,retrieves,Amazon Simple DB domain
+44,Finally  status,deletes,shutdown queue
+45,phase,consists of,following  steps
+46,task,kills,Amazon Simple infrastructure
+48,task,gets,Simple billing service
+52,GetStatus,applied to,filtered Amazon completion
+56,multiple  files,bundled,S3 objects
+59,multiple fetch threads,started in,objects
+60,infrastructure,illustrates,users

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 10.0px Courier; color: #000066}
+    span.s5 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">Cloud computing is based on the client-server paradigm discussed in Section 2.13. The vast majority</p>
+<p class="p1">of cloud applications take advantage of request/response communication between clients and stateless</p>
+<p class="p1">servers. A <span class="s1">stateless server </span>does not require a client to first establish a connection to the server. Instead,</p>
+<p class="p1">it views a client request as an independent transaction and responds to it.</p>
+<p class="p1">The advantages of stateless servers are obvious. Recovering from a server failure requires considerable</p>
+<p class="p1">overhead for a server that maintains the state of all its connections, whereas in the case of a stateless server a client is not affected while a server goes down and then comes back up between two</p>
+<p class="p1">consecutive requests. A stateless system is simpler, more robust, and scalable. A client does not have</p>
+<p class="p1">to be concerned with the state of the server. If the client receives a response to a request, that means</p>
+<p class="p1">that the server is up and running; if not, it should resend the request later. A connection-based service</p>
+<p class="p1">must reserve spaces to maintain the state of each connection with a client; therefore, such a system is</p>
+<p class="p1">not scalable, and the number of clients a server could interact with at any given time is limited by the</p>
+<p class="p1">storage space available to the server.</p>
+<p class="p1">For example, a basic Web server is stateless; it responds to an HTTP request without maintaining a</p>
+<p class="p1">history of past interactions with the client. The client, a browser, is also stateless since it sends requests</p>
+<p class="p1">and waits for responses.The <span class="s1">Hypertext TransferProtocol (HTTP) </span>used by a browser to communicate with</p>
+<p class="p1">the Web server is a request/response application protocol. <span class="s1">HTTP </span>uses the <span class="s1">Transport Control Protocol</span></p>
+<p class="p1"><span class="s1">(TCP)</span>, a connection-oriented and reliable transport protocol. The use of <span class="s1">TCP </span>ensures reliable delivery</p>
+<p class="p1">of large objects but exposes the Web servers to denial-of-service attacks when malicious clients fake</p>
+<p class="p1">attempts to establish a <span class="s1">TCP </span>connection and force the server to allocate space for the connection.</p>
+<p class="p1">A critical aspect of the development of networked applications is how processes and threads running</p>
+<p class="p1">on systems with different architectures and possibly compiled from different programming languages</p>
+<p class="p1">can <span class="s1">communicate structured information with one another</span>. First, the internal representation of the two</p>
+<p class="p1">structures at the two sites may be different. One system may use <span class="s1">Big-Endian </span>and the other <span class="s1">Little-Endian</span></p>
+<p class="p1">representation. The character representations may also be different. Second, a communication channel</p>
+<p class="p1">transmits a sequence of bits and bytes; thus, the data structure must be serialized at the sending site and</p>
+<p class="p1">reconstructed at the receiving site.</p>
+<p class="p1">Several other considerations must be analyzed before deciding on the architectural style of an application.</p>
+<p class="p1">The term <span class="s1">neutrality </span>refers to the ability of the application protocol to use different transport</p>
+<p class="p1">protocols such as <span class="s1">TCP </span>or <span class="s1">UDP </span>and, in general, to run on top of a different protocol stack. For example,</p>
+<p class="p1">we shall see that <span class="s1">SOAP </span>can use <span class="s1">TCP </span>but also <span class="s1">UDP</span>, <span class="s1">SMTP</span>,<span class="s2">3 </span>or <span class="s1">JMS</span><span class="s2">4 </span>as transport vehicles. <span class="s1">Extensibility</span></p>
+<p class="p1">refers to the ability to incorporate additional functions, such as security. <span class="s1">Independence </span>refers to the</p>
+<p class="p1">ability to accommodate different programming styles.</p>
+<p class="p1">Very often the application clients and the servers running on the cloud communicate using RPCs,</p>
+<p class="p1">discussed in Section 2.13, but other styles of communication are possible. RPC-based applications use</p>
+<p class="p1"><span class="s1">stubs </span>to convert the parameters involved in an RPC call. A stub performs two functions: marshalling the</p>
+<p class="p1">data structures and serialization. A more general concept is that of an <span class="s1">Object Request Broker </span>(ORB),</p>
+<p class="p1">the middleware that facilitates communication of networked applications. The ORB at the sending site</p>
+<p class="p1">transforms the data structures used internally by a sending process to a byte sequence and transmits</p>
+<p class="p1">this byte sequence over the network. The ORB at the receiving site maps the byte sequence to the data</p>
+<p class="p1">structures used internally by the receiving process.</p>
+<p class="p2"><span class="s3">The </span>CommonObject RequestBrokerArchitecture (CORBA)<span class="s3">was developed in the early 1990s to allow</span></p>
+<p class="p1">networked applications developed in different programming languages and running on systems with</p>
+<p class="p1">different architectures and system software to work with one another. At the heart of the system is the</p>
+<p class="p1"><span class="s1">Interface Definition Language (IDL)</span>, used to specify the interface of an object. The <span class="s1">IDL </span>representation is then mapped to the set of programming languages, including <span class="s1">C, C++, Java, Smalltalk, Ruby, LISP,</span></p>
+<p class="p1">and <span class="s1">Python</span>. Networked applications pass <span class="s1">CORBA </span>by reference and pass data by value.</p>
+<p class="p1">The <span class="s1">Simple Object Access Protocol </span>(SOAP) is an application protocol developed in 1998 for Web</p>
+<p class="p1">applications; its message format is based on the <span class="s1">Extensible Markup Language </span>(XML). <span class="s1">SOAP </span>uses</p>
+<p class="p1"><span class="s1">TCP </span>and, more recently, <span class="s1">UDP </span>transport protocols. It can also be stacked above other application layer</p>
+<p class="p1">protocols such as <span class="s1">HTTP, SMTP</span>, or <span class="s1">JMS</span>. The processing model of <span class="s1">SOAP </span>is based on a network consisting</p>
+<p class="p1">of senders, receivers, intermediaries, message originators, ultimate receivers, and message paths. <span class="s1">SOAP</span></p>
+<p class="p1">is an underlying layer of Web Services.</p>
+<p class="p2"><span class="s3">The </span>Web Services Description Language (WSDL) <span class="s3">(see </span><span class="s4">www.w3.org/TR/wsdl</span><span class="s3">) was introduced</span></p>
+<p class="p1">in 2001 as an XML-based grammar to describe communication between endpoints of a networked</p>
+<p class="p1">application. The abstract definition of the elements involved include <span class="s1">services</span>, collections of endpoints</p>
+<p class="p1">of communication; <span class="s1">types</span>, containers for data type definitions; <span class="s1">operations</span>, descriptions of actions supported</p>
+<p class="p1">by a service; <span class="s1">port types</span>, operations supported by endpoints; <span class="s1">bindings</span>, protocols and data formats</p>
+<p class="p1">supported by a particular port type; and <span class="s1">port</span>, an endpoint as a combination of a binding and a network</p>
+<p class="p1">address. These abstractions are mapped to concrete message formats and network protocols to define</p>
+<p class="p1">endpoints and services.</p>
+<p class="p1"><span class="s1">Representational State Transfer (REST) </span>is a style of software architecture for distributed hypermedia</p>
+<p class="p1">systems. <span class="s1">REST </span>supports client communication with stateless servers. It is platform- and language independent,</p>
+<p class="p1">supports data caching, and can be used in the presence of firewalls.</p>
+<p class="p1"><span class="s1">REST </span>almost always uses <span class="s1">HTTP </span>to support all four <span class="s1">Create/Read/Update/Delete </span>(<span class="s1">CRUD</span>) operations.</p>
+<p class="p1">It uses <span class="s5">GET</span>, <span class="s5">PUT</span>, and <span class="s5">DELETE </span>to <span class="s5">read</span>, <span class="s5">write</span>, and delete the data, respectively. <span class="s1">REST </span>is a much</p>
+<p class="p1">easier-to-use alternative to <span class="s1">RPC</span>, <span class="s1">CORBA</span>, or Web Services such as <span class="s1">SOAP </span>or <span class="s1">WSDL</span>. For example, to</p>
+<p class="p1">retrieve the address of an individual from a database, a <span class="s1">REST </span>system sends a URL specifying the</p>
+<p class="p1">network address of the database, the name of the individual, and the specific attribute in the record</p>
+<p class="p1">the client application wants to retrieve – in this case, the address. The corresponding <span class="s1">SOAP </span>version</p>
+<p class="p1">of such a request consists of 10 lines or more of <span class="s1">XML</span>. The <span class="s1">REST </span>server responds with the address of</p>
+<p class="p1">the individual. This justifies the statement that <span class="s1">REST </span>is a lightweight protocol. As far as usability is</p>
+<p class="p1">concerned, <span class="s1">REST </span>is easier to build from scratch and to debug, but <span class="s1">SOAP </span>is supported by tools that use</p>
+<p class="p1">self-documentation (e.g., <span class="s1">WSDL </span>to generate the code to connect).</p>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Cloud computing inherits some of the challenges of parallel and distributed computing discussed in</p>
+<p class="p1">Chapter 2; at the same time, it faces major challenges of its own. The specific challenges differ for</p>
+<p class="p1">the three cloud delivery models, but in all cases the difficulties are created by the very nature of utility</p>
+<p class="p1">computing, which is based on resource sharing and resource virtualization and requires a different trust</p>
+<p class="p1">model than the ubiquitous user-centric model we have been accustomed to for a very long time.</p>
+<p class="p1">The most significant challenge is security [<span class="s1">19</span>]; gaining the trust of a large user base is critical for</p>
+<p class="p1">the future of cloud computing. It is unrealistic to expect that a public cloud will provide a suitable</p>
+<p class="p1">environment for all applications. Highly sensitive applications related to the management of the critical</p>
+<p class="p1">infrastructure, healthcare applications, and others will most likely be hosted by private clouds. Many</p>
+<p class="p1">real-time applications will probably still be confined to private clouds. Some applications may be best</p>
+<p class="p1">served by a hybrid cloud setup; such applications could keep sensitive data on a private cloud and use</p>
+<p class="p1">a public cloud for some of the processing.</p>
+<p class="p1">The <span class="s2">SaaS </span>model faces similar challenges as other online services required to protect private information,</p>
+<p class="p1">such as financial or healthcare services. In this case a user interacts with cloud services through</p>
+<p class="p1">a well-defined interface; thus, in principle it is less challenging for the service provider to close some of</p>
+<p class="p1">the attack channels. Still, such services are vulnerable to DoS attack and the users are fearful of malicious</p>
+<p class="p1">insiders. Data in storage is most vulnerable to attack, so special attention should be devoted to the</p>
+<p class="p1">protection of storage servers. Data replication necessary to ensure continuity of service in case of storage</p>
+<p class="p1">system failure increases vulnerability. Data encryption may protect data in storage, but eventually data</p>
+<p class="p1">must be decrypted for processing, and then it is exposed to attack.</p>
+<p class="p1">The <span class="s2">IaaS </span>model is by far the most challenging to defend against attacks. Indeed, an <span class="s2">IaaS </span>user has</p>
+<p class="p1">considerably more degrees of freedom than the other two cloud delivery models. An additional source</p>
+<p class="p1">of concern is that the considerable resources of a cloud could be used to initiate attacks against the</p>
+<p class="p1">network and the computing infrastructure.</p>
+<p class="p1">Virtualization is a critical design option for this model, but it exposes the system to new sources of</p>
+<p class="p1">attack. The trusted computing base (TCB) of a virtual environment includes not only the hardware and</p>
+<p class="p1">the hypervisor but also the management operating system. As we shall see in Section 9.7, the entire</p>
+<p class="p1">state of a virtual machine (VM) can be saved to a file to allow migration and recovery, both highly</p>
+<p class="p1">desirable operations; yet this possibility challenges the strategies to bring the servers belonging to an</p>
+<p class="p1">organization to a desirable and stable state. Indeed, an infected VM can be inactive when the systems</p>
+<p class="p1">are cleaned up, and it can wake up later and infect other systems. This is another example of the deep</p>
+<p class="p1">intertwining of desirable and undesirable effects of basic cloud computing technologies.</p>
+<p class="p1">The next major challenge is related to resource management on a cloud. Any systematic rather than</p>
+<p class="p1">ad hoc resource management strategy requires the existence of controllers tasked to implement several</p>
+<p class="p1">classes of policies: admission control, capacity allocation, load balancing, energy optimization, and last</p>
+<p class="p1">but not least, to provide QoS guarantees.</p>
+<p class="p1">To implement these policies the controllers need accurate information about the global state of the</p>
+<p class="p1">system. Determining the state of a complex system with 10<span class="s3">6 </span>servers or more, distributed over a large</p>
+<p class="p1">geographic area, is not feasible. Indeed, the external load, as well as the state of individual resources,</p>
+<p class="p1">changes very rapidly. Thus, controllers must be able to function with incomplete or approximate knowledge</p>
+<p class="p1">of the system state.</p>
+<p class="p1">It seems reasonable to expect that such a complex system can only function based on self-management</p>
+<p class="p1">principles. But self-management and self-organization raise the bar for the implementation of logging</p>
+<p class="p1">and auditing procedures critical to the security and trust in a provider of cloud computing services.</p>
+<p class="p1">Under self-management it becomes next to impossible to identify the reasons that a certain action that</p>
+<p class="p1">resulted in a security breach was taken.</p>
+<p class="p1">The lastmajor challenge we want to address is related to interoperability and standardization. Vendor</p>
+<p class="p1">lock-in, the fact that a user is tied to a particular cloud service provider, is a major concern for cloud</p>
+<p class="p1">users (see Section 3.5). Standardization would support interoperability and thus alleviate some of the</p>
+<p class="p1">fears that a service critical for a large organization may not be available for an extended period of time.</p>
+<p class="p1">But imposing standards at a time when a technology is still evolving is not only challenging, it can be</p>
+<p class="p1">counterproductive because it may stifle innovation.</p>
+<p class="p1">From this brief discussion the reader should realize the complexity of the problems posed by cloud</p>
+<p class="p1">computing and understand the wide range of technical and social problems cloud computing raises. If</p>
+<p class="p1">successful, the effort to migrate the IT activities of many government agencies to public and private</p>
+<p class="p1">clouds will have a lasting effect on cloud computing. Cloud computing can have a major impact on</p>
+<p class="p1">education, but we have seen little effort in this area.</p>
+</body>
+</html>

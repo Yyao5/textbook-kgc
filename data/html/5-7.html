@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {color: #000066}
+    span.s4 {font: 10.0px Times}
+    span.s5 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">In early 2000 it became obvious that hardware support for virtualization was necessary, and Intel and</p>
+<p class="p1">AMD started work on the first-generation virtualization extensions of the <span class="s1">x86 </span><span class="s2">3 </span>architecture. In 2005</p>
+<p class="p1">Intel released two Pentium 4 models supporting <span class="s1">VT-x</span>, and in 2006 AMD announced <span class="s1">Pacifica </span>and then</p>
+<p class="p1">several <span class="s1">Athlon 64 </span>models.</p>
+<p class="p1">A 2006 paper [<span class="s3">253</span>] analyzes the challenges to virtualizing Intel architectures and then presents</p>
+<p class="p1"><span class="s1">VT-x </span>and <span class="s1">VT-i </span>virtualization architectures for <span class="s1">x86 </span>and <span class="s1">Itanium </span>architectures, respectively. Software</p>
+<p class="p1">solutions at that time addressed some of the challenges, but hardware solutions could improve not only</p>
+<p class="p1">performance but also security and, at the same time, simplify the software systems. We first examine</p>
+<p class="p1">the problems faced by virtualization of the <span class="s1">x86 </span>architecture:</p>
+<p class="p1">• <span class="s1">Ring deprivileging. </span>This means that a VMM forces the guest software, the operating system, and</p>
+<p class="p1">the applications to run at a privilege level greater than 0. Recall that the <span class="s1">x86 </span>architecture provides</p>
+<p class="p1">four protection rings at levels 0–3. Two solutions are then possible: (a) The <span class="s1">(0/1/3) mode</span>, in which</p>
+<p class="p1">the VMM, the OS, and the application run at privilege levels 0<span class="s1">, </span>1, and 3, respectively; or (b) the</p>
+<p class="p1"><span class="s1">(0,3,3) mode</span>, in which the VMM, a guest OS, and applications run at privilege levels 0<span class="s1">, </span>3, and 3,</p>
+<p class="p1">respectively. The first mode is not feasible for <span class="s1">x86 </span>processors in 64-bit mode, as we shall see shortly.</p>
+<p class="p1">• <span class="s1">Ring aliasing. </span>Problems created when a guest OS is forced to run at a privilege level other than that</p>
+<p class="p1">it was originally designed for. For example, when the CR register<span class="s2">4 </span>is PUSHed, the current privilege</p>
+<p class="p1">level is also stored on the stack [<span class="s3">253</span>].</p>
+<p class="p1">• <span class="s1">Address space compression. </span>A VMM uses parts of the guest address space to store several system</p>
+<p class="p1">data structures, such as the interrupt-descriptor table and the global-descriptor table. Such data</p>
+<p class="p1">structures must be protected, but the guest software must have access to them.</p>
+<p class="p2"><span class="s4">• </span>Nonfaulting access to privileged state. <span class="s4">Several instructions, </span><span class="s5">LGDT, SIDT, SLDT</span><span class="s4">, and </span><span class="s5">LTR </span><span class="s4">that</span></p>
+<p class="p1">load the registers <span class="s5">GDTR, IDTR, LDTR</span>, and <span class="s5">TR</span>, can only be executed by software running at</p>
+<p class="p1">privilege level 0, because these instructions point to data structures that control the CPU operation.</p>
+<p class="p1">Nevertheless, instructions that store from these registers fail silently when executed at a privilege</p>
+<p class="p1">level other than 0. This implies that a guest OS executing one of these instructions does not realize</p>
+<p class="p1">that the instruction has failed.</p>
+<p class="p1">• <span class="s1">Guest system calls. </span>Two instructions, <span class="s5">SYSENTER </span>and <span class="s5">SYSEXIT</span>, support low-latency system calls.</p>
+<p class="p1">The first causes a transition to privilege level 0, whereas the second causes a transition from privilege</p>
+<p class="p1">level 0 and fails if executed at a level higher than 0. The VMM must then emulate every guest</p>
+<p class="p1">execution of either of these instructions, which has a negative impact on performance.</p>
+<p class="p1">• <span class="s1">Interrupt virtualization. </span>In response to a physical interrupt, the VMM generates a “virtual interrupt”</p>
+<p class="p1">and delivers it later to the target guestOS. But every OS has the ability to mask interrupts<span class="s2">5</span>; thus the virtual</p>
+<p class="p1">interrupt could only be delivered to the guestOS when the interrupt is not masked. Keeping track</p>
+<p class="p1">of all guestOS attempts to mask interrupts greatly complicates the VMM and increases the overhead.</p>
+<p class="p1">• <span class="s1">Access to hidden state. </span>Elements of the system state (e.g., descriptor caches for segment registers)</p>
+<p class="p1">are hidden; there is no mechanism for saving and restoring the hidden components when there is a</p>
+<p class="p1">context switch from one VM to another.</p>
+<p class="p1">• <span class="s1">Ring compression. </span>Paging and segmentation are the two mechanisms to protect VMM code from</p>
+<p class="p1">being overwritten by a guest OS and applications. Systems running in 64-bit mode can only use</p>
+<p class="p1">paging, but paging does not distinguish among privilege levels 0, 1, and 2, so the guest OS must run</p>
+<p class="p1">at privilege level 3, the so-called <span class="s1">(</span>0<span class="s1">/</span>3<span class="s1">/</span>3<span class="s1">) </span>mode. Privilege levels 1 and 2 cannot be used; thus the</p>
+<p class="p2"><span class="s4">name </span>ring compression<span class="s4">.</span></p>
+<p class="p2"><span class="s4">• </span>Frequent access to privileged resources increases VMM overhead. <span class="s4">The task-priority register (</span><span class="s5">TPR</span><span class="s4">)</span></p>
+<p class="p1">is frequently used by a guest OS. The VMM must protect the access to this register and trap all</p>
+<p class="p1">attempts to access it. This can cause a significant performance degradation.</p>
+<p class="p1">Similar problems exist for the <span class="s1">Itanium </span>architecture discussed in Section <span class="s3">5.10</span>.</p>
+<p class="p1">A major architectural enhancement provided by the <span class="s1">VT-x </span>is the support for two modes of operations</p>
+<p class="p1">and a new data structure called the virtual machine control structure (VMCS), including <span class="s1">host-state </span>and</p>
+<p class="p1"><span class="s1">guest-state </span>areas (see Figure <span class="s3">5.5</span>):</p>
+<p class="p1">• <span class="s1">VMX root. </span>Intended for VMM operations and very close to the <span class="s1">x86 </span>without <span class="s1">VT-x</span>.</p>
+<p class="p1">• <span class="s1">VMX nonroot. </span>Intended to support a VM.</p>
+<p class="p1">When executing a <span class="s1">VM entry </span>operation, the processor state is loaded from the <span class="s1">guest-state </span>of the VM</p>
+<p class="p1">scheduled to run; then the control is transferred from the VMM to the VM.<span class="s1"> </span>A <span class="s1">VM exit </span>saves the processor</p>
+<p class="p1">state in the <span class="s1">guest-state </span>area of the running VM; then it loads the processor state from the <span class="s1">host-state </span>area</p>
+<p class="p1">and finally transfers control to the VMM. Note that all <span class="s1">VM exit </span>operations use a common entry point</p>
+<p class="p1">to the VMM.</p>
+<p class="p1">Each <span class="s1">VM exit </span>operation saves the reason for the exit and, eventually, some qualifications in VMCS.</p>
+<p class="p1">Some of this information is stored as bitmaps. For example, the <span class="s1">exception bitmap </span>specifies which one</p>
+<p class="p1">of 32 possible exceptions caused the exit. The <span class="s1">I/O bitmap </span>contains one entry for each port in a 16-bit</p>
+<p class="p1">I/O space.</p>
+<p class="p1">The VMCS area is referenced with a physical address and its layout is not fixed by the architecture</p>
+<p class="p1">but can be optimized by a particular implementation. The VMCS includes control bits that facilitate</p>
+<p class="p1">the implementation of virtual interrupts. For example, <span class="s1">external-interrupt exiting</span>, when set, causes the</p>
+<p class="p1">execution of a <span class="s1">VM exit </span>operation; moreover, the guest is not allowed to mask these interrupts. When the</p>
+<p class="p1"><span class="s1">interrupt window exiting </span>is set, a <span class="s1">VM exit </span>operation is triggered if the guest is ready to receive interrupts.</p>
+<p class="p1">Processors based on two new virtualization architectures, <span class="s1">VT-d </span><span class="s2">6 </span>and <span class="s1">VT-c</span>, have been developed.</p>
+<p class="p1">The first supports the I/O memory management unit (I/O MMU) virtualization and the second supports</p>
+<p class="p1">network virtualization.</p>
+<p class="p1">Also known as <span class="s1">PCI pass-through</span>, I/O MMU virtualization gives VMs direct access to peripheral</p>
+<p class="p1">devices. <span class="s1">VT-d </span>supports:</p>
+<p class="p1">• DMA address remapping, which is address translation for device DMA transfers.</p>
+<p class="p1">• Interrupt remapping, which is isolation of device interrupts and VM routing.</p>
+<p class="p1">• I/O device assignment, in which an administrator can assign the devices to a VM in any configuration.</p>
+<p class="p1">• Reliability features, which report and record DMA and interrupt errors that may otherwise corrupt</p>
+<p class="p1">memory and impact VM isolation.</p>
+<p class="p1">Next we discuss <span class="s1">Xen</span>, a widely used VMM or hypervisor.</p>
+</body>
+</html>

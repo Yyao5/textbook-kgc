@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Courier}
+    span.s4 {font: 7.5px Times}
+    span.s5 {font: 7.5px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Many cloud applications require the completion of multiple interdependent tasks; the description of a</p>
+<p class="p1">complex activity involving such an ensemble of tasks is known as a <span class="s1">workflow</span>. In this section we discuss</p>
+<p class="p1">workflow models, the life cycle of a workflow, the desirable properties of a workflow description,</p>
+<p class="p1">workflow patterns, reachability of the goal state of a workflow, and dynamic workflows and conclude</p>
+<p class="p1">with a parallel between traditional transaction systems and cloud workflows [<span class="s2">230</span>].</p>
+<p class="p1">Workflow models are abstractions revealing the most important properties of the entities participating</p>
+<p class="p1">in a workflow management system. <span class="s1">Task </span>is the central concept in workflow modeling; a task is a unit</p>
+<p class="p1">of work to be performed on the cloud, and it is characterized by several attributes, such as:</p>
+<p class="p1">• <span class="s1">Name</span>. A string of characters uniquely identifying the task.</p>
+<p class="p1">• <span class="s1">Description</span>. A natural language description of the task.</p>
+<p class="p1">• <span class="s1">Actions</span>. Modifications of the environment caused by the execution of the task.</p>
+<p class="p1">• <span class="s1">Preconditions</span>. Boolean expressions that must be true before the action(s) of the task can take place.</p>
+<p class="p1">• <span class="s1">Post-conditions</span>. Boolean expressions that must be true after the action(s) of the task take place.</p>
+<p class="p1">• <span class="s1">Attributes</span>. Provide indications of the type and quantity of resources necessary for the execution of</p>
+<p class="p1">the task, the actors in charge of the tasks, the security requirements, whether the task is reversible,</p>
+<p class="p1">and other task characteristics.</p>
+<p class="p1">• <span class="s1">Exceptions</span>. Provide information on how to handle abnormal events. The exceptions supported by a</p>
+<p class="p1">task consist of a list of <span class="s3">&lt;event, action&gt; </span>pairs. The exceptions included in the task exception</p>
+<p class="p1">list are called <span class="s1">anticipated exceptions</span>, as opposed to unanticipated exceptions. Events not included</p>
+<p class="p1">in the exception list trigger replanning. <span class="s1">Replanning </span>means restructuring of a process or redefinition</p>
+<p class="p1">of the relationship among various tasks.</p>
+<p class="p1">A <span class="s1">composite task </span>is a structure describing a subset of tasks and the order of their execution. A <span class="s1">primitive</span></p>
+<p class="p1"><span class="s1">task </span>is one that cannot be decomposed into simpler tasks. A composite task inherits some properties</p>
+<p class="p1">from workflows; it consists of tasks and has one start symbol and possibly several end symbols. At</p>
+<p class="p1">the same time, a composite task inherits some properties from tasks; it has a name, preconditions, and</p>
+<p class="p1">post-conditions.</p>
+<p class="p1">A <span class="s1">routing task </span>is a special-purpose task connecting two tasks in a workflow description. The task</p>
+<p class="p1">that has just completed execution is called the <span class="s1">predecessor </span>task; the one to be initiated next is called</p>
+<p class="p1">the <span class="s1">successor task</span>. A routing task could trigger a sequential, concurrent, or iterative execution. Several</p>
+<p class="p1">types of routing task exist:</p>
+<p class="p1">• A <span class="s1">fork routing task </span>triggers execution of several successor tasks. Several semantics for this construct</p>
+<p class="p1">are possible:</p>
+<p class="p1">• All successor tasks are enabled.</p>
+<p class="p1">• Each successor task is associated with a condition. The conditions for all tasks are evaluated,</p>
+<p class="p1">and only the tasks with a <span class="s3">true </span>condition are enabled.</p>
+<p class="p1">• Each successor task is associated with a condition. The conditions for all tasks are evaluated,</p>
+<p class="p1">but the conditions are mutually exclusive and only one condition may be <span class="s3">true</span>. Thus, only one</p>
+<p class="p1">task is enabled.</p>
+<p class="p1">• Nondeterministic, <span class="s1">k </span>out of <span class="s1">n &gt; k </span>successors are selected at random to be enabled.</p>
+<p class="p1">• A <span class="s1">join routing task </span>waits for completion of its predecessor tasks. There are several semantics for the</p>
+<p class="p1">join routing task:</p>
+<p class="p1">• The successor is enabled after all predecessors end.</p>
+<p class="p1">• The successor is enabled after <span class="s1">k </span>out of <span class="s1">n &gt; k </span>predecessors end.</p>
+<p class="p1">• Iterative: The tasks between the fork and the join are executed repeatedly.</p>
+<p class="p1">A <span class="s1">process description</span>, also called a <span class="s1">workflow schema</span>, is a structure describing the <span class="s1">tasks </span>or <span class="s1">activities</span></p>
+<p class="p1">to be executed and the order of their execution. A process description contains one start symbol and</p>
+<p class="p1">one end symbol. A process description can be provided in a <span class="s1">workflow definition language (WFDL)</span>,</p>
+<p class="p1">supporting constructs for choice, concurrent execution, the classical <span class="s1">fork, join </span>constructs, and iterative</p>
+<p class="p1">execution. Clearly, a workflow description resembles a <span class="s1">flowchart</span>, a concept we are familiar with from</p>
+<p class="p1">programming.</p>
+<p class="p1">The phases in the life cycle of a workflow are creation, definition, verification, and enactment. There</p>
+<p class="p1">is a striking similarity between the life cycle of a workflow and that of a traditional computer program,</p>
+<p class="p1">namely, creation, compilation, and execution (see Figure <span class="s2">4.1</span>). The workflow specification by means of</p>
+<p class="p1">a workflow description language is analogous to writing a program. Planning is equivalent to automatic</p>
+<p class="p1">program generation. Workflow verification corresponds to syntactic verification of a program, and</p>
+<p class="p1">workflow enactment mirrors the execution of a compiled program.</p>
+<p class="p1">A <span class="s1">case </span>is an instance of a process description. The start and stop symbols in the workflow description</p>
+<p class="p1">enable the creation and the termination of a case, respectively. An <span class="s1">enactment model </span>describes the steps taken to process a case. When a computer executes all tasks required by a workflow the enactment can</p>
+<p class="p1">be performed by a program called an <span class="s1">enactment engine</span>.</p>
+<p class="p1">The <span class="s1">state of a case </span>at time <span class="s1">t </span>is defined in terms of tasks already completed at that time. Events cause</p>
+<p class="p1">transitions between states. Identifying the states of a case consisting of concurrent activities is considerably more</p>
+<p class="p1">difficult than identifying the states of a strictly sequential process. Indeed, when several activities</p>
+<p class="p1">could proceed concurrently, the state has to reflect the progress made on each independent activity.</p>
+<p class="p1">An alternative description of a workflowcan be provided by a transition system describing the possible</p>
+<p class="p1">paths from the current state to a goal state. Sometimes, instead of providing a process description, we</p>
+<p class="p1">may specify only the goal state and expect the system to generate a workflow description that could</p>
+<p class="p1">lead to that state through a set of actions. In this case, the new workflow description is generated</p>
+<p class="p1">automatically, knowing a set of tasks and the preconditions and post-conditions for each one of them.</p>
+<p class="p1">In artificial intelligence (AI) this activity is known as <span class="s1">planning</span>.</p>
+<p class="p1">The state space of a process includes one initial state and one goal state; a transition system identifies</p>
+<p class="p1">all possible paths from the initial to the goal state. A case corresponds to a particular path in the transition</p>
+<p class="p1">system. The state of a case tracks the progress made during the enactment of that case.</p>
+<p class="p1">Among the most desirable properties of a process description are the <span class="s1">safety </span>and <span class="s1">liveness </span>of the</p>
+<p class="p1">process. Informally, safety means that nothing “bad” ever happens, and liveness means that something</p>
+<p class="p1">“good” will eventually take place should a case based on the process be enacted. Not all processes are</p>
+<p class="p1">safe and live. For example, the process description in Figure <span class="s2">4.2</span>(a) violates the liveness requirement.</p>
+<p class="p1">As long as task <span class="s1">C </span>is chosen after completion of <span class="s1">B</span>, the process will terminate. However, if <span class="s1">D </span>is chosen,</p>
+<p class="p1">then <span class="s1">F </span>will never be instantiated, because it requires the completion of both <span class="s1">C </span>and <span class="s1">E</span>. The process will</p>
+<p class="p1">never terminate, because <span class="s1">G </span>requires completion of both <span class="s1">D </span>and <span class="s1">F</span>.</p>
+<p class="p1">A process description language should be unambiguous and should allow a verification of the process</p>
+<p class="p1">description before the enactment of a case. It is entirely possible that a process description may be enacted</p>
+<p class="p1">correctly in some cases but fail for others. Such enactment failures may be very costly and should be</p>
+<p class="p1">prevented by a thorough verification at the process definition time. To avoid enactment errors, we need to</p>
+<p class="p1">verify process description and check for desirable properties such as safety and liveness. Some process</p>
+<p class="p1">description methods are more suitable for verification than others.</p>
+<p class="p1">A note of caution: Although the original description of a process could be live, the actual enactment</p>
+<p class="p1">of a case may be affected by deadlocks due to resource allocation. To illustrate this situation, consider</p>
+<p class="p1">two tasks, <span class="s1">A </span>and <span class="s1">B</span>, running concurrently. Each of them needs exclusive access to resources <span class="s1">r </span>and <span class="s1">q </span>for</p>
+<p class="p1">a period of time. Either of two scenarios is possible:</p>
+<p class="p1"><span class="s1">1. A </span>or <span class="s1">B </span>acquires both resources and then releases them and allows the other task to do the same.</p>
+<p class="p1"><span class="s1">2. </span>We face the undesirable situation in Figure <span class="s2">4.2</span>(b) when, at time <span class="s1">t</span><span class="s4">1</span>, task <span class="s1">A </span>acquires <span class="s1">r </span>and continues</p>
+<p class="p1">its execution; then at time <span class="s1">t</span><span class="s4">2 </span>task <span class="s1">B </span>acquires <span class="s1">q </span>and continues to run. Then at time <span class="s1">t</span><span class="s4">3 </span>task <span class="s1">B </span>attempts</p>
+<p class="p1">to acquire <span class="s1">r </span>and it blocks because <span class="s1">r </span>is under the control of <span class="s1">A</span>. Task <span class="s1">A </span>continues to run and at time</p>
+<p class="p1"><span class="s1">t</span><span class="s4">4 </span>attempts to acquire <span class="s1">q </span>and it blocks because <span class="s1">q </span>is under the control of <span class="s1">B</span>.</p>
+<p class="p1">The deadlock illustrated in Figure <span class="s2">4.2</span>(b) can be avoided by requesting each task to acquire all</p>
+<p class="p1">resources at the same time. The price to pay is underutilization of resources. Indeed, the idle time of</p>
+<p class="p1">each resource increases under this scheme.</p>
+<p class="p1"><span class="s1">Workflow pattern </span>refers to the temporal relationship among the tasks of a process. The workflow</p>
+<p class="p1">description languages and the mechanisms to control the enactment of a case must have provisions to support these temporal relationships. Workflow patterns are analyzed in [<span class="s2">1</span>,<span class="s2">382</span>]. These patterns</p>
+<p class="p1">are classified in several categories: basic, advanced branching and synchronization, structural, statebased,</p>
+<p class="p1">cancellation, and patterns involving multiple instances. The basic workflow patterns illustrated</p>
+<p class="p1">in Figure <span class="s2">4.3 </span>are:</p>
+<p class="p1">• The <span class="s1">sequence </span>pattern occurs when several tasks have to be scheduled one after the completion of</p>
+<p class="p1">the other [see Figure <span class="s2">4.3</span>(a)].</p>
+<p class="p1">• The<span class="s1">AND split </span>pattern requires several tasks to be executed concurrently. Both tasks <span class="s1">B </span>and <span class="s1">C </span>are</p>
+<p class="p1">activated when task <span class="s1">A </span>terminates [see Figure <span class="s2">4.3</span>(b)]. In case of an <span class="s1">explicit AND split</span>, the activity</p>
+<p class="p1">graph has a routing node and all activities connected to the routing node are activated as soon as the</p>
+<p class="p1">flow of control reaches the routing node. In the case of an <span class="s1">implicit AND split, </span>activities are connected</p>
+<p class="p1">directly and conditions can be associated with branches linking an activity with the next ones. Only</p>
+<p class="p1">when the conditions associated with a branch are true are the tasks activated.</p>
+<p class="p1">• The <span class="s1">synchronization </span>pattern requires several concurrent activities to terminate before an activity can</p>
+<p class="p1">start. In our example, task C can only start after both tasks <span class="s1">A </span>and <span class="s1">B </span>terminate [see Figure <span class="s2">4.3</span>(c)].</p>
+<p class="p1">• The<span class="s1">XOR split </span>requires a decision; after the completion of task <span class="s1">A</span>, either <span class="s1">B </span>or <span class="s1">C </span>can be activated</p>
+<p class="p1">[see Figure <span class="s2">4.3</span>(d)].</p>
+<p class="p1">• In the<span class="s1">XOR join</span>, several alternatives are merged into one. In our example, task <span class="s1">C </span>is enabled when</p>
+<p class="p1">either <span class="s1">A </span>or <span class="s1">B </span>terminates [see Figure <span class="s2">4.3</span>(e)].</p>
+<p class="p1">• The<span class="s1">OR split </span>pattern is a construct to choose multiple alternatives out of a set. In our example, after</p>
+<p class="p1">completion of task <span class="s1">A</span>, one could activate either <span class="s1">B </span>or <span class="s1">C</span>, or both [see Figure <span class="s2">4.3</span>(f)].</p>
+<p class="p1">• The <span class="s1">multiple merge </span>construct allows multiple activations of a task and does not require synchronization</p>
+<p class="p1">after the execution of concurrent tasks. Once <span class="s1">A </span>terminates, tasks <span class="s1">B </span>and <span class="s1">C </span>execute concurrently [see Figure <span class="s2">4.3</span>(g)]. When the first of them, say, <span class="s1">B</span>, terminates, task <span class="s1">D </span>is activated; then when <span class="s1">C</span></p>
+<p class="p1">terminates, <span class="s1">D </span>is activated again.</p>
+<p class="p1">• The <span class="s1">discriminator </span>pattern waits for a number of incoming branches to complete before activating</p>
+<p class="p1">the subsequent activity [see Figure <span class="s2">4.3</span>(h)]; then it waits for the remaining branches to finish without</p>
+<p class="p1">taking any action until all of them have terminated. Next, it resets itself.</p>
+<p class="p1">• The<span class="s1">N out of M join </span>construct provides a barrier synchronization. Assuming that <span class="s1">M &gt; N </span>tasks run</p>
+<p class="p1">concurrently, <span class="s1">N </span>of them have to reach the barrier before the next task is enabled. In our example,</p>
+<p class="p1">any two out of the three tasks <span class="s1">A</span>, <span class="s1">B</span>, and <span class="s1">C </span>have to finish before <span class="s1">E </span>is enabled [see Figure <span class="s2">4.3</span>(i)].</p>
+<p class="p1">• The <span class="s1">deferred choice </span>pattern is similar to the XOR split, but this time the choice is not made explicitly</p>
+<p class="p1">and the run-time environment decides what branch to take [see Figure <span class="s2">4.3</span>(j)].</p>
+<p class="p1">Next we discuss the reachability of the goal state and we consider the following elements:</p>
+<p class="p1">• A system <span class="s1"> </span>, an initial state of the system, <span class="s1">σ</span><span class="s5">ini tial </span>, and a goal state, <span class="s1">σ</span><span class="s5">goal </span>.</p>
+<p class="p1">• A process group <span class="s1">P = {p</span><span class="s4">1</span><span class="s1">, p</span><span class="s4">2</span><span class="s1">, . . . , p</span><span class="s5">n</span><span class="s1">}</span>; each process <span class="s1">p</span><span class="s5">i </span>in the process group is characterized by a</p>
+<p class="p1">set of preconditions, <span class="s1">pre(p</span><span class="s5">i </span><span class="s1">)</span>, post-conditions, <span class="s1">post(p</span><span class="s5">i </span><span class="s1">)</span>, and attributes, <span class="s1">atr(p</span><span class="s5">i </span><span class="s1">)</span>.</p>
+<p class="p1">• A workflow described by a directed activity graph <span class="s1">A </span>or by a procedure <span class="s1">  </span>capable of constructing</p>
+<p class="p1"><span class="s1">A </span>given the tuple <span class="s1">&lt; P, σ</span><span class="s5">ini tial</span><span class="s1">, σ</span><span class="s5">goal </span><span class="s1">&gt;</span>. The nodes of <span class="s1">A </span>are processes in <span class="s1">P </span>and the edges define</p>
+<p class="p1">precedence relations among processes. <span class="s1">P</span><span class="s5">i </span><span class="s1">→ P</span><span class="s5">j </span>implies that <span class="s1">pre(p </span><span class="s5">j </span><span class="s1">) ⊂ post(p</span><span class="s5">i </span><span class="s1">)</span>.</p>
+<p class="p1">• A set of constraints <span class="s1">C = {C</span><span class="s4">1</span><span class="s1">,C</span><span class="s4">2</span><span class="s1">, . . . ,C</span><span class="s5">m</span><span class="s1">}</span>.</p>
+<p class="p1">The coordination problem for system <span class="s1">  </span>in state <span class="s1">σ</span><span class="s5">ini tial </span>is to reach state <span class="s1">σ</span><span class="s5">goal </span>as a result of postconditions</p>
+<p class="p1">of some process <span class="s1">P</span><span class="s5">f inal </span><span class="s1">∈ P </span>subject to constraints <span class="s1">C</span><span class="s5">i </span><span class="s1">∈ C</span>. Here <span class="s1">σ</span><span class="s5">ini tial </span>enables the preconditions</p>
+<p class="p1">of some process <span class="s1">P</span><span class="s5">ini tial </span><span class="s1">∈ P</span>. Informally, this means that a chain of processes exists such that</p>
+<p class="p1">the post-conditions of one process are preconditions of the next process in the chain.</p>
+<p class="p1">Generally, the preconditions of a process are either the conditions and/or the events that trigger the</p>
+<p class="p1">execution of the process or the data the process expects as input; the post-conditions are the results</p>
+<p class="p1">produced by the process. The attributes of a process describe special requirements or properties of the</p>
+<p class="p1">process.</p>
+<p class="p1">Some workflows are static. The activity graph does not change during the enactment of a case.</p>
+<p class="p1"><span class="s1">Dynamic workflows </span>are those that allow the activity graph to be modified during the enactment of</p>
+<p class="p1">a case. Some of the more difficult questions encountered in dynamic workflow management refer to</p>
+<p class="p1">(i) how to integrate workflow and resource management and guarantee optimality or near optimality</p>
+<p class="p1">of cost functions for individual cases; (ii) how to guarantee consistency after a change in a workflow;</p>
+<p class="p1">and (iii) how to create a dynamic workflow. Static workflows can be described in WFDL (the workflow</p>
+<p class="p1">definition language), but dynamic workflows need a more flexible approach.</p>
+<p class="p1">We distinguish two basic models for the mechanics of workflow enactment:</p>
+<p class="p1"><span class="s1">1. Strong coordination models</span>, whereby the process group <span class="s1">P </span>executes under the supervision of a</p>
+<p class="p1"><span class="s1">coordinator </span>process or processes. A coordinator process acts as an enactment engine and ensures a</p>
+<p class="p1">seamless transition from one process to another in the activity graph.</p>
+<p class="p1"><span class="s1">2. Weak coordination models</span>, whereby there is no supervisory process.</p>
+<p class="p1">In the first case, we may deploy a <span class="s1">hierarchical coordination scheme </span>with several levels of coordinators.</p>
+<p class="p1">A supervisor at level <span class="s1">i </span>in a hierarchical scheme with <span class="s1">i +</span>1 levels coordinates a subset of processes</p>
+<p class="p1">in the process group. A supervisor at level <span class="s1">i − </span>1 coordinates a number of supervisors at level <span class="s1">i </span>and the</p>
+<p class="p1">root provides global coordination. Such a hierarchical coordination scheme may be used to reduce the</p>
+<p class="p1">communication overhead; a coordinator and the processes it supervises may be colocated.</p>
+<p class="p1">The most important feature of this coordination model is the ability to support dynamic workflows.</p>
+<p class="p1">The coordinator or the global coordinator may respond to a request to modify the workflow by first</p>
+<p class="p1">stopping all the threads of control in a consistent state, then investigating the feasibility of the requested</p>
+<p class="p1">changes, and finally, implementing feasible changes.</p>
+<p class="p1">Weak coordination models are based on peer-to-peer communication between processes in the process</p>
+<p class="p1">group by means of a societal service such as a <span class="s1">tuple space</span>. Once a process <span class="s1">p</span><span class="s5">i </span><span class="s1">∈ P </span>finishes, it</p>
+<p class="p1">deposits a token, including possibly a subset of its post-conditions, <span class="s1">post(p</span><span class="s5">i </span><span class="s1">)</span>, in a tuple space. The</p>
+<p class="p1">consumer process <span class="s1">p </span><span class="s5">j </span>is expected to visit the tuple space at some point in time, examine the tokens</p>
+<p class="p1">left by its ancestors in the activity graph, and, if its preconditions <span class="s1">pre(p </span><span class="s5">j </span><span class="s1">) </span>are satisfied, commence the</p>
+<p class="p1">execution. This approach requires individual processes to either have a copy of the activity graph or</p>
+<p class="p1">some timetable to visit the tuple space. An alternative approach is using an <span class="s1">active space</span>, a tuple space</p>
+<p class="p1">augmented with the ability to generate an event awakening the consumer of a token.</p>
+<p class="p1">There are similarities and some differences between workflows of traditional transaction-oriented</p>
+<p class="p1">systems and <span class="s1">cloud workflows</span>. The similarities are mostly at the modeling level, whereas the differences</p>
+<p class="p1">affect the mechanisms used to implement workflow management systems. Some of the more subtle</p>
+<p class="p1">differences between the two are:</p>
+<p class="p1">• The emphasis in a transactional model is placed on the contractual aspect of a transaction; in a</p>
+<p class="p1">workflow the enactment of a case is sometimes based on a “best-effort” model whereby the agents</p>
+<p class="p1">involved will do their best to attain the goal state but there is no guarantee of success.</p>
+<p class="p1">• A critical aspect of the transactional model in database applications is maintaining a consistent state</p>
+<p class="p1">of the database; however, a cloud is an open system, and thus its state is considerably more difficult</p>
+<p class="p1">to define.</p>
+<p class="p1">• The database transactions are typically short-lived; the tasks of a cloud workflow could be long lasting.</p>
+<p class="p1">• A database transaction consists of a set of well-defined actions that are unlikely to be altered during</p>
+<p class="p1">the execution of the transaction. However, the process description of a cloud workflow may change</p>
+<p class="p1">during the lifetime of a case.</p>
+<p class="p1">• The individual tasks of a cloud workflow may not exhibit the traditional properties of database</p>
+<p class="p1">transactions. For example, consider durability: At any instance of time, before reaching the goal</p>
+<p class="p1">state, a workflow may roll back to some previously encountered state and continue from there on an</p>
+<p class="p1">entirely different path. A task of a workflow could be either reversible or irreversible. Sometimes,</p>
+<p class="p1">paying a penalty for reversing an action is more profitable in the long run than continuing on a wrong</p>
+<p class="p1">path.</p>
+<p class="p1">• Resource allocation is a critical aspect of the workflow enactment on a cloud without an immediate</p>
+<p class="p1">correspondent for database transactions.</p>
+<p class="p1">The relatively simple coordination model discussed next is often used in cloud computing.</p>
+</body>
+</html>

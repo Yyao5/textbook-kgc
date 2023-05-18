@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A policy typically refers to the principal guiding decisions, whereas mechanisms represent the means to</p>
+<p class="p1">implement policies. Separation of policies from mechanisms is a guiding principle in computer science.</p>
+<p class="p1">Butler Lampson [<span class="s1">208</span>] and Per Brinch Hansen [<span class="s1">154</span>] offer solid arguments for this separation in the</p>
+<p class="p1">context of operating system design.</p>
+<p class="p1">Cloud resource management policies can be loosely grouped into five classes:</p>
+<p class="p1"><span class="s2">1. </span>Admission control.</p>
+<p class="p1"><span class="s2">2. </span>Capacity allocation.</p>
+<p class="p1"><span class="s2">3. </span>Load balancing.</p>
+<p class="p1"><span class="s2">4. </span>Energy optimization.</p>
+<p class="p1"><span class="s2">5. </span>Quality-of-service (QoS) guarantees.</p>
+<p class="p1">The explicit goal of an admission control policy is to prevent the system from accepting workloads in</p>
+<p class="p1">violation of high-level system policies; for example, a system may not accept an additional workload that</p>
+<p class="p1">would prevent it from completing work already in progress or contracted. Limiting the workload requires</p>
+<p class="p1">some knowledge of the global state of the system. In a dynamic system such knowledge, when available,</p>
+<p class="p1">is at best obsolete. Capacity allocation means to allocate resources for individual instances; an instance</p>
+<p class="p1">is an activation of a service. Locating resources subject to multiple global optimization constraints</p>
+<p class="p1">requires a search of a very large search space when the state of individual systems changes rapidly.</p>
+<p class="p1">Load balancing and energy optimization can be done locally, but global load-balancing and energy</p>
+<p class="p1">optimization policies encounter the same difficulties as the one we have already discussed. Load balancing</p>
+<p class="p1">and energy optimization are correlated and affect the cost of providing the services. Indeed, it</p>
+<p class="p1">was predicted that by 2012 up to 40% of the budget for IT enterprise infrastructure would be spent on</p>
+<p class="p1">energy [<span class="s1">104</span>].</p>
+<p class="p1">The common meaning of the term <span class="s2">load balancing </span>is that of evenly distributing the load to a set of</p>
+<p class="p1">servers. For example, consider the case of four identical servers, <span class="s2">A, B,C</span>, and <span class="s2">D</span>, whose relative loads</p>
+<p class="p1">are 80%<span class="s2">, </span>60%<span class="s2">, </span>40%, and 20%, respectively, of their capacity. As a result of perfect load balancing,</p>
+<p class="p1">all servers would end with the same load <span class="s2">− </span>50% of each server’s capacity. In cloud computing a</p>
+<p class="p1">critical goal is minimizing the cost of providing the service and, in particular, minimizing the energy</p>
+<p class="p1">consumption. This leads to a different meaning of the term <span class="s2">load balancing</span>; instead of having the load</p>
+<p class="p1">evenly distributed among all servers, we want to concentrate it and use the smallest number of servers</p>
+<p class="p1">while switching the others to standby mode, a state in which a server uses less energy. In our example,</p>
+<p class="p1">the load from <span class="s2">D </span>will migrate to <span class="s2">A </span>and the load from <span class="s2">C </span>will migrate to <span class="s2">B</span>; thus, <span class="s2">A </span>and <span class="s2">B </span>will be loaded</p>
+<p class="p1">at full capacity, whereas <span class="s2">C </span>and <span class="s2">D </span>will be switched to standby mode. Quality of service is that aspect of</p>
+<p class="p1">resource management that is probably the most difficult to address and, at the same time, possibly the</p>
+<p class="p1">most critical to the future of cloud computing.</p>
+<p class="p1">As we shall see in this section, often resource management strategies jointly target performance</p>
+<p class="p1">and power consumption. <span class="s2">Dynamic voltage and frequency scaling </span>(<span class="s2">DVFS</span>)<span class="s3">1 </span>techniques such as Intel’s SpeedStep andAMD’s PowerNow lower the voltage and the frequency to decrease power consumption.<span class="s3">2</span></p>
+<p class="p1">Motivated initially by the need to save power for mobile devices, these techniques have migrated to</p>
+<p class="p1">virtually all processors, including the ones used for high-performance servers.</p>
+<p class="p1">As a result of lower voltages and frequencies, the performance of processors decreases, but at a</p>
+<p class="p1">substantially slower rate [<span class="s1">213</span>] than the energy consumption. Table <span class="s1">6.1 </span>shows the dependence of the</p>
+<p class="p1">normalized performance and the normalized energy consumption of a typical modern processor on</p>
+<p class="p1">clock rate. As we can see, at 1<span class="s2">.</span>8 GHz we save 18% of the energy required for maximum performance,</p>
+<p class="p1">whereas the performance is only 5%lower than the peak performance, achieved at 2<span class="s2">.</span>2 GHz. This seems</p>
+<p class="p1">a reasonable energy-performance tradeoff!</p>
+<p class="p1">Virtually all optimal – or near-optimal – mechanisms to address the five classes of policies do not</p>
+<p class="p1">scale up and typically target a single aspect of resource management, e.g., admission control, but ignore</p>
+<p class="p1">energy conservation. Many require complex computations that cannot be done effectively in the time</p>
+<p class="p1">available to respond. The performance models are very complex, analytical solutions are intractable,</p>
+<p class="p1">and the monitoring systems used to gather state information for these models can be too intrusive</p>
+<p class="p1">and unable to provide accurate data. Many techniques are concentrated on system performance in</p>
+<p class="p1">terms of throughput and time in system, but they rarely include energy tradeoffs or QoS guarantees.</p>
+<p class="p1">Some techniques are based on unrealistic assumptions; for example, capacity allocation is viewed as</p>
+<p class="p1">an optimization problem, but under the assumption that servers are protected from overload.</p>
+<p class="p1">Allocation techniques in computer clouds must be based on a disciplined approach rather than ad</p>
+<p class="p1">hoc methods. The four basic mechanisms for the implementation of resource management policies are:</p>
+<p class="p1">• <span class="s2">Control theory. </span>Control theory uses the feedback to guarantee system stability and predict transient</p>
+<p class="p1">behavior [<span class="s1">185</span>,<span class="s1">202</span>], but can be used only to predict local rather than global behavior. Kalman filters</p>
+<p class="p1">have been used for unrealistically simplified models.</p>
+<p class="p1">• <span class="s2">Machine learning. </span>A major advantage of machine learning techniques is that they do not need a</p>
+<p class="p1">performance model of the system [<span class="s1">353</span>]. This technique could be applied to coordination of several</p>
+<p class="p1">autonomic system managers, as discussed in [<span class="s1">187</span>].</p>
+<p class="p1">• <span class="s2">Utility-based. </span>Utility-based approaches require a performance model and a mechanism to correlate</p>
+<p class="p1">user-level performance with cost, as discussed in [<span class="s1">9</span>].</p>
+<p class="p1">• <span class="s2">Market-oriented/economic mechanisms. </span>Such mechanisms do not require a model of the system,</p>
+<p class="p1">e.g., combinatorial auctions for bundles of resources discussed in [<span class="s1">333</span>].</p>
+<p class="p1">A distinction should be made between interactive and noninteractive workloads. The management</p>
+<p class="p1">techniques for interactive workloads, e.g., Web services, involve flow control and dynamic application</p>
+<p class="p1">placement, whereas those for noninteractive workloads are focused on scheduling. A fair amount of</p>
+<p class="p1">work reported in the literature is devoted to resource management of interactive workloads, some to</p>
+<p class="p1">noninteractive, and only a few, e.g., [<span class="s1">344</span>], to heterogeneous workloads, a combination of the two.</p>
+</body>
+</html>

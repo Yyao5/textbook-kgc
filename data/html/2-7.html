@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 7.5px Helvetica}
+    span.s5 {font: 7.5px Times}
+  </style>
+</head>
+<body>
+<p class="p1">The communication channel abstraction makes no assumptions about the order of messages; a reallife</p>
+<p class="p1">network might reorder messages. This fact has profound implications for a distributed application.</p>
+<p class="p1">Consider for example a robot getting instructions to navigate from a monitoring facility with two</p>
+<p class="p1">messages, “turn left” and “turn right,” being delivered out of order.</p>
+<p class="p1">Message receiving and message delivery are two distinct operations; a <span class="s1">delivery rule </span>is an additional</p>
+<p class="p1">assumption about the channel-process interface. This rule establishes when a message received is actually</p>
+<p class="p1">delivered to the destination process. The receiving of a message <span class="s1">m </span>and its delivery are two distinct events in a causal relation with one another. A message can only be delivered after being received (see</p>
+<p class="p1">Figure <span class="s2">2.6</span>)</p>
+<p class="p2">receive(m) → deliver(m). <span class="s3">(2.25)</span></p>
+<p class="p1"><span class="s1">First In, First Out </span>(<span class="s1">FIFO</span>) <span class="s1">delivery </span>implies that messages are delivered in the same order in which</p>
+<p class="p1">they are sent. For each pair of source-destination processes (<span class="s1">p</span><span class="s4">i </span><span class="s1">, p </span><span class="s4">j </span>), FIFO delivery requires that the</p>
+<p class="p1">following relation should be satisfied:</p>
+<p class="p2">send<span class="s4">i </span>(m) → send<span class="s4">i </span>(m<span class="s4"> </span></p>
+<p class="p2">) ⇒ deliver <span class="s4">j </span>(m) → deliver <span class="s4">j </span>(m<span class="s4"> </span></p>
+<p class="p1"><span class="s1">). </span>(2.26)</p>
+<p class="p1">Even if the communication channel does not guarantee FIFO delivery, FIFO delivery can be enforced</p>
+<p class="p1">by attaching a sequence number to each message sent. The sequence numbers are also used to reassemble</p>
+<p class="p1">messages out of individual packets.</p>
+<p class="p1"><span class="s1">Causal delivery </span>is an extension of the FIFO delivery to the case when a process receives messages</p>
+<p class="p1">from different sources. Assume a group of three processes, (<span class="s1">p</span><span class="s4">i </span><span class="s1">, p </span><span class="s4">j </span><span class="s1">, p</span><span class="s4">k </span>) and two messages <span class="s1">m </span>and <span class="s1">m</span><span class="s4"> </span>.</p>
+<p class="p1">Causal delivery requires that</p>
+<p class="p2">send<span class="s4">i </span>(m) → send <span class="s4">j </span>(m<span class="s4"> </span></p>
+<p class="p2">) ⇒ deliver<span class="s4">k </span>(m) → deliver<span class="s4">k </span>(m<span class="s4"> </span></p>
+<p class="p1"><span class="s1">). </span>(2.27)</p>
+<p class="p1">When more than two processes are involved in a message exchange, the message delivery may be</p>
+<p class="p1">FIFO but not causal, as shown in Figure <span class="s2">2.7 </span>where we see that</p>
+<p class="p1">• <span class="s1">deliver(m</span><span class="s5">3</span><span class="s1">) → deliver(m</span><span class="s5">1</span><span class="s1">)</span>, according to the local history of process <span class="s1">p</span><span class="s5">2</span>.</p>
+<p class="p1">• <span class="s1">deliver(m</span><span class="s5">2</span><span class="s1">) → send(m</span><span class="s5">3</span><span class="s1">)</span>, according to the local history of process <span class="s1">p</span><span class="s5">1</span>.</p>
+<p class="p1">• <span class="s1">send(m</span><span class="s5">1</span><span class="s1">) → send(m</span><span class="s5">2</span><span class="s1">)</span>, according to the local history of process <span class="s1">p</span><span class="s5">3</span>. • <span class="s1">send(m</span><span class="s5">2</span><span class="s1">) → deliver(m</span><span class="s5">2</span><span class="s1">)</span>.</p>
+<p class="p2"><span class="s3">• </span>send(m<span class="s5">3</span>) → deliver(m<span class="s5">3</span>)<span class="s3">.</span></p>
+<p class="p1">The preceding transitivity property and the causality relations imply that <span class="s1">send(m</span><span class="s5">1</span><span class="s1">) → deliver(m</span><span class="s5">3</span><span class="s1">)</span>.</p>
+<p class="p1">Call <span class="s1">T S(m) </span>the <span class="s1">time stamp </span>carried by message <span class="s1">m</span>. A message received by process <span class="s1">p</span><span class="s4">i </span>is <span class="s1">stable </span>if no</p>
+<p class="p1">future messages with a time stamp smaller than <span class="s1">T S(m) </span>can be received by process <span class="s1">p</span><span class="s4">i </span>. When logical</p>
+<p class="p1">clocks are used, a process <span class="s1">p</span><span class="s4">i </span>can construct consistent observations of the system if it implements the</p>
+<p class="p2"><span class="s3">following delivery rule: </span>Deliver all stable messages in increasing time-stamp order.</p>
+<p class="p1">Let’s now examine the problem of <span class="s1">consistent message delivery </span>under several sets of assumptions.</p>
+<p class="p1">First, assume that processes cooperating with each other in a distributed environment have access to a</p>
+<p class="p1"><span class="s1">global real-time clock</span>, that the message delays are bounded by <span class="s1">δ</span>, and that there is no clock drift. Call</p>
+<p class="p1"><span class="s1">RC(e) </span>the time of occurrence of event <span class="s1">e</span>. A process includes <span class="s1">RC(e) </span>in every message it sends, where <span class="s1">e</span></p>
+<p class="p1">is the send-message event. The delivery rule in this case is: <span class="s1">At time t deliver all received messages with</span></p>
+<p class="p2">time stamps up to (t −δ) in increasing time-stamp order. <span class="s3">Indeed, this delivery rule guarantees that under</span></p>
+<p class="p1">the bounded delay assumption the message delivery is consistent. All messages delivered at time <span class="s1">t </span>are</p>
+<p class="p1">in order and no future message with a time stamp lower than any of the messages delivered may arrive.</p>
+<p class="p1">For any two events, <span class="s1">e </span>and <span class="s1">e</span><span class="s4"> </span>, occurring in different processes, the so-called <span class="s1">clock condition </span>is satisfied</p>
+<p class="p1">if</p>
+<p class="p2">e → e<span class="s4">  </span>⇒ RC(e) &lt; RC(e<span class="s4"> </span></p>
+<p class="p2">), ∀e, e<span class="s4"> </span></p>
+<p class="p1"><span class="s1">. </span>(2.28)</p>
+<p class="p1">Often, we are interested in determining the set of events that caused an event knowing the time</p>
+<p class="p1">stamps associated with all events; in other words, we are interested in deducing the causal precedence</p>
+<p class="p1">relation between events from their time stamps. To do so we need to define the so-called strong clock</p>
+<p class="p1">condition. The <span class="s1">strong clock condition </span>requires an equivalence between the causal precedence and the</p>
+<p class="p1">ordering of the time stamps</p>
+<p class="p2">∀e, e<span class="s4"> </span></p>
+<p class="p2">, e → e<span class="s4">  </span>≡ T S(e) &lt; T S(e<span class="s4"> </span></p>
+<p class="p1"><span class="s1">). </span>(2.29)</p>
+<p class="p1">Causal delivery is very important because it allows processes to reason about the entire system using</p>
+<p class="p1">only local information. This is only true in a closed system where all communication channels are known; sometimes the system has <span class="s1">hidden channels</span>, and reasoning based on causal analysis may lead</p>
+<p class="p1">to incorrect conclusions.</p>
+</body>
+</html>

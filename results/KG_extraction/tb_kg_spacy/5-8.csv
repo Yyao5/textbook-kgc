@@ -1,0 +1,77 @@
+,source,edge,target
+2,systems,operate as,paravirtualized operating x86
+5,full  designers,opted for,paravirtualization
+7,Next  we,analyze,x86  41
+8,creators,used,guest OS
+10,domain,runs on,x86  CPU
+12,aspects,summarized in,I O device Table
+13,management,look,translation
+14,buffer,requires,software TLB
+16,x86  architecture,support,software TLB
+17,when  VMMactivates,requires,complete  TLB
+18,This,has,negative  performance
+27,only  OS,owns,only  pages
+28,other  OS,has,multiple page update performance
+30,strategy,used for,segmentation
+31,architecture,supports,four  protection
+32,virtually OS kernels,run at,one  Level
+33,VMM,runs at,1 guest Level
+34,Applications,make,called system Xen
+35,instructions,paravirtualized,guest Xen
+37,directly  instruction,fails,privileged  instruction
+39,Memory,partitioned between,strong  isolation
+42,balloon which,implements,own page allocator
+44,page faults,handled,directly guest OS
+45,Xen,schedules individual,scheduling algorithm scheduling Section
+46,when latency this,uses,timely  TCP
+48,OS,register with,exception validation
+50,which,uses,extended stack frame
+52,OS,validate,directly exception Xen
+54,system,replaces,hardware interrupts
+55,Notifications,delivered,asynchronous event system
+56,OS,has,virtual timer time
+57,that,supports,system  wide
+59,listeners,informs,which
+60,XenStore,communicates with,rather grant tables
+63,user,provides,memory configuration allocations
+65,Then  Toolstack,parses,XenStore
+67,new communication VM,takes,virtual communication console
+70,Xen,defines,networking
+71,drivers,have,front
+72,two,communicate via,shared  memory
+73,Xen,enforces,shared synchronization signals
+74,lists,stored in,grant memory
+75,Data,move,I O Figure
+77,data buffers,allocated off,off guest OS
+78,O network operations,committed,talk
+80,buffers,protected by,corresponding page frames
+81,virtual network that,has,network interface card
+82,VIF,attached to,firewall router firewall VFR
+83,rings,supported,packet receiving
+85,then send Xen,copies,matching packet rules
+88,pattern,require,packet header
+92,rules,ensure,same source IP address
+95,Xen,includes,unmodified commodity operating systems
+97,own  that,emulates,Dom0  VM
+99,when  Intel,underwent significant,VT x processors
+101,when  Intel,released,VT x
+102,running,adopted by,VT d
+103,Xen,running,2008
+104,support,added to,Linux 2011
+105,Xen,incorporated for,VT d architectures
+110,This,avoids,security driver reliability
+112,OS,exploit,3D graphics card
+115,one,know,bound VM 298
+117,servers,share,same  Xen
+118,generator,sends,1  100
+119,size,increases,100  KB
+120,first  we,see,10  system
+121,when  system,shows,same data rate range
+124,quite  variation,increases,two file size magnitude
+125,Denali,designed,larger network Xen
+127,design,target,existing Denali ABI
+128,design,support,some
+129,design,support,segmentation
+130,multiple guest Xen,support,multiple guest OS
+134,total,had,"3,000 Linux code"
+135,Windows figure,is,Windows XP

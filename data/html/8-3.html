@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Courier}
+    span.s4 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">In this section we discuss the first distributed file systems, developed in the 1980s by software companies</p>
+<p class="p1">and universities. The systems covered are the Network File System developed by Sun Microsystems</p>
+<p class="p1">in 1984, the Andrew File System developed at Carnegie Mellon University as part of the Andrew</p>
+<p class="p1">project, and the Sprite Network File System developed by John Osterhout’s group at UC Berkeley as</p>
+<p class="p1">a component of the <span class="s1">Unix</span>-like distributed operating system called Sprite. Other systems developed at</p>
+<p class="p1">about the same time are Locus [<span class="s2">365</span>], Apollo [<span class="s2">211</span>], and the Remote File System (RFS) [<span class="s2">35</span>]. The main</p>
+<p class="p1">concerns in the design of these systems were scalability, performance, and security (see Table <span class="s2">8.1</span>.)</p>
+<p class="p1">In the 1980s many organizations, including research centers, universities, financial institutions, and</p>
+<p class="p1">design centers, considered networks of workstations to be an ideal environment for their operations.</p>
+<p class="p1">Diskless workstations were appealing due to reduced hardware costs and because of lower maintenance</p>
+<p class="p1">and system administration costs. Soon it became obvious that a distributed file system could be very</p>
+<p class="p1">useful for the management of a large number of workstations. Sun Microsystems, one of the main</p>
+<p class="p1">promoters of distributed systems based on workstations, proceeded to develop theNFSin the early 1980s.</p>
+<p class="p1">Network File System (NFS). NFSwas the first widely used distributed file system; the development</p>
+<p class="p1">of this application based on the client-server model was motivated by the need to share a file system</p>
+<p class="p1">among a number of clients interconnected by a local area network.</p>
+<p class="p1">A majority of workstations were running under <span class="s1">Unix</span>; thus, many design decisions for the NFS were</p>
+<p class="p1">influenced by the design philosophy of the <span class="s1">Unix File System </span>(UFS). It is not surprising that the NFS</p>
+<p class="p1">designers aimed to:</p>
+<p class="p1">• Provide the same semantics as a local UFS to ensure compatibility with existing applications.</p>
+<p class="p1">• Facilitate easy integration into existing UFS.</p>
+<p class="p1">• Ensure that the system would be widely used and thus support clients running on different operating</p>
+<p class="p1">systems.</p>
+<p class="p1">• Accept a modest performance degradation due to remote access over a network with a bandwidth</p>
+<p class="p1">of several Mbps.</p>
+<p class="p1">Before we examine NFS in more detail, we have to analyze three important characteristics of the</p>
+<p class="p1"><span class="s1">Unix </span>File System that enabled the extension from local to remote file management:</p>
+<p class="p1">• The layered design provides the necessary <span class="s1">flexibility </span>for the file system; layering allows separation</p>
+<p class="p1">of concerns and minimization of the interaction among the modules necessary to implement the</p>
+<p class="p1">system. The addition of the <span class="s1">vnode </span>layer allowed the <span class="s1">Unix </span>File System to treat local and remote file</p>
+<p class="p1">access uniformly.</p>
+<p class="p1">• The hierarchical design supports <span class="s1">scalability </span>of the file system; indeed, it allows grouping of files</p>
+<p class="p1">into special files called <span class="s1">directories </span>and supports multiple levels of directories and collections of</p>
+<p class="p1">directories and files, the so-called <span class="s1">file systems</span>. The hierarchical file structure is reflected by the</p>
+<p class="p1">file-naming convention.</p>
+<p class="p1">• The metadata supports a systematic rather than an ad hoc design philosophy of the file system. The</p>
+<p class="p1">so called <span class="s1">inodes </span>contain information about individual files and directories. The inodes are kept on</p>
+<p class="p1">persistent media, together with the data. Metadata includes the file owner, the access rights, the</p>
+<p class="p1">creation time or the time of the last modification of the file, the file size, and information about</p>
+<p class="p1">the structure of the file and the persistent storage device cells where data is stored. Metadata also</p>
+<p class="p1">supports device independence, a very important objective due to the very rapid pace of storage</p>
+<p class="p1">technology development.</p>
+<p class="p1">The <span class="s1">logical organization </span>of a file reflects the data model – the view of the data from the perspective</p>
+<p class="p1">of the application. The <span class="s1">physical organization </span>reflects the storage model and describes the manner in</p>
+<p class="p1">which the file is stored on a given storage medium. The layered design allows UFS to separate concerns</p>
+<p class="p1">for the physical file structure from the logical one.</p>
+<p class="p1">Recall that a <span class="s1">file </span>is a linear array of cells stored on a persistent storage device. The <span class="s1">file pointer</span></p>
+<p class="p1">identifies a cell used as a starting point for a <span class="s3">read </span>or <span class="s3">write </span>operation. This linear array is viewed</p>
+<p class="p1">by an application as a collection of logical records; the file is stored on a physical device as a set of</p>
+<p class="p1">physical records, or blocks, of a size dictated by the physical media.</p>
+<p class="p1">The lower three layers of the UFS hierarchy – the block, the file, and the inode layer – reflect</p>
+<p class="p1">the physical organization. The block layer allows the system to locate individual blocks on the physical</p>
+<p class="p1">device; the file layer reflects the organization of blocks into files; and the inode layer provides</p>
+<p class="p1">the metadata for the objects (files and directories). The upper three layers – the path name, the</p>
+<p class="p1">absolute path name, and the symbolic path name layer – reflect the logical organization. The filename</p>
+<p class="p1">layer mediates between the machine-oriented and the user-oriented views of the file system (see</p>
+<p class="p1">Figure <span class="s2">8.3</span>).</p>
+<p class="p1">Several <span class="s1">control structures </span>maintained by the kernel of the operating system support file handling by</p>
+<p class="p1">a running process. These structures are maintained in the user area of the process address space and can</p>
+<p class="p1">only be accessed in kernel mode. To access a file, a process must first establish a connection with the</p>
+<p class="p1">file system by opening the file. At that time a new entry is added to the <span class="s1">file description table</span>, and the</p>
+<p class="p1">meta-information is brought into another control structure, the <span class="s1">open file table</span>.</p>
+<p class="p1">A <span class="s1">path </span>specifies the location of a file or directory in a file system; a <span class="s1">relative path </span>specifies this</p>
+<p class="p1">location relative to the current/working directory of the process, whereas a <span class="s1">full path</span>, also called an</p>
+<p class="p1"><span class="s1">absolute path</span>, specifies the location of the file independently of the current directory, typically relative</p>
+<p class="p1">to the root directory. A local file is uniquely identified by a <span class="s1">file descriptor (fd)</span>, generally an index in the</p>
+<p class="p1">open file table.</p>
+<p class="p1">The Network File System is based on the client-server paradigm. The client runs on the local host</p>
+<p class="p1">while the server is at the site of the remote file system, and they interact by means of remote procedure</p>
+<p class="p1">calls (RPCs) (see Figure <span class="s2">8.4</span>). The API interface of the local file system distinguishes file operations</p>
+<p class="p1">on a local file from the ones on a remote file and, in the latter case, invokes the RPC client. Figure <span class="s2">8.5</span></p>
+<p class="p1">shows the API for a <span class="s1">Unix </span>File System, with the calls made by the RPC client in response to API calls</p>
+<p class="p1">issued by a user program for a remote file system as well as some of the actions carried out by the NFS server in response to an RPC call. NFS uses a <span class="s1">vnode </span>layer to distinguish between operations on local</p>
+<p class="p1">and remote files, as shown in Figure <span class="s2">8.4</span>.</p>
+<p class="p1">A remote file is uniquely identified by a <span class="s1">file handle (fh) </span>rather than a file descriptor. The file handle</p>
+<p class="p1">is a 32-byte internal name, a combination of the file system identification, an inode number, and a</p>
+<p class="p1">generation number. The file handle allows the system to locate the remote file system and the file on</p>
+<p class="p1">that system; the generation number allows the system to reuse the inode numbers and ensures correct</p>
+<p class="p1">semantics when multiple clients operate on the same remote file.</p>
+<p class="p1">Although many RPC calls, such as <span class="s3">read</span>, are idempotent,<span class="s4">3 </span>communication failures could sometimes</p>
+<p class="p1">lead to unexpected behavior. Indeed, if the network fails to deliver the response to a <span class="s3">read </span>RPC, then</p>
+<p class="p1">the call can be repeated without any side effects. By contrast, when the network fails to deliver the</p>
+<p class="p1">response to the <span class="s3">rmdir </span>RPC, the second call returns an error code to the user if the call was successful</p>
+<p class="p1">the first time. If the server fails to execute the first call, the second call returns normally. Note also that</p>
+<p class="p1">there is no <span class="s3">close </span>RPC because this action only makes changes in the process open file structure and</p>
+<p class="p1">does not affect the remote file.</p>
+<p class="p1">The NFS has undergone significant transformations over the years. It has evolved from Version 2</p>
+<p class="p1">[<span class="s2">314</span>], discussed in this section, to Version 3 [<span class="s2">286</span>] in 1994 and then to Version 4 [<span class="s2">287</span>] in 2000 (see</p>
+<p class="p1">Section <span class="s2">8.11</span>).</p>
+<p class="p1">Andrew File System (AFS). AFS is a distributed file system developed in the late 1980s at Carnegie</p>
+<p class="p1">Mellon University (CMU) in collaboration with IBM [<span class="s2">250</span>]. The designers of the system envisioned</p>
+<p class="p1">a very large number of workstations interconnected with a relatively small number of servers; it was</p>
+<p class="p1">anticipated that each individual at CMU would have an Andrew workstation, so the system would</p>
+<p class="p1">connect up to 10<span class="s1">,</span>000 workstations. The set of trusted servers in AFS forms a structure called Vice.</p>
+<p class="p1">The OS on a workstation, 4.2 BSD <span class="s1">Unix</span>, intercepts file system calls and forwards them to a user-level</p>
+<p class="p1">process called Venus, which caches files from Vice and stores modified copies of files back on the</p>
+<p class="p1">servers they came from. Reading and writing from/to a file are performed directly on the cached copy</p>
+<p class="p1">and bypass Venus; only when a file is opened or closed does Venus communicate with Vice.</p>
+<p class="p1">The emphasis of the AFS design was on performance, security, and simple management of the file</p>
+<p class="p1">system [<span class="s2">170</span>]. To ensure scalability and to reduce response time, the local disks of the workstations are</p>
+<p class="p1">used as persistent cache. The master copy of a file residing on one of the servers is updated only when</p>
+<p class="p1">the file is modified. This strategy reduces the load placed on the servers and contributes to better system</p>
+<p class="p1">performance.</p>
+<p class="p1">Another major objective of the AFS design was improved security. The communications between</p>
+<p class="p1">clients and servers are encrypted, and all file operations require secure network connections. When a</p>
+<p class="p1">user signs into a workstation, the password is used to obtain security tokens from an authentication</p>
+<p class="p1">server. These tokens are then used every time a file operation requires a secure network connection.</p>
+<p class="p1">The AFS uses <span class="s1">access control lists </span>(ACLs) to allow control sharing of the data. An ACL specifies</p>
+<p class="p1">the access rights of an individual user or group of users. A set of tools supports ACL management.</p>
+<p class="p1">Another facet of the effort to reduce user involvement in file management is <span class="s1">location transparency. </span>The</p>
+<p class="p1">files can be accessed from any location and can be moved automatically or at the request of system</p>
+<p class="p1">administrators without user involvement and/or inconvenience. The relatively small number of servers</p>
+<p class="p1">drastically reduces the efforts related to system administration because operations, such as backups,</p>
+<p class="p1">affect only the servers, whereas workstations can be added, removed, or moved from one location to</p>
+<p class="p1">another without administrative intervention.</p>
+<p class="p1">Sprite Network File System (SFS). SFS is a component of the Sprite network operating system</p>
+<p class="p1">[<span class="s2">165</span>]. SFS supports non-write-through caching of files on the client as well as the server systems [<span class="s2">255</span>].</p>
+<p class="p1">Processes running on all workstations enjoy the same semantics for file access as they would if they</p>
+<p class="p1">were run on a single system. This is possible due to a cache consistency mechanism that flushes portions</p>
+<p class="p1">of the cache and disables caching for shared files opened for <span class="s3">read</span>/<span class="s3">write </span>operations.</p>
+<p class="p1">Caching not only hides the network latency, it also reduces server utilization and obviously improves</p>
+<p class="p1">performance by reducing response time. A file access request made by a client process could be satisfied</p>
+<p class="p1">at different levels. First, the request is directed to the local cache; if it’s not satisfied there, it is passed</p>
+<p class="p1">to the local file system of the client. If it cannot be satisfied locally then the request is sent to the remote</p>
+<p class="p1">server. If the request cannot be satisfied by the remote server’s cache, it is sent to the file system running</p>
+<p class="p1">on the server.</p>
+<p class="p1">The design decisions for the Sprite system were influenced by the resources available at a time when a</p>
+<p class="p1">typical workstation had a 1–2 MIPS processor and 4–14 Mbytes of physical memory. The main-memory caches allowed diskless workstations to be integrated into the system and enabled the development of</p>
+<p class="p1">unique caching mechanisms and policies for both clients and servers. The results of a file-intensive</p>
+<p class="p1">benchmark report [<span class="s2">255</span>] show that SFS was 30–35% faster than either NFS or AFS.</p>
+<p class="p1">The file cache is organized as a collection of 4 KB blocks; a cache block has a virtual address</p>
+<p class="p1">consisting of a unique file identifier supplied by the server and a block number in the file. Virtual</p>
+<p class="p1">addressing allows the clients to create new blocks without the need to communicate with the server. File</p>
+<p class="p1">servers map virtual to physical disk addresses. Note that the page size of the virtual memory in Sprite</p>
+<p class="p1">is also 4K.</p>
+<p class="p1">The size of the cache available to an SFS client or a server system changes dynamically as a function</p>
+<p class="p1">of the needs. This is possible because the Sprite operating system ensures optimal sharing of the physical</p>
+<p class="p1">memory between file caching by SFS and virtual memory management.</p>
+<p class="p1">The file system and the virtual memory manage separate sets of physical memory pages and maintain</p>
+<p class="p1">a time of last access for each block or page, respectively. Virtual memory uses a version of the clock</p>
+<p class="p1">algorithm [<span class="s2">254</span>] to implement a least recently used (LRU) page replacement algorithm, and the file</p>
+<p class="p1">system implements a strict LRU order, since it knows the time of each <span class="s3">read </span>and <span class="s3">write </span>operation.</p>
+<p class="p1">Whenever the file system or the virtual memory management experiences a file cache miss or a page</p>
+<p class="p1">fault, it compares the age of its oldest cache block or page, respectively, with the age of the oldest one</p>
+<p class="p1">of the other system; the oldest cache block or page is forced to release the real memory frame.</p>
+<p class="p1">An important design decision related to the SFS was to <span class="s1">delay write-backs; </span>this means that a block</p>
+<p class="p1">is first written to cache, and the writing to the disk is delayed for a time of the order of tens of seconds.</p>
+<p class="p1">This strategy speeds up writing and avoids writing when the data is discarded before the time to <span class="s3">write</span></p>
+<p class="p1">it to the disk. The obvious drawback of this policy is that data can be lost in case of a system failure.</p>
+<p class="p1"><span class="s1">Write-through </span>is the alternative to the delayed write-back; it guarantees reliability because the block</p>
+<p class="p1">is written to the disk as soon as it is available on the cache, but it increases the time for a write</p>
+<p class="p1">operation.</p>
+<p class="p1">Most network file systems guarantee that once a file is closed, the server will have the newest version</p>
+<p class="p1">on persistent storage. As far as concurrency is concerned, we distinguish <span class="s1">sequential write sharing</span>, when</p>
+<p class="p1">a file cannot be opened simultaneously for reading and writing by several clients, from <span class="s1">concurrent write</span></p>
+<p class="p1"><span class="s1">sharing</span>, when multiple clients can modify the file at the same time. Sprite allows both modes of</p>
+<p class="p1">concurrency and delegates the cache consistency to the servers. In case of concurrent <span class="s3">write </span>sharing,</p>
+<p class="p1">the client caching for the file is disabled; all <span class="s3">reads </span>and <span class="s3">writes </span>are carried out through the server.</p>
+<p class="p1">Table <span class="s2">8.1 </span>presents a comparison of caching, writing strategy, and consistency of NFS, AFS [<span class="s2">250</span>],</p>
+<p class="p1">Sprite [<span class="s2">165</span>], Locus [<span class="s2">365</span>], Apollo [<span class="s2">211</span>], and the Remote File System (RFS) [<span class="s2">35</span>].</p>
+</body>
+</html>

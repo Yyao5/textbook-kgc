@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica; min-height: 12.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 6.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times}
+    span.s4 {font: 7.5px Helvetica}
+    span.s5 {font: 10.0px Times}
+    span.s6 {font: 6.0px Helvetica}
+    span.s7 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A <span class="s1">utility function </span>relates the “benefits” of an activity or service with the “cost” to provide the service.</p>
+<p class="p1">For example, the benefit could be revenue and the cost could be the power consumption.</p>
+<p class="p1">A service-level agreement (SLA) often specifies the rewards as well as the penalties associated with</p>
+<p class="p1">specific performance metrics. Sometimes the quality of services translates into average response time;</p>
+<p class="p1">this is the case of cloud-based Web services when the SLA often explicitly specifies this requirement.</p>
+<p class="p1">For example, Figure <span class="s2">6.4 </span>shows the case when the performance metrics is <span class="s1">R</span>, the response time. The</p>
+<p class="p1">largest reward can be obtained when <span class="s1">R   R</span><span class="s3">0</span>; a slightly lower reward corresponds to <span class="s1">R</span><span class="s3">0 </span><span class="s1">&lt; R   R</span><span class="s3">1</span>.</p>
+<p class="p1">When <span class="s1">R</span><span class="s3">1 </span><span class="s1">&lt; R   R</span><span class="s3">2</span>, instead of gaining a reward, the provider of service pays a small penalty; the</p>
+<p class="p1">penalty increases when <span class="s1">R &gt; R</span><span class="s3">2</span>. A utility function, <span class="s1">U(R)</span>, which captures this behavior, is a sequence</p>
+<p class="p1">of step functions. The utility function is sometimes approximated by a quadratic curve, as we shall see</p>
+<p class="p1">in Section <span class="s2">6.2</span>.</p>
+<p class="p1">In this section we discuss a utility-based approach for autonomic management. The goal is to maximize</p>
+<p class="p1">the total profit computed as the difference between the revenue guaranteed by an SLA and the</p>
+<p class="p1">total cost to provide the services. Formulated as an optimization problem, the solution discussed in [<span class="s2">9</span>]</p>
+<p class="p1">addresses multiple policies, including QoS. The cloud model for this optimization is quite complex and</p>
+<p class="p1">requires a fair number of parameters.</p>
+<p class="p1">We assume a cloud providing <span class="s1">|K| </span>different classes of service, each class <span class="s1">k </span>involving <span class="s1">N</span><span class="s4">k </span>applications.</p>
+<p class="p1">For each class <span class="s1">k ∈ K </span>call <span class="s1">v</span><span class="s4">k </span>the revenue (or the penalty) associated with a response time <span class="s1">r</span><span class="s4">k </span>and assume</p>
+<p class="p1">a linear dependency for this utility function of the form <span class="s1">v</span><span class="s4">k </span><span class="s1">= v</span><span class="s4">max</span></p>
+<p class="p2">k</p>
+<p class="p3"> </p>
+<p class="p3"><span class="s5">1 </span>− r<span class="s4">k</span>/r<span class="s4">max</span></p>
+<p class="p2">k</p>
+<p class="p3"> </p>
+<p class="p1">, see Figure <span class="s2">6.5</span>(a).</p>
+<p class="p2"><span class="s5">Call </span><span class="s1">m</span>k <span class="s1">= −v</span>max</p>
+<p class="p2">k <span class="s1">/r</span>max</p>
+<p class="p1"><span class="s4">k </span>the slope of the utility function.</p>
+<p class="p1">The system is modeled as a network of queues with multiqueues for each server and with a delay</p>
+<p class="p1">center that models the think time of the user after the completion of service at one server and the</p>
+<p class="p1">start of processing at the next server [see Figure <span class="s2">6.5</span>(b)]. Upon completion, a class <span class="s1">k </span>request either</p>
+<p class="p1">completes with probability <span class="s1">(</span>1<span class="s1">−</span></p>
+<p class="p4"><br></p>
+<p class="p1"><span class="s4">k</span><span class="s6"> </span><span class="s4">∈K </span><span class="s1">π</span><span class="s4">k,k</span><span class="s6">  </span><span class="s1">) </span>or returns to the system as a class <span class="s1">k</span><span class="s4">  </span>request with transition</p>
+<p class="p1">probability <span class="s1">π</span><span class="s4">k,k</span><span class="s6"> </span>. Call <span class="s1">λ</span><span class="s4">k </span>the external arrival rate of class <span class="s1">k </span>requests and <span class="s1"> </span><span class="s4">k </span>the aggregate rate for class</p>
+<p class="p3">k, <span class="s5">where</span> <span class="s4">k </span>= λ<span class="s4">k </span>+</p>
+<p class="p4"><br></p>
+<p class="p2">k<span class="s6"> </span>∈K <span class="s1"> </span>k<span class="s6"> </span><span class="s1">π</span>k,k<span class="s6">  </span><span class="s5">.</span></p>
+<p class="p1">Typically, CPU and memory are considered representative for resource allocation; for simplicity we</p>
+<p class="p1">assume a single CPU that runs at a discrete set of clock frequencies and a discrete set of supply voltages</p>
+<p class="p1">according to a Dynamic Voltage and Frequency Scaling (DVFS) model. The power consumption of</p>
+<p class="p1">a server is a function of the clock frequency. The scheduling of a server is work-conserving<span class="s7">6 </span>and is</p>
+<p class="p1">modeled as a Generalized Processor Sharing (GPS) scheduling [<span class="s2">385</span>]. Analytical models [<span class="s2">4</span>,<span class="s2">280</span>] are</p>
+<p class="p1">too complex for large systems.</p>
+<p class="p1">The optimization problem formulated in [<span class="s2">9</span>] involves five terms: <span class="s1">A </span>and <span class="s1">B </span>reflect revenues; <span class="s1">C </span>the cost</p>
+<p class="p1">of servers in a low-power, stand-by mode; <span class="s1">D </span>the cost of active servers, given their operating frequency;</p>
+<p class="p1"><span class="s1">E</span>, the cost of switching servers from low-power, stand-by mode to active state, and <span class="s1">F</span>, the cost of</p>
+<p class="p1">migrating VMs from one server to another. There are nine constraints <span class="s1"> </span><span class="s3">1</span><span class="s1">,  </span><span class="s3">2</span><span class="s1">, . . . ,  </span><span class="s3">9 </span>for this mixed integer,</p>
+<p class="p1">nonlinear programming problem. The decision variables for this optimization problem are listed</p>
+<p class="p1">in Table <span class="s2">6.2 </span>and the parameters used are shown in Table <span class="s2">6.3</span>.</p>
+<p class="p1">The expression to be maximized is:</p>
+<p class="p3">(A + B) − (C + D + E + F) <span class="s5">(6.21)</span></p>
+<p class="p1">with</p>
+<p class="p3">A = <span class="s5">max</span></p>
+<p class="p3"> </p>
+<p class="p2">k∈K</p>
+<p class="p3">⎛</p>
+<p class="p3">⎝−m<span class="s4">k</span></p>
+<p class="p3"> </p>
+<p class="p2">i∈I , j∈N<span class="s6">k</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space"> </span>λ</span>i ,k, j</p>
+<p class="p2">h∈H<span class="s6">i</span></p>
+<p class="p3"> </p>
+<p class="p2"><span class="s1">C</span>i ,h <span class="s1">  y</span>i ,h</p>
+<p class="p3"> </p>
+<p class="p2"><span class="s1">μ</span>k, j <span class="s1">  φ</span>i ,k, j <span class="s1">− λ</span>i ,k, j</p>
+<p class="p3">⎞</p>
+<p class="p3">⎠,</p>
+<p class="p3">B =</p>
+<p class="p3"> </p>
+<p class="p2">k∈K</p>
+<p class="p1"><span class="s1">u</span><span class="s4">k </span><span class="s1">   </span><span class="s4">k </span><span class="s1">, </span>(6.22)</p>
+<p class="p3">C =</p>
+<p class="p3"> </p>
+<p class="p2">i∈I</p>
+<p class="p3">  c<span class="s4">i </span>, D =</p>
+<p class="p3"> </p>
+<p class="p2">i∈I ,h∈H<span class="s6">i</span></p>
+<p class="p3">c<span class="s4">i ,h </span>  y<span class="s4">i ,h</span>, E =</p>
+<p class="p3"> </p>
+<p class="p2">i∈I</p>
+<p class="p3">cs<span class="s4">i </span><span class="s5">max </span>(<span class="s5">0</span>, x<span class="s4">i </span>−  x<span class="s4">i </span>), <span class="s5">(6.23)</span></p>
+<p class="p1">and</p>
+<p class="p3">F =</p>
+<p class="p3"> </p>
+<p class="p2">i∈I ,k∈K, j∈N<span class="s6">j</span></p>
+<p class="p2"><span class="s1">cm </span><span class="s5">max </span><span class="s1">(</span><span class="s5">0</span><span class="s1">, z</span>i , j ,k <span class="s1">−  z</span>i , j ,k <span class="s1">). </span><span class="s5">(6.24)</span></p>
+<p class="p1">The nine constraints are:</p>
+<p class="p3">( <span class="s3">1</span>)</p>
+<p class="p4"><br></p>
+<p class="p1"><span class="s4">i∈I </span><span class="s1">λ</span><span class="s4">i ,k, j </span><span class="s1">=  </span><span class="s4">k </span><span class="s1">, ∀k ∈ K, j ∈ N</span><span class="s4">k </span><span class="s1">⇒ </span>the traffic assigned to all servers for class <span class="s1">k </span>requests</p>
+<p class="p1">equals the predicted load for the class.</p>
+<p class="p3">( <span class="s3">2</span>)</p>
+<p class="p4"><br></p>
+<p class="p1"><span class="s4">k∈K, j∈N</span><span class="s6">k </span><span class="s1">φ</span><span class="s4">i ,k, j </span><span class="s1">  </span>1 <span class="s1">∀i ∈ I ⇒</span>server <span class="s1">i </span>cannot be allocated an workload more than its capacity.</p>
+<p class="p3">( <span class="s3">3</span>)</p>
+<p class="p4"><br></p>
+<p class="p1"><span class="s4">h∈H</span><span class="s6">i </span><span class="s1">y</span><span class="s4">i ,h </span><span class="s1">= x</span><span class="s4">i </span><span class="s1">, ∀i ∈ I ⇒ </span>if server <span class="s1">i ∈ I </span>is active it runs at one frequency in the set <span class="s1">H</span><span class="s4">i </span>, and</p>
+<p class="p1">only one <span class="s1">y</span><span class="s4">i ,h </span>is nonzero.</p>
+<p class="p1"><span class="s1">( </span><span class="s3">4</span><span class="s1">) z</span><span class="s4">i ,k, j </span><span class="s1">  x</span><span class="s4">i </span><span class="s1">, ∀i ∈ I , k ∈ K, j ∈ N</span><span class="s4">k </span><span class="s1">⇒</span>requests can only be assigned to active servers.</p>
+<p class="p3">( <span class="s3">5</span>) λ<span class="s4">i ,k, j </span>   <span class="s4">k </span>  z<span class="s4">i ,k, j </span>, ∀i ∈ I , k ∈ K, j ∈ N<span class="s4">k </span>⇒ <span class="s5">requests may run on server </span>i ∈ I <span class="s5">only if the</span></p>
+<p class="p1">corresponding application tier has been assigned to server <span class="s1">i </span>.</p>
+<p class="p2"><span class="s1">( </span><span class="s3">6</span><span class="s1">) λ</span>i ,k, j <span class="s1"> </span></p>
+<p class="p3"> </p>
+<p class="p2">h∈H<span class="s6">i </span><span class="s1">C</span>i ,h <span class="s1">  y</span>i ,h</p>
+<p class="p3"> </p>
+<p class="p3">μ<span class="s4">k, j </span>  φ<span class="s4">i ,k, j </span>, ∀i ∈ I , k ∈ K, j ∈ N<span class="s4">k </span>⇒ <span class="s5">resources cannot be</span></p>
+<p class="p1">saturated.</p>
+<p class="p1"><span class="s1">( </span><span class="s3">7</span><span class="s1">) RAM</span><span class="s4">k, j </span><span class="s1">  z</span><span class="s4">i ,k, j </span><span class="s1">  RAM</span><span class="s4">i </span><span class="s1">, ∀i ∈ I , k ∈ K ⇒ </span>the memory on server <span class="s1">i </span>is sufficient to support</p>
+<p class="p1">all applications running on it.</p>
+<p class="p3">( <span class="s3">8</span>)<span class="Apple-converted-space"> </span></p>
+<p class="p5"><span class="s4">N</span>k</p>
+<p class="p2">j=<span class="s3">1</span></p>
+<p class="p3"> </p>
+<p class="p3"><span class="s5">1 </span>−<span class="Apple-converted-space"> </span></p>
+<p class="p2">M</p>
+<p class="p5"><span class="s4">i=</span><span class="s3">1</span><span class="s1">(</span><span class="s5">1 </span><span class="s1">− a</span><span class="s4">w</span>i ,k</p>
+<p class="p2">i</p>
+<p class="p3"> </p>
+<p class="p1"><span class="s1">  A</span><span class="s4">k </span><span class="s1">, ∀k ∈ K ⇒ </span>the availability of all servers assigned to class <span class="s1">k</span></p>
+<p class="p1">request should be at least equal to the minimum required by the SLA.</p>
+<p class="p3">( <span class="s3">9</span>)</p>
+<p class="p4"><br></p>
+<p class="p5"><span class="s4">N</span>k</p>
+<p class="p3"><span class="s4">j=</span><span class="s3">1 </span>z<span class="s4">i ,k, j </span>  N<span class="s4">k </span>  w<span class="s4">i ,k </span>, ∀i ∈ I , k ∈ K</p>
+<p class="p3">λ<span class="s4">i , j ,k</span>, φ<span class="s4">i , j ,k </span>  <span class="s5">0</span>, ∀i ∈ I , k ∈ K, j ∈ N<span class="s4">k</span></p>
+<p class="p3">x<span class="s4">i </span>, y<span class="s4">i ,h</span>, z<span class="s4">i ,k, j</span>,w<span class="s4">i ,k </span>∈ {<span class="s5">0</span>, <span class="s5">1</span>}, ∀i ∈ I , k ∈ K, j ∈ N<span class="s4">k </span>⇒ <span class="s5">constraints and relations among</span></p>
+<p class="p1">decision variables.</p>
+<p class="p1">Clearly, this approach is not scalable to clouds with a very large number of servers. Moreover, the</p>
+<p class="p1">large number of decision variables and parameters of the model make this approach infeasible for a</p>
+<p class="p1">realistic cloud computing resource management strategy.</p>
+</body>
+</html>

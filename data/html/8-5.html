@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Courier}
+    span.s3 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">The Google File System (GFS) was developed in the late 1990s. It uses thousands of storage systems</p>
+<p class="p1">built from inexpensive commodity components to provide petabytes of storage to a large user community</p>
+<p class="p1">with diverse needs [<span class="s1">136</span>]. It is not surprising that a main concern of the GFS designers was to ensure</p>
+<p class="p1">the reliability of a system exposed to hardware failures, system software errors, application errors, and</p>
+<p class="p1">last but not least, human errors.</p>
+<p class="p1">The system was designed after a careful analysis of the file characteristics and of the access models.</p>
+<p class="p1">Some of the most important aspects of this analysis reflected in the GFS design are:</p>
+<p class="p1">• Scalability and reliability are critical features of the system; they must be considered from the</p>
+<p class="p1">beginning rather than at some stage of the design.</p>
+<p class="p1">• The vast majority of files range in size from a few GB to hundreds of TB.</p>
+<p class="p1">• The most common operation is to <span class="s2">append </span>to an existing file; random <span class="s2">write </span>operations to a file</p>
+<p class="p1">are extremely infrequent.</p>
+<p class="p1">• Sequential <span class="s2">read </span>operations are the norm.</p>
+<p class="p1">• The users process the data in bulk and are less concerned with the response time.</p>
+<p class="p1">• The consistency model should be relaxed to simplify the system implementation, but without placing</p>
+<p class="p1">an additional burden on the application developers.</p>
+<p class="p1">Several design decisions were made as a result of this analysis:</p>
+<p class="p1"><span class="s3">1. </span>Segment a file in large chunks.</p>
+<p class="p1"><span class="s3">2. </span>Implement an atomic file <span class="s2">append </span>operation allowing multiple applications operating concurrently</p>
+<p class="p1">to <span class="s2">append </span>to the same file.</p>
+<p class="p1"><span class="s3">3. </span>Build the cluster around a high-bandwidth rather than low-latency interconnection network. Separate</p>
+<p class="p1">the flow of control from the data flow; schedule the high-bandwidth data flow by pipelining the data</p>
+<p class="p1">transfer over TCP connections to reduce the response time. Exploit network topology by sending</p>
+<p class="p1">data to the closest node in the network.</p>
+<p class="p1"><span class="s3">4. </span>Eliminate caching at the client site. Caching increases the overhead for maintaining consistency</p>
+<p class="p1">among cached copies at multiple client sites and it is not likely to improve performance.</p>
+<p class="p1"><span class="s3">5. </span>Ensure consistency by channeling critical file operations through a <span class="s3">master</span>, a component of the</p>
+<p class="p1">cluster that controls the entire system.</p>
+<p class="p1"><span class="s3">6. </span>Minimize the involvement of the <span class="s3">master </span>in file access operations to avoid hot-spot contention and</p>
+<p class="p1">to ensure scalability.</p>
+<p class="p1"><span class="s3">7. </span>Support efficient checkpointing and fast recovery mechanisms.</p>
+<p class="p1"><span class="s3">8. </span>Support an efficient garbage-collection mechanism.</p>
+<p class="p1">GFS files are collections of fixed-size segments called <span class="s3">chunks</span>; at the time of file creation each chunk</p>
+<p class="p1">is assigned a unique <span class="s3">chunk handle</span>. A chunk consists of 64 KB blocks and each block has a 32-bit</p>
+<p class="p1">checksum. Chunks are stored on <span class="s3">Linux </span>files systems and are replicated on multiple sites; a user may</p>
+<p class="p1">change the number of the replicas from the standard value of three to any desired value. The chunk size</p>
+<p class="p1">is 64 MB; this choice is motivated by the desire to optimize performance for large files and to reduce</p>
+<p class="p1">the amount of metadata maintained by the system.</p>
+<p class="p1">A large chunk size increases the likelihood that multiple operations will be directed to the same</p>
+<p class="p1">chunk; thus it reduces the number of requests to locate the chunk and, at the same time, it allows the</p>
+<p class="p1">application to maintain a persistent network connection with the server where the chunk is located.</p>
+<p class="p1">Space fragmentation occurs infrequently because the chunk for a small file and the last chunk of a large</p>
+<p class="p1">file are only partially filled.</p>
+<p class="p1">The architecture of a GFS cluster is illustrated in Figure <span class="s1">8.7</span>. A <span class="s3">master </span>controls a large number of</p>
+<p class="p1"><span class="s3">chunk servers</span>; it maintains metadata such as filenames, access control information, the location of all the</p>
+<p class="p1">replicas for every chunk of each file, and the state of individual chunk servers. Some of the metadata is</p>
+<p class="p1">stored in persistent storage (e.g., the <span class="s3">operation log </span>records the file namespace as well as the file-to-chunk</p>
+<p class="p1">mapping).</p>
+<p class="p1">The locations of the chunks are stored only in the control structure of the <span class="s3">master</span>’s memory and are</p>
+<p class="p1">updated at system startup or when a new chunk server joins the cluster. This strategy allows the <span class="s3">master</span></p>
+<p class="p1">to have up-to-date information about the location of the chunks.</p>
+<p class="p1">System reliability is a major concern, and the operation log maintains a historical record of metadata</p>
+<p class="p1">changes, enabling the <span class="s3">master </span>to recover in case of a failure. As a result, such changes are atomic and are</p>
+<p class="p1">not made visible to the clients until they have been recorded on multiple replicas on persistent storage.</p>
+<p class="p1">To recover from a failure, the <span class="s3">master </span>replays the operation log. To minimize the recovery time, the</p>
+<p class="p1"><span class="s3">master </span>periodically checkpoints its state and at recovery time replays only the log records after the last</p>
+<p class="p1">checkpoint.</p>
+<p class="p1">Each chunk server is a commodity <span class="s3">Linux </span>system; it receives instructions from the <span class="s3">master </span>and responds</p>
+<p class="p1">with status information. To access a file, an application sends to the <span class="s3">master </span>the filename and the chunk</p>
+<p class="p1">index, the offset in the file for the <span class="s2">read </span>or <span class="s2">write </span>operation; the <span class="s3">master </span>responds with the chunk</p>
+<p class="p1">handle and the location of the chunk. Then the application communicates directly with the chunk server</p>
+<p class="p1">to carry out the desired file operation.</p>
+<p class="p1">The consistency model is very effective and scalable. Operations, such as file creation, are atomic and</p>
+<p class="p1">are handled by the <span class="s3">master</span>. To ensure scalability, the <span class="s3">master </span>has minimal involvement in file mutations</p>
+<p class="p1">and operations such as <span class="s2">write </span>or <span class="s2">append </span>that occur frequently. In such cases the <span class="s3">master </span>grants a lease</p>
+<p class="p1">for a particular chunk to one of the chunk servers, called the <span class="s3">primary</span>; then, the primary creates a serial</p>
+<p class="p1">order for the updates of that chunk.</p>
+<p class="p1">When data for a <span class="s2">write </span>straddles the chunk boundary, two operations are carried out, one for each</p>
+<p class="p1">chunk. The steps for a <span class="s2">write </span>request illustrate a process that buffers data and decouples the control</p>
+<p class="p1">flow from the data flow for efficiency:</p>
+<p class="p1"><span class="s3">1. </span>The client contacts the <span class="s3">master</span>, which assigns a lease to one of the chunk servers for a particular</p>
+<p class="p1">chunk if no lease for that chunk exists; then the <span class="s3">master </span>replies with the ID of the primary as well as</p>
+<p class="p1">secondary chunk servers holding replicas of the chunk. The client caches this information.</p>
+<p class="p1"><span class="s3">2. </span>The client sends the data to all chunk servers holding replicas of the chunk; each one of the chunk</p>
+<p class="p1">servers stores the data in an internal LRU buffer and then sends an acknowledgment to the client.</p>
+<p class="p1"><span class="s3">3. </span>The client sends a <span class="s2">write </span>request to the primary once it has received the acknowledgments from</p>
+<p class="p1">all chunk servers holding replicas of the chunk. The primary identifies mutations by consecutive</p>
+<p class="p1">sequence numbers.</p>
+<p class="p1"><span class="s3">4. </span>The primary sends the <span class="s2">write </span>requests to all secondaries.</p>
+<p class="p1"><span class="s3">5. </span>Each secondary applies the mutations in the order of the sequence numbers and then sends an</p>
+<p class="p1">acknowledgment to the primary.</p>
+<p class="p1"><span class="s3">6. </span>Finally, after receiving the acknowledgments from all secondaries, the primary informs the client.</p>
+<p class="p1">The system supports an efficient checkpointing procedure based on <span class="s3">copy-on-write </span>to construct system</p>
+<p class="p1">snapshots. A lazy garbage collection strategy is used to reclaim the space after a file deletion. In the</p>
+<p class="p1">first step the filename is changed to a hidden name and this operation is time stamped. The <span class="s3">master</span></p>
+<p class="p1">periodically scans the namespace and removes the metadata for the files with a hidden name older than</p>
+<p class="p1">a few days; this mechanism gives a window of opportunity to a user who deleted files by mistake to</p>
+<p class="p1">recover the files with little effort.</p>
+<p class="p1">Periodically, chunk servers exchange with the <span class="s3">master </span>the list of chunks stored on each one of them;</p>
+<p class="p1">the <span class="s3">master </span>supplies them with the identity of orphaned chunks whose metadata has been deleted, and</p>
+<p class="p1">such chunks are then deleted, Even when control messages are lost, a chunk server will carry out the</p>
+<p class="p1">housecleaning at the next <span class="s3">heartbeat </span>exchange with the <span class="s3">master</span>. Each chunk server maintains in core the</p>
+<p class="p1">checksums for the locally stored chunks to guarantee data integrity.</p>
+<p class="p1"><span class="s3">CloudStore </span>is an open-source C++ implementation of GFS that allows client access not only from</p>
+<p class="p1">C++ but also from Java and Python.</p>
+</body>
+</html>

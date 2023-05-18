@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Azure </span>and <span class="s1">Online Services </span>are, respectively, <span class="s1">PaaS </span>and <span class="s1">SaaS </span>cloud platforms from Microsoft. <span class="s1">Windows</span></p>
+<p class="p1"><span class="s1">Azure </span>is an operating system,<span class="s1">SQLAzure </span>is a cloud-based version of theSQLServer, and <span class="s1">AzureAppFabric</span></p>
+<p class="p1">(formerly .NET Services) is a collection of services for cloud applications.</p>
+<p class="p1"><span class="s1">Windows Azure </span>has three core components (see Figure <span class="s2">3.3</span>): <span class="s1">Compute</span>, which provides a computation</p>
+<p class="p1">environment; <span class="s1">Storage </span>for scalable storage; and <span class="s1">Fabric Controller</span>, which deploys, manages, and monitors</p>
+<p class="p1">applications; it interconnects nodes consisting of servers, high-speed connections, and switches.</p>
+<p class="p1">The <span class="s1">Content Delivery Network </span>(CDN) maintains cache copies of data to speed up computations. The</p>
+<p class="p1"><span class="s1">Connect </span>subsystem supports IP connections between the users and their applications running on <span class="s1">Windows</span></p>
+<p class="p1"><span class="s1">Azure</span>. The API interface to <span class="s1">Windows Azure </span>is built on REST, HTTP, and XML. The platform</p>
+<p class="p2"><span class="s3">includes five services: </span>Live Services, SQL Azure, AppFabric, SharePoint<span class="s3">, and </span>Dynamics CRM<span class="s3">. A client</span></p>
+<p class="p1">library and tools are also provided for developing cloud applications in Visual Studio.</p>
+<p class="p1">The computations carried out by an application are implemented as one or more <span class="s1">roles</span>; an application</p>
+<p class="p1">typically runs multiple <span class="s1">instances of a role</span>.We can distinguish (i)Web role instances used to createWeb</p>
+<p class="p1">applications; (ii) Worker role instances used to run Windows-based code; and (iii) VM role instances</p>
+<p class="p1">that run a user-provided Windows Server 2008 R2 image.</p>
+<p class="p1">Scaling, load balancing, memory management, and reliability are ensured by a <span class="s1">fabric controller</span>,</p>
+<p class="p1">a distributed application replicated across a group of machines that owns all of the resources in its</p>
+<p class="p1">environment – computers, switches, load balancers – and it is aware of every<span class="s1">Windows Azure </span>application.</p>
+<p class="p1">The fabric controller decides where new applications should run; it chooses the physical servers to</p>
+<p class="p1">optimize utilization using configuration information uploaded with each <span class="s1">Windows Azure </span>application.</p>
+<p class="p1">The configuration information is an XML-based description of how many Web role instances, how</p>
+<p class="p1">manyWorker role instances, and what other resources the application needs. The fabric controller uses</p>
+<p class="p1">this configuration file to determine how many VMs to create.</p>
+<p class="p1">Blobs, tables, queues, and drives are used as scalable storage.Ablob contains binary data; a container</p>
+<p class="p1">consists of one or more blobs. Blobs can be up to a terabyte and they may have associated metadata</p>
+<p class="p1">(e.g., the information about where a JPEG photograph was taken). Blobs allow a <span class="s1">Windows Azure </span>role</p>
+<p class="p1">instance to interact with persistent storage as though it were a local NTFS<span class="s4">6 </span>file system. Queues enable</p>
+<p class="p1">Web role instances to communicate asynchronously with Worker role instances.</p>
+<p class="p1">The Microsoft Azure platform currently does not provide or support any distributed parallel computing</p>
+<p class="p1">frameworks, such as <span class="s1">MapReduce, Dryad</span>, or <span class="s1">MPI</span>, other than the support for implementing basic</p>
+<p class="p1">queue-based job scheduling [<span class="s2">148</span>].</p>
+</body>
+</html>

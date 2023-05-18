@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier; color: #000066}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Courier}
+    span.s4 {font: 10.0px Helvetica; color: #000000}
+    span.s5 {font: 10.0px Times; color: #000000}
+  </style>
+</head>
+<body>
+<p class="p1">An <span class="s1">EC2 Placement Group </span>is a logical grouping of instances that allows the creation of a virtual</p>
+<p class="p1">cluster. When several instances are launched as an <span class="s1">EC2 Placement Group</span>, the virtual cluster has</p>
+<p class="p1">a high-bandwidth interconnect system suitable for network-bound applications. The cluster computing</p>
+<p class="p1">instances require a hardware virtual machine (HVM) ECB-based machine image, whereas other</p>
+<p class="p1">instances use a paravirtual machine (PVM) image. Such clusters are particularly useful for highperformance</p>
+<p class="p1">computing when most applications are communication intensive.</p>
+<p class="p1">Once a placement group is created, <span class="s1">MPI </span>(Message Passing Interface) can be used for communication</p>
+<p class="p1">among the instances in the placement group. <span class="s1">MPI </span>is a de facto standard for parallel applications</p>
+<p class="p1">using message passing, designed to ensure high performance, scalability, and portability; it is</p>
+<p class="p1">a language-independent “message-passing application programmer interface, together with a protocol</p>
+<p class="p1">and the semantic specifications for how its features must behave in any implementation” [<span class="s2">146</span>]. <span class="s1">MPI</span></p>
+<p class="p1">supports point-to-point as well as collective communication; it is widely used by parallel programs</p>
+<p class="p1">based on the same program multiple data (SPMD) paradigm.</p>
+<p class="p1">The following <span class="s1">C </span>code [<span class="s2">146</span>] illustrates the startup of <span class="s1">MPI </span>communication for a process group</p>
+<p class="p1"><span class="s1">MPI_COM_PROCESS_GROUP </span>consisting of a number of <span class="s1">nprocesses</span>; each process is identified by its</p>
+<p class="p1"><span class="s1">rank</span>. The run-time environment <span class="s1">mpirun </span>or <span class="s1">mpiexec </span>spawns multiple copies of the program, with the</p>
+<p class="p1">total number of copies determining the number of process ranks in <span class="s1">MPI_COM_PROCESS_GROUP</span>.</p>
+<p class="p2">#include &lt;mpi.h&gt;</p>
+<p class="p2">#include &lt;stdio.h&gt;</p>
+<p class="p2">#include &lt;string.h&gt;</p>
+<p class="p2">#define TAG 0</p>
+<p class="p2">#define BUFSIZE 128</p>
+<p class="p2">int main(int argc, char *argv[])</p>
+<p class="p2">{</p>
+<p class="p2">char idstr[32];</p>
+<p class="p2">char buff[BUFSIZE];</p>
+<p class="p2">int nprocesses;</p>
+<p class="p2">int my_processId;</p>
+<p class="p2">int i;</p>
+<p class="p2">MPI_Status stat;</p>
+<p class="p2">MPI_Init(&amp;argc,&amp;argv);</p>
+<p class="p2">MPI_Comm_size(MPI_COM_PROCESS_GROUP,&amp;nprocesses);</p>
+<p class="p2">MPI_Comm_rank(MPI_COM_PROCESS_GROUP,&amp;my_processId);</p>
+<p class="p1"><span class="s1">MPI_SEND </span>and <span class="s1">MPI_RECEIVE </span>are blocking send and blocking receive, respectively; their</p>
+<p class="p1">syntax is:</p>
+<p class="p2">int MPI_Send(void *buf, int count, MPI_Datatype datatype,</p>
+<p class="p2">int dest, int tag,MPI_Comm comm)</p>
+<p class="p2">int MPI_Recv(void *buf, int count, MPI_Datatype datatype,</p>
+<p class="p2">int source, int tag, MPI_Comm comm, MPI_Status *status)</p>
+<p class="p1">with</p>
+<p class="p1"><span class="s3">buf </span><span class="s1">− </span>initial address of send buffer (choice)<span class="s1">.</span></p>
+<p class="p1"><span class="s3">count </span><span class="s1">− </span>number of elements in send buffer (nonnegative integer)<span class="s1">.</span></p>
+<p class="p1"><span class="s3">datatype </span><span class="s1">− </span>data type of each send buffer element (handle)<span class="s1">.</span></p>
+<p class="p1"><span class="s3">dest </span><span class="s1">− </span>rank of destination (integer)<span class="s1">.</span></p>
+<p class="p1"><span class="s3">tag </span><span class="s1">− </span>message tag (integer)<span class="s1">.</span></p>
+<p class="p1"><span class="s3">comm </span><span class="s1">− </span>communicator (handle)<span class="s1">.</span></p>
+<p class="p1">Once started, every process other than the coordinator, the process with <span class="s1">rank = </span>0, sends a message</p>
+<p class="p1">to the entire group and then receives a message from all the other members of the process group.</p>
+<p class="p2">if(my_processId == 0)</p>
+<p class="p2">{</p>
+<p class="p2">printf(“%d: We have %d processes<span class="s1">Ä</span>n", my_processId, nprocesses);</p>
+<p class="p2">for(i=1;i&lt;nprocesses;i++)</p>
+<p class="p2">{</p>
+<p class="p2">sprintf(buff, “Hello %d! “, i);</p>
+<p class="p2">MPI_Send(buff, BUFSIZE, MPI_CHAR, i, TAG, MPI_COMM_PROCESS_</p>
+<p class="p2">GROUP);</p>
+<p class="p2">}</p>
+<p class="p2">for(i=1;i&lt;nprocesses;i++)</p>
+<p class="p2">{</p>
+<p class="p2">MPI_Recv(buff, BUFSIZE, MPI_CHAR, i, TAG, MPI_COMM_PROCESS_</p>
+<p class="p2">GROUP,&amp;stat);</p>
+<p class="p2">printf(“%d: %s<span class="s1">Ä</span>n“, my_processId, buff);</p>
+<p class="p2">}</p>
+<p class="p2">}</p>
+<p class="p2">else</p>
+<p class="p2">{</p>
+<p class="p2">/* receive from rank 0: */</p>
+<p class="p2">MPI_Recv(buff, BUFSIZE, MPI_CHAR, 0, TAG, MPI_COMM_PROCESS_</p>
+<p class="p2">GROUP, &amp;stat);</p>
+<p class="p2">sprintf(idstr, “Processor %d “, my_processId);</p>
+<p class="p2">strncat(buff, idstr, BUFSIZE-1);</p>
+<p class="p2">strncat(buff, “reporting for duty<span class="s1">Ä</span>n‘ BUFSIZE-1);</p>
+<p class="p2">/* send to rank 0: */</p>
+<p class="p2">MPI_Send(buff, BUFSIZE, MPI_CHAR, 0, TAG, MPI_COM_PROCESS</p>
+<p class="p2">_GROUP);</p>
+<p class="p2">}</p>
+<p class="p2">MPI_Finalize();</p>
+<p class="p2">return 0;</p>
+<p class="p2">}</p>
+<p class="p1">An example of cloud computing using the <span class="s1">MPI </span>is described in [<span class="s2">119</span>]. An example of <span class="s1">MPI </span>use on</p>
+<p class="p3"><span class="s4">EC2 </span><span class="s5">is located at </span>http://rc.fas.harvard.edu/faq/amazonec2<span class="s5">.</span></p>
+</body>
+</html>

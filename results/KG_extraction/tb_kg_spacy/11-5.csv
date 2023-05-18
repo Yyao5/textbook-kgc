@@ -1,0 +1,23 @@
+,source,edge,target
+0,API,provided by,S3 client
+3,access,found on,secret AWS account Section
+5,it,used,S3 objects
+10,"programmatically AWS Management s3.createBucket(""bucket_name",created,directly AWS Management Console
+13,object,stores,actual
+15,original  object,have,key
+19,we,use,programmatically AWS Management file
+20,f bucket versioning,feature,"new bucket File(""local_file_name"
+22,us,allows,S3 object
+28,you,use,the
+30,= InputStream,accessed,Scanner
+31,content,recommends,directly  S3
+35,InputStream,means,open  S3
+36,following  code,read,entire  object
+39,upload,requires,local  files
+44,ObjectListing,supports several,useful  getObjectSummaries
+45,S3ObjectSummary,encapsulates most,actual S3 object object
+46,particular  all,create,List String
+48,S3ObjectSummary ObjectListing bucket,Note,truncated  list
+50,bucket,return,then  truncated
+51,bucket,contains,large  objects
+53,previous  example,becomes,large  bucket

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Helvetica}
+    span.s3 {font: 10.0px Times}
+    span.s4 {color: #000066}
+    span.s5 {font: 7.5px Times}
+  </style>
+</head>
+<body>
+<p class="p1">A <span class="s1">logical clock (LC) </span>is an abstraction necessary to ensure the clock condition in the absence of a global</p>
+<p class="p1">clock. Each process <span class="s1">p</span><span class="s2">i </span>maps events to positive integers. Call <span class="s1">LC(e) </span>the local variable associated with</p>
+<p class="p1">event <span class="s1">e</span>. Each process time stamps each message <span class="s1">m </span>sent with the value of the logical clock at the time of</p>
+<p class="p1">sending, <span class="s1">T S(m) = LC(send(m))</span>. The rules to update the logical clock are specified by the following</p>
+<p class="p1">relationship:</p>
+<p class="p2">LC(e) =</p>
+<p class="p2"> </p>
+<p class="p1"><span class="s1">LC +</span>1 if <span class="s1">e </span>is a local event or a <span class="s1">send(m) </span>event</p>
+<p class="p2"><span class="s3">max </span>(LC, T S(m) + <span class="s3">1</span>) <span class="s3">if </span>e = receive(m).</p>
+<p class="p1">(2.23)</p>
+<p class="p1">The concept of logical clocks is illustrated in Figure <span class="s4">2.5 </span>using a modified <span class="s1">space-time diagram </span>in</p>
+<p class="p1">which the events are labeled with the logical clock value. Messages exchanged between processes are</p>
+<p class="p1">shown as lines from the sender to the receiver; the communication events corresponding to sending and</p>
+<p class="p1">receiving messages are marked on these diagrams.</p>
+<p class="p1">Each process labels local events and sends events sequentially until it receives a message marked</p>
+<p class="p1">with a logical clock value larger than the next local logical clock value, as shown in Equation <span class="s4">2.23</span>.</p>
+<p class="p1">It follows that logical clocks do not allow a global ordering of all events. For example, there is no way to</p>
+<p class="p1">establish the ordering of events <span class="s1">e</span><span class="s5">1</span></p>
+<p class="p2"><span class="s5">1</span>, e<span class="s5">1</span></p>
+<p class="p1"><span class="s5">2</span>, and <span class="s1">e</span><span class="s5">1</span></p>
+<p class="p1"><span class="s5">3 </span>in Figure <span class="s4">2.5</span>. Nevertheless, communication events allow</p>
+<p class="p1">different processes to coordinate their logical clocks; for example, process <span class="s1">p</span><span class="s5">2 </span>labels the event <span class="s1">e</span><span class="s5">3</span></p>
+<p class="p1"><span class="s5">2 </span>as 6</p>
+<p class="p1">because of message <span class="s1">m</span><span class="s5">2</span>, which carries the information about the logical clock value as 5 at the time</p>
+<p class="p1">message <span class="s1">m</span><span class="s5">2 </span>was sent. Recall that <span class="s1">e </span><span class="s2">j</span></p>
+<p class="p1"><span class="s2">i </span>is the <span class="s1">j </span>-th event in process <span class="s1">p</span><span class="s2">i </span>.</p>
+<p class="p1">Logical clocks lack an important property, <span class="s1">gap detection</span>; given two events <span class="s1">e </span>and <span class="s1">e</span><span class="s2">  </span>and their logical</p>
+<p class="p1">clock values, <span class="s1">LC(e) </span>and <span class="s1">LC(e</span><span class="s2"> </span></p>
+<p class="p1"><span class="s1">)</span>, it is impossible to establish if an event <span class="s1">e</span><span class="s2">   </span>exists such that</p>
+<p class="p2">LC(e) &lt; LC(e<span class="s2">  </span></p>
+<p class="p2">) &lt; LC(e<span class="s2"> </span></p>
+<p class="p1"><span class="s1">). </span>(2.24)</p>
+<p class="p1">For example, for process <span class="s1">p</span><span class="s5">1 </span>there is an event, <span class="s1">e</span><span class="s5">4</span></p>
+<p class="p1"><span class="s5">1</span>, between the events <span class="s1">e</span><span class="s5">3</span></p>
+<p class="p1"><span class="s5">1 </span>and <span class="s1">e</span><span class="s5">5</span></p>
+<p class="p1"><span class="s5">1 </span>in Figure <span class="s4">2.5</span>; indeed,</p>
+<p class="p2">LC(e<span class="s5">3</span></p>
+<p class="p2"><span class="s5">1</span>) = <span class="s3">3</span>, LC(e<span class="s5">5</span></p>
+<p class="p2"><span class="s5">1</span>) = <span class="s3">5</span>, LC(e<span class="s5">4</span></p>
+<p class="p2"><span class="s5">1</span>) = <span class="s3">4, and </span>LC(e<span class="s5">3</span></p>
+<p class="p2"><span class="s5">1</span>) &lt; LC(e<span class="s5">4</span></p>
+<p class="p2"><span class="s5">1</span>) &lt; LC(e<span class="s5">5</span></p>
+<p class="p1"><span class="s5">1</span><span class="s1">)</span>. However, for process</p>
+<p class="p1"><span class="s1">p</span><span class="s5">3</span>, the events <span class="s1">e</span><span class="s5">3</span></p>
+<p class="p1"><span class="s5">3 </span>and <span class="s1">e</span><span class="s5">4</span></p>
+<p class="p1"><span class="s5">3 </span>are consecutive, though <span class="s1">LC(e</span><span class="s5">3</span></p>
+<p class="p2"><span class="s5">3</span>) = <span class="s3">3 and </span>LC(e<span class="s5">4</span></p>
+<p class="p2"><span class="s5">3</span>) = <span class="s3">10.</span></p>
+</body>
+</html>

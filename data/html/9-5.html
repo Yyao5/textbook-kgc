@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">An operating system (OS) allows multiple applications to share the hardware resources of a physical</p>
+<p class="p1">system, subject to a set of policies. A critical function of an OS is to protect applications against a</p>
+<p class="p1">wide range of malicious attacks such as unauthorized access to privileged information, tempering with</p>
+<p class="p1">executable code, and spoofing. Such attacks can now target even single-user systems such as personal</p>
+<p class="p1">computers, tablets, or smartphones. Data brought into the system may contain malicious code; this</p>
+<p class="p1">could occur via a Java applet, or data imported by a browser from a malicious Web site.</p>
+<p class="p1">The <span class="s1">mandatory security </span>of an OS is considered to be “any security policy where the definition of</p>
+<p class="p1">the policy logic and the assignment of security attributes is tightly controlled by a system security</p>
+<p class="p1">policy administrator” [<span class="s2">209</span>]. Access control, authentication usage, and cryptographic usage policies are</p>
+<p class="p1">all elements of mandatory OS security. The first policy specifies how the OS controls the access to</p>
+<p class="p1">different system objects, the second defines the authentication mechanisms the OS uses to authenticate</p>
+<p class="p1">a principal, and the last specifies the cryptographic mechanisms used to protect the data. A necessary</p>
+<p class="p1">but not sufficient condition for security is that the subsystems tasked with performing security-related</p>
+<p class="p1">functions are temper-proof and cannot be bypassed. The OS should confine an application to a unique</p>
+<p class="p1">security domain.</p>
+<p class="p1">Applications with special privileges that perform security-related functions are called <span class="s1">trusted applications.</span></p>
+<p class="p1">Such applications should only be allowed the lowest level of privileges required to perform</p>
+<p class="p1">their functions. For example, type enforcement is a mandatory security mechanism that can be used to</p>
+<p class="p1">restrict a trusted application to the lowest level of privileges.</p>
+<p class="p1">Enforcing mandatory security through mechanisms left to the discretion of users could lead to a</p>
+<p class="p1">breach of security due not only to malicious intent but also carelessness or lack of understanding.</p>
+<p class="p1">Discretionary mechanisms place the burden of security on individual users. Moreover, an application</p>
+<p class="p1">may change a carefully defined discretionary policy without the consent of the user, whereas a mandatory</p>
+<p class="p1">policy can only be changed by a system administrator.</p>
+<p class="p1">Unfortunately, commercial operating systems do not support multilayered security; such systems</p>
+<p class="p1">only distinguish between a completely privileged security domain and a completely unprivileged one.</p>
+<p class="p1">Some operating systems, such as <span class="s1">Windows NT</span>, allow a program to inherit all the privileges of the</p>
+<p class="p1">program invoking it, regardless of the level of trust in that program.</p>
+<p class="p1">The existence of <span class="s1">trusted paths</span>, mechanisms supporting user interactions with trusted software, is</p>
+<p class="p1">critical to system security. If such mechanisms do not exist, malicious software can impersonate trusted</p>
+<p class="p1">software. Some systems provide trust paths for a few functions such as login authentication and password</p>
+<p class="p1">changing and allow servers to authenticate their clients.</p>
+<p class="p1">The solution discussed in [<span class="s2">209</span>] is to decompose a complex mechanism into several components with</p>
+<p class="p1">well-defined roles. For example, the access control mechanism for the application space could consist</p>
+<p class="p1">of <span class="s1">enforcer </span>and <span class="s1">decider </span>components. To access a protected object, the enforcer will gather the required</p>
+<p class="p1">information about the agent attempting the access and will pass this information to the decider, together</p>
+<p class="p1">with the information about the object and the elements of the policy decision. Finally, it will carry out</p>
+<p class="p1">the actions requested by the decider.</p>
+<p class="p1">A trusted-path mechanism is required to prevent malicious software invoked by an authorized application</p>
+<p class="p1">to tamper with the attributes of the object and/or with the policy rules. A trusted path is also</p>
+<p class="p1">required to prevent an impostor from impersonating the decider agent. A similar solution is proposed</p>
+<p class="p1">for cryptography usage, which should be decomposed into an analysis of the invocation mechanisms</p>
+<p class="p1">and an analysis of the cryptographic mechanism.</p>
+<p class="p1">Another question is how an OS can protect itself and the applications running under it from malicious</p>
+<p class="p1">mobile code attempting to gain access to the data and the other resources and compromise system</p>
+<p class="p1">confidentiality and/or integrity. Java Security Manager uses the type-safety attributes of Java to prevent</p>
+<p class="p1">unauthorized actions of an application running in a “sandbox.” Yet, the Java Virtual Machine (JVM)</p>
+<p class="p1">accepts byte code in violation of language semantics; moreover, it cannot protect itself from tampering</p>
+<p class="p1">by other applications.</p>
+<p class="p1">Even if all these security problems could be eliminated, good security relies on the ability of the file</p>
+<p class="p1">system to preserve the integrity of Java class code. The approach to require digitally signed applets and</p>
+<p class="p1">accept them only from trusted sources could fail due to the all-or-nothing security model. A solution to</p>
+<p class="p1">securing mobile communication could be to confine a browser to a distinct security domain.</p>
+<p class="p1">Specialized <span class="s1">closed-box platforms </span>such as the ones on some cellular phones, game consoles, and automated</p>
+<p class="p1">teller machines (ATMs) could have embedded cryptographic keys that allow themselves to reveal</p>
+<p class="p1">their true identity to remote systems and authenticate the software running on them. Such facilities are</p>
+<p class="p1">not available to <span class="s1">open-box platforms</span>, the traditional hardware designed for commodity operating systems.</p>
+<p class="p1">A highly secure operating system is necessary but not sufficient unto itself; application-specific</p>
+<p class="p1">security is also necessary. Sometimes security implemented above the operating system is better. This</p>
+<p class="p1">is the case for electronic commerce that requires a digital signature on each transaction.</p>
+<p class="p1">We conclude that commodity operating systems offer low assurance. Indeed, an OS is a complex</p>
+<p class="p1">software system consisting of millions of lines of code, and it is vulnerable to a wide range of malicious</p>
+<p class="p1">attacks. An OS poorly isolates one application from another, and once an application is compromised,</p>
+<p class="p1">the entire physical platform and all applications running on it can be affected. The platform security</p>
+<p class="p1">level is thus reduced to the security level of the most vulnerable application running on the platform.</p>
+<p class="p1">Operating systems provide only weak mechanisms for applications to authenticate to one another and</p>
+<p class="p1">do not have a trusted path between users and applications. These shortcomings add to the challenges of</p>
+<p class="p1">providing security in a distributed computing environment. For example, a financial application cannot</p>
+<p class="p1">determine whether a request comes from an authorized user or from a malicious program; in turn, a</p>
+<p class="p1">human user cannot distinguish a response from a malicious program impersonating the service from</p>
+<p class="p1">the response provided by the service itself.</p>
+</body>
+</html>

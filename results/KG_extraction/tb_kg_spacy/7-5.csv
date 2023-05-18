@@ -1,0 +1,46 @@
+,source,edge,target
+1,users,allow,based users systems
+4,Table,summarizes,7.1  metrics
+5,statistics,collected from,billion  crawl
+6,which,uses,congestion
+7,which,supports,mechanisms
+10,we,analyze,problem
+11,we,reviewtwo important,important flow control
+13,TCP,seeks,fair network bandwidth
+16,TCP,uses,sliding flow control protocol
+17,where  MSS,denote,maximum segment size
+19,many  quantity,depends on,network
+21,W,affected by,available network capacity
+22,when window receiver,specifies,new  data
+24,When  receiver,advertises,window
+25,sender,stops,data
+26,subsequent window size update,used,receiver
+30,sender,sends,small  packet
+31,receiver,responds by,new window size
+32,flow sender,attempts,available network network
+35,source,uses,congestion
+36,awnd,denotes,receiver window
+37,algorithms,used,1988
+41,sender,probes,spare  loss
+42,sender,means,times  MSS
+43,sender,starts with,times  MSS
+44,congestion window,acknowledged,effectively  RTT
+46,When congestion window,cwnd,threshold
+47,algorithm,enters,congestion
+49,time,motivated by,fact
+52,system,enters in,slow start =
+53,W  pattern,changed,Internet
+54,Measurements,show,average Internet connection
+55,5  %,required more,256  Kbps
+57,5  %,required less,256  Kbps
+61,strategies,developed,Internet
+63,two  browsers,open,startup aWeb page
+66,Explorer,opens,180  connections
+67,Clearly  strategies,circumvent,considerable congestion overhead
+70,arguments,presented in,108
+71,latency,dominated by,RTTs
+72,data transfer,allows,fewer  RTTs
+74,single TCP connection,requires multiple,single  page
+76,lived Internet that,ensures,large  data
+77,connection,allows faster,fast  retransmission
+78,TCP latency,reduced from,466 init_cwnd =

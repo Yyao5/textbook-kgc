@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 7.5px Times; color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">The development of efficient cloud applications inherits the challenges posed by the natural imbalance</p>
+<p class="p1">among computing, I/O, and communication bandwidths of physical systems. These challenges</p>
+<p class="p1">are greatly amplified due to the scale of the system, its distributed nature, and the fact that virtually</p>
+<p class="p1">all applications are data-intensive. Though cloud computing infrastructures attempt to automatically</p>
+<p class="p1">distribute and balance a load, the application developer is still left with the responsibility of placing the</p>
+<p class="p1">data close to the processing site and identifying optimal storage for the data.</p>
+<p class="p1">One of the main advantages of cloud computing, the shared infrastructure, could also have a negative</p>
+<p class="p1">impact. Performance isolation<span class="s1">1 </span>is nearly impossible to reach in a real system, especially when the system</p>
+<p class="p1">is heavily loaded. The performance of virtual machines fluctuates based on the load, the infrastructure</p>
+<p class="p1">services, and the environment, including the other users. Security isolation is also challenging on multitenant</p>
+<p class="p1">systems.</p>
+<p class="p1">Reliability is also a major concern; node failures are to be expected whenever a large number of</p>
+<p class="p1">nodes cooperate for the computations. Choosing an optimal instance (in terms of performance isolation,</p>
+<p class="p1">reliability, and security) from those offered by the cloud infrastructure is another critical factor to be</p>
+<p class="p1">considered. Of course, cost considerations also play a role in the choice of the instance type.</p>
+<p class="p1">Many applications consist of multiple stages; in turn, each stage may involve multiple instances</p>
+<p class="p1">running in parallel on the systems of the cloud and communicating among them. Thus, efficiency,</p>
+<p class="p1">consistency, and communication scalability are major concerns for an application developer. Indeed, due to shared networks and unknown topology, cloud infrastructures exhibit internode latency and</p>
+<p class="p1">bandwidth fluctuations that affect application performance.</p>
+<p class="p1">Data storage plays a critical role in the performance of any data-intensive application; the organization</p>
+<p class="p1">of the storage, the storage location, and the storage bandwidth must be carefully analyzed to lead to</p>
+<p class="p1">optimal application performance. Clouds support many storage options to set up a file system similar</p>
+<p class="p1">to the <span class="s2">Hadoop </span>file system discussed in Section 8.6; among them are off-instance cloud storage (e.g.,</p>
+<p class="p1"><span class="s2">S3</span>), mountable off-instance block storage (e.g., <span class="s2">EBS</span>), and storage persistent for the lifetime of the</p>
+<p class="p1">instance.</p>
+<p class="p1">Many data-intensive applications use metadata associated with individual data records; for example,</p>
+<p class="p1">the metadata for an MPEG audio file may include the name of the song, the singer, recording information,</p>
+<p class="p1">and so on. Metadata should be stored for easy access, and the storage should be scalable and</p>
+<p class="p1">reliable.</p>
+<p class="p1">Another important consideration for the application developer is logging. Performance considerations</p>
+<p class="p1">limit the amount of data logging, whereas the ability to identify the source of unexpected results</p>
+<p class="p1">and errors is helped by frequent logging. Logging is typically done using instance storage preserved only</p>
+<p class="p1">for the lifetime of the instance. Thus, measures to preserve the logs for a postmortem analysis must be</p>
+<p class="p1">taken. Another challenge awaiting resolution is related to software licensing, discussed in Section 3.11.</p>
+</body>
+</html>

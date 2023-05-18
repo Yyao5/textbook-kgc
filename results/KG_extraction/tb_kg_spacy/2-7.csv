@@ -1,0 +1,29 @@
+,source,edge,target
+1,reallife  network,reorder,messages
+2,fact,has profound,distributed  application
+3,robot,getting,right monitoring order
+7,when  message,establishes,actually destination process
+9,message,delivered after,2.6  deliver(m
+11,same  messages,implies,same  which
+13,following  relation,requires,source destination processes
+14,⇒,deliver,j
+16,FIFO delivery,enforced,sequence message
+17,Even communication channel,guarantee,FIFO
+19,numbers,used,individual  packets
+31,future  messages,received by,process pi
+32,future  messages,stamp smaller,T S(m
+34,consistent  pi,construct consistent,increasing time stamp order
+35,pi,implements,following  delivery
+36,’s,examine,now  the
+37,real message delays,assume,δ
+38,processes,have,distributed  environment
+39,message delays,bounded by,δ
+41,time e. process,includes,RC(e
+42,t,deliver,all t −δ
+43,all,received,messages
+44,bounded message delivery,guarantees,bounded  assumption
+45,message,arrive,lower  messages
+47,so  we,need,strong clock condition
+49,condition,requires,< ≡ T
+52,sometimes  system,has,hidden  channels
+53,reasoning,lead,incorrect  conclusions

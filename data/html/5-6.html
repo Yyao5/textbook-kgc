@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">In 1974 Gerald J. Popek and Robert P. Goldberg gave a set of sufficient conditions for a computer</p>
+<p class="p1">architecture to support virtualization and allow a VMM to operate efficiently [<span class="s1">293</span>]:</p>
+<p class="p1">• A program running under the VMM should exhibit a behavior essentially identical to that demonstrated</p>
+<p class="p1">when the program runs directly on an equivalent machine.</p>
+<p class="p1">• The VMM should be in complete control of the virtualized resources.</p>
+<p class="p1">• A statistically significant fraction of machine instructions must be executed without the intervention</p>
+<p class="p1">of the VMM.</p>
+<p class="p1">Another way to identify an architecture suitable for a virtual machine is to distinguish two classes</p>
+<p class="p1">of machine instructions: sensitive instructions, which require special precautions at execution time, and</p>
+<p class="p1">innocuous instructions, which are not sensitive. In turn, sensitive instructions can be:</p>
+<p class="p1">• <span class="s2">Control sensitive</span>, which are instructions that attempt to change either the memory allocation or the</p>
+<p class="p1">privileged mode.</p>
+<p class="p1">• <span class="s2">Mode sensitive</span>, which are instructions whose behavior is different in the privileged mode.</p>
+<p class="p1">An equivalent formulation of the conditions for efficient virtualization can be based on this classification</p>
+<p class="p2"><span class="s3">of machine instructions. </span>A VMM for a third-generation (or later) computer can be constructed</p>
+<p class="p2">if the set of sensitive instructions is a subset of the privileged instructions of that machine. <span class="s3">To handle</span></p>
+<p class="p1">nonvirtualizable instructions, one could resort to two strategies:</p>
+<p class="p1">• <span class="s2">Binary translation. </span>The VMM monitors the execution of guest operating systems; nonvirtualizable</p>
+<p class="p1">instructions executed by a guest operating system are replaced with other instructions.</p>
+<p class="p1">• <span class="s2">Paravirtualization. </span>The guest operating system is modified to use only instructions that can be</p>
+<p class="p1">virtualized.</p>
+<p class="p1">There are two basic approaches to processor virtualization: <span class="s2">full virtualization</span>, in which each virtual</p>
+<p class="p1">machine runs on an exact copy of the actual hardware, and <span class="s2">paravirtualization</span>, in which each virtual</p>
+<p class="p1">machine runs on a slightly modified copy of the actual hardware (see Figure <span class="s1">5.4</span>). The reasons that</p>
+<p class="p1">paravirtualization is often adopted are (i) some aspects of the hardware cannot be virtualized; (ii)</p>
+<p class="p1">to improve performance; and (iii) to present a simpler interface. <span class="s2">VMware </span>VMMs are examples of</p>
+<p class="p1">full virtualization. <span class="s2">Xen </span>[<span class="s1">41</span>] and <span class="s2">Denali </span>[<span class="s1">372</span>] are based on paravirtualization; Section <span class="s1">5.8 </span>covers the</p>
+<p class="p1">strategies to overcome hardware limitations for paravirtualization in <span class="s2">Xen</span>.</p>
+<p class="p1">Full virtualization requires a virtualizable architecture; the hardware is fully exposed to the guest</p>
+<p class="p1">OS, which runs unchanged, and this ensures that this direct execution mode is efficient. On the other</p>
+<p class="p1">hand, paravirtualization is done because some architectures such as <span class="s2">x86 </span>are not easily virtualizable.</p>
+<p class="p1">Paravirtualization demands that the guest OS be modified to run under the VMM; furthermore, the</p>
+<p class="p1">guest OS code must be ported for individual hardware platforms.</p>
+<p class="p1">Systems such as <span class="s2">VMware EX Server </span>support full virtualization on <span class="s2">x86 </span>architecture. The virtualization</p>
+<p class="p1">of the memory management unit (MMU) and the fact that privileged instructions executed by a guest</p>
+<p class="p1">OS fail silently pose some challenges; for example, to address the latter problem, one has to insert</p>
+<p class="p1">traps whenever privileged instructions are issued by a guest OS. The system must also maintain shadow</p>
+<p class="p1">copies of system control structures, such as page tables, and trap every event affecting the state of these</p>
+<p class="p1">control structures; the overhead of many operations is substantial .</p>
+<p class="p1">Application performance under a virtual machine is critical; generally, virtualization adds some level</p>
+<p class="p1">of overhead that negatively affects the performance. In some cases an application running under a VM performs better than one running under a classical OS. This is the case of a policy called <span class="s2">cache isolation</span>.</p>
+<p class="p1">The cache is generally not partitioned equally among processes running under a classical OS, since one</p>
+<p class="p1">process may use the cache space better than the other. For example, in the case of two processes, one</p>
+<p class="p1"><span class="s4">write</span>-intensive and the other <span class="s4">read</span>-intensive, the cache may be aggressively filled by the first. Under</p>
+<p class="p1">the <span class="s2">cache isolation </span>policy the cache is divided between the VMs and it is beneficial to run workloads</p>
+<p class="p1">competing for cache in two different VMs [<span class="s1">324</span>]. The application I/O performance running under a VM</p>
+<p class="p1">depends on factors such as the disk partition used by the VM, the CPU utilization, the I/O performance</p>
+<p class="p1">of the competing VMs, and the I/O block size. On a <span class="s2">Xen </span>platform, discrepancies between the optimal</p>
+<p class="p1">choice and the default are as high as 8% to 35% [<span class="s1">324</span>].</p>
+</body>
+</html>

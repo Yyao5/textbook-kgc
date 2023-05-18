@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 10.0px Courier; color: #000066}
+    span.s4 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">The demand for computing resources, such as CPU cycles, primary and secondary storage, and network</p>
+<p class="p1">bandwidth, depends heavily on the volume of data processed by an application. The demand for</p>
+<p class="p1">resources can be a function of the time of day, can monotonically increase or decrease in time, or can</p>
+<p class="p1">experience predictable or unpredictable peaks. For example, a new Web service will experience a low</p>
+<p class="p1">request rate when the service is first introduced and the load will exponentially increase if the service is</p>
+<p class="p1">successful. A service for income tax processing will experience a peak around the tax filling deadline,</p>
+<p class="p1">whereas access to a service provided by Federal EmergencyManagement Agency (FEMA)will increase</p>
+<p class="p1">dramatically after a natural disaster.</p>
+<p class="p1">The elasticity of a public cloud, the fact that it can supply to an application precisely the amount</p>
+<p class="p1">of resources it needs and that users pay only for the resources they consume are serious incentives to</p>
+<p class="p1">migrate to a public cloud. The question we address is: How scaling can actually be implemented in a</p>
+<p class="p1">cloud when a very large number of applications exhibit this often unpredictable behavior [<span class="s1">62</span>,<span class="s1">233</span>,<span class="s1">357</span>].</p>
+<p class="p1">To make matters worse, in addition to an unpredictable external load the cloud resource management</p>
+<p class="p1">has to deal with resource reallocation due to server failures.</p>
+<p class="p1">We distinguish two scaling modes: vertical and horizontal. <span class="s2">Vertical scaling </span>keeps the number of VMs</p>
+<p class="p1">of an application constant, but increases the amount of resources allocated to each one of them. This</p>
+<p class="p1">can be done either by migrating the VMs to more powerful servers or by keeping the VMs on the same</p>
+<p class="p1">servers but increasing their share of the CPU time. The first alternative involves additional overhead;</p>
+<p class="p1">the VMis stopped, a snapshot of it is taken, the file is transported to a more powerful server, and, finally,</p>
+<p class="p1">the VM is restated at the new site.</p>
+<p class="p1"><span class="s2">Horizontal scaling </span>is the most common mode of scaling on a cloud; it is done by increasing the</p>
+<p class="p1">number of VMs as the load increases and reducing the number of VMs when the load decreases. Often,</p>
+<p class="p1">this leads to an increase in communication bandwidth consumed by the application. Load balancing</p>
+<p class="p1">among the running VMs is critical to this mode of operation. For a very large application, multiple load</p>
+<p class="p1">balancers may need to cooperate with one another. In some instances the load balancing is done by a</p>
+<p class="p1">front-end server that distributes incoming requests of a transaction-oriented system to back-end servers.</p>
+<p class="p1">An application should be designed to support scaling. As we saw in Section 4.6 in the case of a</p>
+<p class="p1"><span class="s2">modularly divisible </span>application, the workload partitioning is static, it is decided a priori, and cannot be</p>
+<p class="p1">changed; thus, the only alternative is vertical scaling. In the case of an <span class="s2">arbitrarily divisible </span>application</p>
+<p class="p1">the workload can be partitioned dynamically; as the load increases, the system can allocate additional</p>
+<p class="p1">VMs to process the additional workload. Most cloud applications belong to this class, which justifies</p>
+<p class="p1">our statement that horizontal scaling is the most common scaling mode.</p>
+<p class="p1"><span class="s2">Mapping a computation </span>means to assign suitable physical servers to the application. Avery important</p>
+<p class="p1">first step in application processing is to identify the type of application and map it accordingly. For</p>
+<p class="p1">example, a communication-intensive application should be mapped to a powerful server to minimize</p>
+<p class="p1">the network traffic. This may increase the cost per unit of CPU usage, but it will decrease the computing</p>
+<p class="p1">time and probably reduce the overall cost for the user. At the same time, it will reduce the network</p>
+<p class="p1">traffic, a highly desirable effect from the perspective of the cloud service provider. To scale up and down a compute-intensive application, a good strategy is to increase or decrease the number of VMs or</p>
+<p class="p1">instances. Because the load is relatively stable, the overhead of starting up or terminating an instance</p>
+<p class="p1">does not increase significantly the computing time or the cost.</p>
+<p class="p1">There are several strategies to support scaling. <span class="s2">Automatic VM scaling </span>uses predefined metrics, e.g.,</p>
+<p class="p1">CPU utilization, to make scaling decisions. Automatic scaling requires <span class="s2">sensors </span>to monitor the state of</p>
+<p class="p1">VMs and servers; <span class="s2">controllers </span>make decisions based on the information about the state of the cloud, often</p>
+<p class="p1">using a state machine model for decision making. Amazon and Rightscale (<span class="s3">www.rightscale.com</span>)</p>
+<p class="p1">offer automatic scaling. In the case of <span class="s2">AWS </span>the <span class="s2">CloudWatch </span>service supports applications monitoring</p>
+<p class="p1">and allows a user to set up conditions for automatic migrations.</p>
+<p class="p2">Nonscalable or single-load balancers <span class="s4">are also used for horizontal scaling. The </span>Elastic Load Balancing</p>
+<p class="p1">service from Amazon automatically distributes incoming application traffic across multiple <span class="s2">EC2</span></p>
+<p class="p1">instances. Another service, the <span class="s2">Elastic Beanstalk</span>, allows dynamic scaling between a low and a high</p>
+<p class="p1">number of instances specified by the user (see Section 3.1). The cloud user usually has to pay for the</p>
+<p class="p1">more sophisticated scaling services such as <span class="s2">Elastic Beanstalk</span>.</p>
+</body>
+</html>

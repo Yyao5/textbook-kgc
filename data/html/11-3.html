@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Helvetica}
+    span.s3 {font: 10.0px Courier; color: #000066}
+    span.s4 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Aclient must knowthe IP address of a virtual machine in the cloud to be able to connect to it. TheDomain</p>
+<p class="p1">Name Service (DNS) is used to map human-friendly names of computer systems to IP addresses in the</p>
+<p class="p1">Internet or in private networks. DNS is a hierarchical distributed database and plays a role reminiscent</p>
+<p class="p1">of a phone book on the Internet. In late 2010 Amazon announced a DNS service called <span class="s1">Route 53 </span>to</p>
+<p class="p1">route users to <span class="s1">AWS </span>services and to infrastructure outside of <span class="s1">AWS</span>. A network of DNS servers is scattered</p>
+<p class="p1">across the globe, which enables customers to gain reliable access to <span class="s1">AWS </span>and place strict controls over</p>
+<p class="p1">who can manage their DNS system by allowing integration with <span class="s1">AWS </span>Identity and AccessManagement</p>
+<p class="p1">(IAM).</p>
+<p class="p1">For several reasons, including security and the ability of the infrastructure to scale up, the IP addresses</p>
+<p class="p1">of instances visible to the outside world are mapped internally to private IP addresses. A virtual machine</p>
+<p class="p1">running under Amazon’s <span class="s1">EC2 </span>has several IP addresses:</p>
+<p class="p1"><span class="s1">1. EC2 Private IP Address. </span>The internal address of an instance; it is only used for routing within the</p>
+<p class="p1"><span class="s1">EC2 </span>cloud.</p>
+<p class="p1"><span class="s1">2. EC2 Public IP Address. </span>Network traffic originating outside the <span class="s1">AWS </span>network must use either the</p>
+<p class="p1">public IP address or the elastic IP address of the instance. The public IP address is translated using</p>
+<p class="p1">Network Address Translation (NAT) to the private IP address when an instance is launched and it</p>
+<p class="p1">is valid until the instance is terminated. Traffic to the public address is forwarded to the private IP</p>
+<p class="p1">address of the instance.</p>
+<p class="p1"><span class="s1">3. EC2 Elastic IP Address. </span>The IP address allocated to an <span class="s1">AWS </span>account and used by traffic originated</p>
+<p class="p1">outside <span class="s1">AWS</span>. NAT is used to map an elastic IP address to the private IP address. Elastic IP addresses</p>
+<p class="p1">allow the cloud user to mask instance or availability zone failures by programmatically remapping</p>
+<p class="p1">public IP addresses to any instance associated with the user’s account. This allows fast recovery after</p>
+<p class="p1">a system failure. For example, rather than waiting for a cloud maintenance team to reconfigure or</p>
+<p class="p1">replace the failing host or waiting for DNS to propagate the new public IP to all of the customers</p>
+<p class="p1">of a Web service hosted by <span class="s1">EC2</span>, the Web service provider can remap the elastic IP address to a</p>
+<p class="p1">replacement instance. Amazon charges a fee for unallocated Elastic IP addresses.</p>
+<p class="p1">Amazon Web Services use <span class="s1">security groups </span>to control access to users’ virtual machines. A virtual</p>
+<p class="p1">machine instance belongs to one and only one security group, which can only be defined before the</p>
+<p class="p1">instance is launched. Once an instance is running, the security group the instance belongs to cannot be</p>
+<p class="p1">changed. However, more than one instance can belong to a single security group.</p>
+<p class="p1">Security group rules control inbound traffic to the instance and have no effect on outbound traffic from</p>
+<p class="p1">the instance. The inbound traffic to an instance, either from outside the cloud or from other instances</p>
+<p class="p1">running on the cloud, is blocked unless a rule stating otherwise is added to the security group of the</p>
+<p class="p1">instance. For example, assume a client running on instance A in the security group <span class="s1"> </span><span class="s2">A </span>is to connect to</p>
+<p class="p1">a server on instance B listening on TCP port P, where B is in security group <span class="s1"> </span><span class="s2">B</span>. A new rule must be added to security group <span class="s1"> </span><span class="s2">B </span>to allow connections to port P; to accept responses from server <span class="s1">B</span>, a new</p>
+<p class="p1">rule must be added to security group <span class="s1"> </span><span class="s2">A</span>.</p>
+<p class="p1">The following steps allow the user to add a security rule:</p>
+<p class="p1"><span class="s1">1. </span>Sign in to the <span class="s1">AWS </span>Management Console at <span class="s3">http://aws.amazon.com </span>using your email</p>
+<p class="p1">address and password and select <span class="s1">EC2 </span>service.</p>
+<p class="p1"><span class="s1">2. </span>Use the <span class="s1">EC2 Request Instance Wizard </span>to specify the instance type, whether it should be monitored,</p>
+<p class="p1">and specify a key/value pair for the instance to help organize and search (see Figures <span class="s4">11.6</span></p>
+<p class="p1">and <span class="s4">11.7</span>).</p>
+<p class="p1"><span class="s1">3. </span>Provide a name for the key pair. Then on the left-side panel, choose <span class="s1">Security Groups </span>under <span class="s1">Network</span></p>
+<p class="p1"><span class="s1">&amp; Security</span>, select the desired security group, and click on the <span class="s1">Inbound </span>tab to enter the desired rule</p>
+<p class="p1">(see Figure <span class="s4">11.6</span>).</p>
+<p class="p1">To allocate an Elastic IP address, use the <span class="s1">Elastic IPs </span>tab of the <span class="s1">Network &amp; Security </span>left-side panel.</p>
+<p class="p1">On <span class="s1">Linux </span>or <span class="s1">Unix </span>systems the port numbers below 1<span class="s1">,</span>024 can only be assigned by the <span class="s1">root</span>. The</p>
+<p class="p1">plain ASCII file called <span class="s1">services </span>maps friendly textual names for Internet services to their assigned port</p>
+<p class="p1">numbers and protocol types, as in the following example:</p>
+<p class="p2">netstat 15/tcp</p>
+<p class="p2">ftp 21/udp</p>
+<p class="p2">ssh 22/tcp</p>
+<p class="p2">telnet 23/tcp</p>
+<p class="p2">http 80/tcp</p>
+</body>
+</html>

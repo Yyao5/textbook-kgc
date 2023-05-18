@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Courier}
+    span.s3 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A <span class="s1">storage model </span>describes the layout of a data structure in physical storage; a <span class="s1">data model </span>captures the</p>
+<p class="p1">most important logical aspects of a data structure in a database. The physical storage can be a local disk,</p>
+<p class="p1">a removable media, or storage accessible via a network.</p>
+<p class="p1">Two abstract models of storage are commonly used: <span class="s1">cell storage </span>and <span class="s1">journal storage</span>. Cell storage</p>
+<p class="p1">assumes that the storage consists of cells of the same size and that each object fits exactly in one cell. This</p>
+<p class="p1">model reflects the physical organization of several storage media; the primary memory of a computer</p>
+<p class="p1">is organized as an array of memory cells, and a secondary storage device (e.g., a disk) is organized in</p>
+<p class="p1">sectors or blocks <span class="s2">read </span>and written as a unit. <span class="s2">read/write </span><span class="s1">coherence </span>and <span class="s1">before-or-after atomicity</span></p>
+<p class="p1">are two highly desirable properties of any storage model and in particular of cell storage (see Figure <span class="s3">8.1</span>).</p>
+<p class="p1"><span class="s1">Journal storage </span>is a fairly elaborate organization for storing composite objects such as records</p>
+<p class="p1">consisting of multiple fields. Journal storage consists of a <span class="s1">manager </span>and <span class="s1">cell storage</span>, where the entire history of a variable is maintained, rather than just the current value. The user does not have direct</p>
+<p class="p1">access to the <span class="s1">cell storage</span>; instead the user can request the <span class="s1">journal manager </span>to (i) start a new action;</p>
+<p class="p1">(ii) <span class="s2">read </span>the value of a cell; (iii) <span class="s2">write </span>the value of a cell; (iv) commit an action; or (v) abort an</p>
+<p class="p1">action. The <span class="s1">journal manager </span>translates user requests to commands sent to the cell storage: (i) <span class="s2">read </span>a</p>
+<p class="p1">cell; (ii) <span class="s2">write </span>a cell; (iii) allocate a cell; or (iv) deallocate a cell.</p>
+<p class="p1">In the context of storage systems, a <span class="s1">log </span>contains a history of all variables in <span class="s1">cell storage</span>. The information</p>
+<p class="p1">about the updates of each data item forms a record appended at the end of the log. A log provides</p>
+<p class="p1">authoritative information about the outcome of an action involving <span class="s1">cell storage</span>; the cell storage can be</p>
+<p class="p1">reconstructed using the log, which can be easily accessed – we only need a pointer to the last record.</p>
+<p class="p1">An <span class="s1">all-or-nothing </span>action first records the action in a <span class="s1">log </span>in <span class="s1">journal storage </span>and then <span class="s1">installs </span>the</p>
+<p class="p1">change in the <span class="s1">cell storage </span>by overwriting the previous version of a data item (see Figure <span class="s3">8.2</span>). The <span class="s1">log </span>is</p>
+<p class="p1">always kept on nonvolatile storage (e.g., disk) and the considerably larger <span class="s1">cell storage </span>resides typically</p>
+<p class="p1">on nonvolatile memory, but can be held in memory for real-time access or using a write-through cache.</p>
+<p class="p1">Many cloud applications must support online transaction processing and have to guarantee the correctness</p>
+<p class="p1">of the transactions. Transactions consist of multiple actions; for example, the transfer of funds</p>
+<p class="p1">from one account to another requires withdrawing funds from one account and crediting it to another.</p>
+<p class="p1">The system may fail during or after each one of the actions, and steps to ensure correctness must be</p>
+<p class="p1">taken. Correctness of a transaction means that the result should be guaranteed to be the same as though</p>
+<p class="p1">the actions were applied one after another, regardless of the order. More stringent conditions must sometimes be observed; for example, banking transactions must be processed in the order in which they</p>
+<p class="p1">are issued, the so-called <span class="s1">external time consistency</span>. To guarantee correctness, a transaction-processing</p>
+<p class="p1">system supports <span class="s1">all-or-nothing atomicity</span>, discussed in Section 2.10.</p>
+<p class="p1">A <span class="s1">file system </span>consists of a collection of <span class="s1">directories</span>. Each directory provides information about a</p>
+<p class="p1">set of files. Today high-performance systems can choose among three classes of file system: network</p>
+<p class="p1">file systems (NFSs), storage area networks (SANs), and parallel file systems (PFSs). The NFS is very</p>
+<p class="p1">popular and has been used for some time, but it does not scale well and has reliability problems; an</p>
+<p class="p1">NFS server could be a single point of failure.</p>
+<p class="p1">Advances in networking technology allow the separation of storage systems from computational</p>
+<p class="p1">servers; the two can be connected by a SAN. SANs offer additional flexibility and allow cloud servers</p>
+<p class="p1">to deal with nondisruptive changes in the storage configuration. Moreover, the storage in a SAN can</p>
+<p class="p1">be <span class="s1">pooled </span>and then allocated based on the needs of the servers; pooling requires additional software</p>
+<p class="p1">and hardware support and represents another advantage of a centralized storage system. A SAN-based</p>
+<p class="p1">implementation of a file system can be expensive, since each node must have a Fibre Channel adapter</p>
+<p class="p1">to connect to the network.</p>
+<p class="p1">Parallel file systems are scalable, are capable of distributing files across a large number of nodes, and</p>
+<p class="p1">provide a global naming space. In a parallel data system, several I/O nodes serve data to all computational</p>
+<p class="p1">nodes and include a metadata server that contains information about the data stored in the I/O nodes.</p>
+<p class="p1">The interconnection network of a parallel file system could be a SAN.</p>
+<p class="p1">Most cloud applications do not interact directly with file systems but rather through an application</p>
+<p class="p1">layer that manages a database. A <span class="s1">database </span>is a collection of logically related records. The software</p>
+<p class="p1">that controls the access to the database is called a <span class="s1">database management system (DBMS)</span>. The main</p>
+<p class="p1">functions of a DBMS are to enforce data integrity, manage data access and concurrency control, and</p>
+<p class="p1">support recovery after a failure.</p>
+<p class="p1">A DBMS supports a <span class="s1">query language, </span>a dedicated programming language used to develop database</p>
+<p class="p1">applications. Several database models, including the navigational model of the 1960s, the relational</p>
+<p class="p1">model of the 1970s, the object-oriented model of the 1980s, and the <span class="s1">NoSQL </span>model of the first decade</p>
+<p class="p1">of the 2000s, reflect the limitations of the hardware available at the time and the requirements of the</p>
+<p class="p1">most popular applications of each period.</p>
+<p class="p1">Most cloud applications are data intensive and test the limitations of the existing infrastructure. For</p>
+<p class="p1">example, they demand DBMSs capable of supporting rapid application development and short time to</p>
+<p class="p1">market. At the same time, cloud applications require low latency, scalability, and high availability and</p>
+<p class="p1">demand a consistent view of the data.</p>
+<p class="p1">These requirements cannot be satisfied simultaneously by existing database models; for example,</p>
+<p class="p1">relational databases are easy to use for application development but do not scale well. As its name</p>
+<p class="p1">implies, the <span class="s1">NoSQL </span>model does not support SQL as a query language and may not guarantee the</p>
+<p class="p1"><span class="s1">atomicity</span>, <span class="s1">consistency</span>, <span class="s1">isolation</span>, <span class="s1">durability </span>(ACID) properties of traditional databases. <span class="s1">NoSQL </span>usually</p>
+<p class="p1">guarantees the eventual consistency for transactions limited to a single data item. The <span class="s1">NoSQL </span>model is</p>
+<p class="p1">useful when the structure of the data does not require a relational model and the amount of data is very</p>
+<p class="p1">large. Several types of <span class="s1">NoSQL </span>database have emerged in the last few years. Based on the way the <span class="s1">NoSQL</span></p>
+<p class="p1">databases store data, we recognize several types, such as key-value stores, <span class="s1">BigTable </span>implementations,</p>
+<p class="p1">document store databases, and graph databases.</p>
+<p class="p1">Replication, used to ensure fault tolerance of large-scale systems built with commodity components,</p>
+<p class="p1">requires mechanisms to guarantee that all replicas are consistent with one another. This is another</p>
+<p class="p1">example of increased complexity of modern computing and communication systems due to physical</p>
+<p class="p1">characteristics of components, a topic discussed in Chapter 10. Section <span class="s3">8.7 </span>contains an in-depth analysis</p>
+<p class="p1">of a service implementing a consensus algorithm to guarantee that replicated objects are consistent.</p>
+</body>
+</html>

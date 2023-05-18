@@ -1,0 +1,38 @@
+,source,edge,target
+0,guiding  mechanisms,refers to,policies
+1,mechanisms,represent,the
+3,Lampson,offer solid,solid operating system design
+4,policies,grouped into,five  classes
+5,additional  that,accept,already  progress
+7,that,prevent,system
+10,when search state,requires,individual  systems
+12,same  we,encounter,same  one
+14,40  %,predicted,IT enterprise energy
+15,40  %,spent,IT enterprise infrastructure
+16,relative  loads,consider,respectively loads capacity
+17,perfect load servers,end with,− 50 − capacity
+18,critical  goal,minimizing,particular energy consumption
+21,standby  server,want,less  energy
+24,load,migrate to,A
+25,full  C,loaded,standby  mode
+26,full  C,loaded,full  capacity
+30,mobile  techniques,migrated to,high performance servers
+32,lower  performance,decreases,slower energy consumption
+33,Table,shows,modern clock rate
+35,maximum  performance,save,2.2 peak GHz
+37,mechanisms,scale,e.g. energy conservation
+41,complex  that,require complex,effectively  time
+43,techniques,concentrated on,system system
+44,techniques,include,rarely energy tradeoffs
+46,optimization servers,viewed as,overload
+47,techniques,based on,disciplined computer approach
+48,theory,uses,global system behavior
+52,filters,used for,simplified  models
+53,techniques,need,performance
+54,technique,applied to,autonomic system 187
+58,approaches,require,user level 9
+61,mechanisms,require,combinatorial  333
+62,distinction,made between interactive,interactive  workloads
+63,dynamic application those,involve,noninteractive  workloads
+64,those,focused,noninteractive  workloads
+65,amount,is devoted,heterogeneous resource two

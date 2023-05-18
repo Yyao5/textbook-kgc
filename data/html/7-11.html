@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica; min-height: 12.0px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 6.0px Helvetica}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Helvetica}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 7.5px Times; color: #000066}
+    span.s5 {font: 7.5px Times}
+    span.s6 {color: #000066}
+    span.s7 {font: 6.0px Helvetica}
+    span.s8 {font: 6.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Scale-free networks </span>may prove to be a very useful type of overlay networks for cloud computing.</p>
+<p class="p1">The degree distribution of scale-free networks follows a power law. We only consider the discrete</p>
+<p class="p1">case when the probability density function is <span class="s1">p(k) = a f (k) </span>with <span class="s1">f (k) = k</span><span class="s2">−γ </span>and the constant <span class="s1">a </span>is</p>
+<p class="p2">a = <span class="s3">1</span>/ζ(γ, k<span class="s2">min</span>)<span class="s3">. Thus,</span></p>
+<p class="p2">p(k) = <span class="s3">1</span></p>
+<p class="p2">ζ(γ, k<span class="s2">min</span>)</p>
+<p class="p1"><span class="s1">k</span><span class="s2">−γ </span><span class="s1">. </span>(7.4)</p>
+<p class="p1">In this expression, <span class="s1">k</span><span class="s2">min </span>is the smallest degree of any vertex, and for the applications we discuss in this</p>
+<p class="p1">chapter <span class="s1">k</span><span class="s2">min </span><span class="s1">= </span>1; <span class="s1">ζ </span>is the Hurvitz zeta function<span class="s4">8</span></p>
+<p class="p2">ζ(γ, k<span class="s2">min</span>) =</p>
+<p class="p2"><span class="s2">∞</span> </p>
+<p class="p3">n=<span class="s5">0</span></p>
+<p class="p1">1</p>
+<p class="p2">(k<span class="s2">min </span>+ n)<span class="s2">γ</span></p>
+<p class="p2">=</p>
+<p class="p2"><span class="s2">∞</span> </p>
+<p class="p3">n=<span class="s5">0</span></p>
+<p class="p1">1</p>
+<p class="p1"><span class="s1">(</span>1 <span class="s1">+ n)</span><span class="s2">γ </span><span class="s1">. </span>(7.5)</p>
+<p class="p1">Many physical and social systems are interconnected by a scale-free network. Indeed, empirical data</p>
+<p class="p1">available for power grids, theWeb, the citation of scientific papers, or social networks confirm this trend:</p>
+<p class="p1">The power grid of the Western United States has some 5<span class="s1">,</span>000 vertices representing power-generating</p>
+<p class="p1">stations, and in this case <span class="s1">γ ≈ </span>4. For the World Wide Web the probability that <span class="s1">m </span>pages point to one</p>
+<p class="p1">page is <span class="s1">p(k) ≈ k</span><span class="s2">−</span><span class="s5">2</span><span class="s2">.</span><span class="s5">1 </span>[<span class="s6">40</span>]. Recent studies indicate that <span class="s1">γ ≈ </span>3 for the citation of scientific papers. The</p>
+<p class="p1">collaborative graph of movie actors in which links are present if two actors were ever cast in the same</p>
+<p class="p1">movie follows the power law with <span class="s1">γ ≈ </span>2<span class="s1">.</span>3. The larger the network, the closer a power law with <span class="s1">γ ≈ </span>3</p>
+<p class="p1">approximates the distribution [<span class="s6">39</span>].</p>
+<p class="p1">A scale-free network is <span class="s1">nonhomogeneous</span>; the majority of the vertices have a low degree, and only</p>
+<p class="p1">a few vertices are connected to a large number of edges (see Figure <span class="s6">7.16</span>). On the other hand, an</p>
+<p class="p1">exponential network is homogeneous since most of the vertices have the same degree. The average</p>
+<p class="p1">distance <span class="s1">d </span>between the <span class="s1">N </span>vertices, also referred to as the <span class="s1">diameter </span>of the scale-free network, scales as</p>
+<p class="p1">ln <span class="s1">N</span>; in fact, it has been shown that when <span class="s1">k</span><span class="s2">min </span><span class="s1">&gt; </span>2, a lower bound on the diameter of a network with</p>
+<p class="p1">2 <span class="s1">&lt; γ &lt; </span>3 is ln <span class="s1">N </span>[<span class="s6">88</span>]. A number of studies have shown that scale-free networks have remarkable</p>
+<p class="p1">properties such as robustness against random failures [<span class="s6">40</span>], favorable scaling [<span class="s6">10</span>,<span class="s6">11</span>], resilience to</p>
+<p class="p1">congestion [<span class="s6">140</span>], tolerance to attacks [<span class="s6">352</span>], small diameter [<span class="s6">88</span>], and small average path length [<span class="s6">39</span>].</p>
+<p class="p1">The moments of a power-law distribution play an important role in the behavior of a network. It has</p>
+<p class="p1">been shown that the <span class="s1">giant connected component </span>(GCC) of networks with a finite average vertex degree</p>
+<p class="p1">and divergent variance can only be destroyed if all vertices are removed; thus, such networks are highly</p>
+<p class="p1">resilient against faulty constituents [<span class="s6">249</span>]. These properties make scale-free networks very attractive for interconnection networks in many applications, including social systems [<span class="s6">256</span>], peer-to-peer systems</p>
+<p class="p1">[<span class="s6">8</span>,<span class="s6">318</span>], sensor networks [<span class="s6">231</span>], and cloud computing.</p>
+<p class="p1">As an example, consider the case <span class="s1">γ = </span>2<span class="s1">.</span>5 and the minimum vertex degree, <span class="s1">x</span><span class="s2">min </span><span class="s1">= </span>1. We first</p>
+<p class="p1">determine the value of the zeta function <span class="s1">ζ(γ, x</span><span class="s2">min</span><span class="s1">) </span>and approximate <span class="s1">ζ(</span>2<span class="s1">.</span>5<span class="s1">, </span>1<span class="s1">) = </span>1<span class="s1">.</span>341; thus, the</p>
+<p class="p1">distribution function is <span class="s1">p(k) = k</span><span class="s2">−</span><span class="s5">2</span><span class="s2">.</span><span class="s5">5</span><span class="s1">/</span>1<span class="s1">.</span>341 <span class="s1">= </span>0<span class="s1">.</span>745 <span class="s1">  (</span>1<span class="s1">/k</span><span class="s5">2</span><span class="s2">.</span><span class="s5">5</span><span class="s1">)</span>, where <span class="s1">k </span>is the degree of each vertex.</p>
+<p class="p1">The probability of vertices with degree <span class="s1">k &gt; </span>10 is Prob<span class="s1">(k &gt; </span>10<span class="s1">) = </span>1 <span class="s1">− </span>Prob<span class="s1">(k   </span>10<span class="s1">) = </span>0<span class="s1">.</span>015. This</p>
+<p class="p1">means that at most 1<span class="s1">.</span>5% of the total number of vertices will have more than 10 edges connected to them.</p>
+<p class="p1">We also see that 92<span class="s1">.</span>5% of the vertices have degree 1, 2, or 3. Table <span class="s6">7.2 </span>shows the number of vertices of</p>
+<p class="p1">degrees 1 to 10 for a very large network, <span class="s1">N = </span>10<span class="s5">8</span>.</p>
+<p class="p1">Another important property is that the majority of the vertices of a scale-free network are directly</p>
+<p class="p1">connected to the vertices with the highest degree. For example, in a network with <span class="s1">N = </span>130 vertices and</p>
+<p class="p1"><span class="s1">m = </span>215 edges, 60% of the nodes are directly connected to the five vertices with the highest degree,</p>
+<p class="p1">whereas in a random network fewer than half, 27%, of the nodes have this property [<span class="s6">11</span>].</p>
+<p class="p1">Thus, the nodes of a scale-free network with a degree larger than a given threshold (e.g., <span class="s1">k = </span>4 in</p>
+<p class="p1">our example) could assume the role of control nodes, and the remaining 92<span class="s1">.</span>5% of the nodes could be</p>
+<p class="p1">servers; this partition is autonomic. Moreover, most of the server nodes are at distance 1, 2, or 3 from</p>
+<p class="p1">a control node that could gather more accurate state information from these nodes and with minimal</p>
+<p class="p1">communication overhead.</p>
+<p class="p1">We conclude that a scale-free network is an ideal interconnect for a cloud. It is not practical to construct</p>
+<p class="p1">a scale-free physical interconnect for a cloud, but we can generate instead a virtual interconnect with the</p>
+<p class="p1">desired topology. We pay a small penalty in terms of latency and possibly bandwidth when the nodes</p>
+<p class="p1">communicate through the virtual interconnect, but this penalty is likely to become smaller and smaller</p>
+<p class="p1">as new networking technologies for cloud computing emerge.</p>
+<p class="p1">An Algorithm for the Construction of Graphs with Power-Law Degree Distribution. Consider an</p>
+<p class="p1">Erd s-R nyi (ER) graph <span class="s1">G</span><span class="s2">ER </span>with <span class="s1">N </span>vertices.Vertex <span class="s1">i </span>has a unique label from a compact set <span class="s1">i ∈ {</span>1<span class="s1">, N}</span>.</p>
+<p class="p1">We want to rewire this graph and produce a new graph <span class="s1">G</span><span class="s2">SF </span>in which the degrees of the vertices follow</p>
+<p class="p1">a power-law distribution. The procedure we discuss consists of the following steps [<span class="s6">212</span>]:</p>
+<p class="p1"><span class="s1">1. </span>We assign to each node <span class="s1">i </span>a probability:</p>
+<p class="p3"><span class="s1">p</span>i <span class="s1">= i</span>−α</p>
+<p class="p3"><span class="s1"> </span>Nj</p>
+<p class="p3">=<span class="s5">1 </span><span class="s1">j</span>−α</p>
+<p class="p2">= i<span class="s2">−α</span></p>
+<p class="p2">ζ<span class="s2">N </span>(α)</p>
+<p class="p1">with 0 <span class="s1">&lt; α &lt; </span>1 and <span class="s1">ζ</span><span class="s2">N </span><span class="s1">(α) =</span></p>
+<p class="p3"><span class="s1"> </span>N</p>
+<p class="p3">i=<span class="s5">1</span></p>
+<p class="p1"><span class="s1">i</span><span class="s2">−α</span><span class="s1">. </span>(7.6)</p>
+<p class="p1"><span class="s1">2. </span>We select a pair of vertices <span class="s1">i </span>and <span class="s1">j </span>and create an edge between them with probability</p>
+<p class="p2">p<span class="s2">i j </span>= p<span class="s2">i </span>p <span class="s2">j </span>= (i j)</p>
+<p class="p3">−α</p>
+<p class="p3"><span class="s1">ζ</span><span class="s5">2</span>N</p>
+<p class="p2">(α)</p>
+<p class="p1">(7.7)</p>
+<p class="p1">and repeat this process <span class="s1">n </span>times.</p>
+<p class="p1">Then the probability that a given pair of vertices <span class="s1">i </span>and <span class="s1">j </span>is not connected by an edge <span class="s1">h</span><span class="s2">i j </span>is</p>
+<p class="p3"><span class="s1">p</span>NC</p>
+<p class="p3">i j</p>
+<p class="p2">= (<span class="s3">1 </span>− p<span class="s2">i j </span>)<span class="s2">n </span>≈ e<span class="s2">−</span><span class="s5">2</span><span class="s2">np</span><span class="s7">i j </span><span class="s3">(7.8)</span></p>
+<p class="p1">and the probability that they are connected is</p>
+<p class="p3"><span class="s1">p</span>C</p>
+<p class="p3">i j</p>
+<p class="p2">=</p>
+<p class="p2"> </p>
+<p class="p2"><span class="s3">1 </span>− p<span class="s2">NC</span></p>
+<p class="p3">i j</p>
+<p class="p2"> </p>
+<p class="p1"><span class="s1">= </span>1 <span class="s1">− e</span><span class="s2">−</span><span class="s5">2</span><span class="s2">np</span><span class="s7">i j </span><span class="s1">. </span>(7.9)</p>
+<p class="p1">Call <span class="s1">k</span><span class="s2">i </span>the degree of vertex <span class="s1">i </span>; then the moment-generating function of <span class="s1">k</span><span class="s2">i </span>is</p>
+<p class="p2">g<span class="s2">i </span>(t) =</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p2"> </p>
+<p class="p3"><span class="s1">p</span>NC</p>
+<p class="p3">i j</p>
+<p class="p2">+ tp<span class="s2">C</span></p>
+<p class="p3">i j</p>
+<p class="p4"><br></p>
+<p class="p1"><span class="s1">. </span>(7.10)</p>
+<p class="p1">The average degree of vertex <span class="s1">i </span>is</p>
+<p class="p2">  k<span class="s2">i </span>= t</p>
+<p class="p2">d</p>
+<p class="p2">dt</p>
+<p class="p2">g<span class="s2">i </span>(t)|<span class="s2">t=</span><span class="s5">1 </span>=</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p3"><span class="s1">p</span>C</p>
+<p class="p1"><span class="s2">i j </span><span class="s1">. </span>(7.11)</p>
+<p class="p1">Thus,</p>
+<p class="p2">  k<span class="s2">i </span>=</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p2">(<span class="s3">1 </span>− e<span class="s2">−</span><span class="s5">2</span><span class="s2">np</span><span class="s7">i j </span>) =</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p2"> </p>
+<p class="p2"><span class="s3">1 </span>− e</p>
+<p class="p5"><span class="s2">−</span><span class="s5">2</span><span class="s2">n </span>(i j)</p>
+<p class="p5">−α</p>
+<p class="p5">ζ<span class="s8">2</span>N</p>
+<p class="p5">(α)</p>
+<p class="p2"> </p>
+<p class="p2">≈</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p2"><span class="s3">2</span>n</p>
+<p class="p2">(i j)</p>
+<p class="p3">−α</p>
+<p class="p3"><span class="s1">ζ</span><span class="s5">2</span>N</p>
+<p class="p2">(α)</p>
+<p class="p2">= <span class="s3">2</span>n</p>
+<p class="p3"><span class="s1">ζ</span><span class="s5">2</span>N</p>
+<p class="p2">(α)</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p2">(i j)</p>
+<p class="p1"><span class="s2">−α</span><span class="s1">. </span>(7.12)</p>
+<p class="p1">This expression can be transformed as</p>
+<p class="p2">  k<span class="s2">i </span>= <span class="s3">2</span>n</p>
+<p class="p3"><span class="s1">ζ</span><span class="s5">2</span>N</p>
+<p class="p2">(α)</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p2">(i j)</p>
+<p class="p3">−α <span class="s1">=</span></p>
+<p class="p2"><span class="s3">2</span>ni<span class="s2">−α</span> </p>
+<p class="p3">j  =i <span class="s1">j</span>−α</p>
+<p class="p3"><span class="s1">ζ</span><span class="s5">2</span>N</p>
+<p class="p2">(α)</p>
+<p class="p2">=</p>
+<p class="p3"><span class="s3">2</span><span class="s1">ni</span>−α</p>
+<p class="p4"><br></p>
+<p class="p2">ζ<span class="s2">N </span>(α) − i<span class="s2">−α</span></p>
+<p class="p2"> </p>
+<p class="p3"><span class="s1">ζ</span><span class="s5">2</span>N</p>
+<p class="p2">(α)</p>
+<p class="p1"><span class="s1">. </span>(7.13)</p>
+<p class="p1">The moment-generating function of <span class="s1">k</span><span class="s2">i </span>can be written as</p>
+<p class="p2">g<span class="s2">i </span>(t) =</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p2"> </p>
+<p class="p3"><span class="s1">p</span>NC</p>
+<p class="p3">i j</p>
+<p class="p2">+ tp<span class="s2">C</span></p>
+<p class="p3">i j</p>
+<p class="p4"><br></p>
+<p class="p3"><span class="s1">= e</span>(<span class="s5">1</span>−t)   k<span class="s7">i </span><span class="s1">=</span></p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p3"><span class="s1">e</span>−(<span class="s5">1</span>−t)p<span class="s7">C</span></p>
+<p class="p5">i j</p>
+<p class="p2">≈</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p2">[<span class="s3">1 </span>− (<span class="s3">1 </span>− t)p<span class="s2">C</span></p>
+<p class="p3">i j</p>
+<p class="p3"><span class="s1">= e</span>(<span class="s5">1</span>−t)</p>
+<p class="p3"> </p>
+<p class="p5">j  =i <span class="s2">p</span>C</p>
+<p class="p3"><span class="s7">i j </span><span class="s1">= e</span>(<span class="s5">1</span>−t)   k<span class="s7">i </span><span class="s1">. </span><span class="s3">(7.14)</span></p>
+<p class="p1">We conclude that the probability that <span class="s1">k</span><span class="s2">i </span><span class="s1">= k </span>is given by</p>
+<p class="p2">p<span class="s2">d,i </span>(k) = <span class="s3">1</span></p>
+<p class="p2">k!</p>
+<p class="p3"><span class="s1">d</span>k</p>
+<p class="p2">dt<span class="s2">k </span>g<span class="s2">i </span>(t)|<span class="s2">t=</span><span class="s5">0 </span>≈</p>
+<p class="p2">  k<span class="s2">i</span></p>
+<p class="p1"><span class="s1">k! e</span><span class="s2">−  k</span><span class="s7">i </span><span class="s1">. </span>(7.15)</p>
+<p class="p2"><span class="s3">When </span>N → ∞<span class="s3">then </span>ζ<span class="s2">N </span>(α) =  <span class="s2">N</span></p>
+<p class="p1"><span class="s2">i=</span><span class="s5">1 </span><span class="s1">i</span><span class="s2">−α </span>converges to the Riemann zeta function <span class="s1">ζ(α) </span>for <span class="s1">α &gt; </span>1</p>
+<p class="p1">and diverges as <span class="s2">N</span><span class="s8">1</span><span class="s7">−α</span></p>
+<p class="p1"><span class="s5">1</span><span class="s2">−α </span>if 0 <span class="s1">&lt; α &lt; </span>1. For 0 <span class="s1">&lt; α &lt; </span>1 Eq. (<span class="s6">7.6</span>) becomes</p>
+<p class="p3"><span class="s1">p</span>i <span class="s1">= i</span>−α</p>
+<p class="p2">ζ<span class="s2">N </span>(α)</p>
+<p class="p2">= <span class="s3">1 </span>− α</p>
+<p class="p3"><span class="s1">N</span><span class="s5">1</span>−α</p>
+<p class="p1"><span class="s1">i</span><span class="s2">−α</span><span class="s1">. </span>(7.16)</p>
+<p class="p1">When <span class="s1">N →∞, </span>0 <span class="s1">&lt; α &lt; </span>1, and the average degree of the vertices is 2<span class="s1">m</span>, then the degree of vertex <span class="s1">i </span>is</p>
+<p class="p2">k = p<span class="s2">i </span>  mN = <span class="s3">2</span>mN</p>
+<p class="p2"><span class="s3">1 </span>− α</p>
+<p class="p3"><span class="s1">N</span><span class="s5">1</span>−α</p>
+<p class="p2">i<span class="s2">−α </span>= <span class="s3">2</span>m(<span class="s3">1 </span>− α)</p>
+<p class="p2"> </p>
+<p class="p2">i</p>
+<p class="p2">N</p>
+<p class="p3"><span class="s1"> </span>−α</p>
+<p class="p1"><span class="s1">. </span>(7.17)</p>
+<p class="p1">Indeed, the total number of edges in the graph is <span class="s1">mN </span>and the graph has a power-law distribution. Then</p>
+<p class="p2">i = N</p>
+<p class="p2"> </p>
+<p class="p2">k</p>
+<p class="p2"><span class="s3">2</span>m(<span class="s3">1 </span>− α)</p>
+<p class="p3"><span class="s1"> </span>− <span class="s8">1</span></p>
+<p class="p5">α</p>
+<p class="p1"><span class="s1">. </span>(7.18)</p>
+<p class="p1">From this expression we see that there is a one-to-many correspondence between the unique label of</p>
+<p class="p1">the node <span class="s1">i </span>in the <span class="s1">G</span><span class="s2">ER </span>graph and the degree <span class="s1">k </span>of the vertices in the <span class="s1">G</span><span class="s2">SF </span>graph. This reflects the fact</p>
+<p class="p1">that multiple vertices may have the same degree <span class="s1">k</span>. The number of vertices of degree <span class="s1">k </span>is</p>
+<p class="p2">n(k) = N</p>
+<p class="p2"> </p>
+<p class="p2">k</p>
+<p class="p2"><span class="s3">2</span>m(<span class="s3">1 </span>− α)</p>
+<p class="p3"><span class="s1"> </span>− <span class="s8">1</span></p>
+<p class="p5">α</p>
+<p class="p2">− N</p>
+<p class="p2"> </p>
+<p class="p2">k − <span class="s3">1</span></p>
+<p class="p2"><span class="s3">2</span>m(<span class="s3">1 </span>− α)</p>
+<p class="p3"><span class="s1"> </span>− <span class="s8">1</span></p>
+<p class="p5">α</p>
+<p class="p2">= N</p>
+<p class="p2"> </p>
+<p class="p2">k − <span class="s3">1</span></p>
+<p class="p2"><span class="s3">2</span>m(<span class="s3">1 </span>− α)</p>
+<p class="p3"><span class="s1"> </span>− <span class="s8">1</span></p>
+<p class="p5">α</p>
+<p class="p2">  </p>
+<p class="p1">1 <span class="s1">+ </span>1</p>
+<p class="p2">k</p>
+<p class="p3"><span class="s1"> </span>− <span class="s8">1</span></p>
+<p class="p5">α</p>
+<p class="p2">− <span class="s3">1</span></p>
+<p class="p2"> </p>
+<p class="p1"><span class="s1">. </span>(7.19)</p>
+<p class="p1">We denote <span class="s1">γ = </span>1 <span class="s1">+ </span><span class="s5">1</span></p>
+<p class="p1"><span class="s2">α </span>and observe that</p>
+<p class="p2"> </p>
+<p class="p1">1 <span class="s1">+ </span>1</p>
+<p class="p2">k</p>
+<p class="p3"><span class="s1"> </span>− <span class="s8">1</span></p>
+<p class="p5">α</p>
+<p class="p2">= <span class="s3">1 </span>+</p>
+<p class="p2"> </p>
+<p class="p1"><span class="s1">−</span>1</p>
+<p class="p2">α</p>
+<p class="p2">  </p>
+<p class="p1">1</p>
+<p class="p2">k</p>
+<p class="p3"><span class="s1"> </span>− <span class="s8">1</span></p>
+<p class="p5">α</p>
+<p class="p2">+ <span class="s3">1</span></p>
+<p class="p1">2</p>
+<p class="p2"> </p>
+<p class="p1"><span class="s1">−</span>1</p>
+<p class="p2">α</p>
+<p class="p2">  </p>
+<p class="p1"><span class="s1">−</span>1</p>
+<p class="p2">α</p>
+<p class="p2">− <span class="s3">1</span></p>
+<p class="p2">  </p>
+<p class="p1">1</p>
+<p class="p2">k</p>
+<p class="p3"><span class="s1"> </span>− <span class="s8">1</span></p>
+<p class="p5">α</p>
+<p class="p6"><span class="s2">−</span>1</p>
+<p class="p2">+      . <span class="s3">(7.20)</span></p>
+<p class="p1">We see that</p>
+<p class="p2">n(k) = N</p>
+<p class="p2"> </p>
+<p class="p2">(k − <span class="s3">1</span>)(γ − <span class="s3">1</span>)</p>
+<p class="p2"><span class="s3">2</span>m(γ − <span class="s3">2</span>)</p>
+<p class="p3"><span class="s1"> </span>−γ+<span class="s5">1</span></p>
+<p class="p2"> </p>
+<p class="p2">(<span class="s3">1 </span>− γ )</p>
+<p class="p2"> </p>
+<p class="p1">1</p>
+<p class="p2">k</p>
+<p class="p3"><span class="s1"> </span>−γ+<span class="s5">1</span></p>
+<p class="p2">− γ (<span class="s3">1 </span>− γ )</p>
+<p class="p1">2</p>
+<p class="p2"> </p>
+<p class="p1">1</p>
+<p class="p2">k</p>
+<p class="p3"><span class="s1"> </span>−γ</p>
+<p class="p2">+     </p>
+<p class="p2"> </p>
+<p class="p1"><span class="s1">. </span>(7.21)</p>
+<p class="p1">We conclude that to reach the value predicted by the theoretical model for the number of vertices of</p>
+<p class="p1">degree <span class="s1">k</span>, the number of iterations is a function of <span class="s1">N</span>, of the average degree 2<span class="s1">m</span>, and of <span class="s1">γ </span>, the degree of</p>
+<p class="p1">the power law. Next we discuss an algorithm for constructing scale-free networks using biased random</p>
+<p class="p1">walks.</p>
+<p class="p1">Biased Random Walks. A strategy used successfully to locate systems satisfying a set of conditions</p>
+<p class="p1">in applications such as peer-to-peer systems is based on <span class="s1">biased random walks </span>[<span class="s6">33</span>]. Random walks are</p>
+<p class="p1">reported to bemore efficient in searching for nodes with desirable properties than other methods, such as</p>
+<p class="p1">flooding [<span class="s6">135</span>].</p>
+<p class="p1">Unfortunately, the application of random walks in a large network with an irregular topology is</p>
+<p class="p1">unfeasible because a central authority could not maintain accurate information about a dynamic set of</p>
+<p class="p1">members. A solution is to exploit the fact that sampling with a given probability distribution can be</p>
+<p class="p1">simulated by a discrete-time Markov chain. Indeed, consider an irreducible Markov chain with states</p>
+<p class="p1"><span class="s1">(i , j ) ∈ {</span>0<span class="s1">, </span>1<span class="s1">, . . . , S}</span>, and let <span class="s1">P = [p</span><span class="s2">i j </span><span class="s1">] </span>denote its probability transition matrix, where</p>
+<p class="p2">p<span class="s2">i j </span>= <span class="s3">Prob</span>[X(t + <span class="s3">1</span>) = j |X(t) = i ], <span class="s3">(7.22)</span></p>
+<p class="p1">with <span class="s1">X(t) </span>the state at time <span class="s1">t</span>. Let <span class="s1">π = (π</span><span class="s5">0</span><span class="s1">, π</span><span class="s5">1</span><span class="s1">, . . . , π</span><span class="s2">S</span><span class="s1">) </span>be a probability distribution with nonzero</p>
+<p class="p1">probability for every state, <span class="s1">π</span><span class="s2">i </span><span class="s1">&gt; </span>0<span class="s1">, </span>0 <span class="s1">  i   S</span>. The transition matrix <span class="s1">P </span>is chosen so that <span class="s1">π </span>is its unique</p>
+<p class="p1">stationary distribution; thus, the reversibility condition <span class="s1">π = π P </span>holds.When <span class="s1">g(   ) </span>is a function defined</p>
+<p class="p1">on the states of the Markov chain and we want to estimate</p>
+<p class="p2">E =</p>
+<p class="p3"><span class="s1"> </span>S</p>
+<p class="p3">i=<span class="s5">0</span></p>
+<p class="p2">g(i)π<span class="s2">i </span>, <span class="s3">(7.23)</span></p>
+<p class="p1">we can simulate the Markov chain at times <span class="s1">t = </span>1<span class="s1">, </span>2<span class="s1">, . . . , N</span>, and the quantity</p>
+<p class="p2"> E =</p>
+<p class="p3"><span class="s1"> </span>N</p>
+<p class="p3">i=<span class="s5">1</span></p>
+<p class="p2">f (X(t))</p>
+<p class="p2">N</p>
+<p class="p1">(7.24)</p>
+<p class="p1">is a good estimate of <span class="s1">E </span>– more precisely, <span class="s1"> E  → E </span>when <span class="s1">N  → ∞</span>. Hastings [<span class="s6">160</span>] generalizes the</p>
+<p class="p1">sampling method of Metropolis [<span class="s6">243</span>] to construct the transition matrix given the distribution <span class="s1">π</span>. He</p>
+<p class="p1">starts by imposing the reversibility condition <span class="s1">π</span><span class="s2">i </span><span class="s1">p</span><span class="s2">i j </span><span class="s1">= π</span><span class="s2">j </span><span class="s1">p </span><span class="s2">ji</span>. If <span class="s1">Q = [q</span><span class="s2">i j </span><span class="s1">] </span>is the transition matrix of an</p>
+<p class="p1">arbitrary Markov chain on the states <span class="s1">{</span>0<span class="s1">, </span>1<span class="s1">, . . . , S}</span>, it is assumed that</p>
+<p class="p2">p<span class="s2">i j </span>= q<span class="s2">i j</span>α<span class="s2">i j </span><span class="s3">if </span>i  = j <span class="s3">and </span>p<span class="s2">ii </span>= <span class="s3">1 </span>−</p>
+<p class="p2"> </p>
+<p class="p3">j  =i</p>
+<p class="p1"><span class="s1">p</span><span class="s2">i j </span><span class="s1">. </span>(7.25)</p>
+<p class="p1">Two versions of sampling are discussed in [<span class="s6">160</span>]: that of Metropolis and one proposed by Baker[<span class="s6">36</span>].</p>
+<p class="p1">The quantities <span class="s1">α</span><span class="s2">i j </span>are, respectively,</p>
+<p class="p3"><span class="s1">α</span>M</p>
+<p class="p3">i j</p>
+<p class="p2">=</p>
+<p class="p2"> </p>
+<p class="p1">1 if <span class="s2">π</span><span class="s7">j</span></p>
+<p class="p5"><span class="s2">π</span>i <span class="s1">  </span><span class="s3">1</span></p>
+<p class="p5"><span class="s2">π</span>j</p>
+<p class="p5"><span class="s2">π</span>i</p>
+<p class="p1">if <span class="s2">π</span><span class="s7">j</span></p>
+<p class="p5"><span class="s2">π</span>i</p>
+<p class="p2">&lt; <span class="s3">1</span></p>
+<p class="p1">and <span class="s1">α</span><span class="s2">B</span></p>
+<p class="p3">i j</p>
+<p class="p2">= π<span class="s2">j</span></p>
+<p class="p2">π<span class="s2">i </span>+ π<span class="s2">j</span></p>
+<p class="p1"><span class="s1">. </span>(7.26)</p>
+<p class="p1">For example, consider a Poisson distribution <span class="s1">π</span><span class="s2">i </span><span class="s1">= λ</span><span class="s2">i </span><span class="s1">e</span><span class="s2">−λ</span><span class="s1">/i !</span>.We choose <span class="s1">q</span><span class="s2">i j </span><span class="s1">= </span>1<span class="s1">/</span>2 if <span class="s1">j = i −</span>1<span class="s1">, i  = </span>0</p>
+<p class="p1">or <span class="s1">j = i + </span>1<span class="s1">, i  = </span>0 and <span class="s1">q</span><span class="s5">00 </span><span class="s1">= q</span><span class="s5">01 </span><span class="s1">= </span>1<span class="s1">/</span>2. Then, using Baker’s approach, we have</p>
+<p class="p3"><span class="s1">p</span>i j <span class="s1">=</span></p>
+<p class="p2"> </p>
+<p class="p2">λ/(λ + i + <span class="s3">1</span>) <span class="s3">if </span>j = i + <span class="s3">1</span>, i  = <span class="s3">0</span></p>
+<p class="p2">i/(i + λ) <span class="s3">if </span>j = i − <span class="s3">1</span>, i  = <span class="s3">0</span></p>
+<p class="p1">(7.27)</p>
+<p class="p2"><span class="s3">and </span>p<span class="s5">00 </span>= <span class="s3">1</span>/<span class="s3">2, and </span>p<span class="s5">01 </span>= λe<span class="s2">−λ</span>/(<span class="s3">1 </span>+ λe<span class="s2">−λ</span>)<span class="s3">.</span></p>
+<p class="p1">The algorithm to construct scale-free overlay topologies with an adjustable exponent presented in</p>
+<p class="p1">[<span class="s6">319</span>] adopts the equilibrium model discussed in [<span class="s6">140</span>]. The algorithm is based on random walks in a</p>
+<p class="p1">connected overlay network <span class="s1">G(V, E)</span>, viewed as a Markov chain with state space <span class="s1">V </span>and a stationary</p>
+<p class="p1">distribution with a random walk bias configured according to a Metropolis–Hastings chain [<span class="s6">160</span>]. In</p>
+<p class="p1">this case</p>
+<p class="p2">p<span class="s2">i </span>= i<span class="s2">−α</span>, <span class="s3">with 1 </span>  i   N, α∈ [<span class="s3">0</span>, <span class="s3">1</span>) <span class="s3">(7.28)</span></p>
+<p class="p1">and add an edge between two vertices <span class="s1">a </span>and <span class="s1">b </span>with probability</p>
+<p class="p3"><span class="s1">p</span>a</p>
+<p class="p2">  <span class="s2">N</span></p>
+<p class="p3">i=<span class="s5">1</span></p>
+<p class="p2">p<span class="s2">i </span>  p<span class="s2">b</span></p>
+<p class="p2">  <span class="s2">N</span></p>
+<p class="p3">i=<span class="s5">1</span></p>
+<p class="p1"><span class="s1">p</span><span class="s2">i </span>(7.29)</p>
+<p class="p1">if none exists; they repeat the process until <span class="s1">mN </span>edges are created and the mean degree is 2<span class="s1">m</span>. Then the</p>
+<p class="p1">degree distribution is</p>
+<p class="p2">p(k) ∼ k<span class="s2">−γ </span>, <span class="s3">with </span>γ = (<span class="s3">1 </span>+ α)/α. <span class="s3">(7.30)</span></p>
+<p class="p1">The elements of the transition matrix <span class="s1">P = [p</span><span class="s2">i j </span><span class="s1">] </span>are</p>
+<p class="p3"><span class="s1">p</span>i j <span class="s1">=</span></p>
+<p class="p2">⎧⎪⎪⎪⎨</p>
+<p class="p2">⎪⎪⎪⎩</p>
+<p class="p6">1</p>
+<p class="p5"><span class="s2">k</span>i</p>
+<p class="p1">min</p>
+<p class="p2">  </p>
+<p class="p3"><span class="s5">1</span>j</p>
+<p class="p2">  <span class="s8">1</span></p>
+<p class="p5">γ−<span class="s8">1 </span><span class="s2">k</span>i</p>
+<p class="p3">k <span class="s7">j</span></p>
+<p class="p2">, <span class="s3">1</span></p>
+<p class="p2"> </p>
+<p class="p2">(i , j ) ∈ E</p>
+<p class="p1">1 <span class="s1">− </span><span class="s5">1</span></p>
+<p class="p5"><span class="s2">k</span>i</p>
+<p class="p2"> </p>
+<p class="p3">(l,i )∈E <span class="s1">c</span>il <span class="s1">i = j</span></p>
+<p class="p2"><span class="s3">0 </span>(i , j) /∈ E</p>
+<p class="p1">(7.31)</p>
+<p class="p1">with <span class="s1">k</span><span class="s2">i </span>the degree of vertex <span class="s1">i </span>. An upper bound for the number of random walk steps can be determined</p>
+<p class="p1">from a lower bound for the second smallest eigenvalue of the transition matrix, a nontrivial problem.</p>
+<p class="p1">A distributed rewiring scheme for constructing a scale-free overlay topology with an adjustable</p>
+<p class="p1">exponent is presented in [<span class="s6">319</span>]. An alternative method of creating the scale-free overlay network could</p>
+<p class="p1">be based on the gossip-based peer sampling discussed in [<span class="s6">181</span>]. The distributed algorithm for constructing</p>
+<p class="p1">a scale-free network in [<span class="s6">319</span>] is based on the method of constructing a random graph with a power-law</p>
+<p class="p1">distribution sketched in [<span class="s6">140</span>,<span class="s6">212</span>].</p>
+<p class="p1">Estimation of the Degree of a Power-Law Network. The question we address next is how to estimate</p>
+<p class="p1">the degree distribution of any scheme for the construction of a power-law network [43]. The estimation</p>
+<p class="p1">of the degree distribution from empirical data is analyzed in [<span class="s6">86</span>]. According to this study, a good</p>
+<p class="p1">approximation for <span class="s1">γ </span>for a discrete power-law distribution for a network with <span class="s1">P </span>vertices and <span class="s1">k</span><span class="s2">min </span><span class="s1">= </span>1 is</p>
+<p class="p2">γˆ ≈ <span class="s3">1 </span>+ P</p>
+<p class="p2">   <span class="s2">P</span></p>
+<p class="p3">i=<span class="s5">1</span></p>
+<p class="p1">ln</p>
+<p class="p3"><span class="s1">k</span>i</p>
+<p class="p3"><span class="s1">k</span>min <span class="s1">− </span><span class="s3">1</span><span class="s1">/</span><span class="s3">2</span></p>
+<p class="p6"><span class="s1"> </span><span class="s2">−</span>1</p>
+<p class="p2">= <span class="s3">1 </span>+ P</p>
+<p class="p3"><span class="s1"> </span>P</p>
+<p class="p3">i=<span class="s5">1 </span><span class="s3">2</span><span class="s1">k</span>i</p>
+<p class="p1"><span class="s1">. </span>(7.32)</p>
+<p class="p1">Several measures exist for the similarity and dissimilarity of two probability density functions of</p>
+<p class="p1">discrete random variables, including the trace distance, fidelity, mutual information, and relative entropy</p>
+<p class="p1">[<span class="s6">92</span>,<span class="s6">198</span>]. The <span class="s1">trace distance </span>(also called Kolmogorov or L1 distance) of two probability density functions,</p>
+<p class="p1"><span class="s1">p</span><span class="s2">X </span><span class="s1">(x) </span>and <span class="s1">p</span><span class="s2">Y </span><span class="s1">(y)</span>, and their <span class="s1">fidelity </span>are defined as</p>
+<p class="p2">D(p<span class="s2">X </span>(x), p<span class="s2">Y </span>(x)) = <span class="s3">1</span></p>
+<p class="p1">2</p>
+<p class="p2"> </p>
+<p class="p3">x</p>
+<p class="p2">|p<span class="s2">X </span>(x) − p<span class="s2">Y </span>(x)| <span class="s3">(7.33)</span></p>
+<p class="p1">and</p>
+<p class="p2">F(p<span class="s2">X </span>(x), p<span class="s2">Y </span>(x)) =</p>
+<p class="p2"> </p>
+<p class="p3">x</p>
+<p class="p2"> </p>
+<p class="p2">p<span class="s2">X </span>(x)p<span class="s2">Y </span>(x). <span class="s3">(7.34)</span></p>
+<p class="p1">The trace distance is a metric: It is easy to prove nonnegativity, symmetry, the identity of indiscernibles,</p>
+<p class="p1">and the triangle inequality. On the other hand, the fidelity is not a metric, since it fails to</p>
+<p class="p1">satisfy the identity of indiscernibles,</p>
+<p class="p2">F(p<span class="s2">X </span>(x), p<span class="s2">X </span>(x)) =</p>
+<p class="p2"> </p>
+<p class="p3">x</p>
+<p class="p2"> </p>
+<p class="p2">p<span class="s2">X </span>(x)p<span class="s2">X </span>(x) = <span class="s3">1 </span> = <span class="s3">0</span>, <span class="s3">(7.35)</span></p>
+<p class="p1">respectively. Determining either the <span class="s1">L</span>1 distance between the distribution calculated based on Eq. (<span class="s6">7.4</span>) or</p>
+<p class="p1">the one produced by the algorithm discussed earlier requires information about the degree of all vertices.</p>
+<p class="p1">From Table <span class="s6">7.2 </span>we see that the degree-one vertices represent a very large fraction of the vertices of a</p>
+<p class="p1">power-law network and may provide a reasonable approximation of the actual degree distribution.</p>
+</body>
+</html>

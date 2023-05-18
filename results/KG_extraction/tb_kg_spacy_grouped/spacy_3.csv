@@ -1,0 +1,1001 @@
+,source,edge,target
+2000,buffers,protected_by,corresponding page frames
+2001,virtual network that,has,network interface card
+2002,VIF,attached_to,firewall router firewall VFR
+2003,rings,supported,packet receiving
+2004,then send Xen,copies,matching packet rules
+2005,pattern,require,packet header
+2006,rules,ensure,same source IP address
+2007,Xen,includes,unmodified commodity operating systems
+2008,own  that,emulates,Dom0  VM
+2009,when  Intel,underwent_significant,VT x processors
+2010,when  Intel,released,VT x
+2011,running,adopted_by,VT d
+2012,Xen,running,2008
+2013,support,added_to,Linux 2011
+2014,Xen,incorporated_for,VT d architectures
+2015,This,avoids,security driver reliability
+2016,OS,exploit,3D graphics card
+2017,one,know,bound VM 298
+2018,servers,share,same  Xen
+2019,generator,sends,1  100
+2020,size,increases,100  KB
+2021,first  we,see,10  system
+2022,when  system,shows,same data rate range
+2023,quite  variation,increases,two file size magnitude
+2024,Denali,designed,larger network Xen
+2025,design,target,existing Denali ABI
+2026,design,support,some
+2027,design,support,segmentation
+2028,multiple guest Xen,support,multiple guest OS
+2029,total,had,"3,000 Linux code"
+2030,Windows figure,is,Windows XP
+2031,it,implement,such  a
+2032,answers,discussed_in,section
+2033,layered defense mechanism,understood,malware
+2034,layered defense mechanism,disabled,layer
+2035,VMM,offers_to,physical abstraction hardware
+2036,software VMM,forced,physical  hardware
+2037,194  it,argues,physical rogue hardware
+2038,rootkit,refers_to,privileged  system
+2039,name,comes_from,privileged software components
+2040,virtual  machine,sees_virtual,legitimate  virtual
+2041,guest OS,notice,any
+2042,we,address,the
+2043,malware,point,VMM
+2044,malware,runs,approach
+2045,VMM,prevents,malicious guest operating activities
+2046,VMBR,record,key
+2047,data,be,network
+2048,moreover  impunity,change,will
+2049,attacker,has,root
+2050,malicious  OS,enable,guest OS
+2051,ii,run,denial spam application
+2052,VMBRs,described_in,several Windows 194
+2053,once boot attacker,stress,total root privileges system
+2054,once  attacker,has,root privileges attacker
+2055,introduction,found_in,recent virtualization 141
+2056,machines,dissected_in,Smith
+2057,discussion,provided_by,virtual machine Rosenblum
+2058,papers,discuss_in,XenVMM performance
+2059,system,presented_in,372
+2060,paper,compares,standard operating system
+2061,project,presented_in,HP 228
+2062,new  services,argues,operating system
+2063,services,added_below,operating system level
+2064,process,creates,virtual  machine
+2065,survey,provided_by,virtual security 389
+2066,references,discuss,virtualization  architecture
+2067,we,discuss,HP Laboratories
+2068,VMM,expected,detailed performance analysis
+2069,vBlades project,shows,requirements
+2070,ISA,conform,requirements
+2071,unfortunately IA64 architecture,meet,requirements
+2072,hardware,review,four privilege rings
+2073,nonprivileged  PL2,used,nonprivileged  instructions
+2074,applications,run_at,PL3
+2075,OS,accept,four privilege rings
+2076,nonprivileged  instructions,allow,an
+2077,Itaniumwas,selected_because,functional  units
+2078,processor,has,functional  units
+2079,word,contains,three
+2080,fetch mechanism,read,two L1 pipeline
+2081,unit,execute,particular  instruction
+2082,hardware,has,renumbered procedure calls
+2083,7 bit that,specifies,register usage
+2084,illegal write operation,returns,illegal  instruction
+2085,illegal write operation,trapped,value
+2086,processor,supports,privileged region registers
+2087,caller,allows,region
+2088,VMM,intercepts,privileged guest isolation
+2089,hardware,has,interruption vector table
+2090,particular  interrupt,activate_different,interrupt  table
+2091,own vector OS,maintains,IVA
+2092,when guest interrupt,uses,guest interrupt guest handler
+2093,When guest OS,attempts,privileged VMM instruction
+2094,certain  VMM,disable,interrupt
+2095,when guest OS,uses,rsm
+2096,interrupts,fact,guest OS
+2097,interrupt,masked,case
+2098,register stack which,caused_by,accessmemory page fault
+2099,same RSE operations,solved_by,same  time
+2100,number,behave,differently privilege level
+2101,VMM,replaces,dynamic instruction stream
+2102,which,saves,stack information
+2103,VMM,replaces,break.b instruction
+2104,which,access,virtual memory control structures
+2105,illegal  read,trapped,32  127
+2106,Access,controlled_by,PSR.sp instruction
+2107,VMM,guided_by,significant memory performance
+2108,same  VMM,exercise_tight,tight guest OS
+2109,guest OS,allow,memory
+2110,OS,inserts,virtual  addressing
+2111,OS,placed,metaphysical addressing mode
+2112,translation,provides,regular address translation
+2113,distinguishes,using,virtual processor status
+2114,monitor,introduces,significant network communication
+2115,CPU  utilization,reported,100 Mbps network
+2116,native  VMM,executes,larger  instructions
+2117,overheads,reported_for_other,particular  Xen
+2118,we,examine,basic  network
+2119,driver domain,refer_to,guest domain
+2120,native network interface which,called,also network adapter
+2121,precisely guest OS,uses,back driver domain
+2122,guest domain,communicates_with,driver domain
+2123,it,added_to,table
+2124,bridge,uses,rather broadcast packet
+2125,bridge,performs,multiplexing driver demultiplexing
+2126,packets,have,different  VMM
+2127,Similarly  packets,have,single network adaptor
+2128,Xen,supports,address translation
+2129,Table,shows,well Xen optimizations
+2130,Next  we,examine,virtual optimization interface
+2131,interface,provides,low level network primitives
+2132,design,supports,e.g. scatter gather DMA
+2133,features,supported,optimized  Figure
+2134,data packet,allocated_in,new  page
+2135,physical  page,remapped_into,target domain
+2136,physical  page,remapped_to,guest domain
+2137,when network bridge,needs,only MAC packet
+2138,optimized  implementation,based_on,out packet MAC header
+2139,strategy,contributed_to,nonoptimized data version
+2140,optimization,covers_virtual,virtual  memory
+2141,memory,takes,Pentium Pentium processors
+2142,superpage,increases,the
+2143,physical address translation mechanism,covers,physical  pages
+2144,mechanism,maps,contiguous  pages
+2145,This,helps,TLB
+2146,Obviously  pages,belong_to,same guest OS
+2147,only guest that,allocate,rather superpage mapping
+2148,that,forces,the
+2149,version,uses,special memory problem
+2150,Xen,seen,negatively  performance
+2151,Xen,introduces_additional,additional  overhead
+2152,plain vanilla Linux,compare,base  system
+2153,First  we,take,closer OS level virtualization
+2154,OpenVZ,uses,patched Linux kernel
+2155,lack,compensated_by_lower,lower  overhead
+2156,more  memory,used_by,virtual  others
+2157,system,uses,common file system
+2158,one,needs,virtual  VM
+2159,OpenVZ,has,two  level
+2160,fair share scheduler,allocates_cpu,CPU time
+2161,scheduler,has,also  two
+2162,container,has,I O priority
+2163,scheduler,distributes,the
+2164,discussion,focused,281
+2165,experimental  load,is_ample,significantly system time
+2166,series,illustrates,clearly CPU fact
+2167,phenomenon,justifies,threads operating system
+2168,load,tends,average resource utilization
+2169,user,starts,individual  items
+2170,session,requires,the
+2171,increased  load,means,increased  threads
+2172,that,reports,L2 cache binary
+2173,that,allow,the
+2174,setups,shown_in,different  Figure
+2175,two  tiers,run_on,single  Linux
+2176,throughput,increases,linearly  workload
+2177,slightly OpenVZ time,increases,600 Xen system
+2178,DB consumption,represents,1-4  load
+2179,times Xen application domain,shows,times  more
+2180,Xen Dom0,has,times  more
+2181,domain,has,9  times
+2182,base system,run,Linux
+2183,directly  Xen,compared,modified Linux kernel
+2184,Xen,runs,modified  Linux
+2185,procedure evtchn_do_upcall,invoked,event
+2186,figure,refers_to,user space
+2187,group,uses,three DB systems
+2188,throughput,increases,linearly  workload
+2189,times base 3.5,misses_for,larger User Domain
+2190,group,uses,two DB servers
+2191,throughput,increases,800  threads
+2192,relatively  OpenVZ,remains,times  Xen
+2193,OpenVZ,for,increases
+2194,hosting,is,same  server
+2195,Gerald J. Popek,gave,Robert P. a
+2196,computer architecture,support,virtualization
+2197,when  program,exhibit,equivalent  machine
+2198,significant  fraction,executed_without,machine VMM
+2199,formulation,based_on,efficient machine instructions
+2200,set,constructed,privileged  machine
+2201,one,resort_to,Binary  translation
+2202,VMM,monitors,the
+2203,nonvirtualizable  instructions,replaced_with_other,other guest operating instructions
+2204,only  that,modified,only  instructions
+2205,virtual  machine,are,actual  Figure
+2206,aspects,virtualized,hardware
+2207,Section,covers,5.8 hardware Xen
+2208,virtualization,requires,virtualizable
+2209,fully guest which,exposed_to,fully guest OS
+2210,architectures,done,such  x86
+2211,furthermore guest OS code,ported_for_individual,individual hardware platforms
+2212,privileged  instructions,pose,guest OS
+2213,privileged  instructions,insert,traps
+2214,system,maintain,such page tables
+2215,that,adds,negatively  performance
+2216,that,affects,negatively  the
+2217,application,performs,classical  OS
+2218,one  process,partitioned,better cache other
+2219,one  process,use,cache space
+2220,read  cache,filled_by,aggressively  first
+2221,cache isolation cache,under,VMs
+2222,I  performance,depends_on,competing O VMs
+2223,optimal  default,are,optimal  choice
+2224,monitor,called,also  a
+2225,that,runs_under,VMM
+2226,Sometimes  hardware,supports,third guest OS
+2227,same  VMMs,enforce,thus  security
+2228,how guest operating system,controls,hardware resources
+2229,how guest operating system,uses,hardware
+2230,events,affect,same  VMM
+2231,same  VMM,enables,same  platform
+2232,VMM,traps,operation
+2233,VMM,guarantees,major cloud computing
+2234,real memory frames,swap,other  VMs
+2235,VMM,virtualizes,CPU
+2236,such guest OS,buffers_such,interrupts
+2237,VMM,maintains,own shadow page table
+2238,virtualization,has_important,important  performance
+2239,VMware systems,avoid,page
+2240,total  page,maintain,total  VM
+2241,Xen,imposes_total,total  VM
+2242,VMMs,control,virtual memory management
+2243,server,uses,thus balloon VM
+2244,Then  process,forces,free page frames
+2245,same  all,appears,physical  system
+2246,when  IBM,operating,IBM VM/370
+2247,We,distinguish,two system Figure
+2248,that,provide,different  instruction
+2249,VM,supports,many user processes
+2250,When  VM,runs_under,normal  OS
+2251,we,have,virtual  machine
+2252,search,reveals,the
+2253,Table,lists,5.1  companies
+2254,machine,provides,complete
+2255,VM which,run,multiple  applications
+2256,which,run_multiple,multiple
+2257,server,run_multiple,isolated system instances
+2258,instances,known_as,containers
+2259,OpenVZ,requires,host
+2260,systems,claim,performance
+2261,OpenVZ,licensed_under,GPL version
+2262,VMM,shares,existing  Figure
+2263,VM,runs_on,existing  Figure
+2264,VMM,use_several,several
+2265,page faults,handled,directly guest VMM
+2266,complete  solution,make,less cloud computing environment
+2267,gap,exists_between,added  services
+2268,services,operate_below,virtual guest operating system
+2269,VMMs,discussed,physical resource system
+2270,different  systems,vary_in,"bandwidth,1 latency,2 reliability"
+2271,management,grows,well system increase
+2272,external resource management,affected_by_internal,different failure components
+2273,virtual  running,saved,virtual machine load
+2274,state,running,virtual  machine
+2275,users,allows,idiosyncratic  environments
+2276,sharing,requires,multilevel hardware control
+2277,Indeed  resources,shared,such CPU cycles
+2278,resources,shared_among_multiple,multiple  application
+2279,We,start,virtualization virtualization
+2280,that,discuss,binary application programming architecture
+2281,that,define,system
+2282,We,discuss,performance security Section
+2283,full  virtualization,discussed,Section
+2284,operating system,run_without,VMM
+2285,hardware,requires,functions
+2286,hardware abstraction,support,the
+2287,one  architectures,conceived_for,two execution modes
+2288,architectures,support,two  execution
+2289,level,exercised_by,guest operating system
+2290,two level scheduling,implemented,CPU cycles
+2291,x86 processor architecture,extended,hardware Section
+2292,We,analyze,5.8 VMM network Section
+2293,processors,have_multiple,explicit  Section
+2294,We,analyze,potential security Section
+2295,Finally  we,discuss,software fault Section
+2296,Virtualization,simulates,physical  means
+2297,processor,multiplexed_among,processes
+2298,number,aggregated_into,physical RAID disk
+2299,physical  disk,emulates,random access memory
+2300,real  TCP,emulates,reliable bit pipe
+2301,Virtual  address,emulates,real
+2302,one resources which,abstracts,system
+2303,Virtualization,used,late  1950s
+2304,memory,implemented_on,first United 1959
+2305,watchful  which,interacts_with,privileged guest hardware
+2306,VMM,control,physical O disk
+2307,services,added_without,operating system
+2308,user,submit,Amazon Machine applications
+2309,user,choose,many management AWS
+2310,privileged  operations,trapped,VM
+2311,increased  overhead,has,negative  performance
+2312,cost,is,VM
+2313,interfaces,separate_different,different  abstraction
+2314,Layering,minimizes,subsystems
+2315,subsystem,abstracted_through,other subsystem subsystems
+2316,instruction,set,instructions
+2317,Intel architecture,represented_by,32 bit addressing
+2318,hardware,supports,two execution modes
+2319,only kernel that,set,user mode
+2320,user that,are,differently  Section
+2321,that,executed_in,user mode
+2322,hardware,consists_of,I O one
+2323,Applications,call,often object code
+2324,security integrity,executed_in,security user
+2325,privileged  operations,determines,system security
+2326,privileged  operations,violate,system security
+2327,security integrity,executes,security integrity
+2328,binaries,targeted_to,specific hardware architecture
+2329,ABI,include,privileged  system
+2330,instead  ABI,invokes,system calls
+2331,hardware,defines,application ISA
+2332,HLL library which,includes,often system calls
+2333,which,invoke,often  system
+2334,code,run_on,same  ISA
+2335,such performance blocks,converts,significant performance improvement
+2336,Indeed run time behavior,competing,other  applications
+2337,run time behavior,affected_by_other,other  applications
+2338,systems,support,QLinux performance isolation
+2339,still  one,exist,often QoS crosstalk
+2340,virtualization,presents_multiple,same  processor
+2341,hardware instructions,executed,slowly  virtualization
+2342,Mac Apple,used,Intel chips
+2343,Apple,adopted,Intel
+2344,Obviously performance OS,is,more context switching
+2345,subset,includes_arithmetic,arithmetic  instructions
+2346,systems,use,also resource isolation
+2347,attacker,penetrate,entire
+2348,other  software,has,virtual  the
+2349,layer,has,physical  systems
+2350,Thus  virtualization,used,cloud computing environment
+2351,Xen VMM,discussed,example
+2352,Denali VMM,lines_of,"30,000  code"
+2353,considerably  systems,reduced,privileged  functions
+2354,systems,expose,much  smaller
+2355,e.g. Linux 2.6.11,accessed_through,28  hypercalls
+2356,traditional operating system,supports_special,third  party
+2357,users,allowed,individual users systems
+2358,Independently Burroughs Corporation,developed,virtual  1961
+2359,memory,used,segmentation
+2360,IBM,introduced,new operating system
+2361,multiple operating systems,virtualized,virtual machine contexts
+2362,early  virtualization,driven_by,large  users
+2363,system,based_on,CP  CMS
+2364,virtual  machine,created_for,virtual  applications
+2365,VMM,managed,hardware resources
+2366,mainframes,retain_backward,1960s era IBM S/360 line
+2367,production,contributed,other hardware end
+2368,where operating innovation,write,geologic  pace
+2369,VMMs,give,operating system another
+2370,Now  we,turn,6.12 cloud deadlines
+2371,paper,applies,Hadoop tasks
+2372,Table,summarizes,6.8  the
+2373,We,make,initial  system
+2374,ρm,means,respectively reduce servers
+2375,maximum  value,follows,start reduce task
+2376,We,plug,start t0 m
+2377,assumption,relaxed,servers
+2378,Scheduler,presented_in,186
+2379,demand,depends,heavily network application
+2380,new Web service,experience,low  request
+2381,large  number,exhibit,this
+2382,external cloud resource management,make,server failures
+2383,We,distinguish,two scaling modes
+2384,scaling,keeps,application resources
+2385,This,done,same CPU time
+2386,alternative,involves_additional,additional
+2387,file,transported_to,powerful  server
+2388,finally  VM,restated_at,new  site
+2389,when  load,done_by,VMs
+2390,Often  this,leads_to,communication application
+2391,multiple load balancers,need,one
+2392,front end that,done_by,back end servers
+2393,application,designed,scaling
+2394,system,allocate_additional,additional  workload
+2395,horizontal  scaling,belong_to,statement
+2396,intensive  application,mapped_to,powerful network traffic
+2397,This,increase,CPU usage
+2398,This,decrease,overall  user
+2399,same  This,reduce,desirable cloud service provider
+2400,relatively  overhead,is,instance
+2401,scaling,uses,scaling  decisions
+2402,controllers,make,often decision making
+2403,Amazon,offer_automatic,automatic  scaling
+2404,applications user,supports,automatic  migrations
+2405,single load balancers,used_for_horizontal,horizontal  scaling
+2406,service,distributes_incoming,multiple EC2 instances
+2407,service,allows_dynamic,high Elastic Section
+2408,user,has,such Elastic Beanstalk
+2409,extremely  it,poses_new,extremely  problems
+2410,number,dedicated_to_various,various resource management policies
+2411,scheduling,presented_in,SLA 54
+2412,QoS,analyzed_in,121
+2413,participants,called_combinatorial,items
+2414,participants,bid,which
+2415,auctions,provide,cloud resource allocation
+2416,simultaneous clock proxy algorithm,called,333
+2417,applications,discussed_in,data centers
+2418,policies,discussed_in,150
+2419,services,covered_in,280
+2420,management,discussed_in,heterogeneous  344
+2421,allocation,covered_by_numerous,numerous  papers
+2422,system,presented,Hadoop
+2423,driven  scheduling,covered_in,business 106
+2424,Scheduling,presented_in,real cloud 220
+2425,Forum,involved_in,175 virtualization performance
+2426,when  results,specifies,cloud
+2427,when  results,done,computations
+2428,us,motivates,real time applications
+2429,us,examine,subject cloud a
+2430,applications,involve_periodic,periodic  deadlines
+2431,arrival time,characterized_by,tuple
+2432,generally data size,satisfy,constraint
+2433,We,distinguish_hard,soft  deadlines
+2434,that,affected,deadline
+2435,deadlines,play_more,guideline role
+2436,deadlines,missed_by,days
+2437,deadline,expressed_in,hours
+2438,we,consider,divisible  workloads
+2439,virtual  cloud,runs_on,n S1
+2440,cloud,nodes,head node
+2441,node,distributes,worker nodes
+2442,tasks,scheduled_for,tasks arrival
+2443,task,scheduled,earliest  deadline
+2444,when nmin nodes,defined_as,DCi  nmin
+2445,policy,requires,that
+2446,tasks,scheduled_in,derivative  DCi
+2447,number,kept_to,minimum  nmin
+2448,We,discuss,two worker nodes
+2449,optimality,refers,OPR
+2450,workload,partitioned,possible completion time
+2451,tasks,required,same  time
+2452,workload,means,equal  segments
+2453,we,use,the
+2454,notations,summarized_in,Table
+2455,us,determine,execution OPR
+2456,We,determined,now load distribution vector
+2457,we,determine,now execution time
+2458,σ completion which,call,n worker nodes
+2459,which,starts,t0
+2460,application,meets,application deadline
+2461,we,see,that
+2462,EPR partitioning rules,given_in,reference
+2463,MWF MN OPR,uses,minimum MWF nodes
+2464,performance,depends_on,communication cost
+2465,cloud servers,allow,users
+2466,networks,consist_of,limited communication capacity
+2467,When  load,exceeds,load
+2468,dropping  load,starts,limited CPU cycles
+2469,load,limited,input
+2470,switch,handle_multiple,multiple source destination traffic
+2471,when  packets,allowed,individual buffer flow
+2472,when  packets,flows,individual
+2473,greedy flow sources,transmit_at,larger  bandwidth
+2474,separate  queues,proposed_in,round robin manner
+2475,queues,maintained_by,switch
+2476,algorithm,guarantees,bandwidth buffer space allocation
+2477,Indeed  flow,benefit_from,larger  Figure
+2478,queuing,proposes,FQ  problem
+2479,First  algorithm,introduces,round robin round BR
+2480,single  bit,transmitted,queue
+2481,queues,visited_in,robin  fashion
+2482,transmission,interrupted_as,current  packet
+2483,allocation,have,transmission
+2484,paper,proposes,i Ba value
+2485,bid,defined_as,Ba i
+2486,properties,analyzed_in,nonpreemptive FQ 102
+2487,scheduler,proposed_in,multimedia operating 142
+2488,scheduler,acts_at,hierarchy
+2489,machine bandwidth,reallocated_to,active  time
+2490,one  allocation,transferred_to,same  VM
+2491,one  allocation,transferred_to,other  applications
+2492,scheduler,follows_several,several  rules
+2493,real  t,computed,real  time
+2494,virtual  CPU,finish_virtual,virtual  thread
+2495,we,simplify,time  event
+2496,we,use_in,real
+2497,virtual start up time,means,real  time
+2498,example,illustrates,the
+2499,60  a,thread,time
+2500,Several  properties,proved_in,SFQ 142
+2501,well  delay,allocates,throughput
+2502,available  bandwidth,varies_in,time
+2503,only  thread,schedules,current thread allocation
+2504,142  overhead,is_comparable,Solaris scheduling algorithm
+2505,BVT algorithm,supports,best time effort
+2506,Thread  i,has,virtual  time
+2507,thread,maintains,virtual  thread
+2508,threads,dispatched_in,threads
+2509,thread,allows,future CPU allocation
+2510,real  thread,measures,other  mcu
+2511,thread,charged,integer  mcu
+2512,longer  policy,prevents,longer  time
+2513,threads,allowed,virtual  time
+2514,thread,consumes,larger  thread
+2515,τi,maintains,time ki weight run
+2516,virtual  time,switch_from,current running thread
+2517,example,illustrates,best effort applications
+2518,thread,has,twice  second
+2519,We,consider,9 time mcu
+2520,threads,allowed,6  mcu
+2521,Threads,activated_at,times
+2522,switches,occur_at_real,real  times
+2523,time,expressed_in,mcu
+2524,which,occurs,2  mcu
+2525,Table,shows,two  context
+2526,equal  thread,incremented_by,switch time allocation
+2527,virtual  first,compares,virtual  time
+2528,running time thread,appears_as,diagonal  line
+2529,period,displayed_as,horizontal  line
+2530,two  threads,see,real  time
+2531,two  threads,allocated_equal,virtual  time
+2532,Next  we,consider,previous  example
+2533,thread which,triggered_by,running  thread
+2534,warp,gives,Wc thread
+2535,Figure,shows,three  threads
+2536,c.,preempts,current running thread
+2537,guiding  mechanisms,refers_to,policies
+2538,mechanisms,represent,the
+2539,Lampson,offer_solid,solid operating system design
+2540,policies,grouped_into,five  classes
+2541,additional  that,accept,already  progress
+2542,that,prevent,system
+2543,when search state,requires,individual  systems
+2544,same  we,encounter,same  one
+2545,relative  loads,consider,respectively loads capacity
+2546,perfect load servers,end_with,− 50 − capacity
+2547,critical  goal,minimizing,particular energy consumption
+2548,standby  server,want,less  energy
+2549,full  C,loaded,standby  mode
+2550,full  C,loaded,full  capacity
+2551,mobile  techniques,migrated_to,high performance servers
+2552,lower  performance,decreases,slower energy consumption
+2553,Table,shows,modern clock rate
+2554,maximum  performance,save,2.2 peak GHz
+2555,mechanisms,scale,e.g. energy conservation
+2556,complex  that,require_complex,effectively  time
+2557,techniques,concentrated_on,system system
+2558,techniques,include,rarely energy tradeoffs
+2559,optimization servers,viewed_as,overload
+2560,techniques,based_on,disciplined computer approach
+2561,theory,uses,global system behavior
+2562,filters,used_for,simplified  models
+2563,techniques,need,performance
+2564,technique,applied_to,autonomic system 187
+2565,approaches,require,user level 9
+2566,mechanisms,require,combinatorial  333
+2567,distinction,made_between_interactive,interactive  workloads
+2568,dynamic application those,involve,noninteractive  workloads
+2569,those,focused,noninteractive  workloads
+2570,amount,is_devoted,heterogeneous resource two
+2571,management,affects,basic  system
+2572,management,has,indirect  system
+2573,Indeed  functions,become,poor  performance
+2574,management,requires_complex,objective  optimization
+2575,strategies,differ_from,three cloud delivery one
+2576,that,faced_with_large,cloud elasticity
+2577,resources,provisioned_in,seasonal Web spikes
+2578,Scaling,used_for_unplanned,unplanned spike loads
+2579,control loop,is,real  resources
+2580,that,allows,control loop
+2581,Scaling,supported_by,such Google App Engine
+2582,centralized  control,argued_for,continuous  service
+2583,adequate cloud management that,provide_adequate,adequate cloud management policies
+2584,We,start,cloud resource Section
+2585,approach,discussed_in,resource Sections
+2586,algorithm,presented_in,autonomic performance Section
+2587,6.6  we,discuss,Web service
+2588,Next  we,present,combinatorial resource Section
+2589,queuing,analyzed_in,virtual time scheduling Sections
+2590,impact,presented_in,resource Sections
+2591,theory,used,222 Web servers
+2592,feedback control,assumes,invariant system model
+2593,open system transfer that,based_on,stability  constraints
+2594,technique,discussed,managing control 369
+2595,operating constraints,allows_multiple,alone Web servers
+2596,objectives,expressed,cost function
+2597,discussion,considers,single input requests
+2598,cost that,attempt,response time
+2599,brief control theory one,start,optimal resource allocation
+2600,control,generates,operating look ahead conditions
+2601,cost function,minimized,system dynamics
+2602,One,based_on,subject  constrains
+2603,Then  we,study,function
+2604,we,solve,Eq
+2605,We,define,adjoint  cost
+2606,then  we,construct,costate state Lagrange
+2607,Thus  we,define,two point boundary
+2608,forward  costate,develops,backward  time
+2609,Now  we,turn,single input requests
+2610,controller,uses,future  environment
+2611,task,solved_as,initial state regulation control
+2612,We,use,simple queuing model
+2613,Requests,processed_on,FCFS processor basis
+2614,We,assume,priori
+2615,instead  we,use,arrival time
+2616,processor,operate_at,frequencies
+2617,when  processor,operates_at,highest  range
+2618,behavior,modeled_as,discrete time state equation
+2619,energy both,want,service
+2620,both,affect,the
+2621,function,captures,well response time
+2622,it,expressed_as,quadratic response time
+2623,We,have,control quadratic
+2624,trajectory,corresponding_to,control u
+2625,pair,minimizes,Eq
+2626,based cloud applications,is,complex  workflow
+2627,based cloud applications,require,the
+2628,virtual  machine,support_several,several  applications
+2629,application,consist_of_multiple,multiple  threads
+2630,scheduling,supports,the
+2631,virtual communication link,multiplexed_among,virtual  flow
+2632,when scheduling access,addressed_by,resources
+2633,Figure,identifies_several,two resource allocation dimensions
+2634,systems,require_strict,strict
+2635,First  we,discuss,min fairness criterion
+2636,bandwidth  who,shared_among,equal  rights
+2637,user,requests,amount Bi
+2638,following max min conditions,satisfied_by,fair  allocation
+2639,condition allocation C1,is,current  allocation
+2640,When  we,remove,minimum allocation Bmin
+2641,amount,minimize,respectively time the
+2642,requirements,differ_for_different,different scheduling policies
+2643,applications,require,such QoS guarantees
+2644,applications,have_soft,maximum time delay
+2645,Applications,use,so time future
+2646,thread,given,round robin scheduling
+2647,threads,allowed,FCFS SJF algorithms
+2648,deadline,used_for_real,real time applications
+2649,Integration,discussed_in,three  56
+2650,algorithms,proposed,integrated  scheduling
+2651,Next  we,discuss,special computer clouds
+2652,algorithms,illustrate,particular multimedia applications
+2653,managers,cooperate,same power SLAs
+2654,processors,support_dynamic,dynamic energy saving
+2655,Indeed energy dissipation,scales,quadratically supply voltage
+2656,management,controls,thus instruction execution
+2657,linearly CPU clock effect,decreases,lower clock frequency
+2658,frequency,controlled_by,blades power manager
+2659,firmware,adjusts,clock frequency
+2660,approach,based_on_several,joint utility power
+2661,manager,consists_of,per blade power
+2662,negotiation,manager,two  agents
+2663,WebSphere Extended that,use,periodically resource allocation targets
+2664,that,supports,individual Web applications
+2665,blade,serve,"1,000 msec limit"
+2666,110  processor,runs_at,highest  frequency
+2667,110  processor,runs,110  Watts
+2668,types,conducted,experiments
+2669,when response dependency,turned,learning  models
+2670,when  dependence,determined,power consumption
+2671,power,led_to,specifically  experiments
+2672,when  pk,decreases,110  watts
+2673,rapidly  load,increases,given  powercap
+2674,machine learning machine algorithm,based_on,third Reinforcement Learning 349
+2675,users,allocated_in,specific  resources
+2676,users,get_maximum,maximum  benefit
+2677,Indeed CPU application,needs_specific,specific ofmain memory
+2678,models,generated,economic  models
+2679,participants,called_combinatorial,items
+2680,participants,bid,which
+2681,auctions,provide,simple cloud resource allocation
+2682,333,discussed_in,chapter
+2683,current  price,represented_by,auction
+2684,prices,consider,auction
+2685,prices,set,which
+2686,users,provide,desirable  bundles
+2687,We,assume,U users
+2688,user,expresses,user =
+2689,prices,given_by,individual vector p
+2690,total user bid,represents,time
+2691,process,aims,objective  function
+2692,net  value,tailored,maximum amount users
+2693,value,measure,total
+2694,functions,considered_for,e.g. security risks
+2695,algorithm,partitions,two disjoint W
+2696,such Vickey Clarke- criteria,fail,such Vickey Clarke- criteria
+2697,price,exceeds,the
+2698,winners,pay,same resource price
+2699,clearly  unit,at,resource pool
+2700,system awards,expresses,only  resources
+2701,bid,exceeds,final
+2702,winners,states,expensive  bundles
+2703,winners,get,least  expensive
+2704,losers,states,final  price
+2705,ASCA participants,specify,time slot
+2706,demand,mean,offer
+2707,demand,exceed,the
+2708,0  auctioneer,is_larger,new  price
+2709,algorithm,satisfies,conditions
+2710,6.3  users,discover,uniform resource prices
+2711,slight  algorithm,is,multiple user rounds
+2712,algorithm,involves,user
+2713,user proxies,address,actual proxies Figure
+2714,proxies,adjust,automatically  proxies
+2715,notation,means,max
+2716,only optimization participants,guaranteed,same  time
+2717,Nevertheless clock algorithm,finds,only  feasible
+2718,algorithm,guarantee,optimality
+2719,authors,implemented,internal  Google
+2720,system,show,substantial  improvements
+2721,algorithm,supports,resource bundling
+2722,random  participants,arrive_at_random,same  time
+2723,participants,react,bid
+2724,this,adds_to,response
+2725,demand,is,periodic  auctions
+2726,which,guarantees,existing  application
+2727,closed loop control we,saw,control theory allocation
+2728,we,assimilate,closed loop control system
+2729,we,apply,control theory principles
+2730,we,discuss,entire control theory cloud
+2731,management,based_on,two service Figure
+2732,controllers,use,the
+2733,stability,related_to,output
+2734,amount,becomes,useful  applications
+2735,most,occupied_by,management functions
+2736,small  change,leads,controllers
+2737,which,occur,when  input
+2738,types,used_in_autonomic,Markovian decision models
+2739,Lessons,learned_from,experiments
+2740,types,discussed_in,109
+2741,actions,carried,control system
+2742,only  performance,carried,system
+2743,controlled  system,measure,which
+2744,system,occurs,workload
+2745,allocation  deallocation,cause,other  threshold
+2746,this,represent,instability
+2747,function,relates,service
+2748,agreement,specifies,specific performance metrics
+2749,Sometimes  quality,translates,services
+2750,when  SLA,specifies,explicitly  this
+2751,when performance metrics,shows,6.4  case
+2752,lower  reward,corresponds_to,< R R1
+2753,instead  provider,pays,small
+2754,which,captures,this
+2755,quadratic  we,approximated_by,Section
+2756,we,discuss,autonomic  management
+2757,cloud,assume,k Nk applications
+2758,cloud,providing,different
+2759,delay that,see,next  Figure
+2760,single  that,assume,DVFS supply model
+2761,that,runs_at,discrete supply voltages
+2762,problem,involves,five
+2763,variables,listed,optimization Table
+2764,parameters,shown_in,Table
+2765,traffic,equals,predicted class k class
+2766,more  i,allocated,workload
+2767,Nk,assigned_to_active,active  servers
+2768,decision approach,make,realistic resource management strategy
+2769,sensors,measure,the
+2770,actuators,transmit,necessary  actions
+2771,actuators,carry,necessary
+2772,80  cloud,stops,additional  load
+2773,user requests,denied,additional SLA limits
+2774,Thresholds,used_in,predefined control range
+2775,threshold,based_on,time interval
+2776,high  threshold,force,threshold activities
+2777,threshold,encourage_additional,additional  activities
+2778,granularity,refers,system
+2779,accuracy,means,implementation
+2780,detailed  information,used,system state
+2781,accuracy,means,parameters
+2782,Application,discussed,proportional resource 217
+2783,questions,related_to,one
+2784,two  that,seems,cloud
+2785,cloud controller,have,rough cloud state
+2786,some,has,information
+2787,VM,allow,available VMM level sensors
+2788,we,have,goodness
+2789,strategy,reduces,the
+2790,authors,adopt,pragmatic  approach
+2791,arguments,report,oriented Web server
+2792,average  value,vms,high time threshold
+2793,average  value,exceeds,current time high
+2794,average  value,release,low time threshold
+2795,average  value,falls,current CPU slice
+2796,thresholds,perform,static  ones
+2797,such  results,have,realistic  environment
+2798,Moreover  results,convincing,integral control equations
+2799,servers,communicate,specialized  networks
+2800,chapter,starts_with,basic packet Sections
+2801,transformational  changes,surveyed,Section
+2802,Section,covers,initial congestion control TCP
+2803,Models,analyzed,network resource Section
+2804,topologies,discussed_in,storage area Sections
+2805,networks,presented_in,free world Sections
+2806,Finally  Section,is_devoted,7.12 epidemic algorithms
+2807,then destination datagram,allows,then destination which
+2808,network,identify,first destination network
+2809,logical network interface,has,physical  address
+2810,IP address,assigned,dynamically  network
+2811,different  phone,get,different differentWi Fi networks
+2812,addresswhen,connected_to_different,different  networks
+2813,phone,get_different,different  IP
+2814,when IP host,have_multiple,multiple  networks
+2815,Internet,based_on,TCP IP protocol Figure
+2816,packets,captures,Internet destination
+2817,packets,reach,Internet the
+2818,IP,ensures,datagrams destination datagrams
+2819,when  packet,means,packet
+2820,when  packet,drop,packet
+2821,Internet,uses,two connectionless datagram protocol
+2822,header,contains,sufficient  destination
+2823,error checking,assumes,either error application
+2824,Datagrams,arrive_out,order
+2825,Applications,include,such Internet Protocol television
+2826,packet,reaches,destination
+2827,that,delivered_to,logical communication Figure
+2828,processes,use,abstraction  network
+2829,socket,manages,outgoing  messages
+2830,TCP,provides_reliable,one destination system
+2831,application,sends,logical communication link
+2832,sliding flow control sender,uses,receiver
+2833,receiver,allows,process segments
+2834,network,has,finite data
+2835,we,witness_undesirable,capacity
+2836,routers,start,packets
+2837,TCP,uses_several,several congestion Section
+2838,data that,control,max min fair flows
+2839,acknowledgment,used,network sender
+2840,policies,based_on,four  algorithms
+2841,algorithms,use_local,round congestion control policies
+2842,process networking communication,shows,significant  overhead
+2843,process  communication,incurs,significant
+2844,raw  speed,reach,fiber optic fiber channels
+2845,This,has_important,important computer clouds
+2846,access,provided,cloud
+2847,thus  we,start,important  concept
+2848,which,consists_of,necessary datagram network
+2849,where end user systems,has,bandwidth communication channels
+2850,architecture,describes,protocol communication
+2851,We,use,such network phone
+2852,e.g.  layer,means,adjacent  layers
+2853,e.g.  layer,communicate_with,adjacent  layers
+2854,this,justifies,term protocol Figure
+2855,Physically sender data,flows_down,application layer
+2856,streams,pushed_through,electrical communication signals
+2857,bits,passed,then network layer
+2858,where  packet,decides,local area router
+2859,Then data link layer,encapsulates,next communication hop
+2860,then bit stream,passed_to,physical  Figure
+2861,receiving data,flows,upward application layer
+2862,protocol,communicates,logically protocol system
+2863,transport hostB.On,communicates_with,transport receiver
+2864,up application layer,encapsulates,sending network layer
+2865,that,information_as,only information peer
+2866,data unit,carries,decapsulation
+2867,layer,includes,sending data link network
+2868,network layer payload,includes,transport layer application layer header
+2869,Lawrence who,traced,rather circuit switching
+2870,when Ivan Sutherland,encouraged,Research Projects Agency
+2871,early Leonard Kleinrock,developed,switching packet networks
+2872,Kleinrock,published,first  1964
+2873,1968  DARPA,released,packet switches
+2874,group,won,Bolt contract
+2875,teams,played,architectural Leonard design
+2876,idea,introduced_by,first architecture 1972
+2877,collaboration,led_to,TCP Vint IP
+2878,groups,won,TCP DARPA IP
+2879,BBN,installed,first  UCLA
+2880,nodes,added_at,UC Santa Utah
+2881,personal network computers,allowed,1980s
+2882,computers,connected_to,Internet
+2883,System,invented_by,USC Paul ISI
+2884,DNS,permitted,hierarchical Internet address
+2885,Berkeley,rewrote,TCP Unix BSD system
+2886,Dennis Jennings,started,research NSFNET communities
+2887,users,allow,based users systems
+2888,Table,summarizes,7.1  metrics
+2889,statistics,collected_from,billion  crawl
+2890,which,uses,congestion
+2891,which,supports,mechanisms
+2892,we,analyze,problem
+2893,we,reviewtwo_important,important flow control
+2894,TCP,seeks,fair network bandwidth
+2895,TCP,uses,sliding flow control protocol
+2896,where  MSS,denote,maximum segment size
+2897,many  quantity,depends_on,network
+2898,when window receiver,specifies,new  data
+2899,When  receiver,advertises,window
+2900,sender,stops,data
+2901,subsequent window size update,used,receiver
+2902,sender,sends,small  packet
+2903,receiver,responds_by,new window size
+2904,flow sender,attempts,available network network
+2905,source,uses,congestion
+2906,awnd,denotes,receiver window
+2907,algorithms,used,1988
+2908,sender,probes,spare  loss
+2909,sender,means,times  MSS
+2910,sender,starts_with,times  MSS
+2911,congestion window,acknowledged,effectively  RTT
+2912,When congestion window,cwnd,threshold
+2913,algorithm,enters,congestion
+2914,time,motivated_by,fact
+2915,system,enters_in,slow start =
+2916,W  pattern,changed,Internet
+2917,Measurements,show,average Internet connection
+2918,strategies,developed,Internet
+2919,two  browsers,open,startup aWeb page
+2920,Explorer,opens,180  connections
+2921,Clearly  strategies,circumvent,considerable congestion overhead
+2922,arguments,presented_in,108
+2923,latency,dominated_by,RTTs
+2924,data transfer,allows,fewer  RTTs
+2925,single TCP connection,requires_multiple,single  page
+2926,lived Internet that,ensures,large  data
+2927,connection,allows_faster,fast  retransmission
+2928,TCP latency,reduced_from,466 init_cwnd =
+2929,solutions,based,QoS data streaming
+2930,data packet flow,discuss,equal  data
+2931,which,takes_into,data packet sizes
+2932,high data rate flow,ensures,fair link capacity
+2933,Packets,classified_into,first  system
+2934,queues,serviced,round robin Figure
+2935,first  this,maximizes,minimum data data
+2936,then  any,maximizes,minimum data rate
+2937,Starvation,avoided,expensive  flows
+2938,Next  we,review,based Van 1995
+2939,same  CBQ,supports,such video streaming
+2940,CBQ,aggregates,different  priorities
+2941,that,uses_several,class link allocation
+2942,7.8  we,see,two  traffic
+2943,leaves,considered,tree
+2944,two  root,are,Level
+2945,then time interior,aims,allocated leaf bandwidth
+2946,then time interior,receives,leaf class
+2947,distribution,follows,excess congestion avoidance
+2948,recent period class,used_more,class bandwidth second
+2949,class,used,exactly  class
+2950,class,continue,two  examples
+2951,kernel,implements,token  CBQ
+2952,class,has,assured
+2953,class,has,also  ceil
+2954,then  parent,examines,advantage children
+2955,parent,borrow_from,children
+2956,ofmicroprocessor  technologies,is,parallel cloud computing
+2957,ofmicroprocessor  technologies,paved,parallel control the
+2958,fascinating  developments,have,new  technology
+2959,we,discuss,only cloud computing
+2960,Internet,evolving_under,own  success
+2961,network,supporting,only  the
+2962,transport,morphed_into,real multimedia applications
+2963,we,examine,two  networks
+2964,two  networks,exchange,freely  customers
+2965,two  networks,exchange,freely  traffic
+2966,network,pays,another
+2967,network,paid,which
+2968,networks,classified_as,commonly  Tier
+2969,network,reach,other  Internet
+2970,that,engages_in,other  networks
+2971,typically  traffic,billed_by,upstream  provider
+2972,that,reduce,per IXPs service
+2973,increased  number,improves,tolerance
+2974,one network each,consists_of,participating  ISPs
+2975,technologies,reshaping,such content delivery Figure
+2976,applications,moving_to,cloud
+2977,such customers that,consumes,significant network bandwidth
+2978,network infrastructure,keep,bandwidth
+2979,infrastructure,falling,behind network Figure
+2980,Google,initiated,Google Fiber
+2981,section,presents_high,high cloud computing
+2982,interconnection networks,evolved_at,overall  system
+2983,speed,increased_from,1  1997
+2984,InfiniBand,has,switched fabric topology
+2985,InfiniBand,supports_several,several signaling rates
+2986,consumption,depends_on,throughput
+2987,architectural  specification,defines_multiple,operational data rates
+2988,double data rates,carry,useful  data
+2989,specified reactivation time,allows,several  microseconds
+2990,reactivation time,vary,link
+2991,systems,implement,InfiniBand QDR
+2992,InifiniBand fabric,used,storage servers
+2993,InfiniBand,has_high,redundant QoS system
+2994,InfiniBand,offers,such speed disks
+2995,infrastructure,satisfy_several,several  scalability
+2996,other speed server,allow_low,similar  speed
+2997,same  requirement,ensures,system management
+2998,same  requirement,reduces,the
+2999,then IP data,receive,final  destination

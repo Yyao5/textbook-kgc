@@ -1,0 +1,61 @@
+,source,edge,target
+0,applications,take special,shared  resources
+1,shared  resource,consider,financial  which
+2,thread,accesses,new  balance
+9,crash,lead,first  account
+10,amount,credited to,first  second
+11,operation,allowed,interruptions
+13,atomic  actions,expose,the
+16,thus  system,simplifies,system
+18,therefore  we,have,internal  failure
+21,transaction analysis,suggests,basic  storage
+22,analysis,pay special,special  attention
+29,test  which,support,noninterruptible memory operations
+30,which,writes to,memory location
+31,two memory values,modifies,new memory value
+33,flavors,distinguished,atomicity
+34,atomic  action,means,same  state
+37,transaction,carried,examples
+38,record,returned,original  state
+40,states,shown in,all  Figure
+41,preparatory  that,guarantee,only  object
+43,us,allows,system consistency
+45,us,deal,system failures
+49,transition,called,second  phase
+50,pages  that,carried,removable stack space
+51,results,exposed,phase
+53,resources,released,commit commit point
+54,discussion,illustrates,all storage Figure
+56,storage,support,all  actions
+57,content,changed,cell
+61,that,called,all  actions
+62,that,supports,all
+64,when cell action,identifies,version
+65,that,changes,cell storage
+68,new  value,written to,cell
+69,2.13 version we,shows,new  action
+72,action,invokes,first  Action
+73,outcome record,created,uniquely  action
+75,version history,modified,variable
+76,action,accesses,a
+77,Finally  action,invokes,Commit
+78,multiple  actions,means,one  order
+79,actions,occurred,one  another
+81,transaction,debit,second  accounts
+86,us,allows,concurrent  activities
+87,us,deal with unforseen,unforseen  events
+92,atomic  action,address several,given  time
+94,atomic  action,has,shared  resource
+95,atomic  action,return to,original  system
+97,How  order,ensure,consistent  results
+98,order,leads,atomic  actions
+99,Answers,increase,additional  problems
+101,access,protected by,shared  locks
+104,such  actions,packaged in,critical  code
+106,lock,finds,critical  section
+108,finally  that,unlocks,critical  section
+109,lock,implemented,hardware atomicity
+110,when  lock,set,queue
+112,Monitors,provide special,shared  Figure
+114,long  drivers,require,rules
+115,lights,prevent,accidents

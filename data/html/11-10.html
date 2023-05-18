@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times; color: #000066}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {color: #000000}
+    span.s4 {font: 7.5px Times; color: #000066}
+    span.s5 {font: 7.5px Helvetica}
+    span.s6 {font: 7.5px Times}
+    span.s7 {font: 10.0px Times}
+    span.s8 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">Mobile wireless applications are likely to benefit from cloud computing, as we discussed in Chapter 4.</p>
+<p class="p1">This expectation is motivated by several reasons:</p>
+<p class="p1">• The convenience of data access from any site connected to the Internet.</p>
+<p class="p1">• The data transfer rates of wireless networks are increasing; the time to transfer data to and from a</p>
+<p class="p1">cloud is no longer a limiting factor.</p>
+<p class="p1">• Mobile devices have limited resources; whereas new generations of smartphones and tablet computers</p>
+<p class="p1">are likely to use multicore processors and have a fair amount of memory, power consumption</p>
+<p class="p1">is, and will continue to be, a major concern in the near future. Thus, it seems reasonable to delegate</p>
+<p class="p1">compute- and data-intensive tasks to an external entity, e.g., a cloud.</p>
+<p class="p1">The first application we discuss is a cloud-based simulation for trust evaluation in a Cognitive Radio</p>
+<p class="p1">Network (CRN) [<span class="s1">52</span>]. The available communication spectrum is a precious commodity, and the objective</p>
+<p class="p1">of a CRN is to use the communication bandwidth effectively while attempting to avoid interference</p>
+<p class="p1">with licensed users. Two main functions necessary for the operation of a CRN are spectrum sensing</p>
+<p class="p1">and spectrum management. The former detects unused spectrum and the latter decides the optimal</p>
+<p class="p1">use of the available spectrum. Spectrum sensing in CRNs is based on information provided by the</p>
+<p class="p1">nodes of the network. The nodes compete for the free channels, and some may supply deliberately</p>
+<p class="p1">distorted information to gain advantage over the other nodes; thus, trust determination is critical for the</p>
+<p class="p1">management of CRNs.</p>
+<p class="p1">Cognitive Radio Networks. Research over the last decade reveals a significant temporal and spatial</p>
+<p class="p1">underutilization of the allocated spectrum. Thus, there is a motivation to opportunistically harness the</p>
+<p class="p1">vacancies of spectrum at a given time and place.</p>
+<p class="p1">The original goal of cognitive radio, first proposed at Bell Labs [<span class="s1">246</span>,<span class="s1">247</span>], was to develop a softwarebased</p>
+<p class="p1">radio platform that allows a reconfigurable wireless transceiver to automatically adapt its communication</p>
+<p class="p1">parameters to network availability and to user demands. Today the focus of cognitive radio</p>
+<p class="p1">is on spectrum sensing [<span class="s1">58</span>,<span class="s1">161</span>].</p>
+<p class="p1">We recognize two types of devices connected to a CRN: primary and secondary. <span class="s2">Primary</span></p>
+<p class="p1">nodes/devices have exclusive rights to specific regions of the spectrum; <span class="s2">secondary </span>nodes/devices enjoy</p>
+<p class="p1">dynamic spectrum access and are able to use a channel, provided that the primary, licensed to use that</p>
+<p class="p1">channel, is not communicating. Once a primary starts its transmission, the secondary using the channel</p>
+<p class="p1">is required to relinquish it and identify another free channel to continue its operation. This mode of</p>
+<p class="p1">operation is called an <span class="s2">overlay mode.</span></p>
+<p class="p1">CRNs are often based on a <span class="s2">cooperative spectrum-sensing </span>strategy. In this mode of operation, each</p>
+<p class="p1">node determines the occupancy of the spectrum based on its own measurements, combined with information</p>
+<p class="p1">from its neighbors, and then shares its own spectrum occupancy assessment with its neighbors</p>
+<p class="p2"><span class="s3">[</span>129<span class="s3">,</span>339<span class="s3">,</span>340<span class="s3">].</span></p>
+<p class="p1">Information sharing is necessary because a node alone cannot determine the true spectrum occupancy.</p>
+<p class="p1">Indeed, a secondary node has a limited transmission and reception range; node mobility combined</p>
+<p class="p1">with typical wireless channel impairments, such as multipath fading, shadowing, and noise, add to the</p>
+<p class="p1">difficulty of gathering accurate information by a single node.</p>
+<p class="p1">Individual nodes of a centralized or infrastructure-based CRN send the results of their measurements</p>
+<p class="p1">regarding spectrum occupancy to a central entity, whether a base station, an access point, or a cluster</p>
+<p class="p1">head. This entity uses a set of <span class="s2">fusion rules </span>to generate the spectrum occupancy report and then distributes</p>
+<p class="p1">it to the nodes in its jurisdiction. The area covered by such networks is usually small since global spectrum</p>
+<p class="p1">decisions are affected by the local geography.</p>
+<p class="p1">There is another mode of operation based on the idea that a secondary node operates at a much lower</p>
+<p class="p1">power level than a primary one. In this case the secondary can share the channel with the primary as long as its transmission power is below a threshold, <span class="s2">μ</span>, that has to be determined periodically. In this</p>
+<p class="p1">scenario the receivers that want to listen to the primary are able to filter out the “noise” caused by the</p>
+<p class="p1">transmission initiated by secondaries if the signal-to-noise ratio, <span class="s2">(S/N)</span>, is large enough.</p>
+<p class="p1">We are only concerned with the overlay mode whereby a secondary node maintains an <span class="s2">occupancy</span></p>
+<p class="p1"><span class="s2">report</span>, which gives a snapshot of the current status of the channels in the region of the spectrum it is</p>
+<p class="p1">able to access. The occupancy report is a list of all the channels and their state, e.g., 0 if the channel is</p>
+<p class="p1">free for use and 1 if the primary is active. Secondary nodes continually sense the channels available to</p>
+<p class="p1">them to gather accurate information about available channels.</p>
+<p class="p1">The secondary nodes of an ad hoc CRN compete for free channels, and the information one node may</p>
+<p class="p1">provide to its neighbors could be deliberately distorted. Malicious nodes will send false information</p>
+<p class="p1">to the fusion center in a centralized CRN. Malicious nodes could attempt to deny the service or to</p>
+<p class="p1">cause other secondary nodes to violate spectrum allocation rules. To <span class="s2">deny the service</span>, a node will report</p>
+<p class="p1">that free channels are used by the primary. To entice the neighbors to commit Federal Communication</p>
+<p class="p1">Commission (FCC) violations, the occupancy report will show that channels used by the primary are</p>
+<p class="p1">free. This attack strategy is called a <span class="s2">secondary spectrum data falsification (SSDF)</span>, or Byzantine, attack.<span class="s4">5</span></p>
+<p class="p1">Thus, trust determination is a critical issue for CR networks.</p>
+<p class="p1">Trust. The actual meaning of <span class="s2">trust </span>is domain and context specific. Consider, for example, networking;</p>
+<p class="p1">at the MAC layer the multiple-access protocols assume that all senders follow the channel access</p>
+<p class="p1">policy, e.g., in Carrier SenseMultiple Access with Collision Detection (CSMA-CD) a sender senses the</p>
+<p class="p1">channel and then attempts to transmit if no one else does. In a store-and-forward network, trust assumes</p>
+<p class="p1">that all routers follow a best-effort policy to forward packets toward their destination.</p>
+<p class="p1">In the context of cognitive radio, trust is based on the quality of information regarding the channel</p>
+<p class="p1">activity provided by a node. The status of individual channels can be assessed by each node based on</p>
+<p class="p1">the results of its own measurements, combined with the information provided by its neighbors, as is the</p>
+<p class="p1">case of several algorithms discussed in the literature [<span class="s1">68</span>,<span class="s1">339</span>].</p>
+<p class="p1">The alternative discussed in Section <span class="s1">11.11 </span>is to have a cloud-based service that collects information</p>
+<p class="p1">from individual nodes, evaluates the state of each channel based on the information received, and</p>
+<p class="p1">supplies this information on demand. Evaluation of the trust and identification of untrustworthy nodes</p>
+<p class="p1">are critical for both strategies [<span class="s1">284</span>].</p>
+<p class="p1">A Distributed Algorithm for TrustManagement in Cognitive Radio. The algorithm computes the</p>
+<p class="p1">trust of node 1 <span class="s2">  i   n </span>in each node in its vicinity, <span class="s2">j ∈ V</span><span class="s5">i </span>, and requires several preliminary steps. The</p>
+<p class="p1">basic steps executed by a node <span class="s2">i </span>at time <span class="s2">t </span>are:</p>
+<p class="p1"><span class="s2">1. </span>Determine node <span class="s2">i </span>’s version of the occupancy report for each one of the <span class="s2">K </span>channels:</p>
+<p class="p3">S<span class="s5">i </span>(t) = {s<span class="s5">i ,</span><span class="s6">1</span>(t), s<span class="s5">i ,</span><span class="s6">2</span>(t), . . . , s<span class="s5">i ,K </span>(t)} <span class="s7">(11.1)</span></p>
+<p class="p1">In this step node <span class="s2">i </span>measures the power received on each of the <span class="s2">K </span>channels.</p>
+<p class="p1"><span class="s2">2. </span>Determine the set <span class="s2">V</span><span class="s5">i </span><span class="s2">(t) </span>of the nodes in the vicinity of node <span class="s2">i </span>. Node <span class="s2">i </span>broadcasts a message and</p>
+<p class="p1">individual nodes in its vicinity respond with their <span class="s8">NodeId</span>.</p>
+<p class="p1"><span class="s2">3. </span>Determine the distance to each node <span class="s2">j ∈ V</span><span class="s5">i </span><span class="s2">(t) </span>using the algorithm described in this section.</p>
+<p class="p1"><span class="s2">4. </span>Infer the power as measured by each node <span class="s2">j ∈ V</span><span class="s5">i </span><span class="s2">(t) </span>on each channel <span class="s2">k ∈ K</span>.</p>
+<p class="p1"><span class="s2">5. </span>Use the location and power information determined in the previous two steps to infer the status of</p>
+<p class="p1">each channel:</p>
+<p class="p4"><span class="s2">s</span>infer</p>
+<p class="p3"><span class="s5">i ,k, j </span>(t), <span class="s7">1 </span>  k   K, j ∈ V<span class="s5">i </span>(t). <span class="s7">(11.2)</span></p>
+<p class="p1">A secondary node <span class="s2">j </span>should have determined 0 if the channel is free for use, 1 if the primary node is</p>
+<p class="p1">active, and <span class="s2">X </span>if it cannot be determined.</p>
+<p class="p4"><span class="s2">s</span>infer</p>
+<p class="p4">i ,k, j <span class="s2">(t) =</span></p>
+<p class="p3">⎧⎨</p>
+<p class="p3">⎩</p>
+<p class="p1">0 if secondary node <span class="s2">j </span>decides that channel <span class="s2">k </span>is free<span class="s2">.</span></p>
+<p class="p1">1 if secondary node <span class="s2">j </span>decides that channel <span class="s2">k </span>is used by the primary<span class="s2">.</span></p>
+<p class="p1"><span class="s2">X </span>if no inference can be made<span class="s2">.</span></p>
+<p class="p1">(11.3)</p>
+<p class="p1"><span class="s2">6. </span>Receive the information provided by neighbor <span class="s2">j ∈ V</span><span class="s5">i </span><span class="s2">(t), S</span><span class="s5">recv</span></p>
+<p class="p4">i ,k, j <span class="s2">(t)</span><span class="s7">.</span></p>
+<p class="p1"><span class="s2">7. </span>Compare the information provided by neighbor <span class="s2">j ∈ V</span><span class="s5">i </span><span class="s2">(t)</span>:</p>
+<p class="p4"><span class="s2">S</span>recv</p>
+<p class="p4">i ,k, j <span class="s2">(t) =</span></p>
+<p class="p3"> </p>
+<p class="p4"><span class="s2">s</span>recv</p>
+<p class="p4">i ,<span class="s6">1</span>, j <span class="s2">(t), s</span>recv</p>
+<p class="p3"><span class="s5">i ,</span><span class="s6">2</span><span class="s5">, j </span>(t), . . . , s<span class="s5">recv</span></p>
+<p class="p4">i ,K, j <span class="s2">(t)</span></p>
+<p class="p3"> </p>
+<p class="p1">(11.4)</p>
+<p class="p1">with the information inferred by node <span class="s2">i </span>about node <span class="s2">j </span>:</p>
+<p class="p4"><span class="s2">S</span>infer</p>
+<p class="p4">i ,k, j <span class="s2">(t) =</span></p>
+<p class="p3"> </p>
+<p class="p4"><span class="s2">s</span>infer</p>
+<p class="p4">i ,<span class="s6">1</span>, j <span class="s2">(t), s</span>infer</p>
+<p class="p3"><span class="s5">i ,</span><span class="s6">2</span><span class="s5">, j </span>(t), . . . , s<span class="s5">infer</span></p>
+<p class="p4">i ,K, j <span class="s2">(t)</span></p>
+<p class="p3"> </p>
+<p class="p1"><span class="s2">. </span>(11.5)</p>
+<p class="p1"><span class="s2">8. </span>Compute the number of matches, mismatches, and cases when no inference is possible, respectively,</p>
+<p class="p3">α<span class="s5">i , j </span>(t) =M</p>
+<p class="p3"> </p>
+<p class="p4"><span class="s2">S</span>infer</p>
+<p class="p4">i ,k, j <span class="s2">(t), S</span>recv</p>
+<p class="p4">i ,k, j <span class="s2">(t)</span></p>
+<p class="p3"> </p>
+<p class="p1"><span class="s2">, </span>(11.6)</p>
+<p class="p1">with<span class="s2">M</span>the number of matches between the two vectors and</p>
+<p class="p3">β<span class="s5">i , j </span>(t) = N</p>
+<p class="p3"> </p>
+<p class="p4"><span class="s2">S</span>infer</p>
+<p class="p4">i ,k, j <span class="s2">(t), S</span>recv</p>
+<p class="p4">i ,k, j <span class="s2">(t)</span></p>
+<p class="p3"> </p>
+<p class="p1"><span class="s2">, </span>(11.7)</p>
+<p class="p1">with <span class="s2">N </span>the number of mismatches between the two vectors, and <span class="s2">X</span><span class="s5">i , j </span><span class="s2">(t) </span>the number of cases where</p>
+<p class="p1">no inference could be made.</p>
+<p class="p1"><span class="s2">9. </span>Use the quantities <span class="s2">α</span><span class="s5">i , j </span><span class="s2">(t), β</span><span class="s5">i , j </span><span class="s2">(t)</span>, and <span class="s2">X</span><span class="s5">i , j </span><span class="s2">(t) </span>to assess the trust in node <span class="s2">j </span>. For example, compute</p>
+<p class="p1">the trust of node <span class="s2">i </span>in node <span class="s2">j </span>at time <span class="s2">t </span>as</p>
+<p class="p3">ζ<span class="s5">i , j </span>(t) =</p>
+<p class="p3"> </p>
+<p class="p3"><span class="s7">1 </span>+ X<span class="s5">i , j </span>(t)</p>
+<p class="p4"><span class="s2"><span class="Apple-converted-space"> </span>α</span>i , j <span class="s2">(t)</span></p>
+<p class="p4"><span class="s2">α</span>i , j <span class="s2">(t) + β</span>i , j <span class="s2">(t)</span></p>
+<p class="p1"><span class="s2">. </span>(11.8)</p>
+<p class="p1">Simulation of the Distributed Trust Algorithm. The cloud application is a simulation of a CRN to</p>
+<p class="p1">assess the effectiveness of a particular trust assessment algorithm. Multiple instances of the algorithm</p>
+<p class="p1">run concurrently on an <span class="s2">AWS </span>cloud. The area where the secondary nodes are located is partitioned into</p>
+<p class="p1">several overlapping subareas, as shown in Figure <span class="s1">11.11</span>. The secondary nodes are identified by an</p>
+<p class="p1">instance Id, <span class="s2">iId</span>, as well as a global Id, <span class="s2">gId</span>. The simulation assumes that the primary nodes cover the</p>
+<p class="p1">entire area; thus, their position is immaterial.</p>
+<p class="p1">The simulation involves a controller and several cloud instances. In its initial implementation, the</p>
+<p class="p1">controller runs on a local system under <span class="s2">Linux Ubuntu </span>10.04 LTS. The controller supplies the data, the</p>
+<p class="p1">trust program, and the scripts to the cloud instances; the cloud instances run under the Basic 32-bit <span class="s2">Linux</span></p>
+<p class="p1">image on <span class="s2">AWS</span>, the so-called <span class="s8">t1.micro</span>. The instances run the actual trust program and compute the</p>
+<p class="p1">instantaneous trust inferred by a neighbor; the results are then processed by an <span class="s2">awk</span><span class="s4">6 </span>script to compute</p>
+<p class="p1">the average trust associated with a node as seen by all its neighbors. On the next version of the application</p>
+<p class="p1">the data is stored on the cloud using the <span class="s2">S3 </span>service, and the controller also runs on the cloud.</p>
+<p class="p1">In the simulation discussed here, the nodes with</p>
+<p class="p3">gId = {<span class="s7">1</span>, <span class="s7">3</span>, <span class="s7">6</span>, <span class="s7">8</span>, <span class="s7">12</span>, <span class="s7">16</span>, <span class="s7">17</span>, <span class="s7">28</span>, <span class="s7">29</span>, <span class="s7">32</span>, <span class="s7">35</span>, <span class="s7">38</span>, <span class="s7">39</span>, <span class="s7">43</span>, <span class="s7">44</span>, <span class="s7">45</span>} <span class="s7">(11.9)</span></p>
+<p class="p1">were programmed to be dishonest. The results show that the nodes programmed to act maliciously</p>
+<p class="p1">have a trust value lower than that of the honest nodes; their trust value is always lower than 0<span class="s2">.</span>6 and,</p>
+<p class="p1">in many instances, lower than 0<span class="s2">.</span>5 (see Figure <span class="s1">11.12</span>). We also observe that the node density affects the</p>
+<p class="p1">accuracy of the algorithm; the algorithm predicts more accurately the trust in densely populated areas.</p>
+<p class="p1">As expected, nodes with no neighbors are unable to compute the trust.</p>
+<p class="p1">In practice the node density is likely to be nonuniform, high in a crowded area such as a shopping mall,</p>
+<p class="p1">and considerably lower in surrounding areas. This indicates that when the trust is computed using the</p>
+<p class="p1">information provided by all secondary nodes, we can expect higher accuracy of the trust determination</p>
+<p class="p1">in higher density areas.</p>
+</body>
+</html>

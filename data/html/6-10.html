@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Helvetica}
+    span.s4 {font: 7.5px Times}
+    span.s5 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">A hierarchical CPU scheduler for multimedia operating systems was proposed in [<span class="s1">142</span>]. The basic idea</p>
+<p class="p1">of the <span class="s2">start-time fair queuing (SFQ) </span>algorithm is to organize the consumers of the CPU bandwidth in a</p>
+<p class="p1">tree structure; the root node is the processor and the leaves of this tree are the threads of each application.</p>
+<p class="p1">A scheduler acts at each level of the hierarchy. The fraction of the processor bandwidth, <span class="s2">B</span>, allocated to</p>
+<p class="p1">the intermediate node <span class="s2">i </span>is</p>
+<p class="p2"><span class="s2">B</span>i</p>
+<p class="p3">B</p>
+<p class="p3">=<span class="Apple-converted-space">  </span>w<span class="s3">i</span></p>
+<p class="p2">nj</p>
+<p class="p2">=<span class="s4">1 </span><span class="s2">w</span>j</p>
+<p class="p1">(6.31)</p>
+<p class="p1">with <span class="s2">w</span><span class="s3">j </span><span class="s2">, </span>1 <span class="s2">  j   n</span>, the weight of the <span class="s2">n </span>children of node <span class="s2">i </span>; see the example in Figure <span class="s1">6.9</span>.</p>
+<p class="p1">When a virtual machine is not active, its bandwidth is reallocated to the other VMs active at the time.</p>
+<p class="p1">When one of the applications of a virtual machine is not active, its allocation is transferred to the other applications running on the same VM. Similarly, if one of the threads of an application is not runnable,</p>
+<p class="p1">its allocation is transferred to the other threads of the applications.</p>
+<p class="p1">Call <span class="s2">v</span><span class="s3">a</span><span class="s2">(t) </span>and <span class="s2">v</span><span class="s3">b</span><span class="s2">(t) </span>the virtual time of threads <span class="s2">a </span>and <span class="s2">b</span>, respectively, at real time <span class="s2">t</span>. The virtual time</p>
+<p class="p1">of the scheduler at time <span class="s2">t </span>is denoted by <span class="s2">v(t)</span>. Call <span class="s2">q </span>the time quantum of the scheduler in milliseconds.</p>
+<p class="p1">The threads <span class="s2">a </span>and <span class="s2">b </span>have their time quanta, <span class="s2">q</span><span class="s3">a </span>and <span class="s2">q</span><span class="s3">b</span>, weighted by <span class="s2">w</span><span class="s3">a </span>and <span class="s2">w</span><span class="s3">b</span>, respectively; thus, in</p>
+<p class="p1">our example, the time quanta of the two threads are <span class="s2">q/w</span><span class="s3">a </span>and <span class="s2">q/w</span><span class="s3">b</span>, respectively. The <span class="s2">i </span>-th activation</p>
+<p class="p1">of thread <span class="s2">a </span>will start at the virtual time <span class="s2">S</span><span class="s3">ia</span></p>
+<p class="p1">and will finish at virtual time <span class="s2">F</span><span class="s3">ia</span></p>
+<p class="p1">. We call <span class="s2">τ </span><span class="s3">j </span>the real time of</p>
+<p class="p1">the <span class="s2">j </span>-th invocation of the scheduler.</p>
+<p class="p1">An SFQ scheduler follows several rules:</p>
+<p class="p1">R1. The threads are serviced in the order of their virtual start-up time; ties are broken arbitrarily.</p>
+<p class="p1">R2. The virtual startup time of the <span class="s2">i </span>-th activation of thread <span class="s2">x </span>is</p>
+<p class="p2"><span class="s2">S</span>ix</p>
+<p class="p3">(t) = <span class="s5">max</span></p>
+<p class="p3"> </p>
+<p class="p3">v</p>
+<p class="p3"> </p>
+<p class="p3">τ <span class="s3">j</span></p>
+<p class="p3"> </p>
+<p class="p2"><span class="s2">, F</span>(i−<span class="s4">1</span>)</p>
+<p class="p3"><span class="s3">x </span>(t)</p>
+<p class="p3"> </p>
+<p class="p1">and <span class="s2">S</span><span class="s4">0</span></p>
+<p class="p2">x</p>
+<p class="p1"><span class="s2">= </span>0<span class="s2">. </span>(6.32)</p>
+<p class="p1">The condition for thread <span class="s2">i </span>to be started is that thread <span class="s2">(i − </span>1<span class="s2">) </span>has finished and that the scheduler is</p>
+<p class="p1">active.</p>
+<p class="p1">R3. The virtual finish time of the <span class="s2">i </span>-th activation of thread <span class="s2">x </span>is</p>
+<p class="p2"><span class="s2">F</span>ix</p>
+<p class="p3">(t) = S<span class="s3">ix</span></p>
+<p class="p3">(t) + q</p>
+<p class="p2"><span class="s2">w</span>x</p>
+<p class="p1"><span class="s2">. </span>(6.33)</p>
+<p class="p1">A thread is stopped when its time quantum has expired; its time quantum is the time quantum of</p>
+<p class="p1">the scheduler divided by the weight of the thread.</p>
+<p class="p1">R4. The virtual time of all threads is initially zero, <span class="s2">v</span><span class="s4">0</span></p>
+<p class="p2">x</p>
+<p class="p1"><span class="s2">= </span>0. The virtual time <span class="s2">v(t) </span>at real time <span class="s2">t </span>is</p>
+<p class="p1">computed as follows:</p>
+<p class="p3">v(t) =</p>
+<p class="p3"> </p>
+<p class="p1">Virtual start time of the thread in service at time <span class="s2">t, </span>if CPU is busy</p>
+<p class="p1">Maximum finish virtual time of any thread<span class="s2">, </span>if CPU is idle<span class="s2">.</span></p>
+<p class="p1">(6.34)</p>
+<p class="p1">In this description of the algorithm we have included the real time <span class="s2">t </span>to stress the dependence of all</p>
+<p class="p1">events in virtual time on the real time. To simplify the notation we use in our examples the real time as</p>
+<p class="p1">the index of the event. In other words, <span class="s2">S</span><span class="s4">6</span></p>
+<p class="p1"><span class="s3">a </span>means the virtual start-up time of thread <span class="s2">a </span>at real time <span class="s2">t = </span>6.</p>
+<p class="p1">Example. The following example illustrates the application of the SFQ algorithm when there are two</p>
+<p class="p1">threads with the weights <span class="s2">w</span><span class="s3">a </span><span class="s2">= </span>1 and <span class="s2">w</span><span class="s3">b </span><span class="s2">= </span>4 and the time quantum is <span class="s2">q = </span>12 (see Figure <span class="s1">6.10</span>.)</p>
+<p class="p1">Initially <span class="s2">S</span><span class="s4">0</span></p>
+<p class="p2">a</p>
+<p class="p3">= <span class="s5">0</span>, S<span class="s4">0</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">= </span>0<span class="s2">, v</span><span class="s3">a</span><span class="s2">(</span>0<span class="s2">) = </span>0, and <span class="s2">v</span><span class="s3">b</span><span class="s2">(</span>0<span class="s2">) = </span>0. Thread <span class="s2">b </span>blocks at time <span class="s2">t = </span>24 and wakes up</p>
+<p class="p1">at time <span class="s2">t = </span>60.</p>
+<p class="p1">The scheduling decisions are made as follows:</p>
+<p class="p1"><span class="s2">1. t = </span>0: We have a tie, <span class="s2">S</span><span class="s4">0</span></p>
+<p class="p2">a</p>
+<p class="p3">= S<span class="s4">0</span></p>
+<p class="p1"><span class="s3">b </span>, and arbitrarily thread <span class="s2">b </span>is chosen to run first. The virtual finish time</p>
+<p class="p1">of thread <span class="s2">b </span>is</p>
+<p class="p4"><span class="s2">F</span>0</p>
+<p class="p2">b</p>
+<p class="p3">= S<span class="s4">0</span></p>
+<p class="p2">b</p>
+<p class="p3">+ q/w<span class="s3">b </span>= <span class="s5">0 </span>+ <span class="s5">12</span>/<span class="s5">4 </span>= <span class="s5">3</span>. <span class="s5">(6.35)</span></p>
+<p class="p1"><span class="s2">2. t = </span>3: Both threads are runnable and thread <span class="s2">b </span>was in service; thus, <span class="s2">v(</span>3<span class="s2">) = S</span><span class="s4">0</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">= </span>0; then</p>
+<p class="p4"><span class="s2">S</span>1</p>
+<p class="p2">b</p>
+<p class="p3">= <span class="s5">max</span>[v(<span class="s5">3</span>), F<span class="s4">0</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">] = </span>max <span class="s2">(</span>0<span class="s2">, </span>3<span class="s2">) = </span>3<span class="s2">. </span>(6.36)</p>
+<p class="p1">But <span class="s2">S</span><span class="s4">0</span></p>
+<p class="p3"><span class="s3">a </span>&lt; S<span class="s4">1</span></p>
+<p class="p1"><span class="s3">b </span>, thus thread <span class="s2">a </span>is selected to run. Its virtual finish time is</p>
+<p class="p4"><span class="s2">F</span>0</p>
+<p class="p2">a</p>
+<p class="p3">= S<span class="s4">0</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">+ q/w</span><span class="s3">a </span><span class="s2">= </span>0 <span class="s2">+ </span>12<span class="s2">/</span>1 <span class="s2">= </span>12<span class="s2">. </span>(6.37)</p>
+<p class="p1"><span class="s2">3. t = </span>15: Both threads are runnable, and thread <span class="s2">a </span>was in service at this time; thus,</p>
+<p class="p3">v(<span class="s5">15</span>) = S<span class="s4">0</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">= </span>0 (6.38)</p>
+<p class="p1">and</p>
+<p class="p4"><span class="s2">S</span>1</p>
+<p class="p2">a</p>
+<p class="p3">= <span class="s5">max</span>[v(<span class="s5">15</span>), F<span class="s4">0</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">] = </span>max<span class="s2">[</span>0<span class="s2">, </span>12<span class="s2">] = </span>12<span class="s2">. </span>(6.39)</p>
+<p class="p1">As <span class="s2">S</span><span class="s4">1</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">= </span>3 <span class="s2">&lt; </span>12, thread <span class="s2">b </span>is selected to run; the virtual finish time of thread <span class="s2">b </span>is now</p>
+<p class="p4"><span class="s2">F</span>1</p>
+<p class="p2">b</p>
+<p class="p3">= S<span class="s4">1</span></p>
+<p class="p2">b</p>
+<p class="p3">+ q/w<span class="s3">b </span>= <span class="s5">3 </span>+ <span class="s5">12</span>/<span class="s5">4 </span>= <span class="s5">6</span>. <span class="s5">(6.40)</span></p>
+<p class="p1"><span class="s2">4. t = </span>18: Both threads are runnable, and thread <span class="s2">b </span>was in service at this time; thus,</p>
+<p class="p3">v(<span class="s5">18</span>) = S<span class="s4">1</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">= </span>3 (6.41)</p>
+<p class="p1">and</p>
+<p class="p4"><span class="s2">S</span>2</p>
+<p class="p2">b</p>
+<p class="p3">= <span class="s5">max</span>[v(<span class="s5">18</span>), F<span class="s4">1</span></p>
+<p class="p2">b</p>
+<p class="p3">] = <span class="s5">max</span>[<span class="s5">3</span>, <span class="s5">6</span>] = <span class="s5">6</span>. <span class="s5">(6.42)</span></p>
+<p class="p1">As <span class="s2">S</span><span class="s4">2</span></p>
+<p class="p3"><span class="s3">b </span>&lt; S<span class="s4">1</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">= </span>12, thread <span class="s2">b </span>is selected to run again; its virtual finish time is</p>
+<p class="p4"><span class="s2">F</span>2</p>
+<p class="p2">b</p>
+<p class="p3">= S<span class="s4">2</span></p>
+<p class="p2">b</p>
+<p class="p3">+ q/w<span class="s3">b </span>= <span class="s5">6 </span>+ <span class="s5">12</span>/<span class="s5">4 </span>= <span class="s5">9</span>. <span class="s5">(6.43)</span></p>
+<p class="p1"><span class="s2">5. t = </span>21: Both threads are runnable, and thread <span class="s2">b </span>was in service at this time; thus,</p>
+<p class="p3">v(<span class="s5">21</span>) = S<span class="s4">2</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">= </span>6 (6.44)</p>
+<p class="p1">and</p>
+<p class="p4"><span class="s2">S</span>3</p>
+<p class="p2">b</p>
+<p class="p3">= <span class="s5">max</span>[v(<span class="s5">21</span>), F<span class="s4">2</span></p>
+<p class="p2">b</p>
+<p class="p3">] = <span class="s5">max</span>[<span class="s5">6</span>, <span class="s5">9</span>] = <span class="s5">9</span>. <span class="s5">(6.45)</span></p>
+<p class="p1">As <span class="s2">S</span><span class="s4">2</span></p>
+<p class="p3"><span class="s3">b </span>&lt; S<span class="s4">1</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">= </span>12, thread <span class="s2">b </span>is selected to run again; its virtual finish time is</p>
+<p class="p4"><span class="s2">F</span>3</p>
+<p class="p2">b</p>
+<p class="p3">= S<span class="s4">3</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">+ q/w</span><span class="s3">b </span><span class="s2">= </span>9 <span class="s2">+ </span>12<span class="s2">/</span>4 <span class="s2">= </span>12<span class="s2">. </span>(6.46)</p>
+<p class="p1"><span class="s2">6. t = </span>24: Thread <span class="s2">b </span>was in service at this time; thus,</p>
+<p class="p3">v(<span class="s5">24</span>) = S<span class="s4">3</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">= </span>9 (6.47)</p>
+<p class="p4"><span class="s2">S</span>4</p>
+<p class="p2">b</p>
+<p class="p3">= <span class="s5">max</span>[v(<span class="s5">24</span>), F<span class="s4">3</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">] = </span>max<span class="s2">[</span>9<span class="s2">, </span>12<span class="s2">] = </span>12<span class="s2">. </span>(6.48)</p>
+<p class="p1">Thread <span class="s2">b </span>is suspended till <span class="s2">t = </span>60; thus, thread <span class="s2">a </span>is activated. Its virtual finish time is</p>
+<p class="p4"><span class="s2">F</span>1</p>
+<p class="p2">a</p>
+<p class="p3">= S<span class="s4">1</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">+ q/w</span><span class="s3">a </span><span class="s2">= </span>12 <span class="s2">+ </span>12<span class="s2">/</span>1 <span class="s2">= </span>24<span class="s2">. </span>(6.49)</p>
+<p class="p1"><span class="s2">7. t = </span>36: Thread <span class="s2">a </span>was in service and the only runnable thread at this time; thus,</p>
+<p class="p3">v(<span class="s5">36</span>) = S<span class="s4">1</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">= </span>12 (6.50)</p>
+<p class="p1">and</p>
+<p class="p4"><span class="s2">S</span>2</p>
+<p class="p2">a</p>
+<p class="p3">= <span class="s5">max</span>[v(<span class="s5">36</span>), F<span class="s4">2</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">] = </span>max<span class="s2">[</span>12<span class="s2">, </span>24<span class="s2">] = </span>24<span class="s2">. </span>(6.51)</p>
+<p class="p1">Then,</p>
+<p class="p4"><span class="s2">F</span>2</p>
+<p class="p2">a</p>
+<p class="p3">= S<span class="s4">2</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">+ q/w</span><span class="s3">a </span><span class="s2">= </span>24 <span class="s2">+ </span>12<span class="s2">/</span>1 <span class="s2">= </span>36<span class="s2">. </span>(6.52)</p>
+<p class="p1"><span class="s2">8. t = </span>48: Thread <span class="s2">a </span>was in service and is the only runnable thread at this time; thus,</p>
+<p class="p3">v(<span class="s5">48</span>) = S<span class="s4">2</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">= </span>24 (6.53)</p>
+<p class="p1">and</p>
+<p class="p4"><span class="s2">S</span>3</p>
+<p class="p2">a</p>
+<p class="p3">= <span class="s5">max</span>[v(<span class="s5">48</span>), F<span class="s4">2</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">] = </span>max<span class="s2">[</span>24<span class="s2">, </span>36<span class="s2">] = </span>36<span class="s2">. </span>(6.54)</p>
+<p class="p1">Then,</p>
+<p class="p4"><span class="s2">F</span>3</p>
+<p class="p2">a</p>
+<p class="p3">= S<span class="s4">3</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">+ q/w</span><span class="s3">a </span><span class="s2">= </span>36 <span class="s2">+ </span>12<span class="s2">/</span>1 <span class="s2">= </span>48<span class="s2">. </span>(6.55)</p>
+<p class="p1"><span class="s2">9. t = </span>60: Thread <span class="s2">a </span>was in service at this time; thus,</p>
+<p class="p3">v(<span class="s5">60</span>) = S<span class="s4">3</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">= </span>36 (6.56)</p>
+<p class="p1">and</p>
+<p class="p4"><span class="s2">S</span>4</p>
+<p class="p2">a</p>
+<p class="p3">= <span class="s5">max</span>[v(<span class="s5">60</span>), F<span class="s4">3</span></p>
+<p class="p2">a</p>
+<p class="p1"><span class="s2">] = </span>max<span class="s2">[</span>36<span class="s2">, </span>48<span class="s2">] = </span>48<span class="s2">. </span>(6.57)</p>
+<p class="p1">But now thread <span class="s2">b </span>is runnable and <span class="s2">S</span><span class="s4">4</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">= </span>12.</p>
+<p class="p1">Thus, thread <span class="s2">b </span>is activated and</p>
+<p class="p4"><span class="s2">F</span>4</p>
+<p class="p2">b</p>
+<p class="p3">= S<span class="s4">4</span></p>
+<p class="p2">b</p>
+<p class="p1"><span class="s2">+ q/w</span><span class="s3">b </span><span class="s2">= </span>12 <span class="s2">+ </span>12<span class="s2">/</span>4 <span class="s2">= </span>15<span class="s2">. </span>(6.58)</p>
+<p class="p1">Several properties of the SFQ algorithm are proved in [<span class="s1">142</span>]. The algorithm allocates CPU fairly</p>
+<p class="p1">when the available bandwidth varies in time and provides throughput as well as delay guarantees. The</p>
+<p class="p1">algorithm schedules the threads in the order of their virtual start-up time, the shortest one first; the length</p>
+<p class="p1">of the time quantum is not required when a thread is scheduled but only after the thread has finished its</p>
+<p class="p1">current allocation. The authors of [<span class="s1">142</span>] report that the overhead of the SFQ algorithms is comparable</p>
+<p class="p1">to that of the Solaris scheduling algorithm.</p>
+</body>
+</html>

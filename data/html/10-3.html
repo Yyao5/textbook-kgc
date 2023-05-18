@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Helvetica}
+    span.s4 {font: 7.5px Times}
+    span.s5 {font: 10.0px Times}
+    span.s6 {font: 8.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Abstract questions about systems consisting of an ensemble of components have preoccupied the minds</p>
+<p class="p1">of humans for millennia. For example, the Greek philosopher Aristotle stated that “<span class="s1">. . . </span>the whole is</p>
+<p class="p1">something over and above its parts, and not just the sum of them all.” In <span class="s1">The Republic</span>, fellow Greek</p>
+<p class="p1">philosopher Plato introduced the concept of “level of knowledge,” ranging from total ignorance to total</p>
+<p class="p1">knowledge. “True knowledge” exists only if a foundation of axioms or a priori knowledge exists [<span class="s2">172</span>],</p>
+<p class="p1">and this cannot be the case for complex systems.</p>
+<p class="p1">At first we can turn for guidance on how to measure system complexity to thermodynamics, a</p>
+<p class="p1">branch of physics concerned with heat and its relation with energy and work. Thermodynamics defines</p>
+<p class="p1">macroscopic properties such as temperature, pressure, and entropy to characterize large assemblies of</p>
+<p class="p1">microscopic particles, e.g., gases, and establishes laws governing the behavior of such systems. The</p>
+<p class="p1">analogy to large-scale systems is inescapable; indeed, we are interested in high-level properties such</p>
+<p class="p1">as reliability; performance measured by throughput and response time, security, and elasticity; and the</p>
+<p class="p1">ability to respond to a sudden increase of the load of very large collections of servers, each one powered</p>
+<p class="p1">by many processors, each processor with millions of transistors. From the “microscopic” properties of</p>
+<p class="p1">these elements we have to estimate the “macroscopic” properties of the system.</p>
+<p class="p1">The concepts of thermodynamic entropy, von Neumann entropy, and Shannon entropy are related to</p>
+<p class="p1">the number of states of a system; thus, they reflect to some extent the system’s complexity [<span class="s2">92</span>]. The</p>
+<p class="p1">thermodynamic entropy of a microscopic system, e.g., <span class="s1">N </span>molecules of gas, is</p>
+<p class="p1"><span class="s1">S = k</span><span class="s3">B </span>ln <span class="s1"> , </span>(10.1)</p>
+<p class="p1">with <span class="s1">k</span><span class="s3">B </span>the Boltzmann’s constant and<span class="s1"> </span>the number of microstates of the system.When the <span class="s1">N </span>molecules</p>
+<p class="p1">are grouped together in <span class="s1">m </span>macrostates depending on their energy, then the number of bits required to label the individual microstates is</p>
+<p class="p2">Q = H(p<span class="s4">1</span>, p<span class="s4">2</span>, . . . , p<span class="s3">m</span>), <span class="s5">(10.2)</span></p>
+<p class="p1">with <span class="s1">H(p</span><span class="s4">1</span><span class="s1">, p</span><span class="s4">2</span><span class="s1">, . . . , p</span><span class="s3">m</span><span class="s1">) </span>the Shannon entropy of a systemwith<span class="s1">m </span>states. If <span class="s1">n</span><span class="s3">i </span>is the number of molecules</p>
+<p class="p1">in state <span class="s1">i </span>, then <span class="s1">p</span><span class="s3">i </span><span class="s1">= n</span><span class="s3">i </span><span class="s1">/N </span>is the probability of the system being in state <span class="s1">i </span>.</p>
+<p class="p1">In turn, the von Neumann entropy of a quantum system with the density matrix <span class="s1">ρ</span></p>
+<p class="p2">S(ρ) = −<span class="s5">tr</span>[ρ <span class="s5">log </span>ρ] <span class="s5">(10.3)</span></p>
+<p class="p1">is equal to the Shannon entropy if the system is prepared in a <span class="s1">maximally mixed state</span>, a state where all</p>
+<p class="p1">pure states are equally likely.</p>
+<p class="p1">A measure of complexity is the <span class="s1">relative predictive efficiency</span>, denoted by <span class="s1">e </span>and defined as</p>
+<p class="p2">e = E/C <span class="s5">(10.4)</span></p>
+<p class="p1">with <span class="s1">E </span>the excess entropy and <span class="s1">C </span>the statistical complexity [<span class="s2">95</span>]. The <span class="s1">excess entropy </span>measures the</p>
+<p class="p1">complexity of the stochastic process and can be regarded as the fraction of historical information about</p>
+<p class="p1">the process that allows us to predict the future behavior of that process. The <span class="s1">statistical complexity </span>reflects</p>
+<p class="p1">the size of the model of the system at a certain level of abstraction.</p>
+<p class="p1">The scale of organization considered by an external observer plays a critical role in assessing the</p>
+<p class="p1">relative predictive efficiency. For example, at the microscopic level the calculation of <span class="s1">e </span>for a volume of</p>
+<p class="p1">gas requires very complex molecular dynamic computations in order to accurately predict the excess</p>
+<p class="p1">entropy; both <span class="s1">E </span>and <span class="s1">C </span>are very high and the predictive efficiency is low. On the other hand, at the</p>
+<p class="p1">macroscopic level the relationship among the pressure <span class="s1">P</span>, the volume <span class="s1">V</span>, and the temperature <span class="s1">T </span>is a</p>
+<p class="p1">very simple <span class="s1">PV = nRT</span>, with <span class="s1">n </span>the number of moles of gas and <span class="s1">R </span>the universal gas constant. In this</p>
+<p class="p1">case, <span class="s1">E </span>maintains a high value, but now <span class="s1">C </span>is low and the predictive efficiency <span class="s1">E/C </span>is large.</p>
+<p class="p1">Physical systems in equilibrium display their most complex behavior at <span class="s1">critical points</span>. In thermodynamics</p>
+<p class="p1">a critical point specifies the conditions of temperature and pressure at which a phase boundary,</p>
+<p class="p1">e.g., between liquid and gas, ceases to exist. The time to reach equilibrium becomes very high at critical</p>
+<p class="p1">points, a phenomenon called <span class="s1">critical slowing</span>. Wolpert and Macready [<span class="s2">377</span>] argue that <span class="s1">self-similarity</span></p>
+<p class="p1">can be used to quantify complexity; the patterns exhibited by complex systems at different scales are</p>
+<p class="p1">very different, whereas the patterns exhibited by simple systems such as gases and crystals do not vary</p>
+<p class="p1">significantly from one scale to another.</p>
+<p class="p1">As discussed earlier, we could use the complexity of a program that simulates the system as a</p>
+<p class="p1">measure of complexity of the system. This will reflect not only the number of states but also the pattern</p>
+<p class="p1">of transitions among states. This idea has its own limitations because, generally, in our simulations we</p>
+<p class="p1">use approximate models of a system rather than exact ones.</p>
+<p class="p1">This measure of complexity is consistent with the concept of <span class="s1">depth</span>, defined as the number of computational</p>
+<p class="p1">steps needed to simulate a system’s state. The author of [<span class="s2">225</span>] argues that the emergence</p>
+<p class="p1">of complexity requires a long history, but we need a measure stricter than physical time to reflect this</p>
+<p class="p1">history. The depth reflects not how long the system remains in equilibrium but <span class="s1">how many steps are</span></p>
+<p class="p2">necessary to reach equilibrium following some efficient process. <span class="s5">The rate of change of the system state</span></p>
+<p class="p1">and the communication time do not reflect the complexity of a system. Indeed, two rotating structures</p>
+<p class="p1">involving very different physical processes, a hurricane and a spiral celestial galaxy, are at the limit of today’s realistic computer simulations, thus, are of similar depth and, consequently, of similar complexity.</p>
+<p class="p1">Yet, galaxy formation occurs at a scale of millions of light years and is bounded by communication</p>
+<p class="p1">at the speed of light, whereas the time for hurricane formation is measured in days, the atmospheric</p>
+<p class="p1">disturbances propagate more slowly, and the scale is only hundreds of kilometers.</p>
+<p class="p1">Complexity could be related to the description of a system and may consist of structural, functional,</p>
+<p class="p1">and, possibly, other important properties of the system. The question of how to measure the descriptive</p>
+<p class="p1">complexity of an object was addressed by Kolmogorov [<span class="s2">198</span>] and, independently, by Solomonoff [<span class="s2">328</span>]</p>
+<p class="p1">and Chaitin [<span class="s2">69</span>]. An application of Kolmogorov complexity to the characterization of scheduling on a</p>
+<p class="p1">computational grid is discussed in [<span class="s2">229</span>].</p>
+<p class="p1">TheKolmogorov complexity <span class="s1">K</span><span class="s6">V</span><span class="s1">(s) </span>of the string <span class="s1">s </span>with respect to the universal computer <span class="s1">V </span>is defined</p>
+<p class="p1">as the minimal length over all programs <span class="s1">Prog</span><span class="s6">V </span>that print <span class="s1">s </span>and halt</p>
+<p class="p2">K<span class="s6">V</span>(s) = min[Length(s)] <span class="s5">over all Prog: </span>V(Prog<span class="s6">V</span>) = s. <span class="s5">(10.5)</span></p>
+<p class="p1">The intuition behind Kolmogorov complexity is to provide the shortest possible description of any</p>
+<p class="p1">object or phenomenon, and its roots can be traced back to wisdom formulated centuries ago. “Nunquam</p>
+<p class="p1">ponenda est pluritas sine necesitate,” the famous principle formulated by William of Ockham <span class="s1">(</span>1290–</p>
+<p class="p1">1349<span class="s1">)</span>, states; it means that an explanation should not be extended beyond what is necessary [<span class="s2">351</span>].</p>
+<p class="p1">Bertrand Russell translates this as “It is vain to do with more what can be done with fewer.”</p>
+</body>
+</html>

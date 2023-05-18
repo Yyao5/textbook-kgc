@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica; min-height: 12.0px}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 7.5px Helvetica}
+    span.s5 {font: 7.5px Times}
+    span.s6 {font: 8.0px Helvetica}
+    span.s7 {font: 6.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Resources in a cloud are allocated in <span class="s1">bundles</span>, allowing users get maximum benefit from a specific</p>
+<p class="p1">combination of resources. Indeed, along with CPU cycles, an application needs specific amounts ofmain</p>
+<p class="p1">memory, disk space, network bandwidth, and so on. Resource bundling complicates traditional resource</p>
+<p class="p1">allocation models and has generated interest in economic models and, in particular, auction algorithms.</p>
+<p class="p1">In the context of cloud computing, an auction is the allocation of resources to the highest bidder.</p>
+<p class="p1">Combinatorial Auctions. Auctions in which participants can bid on combinations of items, or <span class="s1">packages</span>,</p>
+<p class="p1">are called <span class="s1">combinatorial auctions </span>[<span class="s2">93</span>]. Such auctions provide a relatively simple, scalable, and</p>
+<p class="p1">tractable solution to cloud resource allocation. Two recent combinatorial auction algorithms are the <span class="s1">simultaneous clock auction </span>[<span class="s2">29</span>] and the <span class="s1">clock proxy auction </span>[<span class="s2">30</span>]. The algorithm discussed in this chapter</p>
+<p class="p1">and introduced in [<span class="s2">333</span>] is called the <span class="s1">ascending clock auction (ASCA)</span>. In all these algorithms the</p>
+<p class="p1">current price for each resource is represented by a “clock” seen by all participants at the auction.</p>
+<p class="p1">We consider a strategy in which prices and allocation are set as a result of an auction. In this auction,</p>
+<p class="p1">users provide bids for desirable bundles and the price they are willing to pay. We assume a population</p>
+<p class="p2"><span class="s3">of </span>U <span class="s3">users, </span>u = {<span class="s3">1</span>, <span class="s3">2</span>, . . . ,U}<span class="s3">, and </span>R <span class="s3">resources, </span>r = {<span class="s3">1</span>, <span class="s3">2</span>, . . . , R}<span class="s3">. The bid of user </span>u <span class="s3">is </span>B<span class="s4">u </span>= {Q<span class="s4">u</span>, π<span class="s4">u</span>}</p>
+<p class="p2"><span class="s3">with</span>Q<span class="s4">i </span>= (q<span class="s5">1</span></p>
+<p class="p2"><span class="s4">u </span>, q<span class="s5">2</span></p>
+<p class="p2"><span class="s4">u </span>, q<span class="s5">3</span></p>
+<p class="p1"><span class="s4">u </span><span class="s1">, . . . ) </span>an <span class="s1">R</span>-component vector; each element of this vector, <span class="s1">q</span><span class="s4">iu</span></p>
+<p class="p1">, represents a bundle</p>
+<p class="p1">of resources user <span class="s1">u </span>would accept and, in return, pay the total price <span class="s1">π</span><span class="s4">u</span>. Each vector component <span class="s1">q</span><span class="s4">iu</span></p>
+<p class="p1">is a</p>
+<p class="p1">positive quantity and encodes the quantity of a resource desired or, if negative, the quantity of the resource</p>
+<p class="p1">offered. A user expresses her desires as an <span class="s1">indifference set I = (q</span><span class="s5">1</span></p>
+<p class="p1"><span class="s4">u </span>XOR <span class="s1">q</span><span class="s5">2</span></p>
+<p class="p1"><span class="s4">u </span>XOR <span class="s1">q</span><span class="s5">3</span></p>
+<p class="p2"><span class="s4">u </span><span class="s3">XOR </span>. . . )<span class="s3">.</span></p>
+<p class="p1">The final auction prices for individual resources are given by the vector <span class="s1">p = (p</span><span class="s5">1</span><span class="s1">, p</span><span class="s5">2</span><span class="s1">, . . . , p</span><span class="s4">R</span><span class="s1">) </span>and</p>
+<p class="p1">the amounts of resources allocated to user <span class="s1">u </span>are <span class="s1">x</span><span class="s4">u </span><span class="s1">= (x</span><span class="s5">1</span></p>
+<p class="p2"><span class="s4">u </span>, x<span class="s5">2</span></p>
+<p class="p2"><span class="s4">u</span>, . . . , x <span class="s4">R</span></p>
+<p class="p1"><span class="s4">u </span><span class="s1">)</span>. Thus, the expression <span class="s1">[(x</span><span class="s4">u</span><span class="s1">)</span><span class="s4">T </span><span class="s1">p]</span></p>
+<p class="p1">represents the total price paid by user <span class="s1">u </span>for the bundle of resources if the bid is successful at time <span class="s1">T </span>.</p>
+<p class="p1">The scalar <span class="s1">[</span>min<span class="s4">q∈</span><span class="s6">Q</span><span class="s7">u </span><span class="s1">(q</span><span class="s4">T </span><span class="s1">p)] </span>is the final price established through the bidding process.</p>
+<p class="p1">The bidding process aims to optimize an <span class="s1">objective function f (x, p)</span>. This function could be tailored</p>
+<p class="p1">to measure the net value of all resources traded, or it can measure the <span class="s1">total surplus </span>– the difference</p>
+<p class="p1">between the maximum amount users are willing to pay minus the amount they pay. Other optimization</p>
+<p class="p1">functions could be considered for a specific system, e.g., the minimization of energy consumption or</p>
+<p class="p1">of security risks.</p>
+<p class="p1">Pricing and Allocation Algorithms. A pricing and allocation algorithm partitions the set of users</p>
+<p class="p1">into two disjoint sets, winners and losers, denoted as <span class="s1">W </span>and <span class="s1">L</span>, respectively. The algorithm should:</p>
+<p class="p1"><span class="s1">1. </span>Be computationally tractable. Traditional combinatorial auction algorithms such as Vickey-Clarke-</p>
+<p class="p1">Groves (VLG) fail this criteria, because they are not computationally tractable.</p>
+<p class="p1"><span class="s1">2. </span>Scale well. Given the scale of the system and the number of requests for service, scalability is a</p>
+<p class="p1">necessary condition.</p>
+<p class="p1"><span class="s1">3. </span>Be objective. Partitioning in winners and losers should only be based on the price <span class="s1">π</span><span class="s4">u </span>of a user’s bid.</p>
+<p class="p1">If the price exceeds the threshold, the user is a winner; otherwise the user is a loser.</p>
+<p class="p1"><span class="s1">4. </span>Be fair.Make sure that the prices are <span class="s1">uniform</span>. All winners within a given resource pool pay the same</p>
+<p class="p1">price.</p>
+<p class="p1"><span class="s1">5. </span>Indicate clearly at the end of the auction the unit prices for each resource pool.</p>
+<p class="p1"><span class="s1">6. </span>Indicate clearly to all participants the relationship between the supply and the demand in the system.</p>
+<p class="p1">The function to be maximized is</p>
+<p class="p1">max</p>
+<p class="p3">x,p</p>
+<p class="p2">f (x, p). <span class="s3">(6.25)</span></p>
+<p class="p1">The constraints in Table <span class="s2">6.4 </span>correspond to our intuition: (a) the first one states that a user either</p>
+<p class="p1">gets one of the bundles it has opted for or nothing; no partial allocation is acceptable. (b) The second</p>
+<p class="p1">constraint expresses the fact that the system awards only available resources; only offered resources</p>
+<p class="p1">can be allocated. (c) The third constraint is that the bid of the winners exceeds the final price. (d) The</p>
+<p class="p1">fourth constraint states that the winners get the least expensive bundles in their indifference set. (e) The</p>
+<p class="p1">fifth constraint states that losers bid below the final price. (f) The last constraint states that all prices are</p>
+<p class="p1">positive numbers.</p>
+<p class="p1">The ASCA Combinatorial Auction Algorithm. Informally, in the ASCA algorithm [<span class="s2">333</span>] the participants</p>
+<p class="p1">at the auction specify the resource and the quantities of that resource offered or desired at the</p>
+<p class="p1">price listed for that time slot. Then the <span class="s1">excess vector</span></p>
+<p class="p2">z(t) =</p>
+<p class="p2"> </p>
+<p class="p3">u</p>
+<p class="p1"><span class="s1">x</span><span class="s4">u</span><span class="s1">(t) </span>(6.26)</p>
+<p class="p1">is computed. If all its components are negative, the auction stops; negative components mean that the</p>
+<p class="p1">demand does not exceed the offer. If the demand is larger than the offer, <span class="s1">z(t)   </span>0, the auctioneer</p>
+<p class="p1">increases the price for items with a positive excess demand and solicits bids at the new price. Note that</p>
+<p class="p1">the algorithm satisfies conditions 1 through 6; from Table 6.3 all users discover the price at the same time</p>
+<p class="p1">and pay or receive a “fair” payment relative to uniform resource prices, the computation is tractable, and</p>
+<p class="p1">the execution time is linear in the number of participants at the auction and the number of resources. The</p>
+<p class="p1">computation is robust and generates plausible results regardless of the initial parameters of the system.</p>
+<p class="p1">There is a slight complication as the algorithm involves user bidding in multiple rounds. To address</p>
+<p class="p1">this problem the user proxies automatically adjust their demands on behalf of the actual bidders, as</p>
+<p class="p1">shown in Figure <span class="s2">6.6</span>. These proxies can be modeled as functions that compute the “best bundle” from</p>
+<p class="p1">each <span class="s1">Q</span><span class="s4">u </span>set given the current price</p>
+<p class="p2">Q<span class="s4">u </span>=</p>
+<p class="p2"> </p>
+<p class="p2">ˆ q<span class="s4">u </span><span class="s3">if </span>ˆ q<span class="s4">T</span></p>
+<p class="p1"><span class="s4">u </span><span class="s1">p   π</span><span class="s4">u </span>with <span class="s1">ˆ q</span><span class="s4">u </span><span class="s1">∈ </span>argmin <span class="s1">(q</span><span class="s4">T</span></p>
+<p class="p2"><span class="s4">u </span>p)</p>
+<p class="p1">0 otherwise <span class="s1">.</span></p>
+<p class="p1">The input to the ASCA algorithm: <span class="s1">U </span>users, <span class="s1">R </span>resources, <span class="s1">  p </span>the starting price, and the update increment</p>
+<p class="p1">function, <span class="s1">g : (x, p)  → R</span><span class="s4">R</span>. The pseudocode of the algorithm is:</p>
+<p class="p2"><span class="s3">1: set </span>t = <span class="s3">0</span>, p(<span class="s3">0</span>) =  p</p>
+<p class="p1">2: loop</p>
+<p class="p2"><span class="s3">3: collect bids </span>x<span class="s4">u</span>(t) = G<span class="s4">u</span>(p(t)), ∀u</p>
+<p class="p1">4: calculate excess demand <span class="s1">z(t) =</span></p>
+<p class="p4"><br></p>
+<p class="p2"><span class="s4">u </span>x<span class="s4">u</span>(t)</p>
+<p class="p1">5: if z(t) &lt;0 then</p>
+<p class="p1">6: break</p>
+<p class="p1">7: else</p>
+<p class="p2"><span class="s3">8: update prices </span>p(t + <span class="s3">1</span>) = p(t) + g(x(t), p(t))</p>
+<p class="p2"><span class="s3">9: </span>t ← t + <span class="s3">1</span></p>
+<p class="p1">10: end if</p>
+<p class="p1">11: end loop</p>
+<p class="p1">In this algorithm <span class="s1">g(x(t), p(t)) </span>is the function for setting the price increase. This function can be</p>
+<p class="p1">correlated with the excess demand <span class="s1">z(t)</span>, as in <span class="s1">g(x(t), p(t)) = αz(t)</span></p>
+<p class="p1"><span class="s4">+ </span>(the notation <span class="s1">x</span><span class="s4">+ </span>means max <span class="s1">(x, </span>0<span class="s1">)</span>)</p>
+<p class="p1">with <span class="s1">α </span>a positive number. An alternative is to ensure that the price does not increase by an amount larger</p>
+<p class="p1">than <span class="s1">δ</span>. In that case <span class="s1">g(x(t), p(t)) = </span>min <span class="s1">(αz(t)</span></p>
+<p class="p3">+</p>
+<p class="p1"><span class="s1">, δe) </span>with <span class="s1">e = (</span>1<span class="s1">, </span>1<span class="s1">, . . . , </span>1<span class="s1">) </span>is an <span class="s1">R</span>-dimensional vector</p>
+<p class="p1">and minimization is done component wise.</p>
+<p class="p1">The convergence of the optimization problem is guaranteed <span class="s1">only if </span>all participants at the auction are</p>
+<p class="p1">either providers of resources or consumers of resources, but not both providers and consumers at the same</p>
+<p class="p1">time. Nevertheless, the clock algorithm only finds a feasible solution; it does not guarantee its optimality.</p>
+<p class="p1">The authors of [<span class="s2">333</span>] have implemented the algorithm and allowed internal use of it within Google.</p>
+<p class="p1">Their preliminary experiments show that the system led to substantial improvements. One of the most</p>
+<p class="p1">interesting side effects of the new resource allocation policy is that users were encouraged to make their</p>
+<p class="p1">applications more flexible and mobile to take advantage of the flexibility of the system controlled by</p>
+<p class="p1">the ASCA algorithm.</p>
+<p class="p1">An auctioning algorithm is very appealing because it supports resource bundling and does not require</p>
+<p class="p1">a model of the system. At the same time, a practical implementation of such algorithms is challenging.</p>
+<p class="p1">First, requests for service arrive at random times, whereas in an auction all participants must react</p>
+<p class="p1">to a bid at the same time. Periodic auctions must then be organized, but this adds to the delay of</p>
+<p class="p1">the response. Second, there is an incompatibility between cloud elasticity, which guarantees that the</p>
+<p class="p1">demand for resources of an existing application will be satisfied immediately, and the idea of periodic</p>
+<p class="p1">auctions.</p>
+</body>
+</html>

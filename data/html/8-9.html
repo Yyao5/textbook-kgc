@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Courier}
+    span.s4 {font: 7.5px Times}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">BigTable </span>is a distributed storage system developed by Google to store massive amounts of data and to</p>
+<p class="p1">scale up to thousands of storage servers [<span class="s2">73</span>]. The system uses the Google File System discussed in</p>
+<p class="p1">Section <span class="s2">8.5 </span>to store user data as well as system information. To guarantee atomic <span class="s3">read </span>and <span class="s3">write</span></p>
+<p class="p1">operations, it uses the <span class="s1">Chubby </span>distributed lock service (see Section <span class="s2">8.7</span>); the directories and the files in</p>
+<p class="p1">the namespace of <span class="s1">Chubby </span>are used as locks.</p>
+<p class="p1">The system is based on a simple and flexible datamodel. It allows an application developer to exercise</p>
+<p class="p1">control over the data format and layout and reveals data locality information to the application clients.</p>
+<p class="p1">Any <span class="s3">read </span>or <span class="s3">write </span>row operation is atomic, even when it affects more than one column. The column</p>
+<p class="p1">keys identify <span class="s1">column families</span>, which are units of access control. The data in a column family is of the</p>
+<p class="p1">same type. Client applications written in C++ can add or delete values, search for a subset of data, and</p>
+<p class="p1">look up data in a row.</p>
+<p class="p1">A row key is an arbitrary string of up to 64 KB, and a row range is partitioned into <span class="s1">tablets </span>serving as</p>
+<p class="p1">units for load balancing. The time stamps used to index various versions of the data in a cell are 64-bit</p>
+<p class="p1">integers; their interpretation can be defined by the application, whereas the default is the time of an</p>
+<p class="p1">event in microseconds. A column key consists of a string defining the family name, a set of printable</p>
+<p class="p1">characters, and an arbitrary string as qualifier.</p>
+<p class="p1">The organization of a <span class="s1">BigTable </span>(see Figure <span class="s2">8.11</span>) shows a sparse, distributed, multidimensional map</p>
+<p class="p1">for an email application. The system consists of three major components: a library linked to application</p>
+<p class="p1">clients to access the system, a master server, and a large number of tablet servers. The master server</p>
+<p class="p1">controls the entire system, assigns tablets to tablet servers and balances the load among them, manages</p>
+<p class="p1">garbage collection, and handles table and column family creation and deletion.</p>
+<p class="p1">Internally, the space management is ensured by a three-level hierarchy: the <span class="s1">root tablet</span>, the location</p>
+<p class="p1">of which is stored in a <span class="s1">Chubby </span>file, points to entries in the second element, the <span class="s1">metadata </span>tablet, which,</p>
+<p class="p1">in turn, points to <span class="s1">user </span>tablets, collections of locations of users’ tablets. An application client searches</p>
+<p class="p1">through this hierarchy to identify the location of its tablets and then caches the addresses for further use.</p>
+<p class="p1">The performance of the system reported in [<span class="s2">73</span>] is summarized in Table <span class="s2">8.2</span>. The table shows the</p>
+<p class="p1">number of random and sequential <span class="s3">read </span>and <span class="s3">write </span>and scan operations for 1<span class="s1">, </span>000 bytes, when the</p>
+<p class="p1">number of servers increases from 1 to 50, then to 250, and finally to 500. Locking prevents the system</p>
+<p class="p1">from achieving a linear speed-up, but the performance of the system is still remarkable due to a fair</p>
+<p class="p1">number of optimizations. For example, the number of scans on 500 tablet servers is 7<span class="s1">,</span>843<span class="s1">/</span>2 <span class="s1">  </span>10<span class="s4">3</span></p>
+<p class="p1">instead of 15<span class="s1">,</span>385<span class="s1">/</span>2<span class="s1"> </span>10<span class="s4">3</span>. It is reported that only 12 clusters use more than 500 tablet servers, whereas</p>
+<p class="p1">some 259 clusters use between 1 and 19 tablet servers.</p>
+<p class="p1"><span class="s1">BigTable </span>is used by a variety of applications, including <span class="s1">Google Earth</span>, <span class="s1">Google Analytics</span>, <span class="s1">Google</span></p>
+<p class="p1"><span class="s1">Finance</span>, andWeb crawlers. For example, <span class="s1">Google Earth </span>uses two tables, one for preprocessing and one</p>
+<p class="p1">for serving client data. The preprocessing table stores raw images; the table is stored on disk because</p>
+<p class="p1">it contains some 70 TB of data. Each row of data consists of a single image; adjacent geographic</p>
+<p class="p1">segments are stored in rows in close proximity to one another. The column family is very sparse;</p>
+<p class="p1">it contains a column for every raw image. The preprocessing stage relies heavily on <span class="s1">MapReduce </span>to clean and consolidate the data for the serving phase. The serving table stored on GFS is “only” 500 GB,</p>
+<p class="p1">and it is distributed across several hundred tablet servers, which maintain in-memory column families.</p>
+<p class="p1">This organization enables the serving phase of <span class="s1">Google Earth </span>to provide a fast response time to tens of</p>
+<p class="p1">thousands of queries per second.</p>
+<p class="p1"><span class="s1">Google Analytics </span>provides aggregate statistics such as the number of visitors to aWeb page per day.</p>
+<p class="p1">To use this service, Web servers embed a <span class="s1">JavaScript </span>code into their Web pages to record information</p>
+<p class="p1">every time a page is visited. The data is collected in a <span class="s1">raw-click BigTable </span>of some 200 TB, with a row for</p>
+<p class="p1">each end-user session. A <span class="s1">summary </span>table of some 20 TB contains predefined summaries for a Website.</p>
+</body>
+</html>

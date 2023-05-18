@@ -1,0 +1,87 @@
+,source,edge,target
+0,Locks,support,the
+1,Locks,enable,shared  operations
+3,master,has,important
+4,master,maintains,system components
+5,Locking,done,asynchronous Paxos Section
+7,when communication delays,guarantees,large scale system
+8,Nevertheless  algorithm,use,faulty  process
+11,Coordination,discussed in,Paxos Section
+12,systems,experience,lost communication sequence
+14,consistent  messages,use virtual,processes
+16,this,complicates,processing time
+17,processes,based on,rules
+18,that,have,shared  objects
+19,regardless  locks,locks,primitives
+20,grained  locks,called,longer  time
+24,such meta lock,require,generation lock
+26,information,aggregated into,opaque byte sequencer
+27,question,demands several,several design decisions
+28,locks,have,obvious
+30,who,stop,traffic laws
+31,who,obey,traffic
+32,disadvantages,added,mandatory  locks
+34,task,access,lock
+35,task,forces,the
+38,more application threads,allow more,shared time interval
+40,data,generate,larger lock server
+41,larger  number,affected,applications
+43,large data that,seem,wide area networks
+45,locking consensus that,delegate to,asynchronous service calls
+47,course lock service service,has,heavy  load
+49,many cloud applications,comes,small  files
+52,names,included in,atomic file operations
+54,choice,consider,also  the
+56,clients,control,cache information
+57,Finally  we,consider,consensus
+58,more  service,seems,high  availability
+60,lock it,decided,advisory  locks
+64,service,used by several,8.5 Google Section
+65,organization,shown in,Figure
+66,cell,serves,one data center
+67,standard  number,includes several,which
+69,servers,distributed across,data center
+70,current consensus one,use,new consensus master
+73,new Paxos master,elected by,period
+75,locks,acquired,client
+76,Clients,use,master
+78,When  master,receives,write
+79,master,propagates,replicas
+80,read  master,receives,replicas
+82,System,includes,file  status
+83,such master lock,subscribe to,such child node
+84,files,organized in,similar tree Unix
+85,file,has,file descriptor
+87,master,writes,periodically GFS file server
+88,file,act as,lock
+93,Handles,created by,close
+96,which,decide,SetSequencer Get- CheckSequencer
+99,which,associates,sequencer
+103,candidate threads,attempt,lock file
+105,that,becomes,lfile
+109,threads,read,lfile
+110,lock,check,sequencer
+112,example,illustrates,name server
+113,We,take,actual  service
+115,Chubby  locks,stored in,Chubby  database
+117,active Chubby which,shows,local log replica
+122,replica,maintains,replica
+124,repeatedly  replicas,executed,same log entries
+126,local  snapshot,consists of,replay failure
+127,snapshot,speak,Chubby
+128,state,recorded in,also  database
+129,algorithm,used,replicated  log
+132,three  phases,executed,algorithm
+135,several  replicas,decide,master
+138,where sequence number r,generates,propose  message
+139,number,seen,larger sequence number range
+140,higher promise replicas,replicas,other candidate masters
+141,that,seen,higher  sequence
+143,number,represents,a
+144,that,elected,propose  message
+145,that,sent,propose
+146,accept  message,broadcasts to,value replies
+147,message,selected,value master
+151,when  majority,send,acknowledge
+152,then  master,broadcasts,commit message
+154,practical  use,ignore,wide variety implementation

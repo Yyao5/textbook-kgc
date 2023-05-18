@@ -1,0 +1,46 @@
+,source,edge,target
+0,virtual machine monitor,hear,considerably operating system
+1,virtualization,enhances,virtual machine monitor
+2,traditional system.14 Ahypervisor,has,traditional operating system
+3,hypervisormust,rely on amanagement,amanagement VMto storage devices
+7,security risks,conclude,virtual  environment
+10,We,have,sweeping  statements
+11,trusted computer base,includes,only cloud computing hypervisor
+12,OS,supports administrative,administrative  tools
+13,TCB,includes,called management operating Figure
+14,vulnerabilities,introduced by,software components
+15,Xen 21,[,23 service control
+16,11  attacks,attributed to,denial guest service
+26,new  that,play several,denial  service
+28,third  party,Modify,new  VM
+31,new  VM,Refuse,foreign  memory
+34,us,turn,now  attention
+35,that,exposes,abstract guest operating systems
+37,two,communicate via,shared  Section
+38,original  service,sends,data
+41,run time communication,have,Dom0
+43,entire  state,guarantee,Section
+44,Dom0,extract cryptographic,significant  security
+45,entire  state,maintained,system
+47,VM,deny,critical  system
+48,also  This,gain,additional  Dom0
+49,foreign  DomU,prohibited from,Dom0
+51,DomU,initiates,procedure
+53,Dom0,provided with,virtual CPU registers
+54,affected virtualization that,monitored by,based  215
+56,only guest application,ensured,data
+58,Thus guest software,have,sensitive network user
+60,We,need,secure run time system
+61,that,implement,wewant
+63,that,allowed,virtual  registers
+64,hypercalls,restricted,specific  time
+65,hypercalls,prohibited,IOMMU19
+67,virtual  We,restrict,critical  hypercalls
+70,We,check,DomU
+75,contents,encrypted,virtual CPU registers
+80,Dom0,encrypted,encrypted  VM
+83,memory pages,calculate,Dom0
+85,restored  DomU,allocated,different memory region
+88,increased  level,leads to,increased  overhead
+89,Measurements,reported in,to domain build time
+91,1.7,restore,time

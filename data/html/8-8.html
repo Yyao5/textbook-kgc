@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 10.0px Courier; color: #000066}
+    span.s5 {font: 10.0px Times; color: #000066}
+    span.s6 {font: 7.5px Times; color: #000066}
+    span.s7 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">Many cloud services are based on <span class="s1">online transaction processing </span>(OLTP) and operate under tight latency</p>
+<p class="p1">constraints. Moreover, these applications have to deal with extremely high data volumes and are expected</p>
+<p class="p1">to provide reliable services for very large communities of users. It did not take very long for companies</p>
+<p class="p1">heavily involved in cloud computing, such as Google and Amazon, e-commerce companies such as</p>
+<p class="p1">eBay, and social media networks such as Facebook, Twitter, or LinkedIn, to discover that traditional</p>
+<p class="p1">relational databases are not able to handle the massive amount of data and the real-time demands of</p>
+<p class="p1">online applications that are critical for their business models.</p>
+<p class="p1">The search for alternate models with which to store the data on a cloud is motivated by the need</p>
+<p class="p1">to decrease the latency by caching frequently used data in memory on dedicated servers, rather than</p>
+<p class="p1">fetching it repeatedly. In addition, distributing the data on a large number of servers allows multiple</p>
+<p class="p1">transactions to occur at the same time and decreases the response time. The relational schema are of little</p>
+<p class="p1">use for such applications in which conversion to key-value databases seems a much better approach.</p>
+<p class="p1">Of course, such systems do not store meaningful metadata information, unless they use extensions that</p>
+<p class="p1">cannot be exported easily.</p>
+<p class="p1">A major concern for the designers of OLTP systems is to reduce the response time. The term</p>
+<p class="p1"><span class="s1">memcaching </span>refers to a general-purpose distributed memory system that caches objects in main memory</p>
+<p class="p1">(RAM); the system is based on a very large hash table distributed across many servers. The <span class="s1">memcached</span></p>
+<p class="p1">system is based on a client-server architecture and runs under several operating systems, including</p>
+<p class="p1"><span class="s1">Linux</span>, <span class="s1">Unix</span>, <span class="s1">Mac OS X</span>, and <span class="s1">Windows</span>. The servers maintain a key-value associative array. The API</p>
+<p class="p1">allows the clients to add entries to the array and to query it. A key can be up to 250 bytes long, and a</p>
+<p class="p1">value can be no larger than 1MB. The <span class="s1">memcached </span>system uses an LRU cache-replacement strategy.</p>
+<p class="p1">Scalability is the other major concern for cloud OLTP applications and implicitly for datastores.</p>
+<p class="p1">There is a distinction between <span class="s1">vertical scaling</span>, where the data and the workload are distributed to</p>
+<p class="p1">systems that share resources such as cores and processors, disks, and possibly RAM, and <span class="s1">horizontal</span></p>
+<p class="p1"><span class="s1">scaling</span>, where the systems do not share either primary or secondary storage [<span class="s2">66</span>].</p>
+<p class="p1">Cloud stores such as <span class="s1">document stores </span>and <span class="s1">NoSQL </span>databases are designed to scale well, do not exhibit</p>
+<p class="p1">a single point of failure, have built-in support for consensus-based decisions, and support partitioning</p>
+<p class="p1">and replication as basic primitives. Systems such as Amazon’s <span class="s1">SimpleDB</span>, discussed in Section 3.1;</p>
+<p class="p2">CouchDB <span class="s3">(see </span><span class="s4">http://couchdb.apache.org/</span><span class="s3">), or </span>Oracle NoSQL database <span class="s3">[</span><span class="s5">277</span><span class="s3">] are very</span></p>
+<p class="p1">popular, though they provide less functionality than traditional databases. The <span class="s1">key-value </span>data model is very popular. Several such systems, including Voldemort, Redis, Scalaris, and Tokyo cabinet, are</p>
+<p class="p1">discussed in [<span class="s2">66</span>].</p>
+<p class="p1">The “soft-state” approach in the design of <span class="s1">NoSQL </span>allows data to be inconsistent and transfers the</p>
+<p class="p1">task of implementing only the subset of the ACID properties required by a specific application to the</p>
+<p class="p1">application developer. The <span class="s1">NoSQL </span>systems ensure that data will be “eventually consistent” at some</p>
+<p class="p1">future point in time instead of enforcing consistency at the time when a transaction is “committed.”</p>
+<p class="p1">Data partitioning among multiple storage servers and data replication are also tenets of the <span class="s1">NoSQL</span></p>
+<p class="p1">philosophy<span class="s6">7</span>; they increase availability, reduce response time, and enhance scalability.</p>
+<p class="p1">The name <span class="s1">NoSQL </span>given to this storage model is misleading. Michael Stonebreaker notes [<span class="s2">335</span>] that</p>
+<p class="p1">“blinding performance depends on removing overhead. Such overhead has nothing to do with SQL, but</p>
+<p class="p1">instead revolves around traditional implementations of ACID transactions, multi-threading, and disk</p>
+<p class="p1">management.”</p>
+<p class="p1">The overhead of OLTP systems is due to four sources with equal contribution: logging, locking,</p>
+<p class="p1">latching, and buffer management. Logging is expensive because traditional databases require transaction</p>
+<p class="p1">durability; thus, every <span class="s7">write </span>to the database can be completed only after the log has been updated.</p>
+<p class="p1">To guarantee atomicity, transactions lock every record, and this requires access to a lock table. Many</p>
+<p class="p1">operations require multithreading, and the access to shared data structures, such as lock tables, demands</p>
+<p class="p1">short-term latches<span class="s6">8 </span>for coordination. The breakdown of the instruction count for these operations in</p>
+<p class="p1">existing DBMSs is as follows: 34<span class="s1">.</span>6% for buffer management, 14<span class="s1">.</span>2% for latching, 16<span class="s1">.</span>3% for locking,</p>
+<p class="p1">11<span class="s1">.</span>9% for logging, and 16<span class="s1">.</span>2% for hand-coded optimization [<span class="s2">157</span>].</p>
+<p class="p1">Today OLTP databases could exploit the vast amounts of resources of modern computing and communication</p>
+<p class="p1">systems to store the data in main memory rather than rely on disk-resident B-trees and heap</p>
+<p class="p1">files, locking-based concurrency control, and support for multithreading optimized for the computer</p>
+<p class="p1">technology of past decades [<span class="s2">157</span>]. Logless, single-threaded, and transaction-less databases could replace</p>
+<p class="p1">the traditional ones for some cloud applications.</p>
+<p class="p1">Data replication is critical not only for system reliability and availability, but also for its performance.</p>
+<p class="p1">In an attempt to avoid catastrophic failures due to power blackouts, natural disasters, or other causes</p>
+<p class="p1">(see also Section 1.6), many companies have established multiple data centers located in different</p>
+<p class="p1">geographic regions. Thus, data replication must be done over a <span class="s1">wide area network </span>(WAN). This could</p>
+<p class="p1">be quite challenging, especially for log data, metadata, and system configuration information, due to</p>
+<p class="p1">increased probability of communication failure and larger communication delays. Several strategies are</p>
+<p class="p1">possible, some based on master/slave configurations, others based on homogeneous replica groups.</p>
+<p class="p1">Master/slave replication can be asynchronous or synchronous. In the first case the master replicates</p>
+<p class="p1">write-ahead log entries to at least one slave, and each slave acknowledges appending the log record as</p>
+<p class="p1">soon as the operation is done. In the second case the master must wait for the acknowledgments from</p>
+<p class="p1">all slaves before proceeding. Homogeneous replica groups enjoy shorter latency and higher availability</p>
+<p class="p1">than master/slave configurations. Any member of the group can initiate mutations that propagate</p>
+<p class="p1">asynchronously.</p>
+<p class="p1">flexible one tailored to the specific requirements of the applications. Sometimes the data management</p>
+<p class="p1">ecosystem of a cloud computing environment integrates multiple databases; for example, Oracle integrates</p>
+<p class="p1">its <span class="s1">NoSQL </span>database with the <span class="s1">HDFS </span>discussed in Section <span class="s2">8.6</span>, with the Oracle Database, and with</p>
+<p class="p1">theOracle Exadata. Another approach, discussed in Section <span class="s2">8.10</span>, is to partition the data and to guarantee</p>
+<p class="p1">full ACID semantics within a partition, while supporting eventual consistency among partitions.</p>
+</body>
+</html>

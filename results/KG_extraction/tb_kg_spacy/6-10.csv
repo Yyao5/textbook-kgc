@@ -1,0 +1,26 @@
+,source,edge,target
+0,scheduler,proposed in,multimedia operating 142
+2,scheduler,acts at,hierarchy
+3,1 j n,is,node Figure
+4,machine bandwidth,reallocated to,active  time
+5,one  allocation,transferred to,same  VM
+6,one  allocation,transferred to,other  applications
+7,t,denoted by,v(t
+10,a,start at,virtual  time
+12,We,call,τ
+13,scheduler,follows several,several  rules
+20,real  t,computed,real  time
+22,virtual  CPU,finish virtual,virtual  thread
+23,we,simplify,time  event
+24,we,use in,real
+25,virtual start up time,means,real  time
+26,example,illustrates,the
+32,We,have,a
+33,arbitrarily = S0 b,chosen,= S0 b
+47,6.53  F2,=,runnable  time
+48,60  a,Thread,time
+50,Several  properties,proved in,SFQ 142
+51,well  delay,allocates,throughput
+52,available  bandwidth,varies in,time
+54,only  thread,schedules,current thread allocation
+56,142  overhead,is comparable,Solaris scheduling algorithm

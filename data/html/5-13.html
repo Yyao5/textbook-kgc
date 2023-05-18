@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Software fault isolation </span>(SFI) offers a technical solution for sandboxing binary code of questionable</p>
+<p class="p1">provenance that can affect security in cloud computing. Insecure and tampered VM images are one</p>
+<p class="p1">of the security threats because binary codes of questionable provenance for native plug-ins to a Web</p>
+<p class="p1">browser can pose a security threat when Web browsers are used to access cloud services.</p>
+<p class="p1">A recent paper [<span class="s2">322</span>] discusses the application of the sandboxing technology for two modern CPU</p>
+<p class="p1">architectures, <span class="s1">ARM </span>and 64-bit <span class="s1">x86</span>. <span class="s1">ARM </span>is a load/store architecture with 32-bit instruction and 16</p>
+<p class="p1">general-purpose registers. It tends to avoid multicycle instructions, and it shares many RISC architecture</p>
+<p class="p1">features, but (a) it supports a “thumb” mode with 16-bit instruction extensions; (b) it has complex</p>
+<p class="p1">addressing modes and a complex barrel shifter; and (c) condition codes can be used to predicate most</p>
+<p class="p1">instructions. In the <span class="s1">x86</span>-64 architecture, general-purpose registers are extended to 64 bits, with an <span class="s3">r</span></p>
+<p class="p1">replacing the <span class="s3">e </span>to identify the 64 versus 32-bit registers (e.g., <span class="s3">rax </span>instead of <span class="s3">eax</span>). There are eight new</p>
+<p class="p1">general-purpose registers, named r8–r15. To allow legacy instructions to use these additional registers,</p>
+<p class="p1"><span class="s1">x86</span>-64 defines a set of new prefix bytes to use for register selection.</p>
+<p class="p1">This SFI implementation is based on the previous work of the same authors on Google Native</p>
+<p class="p1">Client (NC) and assumes an execution model in which a trusted run-time shares a process with an</p>
+<p class="p1">untrusted multithreaded plug-in. The rules for binary code generation of the untrusted plug-in are:</p>
+<p class="p1">(i) the code section is <span class="s1">read-only </span>and is statically linked; (ii) the code is divided into 32-byte <span class="s1">bundles</span>,</p>
+<p class="p1">and no instruction or pseudo-instruction crosses the bundle boundary; (iii) the disassembly starting at</p>
+<p class="p1">the bundle boundary reaches all valid instructions; and (iv) all indirect flow-control instructions are</p>
+<p class="p1">replaced by pseudo-instructions that ensure address alignment to bundle boundaries.</p>
+<p class="p1">The features of the SFI for the Native Client on the <span class="s1">x86</span>-32, <span class="s1">x86</span>-64, and <span class="s1">ARM </span>are summarized in</p>
+<p class="p1">Table <span class="s2">5.4 </span>[<span class="s2">322</span>]. The control flow and store sandboxing for the <span class="s1">ARM </span>SFI incur less then 5% average</p>
+<p class="p1">overhead, and those for <span class="s1">x86</span>-64 SFI incur less than 7% average overhead.</p>
+</body>
+</html>

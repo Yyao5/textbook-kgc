@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A <span class="s1">storage area network </span>(SAN) is a specialized, high-speed network for data-block transfers between</p>
+<p class="p1">computer systems and storage elements; thus, it is a critical element of a cloud infrastructure (see</p>
+<p class="p1">Figure <span class="s2">7.13</span>). A SAN consists of a communication infrastructure and a management layer. The Fibre</p>
+<p class="p1">Channel (FC) is the dominant architecture of SANs.</p>
+<p class="p1">FC is a layered protocol with several layers, as depicted in Figure <span class="s2">7.14</span>:</p>
+<p class="p1">A. The lower three layer protocols: FC-0, the physical interface; FC-1, the transmission protocol</p>
+<p class="p1">responsible for encoding/decoding; and FC-2, the signaling protocol responsible for framing and flow</p>
+<p class="p1">control.</p>
+<p class="p1">FC-0 uses laser diodes as the optical source and manages the point-to-point fiber connections.When</p>
+<p class="p1">the fiber connection is broken, the ports send a series of pulses until the physical connection is reestablished</p>
+<p class="p1">and the necessary handshake procedures are followed.</p>
+<p class="p1">FC-1 controls the serial transmission and integrates data with clock information. It ensures encoding</p>
+<p class="p1">to the maximum length of the code, maintains DC balance, and provides word alignment.</p>
+<p class="p1">FC-2 provides the transport methods for data transmitted in 4-byte ordered sets containing data</p>
+<p class="p1">and control characters. It handles the topologies based on the presence or absence of a fabric, the</p>
+<p class="p1">communication models, the classes of service provided by the fabric and the nodes, sequence and</p>
+<p class="p1">exchange identifiers, and segmentation and reassembly.</p>
+<p class="p1">B. Two upper layer protocols: FC-3, the common services layer; and FC-4, the protocol mapping</p>
+<p class="p1">layer. FC-3 supports multiple ports on a single node or fabric using:</p>
+<p class="p1">• Hunt groups-sets of associated ports assigned an alias identifier that allows any frames containing</p>
+<p class="p1">that alias to be routed to any available port within the set.</p>
+<p class="p1">• Striping to multiply bandwidth, using multiple ports in parallel to transmit a single information unit</p>
+<p class="p1">across multiple links.</p>
+<p class="p1">• Multicast and broadcast to deliver a single transmission to multiple destination ports or to all nodes.</p>
+<p class="p1">To accommodate various application needs, FC supports several classes of service:</p>
+<p class="p1"><span class="s1">Class 1. </span>Rarely used blocking connection-oriented service. Acknowledgments ensure that the frames</p>
+<p class="p1">are received in the same order in which they are sent and reserve full bandwidth for the connection</p>
+<p class="p1">between the two devices.</p>
+<p class="p1"><span class="s1">Class 2. </span>Acknowledgments ensure that the frames are received. Allows the fabric to multiplex several</p>
+<p class="p1">messages on a frame-by-frame basis. Because frames can take different routes, it does not guarantee</p>
+<p class="p1">in-order delivery; it relies on upper layer protocols to take care of frame sequence.</p>
+<p class="p1"><span class="s1">Class 3. </span>Datagram connection; no acknowledgments.</p>
+<p class="p1"><span class="s1">Class 4. </span>Supports connection-oriented service. Virtual circuits (VCs) established between ports</p>
+<p class="p1">guarantee in-order delivery and acknowledgment of delivered frames, but the fabric is responsible for</p>
+<p class="p1">multiplexing frames of different VCs. Guaranteed QoS, including bandwidth and latency; intended for</p>
+<p class="p1">multimedia applications.</p>
+<p class="p1"><span class="s1">Class 5. </span>Supports isochronous service for applications requiring immediate delivery without</p>
+<p class="p1">buffering.</p>
+<p class="p1"><span class="s1">Class 6. </span>Supports dedicated connections for a reliable multicast.</p>
+<p class="p1"><span class="s1">Class 7. </span>Similar to Class 2 but used for the control and management of the fabric. A connectionless</p>
+<p class="p1">service with notification of nondelivery.</p>
+<p class="p1">Although each device connected to a LAN has a unique physical address, also called a Media Access</p>
+<p class="p1">Control (MAC) address, each FC device has a unique ID called theWorldWide Name (WWN), a 64-bit</p>
+<p class="p1">address. Each port in the switched fabric has its own unique 24-bit address consisting of the domain</p>
+<p class="p1">(bits 23–16), the area (bits 15–08), and the port physical address (bits 07–00).</p>
+<p class="p1">The switch of a switched fabric environment assigns dynamically and maintains the port addresses.</p>
+<p class="p1">When a device with a WWN logs into the switch on a port, the switch assigns the port address to that</p>
+<p class="p1">port and maintains the correlation between that port address and the WWN address of the device using</p>
+<p class="p1">the Name Server, a component of the fabric operating system, which runs inside the switch.</p>
+<p class="p1">The format of an FCframe is shown inFigure <span class="s2">7.15</span>. Zoning permits finer segmentation of the switched</p>
+<p class="p1">fabric. Only the members of the same zone can communicate within that zone. It can be used to separate</p>
+<p class="p1">different environments (e.g., a <span class="s1">Microsoft Windows NT </span>from a <span class="s1">UNIX </span>environment).</p>
+<p class="p1">Several other protocols are used for SANs. Fibre Channel over IP (FCIP) allows transmission of Fibre</p>
+<p class="p1">Channel information through the IP network using <span class="s1">tunneling</span>. Tunneling is a technique for network protocols</p>
+<p class="p1">to encapsulate a different payload protocol. It allows a network protocol to carry a payload over</p>
+<p class="p1">an incompatible delivery network or to provide a secure path through an untrusted network. Tunneling</p>
+<p class="p1">allows a protocol that a firewall would normally block to cross it wrapped inside a protocol that the</p>
+<p class="p1">firewall does not block. For example, an HTTP tunnel can be used for communication from network</p>
+<p class="p1">locations with restricted connectivity (e.g., behind NATs, firewalls, or proxy servers) and most often</p>
+<p class="p1">with applications that lack native support for communication in such conditions of restricted connectivity.</p>
+<p class="p1">Restricted connectivity is a commonly used method to lock down a network to secure it against</p>
+<p class="p1">internal and external threats.</p>
+<p class="p1">Internet Fibre Channel Protocol (iFCP) is a gateway-to-gateway protocol that supports communication</p>
+<p class="p1">among FC storage devices in a SAN or on the Internet using TCP/IP. iFCP replaces the lower-layer Fibre Channel transport with TCP/IP and Gigabit Ethernet. With iFCP, Fibre Channel devices connect</p>
+<p class="p1">to an iFCP gateway or switch, and each Fibre Channel session is terminated at the local gateway and</p>
+<p class="p1">converted to a TCP/IP session via iFCP.</p>
+</body>
+</html>

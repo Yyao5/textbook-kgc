@@ -1,0 +1,41 @@
+,source,edge,target
+0,clouds,provide,large  organizations
+1,cloud,has,front disk user
+2,platforms,used as,private control cloud
+3,Schematically cloud infrastructure,carries,following  application
+10,We,discuss,open source software systems
+11,Eucalyptus,regarded as,open source Figure
+13,systems,supports several,several operating CentOS
+17,controllers,managed by,cloud controller
+20,resources,makes high,high cluster controllers
+22,Users,create,EBS volumes
+23,Snapshots,stored in,availability zones
+26,users,allows,buckets
+28,system,supports,strong
+29,Web administrators,access,root access
+30,administrators,need,root
+31,system,supports,single user interfaces
+32,management,implements,distributed S3 system
+33,procedure,based,virtual  machine
+34,front  end,used,VM
+36,VM disk image,transferred to,compute node
+37,disk image,modified for,compute node
+38,compute node,sets,virtual Media Access Control
+40,head DHCP,set,MAC IP pair
+41,VMM,activates,VM
+42,user,ssh10,directly  VM
+43,system,support,corporate enterprise environment
+44,Users,shielded from,hard system administrators
+47,configuration,uses,NFS
+48,oned head daemon,uses,compute node
+49,compute node,sets,virtual network MAC
+51,files,transferred to,compute node
+52,VMM,starts,compute VM
+53,trusted  who,suited for,versatile  users
+54,running Nimbus process,inherits from,compute nodes
+56,Customization,done by,only system administrators
+57,Table,summarizes,three  systems
+61,recently  NASA,moved,cloud Rackspace
+62,companies,have,Red OpenStack
+63,version,management,based resource utilization
+65,administrators,control,extensible Web application

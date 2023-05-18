@@ -1,0 +1,61 @@
+,source,edge,target
+0,clouds,support,centric  computing
+1,2013 Internet video,see in,18  month
+4,amount,has,large user population
+6,networks,offer fast,fast content communication
+8,CDN,receives,content
+10,content,delivered to,closest edge server
+11,CDNs,designed,better  security
+14,volume,increases,Internet
+16,CDNs,place additional,general flash demand
+19,resources,placed,strategically  scalability
+21,when  one,replicated,replicas
+23,placement,reduces,startup time
+24,content provider content that,uses,authoritative client requests
+25,replicated  content,protected from,cyber  fraud
+26,aCDN,deliver static,live  demand
+28,caching  changes,refers,caching  technologies
+29,that,maintained,caching  technologies
+30,live  content,refers to live,real media server
+33,streaming content media,support static,live content demand
+35,company,evolved from,MIT network traffic
+37,Akamai,placed,71 Akamai inception
+38,Akamai,controlled,85  market
+39,Akamai,mirrors,strategically  Internet
+40,IP address,is,rather Akamai server
+41,Then Akamai server,picked,automatically end user
+42,Limelight which,are several,on  video
+44,infrastructure,uses,different CDN fair
+45,SOCKS Array Routing Protocol,described,succinctly Cache 285
+46,caches,exchange,ICP
+48,HTCP,used,cache activity
+51,called network core,play,active content delivery
+52,other network approach,requires,predefined user policies
+53,strategy,based,multiple end user
+54,second network core elements,redirect,content type access
+55,CDNs,use,strategies
+56,problem,solved with suboptimal,suboptimal network inputs
+57,servers,replicate,entire origin server
+58,partial site selection,retrieve,origin edge
+59,objects,replicated,caches heuristics
+60,management,depends on,cache cache policies
+61,CDNs,use several,on content demand
+63,routing,request,users
+64,perceived replica server load,taken,request
+65,edge servers,assumes,similar  content
+66,edge servers,have similar,similar  characteristics
+68,algorithms,perform,current  system
+69,algorithm,takes into,available replica server
+70,service that,exploit,balancing edge policy
+71,several edge servers,connected,which
+72,multiple DNS server,returns,IP
+74,Web server,includes in,edge server
+75,several routing table,requires,host
+76,same IP address,assigned to several,several  hosts
+77,table,contains,the
+78,Cache,hit,ratio
+79,which,based on,perceived response time
+81,CDNs,face considerable,such data smartphones
+82,streaming,requires,bandwidth  space
+84,concept,introduced in,content service 226
+85,CSNs,are,infrastructure processing

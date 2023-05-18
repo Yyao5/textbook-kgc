@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">As mentioned repeatedly, cloud computing is intrinsically dependent on communication; thus, network</p>
+<p class="p1">resource management is a very important aspect of the management of computer clouds. A critical aspect</p>
+<p class="p1">of resource management in cloud computing is to guarantee the communication bandwidth required by</p>
+<p class="p1">an application as specified by a service-level agreement (SLA). The solutions to this problem are based</p>
+<p class="p1">on the strategies used for some time on the Internet to support the quality-of-service (QoS) requirements</p>
+<p class="p1">of data streaming.</p>
+<p class="p1">First, we discuss the stochastic fairness queuing (SFQ) algorithm [<span class="s1">240</span>], which takes into account</p>
+<p class="p1">data packet sizes to ensure that each flow has the opportunity to transmit an equal amount of data.</p>
+<p class="p1">SFQ is a simpler and less accurate implementation of fair queuing algorithms and thus requires fewer</p>
+<p class="p1">calculations. The fair queuing (FQ) algorithm discussed in Section 6.9 ensures that a high-data-rate</p>
+<p class="p1">flow cannot use more than its fair share of the link capacity. Packets are first classified into flows by the</p>
+<p class="p1">system and then assigned to a queue dedicated to the flow; queues are serviced one packet at a time in</p>
+<p class="p1">round-robin order, as shown in Figure <span class="s1">7.7</span>. FQ’s objective is <span class="s2">max–min </span>fairness; this means that first, it</p>
+<p class="p1">maximizes the minimum data rate of any of the data flows, then it maximizes the second minimum data</p>
+<p class="p1">rate, etc. Starvation of expensive flows is avoided, but the throughput is lower.</p>
+<p class="p1">Next we review a widely used strategy for link sharing, the class-based queuing (CBQ) method</p>
+<p class="p1">proposed by Sally Floyd and Van Jacobson in 1995 [<span class="s1">125</span>]. The objective of CBQ is to support flexible</p>
+<p class="p1">link sharing for applications that require bandwidth guarantees such as VoIP, video streaming, and audio</p>
+<p class="p1">streaming. At the same time, CBQ supports some balance between short-lived network flows, such as</p>
+<p class="p1">Web searches, and long-lived ones, such as video streaming or file transfers.</p>
+<p class="p1">CBQ aggregates the connections and constructs a hierarchy of classes with different priorities and</p>
+<p class="p1">throughput allocations. To accomplish link sharing, CBQ uses several functional units: (i) a <span class="s2">classifier</span></p>
+<p class="p1">that uses the information in the packet header to assign arriving packets to classes; (ii) an <span class="s2">estimator </span>of the short-term bandwidth for the class; (iii) a <span class="s2">selector</span>, or scheduler, which identifies the highest-priority</p>
+<p class="p1">class to send next and, if multiple classes have the same priority, to schedule them on a round-robin</p>
+<p class="p1">basis; and (iv) a <span class="s2">delayer </span>to compute the next time when a class that has exceeded its link allocation is</p>
+<p class="p1">allowed to send.</p>
+<p class="p1">The classes are organized in a tree-like hierarchy; for example, in Figure <span class="s1">7.8 </span>we see two types of</p>
+<p class="p1">traffic: group <span class="s2">A </span>corresponding to short-lived traffic and group <span class="s2">B </span>corresponding to long-lived traffic.</p>
+<p class="p1">The leaves of the tree are considered Level 1 and in this example include six classes of traffic: real</p>
+<p class="p1">time, Web, interactive, video streaming, audio streaming, and file transfer. At Level 2 there are the two</p>
+<p class="p1">classes of traffic, <span class="s2">A </span>and <span class="s2">B</span>. The root, at Level 3, is the link itself.</p>
+<p class="p1">The link-sharing policy aims to ensure that if sufficient demand exists, then, after some time intervals,</p>
+<p class="p1">each interior or leaf class receives its allocated bandwidth. The distribution of the “excess” bandwidth</p>
+<p class="p1">follows a set of guidelines but does not support mechanisms for congestion avoidance.</p>
+<p class="p1">A class is <span class="s2">overlimit </span>if over a certain recent period it has used more than its bandwidth allocation</p>
+<p class="p1">(in bytes per second), <span class="s2">underlimit </span>if it has used less, and <span class="s2">atlimit </span>if it has used exactly its allocation. A</p>
+<p class="p1">leaf class is <span class="s2">satisfied </span>if it is underlimit and has a persistent backlog, and it is <span class="s2">unsatisfied </span>otherwise. A</p>
+<p class="p1">nonleaf class is unsatisfied if it is underlimit and has some descendent class with a persistent backlog.</p>
+<p class="p1">A precise definition of the term <span class="s2">persistent backlog </span>is part of a local policy. A class does not need to be</p>
+<p class="p1"><span class="s2">regulated </span>if it is underlimit or if there are no unsatisfied classes. The class should be regulated if it is</p>
+<p class="p1">overlimit and if some other class is unsatisfied, and this regulation should continue until the class is no</p>
+<p class="p1">longer overlimit or until there are no unsatisfied classes (see Figure <span class="s1">7.9 </span>for two examples).</p>
+<p class="p1">The <span class="s2">Linux </span>kernel implements a link-sharing algorithm called <span class="s2">hierarchical token buckets </span>(HTB)</p>
+<p class="p1">inspired by CBQ. In CBQ every class has an <span class="s2">assured rate </span>(AR); in addition to the AR every class in</p>
+<p class="p1">HTB has also a <span class="s2">ceil rate </span>(CR) (see Figure <span class="s1">7.10</span>). The main advantage of HTB over CBQ is that it allows</p>
+<p class="p1"><span class="s2">borrowing</span>. If a class C needs a rate above its AR, it tries to borrow from its parent; then the parent examines its children and, if there are classes running at a rate lower than their AR, the parent can</p>
+<p class="p1">borrow from them and reallocate it to class C.</p>
+</body>
+</html>

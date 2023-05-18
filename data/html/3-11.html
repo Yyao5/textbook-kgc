@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 8.5px Courier; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Software licensing for cloud computing is an enduring problem without a universally accepted solution</p>
+<p class="p1">at this time. The license management technology is based on the old model of computing centers with</p>
+<p class="p1">licenses given on the basis of named users or as site licenses. This licensing technology, developed for</p>
+<p class="p1">a centrally managed environment, cannot accommodate the distributed service infrastructure of cloud</p>
+<p class="p1">computing or of grid computing.</p>
+<p class="p1">Only very recently IBM reached an agreement allowing some of its software products to be used on</p>
+<p class="p1"><span class="s1">EC2</span>. Furthermore,MathWorks developed a businessmodel for the use ofMATLABin grid environments</p>
+<p class="p1">[<span class="s2">63</span>]. The <span class="s1">Software-as-a-Service (SaaS) </span>deployment model is gaining acceptance because it allows users</p>
+<p class="p1">to pay only for the services they use.</p>
+<p class="p1">There is significant pressure to change the traditional software licensing model and find nonhardware-</p>
+<p class="p1">based solutions for cloud computing. The increased negotiating power of users, coupled with</p>
+<p class="p1">the increase in software piracy, has renewed interest in alternative schemes such as those proposed by</p>
+<p class="p1">the <span class="s1">SmartLM </span>research project ( <span class="s3">www.smartlm.eu</span>). <span class="s1">SmartLM </span>license management requires a complex</p>
+<p class="p1">software infrastructure involving SLA, negotiation protocols, authentication, and other management</p>
+<p class="p1">functions.</p>
+<p class="p1">A commercial product based on the ideas developed by this research project is <span class="s1">elasticLM</span>, which</p>
+<p class="p1">provides license and billing for Web-based services [<span class="s2">63</span>]. The architecture of the <span class="s1">elasticLM </span>license</p>
+<p class="p1">service has several layers: coallocation, authentication, administration, management, business, and</p>
+<p class="p1">persistency. The authentication layer authenticates communication between the license service and the</p>
+<p class="p1">billing service as well as the individual applications; the persistence layer stores the usage records. The</p>
+<p class="p1">main responsibility of the business layer is to provide the licensing service with the licenses prices, and</p>
+<p class="p1">the management coordinates various components of the automated billing service.</p>
+<p class="p1">When a user requests a license from the license service, the terms of the license usage are negotiated</p>
+<p class="p1">and they are part of an SLA document. The negotiation is based on application-specific templates and</p>
+<p class="p1">the license cost becomes part of the SLA. The SLA describes all aspects of resource usage, including</p>
+<p class="p1">the ID of application, duration, number of processors, and guarantees, such as the maximum cost and</p>
+<p class="p1">deadlines. When multiple negotiation steps are necessary, the WS-Agreement Negotiation protocol</p>
+<p class="p1">is used.</p>
+<p class="p1">To understand the complexity of the issues related to software licensing, we point out some of</p>
+<p class="p1">the difficulties related to authorization. To verify the authorization to use a license, an application</p>
+<p class="p1">must have the certificate of an authority. This certificate must be available locally to the application</p>
+<p class="p1">because the application may be executed in an environment with restricted network access. This</p>
+<p class="p1">opens up the possibility for an administrator to hijack the license mechanism by exchanging the local</p>
+<p class="p1">certificate.</p>
+</body>
+</html>

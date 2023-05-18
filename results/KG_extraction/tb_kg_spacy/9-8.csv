@@ -1,0 +1,66 @@
+,source,edge,target
+1,many  users,ignore,other  concern
+2,user,has,EC2 service
+4,First  ’s,let,AMI
+7,We,start from,file S3
+13,when loopback data,used for,blocks
+15,creator,use,second
+18,user,has,firewall Section
+23,22 Remote Desktop,accessed,3389  Windows
+25,Remote Desktop,used,port
+26,Many,allowed,standard  tools
+28,Security which,shared with,promptly AWS users
+29,details,found in,testing 38
+30,Here  we,discuss,only  results
+32,audit,covered,software vulnerabilities
+33,most malware targetsWindows,audited,Windows
+35,strategy,explain,start time AMIs
+36,58 Linux audited,revealed,critical  vulnerabilities
+38,Nessus,classifies,four vulnerabilities levels
+39,audit,reported,highest severity level
+40,types,analyzed,security risks
+41,22  %,contained,scanned Linux AMIs
+42,passwords,cases in,which
+44,user,provide,public ssh key
+45,key,stored in,home directory
+46,malicious  who,opens,remotely  AMI
+48,based  authentication,opened,own  password
+50,authentication,remove,malicious  user
+51,wider  one,opened,such John www.openwall.com/john
+52,one,extract,password hashes
+53,when  image,posed by,cloud init script
+54,script,regenerates,host
+55,public  part,used,server
+58,systems,become vulnerable,middle11  attacks
+60,attacker,use,NMap AMI NMap
+62,authors,reports,"2,100  procedure"
+63,connections,pose,serious  system
+64,outside  entity,allow,var Linux system
+66,modified syslog which,detected,incoming aWeb server
+68,Malware,identified,available malware www.clamav.net
+69,AMIs,infectedWindows,second Trojan Agent
+71,trojan,carries,keylogging
+72,AMI,included,also  tool
+73,creator,assumes,shared  privacy
+74,private  keys,shell,browser history
+75,files,recovered from,published  images
+76,AWS API that,recover,AWS API keys
+78,cloud computing charges,start,API key
+81,search,target,9A − Z]∗
+85,majority,determined,ssh 56
+87,Recovery,requires,same IP lastlog
+88,audit,found,lastb AMIs databases
+89,Firefox browser auditor,contained,user
+90,auditor,identify,the
+91,612  AMIs,contained,one shell history file
+92,audit,analyzed,74 identification credentials
+93,GET requests,stored,aWeb site
+94,Passwords,exploited by,such GET logs
+95,malicious  agent,are,own  system
+96,Recovery,poses,sensitive  image
+97,When  sectors,containing sensitive,sensitive
+98,actually  recovery,overwritten by,sensitive  information
+99,creator,use,next image impossible
+102,such  blocks,contain,deleted  files
+104,theAMIs,using,exundelete
+105,users,conclude,fully image sharing

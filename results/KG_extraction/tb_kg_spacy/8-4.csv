@@ -1,0 +1,61 @@
+,source,edge,target
+0,O,implies,input output operations
+1,distributed file systems,became ubiquitous,step file system
+3,multiple  clients,allow multiple,same  file
+6,successive file reads,advance,multiple  file
+7,when  clients,share,file
+9,supercomputers,took,same support program
+10,317,developed at,early multimedia file system
+11,that,emulates,closely  the
+13,GPFS,support,each file Figure
+14,Afile,consists of,several MB disks
+15,system,support,large  files
+16,directories,use extensible,extensible  file
+19,Metadata,stored in,such data block inodes
+21,GPFS,records,write ahead log file
+22,only log records,means,persistent  storage
+25,directory block,updated,example
+27,inode,created,file
+28,log records,transferred from,cache
+33,system,allows,inode record
+37,parallelism,used,access time
+42,striping,allows concurrent,unpleasant  sideeffects
+45,large  number,affected,files
+48,system,attempts,single access disk
+50,system,uses,equal block size
+52,files,replicated on,physical  disks
+53,Support,improves,serious  consistency
+54,consistency,ensured,GPFS
+55,central lock manager grants,lock,I O node
+56,tokens,used by,also cache management system
+57,granularity,has important,important file system
+58,GPFS,uses,various  data
+59,tokens,used for,data files
+61,attempting,acquires,entire  file
+62,second  node,allowed,same  file
+65,Then  range,restricted,first  node
+67,nodes,operate,further  negotiations
+68,tokens,rounded,boundaries
+70,negotiations,use,current  operations
+71,shipping,allows fine,byte range locking
+73,file blocks,controlled by,round robin manner
+76,only  one,allowed,file
+78,manager,maintains,the
+79,additional upgrades nodes,creates,file
+80,file,collects,tokens
+83,node,sends,token  manager
+86,Access,synchronized,metadata
+87,same file size,updated,shared write inode
+90,One,assumes,metanode
+91,updates,channeled through,metanode
+92,size,determined by,individual update requests
+93,strategy,used for,indirect  blocks
+94,data,updated,distributed locking mechanism
+95,GPFS,uses,disk space
+99,32  subblock,has,32  bits
+101,map,partitioned into,regions
+102,region,stored on,I  node
+103,multiple  nodes,reduces,same disk time
+105,strategy,updates free,individual space nodes
+107,discussion,found,several file 2002
+108,documentation,is available,177

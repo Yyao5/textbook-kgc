@@ -1,0 +1,21 @@
+,source,edge,target
+0,system,has,large data capacity
+2,capacity,handles,23 billion 23 transactions
+5,system,supports,limited consistency Figure
+8,well  that,supports,drastically response time
+9,that,allow,system
+11,version,require,single Paxos master
+12,Instead  node,initiate,symmetric  peers
+14,Data,partitioned,excessive entity groups
+17,ground,reflected in,also data model
+18,entry,declared in,named  properties
+19,key,created as,entry properties
+20,entity,reference,special entity root table
+21,group,consists of,primary reference group
+22,system,makes extensive,extensive  BigTable
+23,Entities,mapped,same BigTable collisions
+26,different time stamps,stored in,cell
+27,Megastore,takes,advantage
+29,mutation,recorded along,new mutation time version
+32,concurrently  read,has several,updated  version
+34,transaction,involves,committed log transaction

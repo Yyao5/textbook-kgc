@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">Modularity, layering, and hierarchy represent some of the means to cope with the complexity of a</p>
+<p class="p1">system. Modularity is a technique to build a complex system from a set of components built and tested</p>
+<p class="p1">independently. A strong requirement for modularity is to define very clearly the interfaces between</p>
+<p class="p1">modules and enable the modules to work together.</p>
+<p class="p1">Modularity has been used extensively since the industrial revolution for building every imaginable</p>
+<p class="p1">product, from weaving looms to steam engines, watches to automobiles, and electronic devices to</p>
+<p class="p1">airplanes. Individual modules are often made of subassemblies; for example, the power train of a car</p>
+<p class="p1">includes the engine assembly, the gear box, and the transmission.</p>
+<p class="p1">Modularity can reduce costs for manufacturers and consumers. The same module may be used by a</p>
+<p class="p1">manufacturer in multiple products; to repair a defective product a consumer only needs to replace the</p>
+<p class="p1">module causing the malfunction rather than the entire product. Modularity encourages specialization</p>
+<p class="p1">because individual modules can be developed by experts with deep understanding of a particular field.</p>
+<p class="p1">It also supports innovation, allowing a module to be replaced with a better one without affecting the</p>
+<p class="p1">rest of the system.</p>
+<p class="p1">Layering and hierarchy have been present in social systems since ancient times. For example, the</p>
+<p class="p1">Spartan Constitution, called Politeia, described a Dorian society based on a rigidly layered social</p>
+<p class="p1">system and a strong military. Nowadays, in a modern society, we are surrounded by organizations that</p>
+<p class="p1">are structured hierarchically.We have to recognize that layering and hierarchical organization have their</p>
+<p class="p1">own problems, could negatively affect society, impose a rigid structure and affect social interactions,</p>
+<p class="p1">increase the overhead of activities, and prevent the system from acting promptly when such actions are</p>
+<p class="p1">necessary.</p>
+<p class="p1">Layering demands modularity because each layer fulfills a well-defined function, but the communication</p>
+<p class="p1">patterns in the case of layering are more restrictive. A layer is expected to communicate only</p>
+<p class="p1">with adjacent layers. This restriction, the limitation of communication patterns, clearly reduces the</p>
+<p class="p1">complexity of a system and makes it easier to understand its behavior.</p>
+<p class="p1">It is no surprise that modularity, layering, and hierarchy are critical to computer and communication</p>
+<p class="p1">systems. Since the early days of computing, large programs have been split into modules, each with a</p>
+<p class="p1">well-defined functionality. Modules with related functionalities have then been grouped together into</p>
+<p class="p1">numerical, graphical, statistical, and many other types of libraries.</p>
+<p class="p1">Layering helps us deal with complicated problems when we have to separate concerns that prevent</p>
+<p class="p1">us from making optimal design decisions. To do so, we define layers that address each concern and</p>
+<p class="p1">design the clear interfaces between the layers.</p>
+<p class="p1">Probably the best example is layering of communication protocols. In this case it was recognized</p>
+<p class="p1">that we have to accommodate a variety of physical communication channels that carry electromagnetic,</p>
+<p class="p1">optical, and acoustic signals; thus, we need a <span class="s1">physical </span>layer. The next concern is how to transport bits,</p>
+<p class="p1">not signals, between two points joined to one another by a communication channel; thus, the need for</p>
+<p class="p1">a <span class="s1">data link </span>layer. Next we decided that we need networks with multiple intermediate nodes when bits</p>
+<p class="p1">have to traverse a chain of intermediate nodes from a source to the destination; the concern here is how</p>
+<p class="p1">to forward the bits from one intermediate node to the next, so we had to introduce the <span class="s1">network </span>layer.</p>
+<p class="p1">Then we recognized that the source and the recipient of information are in fact outside the network and</p>
+<p class="p1">they are not interested in how the information crosses the network, but we want the information to reach</p>
+<p class="p1">its destination unaltered; the <span class="s1">transport </span>layer was then deemed necessary. Finally, the information sent</p>
+<p class="p1">and received has a meaning only in the context of an application; thus, we needed an <span class="s1">application </span>layer.</p>
+<p class="p1">Layering could prevent some optimizations; for example, cross-layer communication (communication</p>
+<p class="p1">between non-adjacent layers) could allow wireless applications to take advantage of information</p>
+<p class="p1">available at the Media Access Control (<span class="s1">MAC</span>) sublayer of the data link layer. This example shows that</p>
+<p class="p1">layering gives us insight as to where to place the basic mechanisms for error control, flow control, and</p>
+<p class="p1">congestion control on the protocol stack.</p>
+<p class="p1">An interesting question is whether a layered cloud architecture that has practical implications for</p>
+<p class="p1">the future development of computing clouds could be implemented. One could argue that it may be</p>
+<p class="p1">too early for such an endeavor, that we need time to fully understand how to better organize a cloud</p>
+<p class="p1">infrastructure, and we need to gather data to support the advantages of one approach over another.</p>
+<p class="p1">On the other hand, there are other systems in which it is difficult to envision a layered organization</p>
+<p class="p1">because of the complexity of the interaction between the individual modules. Consider, for example,</p>
+<p class="p1">an operating system that has a set of well-defined functional components:</p>
+<p class="p1">• The processor management subsystem, responsible for processor virtualization, scheduling, interrupt</p>
+<p class="p1">handling, and execution of privileged operations and system calls.</p>
+<p class="p1">• The virtual memory management subsystem, responsible for translating virtual addresses to physical</p>
+<p class="p1">addresses.</p>
+<p class="p1">• The multilevel memory management subsystem, responsible for transferring storage blocks between</p>
+<p class="p1">different memory levels, most commonly between primary and secondary storage.</p>
+<p class="p1">• The I/O subsystem, responsible for transferring data between the primary memory and the I/O</p>
+<p class="p1">devices.</p>
+<p class="p1">• The networking subsystem, responsible for network communication.</p>
+<p class="p1">The processor management interacts with all other subsystems. There are also multiple interactions</p>
+<p class="p1">between the other subsystems; therefore, it seems unlikely that a layered organization is feasible in this</p>
+<p class="p1">case.</p>
+</body>
+</html>

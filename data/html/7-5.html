@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier; color: #000066}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    span.s1 {font: 10.0px Times; color: #000000}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Courier}
+    span.s4 {font: 10.0px Helvetica}
+    span.s5 {font: 10.0px Times}
+    span.s6 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">The Web supports access to content stored on a cloud; virtually all cloud computing infrastructures</p>
+<p class="p1">allow users to interact with their computations on the cloud using Web-based systems. Thus, it should</p>
+<p class="p1">be clear that the metrics related to Web access are important for designing and tuning networks.</p>
+<p class="p2"><span class="s1">The site </span>http://code.google.com/speed/articles/web-metrics.html <span class="s1">provides</span></p>
+<p class="p1">statistics about metrics such as size and number of resources; Table <span class="s2">7.1 </span>summarizes these metrics.</p>
+<p class="p1">The statistics are collected from a sample of several billion pages detected during Google’s crawl and</p>
+<p class="p1">indexing pipeline.</p>
+<p class="p1">Such statistics are useful for tuning the transport protocols to deliver optimal performance in terms</p>
+<p class="p1">of latency and throughput. <span class="s3">HTTP</span>, the application protocol forWeb browsers, uses TCP, which supports</p>
+<p class="p1">mechanisms to limit the amount of data transported over the network to avoid congestion. Metrics,</p>
+<p class="p1">such as the average size of a page or the number of GET operations, are useful to explain the results</p>
+<p class="p1">of performance measurements carried out on existing systems and to propose changes to optimize the</p>
+<p class="p1">performance, as discussed next.</p>
+<p class="p1">Another example illustrating the need for the networking infrastructure to adapt to new requirements</p>
+<p class="p1">is the TCP initial congestionwindow. Before we analyze this problem in depth, we reviewtwo important</p>
+<p class="p1">mechanisms to control data transport, called flow control and congestion control. TCP seeks to achieve</p>
+<p class="p1">high channel utilization, avoid congestion, and, at the same time, ensure a fair sharing of the network</p>
+<p class="p1">bandwidth.</p>
+<p class="p1">TCP uses a sliding window flow control protocol. If <span class="s4">W </span>is the window size, then the data rate <span class="s4">S </span>of</p>
+<p class="p1">the sender is:</p>
+<p class="p3">S = W   <span class="s5">MSS</span></p>
+<p class="p1">RTT</p>
+<p class="p1">bps <span class="s4">= W</span></p>
+<p class="p1">RTT</p>
+<p class="p1">packets<span class="s4">/</span>second<span class="s4">,</span></p>
+<p class="p1">where MSS and RTT denote the maximum segment size and the round-trip time, respectively. If</p>
+<p class="p1"><span class="s4">S </span>is too, small, the transmission rate is smaller than the channel capacity, whereas a large <span class="s4">S </span>leads to</p>
+<p class="p1">congestion. The channel capacity in the case of communication over the Internet is not a fixed quantity,</p>
+<p class="p1">but, as different physical channels are shared among many flows, it depends on the load of the network.</p>
+<p class="p1">The actual window size <span class="s4">W </span>is affected by two factors: (a) the ability of the receiver to accept new</p>
+<p class="p1">data and (b) the sender’s estimation of the available network capacity. The receiver specifies the amount</p>
+<p class="p1">of additional data it is willing to accept in the <span class="s4">receive window </span>field of every frame; the receive window</p>
+<p class="p1">shifts when the receiver receives and acknowledges a new segment of data. When a receiver advertises a</p>
+<p class="p1">window size of zero, the sender stops sending data and starts the persist timer; this timer is used to avoid</p>
+<p class="p1">the deadlock when a subsequent window size update from the receiver is lost. When the persist timer</p>
+<p class="p1">expires, the sender sends a small packet and the receiver responds by sending another acknowledgment</p>
+<p class="p1">containing the new window size. In addition to the flow control provided by the receiver, the sender</p>
+<p class="p1">attempts to infer the available network capacity and to avoid overloading the network. The source uses</p>
+<p class="p1">the losses and the delay to determine the level of congestion. If <span class="s4">awnd </span>denotes the receiver window and</p>
+<p class="p1"><span class="s4">cwnd </span>the congestion window set by the sender, the actual window should be:</p>
+<p class="p3">W = <span class="s5">min </span>(cwnd, awnd).</p>
+<p class="p1">Several algorithms are used to calculate <span class="s4">cwnd</span>, including Tahoe and Reno, developed by Jacobson in 1988</p>
+<p class="p1">and 1990. Tahoe was based on slow-start (SS), congestion avoidance (CA), and fast retransmit (FR); the</p>
+<p class="p1">sender probes the network for spare capacity and detects congestion based on loss. The slow start means</p>
+<p class="p1">that the sender starts with a window of two times MSS, <span class="s4">init</span>_<span class="s4">cwnd = </span>1; for every packet acknowledged,</p>
+<p class="p1">the congestion window increases by 1MSS so that the congestion window effectively doubles for every</p>
+<p class="p1">RTT. When the congestion window exceeds the threshold, <span class="s4">cwnd   ssthresh</span>, the algorithm enters the</p>
+<p class="p1">congestion avoidance state; in CA state, on each successful acknowledgment <span class="s4">cwnd ← cwnd+</span>1<span class="s4">/cwnd</span></p>
+<p class="p1">and on each RTT <span class="s4">cwnd ← cwnd + </span>1. The fast retransmit is motivated by the fact that the time out is</p>
+<p class="p1">too long, so a sender retransmits immediately after three duplicate acknowledgments without waiting for a timeout; two adjustments are then made:</p>
+<p class="p3">flightsize = <span class="s5">min </span>(awnd, cwnd) <span class="s5">and </span>ssthresh ← <span class="s5">max </span>(flightsize/<span class="s5">2</span>, <span class="s5">2</span>)</p>
+<p class="p1">and the system enters in the slow-start state, <span class="s4">cwnd = </span>1.</p>
+<p class="p1">The pseudocode describing the Tahoe algorithm is:</p>
+<p class="p4">for every ACK {</p>
+<p class="p4">if (W &lt; ssthresh) then W++ (SS)</p>
+<p class="p4">else W += 1/W (CA)</p>
+<p class="p4">}</p>
+<p class="p4">for every loss {</p>
+<p class="p4">ssthresh = W/2</p>
+<p class="p4">W = 1</p>
+<p class="p4">}</p>
+<p class="p1">The pattern of usage of the Internet has changed. Measurements reported by different sources [<span class="s2">108</span>]</p>
+<p class="p1">show that in 2009 the average bandwidth of an Internet connection was 1<span class="s4">.</span>7 Mbps; more than 50% of</p>
+<p class="p1">the traffic required more than 2 Mbps and could be considered broadband, whereas only about 5% of</p>
+<p class="p1">the flows required less that 256 Kbps and could be considered narrowband. Recall that the averageWeb</p>
+<p class="p1">page size is in the range of 384 KB.</p>
+<p class="p1">Although the majority of Internet traffic is due to long-lived, bulk data transfer (e.g., video streaming</p>
+<p class="p1">and audio streaming), the majority of transactions are short lived (e.g., Web requests). So a major</p>
+<p class="p1">challenge is to ensure some fairness for short-lived transactions.</p>
+<p class="p1">To overcome the limitations of the slow-start application, strategies have been developed to reduce</p>
+<p class="p1">the time to download data over the Internet. For example, two browsers, Firefox 3 and Google Chrome,</p>
+<p class="p1">open up to six TCP connections per domain to increase the parallelism and to boost startup performance</p>
+<p class="p1">in downloading aWeb page. Internet Explorer 8 opens 180 connections. Clearly, these strategies circumvent</p>
+<p class="p1">the mechanisms for congestion control and incur a considerable overhead. It is argued that a better</p>
+<p class="p1">solution is to increase the initial congestion window of TCP, and the arguments presented in [<span class="s2">108</span>] are:</p>
+<p class="p1">• The TCP latency is dominated by the number of RTTs during the slow-start phase<span class="s6">4</span>; increasing the</p>
+<p class="p1"><span class="s4">init</span>_<span class="s4">cwnd </span>parameter allows the data transfer to be completed with fewer RTTs.</p>
+<p class="p1">• Given that the average page size is 384 KB, a single TCP connection requires multiple RTTs to</p>
+<p class="p1">download a single page.</p>
+<p class="p1">• It ensures fairness between short-lived transactions that are the majority of Internet transfers and the</p>
+<p class="p1">long-lived transactions that transfer very large amounts of data.</p>
+<p class="p1">• It allows faster recovery after losses through fast retransmission.</p>
+<p class="p1">In the experiments reported in [<span class="s2">108</span>] the TCP latency was reduced from about 490 msec when</p>
+<p class="p1"><span class="s4">init</span>_<span class="s4">cwnd = </span>3 to about 466 msec for <span class="s4">init</span>_<span class="s4">cwnd = </span>16.</p>
+</body>
+</html>

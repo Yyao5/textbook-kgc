@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 6.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 7.5px Helvetica}
+    span.s3 {font: 7.5px Times}
+    span.s4 {font: 10.0px Helvetica}
+    span.s5 {font: 10.0px Times}
+    span.s6 {font: 6.0px Helvetica}
+    span.s7 {font: 6.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">The cloud service discussed in this section, see also [<span class="s1">52</span>], is an alternative to the distributed trust</p>
+<p class="p1">management scheme analyzed in Section <span class="s1">11.10</span>. mobile devices are ubiquitous nowadays and their use</p>
+<p class="p1">will continue to increase. Clouds are emerging as the computing and storage engines of the future for</p>
+<p class="p1">a wide range of applications. There is a symbiotic relationship between the two; mobile devices can</p>
+<p class="p1">consume as well as produce very large amounts of data, whereas computer clouds have the capacity</p>
+<p class="p1">to store and deliver such data to the user of a mobile device. To exploit the potential of this symbiotic</p>
+<p class="p1">relationship, we propose a new cloud service for the management of wireless networks.</p>
+<p class="p1">Mobile devices have limited resources; new generations of smartphones and tablet computers are</p>
+<p class="p1">likely to use multicore processors and have a fair amount of memory, but power consumption is still and</p>
+<p class="p1">will continue to be a major concern; thus, it seems reasonable to delegate and data-intensive tasks to the</p>
+<p class="p1">cloud. The motivation for this application is to reduce the power consumption of the mobile devices.</p>
+<p class="p1">Transferring computations related to CRN management to a cloud supports the development of</p>
+<p class="p1">new, possibly more accurate, resource management algorithms. For example, algorithms to discover communication channels currently in use by a primary transmitter could be based on past history but are</p>
+<p class="p1">not feasible when the trust is computed by the mobile device. Such algorithms require massive amounts</p>
+<p class="p1">of data and can also identify malicious nodes with high probability.</p>
+<p class="p1">Mobile devices such as smartphones and tablets are able to communicate using two networks: (i)</p>
+<p class="p1">a cellular wireless network; and (ii) a Wi-Fi network. The service we propose assumes that a mobile</p>
+<p class="p1">device uses the cellular wireless network to access the cloud, whereas the communication over the</p>
+<p class="p1">Wi-Fi channel is based on cognitive radio (CR). The amount of data transferred using the cellular</p>
+<p class="p1">network is limited by the subscriber’s data plan, but no such limitation exists for the Wi-Fi network.</p>
+<p class="p1">The cloud service, discussed next, will allow mobile devices to use theWi-Fi communication channels</p>
+<p class="p1">in a cognitive radio network environment and will reduce the operating costs for end users.</p>
+<p class="p1">Although the focus of our discussion is on trust management for CRNs, the cloud service we propose</p>
+<p class="p1">can be used for tasks other than bandwidth management; for example, routing in mobile ad hoc networks,</p>
+<p class="p1">detection and isolation of noncooperative nodes, and other network management and monitoring</p>
+<p class="p1">functions could benefit from the identification of malicious nodes.</p>
+<p class="p1">Model Assumptions. The cognitive radio literature typically analyzes networks with a relatively small</p>
+<p class="p1">number of nodes and active in a limited geographic area; thus, all nodes in the network sense the same</p>
+<p class="p1">information on channel occupancy. Channel impairments, such as signal fading, noise, and so on cause</p>
+<p class="p1">errors and lead trustworthy nodes to report false information. We consider networks with a much</p>
+<p class="p1">larger number of nodes distributed over a large geographic area; as the signal strength decays with the</p>
+<p class="p1">distance, we consider several rings around a primary tower. We assume a generic fading model given</p>
+<p class="p1">by the following expression:</p>
+<p class="p2">γ <span class="s2">i</span></p>
+<p class="p3">k</p>
+<p class="p2">= T<span class="s2">k </span>  A<span class="s3">2</span></p>
+<p class="p3"><span class="s4">s</span>α</p>
+<p class="p3">ik</p>
+<p class="p1">(11.10)</p>
+<p class="p1">where <span class="s4">γ </span><span class="s2">i</span></p>
+<p class="p1"><span class="s2">k </span>is the received signal strength on channel <span class="s4">k </span>at location of node <span class="s4">i , A </span>is the frequency constant,</p>
+<p class="p1">2 <span class="s4">  α   </span>6 is path loss factor, <span class="s4">s</span><span class="s2">α</span></p>
+<p class="p1"><span class="s2">ik </span>is the distance between primary tower <span class="s4">P</span><span class="s2">k </span>and node <span class="s4">i </span>, and <span class="s4">T</span><span class="s2">k </span>is the</p>
+<p class="p1">transition power of primary tower <span class="s4">P</span><span class="s2">k </span>transmitting on channel <span class="s4">k</span>.</p>
+<p class="p1">In our discussion we assume that there are <span class="s4">K </span>channels labeled 1<span class="s4">, </span>2<span class="s4">, . . . , K </span>and a primary transmitter</p>
+<p class="p1"><span class="s4">P</span><span class="s2">k </span>transmits on channel <span class="s4">k</span>. The algorithm is based on several assumptions regarding the secondary</p>
+<p class="p1">nodes, the behavior of malicious nodes, and the geometry of the system. First, we assume that the</p>
+<p class="p1">secondary nodes:</p>
+<p class="p1">• Are mobile devices; some are slow-moving, others are fast-moving.</p>
+<p class="p1">• Cannot report their position because they are not equipped with a global positioning system (GPS).</p>
+<p class="p1">• The clocks of the mobile devices are not synchronized.</p>
+<p class="p1">• The transmission and reception range of a mobile device can be different.</p>
+<p class="p1">• The transmission range depends on the residual power of each mobile device.</p>
+<p class="p1">We assume that the malicious nodes in the network are a minority and their behavior is captured by the</p>
+<p class="p1">following assumptions:</p>
+<p class="p1">• The misbehaving nodes are malicious rather than selfish; their only objective is to hinder the activity</p>
+<p class="p1">of other nodes whenever possible, a behavior distinct from the one of selfish nodes motivated to gain</p>
+<p class="p1">some advantage.</p>
+<p class="p1">• The malicious nodes are uniformly distributed in the area we investigate.</p>
+<p class="p1">• The malicious nodes do not collaborate in their attack strategies.</p>
+<p class="p1">• The malicious nodes change the intensity of their Byzantine attack in successive time slots. Similar</p>
+<p class="p1">patterns of malicious behavior are easy to detect, and an intelligent attacker is motivated to avoid</p>
+<p class="p1">detection.</p>
+<p class="p1">The geometry of the system is captured by Figure <span class="s1">11.13</span>. We distinguish primary and secondary nodes</p>
+<p class="p1">and the cell towers used by the secondary nodes to communicate with service running on the cloud.</p>
+<p class="p1">We use a majority voting rule for a particular ring around a primary transmitter. The global decision</p>
+<p class="p1">regarding the occupancy of a channel requires a majority of the votes. Since the malicious nodes are a</p>
+<p class="p1">minority and they are uniformly distributed, the malicious nodes in any ring are also a minority; thus,</p>
+<p class="p1">a ring-based majority fusion is a representative of accurate occupancy for the channel associated with</p>
+<p class="p1">the ring.</p>
+<p class="p1">All secondary nodes are required to register first and then to transmit periodically their current power</p>
+<p class="p1">level, as well as their occupancy report for each one of the <span class="s4">K </span>channels. As mentioned in the introductory</p>
+<p class="p1">discussion, the secondary nodes connect to the cloud using the cellular network. After a mobile device</p>
+<p class="p1">is registered, the cloud application requests the cellular network to detect its location. The towers of</p>
+<p class="p1">the cellular network detect the location of a mobile device by triangulation with an accuracy that is</p>
+<p class="p1">a function of the environment and is of the order of 10 meters. The location of the mobile device is</p>
+<p class="p1">reported to the cloud application every time it provides an occupancy report.</p>
+<p class="p1">The nodes that do not participate in the trust computation will not register in this cloud-based version</p>
+<p class="p1">of the resource management algorithm; thus, they do not get the occupancy report and cannot use it to</p>
+<p class="p1">identify free channels. Obviously, if a secondary node does not register, it cannot influence other nodes</p>
+<p class="p1">and prevent them from using free channels, or tempt them to use busy channels.</p>
+<p class="p1">In the registration phase a secondary node transmits its MAC address and the cloud responds with</p>
+<p class="p1">the tuple <span class="s4">( , δ</span><span class="s2">s </span><span class="s4">)</span>. Here, <span class="s4">  </span>is the time interval between two consecutive reports, chosen to minimize</p>
+<p class="p1">the communication as well as the overhead for sensing the status of each channel. To reduce the</p>
+<p class="p1">communication overhead, secondary nodes should only transmit the changes from the previous status</p>
+<p class="p1">report. <span class="s4">δ</span><span class="s2">s </span><span class="s4">&lt;   </span>is the time interval to the first report expected from the secondary node. This scheme</p>
+<p class="p1">provides a pseudo-synchronization so that the data collected by the cloud, and used to determine the</p>
+<p class="p1">trust is, based on observations made by the secondary nodes at about the same time.</p>
+<p class="p1">An Algorithm for Trust Evaluation Based on Historical Information. The cloud computes the</p>
+<p class="p1">probable distance <span class="s4">d</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">i </span>of each secondary node <span class="s4">i </span>from the known location of a primary transmitter, <span class="s4">P</span><span class="s2">k </span>.</p>
+<p class="p1">Based on signal attenuation properties we conceptualize <span class="s4">N </span>circular rings centered at the primary, where</p>
+<p class="p1">each ring is denoted by <span class="s4">R</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">r </span>, with 1 <span class="s4">  r   N </span>the ring number. The radius of a ring is based on the</p>
+<p class="p1">distance <span class="s4">d</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">r </span>to the primary transmitter <span class="s4">P</span><span class="s2">k </span>. A node at a distance <span class="s4">d</span><span class="s2">k</span></p>
+<p class="p3">i <span class="s4">  d</span>k</p>
+<p class="p1"><span class="s3">1 </span>is included in the ring <span class="s4">R</span><span class="s2">k</span></p>
+<p class="p1"><span class="s3">1</span>,</p>
+<p class="p1">nodes at distance <span class="s4">d</span><span class="s2">k</span></p>
+<p class="p2"><span class="s3">1 </span>&lt; d<span class="s2">k</span></p>
+<p class="p3">i <span class="s4">  d</span>k</p>
+<p class="p1"><span class="s3">2 </span>are included in the ring <span class="s4">R</span><span class="s2">k</span></p>
+<p class="p1"><span class="s3">2</span>, and so on. The closer to the primary, the</p>
+<p class="p1">more accurate the channel occupancy report of the nodes in the ring should be. Call <span class="s4">n</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">r </span>the number of</p>
+<p class="p1">nodes in ring <span class="s4">R</span><span class="s2">k</span></p>
+<p class="p3">r <span class="s5">.</span></p>
+<p class="p1">At each report cycle at time <span class="s4">t</span><span class="s2">q </span>, the cloud computes the occupancy report for channel 1 <span class="s4">  k   K</span>used</p>
+<p class="p1">by primary transmitter <span class="s4">P</span><span class="s2">k </span>. The status of channel <span class="s4">k </span>reported by node <span class="s4">i ∈ R</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">r </span>is denoted as <span class="s4">s</span><span class="s2">k</span></p>
+<p class="p3">i <span class="s4">(t</span>q <span class="s4">)</span><span class="s5">.</span></p>
+<p class="p1">Call <span class="s4">σ</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">one</span><span class="s4">(t</span><span class="s2">q </span><span class="s4">) </span>the count of the nodes in the ring <span class="s4">R</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">r </span>reporting that the channel <span class="s4">k </span>is not free (reporting</p>
+<p class="p3"><span class="s4">s</span>k</p>
+<p class="p1"><span class="s2">i </span><span class="s4">(t</span><span class="s2">q </span><span class="s4">) = </span>1) and <span class="s4">σ</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">zero</span><span class="s4">(t</span><span class="s2">q </span><span class="s4">) </span>the count of those reporting that the channel is free (reporting <span class="s4">s</span><span class="s2">k</span></p>
+<p class="p2"><span class="s2">i </span>(t<span class="s2">q </span>) = <span class="s5">0):</span></p>
+<p class="p3"><span class="s4">σ</span>k</p>
+<p class="p2"><span class="s2">one</span>(t<span class="s2">q </span>) =  </p>
+<p class="p4"><span class="s2">n</span>k</p>
+<p class="p4">r</p>
+<p class="p3">i=<span class="s3">1</span><span class="s4">s</span>k</p>
+<p class="p3">i <span class="s4">(t</span>q <span class="s4">) </span><span class="s5">and </span><span class="s4">σ</span>k</p>
+<p class="p3">zero<span class="s4">(t</span>q <span class="s4">) = n</span>k</p>
+<p class="p3">r</p>
+<p class="p2">− σ<span class="s2">k</span></p>
+<p class="p1"><span class="s2">one</span><span class="s4">(t</span><span class="s2">q </span><span class="s4">). </span>(11.11)</p>
+<p class="p1">Then, the status of channel <span class="s4">k </span>reported by the nodes in the ring <span class="s4">R</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">r </span>is determined by majority voting as</p>
+<p class="p3"><span class="s4">σ</span>kR</p>
+<p class="p2"><span class="s6">r </span>(t<span class="s2">q </span>)</p>
+<p class="p2"> </p>
+<p class="p1"><span class="s4">= </span>1 when <span class="s4">σ</span><span class="s2">k</span></p>
+<p class="p2"><span class="s2">one</span>(t<span class="s2">q </span>)   σ<span class="s2">k</span></p>
+<p class="p3">zero<span class="s4">(t</span>q <span class="s4">).</span></p>
+<p class="p1"><span class="s4">= </span>0 otherwise<span class="s4">.</span></p>
+<p class="p1">(11.12)</p>
+<p class="p1">To determine the trust in node <span class="s4">i </span>we compare <span class="s4">s</span><span class="s2">k</span></p>
+<p class="p3">i <span class="s4">(t</span>q <span class="s4">) </span><span class="s5">with </span><span class="s4">σ</span>kR</p>
+<p class="p4">r</p>
+<p class="p1"><span class="s4">(t</span><span class="s2">q </span><span class="s4">)</span>; call <span class="s4">α</span><span class="s2">k</span></p>
+<p class="p3">i ,r <span class="s4">(t</span>q <span class="s4">) </span><span class="s5">and </span><span class="s4">β</span>k</p>
+<p class="p1"><span class="s2">i ,r </span><span class="s4">(t</span><span class="s2">q </span><span class="s4">) </span>the number</p>
+<p class="p1">of matches and, respectively, mismatches in this comparison for each node in the ring <span class="s4">R</span><span class="s2">k</span></p>
+<p class="p1"><span class="s2">r </span>. We repeat</p>
+<p class="p1">this procedure for all rings around <span class="s4">P</span><span class="s2">k </span>and construct</p>
+<p class="p3"><span class="s4">α</span>k</p>
+<p class="p2"><span class="s2">i </span>(t<span class="s2">q </span>) =  </p>
+<p class="p4"><span class="s2">n</span>k</p>
+<p class="p4">r</p>
+<p class="p3">r=<span class="s3">1</span><span class="s4">α</span>k</p>
+<p class="p3">i ,r <span class="s4">(t</span>q <span class="s4">) </span><span class="s5">and </span><span class="s4">β</span>k</p>
+<p class="p2"><span class="s2">i </span>(t<span class="s2">q </span>) =  </p>
+<p class="p4"><span class="s2">n</span>k</p>
+<p class="p4">r</p>
+<p class="p3">r=<span class="s3">1</span><span class="s4">β</span>k</p>
+<p class="p1"><span class="s2">i ,r </span><span class="s4">(t</span><span class="s2">q </span><span class="s4">). </span>(11.13)</p>
+<p class="p1">Node <span class="s4">i </span>will report the status of the channels in the set <span class="s4">C</span><span class="s2">i </span><span class="s4">(t</span><span class="s2">q </span><span class="s4">)</span>, the channels with index <span class="s4">k ∈ C</span><span class="s2">i </span><span class="s4">(t</span><span class="s2">q </span><span class="s4">)</span>; then,</p>
+<p class="p2"><span class="s5">the quantities </span>α<span class="s2">i </span>(t<span class="s2">q </span>) <span class="s5">and </span>β<span class="s2">i </span>(t<span class="s2">q </span>) <span class="s5">with </span>α<span class="s2">i </span>(t<span class="s2">q </span>) + β<span class="s2">i </span>(t<span class="s2">q </span>) = |C<span class="s2">i </span>(t<span class="s2">q </span>)| <span class="s5">are</span></p>
+<p class="p2">α<span class="s2">i </span>(t<span class="s2">q </span>) =  <span class="s2">k∈C</span><span class="s6">i </span>α<span class="s2">k</span></p>
+<p class="p2"><span class="s2">i </span>(t<span class="s2">q </span>) <span class="s5">and </span>β<span class="s2">i </span>(t<span class="s2">q </span>) =  <span class="s2">k∈C</span><span class="s6">i </span>β<span class="s2">k</span></p>
+<p class="p1"><span class="s2">i </span><span class="s4">(t</span><span class="s2">q </span><span class="s4">). </span>(11.14)</p>
+<p class="p1">Finally, the global trust in node <span class="s4">i </span>is</p>
+<p class="p2">ζ<span class="s2">i </span>(t<span class="s2">q </span>) = α<span class="s2">i </span>(t<span class="s2">q </span>)</p>
+<p class="p2">α<span class="s2">i </span>(t<span class="s2">q </span>) + β<span class="s2">i </span>(t<span class="s2">q </span>)</p>
+<p class="p1"><span class="s4">. </span>(11.15)</p>
+<p class="p1">The trust in each node at each iteration is determined using a similar strategy to the one discussed</p>
+<p class="p1">earlier. Its status report, <span class="s4">S</span><span class="s2">j </span><span class="s4">(t)</span>, contains only information about the channels it can report on, and only</p>
+<p class="p1">if the information has changed from the previous reporting cycle.</p>
+<p class="p1">Then, a statistical analysis of the random variables for a window of time <span class="s4">W, ζ</span><span class="s2">j </span><span class="s4">(t</span><span class="s2">q </span><span class="s4">), t</span><span class="s2">q </span><span class="s4">∈ W </span>allows us</p>
+<p class="p1">to compute the moments as well as a 95% confidence interval. Based on these results we assess whether</p>
+<p class="p1">node <span class="s4">j </span>is trustworthy and eliminate the untrustworthy nodes when we evaluate the occupancy map at</p>
+<p class="p1">the next cycle. We continue to assess the trustworthiness of all nodes and may accept the information</p>
+<p class="p1">from node <span class="s4">j </span>when its behavior changes.</p>
+<p class="p1">Let’s now discuss the use of historical information to evaluate trust. We assume a sliding window</p>
+<p class="p1"><span class="s4">W(t</span><span class="s2">q </span><span class="s4">) </span>consists of <span class="s4">n</span><span class="s2">w </span>time slots. Given two decay constants <span class="s4">k</span><span class="s3">1</span>and <span class="s4">k</span><span class="s3">2</span>, with <span class="s4">k</span><span class="s3">1 </span><span class="s4">+ k</span><span class="s3">2 </span><span class="s4">= </span>1, we use an</p>
+<p class="p1">exponential averaging that gives decreasing weight to old observations. We choose <span class="s4">k</span><span class="s3">1 </span><span class="s4">  k</span><span class="s3">2 </span>to give</p>
+<p class="p1">more weight to the past actions of a malicious node. Such nodes attack only intermittently and try to</p>
+<p class="p1">disguise their presence with occasional good reports; the misbehavior should affect the trust more than</p>
+<p class="p1">the good actions. The history-based trust requires the determination of two quantities:</p>
+<p class="p3"><span class="s4">α</span>H</p>
+<p class="p2"><span class="s2">i </span>(t<span class="s2">q </span>) =  </p>
+<p class="p4"><span class="s2">n</span>w−<span class="s7">1</span></p>
+<p class="p2"><span class="s2">i=</span><span class="s3">0 </span>α<span class="s2">i </span>(t<span class="s2">q </span>− iτ)k<span class="s2">i</span><span class="s3">1</span></p>
+<p class="p1">and <span class="s4">β</span><span class="s2">H</span></p>
+<p class="p2"><span class="s2">i </span>(t<span class="s2">q </span>) =  </p>
+<p class="p4"><span class="s2">n</span>w−<span class="s7">1</span></p>
+<p class="p2"><span class="s2">i=</span><span class="s3">0 </span>β<span class="s2">i </span>(t<span class="s2">q </span>− iτ)k<span class="s2">i</span><span class="s3">2</span></p>
+<p class="p1"><span class="s4">. </span>(11.16)</p>
+<p class="p1">Then, the history-based trust for node <span class="s4">i </span>valid only at times <span class="s4">t</span><span class="s2">q </span><span class="s4">  n</span><span class="s2">w</span><span class="s4">τ </span>is:</p>
+<p class="p2">ζ <span class="s2">H</span></p>
+<p class="p2"><span class="s2">i </span>(t<span class="s2">q </span>) = α<span class="s2">H</span></p>
+<p class="p3">i <span class="s4">(t</span>q <span class="s4">)</span></p>
+<p class="p3"><span class="s4">α</span>H</p>
+<p class="p2"><span class="s2">i </span>(t<span class="s2">q </span>) + β<span class="s2">H</span></p>
+<p class="p3">i <span class="s4">(t</span>q <span class="s4">)</span></p>
+<p class="p1"><span class="s4">. </span>(11.17)</p>
+<p class="p1">For times <span class="s4">t</span><span class="s2">q </span><span class="s4">&lt; n</span><span class="s2">w</span><span class="s4">τ </span>the trust will be based only on a subset of observations rather than a full window</p>
+<p class="p1">on <span class="s4">n</span><span class="s2">w </span>observations.</p>
+<p class="p1">This algorithm can also be used in regions in which the cellular infrastructure is missing. An ad</p>
+<p class="p1">hoc network could allow the nodes that cannot connect directly to the cellular network to forward their</p>
+<p class="p1">information to nodes closer to the towers and then to the cloud-based service.</p>
+<p class="p1">Simulation of the History-Based Algorithm for Trust Management. The aim of the history-based</p>
+<p class="p1">trust evaluation is to distinguish between trustworthy and malicious nodes. We expect the ratio of</p>
+<p class="p1">malicious to trustworthy nodes as well as node density to play an important role in this decision. The</p>
+<p class="p1">node density <span class="s4">ρ </span>is the number of nodes per unit of the area. In our simulation experiments the size of the</p>
+<p class="p1">area is constant but the number of nodes increases from 500 to 2<span class="s4">,</span>000; thus, the node density increases</p>
+<p class="p1">by a factor of four. The ratio of the number of malicious to the total number of nodes varies between</p>
+<p class="p1"><span class="s4">α = </span>0<span class="s4">.</span>2 and a worst case of <span class="s4">α = </span>0<span class="s4">.</span>6.</p>
+<p class="p1">The performance metrics we consider are as follows: the average trust for all nodes, the average</p>
+<p class="p1">trust of individual nodes, and the error of honest/trustworthy nodes. We want to see how the algorithm</p>
+<p class="p1">behaves when the density of the nodes increases, so we consider four cases with 500<span class="s4">, </span>1<span class="s4">,</span>000<span class="s4">, </span>1<span class="s4">,</span>500<span class="s4">,</span></p>
+<p class="p1">and 2<span class="s4">,</span>000 nodes on the same area. Thus, we allow the density to increase by a factor of four. We also</p>
+<p class="p1">investigate the average trust when <span class="s4">α</span>, the ratio of malicious nodes to the total number of nodes, increases</p>
+<p class="p1">from <span class="s4">α = </span>0<span class="s4">.</span>2 to <span class="s4">α = </span>0<span class="s4">.</span>4 and, finally, to <span class="s4">α = </span>0<span class="s4">.</span>6.</p>
+<p class="p1">This straightforward data-partitioning strategy for the distributed trust management algorithm is</p>
+<p class="p1">not a reasonable one for the centralized algorithm, because it would lead to excessive communication</p>
+<p class="p1">among the cloud instances. Individual nodes may contribute data regarding primary transmitters in a</p>
+<p class="p1">different subarea; to evaluate the trust of each node, the cloud instances would have to exchange a</p>
+<p class="p1">fair amount of information. This data partitioning would also complicate our algorithm, which groups</p>
+<p class="p1">together secondary nodes based on their distance from the primary one.</p>
+<p class="p1">Instead, we allocate to each instance a number of channels, and all instances share the information</p>
+<p class="p1">about the geographic position of each node. The distance of a secondary node to any primary one can</p>
+<p class="p1">then be easily computed. This data-partitioning strategy scales well in the number of primaries. Thus, it</p>
+<p class="p1">is suitable for simulation in large metropolitan areas, but may not be able to accommodate cases when</p>
+<p class="p1">the number of secondaries is on the order of 10<span class="s3">8</span>–10<span class="s3">9</span>.</p>
+<p class="p1">The objective of our studies is to understand the limitations of the algorithm; the aim of the algorithm</p>
+<p class="p1">is to distinguish between trustworthy and malicious nodes. We expect that the ratio of malicious to</p>
+<p class="p1">trustworthy nodes, as well as the node density should play an important role in this decision. The</p>
+<p class="p1">measures we examine are the average trust for all nodes, as well as the average trust of individual nodes.</p>
+<p class="p2">The effect of the malicious versus trustworthy node ratio on the average trust. <span class="s5">We report the effect</span></p>
+<p class="p1">of the malicious versus trustworthy node ratio on the average trust when the number of nodes increases.</p>
+<p class="p1">The average trust is computed separately for the two classes of nodes and allows us to determine whether</p>
+<p class="p1">the algorithm is able to clearly separate them.</p>
+<p class="p1">Recall that the area is constant; thus, when the number of nodes increases, so does the node density.</p>
+<p class="p1">First we consider two extreme cases: the malicious nodes represent only 20% of the total number of</p>
+<p class="p1">nodes and an unrealistically high presence, 60%. Then we report on the average trust when the number</p>
+<p class="p1">of nodes is fixed and the malicious nodes represent an increasing fraction of the total number of nodes.</p>
+<p class="p1">Results reported in [<span class="s1">52</span>] show that when the malicious nodes represent only 20% of all nodes, there</p>
+<p class="p1">is a clear distinction between the two groups. The malicious nodes have an average trust of 0<span class="s4">.</span>28 and</p>
+<p class="p1">trustworthy nodes have an average trust index of 0<span class="s4">.</span>91, regardless of the number of nodes.</p>
+<p class="p1">When the malicious nodes represent 60% of all the nodes, the number of nodes plays a significant</p>
+<p class="p1">role; when the number of nodes is small, the two groups cannot be distinguished, so their average trust</p>
+<p class="p1">index is almost equal, 0<span class="s4">.</span>55, although the honest nodes have a slightly larger average trust value. When</p>
+<p class="p1">the number of nodes increases to 2<span class="s4">,</span>000 and node density increases fourfold, the average trust of the</p>
+<p class="p1">malicious group decreases to 0<span class="s4">.</span>45 and for the honest group it increases to about 0<span class="s4">.</span>68.</p>
+<p class="p1">This result is not unexpected; it only shows that the history-based algorithm is able to classify the</p>
+<p class="p1">nodes properly, even when the malicious nodes are a majority, a situation we do not expect to encounter</p>
+<p class="p1">in practice. This effect is somewhat surprising; we did not expect that under these extreme conditions</p>
+<p class="p1">the average of the trust of all nodes would be so different for the two groups. A possible explanation</p>
+<p class="p1">is that our strategy to reward constant good behavior rather than occasional good behavior, designed to</p>
+<p class="p1">mask the true intentions of a malicious node, works well.</p>
+<p class="p1">Figures <span class="s1">11.14</span>(a) and (b) shows the average trust function of <span class="s4">α</span>, the ratio of malicious versus total</p>
+<p class="p1">number of nodes. The results confirm the behavior discussed earlier. We see a clear separation of the</p>
+<p class="p1">two classes only when the malicious nodes are in the minority. When the density of malicious nodes</p>
+<p class="p1">approaches a high value so that they are in the majority, the algorithm still performs, as is evident from</p>
+<p class="p1">the figures. The average trust for honest nodes even at high value of <span class="s4">α </span>is larger than the trust of malicious</p>
+<p class="p1">nodes. Thus, the trusts allows the identification of malicious nodes.We also observe that the distinction</p>
+<p class="p1">between the two classes of nodes is more clear when the number of nodes in the network increases.</p>
+<p class="p2">The benefits of a cloud-based service for trust management. <span class="s5">A cloud service for trust management</span></p>
+<p class="p1">in cognitive networks can have multiple technical as well as economic benefits [<span class="s1">74</span>]. The service is</p>
+<p class="p1">likely to have a broader impact than the one discussed here, and it could be used to support a range of</p>
+<p class="p1">important policies in a wireless network where many decisions require the cooperation of all nodes.</p>
+<p class="p1">A history-based algorithm to evaluate the trust and detect malicious nodes with high probability is at</p>
+<p class="p1">the center of the solution we have proposed [<span class="s1">52</span>].</p>
+<p class="p1">A centralized, history-based algorithm for bandwidth management in CRNs has several advantages</p>
+<p class="p1">over the distributed algorithms discussed in the literature:</p>
+<p class="p1">• Drastically reduces the computations a mobile device is required to carry out to identify free channels</p>
+<p class="p1">and avoid penalties associated with interference with primary transmitters.</p>
+<p class="p1">• Allows a secondary node to get information about channel occupancy as soon as it joins the system,</p>
+<p class="p1">and later on demand. This information is available even when a secondary node is unable to receive</p>
+<p class="p1">reports from its neighbors, or when it is isolated.</p>
+<p class="p1">• Does not require the large number of assumptions critical to the distributed algorithms.</p>
+<p class="p1">• The dishonest nodes can be detected with high probability and their reports can be ignored; thus,</p>
+<p class="p1">over time the accuracy of the results increases. Moreover, historic data could help detect a range of</p>
+<p class="p1">Byzantine attacks orchestrated by a group of malicious nodes.</p>
+<p class="p1">• Is very likely to produce more accurate results than the distributed algorithm because the reports are</p>
+<p class="p1">based on information from all secondary nodes reporting on a communication channel used by a</p>
+<p class="p1">primary, not only those in its vicinity; a higher node density increases the accuracy of the predictions.</p>
+<p class="p1">The accuracy of the algorithm is a function of the frequency of the occupancy reports provided by</p>
+<p class="p1">the secondary nodes.</p>
+<p class="p1">The centralized trust management scheme has several other advantages. First, it can be used not only</p>
+<p class="p1">to identify malicious nodes and provide channel occupancy reports, but also to manage the allocation</p>
+<p class="p1">of free channels. In the distributed case, two nodes may attempt to use a free channel and collide; this</p>
+<p class="p1">situation is avoided in the centralized case. At the same time, malicious nodes can be identified with</p>
+<p class="p1">high probability and be denied access to the occupancy report.</p>
+<p class="p1">The server could also collect historic data regarding the pattern of behavior of the primary nodes</p>
+<p class="p1">and use this information for the management of free channels. For example, when a secondary requests</p>
+<p class="p1">access for a specific length of time, the service may attempt to identify a free channel likely to be</p>
+<p class="p1">available for that time.</p>
+<p class="p1">The trust management may also be extended to other network operations such as routing in a mobile</p>
+<p class="p1">ad hoc network; the strategy in this case would be to avoid routing through malicious nodes.</p>
+</body>
+</html>

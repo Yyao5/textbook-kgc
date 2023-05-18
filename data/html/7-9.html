@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {color: #000066}
+    span.s4 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Computer clouds support not only network-centric computing, but also network-centric content. For</p>
+<p class="p1">example, we shall see in Chapter 8 that in 2013 Internet video is expected to generate over 18 exabytes</p>
+<p class="p1">of data per month. The vast amount of data stored on the cloud has to be delivered efficiently to a large</p>
+<p class="p1">user population.</p>
+<p class="p1">Content-delivery networks (CDNs) offer fast and reliable content delivery and reduce the communication</p>
+<p class="p1">bandwidth by caching and replication. A CDN receives the content from an <span class="s1">origin </span>server, then replicates</p>
+<p class="p1">it to its <span class="s1">edge </span>cache servers. The content is delivered to an end user from the “closest” edge server.</p>
+<p class="p1">CDNs are designed to support scalability, increase reliability and performance, and provide better</p>
+<p class="p1">security. The volume of transactions and data transported by the Internet increases dramatically every</p>
+<p class="p1">year. Additional resources are necessary to accommodate the additional load placed on communication</p>
+<p class="p1">and storage systems and to improve the end-user experience. CDNs place additional resources provisioned</p>
+<p class="p1">to absorb the traffic caused by <span class="s1">flash crowds</span><span class="s2">7 </span>and, in general, to provide capacity on demand.</p>
+<p class="p1">The additional resources are placed strategically throughout the Internet to ensure scalability. The</p>
+<p class="p1">resources provided by a CDN are replicated, and when one of the replicas fails, the content is available</p>
+<p class="p1">from another one. The replicas are “close” to the consumers of the content, and this placement reduces</p>
+<p class="p1">the startup time and the communication bandwidth. A CDN uses two types of server: the <span class="s1">origin </span>server</p>
+<p class="p1">updated by the content provider and <span class="s1">replica </span>servers that cache the content and serve as an authoritative</p>
+<p class="p1">reference for client requests. Security is a critical aspect of the services provided by aCDN; the replicated</p>
+<p class="p1">content should be protected from the increased risk of cyber fraud and unauthorized access.</p>
+<p class="p1">A CDN can deliver static content and/or live or on-demand streaming media. <span class="s1">Static content </span>refers</p>
+<p class="p1">to media that can be maintained using traditional caching technologies because changes are infrequent.</p>
+<p class="p1">Examples of static content are HTML pages, images, documents, software patches, and audio and/or</p>
+<p class="p1">video files. <span class="s1">Live media </span>refers to live events during which the content is delivered in real time from the</p>
+<p class="p1">encoder to the media server. On-demand delivery of audio and/or video streams, movie files, and music</p>
+<p class="p1">clips provided to end users is content-encoded and then stored on media servers. Virtually all CDN</p>
+<p class="p1">providers support static content delivery, whereas live or on-demand streaming media are considerably</p>
+<p class="p1">more challenging.</p>
+<p class="p1">The first CDN was set up by <span class="s1">Akamai</span>, a company evolved from a Massachusetts Institute of Technology</p>
+<p class="p1">(MIT) project to optimize network traffic. <span class="s1">Akamai </span>has placed some 20<span class="s1">,</span>000 servers in 1<span class="s1">,</span>000</p>
+<p class="p1">networks in 71 countries since its inception. In 2009 it controlled some 85% of the market [<span class="s3">285</span>].</p>
+<p class="p1"><span class="s1">Akamai </span>mirrors the contents of clients on multiple systems placed strategically through the Internet.</p>
+<p class="p1">Though the domain name (but not the subdomain) is the same, the IP address of the resource requested</p>
+<p class="p1">by a user points to an <span class="s1">Akamai </span>server rather than the customer’s server. Then the <span class="s1">Akamai </span>server is</p>
+<p class="p1">automatically picked, depending on the type of content and the network location of the end user.</p>
+<p class="p1">There are several other active commercial CDNs, including <span class="s1">EdgeStream</span>, which provides video</p>
+<p class="p1">streaming, and <span class="s1">Limelight Networks</span>, which provides distributed on-demand and live delivery of video,</p>
+<p class="p1">music, and games. There are several academic CDNs: <span class="s1">Coral </span>is a freely available network designed to</p>
+<p class="p1">mirror Web content, hosted on PlanetLab; <span class="s1">Globule </span>is an open-source collaborative CDN developed at</p>
+<p class="p1">the Vrije Universiteit in Amsterdam.</p>
+<p class="p1">The communication infrastructure among different CDN components uses a fair number of protocols,</p>
+<p class="p2"><span class="s4">including </span>Network Element Control Protocol <span class="s4">(NECP), </span>Web Cache Coordination Protocol <span class="s4">(WCCP),</span></p>
+<p class="p2">SOCKS<span class="s4">, </span>Cache Array Routing Protocol <span class="s4">(CARP), </span>Internet Cache Protocol <span class="s4">(ICP), </span>Hypertext Caching</p>
+<p class="p1"><span class="s1">Protocol </span>(HTCP), and <span class="s1">Cache Digest</span>, described succinctly in [<span class="s3">285</span>]. For example, caches exchange ICP</p>
+<p class="p1">queries and replies to locate the best sites from which to retrieve an object; HTCP is used to discover</p>
+<p class="p1">HTTP caches, cache data, or manage sets of HTTP caches and monitor cache activity.</p>
+<p class="p1">There are two strategies for CDN organization. In the so-called <span class="s1">overlay</span>, the network core does not</p>
+<p class="p1">play an active role in content delivery. On the other hand, the <span class="s1">network </span>approach requires the routers</p>
+<p class="p1">and the switches to use dedicated software to identify specific application types and to forward user</p>
+<p class="p1">requests based on predefined policies.</p>
+<p class="p1">The first strategy is based exclusively on content replication on multiple caches and redirection based</p>
+<p class="p1">on proximity to the end user. In the second approach, the network core elements redirect content requests</p>
+<p class="p1">to local caches or redirect data center incoming traffic to servers optimized for specific content type</p>
+<p class="p1">access. Some CDNs, including <span class="s1">Akamai</span>, use both strategies.</p>
+<p class="p1">Important design and policy decisions for a CDN are:</p>
+<p class="p1">• The placement of the edge servers.</p>
+<p class="p1">• The content selection and delivery.</p>
+<p class="p1">• The content management.</p>
+<p class="p1">• The request routing policies.</p>
+<p class="p1">The placement problem is often solved with suboptimal heuristics using workload patterns and</p>
+<p class="p1">network topology as inputs. The simplest, but a costly, approach for content selection and delivery is</p>
+<p class="p1"><span class="s1">full-site </span>replication, suitable for static content. The edge servers replicate the entire content of the origin</p>
+<p class="p1">server. On the other hand, <span class="s1">partial-site </span>selection and delivery retrieve the base HTML page from the</p>
+<p class="p1">origin server and the objects referenced by this page from the edge caches. The objects can be replicated</p>
+<p class="p1">based on their popularity or on some heuristics.</p>
+<p class="p1">Content management depends on the caching techniques, cache maintenance, and cache update</p>
+<p class="p1">policies. CDNs use several strategies to manage the consistency of content at replicas: periodic updates,</p>
+<p class="p1">updates triggered by the content change, and on-demand updates.</p>
+<p class="p1">The request routing in a CDN directs users to the closest edge server that can best serve the request;</p>
+<p class="p1">metrics such as network proximity, client perceived latency, distance, and replica server load are taken</p>
+<p class="p1">into account in routing a request. Round-robin is a nonadaptive request-routing method that aims to</p>
+<p class="p1">balance the load; it assumes that all edge servers have similar characteristics and can deliver the content.</p>
+<p class="p1">Adaptive algorithms perform considerably better but are more complex and require some knowledge</p>
+<p class="p1">of the current state of the system. The algorithm used by <span class="s1">Akamai </span>takes into consideration metrics such</p>
+<p class="p1">as the load of the edge server, the bandwidth currently available to a replica server, and the reliability.</p>
+<p class="p1">CDN routing can exploit an organization in which several edge servers are connected to a service</p>
+<p class="p1">node that’s aware of the load and the information about each edge server connected to it and attempts</p>
+<p class="p1">to implement a <span class="s1">global load-balancing policy</span>. An alternative is <span class="s1">DNS-based routing</span>, in which a domain</p>
+<p class="p1">name has multiple IP addresses associated with it and the service provider’s DNS server returns the IP</p>
+<p class="p1">addresses of the edge servers holding the replica of the requested object; then the client’s DNS server</p>
+<p class="p1">chooses one of them.</p>
+<p class="p1">Another alternative is <span class="s1">HTTP redirection</span>; in this case a Web server includes in the HTTP header of</p>
+<p class="p1">a response to a client the address of another edge server. Finally, <span class="s1">IP any casting </span>requires that the same</p>
+<p class="p1">IP address is assigned to several hosts, and the routing table of a router contains the address of the host</p>
+<p class="p1">closest to it.</p>
+<p class="p1">The critical metrics of CDN performance are:</p>
+<p class="p1">• Cache hit ratio, which is the ratio of the number of cached objects versus total number of objects</p>
+<p class="p1">requested.</p>
+<p class="p1">• Reserved bandwidth for the origin server.</p>
+<p class="p1">• Latency, which is based on the perceived response time by the end users.</p>
+<p class="p1">• Edge server utilization.</p>
+<p class="p1">• Reliability, which is based on packet-loss measurements.</p>
+<p class="p1">CDNs will face considerable challenges in the future due to increased appeal of data streaming and to</p>
+<p class="p1">the proliferation of mobile devices such as smartphones and tablets. On-demand video streaming requires</p>
+<p class="p1">enormous bandwidth and storage space as well as powerful servers. CDNs for mobile networks must</p>
+<p class="p1">be able to dynamically reconfigure the system in response to spatial and temporal demand variations.</p>
+<p class="p1">The concept of a <span class="s1">content service network (CSN) </span>was introduced in [<span class="s3">226</span>]. CSNs are overlay networks</p>
+<p class="p1">built around CDNs to provide an infrastructure service for processing and transcoding.</p>
+</body>
+</html>

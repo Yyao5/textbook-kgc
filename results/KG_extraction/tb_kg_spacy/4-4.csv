@@ -1,0 +1,115 @@
+,source,edge,target
+0,applications,require,the
+1,description,known as,complex  workflow
+2,we,discuss,traditional transaction systems
+5,task,characterized by several,such  Name
+7,action(s,take,place
+8,that,take,place
+12,exceptions,included in,unanticipated task exception exceptions
+15,Events,included,exception list trigger
+18,task,inherits,some
+19,task,consists of,one start symbol
+20,composite  task,inherits,properties
+21,task,has,name
+23,that,called,just  execution
+26,task,trigger,iterative  execution
+27,fork,exist,several successor tasks
+30,successor task,associated with,condition
+31,conditions,evaluated,tasks
+32,tasks,enabled,true  condition
+33,task,associated with,condition
+34,conditions,evaluated,tasks
+36,n > k successors,selected at random,random
+41,successor,enabled after,n > k predecessors
+42,tasks,Iterative,fork
+43,description,called,also activities execution
+44,description,contains,one start symbol
+45,description,provided in,classical workflow definition constructs
+46,concept  we,resembles,programming
+47,syntactic workflow enactment,corresponds to syntactic,compiled  program
+48,enactment,mirrors,the
+51,model,describes,case
+52,enactment,executes,program
+54,t,defined in,already  time
+55,Events,cause,states
+56,concurrently  state,has,independent  activity
+59,description,provided by,current goal state
+60,workflow that,specify,actions
+62,new workflow description,generated,set post preconditions
+65,space,includes,one  initial
+66,transition system,identifies,possible goal state
+67,case,corresponds to,particular transition system
+68,state,tracks,case
+69,eventually  case,means,process
+71,eventually  case,means,process
+72,process description,violates,4.2(a liveness requirement
+73,process,terminate,B
+75,G,instantiated,process case
+77,F,requires,the
+81,process description,enacted,correctly  cases
+84,we,need,such process safety
+86,actual  enactment,affected by,due resource allocation
+89,A,needs,exclusive resources time
+90,other  task,acquires,same
+92,We,face,undesirable  Figure
+93,when task A,acquires,r
+95,then t2 task B,acquires,q
+96,Then t3 task B,attempts,Then  time
+102,pattern,refers to,temporal  process
+103,languages,have,temporal  relationships
+105,patterns,analyzed in,"1,382"
+106,patterns,classified in several,multiple  instances
+107,patterns,illustrated,Figure
+108,several  tasks,see,one  Figure
+112,pattern,requires several,several  tasks
+114,when  A,activated,Figure
+118,soon  flow,activated,routing node
+119,activities,connected,implicit
+120,conditions,associated with,next  ones
+121,concurrent  activity,requires several,concurrent  activities
+123,only  A,start,Figure
+124,A,terminate,Figure
+125,split,requires,a
+128,several  alternatives,merged into,one
+129,when  A,enabled,Figure
+133,task one,activate,B
+135,construct,allows multiple,concurrent  tasks
+140,When  first,say,B C
+144,pattern,waits for,incoming  branches
+146,all,waits,branches
+148,Next  Figure,resets,Figure
+151,next  task,have,barrier
+154,three  E,have,Figure
+156,explicitly run time environment,made,Figure
+158,Next  we,discuss,goal state
+159,we,consider,initial  system
+160,process pi,characterized by,process preconditions
+164,tial,enables,process
+165,such post conditions,means,next  chain
+166,chain,exists such,one post process
+167,attributes,describe special,special  process
+168,graph,change during,case
+170,Some,refer to,dynamic cost workflow
+174,workflows,described in,WFDL
+175,workflows,need,flexible  approach
+176,We,distinguish,basic workflow enactment
+178,process,acts as,one activity graph
+180,first  we,deploy,several coordination coordinators
+181,i,coordinates,i process group
+182,supervisor,coordinates,−  supervisors
+183,i,provides global,global  coordination
+188,coordinator,respond to,feasible  changes
+190,models,based on,such tuple space
+192,pi,deposits,possibly tuple space
+194,space preconditions,expected,pre(p execution
+198,approach,requires individual,individual tuple space
+200,approach,using,active tuple token
+202,differences,affect,the
+203,contractual  enactment,based,case
+204,emphasis,placed,transactional  model
+206,critical  aspect,maintaining,transactional database consistent
+207,defined  that,consists of,transaction
+208,However process description,change,cloud case
+209,individual  tasks,exhibit,traditional database transactions
+211,goal workflow,roll,different  path
+213,model,used in,often cloud computing

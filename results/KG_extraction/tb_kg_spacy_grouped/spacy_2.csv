@@ -1,0 +1,1001 @@
+,source,edge,target
+1000,images,create,such  hostname
+1001,iv,add,image
+1002,EC2,based_on,Xen virtualization Section
+1003,instance,specifies,available  hour
+1004,user,interact_with,running console output
+1005,user,has,elastic computing EC2
+1006,instances,placed_in_multiple,different  regions
+1007,EC2,allows,virtual user facility
+1008,EC2,distributes,balancing application facility
+1009,EC2,associates,elastic  IP
+1010,user,allows,public software support team
+1011,System,supports,minimal  functions
+1012,S3,allows,five  terabytes
+1013,object,stored_in,assigned  key
+1014,bucket,stored_in,user
+1015,S3,maintains,defined access control object
+1016,rights,granted,other  users
+1017,S3,supports,one  another
+1018,MD52,computes,field
+1019,MD52,written,object
+1020,then  object,corrupted_during,transmission
+1021,SLA,guarantees,reliability
+1022,interface,provided,high scale distribution
+1023,Store,provides_persistent,persistent Amazon EC2 instances
+1024,size,ranges_from,one storage terabyte
+1025,volumes,grouped,automatically availability zone
+1026,instance,mount_multiple,multiple  volumes
+1027,volume,shared_among_multiple,multiple  instances
+1028,EBS,supports,then  instance
+1029,DB,supports,relational  databases
+1030,DB,creates_multiple,distributed data item
+1031,same  DB,manages,hardware data items
+1032,automated  SQS,allows_multiple,multiple SQS messages
+1033,computer,add,installed  software
+1034,Applications,run,same  technologies
+1035,Developers,access,based  SOAP
+1036,anonymously queue sharing,shared_with_other,also IP day
+1037,example,presented_in,message Section
+1038,user,monitor,then  metrics
+1039,user,start,type
+1040,service,used,other RDS DB applications
+1041,Cloud,provides,existing IT organization
+1042,infrastructure,connected_via,isolated AWS compute resources
+1043,existing management capabilities,allows,seamlessly intrusion detection cloud
+1044,Scaling,exploits,automatic EC2 instances
+1045,size,of,group
+1046,Typically  maximum,specified,regular  group
+1047,group,consists_of,static launch configurations
+1048,new  instances,started,launch configuration
+1049,instances,terminated,older launch configurations
+1050,function,carries,Auto Scaling health
+1051,user,specify,health
+1052,then Auto Scaling,terminate,new  one
+1053,Triggers,use,CloudWatch
+1054,CPU  utilization,detect,new  instances
+1055,which,supports,workflow
+1056,that,handles,automatically application monitoring 356
+1057,service,scales,default Auto Scaling settings
+1058,Java developer,create,such Web Application type
+1059,short Management application,will,short Management time
+1060,CloudFormation,allows,application
+1061,text file,creates,configuration resources
+1062,template,parameterized,e.g.  instances
+1063,Amazon that,allows,AWS
+1064,AMI Key SSH,running,Type
+1065,provider,terminate,reason
+1066,AWSLA,prohibits,direct  sellers
+1067,that,prohibits,otherwise  person
+1068,illegal  that,prohibits,race
+1069,that,used,illegal  activities
+1070,Users,have_several,several Microsoft 1
+1071,Today  Amazon,offers,several data Table
+1072,regions,communicate_through,resources
+1073,Aservermay,run_multiple,virtual  machines
+1074,instance,use,other Simple Figure
+1075,systems,allows,same availability region
+1076,EBS volumes,replicated_within,same availability zone
+1077,when  servers,advised,catastrophic  events
+1078,user,request_virtual,virtual  regions
+1079,user,request,virtual availability region
+1080,user,allows,virtual  servers
+1081,rates,determined_by,operating energy
+1082,Thus  choice,reduce,communication reliability
+1083,limited instance that,chooses,I O application
+1084,instance,provided_with,DNS name
+1085,e.g. Amazon that,maps_to,internal IP ones
+1086,address,assigned_for,instance
+1087,when IP instance,returned_to,public IP addresses
+1088,instance,request,public IP address
+1089,Amazon,charges,EC2 instances
+1090,Charges,differ_from,one  another
+1091,reservation,required_for,popular  model
+1092,reserved  user,pays,hourly time rate
+1093,substantial CPU amount,require,substantial CPU cycles
+1094,when market price,bid_on_unused,user
+1095,system,offers_several,several instance types
+1096,Table,summarizes,3.2  instance
+1097,power,measured_in,virtual EC2 compute units
+1098,charges,depend_on,outside AWS region
+1099,charges,shown_in,USWest  Table
+1100,Garfinkel,reported,early Amazon Web Services
+1101,new  instance,started_in_less,two  minutes
+1102,unscheduled  reboot,experienced,testing
+1103,data,lost_during,reboot
+1104,data,recovered_from,frozen  instance
+1105,bucket,created,1  byte
+1106,transaction,reflected,successfully  next
+1107,transaction,resolved_before,successfully  next
+1108,user,showed,overlapping S3 transactions
+1109,maximum S3 system,measured,single client thread
+1110,data throughput,concluded,high  transaction
+1111,concurrent  requests,designed,S3
+1112,concurrent  requests,improve,the
+1113,experiment,involved,100 MB GET
+1114,number,increased_from,one
+1115,bandwidth,cut_in,six  threads
+1116,four read retries,encountered,errors
+1117,We,start,proportional data systems
+1118,we,analyze,Chapter
+1119,efficiency,captured_by,power
+1120,two  performance,increased_much,computing systems
+1121,performance,increased_by,subject operating efficiency
+1122,power requirements,use,3.6 power 42
+1123,systems,lead_to_large,large computing clouds
+1124,more  load,consumes,light  load
+1125,subsystems,behave,differently energy efficiency
+1126,processors,have,memory  subsystems
+1127,processors,consume_less,very peak lowload
+1128,number,emerged,proposals
+1129,data center network,argue,different butterfly interconnect
+1130,channels,consist_of_multiple,serial  lanes
+1131,physical  unit,stripped_across,active  lanes
+1132,regardless  Channels,operate,multiple  lanes
+1133,Channels,send_idle,idle  packets
+1134,One,based_on,replication
+1135,strategy,reported_in,sliding  364
+1136,technique,based_on,data migration
+1137,system,uses,data storage
+1138,daily term optimization number,controlled_by,longer term optimization period
+1139,"6,000 data centers",consumed,$ 4.5 billion
+1140,instantaneous  demand,expected,new power plants
+1141,network infrastructure,predicted,2010  efficiency
+1142,30 energy efficiency,improved_by,six  magnitude
+1143,effort,focused_on,data center
+1144,typical Google cluster,spends_most,cluster time
+1145,when  network,operate_in,dynamic  range
+1146,dynamic resource provisioning,argue,power consumption
+1147,resource management framework,presented_in,dynamic SLA 358
+1148,support,consumes,very  large
+1149,MB Internet Internet,ranges_from,MB ebook reading
+1150,energy demand,reports,4 network bandwidth
+1151,bandwidth  that,count,such Second Life
+1152,that,emerge_in,future
+1153,greenhouse gas emissions,estimated,increased consumer demand
+1154,that,exploits,physical
+1155,prototype,described_in,Green 376
+1156,study,reported_in,small Cloud Computing 279
+1157,one cloud third,were_concerned,security threats
+1158,two  thirds,raised,the
+1159,about  half,comprehend,fully cloud functions
+1160,availability,raised_by,data respondents
+1161,independent security layer,added_to,API security
+1162,data decryption,implemented,secure data leakage
+1163,compartmentalization,deployed,negative  resource
+1164,set,includes,control NIST working data
+1165,study,aims,public  adoption
+1166,study,based_on,responsible IT world
+1167,public  clouds,cited,hybrid savings ones
+1168,public  percentage,reasons,element
+1169,83 application streaming,help,83 desk services
+1170,also  that,identified,employee health records
+1171,studies,identify,critical cloud research
+1172,users,alleviate,called vendor lock Section
+1173,that,seems_natural,better user experience
+1174,Intercloud,appears,networks
+1175,extension,shows,far  trivial
+1176,digital level that,offers,final  destination
+1177,agreements,reached,basic  questions
+1178,we,based_on_different,different delivery models
+1179,Amazon,announced,new  service
+1180,CSPs,think,added CSPs services
+1181,CSPs,have,competitive  advantage
+1182,how CSPs store,exposing,adversely CSPs business
+1183,store,affect,adversely process CSPs
+1184,that,dictate,internal  cloud
+1185,Nevertheless  building,seems,infrastructure
+1186,First  we,need,items
+1187,Indeed  we,need_common,common  objects
+1188,we,need,two  events
+1189,Intercloud,require,then cloud computing
+1190,Then cloud service provider,have,ontology
+1191,distributed  database,have,Name Service
+1192,vast  amount,stored_in,root DNS
+1193,cloud,require,internal Intercloud objects
+1194,bemore request,originated,bemore precise
+1195,internal  that,translated_into,destination cloud
+1196,This,raises,immediately  efficiency
+1197,now  Intercloud,answered,only  paper
+1198,Intercloud,create_new,new  threats
+1199,tasks,cross_from,administrative  another
+1200,users,disclosed,tasks
+1201,migration,requires,thought trust model
+1202,acting,means,new  instances
+1203,dynamic trust that,based_on_dynamic,time
+1204,Intercloud exchanges,play,trust clouds
+1205,Intercloud exchanges,determine,trust
+1206,Encryption,used,Intercloud
+1207,idea,opens,interesting research topics
+1208,practicality,discussed_after,underway NIST bear fruit
+1209,large  organization,are_several,single cloud provider
+1210,potential,poses,great system danger
+1211,Last Cloud Service Provider,decide,other network CSPs
+1212,alternative,switching_to,provider
+1213,chapter,discusses,storage
+1214,Chapter,covers,8 storage systems
+1215,that,discuss,vendor lock storage reliability
+1216,solution,based_on,reliable data storage
+1217,system,uses,distributed disk Figure
+1218,disk controller,distributes,wise data blocks
+1219,when parity blocks,written_on,dedicated RAID-4 systems
+1220,file,avoid,the
+1221,when parity blocks,written_to,dedicated  disk
+1222,us,allows,single disk loss
+1223,us,recover,data
+1224,3.5  we,have,third  file
+1225,we,recover,missing
+1226,Obviously  we,detect,same  procedure
+1227,concurrently  a3,allows_parallel,write  performance
+1228,blocks  a1,read,example
+1229,a3,aggregate_multiple,multiple  write
+1230,system,strips,four  clusters
+1231,that,controlled,RAID controller
+1232,proxy,ensures,before  atomicity
+1233,proxy,buffers,data
+1234,idea,raises_several,immediately  several
+1235,single storage system?Howmuch overhead,introduced_by,single  failure
+1236,experiment,reported,question
+1237,Redundant Array,uses,same data AWS
+1238,3.1  bucket,stores,arbitrary  size
+1239,cost increases,discussed_in,RACS systems
+1240,paper,suggests,several  proxies
+1241,single  clients,connected_to_several,multiple  clouds
+1242,solution,remains,limited data storage
+1243,nature,dominates,all
+1244,Experiments,produce_inconclusive,inconclusive test bed results
+1245,poses,conclude,service users
+1246,providers,have,service resource Chapter
+1247,same cloud application developers,have,cloud computing model
+1248,clouds,provide,large  organizations
+1249,cloud,has,front disk user
+1250,platforms,used_as,private control cloud
+1251,Schematically cloud infrastructure,carries,following  application
+1252,We,discuss,open source software systems
+1253,Eucalyptus,regarded_as,open source Figure
+1254,systems,supports_several,several operating CentOS
+1255,controllers,managed_by,cloud controller
+1256,resources,makes_high,high cluster controllers
+1257,Users,create,EBS volumes
+1258,Snapshots,stored_in,availability zones
+1259,users,allows,buckets
+1260,system,supports,strong
+1261,Web administrators,access,root access
+1262,administrators,need,root
+1263,system,supports,single user interfaces
+1264,management,implements,distributed S3 system
+1265,procedure,based,virtual  machine
+1266,front  end,used,VM
+1267,VM disk image,transferred_to,compute node
+1268,disk image,modified_for,compute node
+1269,compute node,sets,virtual Media Access Control
+1270,head DHCP,set,MAC IP pair
+1271,VMM,activates,VM
+1272,user,ssh10,directly  VM
+1273,system,support,corporate enterprise environment
+1274,Users,shielded_from,hard system administrators
+1275,configuration,uses,NFS
+1276,oned head daemon,uses,compute node
+1277,compute node,sets,virtual network MAC
+1278,files,transferred_to,compute node
+1279,VMM,starts,compute VM
+1280,trusted  who,suited_for,versatile  users
+1281,running Nimbus process,inherits_from,compute nodes
+1282,Customization,done_by,only system administrators
+1283,Table,summarizes,three  systems
+1284,recently  NASA,moved,cloud Rackspace
+1285,companies,have,Red OpenStack
+1286,version,management,based resource utilization
+1287,administrators,control,extensible Web application
+1288,user,has_direct,cloud aWeb resources
+1289,service provider,databases,hardware
+1290,system,ensures,such  tolerance
+1291,system,attributes_such,such  security
+1292,PaaS,provides,only  a
+1293,PaaS,allow,security applications
+1294,total  PaaS,provides_total,typically  control
+1295,PaaS,provides,typically  no
+1296,carefully cloud provider,is_critical,carefully  liability
+1297,many  liabilities,apply_to,third  party
+1298,partially user responsibility,increases_in,interface
+1299,DDoS,affects,only  several
+1300,3.7  security,describes,major IaaS cloud cloud
+1301,SLA,records,ii  priorities
+1302,agreement,covers,confidential customer information
+1303,area,define,other target service
+1304,Penaltiesmay,specified_in,also  SLA
+1305,oriented  architecture,expected,middleware  SLAmanagement
+1306,project,researching,European area
+1307,percentage,answered,calls
+1308,negotiation which,has,responsible processing proposals
+1309,concept,discussed_in,cloud service
+1310,authors,propose,compliance level CLAs
+1311,WS 20,uses,customizable  aspects
+1312,language,supports,one round counterproposals
+1313,framework,described_in,virtual computing 379
+1314,technology,based_on,named site licenses
+1315,some,reached,software EC2
+1316,Furthermore  MathWorks,developed,ofMATLABin grid 63
+1317,only  users,gaining,only  services
+1318,power,renewed,such SmartLM research project
+1319,license management,requires,complex software SLA
+1320,architecture,has_several,several license layers
+1321,terms,negotiated,license usage
+1322,cost,becomes,SLA
+1323,SLA,describes,maximum resource cost
+1324,we,point,authorization
+1325,application,have,authority
+1326,administrator,opens,local license certificate
+1327,administrator,hijack,license mechanism
+1328,effort,concentrated_in,Service
+1329,number,estimated,early 2.4 289
+1330,services,running_on,such  iPhones
+1331,data,stored_in,data cloud
+1332,service,hosts,Lotus Notes
+1333,multiple  users,allows_multiple,same document changes
+1334,Docs,provides,spell checker
+1335,users,allows,several Microsoft Office
+1336,based  Calendar,supports_multiple,monthly Outlook Calendar
+1337,reminders,received_via,SMS
+1338,Picasa,provides,free disk charge
+1339,Users,add,Google Maps
+1340,users,allows,online discussion email
+1341,Initially  AppEngine,supported,only  Python
+1342,detailed  documentation,added,Java
+1343,database,accessed_with,like Query syntax
+1344,where  photograph,reflects,so  227
+1345,crawlers,rely_on,new  content
+1346,users,allows,customized search facets
+1347,users,create,customized  search
+1348,simple item type,selfdescribing,names
+1349,item,follows,simple  schema
+1350,type,attribute,names
+1351,Base,accessed_in,relevant keyword database
+1352,results,ranked_across,properties
+1353,this,done_by,attributes query time
+1354,Drive,gives,20  GB
+1355,engines,implemented,several interest travel
+1356,However  data,covers,available  a
+1357,Google,redefined,centric Chrome OS
+1358,liberal application development Apple,adheres_to,strict application rules
+1359,Apple,builds,own technology hardware
+1360,products,offer_unparalleled,broad Android OS
+1361,other cloud service providers,manage_vast,vast  data
+1362,DBMS,supports,defined query schema
+1363,interoperability,requires_semantic,different management schemas
+1364,dataspaces,aim_at,rather data coexistence
+1365,efforts,encountered_major,major  years
+1366,how  it,discovered,able  application
+1367,soon  it,realized,efficiently system checkpoint
+1368,same  providers,realized,large computing service
+1369,advantage,offset_by,costly resource resources
+1370,based computing customers,requires,only  infrastructure
+1371,same  users,benefit_from,intensive execution parallelization
+1372,application,partition,segments
+1373,application developers,enjoy,the
+1374,larger user system,becomes,user population
+1375,elasticity,allows,additional application developers
+1376,success,rests_on,centric user computing
+1377,This,translates_into,critical  SLAs
+1378,clearly grid computing which,differentiates,scientific  applications
+1379,utility computing providers,expected,such application customers
+1380,utility computing providers,develop,such  application
+1381,many Red Hat,seems,27  infrastructure
+1382,only  workload,partitioned_in,arbitrary  size
+1383,4.6  we,discuss,arbitrarily  divisible
+1384,workload,partitioned,which
+1385,application,require_longer,higher execution cloud
+1386,memory performance applications,show,low performance latency
+1387,communication,exhibit,memory  performance
+1388,development,inherits,physical communication systems
+1389,virtually  applications,distributed,nature
+1390,application developer,left_with,optimal processing data
+1391,One,have,negative cloud impact
+1392,performance,fluctuates_based,other infrastructure users
+1393,large  number,cooperate,nodes
+1394,course cost considerations,play,also instance type
+1395,stage,involve_multiple,multiple  systems
+1396,bandwidth  that,exhibit_internode,application performance
+1397,storage,plays,intensive  application
+1398,storage bandwidth,analyzed,optimal application performance
+1399,Clouds,support_many,many  storage
+1400,metadata,include,audio  song
+1401,easy  storage,stored_for_easy,easy  access
+1402,consideration,logging,application developer
+1403,data ability,limit,frequent  logging
+1404,ability,helped,unexpected  results
+1405,Logging,done,only instance instance
+1406,Thus  measures,taken,postmortem analysis
+1407,applications,divided_into_several,broad  categories
+1408,types,identified,data processing applications
+1409,pipeline,supports,large Web crawler engines
+1410,pipeline,supports,large  interests
+1411,users,allow,users cloud
+1412,pipeline,converts,e.g.  documents
+1413,Word,use_optical,digital character documents
+1414,systems,cover,intensive  enterprise
+1415,applications,have,typically  deadlines
+1416,failure,have_serious,economic  consequences
+1417,list,includes,annual activity retail
+1418,categories,have,such Web conferences
+1419,e.g. holiday that,are,15 income tax deadline
+1420,auto,makes_economic,economic
+1421,new  classes,leads,other business analytics
+1422,new  classes,emerge_in,cloud computing example
+1423,that,process_large,large  data
+1424,many cloud applications,benefit_from,areas
+1425,software,run_on,also  cloud
+1426,elasticity,requires,multiple  systems
+1427,multiple data event,depends_on,next  error
+1428,backup,replicated,automatically  execution
+1429,backup,continues,automatically  the
+1430,standby  server,is,same  primary
+1431,3.5 data store access,mitigated_by,proxy
+1432,client,could,data
+1433,that,service,large  cloud
+1434,that,involves,large  servers
+1435,such database event,runs_on,such database access
+1436,servers,use,servers actions
+1437,change,requires,configuration file
+1438,when  command,has,state state
+1439,all,synchronized,proxies
+1440,proxies,ensured,Paxos consensus Section
+1441,service,used_for,distributed  systems
+1442,software,written_in,C. project
+1443,then  clients,connect_to,coordination service
+1444,organization,shown_in,Figure
+1445,servers,communicate_with,leader
+1446,service,provides,single  system
+1447,client,connect_to,pack
+1448,client,uses,single  server
+1449,TCP client,sends,events
+1450,client,synchronizes,client server
+1451,TCP connections,detect,other client servers
+1452,read operation,returns,write  operation
+1453,servers,elect,leader forwards leader
+1454,leader,uses,atomic  consensus
+1455,servers,elect,new  leader
+1456,system,organized_as,similar file system
+1457,name,identified_by,unique  Figure
+1458,Indeed  system,designed,state information
+1459,data,includes,"ACLs,6 version stamps"
+1460,when  znode,set,notification
+1461,organization,allows,coordinated  updates
+1462,data,contains,also version number
+1463,that,stamped_with,transition
+1464,data,read,node
+1465,write,read,znode
+1466,write,replaces,data
+1467,Zookeeper data,stored_in,server memory
+1468,Updates,logged,recoverability
+1469,in  that,serialized,entire  tree
+1470,disk,are,writes
+1471,strictly  Updates,applied,strictly  which
+1472,regardless server client,receives,same  response
+1473,update,persists,client
+1474,long  majority,guaranteed,servers
+1475,local  that,read,client
+1476,When  leader,receives,write
+1477,that,determines,new  state
+1478,protocol,uses,atomically FIFO servers
+1479,message,included_in,proposal
+1480,Proposals,agreed,Paxos algorithm
+1481,system,keeps,synch
+1482,one  it,delivered_to,eventually  servers
+1483,message m,delivered_before,message
+1484,delete,delete,node
+1485,set data,write,node
+1486,when  session,supports,ephemeral  nodes
+1487,ZooKeeper service,shows,finite state machine coordination
+1488,ZooKeeper service,supports,finite state machine
+1489,service,used,such group membership
+1490,front end system,distributes,back end systems
+1491,back end systems,added_to,pool
+1492,Only  data,partitioned_into,arbitrary  cloud
+1493,We,distinguish,divisible  workloads
+1494,partitioning,defined,priori
+1495,workload,partitioned_into,very  size
+1496,applications,obey,sharing  model
+1497,Theory,analyzed_in,Section
+1498,MapReduce,based_on,intensive  applications
+1499,computations,start,second  phase
+1500,program,based_on,partial master instance results
+1501,LISP,conceived_for,large computing clusters
+1502,pairs,transformed_into,output
+1503,applications,implemented,easily  model
+1504,one,process,URL access frequency
+1505,pairs Reduce function,totalcount,pairs  URL
+1506,function,produces,pairs
+1507,function,distributed,record  pair
+1508,function,extracts,record
+1509,defined  that,shows,documents
+1510,When user program,invokes,MapReduce
+1511,sequence,take,Figure
+1512,library,splits,input files
+1513,master,assigns_to,idle  Map
+1514,considerations,limit,the
+1515,worker,assigned,Map
+1516,pairs,buffered_in,local partitioning function
+1517,back  who,passed,Reduce workers
+1518,worker,uses_remote,intermediate worker sorts keys
+1519,intermediate  key,passed_to,defined Reduce function
+1520,output,appended_to,final output file
+1521,When  Map,have,tasks
+1522,master,wakes,user program
+1523,master,stores,worker machine
+1524,periodically master worker,pings,periodically master worker
+1525,task,reset,failed  idle
+1526,it,writes_periodic,last  checkpoint
+1527,data,stored,Google File Section
+1528,environment,described,MapReduce
+1529,cluster,consists_of,machines
+1530,Data,stored_on,individual IDE7 machines
+1531,system,uses,unreliable  hardware
+1532,input data,stored_on,local  system
+1533,applications,require,the
+1534,description,known_as,complex  workflow
+1535,we,discuss,traditional transaction systems
+1536,task,characterized_by_several,such  Name
+1537,that,take,place
+1538,exceptions,included_in,unanticipated task exception exceptions
+1539,Events,included,exception list trigger
+1540,task,inherits,some
+1541,task,consists_of,one start symbol
+1542,composite  task,inherits,properties
+1543,task,has,name
+1544,that,called,just  execution
+1545,task,trigger,iterative  execution
+1546,fork,exist,several successor tasks
+1547,successor task,associated_with,condition
+1548,conditions,evaluated,tasks
+1549,tasks,enabled,true  condition
+1550,task,associated_with,condition
+1551,conditions,evaluated,tasks
+1552,successor,enabled_after,n > k predecessors
+1553,tasks,iterative,fork
+1554,description,called,also activities execution
+1555,description,contains,one start symbol
+1556,description,provided_in,classical workflow definition constructs
+1557,concept  we,resembles,programming
+1558,syntactic workflow enactment,corresponds_to_syntactic,compiled  program
+1559,enactment,mirrors,the
+1560,model,describes,case
+1561,enactment,executes,program
+1562,Events,cause,states
+1563,concurrently  state,has,independent  activity
+1564,description,provided_by,current goal state
+1565,workflow that,specify,actions
+1566,new workflow description,generated,set post preconditions
+1567,space,includes,one  initial
+1568,transition system,identifies,possible goal state
+1569,case,corresponds_to,particular transition system
+1570,state,tracks,case
+1571,eventually  case,means,process
+1572,eventually  case,means,process
+1573,process description,enacted,correctly  cases
+1574,we,need,such process safety
+1575,actual  enactment,affected_by,due resource allocation
+1576,other  task,acquires,same
+1577,We,face,undesirable  Figure
+1578,Then t3 task B,attempts,Then  time
+1579,pattern,refers_to,temporal  process
+1580,languages,have,temporal  relationships
+1581,patterns,analyzed_in,"1,382"
+1582,patterns,classified_in_several,multiple  instances
+1583,patterns,illustrated,Figure
+1584,several  tasks,see,one  Figure
+1585,pattern,requires_several,several  tasks
+1586,when  A,activated,Figure
+1587,soon  flow,activated,routing node
+1588,activities,connected,implicit
+1589,conditions,associated_with,next  ones
+1590,concurrent  activity,requires_several,concurrent  activities
+1591,only  A,start,Figure
+1592,several  alternatives,merged_into,one
+1593,when  A,enabled,Figure
+1594,construct,allows_multiple,concurrent  tasks
+1595,When  first,say,B C
+1596,pattern,waits,incoming  branches
+1597,all,waits,branches
+1598,Next  Figure,resets,Figure
+1599,next  task,have,barrier
+1600,three  E,have,Figure
+1601,explicitly run time environment,made,Figure
+1602,Next  we,discuss,goal state
+1603,we,consider,initial  system
+1604,process pi,characterized_by,process preconditions
+1605,tial,enables,process
+1606,such post conditions,means,next  chain
+1607,chain,exists_such,one post process
+1608,attributes,describe_special,special  process
+1609,graph,change_during,case
+1610,Some,refer_to,dynamic cost workflow
+1611,workflows,described_in,WFDL
+1612,workflows,need,flexible  approach
+1613,We,distinguish,basic workflow enactment
+1614,process,acts_as,one activity graph
+1615,first  we,deploy,several coordination coordinators
+1616,supervisor,coordinates,−  supervisors
+1617,coordinator,respond_to,feasible  changes
+1618,models,based_on,such tuple space
+1619,pi,deposits,possibly tuple space
+1620,approach,requires_individual,individual tuple space
+1621,approach,using,active tuple token
+1622,differences,affect,the
+1623,contractual  enactment,based,case
+1624,emphasis,placed,transactional  model
+1625,critical  aspect,maintaining,transactional database consistent
+1626,defined  that,consists_of,transaction
+1627,However process description,change,cloud case
+1628,individual  tasks,exhibit,traditional database transactions
+1629,goal workflow,roll,different  path
+1630,model,used_in,often cloud computing
+1631,computing,based_on,client server Section
+1632,majority,take,request response clients
+1633,server,require,first  server
+1634,Instead  client,views,independent client transaction
+1635,server,overhead_for,consecutive  requests
+1636,client,have,server
+1637,that,resend,request
+1638,server,interact_with,available storage server
+1639,server,responds_to,past HTTP client
+1640,client,sends,requests
+1641,HTTP,uses,Transport Control Protocol
+1642,malicious Web clients,ensures_reliable,TCP connection
+1643,malicious  clients,servers_to,denial  attacks
+1644,running,communicate,different programming languages
+1645,system,use,Big  Endian
+1646,thus data structure,serialized_at,sending receiving site
+1647,considerations,analyzed_before,architectural  application
+1648,neutrality,refers_to,different protocol stack
+1649,SOAP,see,also transport vehicles
+1650,Extensibility,refers_to,such  security
+1651,Independence,refers_to,different programming styles
+1652,often application clients,communicate,other  communication
+1653,applications,use,RPC call
+1654,stub,performs,two data structures
+1655,ORB,transforms,byte byte network
+1656,ORB,maps,internally receiving process
+1657,representation,mapped_to,then programming C
+1658,applications,pass,value
+1659,protocol message format,based_on,Extensible Markup Language
+1660,SOAP,uses,recently UDP transport protocols
+1661,SOAP,stacked_above_other,such application layer HTTP
+1662,model,based_on,senders
+1663,Language,introduced,networked  application
+1664,definition,include,particular port binding
+1665,abstractions,mapped_to_concrete,concrete network endpoints
+1666,REST,supports,stateless client servers
+1667,REST,uses,always  four
+1668,HTTP,uses,data
+1669,REST system,sends,specific client case
+1670,version,consists_of,more  XML
+1671,server,responds_with,individual
+1672,REST,justifies,statement
+1673,REST,is_easier,debug
+1674,e.g. self WSDL,supported_by,code
+1675,e.g.  WSDL,generate,code
+1676,We,use,cloud computing
+1677,regular  that,allows,Web
+1678,large  that,performs,regular  expression
+1679,ofmultiple controller that,initiate,billing records
+1680,when acrossmultiple processing,uses,final  result
+1681,details,captured_in,following  steps
+1682,when thread input message,polls,required parses actions
+1683,then launch message,enqueued_in,launch queue
+1684,thread,picks,message
+1685,then  message,updates,Simple DB domain
+1686,Finally  message,enqueues,launch queue
+1687,phase,consists_of,following  steps
+1688,task,starts,Amazon EC2 instances
+1689,task,uses,Java Runtime
+1690,Hadoop,runs,EC2 slave parallel
+1691,task,takes,five match matches
+1692,Then  combine,reduce,task output
+1693,results,stored_on,output bucket
+1694,thread,retrieves,status themonitor task
+1695,error,updates,Amazon billing queues
+1696,when monitor processing,deletes,monitor queue
+1697,shutdown which,retrieves,Amazon Simple DB domain
+1698,Finally  status,deletes,shutdown queue
+1699,phase,consists_of,following  steps
+1700,task,kills,Amazon Simple infrastructure
+1701,task,gets,Simple billing service
+1702,GetStatus,applied_to,filtered Amazon completion
+1703,multiple  files,bundled,S3 objects
+1704,multiple fetch threads,started_in,objects
+1705,infrastructure,illustrates,users
+1706,networks,play,important  lives
+1707,recent  people,expanded,functions
+1708,Traditionally  determining,done,network
+1709,evaluation,turns,social  closeness
+1710,CBR  process,reasoning,aware recommendation systems
+1711,CBR,requires,based  retrieval
+1712,massive history which,handle_massive,reasoning  cloud
+1713,system,described_in,171
+1714,system,consists_of,based reasoning engine
+1715,layer,uses,social closeness information
+1716,engine,calculates,back cloud layer
+1717,master which,connects_to,server results
+1718,case,consists_of,optional problem solution
+1719,where  node,applied_to,one  user
+1720,MapReduce,used,pairwise relationship weight
+1721,cycle,has,four
+1722,real  solution,map,new target case
+1723,solution,adapted_to,target problem
+1724,social  networks,constructed_for,e.g. application biology
+1725,networks,enable,remote  workflows
+1726,specific Mersenne Prime Search,initiated_in,late  1990s
+1727,where  users,used_in,accountability
+1728,users,earn,resources
+1729,Network BOINC,aims,different  applications
+1730,architecture,presented_in,social Facebook 76
+1731,Methods,profile,application information
+1732,prototype,uses,distributed Web infrastructure
+1733,e.g. Facebook applications,are_scalable,Amazon Web Services
+1734,e.g. Facebook applications,hosted_by,Amazon Web Services
+1735,Today  organizations,use,Facebook authentication
+1736,mashups,combine,also  events
+1737,often cloud computing services,argues,general cloud systems
+1738,often  services,follow,SaaS  model
+1739,also Mashup platforms,argues,IBM Mashup Center
+1740,Mashup platforms,rely_on,cloud computing systems
+1741,Make Call Svc,uses,Svc
+1742,system,supports,eventdriven mashups
+1743,new Mashup that,has,mashup deployment
+1744,two deployer that,consists_of,mashups
+1745,mashup,created,graphical XML file
+1746,mashup,deployed_into,PaaS Mashup approach
+1747,primitive  that,supports,different  service
+1748,that,allows,the
+1749,Java Message which,uses,asynchronous  communication
+1750,component,sends,messages
+1751,tolerance,tested_on,VMware
+1752,fault tolerance,provided,transparently  VMM
+1753,secondary,run_on_distinct,execution
+1754,secondary,continues,execution
+1755,MapReduce,discussed_in,100
+1756,application,analyzed_in,360
+1757,generation,presented_in,scientific  282
+1758,applications,analyzed_in,"223,224"
+1759,applications,presented_in,"cloud 76,171,331"
+1760,service level checking,discussed_in,78
+1761,checking,analyzed_in,78
+1762,respectively software testing,presented_in,scientific  305
+1763,cost performance issues,analyzed_in,196
+1764,cost performance issues,rediscussed_in,196
+1765,methods,introduced,human  knowledge
+1766,few  we,witnessed,complex  phenomena
+1767,2007 scientist Jim Gray,discussed,scientific  method
+1768,data,processed,simulations
+1769,data,stored_by,statistical computer packages
+1770,activities,require_powerful,powerful computing systems
+1771,atmospheric  data,viewed_as,different theWeb sources
+1772,binary text encoding,allows,serious  challenges
+1773,encoding,poses_serious,documents
+1774,Metadata,used,scientific  data
+1775,data that,describes,scientific data domains
+1776,run time system,supports,based  orchestration
+1777,paper,describes,comparative Computing EC2
+1778,NERSC,located_at,Berkeley National Laboratory
+1779,community,has,600  codes
+1780,weather climate code,uses,dimensional  domain
+1781,second,decomposed_over,longitude/ latitude
+1782,long MPI13 that,movement,point  point
+1783,System,used_for,chemistry calculations
+1784,Iowa State University,has,SPMD execution model
+1785,DDI,presents,distributed data memory
+1786,cluster program,uses,socket
+1787,other processors half,uses,half processors compute
+1788,field lines,uses,toroidal fusion plasma
+1789,that,follows,field lines
+1790,version,uses,64 domain domains
+1791,nearestneighbor that,dominated_by,nearestneighbor exchanges
+1792,parts,involve,particle  steps
+1793,charge deposition,uses,indirect
+1794,Time models,solver,spectral integratedGreen function
+1795,code,uses,dynamic y−z domains
+1796,algorithm,used,boundary  conditions
+1797,different grid scheme,uses,multigrid solver
+1798,code,embedded,astrophysical integration scheme
+1799,topology,tends,simple topology interconnects
+1800,code,has,low  computational
+1801,code,stresses,memory latency
+1802,solver,stresses_global,global  communications
+1803,sizes,range_from_short,relatively  moderate
+1804,algorithm,discretizes,dimensional space time
+1805,integration,requires,sparse time matrix
+1806,inversion,translates_into_tridimensional,complex matrix vector multiplications
+1807,multiplication,requires,dot
+1808,dot product,consists_of,five  operations
+1809,model,based_on,dimensional domain decomposition
+1810,algorithm,requires,separated gather memory
+1811,that,performs,total ab energy
+1812,FFTs,transform,real wave space
+1813,FFT,dominates,run
+1814,code,uses,MPI
+1815,code,uses,short  messages
+1816,code,parallelizes_over,fine grain parallelism
+1817,authors,use,large Performance Computing NERSC
+1818,that,quantify_basic,basic  system
+1819,code,does,results
+1820,that,solves,linear  system
+1821,whereby  pairs,exercises,other
+1822,whereby  pairs,communicate_with,other
+1823,node,has,two  sockets
+1824,that,connects,dimensional  mesh
+1825,codes,compiled_with,Group suite version
+1826,XT4  node,has,8 Budapest RAM
+1827,processor,connected_through,s bidirectional Cray SeaStar-2 ASIC
+1828,tridimensional torus node,interconnected_in,direct  node
+1829,Codes,compiled_with,Pathscale
+1830,node,connected_to,blocking Rate InfiniBand factor
+1831,Codes,compiled,Intel
+1832,cluster,had,7.5 Amazon parlance
+1833,nodes,connected_with,gigabit Ethernet
+1834,binaries,compiled_on,Lawrencium
+1835,results,reported_in,Table
+1836,results,give,efficiently  cloud
+1837,applications,affected_by,smaller  Carver
+1838,experiment,illustrates,biology research
+1839,authors,carried,BLAST23 Azure platform
+1840,Azure,offers,four computing cores
+1841,experiment,used,14 GB RAM
+1842,computation,take,seven  CPU
+1843,thus  experiment,allocated,three data centers
+1844,center,hosted,large AzureBLAST instances
+1845,sequences,divided_into_multiple,multiple  segments
+1846,segment,submitted_for,one AzureBLAST deployment
+1847,observations,drawn_after,post experiment analysis
+1848,two  message,reappear_in,automatically  task
+1849,result,generated,task
+1850,computational  effort,allow_for,optimal  parameters
+1851,user,expected,optimal budget limitations
+1852,same  resources,waited_for,same  instances
+1853,when  jobs,use,same
+1854,some,take,longer completion time
+1855,analysis,shows_unrecoverable,unrecoverable instance failures
+1856,several  ensembles,caused_several,instances
+1857,computational science experiment,requires,the
+1858,authors,developed,general  cloud
+1859,Cirrus job,has,parameters
+1860,prologue,sets,running
+1861,Windows Live ID service,authenticates,user
+1862,service,submit,Web Figure
+1863,job,added_to,table
+1864,execution,controlled,job
+1865,parametric  engine,starts,parameter space
+1866,sweeping test result,sent_to,sampling filter
+1867,task,associated_with,task table
+1868,record,updated,periodically worker task
+1869,progress,monitored_by,manager
+1870,queue,feeds_into,worker instances
+1871,worker,updates,periodically control manager
+1872,We,continue,based Azure 224
+1873,front end worker,are,background processing
+1874,theWeb,roles,forWeb
+1875,such compute that,use,state change notifications
+1876,that,provide,run
+1877,applications,use,semistructured message queues
+1878,services,provide_strong,strong consistency guarantees
+1879,complexity,moved_to,application space
+1880,Figure,illustrates,coupled Azure platform
+1881,software,eliminates,individual  VMs
+1882,results,show,remote application resource
+1883,questionable  that,offers,cloud computing
+1884,binary  codes,pose,native Web security
+1885,paper,discusses,modern CPU architectures
+1886,architecture,tends,multicycle instructions
+1887,architecture,shares_many,many RISC architecture features
+1888,c condition codes,has_complex,most  instructions
+1889,64  r,extended_to,instead bit eax
+1890,x86 64,defines,new register selection
+1891,implementation,based_on,untrusted multithreaded plug in
+1892,bundle disassembly,reaches,valid bundle instructions
+1893,32 byte instruction,divided_into,pseudo bundle
+1894,that,replaced_by,address boundaries
+1895,x86 ARM,features_of,Table
+1896,flow  sandboxing,incur_less,average ARM overhead
+1897,SFI,incur_less,average  overhead
+1898,hardware support,became_obvious,virtualization
+1899,Intel,started,3 generation virtualization architecture
+1900,Intel,released,4 VT x
+1901,AMD,announced,Pacifica
+1902,paper,analyzes,x86 virtualization architectures
+1903,solutions,addressed,challenges
+1904,solutions,improve,same software systems
+1905,We,examine,x86  architecture
+1906,VMM,means,greater privilege 0
+1907,VMM,forces,guest
+1908,x86  architecture,provides,four protection rings
+1909,VMM,run,which
+1910,current privilege level,stored_on,also  stack
+1911,VMM,uses,interrupt descriptor table
+1912,guest software,protected,structures
+1913,software,have,structures
+1914,data that,executed_by,CPU operation
+1915,that,load,registers
+1916,that,fail,other privilege 0
+1917,instruction,implies,instructions
+1918,executing,realize,instructions
+1919,instructions,support_low,low latency system calls
+1920,0 privilege second,causes,higher privilege 0
+1921,second,causes,privilege level
+1922,then guest which,emulate,negative  performance
+1923,physical  VMM,generates,later  target
+1924,OS,has,the
+1925,when  interrupt,delivered_to,only  guestOS
+1926,Systems,use,only bit paging
+1927,0 guest OS,distinguish_among,privilege level
+1928,so guest OS,run,privilege level
+1929,Frequent  access,increases,privileged  VMM
+1930,register,used_by,frequently guest OS
+1931,VMM,protect,access
+1932,This,cause,significant performance degradation
+1933,problems,exist_for,Itanium Section
+1934,then  control,transferred_from,VM
+1935,exit,saves,processor state
+1936,then  state,loads,finally host state VMM
+1937,VM exit operations,use,common entry point
+1938,operation,saves,eventually  VMCS
+1939,Some,stored_as,bitmaps
+1940,one,caused,possible  exit
+1941,bitmap,contains,I O space
+1942,layout,fixed_by,particular  implementation
+1943,control that,includes,virtual  interrupts
+1944,that,facilitate,the
+1945,interrupt  exiting,causes,example
+1946,moreover  guest,allowed,interrupts
+1947,guest,triggered,interrupts
+1948,Processors,developed,new virtualization architectures
+1949,I memory management second,supports,network virtualization
+1950,second,supports,network
+1951,I MMU virtualization,gives,peripheral  devices
+1952,DMA address which,supports,address device
+1953,administrator,assign,VM
+1954,Next  we,discuss,Xen
+1955,systems,operate_as,paravirtualized operating x86
+1956,full  designers,opted_for,paravirtualization
+1957,Next  we,analyze,x86  41
+1958,creators,used,guest OS
+1959,domain,runs_on,x86  CPU
+1960,aspects,summarized_in,I O device Table
+1961,management,look,translation
+1962,buffer,requires,software TLB
+1963,x86  architecture,support,software TLB
+1964,when  VMMactivates,requires,complete  TLB
+1965,This,has,negative  performance
+1966,only  OS,owns,only  pages
+1967,other  OS,has,multiple page update performance
+1968,strategy,used_for,segmentation
+1969,architecture,supports,four  protection
+1970,virtually OS kernels,run_at,one  Level
+1971,VMM,runs_at,1 guest Level
+1972,Applications,make,called system Xen
+1973,instructions,paravirtualized,guest Xen
+1974,directly  instruction,fails,privileged  instruction
+1975,Memory,partitioned_between,strong  isolation
+1976,balloon which,implements,own page allocator
+1977,page faults,handled,directly guest OS
+1978,Xen,schedules_individual,scheduling algorithm scheduling Section
+1979,when latency this,uses,timely  TCP
+1980,OS,register_with,exception validation
+1981,which,uses,extended stack frame
+1982,OS,validate,directly exception Xen
+1983,system,replaces,hardware interrupts
+1984,Notifications,delivered,asynchronous event system
+1985,OS,has,virtual timer time
+1986,that,supports,system  wide
+1987,listeners,informs,which
+1988,XenStore,communicates_with,rather grant tables
+1989,user,provides,memory configuration allocations
+1990,Then  Toolstack,parses,XenStore
+1991,new communication VM,takes,virtual communication console
+1992,Xen,defines,networking
+1993,drivers,have,front
+1994,two,communicate_via,shared  memory
+1995,Xen,enforces,shared synchronization signals
+1996,lists,stored_in,grant memory
+1997,Data,move,I O Figure
+1998,data buffers,allocated_off,off guest OS
+1999,O network operations,committed,talk

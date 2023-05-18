@@ -1,0 +1,23 @@
+,source,edge,target
+0,monitor,called,also  a
+2,that,runs under,VMM
+4,Sometimes  hardware,supports,third guest OS
+6,same  VMMs,enforce,thus  security
+8,how guest operating system,controls,hardware resources
+9,how guest operating system,uses,hardware
+10,events,affect,same  VMM
+11,same  VMM,enables,same  platform
+17,VMM,traps,operation
+18,VMM,guarantees,major cloud computing
+20,real memory frames,swap,other  VMs
+22,VMM,virtualizes,CPU
+24,such guest OS,buffers such,interrupts
+25,VMM,maintains,own shadow page table
+28,virtualization,has important,important  performance
+29,VMMs,use,a
+30,VMware systems,avoid,page
+31,total  page,maintain,total  VM
+32,Xen,imposes total,total  VM
+33,VMMs,control,virtual memory management
+34,server,uses,thus balloon VM
+39,Then  process,forces,free page frames

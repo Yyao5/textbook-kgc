@@ -1,0 +1,138 @@
+,source,edge,target
+0,see,is,distributed management Section
+2,Clouds,emerging as,wide  applications
+4,large computer clouds,consume,mobile  device
+6,computer clouds,have,the
+8,we,propose,wireless cloud networks
+10,thus  it,seems reasonable,intensive  cloud
+14,when communication trust,based on past,mobile  device
+17,algorithms,require massive,high  probability
+20,wireless  communication,assumes,cognitive Wi Fi radio
+21,mobile  device,uses,wireless  cloud
+23,communication,based,Wi Fi channel
+24,amount,limited by,cellular data plan
+25,limitation,exists for,Wi Fi network
+26,mobile  devices,allow mobile,cognitive end users
+29,we,used for,bandwidth  management
+32,thus  nodes,analyzes,same channel occupancy
+36,we,consider several,primary  tower
+38,2 α 6,assume,path loss ik
+40,we,assume,discussion
+42,Pk,transmits on,primary  channel
+43,algorithm,based on several,malicious  system
+47,others,report,global positioning system
+49,clocks,synchronized,mobile  devices
+50,transmission range,depends on,mobile  device
+51,minority  behavior,assume,following  assumptions
+52,minority  behavior,captured by,following  assumptions
+54,uniformly  we,distributed in,uniformly  area
+55,malicious  nodes,collaborate in,nodes attack strategies
+56,malicious  nodes,change,successive time slots
+57,attacker,motivated,detection
+59,geometry,captured by,Figure
+60,We,distinguish primary,secondary cell cloud
+61,We,use,primary majority voting transmitter
+62,decision,requires,votes
+65,nodes,required,well K channels
+67,then  transmit,nodes current,current power level
+69,secondary  nodes,connect to,cellular  network
+71,cloud application,requests,cellular application location
+73,mobile  that,detect,10  meters
+74,mobile time location,reported to,occupancy report
+75,location,provides,occupancy
+76,that,register,trust computation
+77,thus  nodes,get,free occupancy channels
+80,node,influence other,busy  channels
+83,secondary registration node,transmits,node MAC address
+84,cloud,responds with,tuple
+86,secondary  nodes,transmit,previous status report
+87,data,provides,same  time
+91,cloud,computes,primary dk transmitter
+92,where  ring,conceptualize,1 ring number
+93,radius,based on,primary dk transmitter
+94,dk  i,included in,nodes dk distance
+96,dk  i,included in,dk ring
+97,tq report cloud,computes,primary transmitter Pk
+98,k,reported,channel
+99,r,denoted as,sk i
+100,1 sk channel,reporting,sk one(tq
+103,Then  status,σk,one(tq majority zero(tq
+106,We,repeat,i
+109,Node  i,report,αi k ∈ tq
+110,trust,determined,similar  one
+112,only channels information,contains,previous reporting cycle
+113,information,report,channels strategy
+115,us,allows,moments
+116,us,compute,the
+117,when  we,assess,next occupancy cycle
+119,when information behavior,continue,node j
+125,sliding window W(tq,assume,nw time slots
+128,exponential  that,use,old  observations
+129,that,gives,decreasing  weight
+130,We,choose,malicious k1 node
+133,misbehavior,affect,good  actions
+135,trust,requires,two  quantities
+137,trust,based,full nw observations
+138,cellular  infrastructure,used in,also  which
+139,that,allow,based  service
+140,that,nodes,cellular  network
+143,We,expect,important node decision
+145,thus node density,increases,four
+146,ratio,varies between,worst  =
+148,so nodes we,want,same  area
+149,when nodes we,behaves,when nodes increases
+150,density,allow,four
+152,when  α,investigate,finally  0.6
+153,when  α,increases,total  =
+156,nodes,contribute,different  subarea
+158,cloud  instances,have,fair  information
+160,also  which,complicate,primary nodes one
+161,Instead  we,allocate to,channels
+162,instances,share,geographic  node
+163,distance,computed,primary  one
+168,well node density,expect,important  decision
+169,well node density,play,important  role
+170,when node number,report,nodes
+171,algorithm,computed,two  nodes
+172,us,determine,algorithm
+173,density,does,nodes increases
+174,First  we,consider,two  extreme
+175,malicious  nodes,represent,total  nodes
+176,malicious  nodes,report on,total  nodes
+177,when  number,fixed,nodes
+178,nodes,represent,increasing
+179,malicious  nodes,reported in,two  groups
+180,malicious  nodes,show,20  nodes
+181,nodes,have,average  0.28
+182,nodes,have,regardless trust nodes
+183,malicious  nodes,represent,60
+184,number,plays,significant
+185,honest  nodes,distinguished,average trust value
+186,honest  nodes,have,average  trust
+187,When  number,increases to,"2,000"
+189,honest group trust,decreases to,about  0.68
+191,we,shows,practice
+192,extreme  average,expect,two  groups
+193,strategy,works,malicious  node
+195,results,confirm,behavior
+196,malicious  nodes,see,minority
+197,When  density,approaches,high  value
+198,algorithm,performs,still  figures
+199,Thus  trusts,allows,malicious  nodes
+200,when  number,observe,network
+201,service,have multiple,economic trust 74
+203,many  decisions,used,nodes
+208,mobile  device,reduces,primary  transmitters
+209,mobile  device,reduces,primary  transmitters
+210,soon channel node,node,later  demand
+216,thus  accuracy,increases,results
+217,historic  data,help,malicious  nodes
+218,higher node density,increases,predictions
+219,reports,based on,secondary communication primary
+220,scheme,has several,other  advantages
+221,First  it,used,free channel occupancy channels
+226,situation,avoided in,centralized  case
+227,malicious  nodes,identified with,high occupancy report
+229,server,collect historic,free  channels
+231,specific requests service,attempt,likely  time
+234,strategy,be,malicious  nodes

@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 8.5px Courier}
+    span.s3 {font: 10.0px Helvetica}
+    span.s4 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">There are several risks involved when a large organization relies solely on a single cloud provider. As</p>
+<p class="p1">the short history of cloud computing shows, cloud services may be unavailable for a short or even an</p>
+<p class="p1">extended period of time. Such an interruption of service is likely to negatively impact the organization</p>
+<p class="p1">and possibly diminish or cancel completely the benefits of utility computing for that organization.</p>
+<p class="p1">The potential for permanent data loss in case of a catastrophic system failure poses an equally great</p>
+<p class="p1">danger.</p>
+<p class="p1">Last but not least, a Cloud Service Provider (CSP) may decide to increase the prices for service and</p>
+<p class="p1">charge more for computing cycles, memory, storage space, and network bandwidth than other CSPs.</p>
+<p class="p1">The alternative in this case is switching to another provider. Unfortunately, this solution could be very</p>
+<p class="p1">costly due to the large volume of data to be transferred from the old to the new provider. Transferring</p>
+<p class="p1">terabytes or possibly petabytes of data over the network takes a fairly long time and incurs substantial</p>
+<p class="p1">charges for the network bandwidth.</p>
+<p class="p1">This chapter discusses the storage models supported by the cloud infrastructure provided by Amazon,</p>
+<p class="p1">Google, and Microsoft; Chapter 8 covers the architecture of storage systems in general. Reliability is</p>
+<p class="p1">a major concern, and here we discuss a solution that addresses both avoidance of vendor lock-in and</p>
+<p class="p1">storage reliability.</p>
+<p class="p1">A solution to guarding against the problems posed by the vendor lock-in is to replicate the data to</p>
+<p class="p1">multiple cloud service providers. Straightforward replication is very costly and, at the same time, poses</p>
+<p class="p1">technical challenges. The overhead to maintain data consistency could drastically affect the performance</p>
+<p class="p1">of the virtual storage system consisting of multiple full replicas of the organization’s data spread over</p>
+<p class="p1">multiple vendors. Another solution could be based on an extension of the design principle of a RAID-5</p>
+<p class="p1">system used for reliable data storage.</p>
+<p class="p1">A RAID-5 system uses block-level stripping with distributed parity over a disk array, as shown in</p>
+<p class="p1">Figure <span class="s1">3.5</span>(a); the disk controller distributes the sequential blocks of data to the physical disks and</p>
+<p class="p1">computes a parity block by bit-wise <span class="s2">XOR</span>-ing of the data blocks. The parity block is written on a different</p>
+<p class="p1">disk for each file to avoid the bottleneck possible when all parity blocks are written to a dedicated disk,</p>
+<p class="p1">as is done in the case of RAID-4 systems. This technique allows us to recover the data after a single</p>
+<p class="p1">disk loss. For example, if Disk 2 in Figure <span class="s1">3.5 </span>is lost, we still have all the blocks of the third file, <span class="s3">c</span>1,</p>
+<p class="p1"><span class="s3">c</span>2, and <span class="s3">c</span>3, and we can recover the missing blocks for the others as follows:</p>
+<p class="p2">a<span class="s4">2 </span>= (a<span class="s4">1</span>) <span class="s4">XOR </span>(aP) <span class="s4">XOR </span>(a<span class="s4">3</span>)</p>
+<p class="p2">b<span class="s4">2 </span>= (b<span class="s4">1</span>) <span class="s4">XOR </span>(bP) <span class="s4">XOR </span>(b<span class="s4">3</span>)</p>
+<p class="p2">d<span class="s4">1 </span>= (dP) <span class="s4">XOR </span>(d<span class="s4">2</span>) <span class="s4">XOR </span>(d<span class="s4">3</span>)</p>
+<p class="p1"><span class="s3">. </span>(39)</p>
+<p class="p1">Obviously, we can also detect and correct errors in a single block using the same procedure. The</p>
+<p class="p1">RAID controller also allows parallel access to data (for example, the blocks <span class="s3">a</span>1, <span class="s3">a</span>2, and <span class="s3">a</span>3 can be <span class="s2">read</span></p>
+<p class="p1">and written concurrently) and it can aggregate multiple write operations to improve performance.</p>
+<p class="p1">The system in Figure <span class="s1">3.5</span>(b) strips the data across four clusters. The access to data is controlled</p>
+<p class="p1">by a proxy that carries out some of the functions of a RAID controller, as well as authentication and</p>
+<p class="p1">other security-related functions. The proxy ensures <span class="s3">before-and-after </span>atomicity as well as <span class="s3">all-or-nothing</span></p>
+<p class="p1">atomicity for data access; the proxy buffers the data, possibly converts the datamanipulation commands, optimizes the data access (e.g., aggregates multiple write operations), converts data to formats specific</p>
+<p class="p1">to each cloud, and so on.</p>
+<p class="p1">This elegant idea immediately raises several questions: How does the response time of such a scheme</p>
+<p class="p1">comparewith that of a single storage system?Howmuch overhead is introduced by the proxy?Howcould</p>
+<p class="p1">this scheme avoid a single point of failure, the proxy? Are there standards for data access implemented</p>
+<p class="p1">by all vendors?</p>
+<p class="p1">An experiment to answer some of these question is reported in [<span class="s1">5</span>]; the Redundant Array of Cloud</p>
+<p class="p1">Storage (RACS) system uses the same data model and mimics the interface of the <span class="s3">S3 </span>provided by <span class="s3">AWS</span>.</p>
+<p class="p1">The <span class="s3">S3 </span>system, discussed in Section <span class="s1">3.1</span>, stores the data in <span class="s3">buckets</span>, each bucket being a flat namespace</p>
+<p class="p1">with <span class="s3">keys </span>associated with <span class="s3">objects </span>of arbitrary size but less than 5 GB. The prototype implementation</p>
+<p class="p1">discussed in [<span class="s1">5</span>] led the authors to conclude that the cost increases and the performance penalties of</p>
+<p class="p1">the RACS systems are relatively minor. The paper also suggests an implementation to avoid the single</p>
+<p class="p1">point of failure by using several proxies. Then the system is able to recover from the failure of a single</p>
+<p class="p1">proxy; clients are connected to several proxies and can access the data stored on multiple clouds.</p>
+<p class="p1">It remains to be seen whether such a solution is feasible in practice for organizations with a very</p>
+<p class="p1">large volume of data, given the limited number of cloud storage providers and the lack of standards for</p>
+<p class="p1">data storage. A basic question is whether it makes sense to trade basic tenets of cloud computing, such</p>
+<p class="p1">as simplicity and homogeneous resources controlled by a single administrative authority, for increased</p>
+<p class="p1">reliability and freedom from vendor lock-in [67].</p>
+<p class="p1">This brief discussion hints at the need for standardization and for scalable solutions, two of the many</p>
+<p class="p1">challenges faced by cloud computing in the near future. The pervasive nature of scalability dominates all</p>
+<p class="p1">aspects of cloud management and cloud applications; solutions that perform well on small systems are</p>
+<p class="p1">no longer feasible when the number of systems or the volume of the input data of an application increases</p>
+<p class="p1">by one or more orders of magnitude. Experiments with small test-bed systems produce inconclusive</p>
+<p class="p1">results. The only alternative is to conduct intensive simulations to prove (or disprove) the advantages of a</p>
+<p class="p1">particular algorithm for resource management or the feasibility of a particular data-intensive application.</p>
+<p class="p1">We can also conclude that cloud computing poses challenging problems to service providers and</p>
+<p class="p1">to users. The service providers have to develop strategies for resource management subject to quality</p>
+<p class="p1">of service and cost constraints, as discussed in Chapter 6. At the same time, the cloud application</p>
+<p class="p1">developers have to be aware of the limitations of the cloud computing model.</p>
+</body>
+</html>

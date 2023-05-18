@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A common approach to managing system complexity is to identify a set of <span class="s1">layers </span>with well-defined</p>
+<p class="p1"><span class="s1">interfaces </span>among them. The interfaces separate different levels of abstraction. Layering minimizes the</p>
+<p class="p1">interactions among the subsystems and simplifies the description of the subsystems. Each subsystem</p>
+<p class="p1">is abstracted through its interfaces with the other subsystems. Thus, we are able to design, implement,</p>
+<p class="p1">and modify the individual subsystems independently.</p>
+<p class="p1">The instruction set architecture (ISA) defines a processor’s set of instructions. For example, the</p>
+<p class="p1">Intel architecture is represented by the <span class="s1">x86</span>-32 and <span class="s1">x86</span>-64 instruction sets for systems supporting 32-bit addressing and 64-bit addressing, respectively. The hardware supports two execution modes, a <span class="s1">privileged</span>,</p>
+<p class="p1">or <span class="s1">kernel</span>,mode and a <span class="s1">user </span>mode. The instruction set consists of two sets of instructions, <span class="s1">privileged</span></p>
+<p class="p1">instructions that can only be executed in kernel mode and <span class="s1">nonprivileged </span>instructions that can be executed</p>
+<p class="p1">in user mode. There are also <span class="s1">sensitive instructions </span>that can be executed in kernel and in user mode but</p>
+<p class="p1">that behave differently (see Section <span class="s2">5.6</span>).</p>
+<p class="p1">Computer systems are fairly complex, and their operation is best understood when we consider a</p>
+<p class="p1">model similar to the one in Figure <span class="s2">5.1</span>, which shows the interfaces among the software components and</p>
+<p class="p1">the hardware [<span class="s2">325</span>]. The hardware consists of one or more multicore processors, a system interconnect</p>
+<p class="p1">(e.g., one or more buses), a memory translation unit, the main memory, and I/O devices, including one</p>
+<p class="p1">or more networking interfaces. Applications written mostly in high-level languages (HLL) often call</p>
+<p class="p1">library modules and are compiled into <span class="s1">object code</span>. Privileged operations, such as I/O requests, cannot</p>
+<p class="p1">be executed in user mode; instead, application and library modules issue <span class="s1">system calls </span>and the operating</p>
+<p class="p1">system determines whether the privileged operations required by the application do not violate system</p>
+<p class="p1">security or integrity and, if they don’t, executes them on behalf of the user. The binaries resulting from</p>
+<p class="p1">the translation of HLL programs are targeted to a specific hardware architecture.</p>
+<p class="p1">The first interface we discuss is the <span class="s1">instruction set architecture (ISA) </span>at the boundary of the hardware</p>
+<p class="p1">and the software. The next interface is the <span class="s1">application binary interface (ABI)</span>,which allows the ensemble</p>
+<p class="p1">consisting of the application and the library modules to access the hardware. The ABI does not include</p>
+<p class="p1">privileged system instructions; instead it invokes system calls. Finally, the <span class="s1">application program interface (API) </span>defines the set of instructions the hardware was designed to execute and gives the application</p>
+<p class="p1">access to the ISA. It includes HLL library calls, which often invoke system calls. A <span class="s1">process </span>is the</p>
+<p class="p1">abstraction for the code of an application at execution time; a <span class="s1">thread </span>is a lightweight process. <span class="s1">The ABI</span></p>
+<p class="p2">is the projection of the computer system seen by the process, and the API is the projection of the system</p>
+<p class="p2">from the perspective of the HLL program.</p>
+<p class="p1">Clearly, the binaries created by a compiler for a specific ISA and a specific operating system are</p>
+<p class="p1">not portable. Such code cannot run on a computer with a different ISA or on computers with the</p>
+<p class="p1">same ISA but different operating systems. However, it is possible to compile an HLL program for a</p>
+<p class="p1">VM environment, as shown in Figure <span class="s2">5.2</span>, where portable code is produced and distributed and then</p>
+<p class="p1">converted by binary translators to the ISA of the host system. A <span class="s1">dynamic binary translation </span>converts</p>
+<p class="p1">blocks of guest instructions from the portable code to the host instruction and leads to a significant</p>
+<p class="p1">performance improvement as such blocks are cached and reused.</p>
+</body>
+</html>

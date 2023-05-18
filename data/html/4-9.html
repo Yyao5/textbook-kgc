@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 10.0px Times}
+    span.s5 {font: 10.0px Courier}
+  </style>
+</head>
+<body>
+<p class="p1">A recent paper [<span class="s1">179</span>] describes the set of applications used at the National Energy Research Scientific</p>
+<p class="p1">Computing Center (NERSC) and presents the results of a comparative benchmark of <span class="s2">EC2 </span>and three</p>
+<p class="p1">supercomputers. NERSC is located at Lawrence Berkeley National Laboratory and serves a diverse</p>
+<p class="p1">community of scientists; it has some 3<span class="s2">,</span>000 researchers and involves 400 projects based on some 600</p>
+<p class="p1">codes. Some of the codes used are:</p>
+<p class="p1"><span class="s2">Community AtmosphereMode </span>(CAM), the atmospheric component of Community Climate System</p>
+<p class="p1">Model (CCSM), is used for weather and climate modeling.<span class="s3">12 </span>The code developed at NCAR uses</p>
+<p class="p1">two two-dimensional domain decompositions – one for the dynamics and the other for remapping.</p>
+<p class="p1">The first is decomposed over latitude and vertical level; the second is decomposed over longitude/</p>
+<p class="p1">latitude. The program is communication-intensive; on-node/processor data movement and</p>
+<p class="p1">relatively long <span class="s2">MPI</span><span class="s3">13 </span>messages that stress the interconnect point-to-point bandwidth are used to</p>
+<p class="p1">move data between the two decompositions.</p>
+<p class="p2">General Atomic and Molecular Electronic Structure System <span class="s4">(GAMESS) is used for ab initio quantum</span></p>
+<p class="p1">chemistry calculations. The code, developed by theGordon Research Group at theU.S.Department</p>
+<p class="p1">of Energy’s Ames Lab at Iowa State University, has its own communication library, the Distributed</p>
+<p class="p1">Data Interface (DDI), and is based on the same program multiple data (SPMD) execution</p>
+<p class="p1">model. DDI presents the abstraction of a global shared memory with one-sided data transfers, even</p>
+<p class="p1">on systems with physically distributed memory. On the cluster systems at NERSC the program uses</p>
+<p class="p1">socket communication; on the Cray XT4 the DDI uses <span class="s2">MPI </span>and only one-half of the processors</p>
+<p class="p1">compute, whereas the other half are data movers. The program is memory- and communication intensive.</p>
+<p class="p1"><span class="s2">Gyrokinetic</span><span class="s3">14 </span>(GTC) is a code for fusion research.<span class="s3">15 </span>It is a self-consistent, gyrokinetic tridimensional</p>
+<p class="p1">particle-in-cell (PIC)<span class="s3">16 </span>code with a nonspectral Poisson solver. It uses a grid that</p>
+<p class="p1">follows the field lines as they twist around a toroidal geometry representing a magnetically confined</p>
+<p class="p1">toroidal fusion plasma. The version of GTC used at NERSC uses a fixed, one-dimensional</p>
+<p class="p1">domain decomposition with 64 domains and 64<span class="s2">MPI </span>tasks. Communication is dominated by nearestneighbor</p>
+<p class="p1">exchanges that are bandwidth-bound. The most computationally intensive parts of GTC</p>
+<p class="p1">involve gather/deposition of charge on the grid and particle “push” steps. The code is memory intensive</p>
+<p class="p1">because the charge deposition uses indirect addressing.</p>
+<p class="p2">IntegratedMapandParticle Accelerator Tracking Time <span class="s4">(IMPACT-T) is a code for the prediction and</span></p>
+<p class="p1">performance enhancement of accelerators. It models the arbitrary overlap of fields from beamline</p>
+<p class="p1">elements and uses a parallel, relativistic PIC method with a spectral integratedGreen function solver.</p>
+<p class="p1">This object-oriented <span class="s2">Fortran90 </span>code uses a two-dimensional domain decomposition in the <span class="s2">y−z</span></p>
+<p class="p1">directions and dynamic load balancing based on the domains. Hockney’s Fast Fourier Transform</p>
+<p class="p1">(FFT) algorithm is used to solve Poisson’s equation with open boundary conditions. The code is</p>
+<p class="p1">sensitive to the memory bandwidth and <span class="s2">MPI </span>collective performance.</p>
+<p class="p1"><span class="s2">MAESTRO </span>is a low Mach number hydrodynamics code for simulating astrophysical flows.<span class="s3">17 </span>Its</p>
+<p class="p1">integration scheme is embedded in an adaptive mesh refinement algorithm based on a hierarchical</p>
+<p class="p1">system of rectangular, nonoverlapping grid patches at multiple levels with different resolutions;</p>
+<p class="p1">it uses a multigrid solver. Parallelization is via a tridimensional domain decomposition using a</p>
+<p class="p1">coarse-grained distribution strategy to balance the load and minimize communication costs. The</p>
+<p class="p1">communication topology tends to stress simple topology interconnects. The code has a very low</p>
+<p class="p1">computational intensity, it stresses memory latency, and the implicit solver stresses global communications.</p>
+<p class="p1">The message sizes range from short to relatively moderate.</p>
+<p class="p2">MIMD Lattice Computation <span class="s4">(MILC) is a </span>Quantum Chromo Dynamics <span class="s4">(QCD) code used to study</span></p>
+<p class="p1">“strong” interactions binding quarks into protons and neutrons and holding them together in the</p>
+<p class="p1">nucleus.<span class="s3">18 </span>The algorithm discretizes the space and evaluates field variables on sites and links of a</p>
+<p class="p1">regular hypercube lattice in four-dimensional space-time. The integration of an equation of motion</p>
+<p class="p1">for hundreds or thousands of time steps requires inverting a large, sparse matrix. The Conjugate</p>
+<p class="p1">Gradient (<span class="s2">CG</span>)method is used to solve a sparse, nearly singular matrix problem.Many <span class="s2">CG </span>iteration</p>
+<p class="p1">steps are required for convergence; the inversion translates into tridimensional complex matrix vector</p>
+<p class="p1">multiplications. Each multiplication requires a dot product of three pairs of tridimensional</p>
+<p class="p1">complex vectors; a dot product consists of five multiply/add operations and one multiply. The</p>
+<p class="p1">MIMD computational model is based on a four-dimensional domain decomposition. Each task</p>
+<p class="p1">exchanges data with its eight nearest neighbors and is involved in the <span class="s2">all-reduce </span>calls with very</p>
+<p class="p1">small payload as part of the <span class="s2">CG </span>algorithm. The algorithm requires <span class="s2">gather </span>operations from widely</p>
+<p class="p1">separated locations in memory. The code is highly memory- and computational-intensive and it is</p>
+<p class="p1">heavily dependent on prefetching.</p>
+<p class="p1"><span class="s2">PARAllel Total Energy Code </span>(PARATEC) is a quantum mechanics code that performs ab initio</p>
+<p class="p1">total energy calculations using pseudo-potentials, a plane wave basis set, and an all-band (unconstrained)</p>
+<p class="p1">Conjugate Gradient (<span class="s2">CG</span>) approach. Parallel three-dimensional FFTs transform the wave</p>
+<p class="p1">functions between real and Fourier space. The FFT dominates the run-time; the code uses <span class="s2">MPI</span></p>
+<p class="p1">and is communication-intensive. The code uses mostly point-to-point short messages. The code</p>
+<p class="p1">parallelizes over grid points, thereby achieving a fine-grain level of parallelism. The BLAS3 and</p>
+<p class="p1">one-dimensional FFT use optimized libraries (e.g., Intel’s MKL or AMD’s ACML), which results</p>
+<p class="p1">in high cache reuse and a high percentage of per-processor peak performance.</p>
+<p class="p1">The authors of [<span class="s1">179</span>] use the High-Performance Computing Challenge (HPCC) benchmark to compare</p>
+<p class="p1">the performance of <span class="s2">EC2 </span>with the performance of three large systems at NERSC. HPCC<span class="s3">19 </span>is a</p>
+<p class="p1">suite of seven synthetic benchmarks: three targeted synthetic benchmarks that quantify basic system</p>
+<p class="p1">parameters that characterize individually the computation and communication performance and four</p>
+<p class="p1">complex synthetic benchmarks that combine computation and communication and can be considered</p>
+<p class="p1">simple proxy applications. These benchmarks are:</p>
+<p class="p1">• DGEMM.<span class="s3">20 </span>The benchmark measures the floating-point performance of a processor/core. The memory</p>
+<p class="p1">bandwidth does little to affect the results, since the code is cache-friendly. Thus, the results of</p>
+<p class="p1">the benchmark are close to the theoretical peak performance of the processor.</p>
+<p class="p1">• STREAM.<span class="s3">21 </span>The benchmark measures the memory bandwidth.</p>
+<p class="p1">• The network latency benchmark.</p>
+<p class="p1">• The network bandwidth benchmark.</p>
+<p class="p1">• HPL.<span class="s3">22 </span>A software package that solves a (random) dense linear system in double precision arithmetic</p>
+<p class="p1">on distributed-memory computers. It is a portable and freely available implementation of the High-</p>
+<p class="p1">Performance Computing Linpack Benchmark.</p>
+<p class="p1">• FFTE. Measures the floating-point rate of execution of double precision complex one-dimensional</p>
+<p class="p1">Discrete Fourier Transform (DFT).</p>
+<p class="p1">• PTRANS. Parallel matrix transpose exercises the communications whereby pairs of processors</p>
+<p class="p1">communicate with each other simultaneously. It is a useful test of the total communications capacity</p>
+<p class="p1">of the network.</p>
+<p class="p1">• RandomAccess. Measures the rate of integer random updates of memory (GUPS).</p>
+<p class="p1">The systems used for the comparison with cloud computing are:</p>
+<p class="p1"><span class="s2">Carver</span>. A 400-node IBM iDataPlex cluster with quad-core Intel Nehalem processors running at</p>
+<p class="p1">2.67 GHz and with 24 GB of RAM (3 GB/core). Each node has two sockets; a single Quad Data</p>
+<p class="p1">Rate (QDR) IB link connects each node to a network that is locally a fat tree with a global two dimensional</p>
+<p class="p1">mesh. The codes were compiled with the Portland Group suite version 10.0 and Open</p>
+<p class="p1"><span class="s2">MPI </span>version 1.4.1.</p>
+<p class="p1"><span class="s2">Franklin</span>. A 9,660-node Cray XT4; each node has a single quad-core 2<span class="s2">.</span>3 GHz AMD Opteron</p>
+<p class="p1">Budapest processor with 8 GB of RAM (2 GB/core). Each processor is connected through a</p>
+<p class="p1">6.4 GB/s bidirectional HyperTransport interface to the interconnect via a Cray SeaStar-2 ASIC.</p>
+<p class="p1">The SeaStar routing chips are interconnected in a tridimensional torus topology in which each</p>
+<p class="p1">node has a direct link to its six nearest neighbors. Codes were compiled with the Pathscale or the</p>
+<p class="p1">Portland Group suite version 9.0.4.</p>
+<p class="p1"><span class="s2">Lawrencium</span>. A 198-node (1,584 core) <span class="s2">Linux </span>cluster; a compute node is a Dell Poweredge 1950</p>
+<p class="p1">server with two Intel Xeon quad-core 64-bit, 2.66-GHz Harpertown processors with 16GBofRAM</p>
+<p class="p1">(2 GB/core). A compute node is connected to a Dual Data Rate InfiniBand network configured as a</p>
+<p class="p1">fat tree with a 3:1 blocking factor. Codes were compiled using Intel 10.0.018 and Open <span class="s2">MPI </span>1.3.3.</p>
+<p class="p1">The virtual cluster at Amazon had four <span class="s2">EC2 </span>Compute Units (CUs), two virtual cores with two</p>
+<p class="p1">CUs each, and 7.5 GB of memory (an <span class="s5">m1.large </span>instance in Amazon parlance). A Compute Unit</p>
+<p class="p1">is approximately equivalent to a 1.0–1.2 GHz 2007 Opteron or 2007 Xeon processor. The nodes are</p>
+<p class="p1">connected with gigabit Ethernet. The binaries were compiled on Lawrencium. The results reported in</p>
+<p class="p1">[<span class="s1">179</span>] are summarized in Table <span class="s1">4.1</span>.</p>
+<p class="p1">The results in Table <span class="s1">4.1 </span>give us some ideas about the characteristics of scientific applications likely</p>
+<p class="p1">to run efficiently on the cloud. Communication-intensive applications will be affected by the increased</p>
+<p class="p1">latency (more than 70 times larger then <span class="s2">Carver</span>) and lower bandwidth (more than 70 times smaller than</p>
+<p class="p2">Carver<span class="s4">).</span></p>
+</body>
+</html>

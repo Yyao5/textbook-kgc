@@ -1,0 +1,68 @@
+,source,edge,target
+0,elasticity,requires,multiple  systems
+2,multiple data event,depends on,next  error
+6,backup,replicated,automatically  execution
+8,backup,continues,automatically  the
+9,standby  server,is,same  primary
+10,3.5 data store access,mitigated by,proxy
+11,client,could,data
+14,that,service,large  cloud
+15,that,involves,large  servers
+16,such database event,runs on,such database access
+19,servers,use,servers actions
+21,change,requires,configuration file
+23,when  command,has,state state
+26,all,synchronized,proxies
+28,proxies,ensured,Paxos consensus Section
+29,proxies,implement,a
+30,service,used for,distributed  systems
+31,software,written in,C. project
+33,then  clients,connect to,coordination service
+34,organization,shown in,Figure
+35,servers,communicate with,leader
+38,4.4(a  service,shows,single system image
+39,service,provides,single  system
+40,client,connect to,pack
+41,client,uses,single  server
+43,TCP client,sends,events
+44,client,synchronizes,client server
+46,TCP connections,detect,other client servers
+47,read operation,returns,write  operation
+48,servers,elect,leader forwards leader
+50,leader,uses,atomic  consensus
+53,servers,elect,new  leader
+54,system,organized as,similar file system
+55,name,identified by,unique  Figure
+57,Indeed  system,designed,state information
+59,data,includes,"ACLs,6 version stamps"
+60,when  znode,set,notification
+62,organization,allows,coordinated  updates
+63,data,contains,also version number
+64,that,stamped with,transition
+65,data,read,node
+66,write,read,znode
+67,write,replaces,data
+68,Zookeeper data,stored in,server memory
+69,Updates,logged,recoverability
+71,in  that,serialized,entire  tree
+72,disk,are,writes
+74,strictly  Updates,applied,strictly  which
+75,regardless server client,receives,same  response
+77,update,persists,client
+79,long  majority,guaranteed,servers
+82,local  that,read,client
+84,When  leader,receives,write
+85,that,determines,new  state
+87,protocol,uses,atomically FIFO servers
+88,message,included in,proposal
+91,Proposals,agreed,Paxos algorithm
+93,system,keeps,synch
+95,one  it,delivered to,eventually  servers
+97,message m,delivered before,message
+98,m,delivered before,n  servers
+101,delete,delete,node
+104,set data,write,node
+108,when  session,supports,ephemeral  nodes
+109,ZooKeeper service,shows,finite state machine coordination
+110,ZooKeeper service,supports,finite state machine
+112,service,used,such group membership

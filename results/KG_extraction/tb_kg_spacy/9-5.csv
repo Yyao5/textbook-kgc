@@ -1,0 +1,41 @@
+,source,edge,target
+0,system,allows multiple,subject hardware policies
+4,attacks,target,personal user computers
+7,this,occur via,malicious Web site
+9,where security definition,considered,tightly policy administrator
+10,how  OS,controls,the
+11,last,defines,cryptographic  data
+12,last,specifies,cryptographic
+14,OS,confine,unique security domain
+15,special  that,called trusted,related  functions
+16,applications,allowed,lowest privileges functions
+19,mechanisms,place,individual  users
+20,mandatory  policy,change,only system administrator
+23,such  systems,distinguish between,privileged security domain
+24,such Windows program,allow,regardless  program
+28,malicious  software,impersonate,trusted  software
+29,such login servers,provide,servers clients
+30,solution,is,defined  roles
+32,access control mechanism,consist,application components
+34,enforcer,gather,together policy decision
+36,Finally  information,carry,decider
+37,mechanism,required,authorized policy rules
+39,path,required,also decider agent
+41,cryptography which,proposed,cryptographic invocation mechanism
+44,Manager,uses,unauthorized type safety sandbox
+46,Java Virtual Machine,accepts,byte code
+47,moreover  code,protect,other  applications
+50,good  security,relies on,Java class code
+51,approach,fail due,all security model
+54,keys,embedded cryptographic,remote  systems
+55,that,allow,keys
+57,that,requires,digital
+58,commodity operating systems,conclude,low  assurance
+59,commodity operating systems,offer low,low
+60,OS,isolates,one  another
+62,physical  platform,affected,application
+63,level,reduced to,vulnerable security platform
+64,systems,provide,trusted  users
+66,shortcomings,add to,computing  environment
+67,financial  application,can,example
+69,human  user,distinguish,malicious service service

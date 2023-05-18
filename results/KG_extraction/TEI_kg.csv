@@ -1,0 +1,1290 @@
+chapter 1 introduction,contains,1.1 network-centric computing and network-centric content
+chapter 1 introduction,contains,1.2 peer-to-peer systems
+chapter 1 introduction,contains,1.3 cloud computing: an old idea whose time has come
+chapter 1 introduction,contains,1.4 cloud computing delivery models and services
+chapter 1 introduction,contains,1.5 ethical issues in cloud computing
+chapter 1 introduction,contains,1.6 cloud vulnerabilities
+chapter 1 introduction,contains,1.7 major challenges faced by cloud computing
+chapter 1 introduction,contains,1.8 further reading
+chapter 1 introduction,contains,1.9 history notes
+chapter 2 parallel and distributed systems,contains,2.1 parallel computing
+chapter 2 parallel and distributed systems,contains,2.2 parallel computer architecture
+chapter 2 parallel and distributed systems,contains,2.3 distributed systems
+chapter 2 parallel and distributed systems,contains,2.4 global state of a process group
+chapter 2 parallel and distributed systems,contains,2.5 communication protocols and process coordination
+chapter 2 parallel and distributed systems,contains,2.6 logical clocks
+chapter 2 parallel and distributed systems,contains,2.7 message delivery rules; causal delivery
+chapter 2 parallel and distributed systems,contains,2.8 runs and cuts; causal history
+chapter 2 parallel and distributed systems,contains,2.9 concurrency
+chapter 2 parallel and distributed systems,contains,2.10 atomic actions
+chapter 2 parallel and distributed systems,contains,2.11 consensus protocols
+chapter 2 parallel and distributed systems,contains,2.12 modeling concurrency with petri nets
+chapter 2 parallel and distributed systems,contains,2.13 enforced modularity: the client-server paradigm
+chapter 2 parallel and distributed systems,contains,2.14 further reading
+chapter 2 parallel and distributed systems,contains,2.15 history notes
+chapter 3 cloud infrastructure,contains,3.1 cloud computing at amazon
+chapter 3 cloud infrastructure,contains,3.2 cloud computing: the google perspective
+chapter 3 cloud infrastructure,contains,3.3 microsoft windows azure and online services
+chapter 3 cloud infrastructure,contains,3.4 open-source software platforms for private clouds
+chapter 3 cloud infrastructure,contains,3.5 cloud storage diversity and vendor lock-in
+chapter 3 cloud infrastructure,contains,3.6 cloud computing interoperability: the intercloud
+chapter 3 cloud infrastructure,contains,3.7 energy use and ecological impact of large-scale data centers
+chapter 3 cloud infrastructure,contains,3.8 service- and compliance-level agreements
+chapter 3 cloud infrastructure,contains,3.9 responsibility sharing between user and cloud service provider
+chapter 3 cloud infrastructure,contains,3.10 user experience
+chapter 3 cloud infrastructure,contains,3.11 software licensing
+chapter 3 cloud infrastructure,contains,3.12 further reading
+chapter 3 cloud infrastructure,contains,3.13 history notes
+chapter 4 cloud computing: applications and paradigms,contains,4.1 challenges for cloud computing
+chapter 4 cloud computing: applications and paradigms,contains,4.2 existing cloud applications and new application opportunities
+chapter 4 cloud computing: applications and paradigms,contains,4.3 architectural styles for cloud applications
+chapter 4 cloud computing: applications and paradigms,contains,4.4 workflows: coordination of multiple activities
+chapter 4 cloud computing: applications and paradigms,contains,4.5 coordination based on a state machine model: the zookeeper
+chapter 4 cloud computing: applications and paradigms,contains,4.6 the mapreduce programming model
+chapter 4 cloud computing: applications and paradigms,contains,4.7 a case study: the greptheweb application
+chapter 4 cloud computing: applications and paradigms,contains,4.8 clouds for science and engineering
+chapter 4 cloud computing: applications and paradigms,contains,4.9 high-performance computing on a cloud
+chapter 4 cloud computing: applications and paradigms,contains,4.10 cloud computing for biology research
+chapter 4 cloud computing: applications and paradigms,contains,"4.11 social computing, digital content, and cloud computing"
+chapter 4 cloud computing: applications and paradigms,contains,4.12 further reading
+chapter 5 cloud resource virtualization,contains,5.1 virtualization
+chapter 5 cloud resource virtualization,contains,5.2 layering and virtualization
+chapter 5 cloud resource virtualization,contains,5.3 virtual machine monitors
+chapter 5 cloud resource virtualization,contains,5.4 virtual machines
+chapter 5 cloud resource virtualization,contains,5.5 performance and security isolation
+chapter 5 cloud resource virtualization,contains,5.6 full virtualization and paravirtualization
+chapter 5 cloud resource virtualization,contains,5.7 hardware support for virtualization
+chapter 5 cloud resource virtualization,contains,"5.8 case study: xen, a vmm based on paravirtualization"
+chapter 5 cloud resource virtualization,contains,5.9 optimization of network virtualization in xen 2.0
+chapter 5 cloud resource virtualization,contains,5.10 vblades: paravirtualization targeting an x86-64 itanium processor
+chapter 5 cloud resource virtualization,contains,5.11 a performance comparison of virtual machines
+chapter 5 cloud resource virtualization,contains,5.12 the darker side of virtualization
+chapter 5 cloud resource virtualization,contains,5.13 software fault isolation
+chapter 5 cloud resource virtualization,contains,5.14 further reading
+chapter 5 cloud resource virtualization,contains,5.15 history notes
+chapter 6 cloud resource management and scheduling,contains,6.1 policies and mechanisms for resource management
+chapter 6 cloud resource management and scheduling,contains,6.2 applications of control theory to task scheduling on a cloud
+chapter 6 cloud resource management and scheduling,contains,6.3 stability of a two-level resource allocation architecture
+chapter 6 cloud resource management and scheduling,contains,6.4 feedback control based on dynamic thresholds
+chapter 6 cloud resource management and scheduling,contains,6.5 coordination of specialized autonomic performance managers
+chapter 6 cloud resource management and scheduling,contains,6.6 a utility-based model for cloud-based web services
+chapter 6 cloud resource management and scheduling,contains,6.7 resource bundling: combinatorial auctions for cloud resources
+chapter 6 cloud resource management and scheduling,contains,6.8 scheduling algorithms for computing clouds
+chapter 6 cloud resource management and scheduling,contains,6.9 fair queuing
+chapter 6 cloud resource management and scheduling,contains,6.10 start-time fair queuing
+chapter 6 cloud resource management and scheduling,contains,6.11 borrowed virtual time
+chapter 6 cloud resource management and scheduling,contains,6.12 cloud scheduling subject to deadlines
+chapter 6 cloud resource management and scheduling,contains,6.13 scheduling mapreduce applications subject to deadlines
+chapter 6 cloud resource management and scheduling,contains,6.14 resource management and dynamic application scaling
+chapter 6 cloud resource management and scheduling,contains,6.15 further reading
+chapter 7 networking support,contains,7.1 packet-switched networks
+chapter 7 networking support,contains,7.2 the internet
+chapter 7 networking support,contains,7.3 internet migration to ipv6
+chapter 7 networking support,contains,7.4 the transformation of the internet
+chapter 7 networking support,contains,7.5 web access and the tcp congestion control window
+chapter 7 networking support,contains,7.6 network resource management
+chapter 7 networking support,contains,7.7 interconnection networks for computer clouds
+chapter 7 networking support,contains,7.8 storage area networks
+chapter 7 networking support,contains,7.9 content-delivery networks
+chapter 7 networking support,contains,7.10 overlay networks and small-world networks
+chapter 7 networking support,contains,7.11 scale-free networks
+chapter 7 networking support,contains,7.12 epidemic algorithms
+chapter 7 networking support,contains,7.13 further reading
+chapter 7 networking support,contains,7.14 history notes
+chapter 8 storage systems,contains,8.1 the evolution of storage technology
+chapter 8 storage systems,contains,"8.2 storage models, file systems, and databases"
+chapter 8 storage systems,contains,8.3 distributed file systems: the precursors
+chapter 8 storage systems,contains,8.4 general parallel file system
+chapter 8 storage systems,contains,8.5 google file system
+chapter 8 storage systems,contains,8.6 apache hadoop
+chapter 8 storage systems,contains,8.7 locks and chubby: a locking service
+chapter 8 storage systems,contains,8.8 transaction processing and nosql databases
+chapter 8 storage systems,contains,8.9 bigtable
+chapter 8 storage systems,contains,8.10 megastore
+chapter 8 storage systems,contains,8.11 history notes
+chapter 8 storage systems,contains,8.12 further reading
+chapter 9 cloud security,contains,9.1 cloud security risks
+chapter 9 cloud security,contains,9.2 security: the top concern for cloud users
+chapter 9 cloud security,contains,9.3 privacy and privacy impact assessment
+chapter 9 cloud security,contains,9.4 trust
+chapter 9 cloud security,contains,9.5 operating system security
+chapter 9 cloud security,contains,9.6 virtual machine security
+chapter 9 cloud security,contains,9.7 security of virtualization
+chapter 9 cloud security,contains,9.8 security risks posed by shared images
+chapter 9 cloud security,contains,9.9 security risks posed by a management os
+chapter 9 cloud security,contains,9.10 xoar: breaking the monolithic design of the tcb
+chapter 9 cloud security,contains,9.11 a trusted virtual machine monitor
+chapter 9 cloud security,contains,9.12 further reading
+chapter 10 complex systems and self-organization,contains,10.1 complex systems
+chapter 10 complex systems and self-organization,contains,10.2 abstraction and physical reality
+chapter 10 complex systems and self-organization,contains,10.3 quantifying complexity
+chapter 10 complex systems and self-organization,contains,10.4 emergence and self-organization
+chapter 10 complex systems and self-organization,contains,10.5 composability bounds and scalability
+chapter 10 complex systems and self-organization,contains,"10.6 modularity, layering, and hierarchy"
+chapter 10 complex systems and self-organization,contains,10.7 more on the complexity of computing and communication systems
+chapter 10 complex systems and self-organization,contains,10.8 systems of systems: challenges and solutions
+chapter 10 complex systems and self-organization,contains,10.9 further reading
+chapter 11 cloud application development,contains,11.1 amazon web services: ec2 instances
+chapter 11 cloud application development,contains,11.2 connecting clients to cloud instances through firewalls
+chapter 11 cloud application development,contains,11.3 security rules for application and transport layer protocols in ec2
+chapter 11 cloud application development,contains,11.4 how to launch an ec2 linux instance and connect to it
+chapter 11 cloud application development,contains,11.5 how to use s3 in java
+chapter 11 cloud application development,contains,11.6 how to manage sqs services in c#
+chapter 11 cloud application development,contains,11.7 how to install the simple notification service on ubuntu 10.04
+chapter 11 cloud application development,contains,11.8 how to create an ec2 placement group and use mpi
+chapter 11 cloud application development,contains,11.9 how to install hadoop on eclipse on a windows system
+chapter 11 cloud application development,contains,11.10 cloud-based simulation of a distributed trust algorithm
+chapter 11 cloud application development,contains,11.11 a trust management service
+chapter 11 cloud application development,contains,11.12 a cloud service for adaptive data streaming
+chapter 11 cloud application development,contains,11.13 cloud-based optimal fpga synthesis
+chapter 1 introduction,contains,Cloud computing
+chapter 1 introduction,contains,delivery models and services
+chapter 1 introduction,contains,economical aspects
+chapter 1 introduction,contains,"Cloud computing, delivery models and services"
+chapter 1 introduction,contains,Elastic computing
+chapter 1 introduction,contains,iCloud (Apple)
+chapter 5 cloud resource virtualization,contains,Bandwidth
+chapter 5 cloud resource virtualization,contains,utility-based computing costs
+chapter 5 cloud resource virtualization,contains,Latency
+chapter 6 cloud resource management and scheduling,contains,Autoscaling
+chapter 6 cloud resource management and scheduling,contains,Cloud resource management
+chapter 8 storage systems,contains,Storage area network (SAN)
+chapter 8 storage systems,contains,Storage system
+chapter 11 cloud application development,contains,Amazon Web Services (AWS)
+chapter 11 cloud application development,contains,Cognitive radio networks (CRNs)
+1.1 network-centric computing and network-centric content,contains,Application/logic tier
+1.1 network-centric computing and network-centric content,contains,Centers for Disease Control (CDC)
+1.1 network-centric computing and network-centric content,contains,"grid movement, impact on"
+1.1 network-centric computing and network-centric content,contains,Computing grid
+1.1 network-centric computing and network-centric content,contains,"application, challenges"
+1.1 network-centric computing and network-centric content,contains,Content
+1.1 network-centric computing and network-centric content,contains,centric routing
+1.1 network-centric computing and network-centric content,contains,defined
+1.1 network-centric computing and network-centric content,contains,Content-centric routing
+1.1 network-centric computing and network-centric content,contains,Data tier
+1.1 network-centric computing and network-centric content,contains,Defense Information Systems Agency (DISA)
+1.1 network-centric computing and network-centric content,contains,European Organization for Nuclear Research (CERN)
+1.1 network-centric computing and network-centric content,contains,Health and Human Services (HHS)
+1.1 network-centric computing and network-centric content,contains,HyperText Markup Language (HTML)
+1.1 network-centric computing and network-centric content,contains,HyperText Transfer Protocol (HTTP)
+1.1 network-centric computing and network-centric content,contains,Large Hadron Collider (LHC)
+1.1 network-centric computing and network-centric content,contains,LHC Computing Grid (LCG)
+1.1 network-centric computing and network-centric content,contains,Middleware
+1.1 network-centric computing and network-centric content,contains,National Aeronautics and Space Administration (NASA)
+1.1 network-centric computing and network-centric content,contains,Navy’s Next Generation Enterprise Network (NGEN)
+1.1 network-centric computing and network-centric content,contains,Network-centric computing and network-centric content
+1.1 network-centric computing and network-centric content,contains,advantages
+1.1 network-centric computing and network-centric content,contains,characteristics
+1.1 network-centric computing and network-centric content,contains,development factors
+1.1 network-centric computing and network-centric content,contains,distribution developments
+1.1 network-centric computing and network-centric content,contains,Presentation tier
+1.1 network-centric computing and network-centric content,contains,Quad-core processors
+1.1 network-centric computing and network-centric content,contains,RDF Schema (RDFS)
+1.1 network-centric computing and network-centric content,contains,Relational database management system (RDBMS)
+1.1 network-centric computing and network-centric content,contains,Resource Description Framework (RDF)
+1.1 network-centric computing and network-centric content,contains,"Software engineering tier models, impact on"
+1.1 network-centric computing and network-centric content,contains,Three-tier model
+1.1 network-centric computing and network-centric content,contains,Web Ontology Language (OWL)
+1.2 peer-to-peer systems,contains,BitTorrent
+1.2 peer-to-peer systems,contains,Chord
+1.2 peer-to-peer systems,contains,Credence
+1.2 peer-to-peer systems,contains,Key-based routing (KBR)
+1.2 peer-to-peer systems,contains,Network News Transfer Protocol (NNTP)
+1.2 peer-to-peer systems,contains,Overcite
+1.2 peer-to-peer systems,contains,Peer-to-peer systems
+1.2 peer-to-peer systems,contains,overlay network
+1.2 peer-to-peer systems,contains,properties
+1.2 peer-to-peer systems,contains,Simple Mail Transfer Protocol (SMTP)
+1.2 peer-to-peer systems,contains,Skype
+1.2 peer-to-peer systems,contains,Voice-over-Internet Protocol (VoIP)
+1.3 cloud computing: an old idea whose time has come,contains,economical aspects
+1.3 cloud computing: an old idea whose time has come,contains,"obstacles, using"
+1.3 cloud computing: an old idea whose time has come,contains,"success factors, reasons"
+1.3 cloud computing: an old idea whose time has come,contains,types
+1.3 cloud computing: an old idea whose time has come,contains,Community cloud
+1.3 cloud computing: an old idea whose time has come,contains,Data centers energy consumption
+1.3 cloud computing: an old idea whose time has come,contains,Hybrid cloud
+1.3 cloud computing: an old idea whose time has come,contains,Private cloud
+1.3 cloud computing: an old idea whose time has come,contains,Public cloud
+1.4 cloud computing delivery models and services,contains,architectures
+1.4 cloud computing delivery models and services,contains,enterprise services
+1.4 cloud computing delivery models and services,contains,entities
+1.4 cloud computing delivery models and services,contains,model structures
+1.4 cloud computing delivery models and services,contains,delivery models
+1.4 cloud computing delivery models and services,contains,Infrastructure-as-a-Service (IaaS)
+1.4 cloud computing delivery models and services,contains,Platform-as-a-Service (PaaS)
+1.4 cloud computing delivery models and services,contains,Software-as-a-Service (SaaS)
+1.5 ethical issues in cloud computing,contains,complex structure
+1.5 ethical issues in cloud computing,contains,ethical issues
+1.5 ethical issues in cloud computing,contains,support activities
+1.6 cloud vulnerabilities,contains,vulnerabilities
+1.6 cloud vulnerabilities,contains,Cloud vulnerabilities
+1.7 major challenges faced by cloud computing,contains,major challenges
+1.7 major challenges faced by cloud computing,contains,"SaaS model challenges, cloud computing"
+1.8 further reading,contains,"IaaS model challenges, cloud computing"
+1.8 further reading,contains,Trusted computer base (TCB)
+1.8 further reading,contains,cloud computing
+2.1 parallel computing,contains,Amdahl’s law
+2.1 parallel computing,contains,Application-specific integrated circuit (ASIC)
+2.1 parallel computing,contains,Cloud applications
+2.1 parallel computing,contains,Cloud computing
+2.1 parallel computing,contains,parallel computing
+2.1 parallel computing,contains,Coffman conditions
+2.1 parallel computing,contains,circular wait
+2.1 parallel computing,contains,hold and wait
+2.1 parallel computing,contains,mutual exclusion
+2.1 parallel computing,contains,no preemption
+2.1 parallel computing,contains,Communication protocols and process coordination
+2.1 parallel computing,contains,Concurrent processes
+2.1 parallel computing,contains,Data parallelism/loop parallelism
+2.1 parallel computing,contains,Field programmable gate arrays (FPGAs)
+2.1 parallel computing,contains,Gustafson’s law
+2.1 parallel computing,contains,Hardware description language (HDL)
+2.1 parallel computing,contains,Holy grail
+2.1 parallel computing,contains,Message Passing Interface (MPI)
+2.1 parallel computing,contains,Multicore processors
+2.1 parallel computing,contains,Parallel and Distributed Systems
+2.1 parallel computing,contains,checkpoint-restart procedures
+2.1 parallel computing,contains,cloud applications
+2.1 parallel computing,contains,communication protocols
+2.1 parallel computing,contains,advantages
+2.1 parallel computing,contains,algorithms requirements
+2.1 parallel computing,contains,barrier synchronization
+2.1 parallel computing,contains,concurrency problems
+2.1 parallel computing,contains,deadlocks
+2.1 parallel computing,contains,fine-grain and coarse-grain
+2.1 parallel computing,contains,livelock condition
+2.1 parallel computing,contains,shared memory
+2.1 parallel computing,contains,speed-up measures
+2.1 parallel computing,contains,subtasks
+2.1 parallel computing,contains,Partial differential equations (PDEs)
+2.1 parallel computing,contains,Priority inversion
+2.1 parallel computing,contains,Same program multiple data (SPMD)
+2.1 parallel computing,contains,Transaction processing systems
+2.2 parallel computer architecture,contains,Bit-level parallelism
+2.2 parallel computer architecture,contains,Cache Only Memory Access (COMA)
+2.2 parallel computer architecture,contains,Complex instruction set computing (CISC)
+2.2 parallel computer architecture,contains,Floating point systems (FPS)
+2.2 parallel computer architecture,contains,Hypercube
+2.2 parallel computer architecture,contains,IBM Sequoia-BlueGene/Q system
+2.2 parallel computer architecture,contains,Instruction-level parallelism
+2.2 parallel computer architecture,contains,Jaguar
+2.2 parallel computer architecture,contains,MIMD architecture
+2.2 parallel computer architecture,contains,defined
+2.2 parallel computer architecture,contains,in parallel computing
+2.2 parallel computer architecture,contains,"Multiple instructions, Multiple Data (MIMD)"
+2.2 parallel computer architecture,contains,Non-Uniform Memory Access (NUMA)
+2.2 parallel computer architecture,contains,Parallel and Distributed Systems
+2.2 parallel computer architecture,contains,parallel computer architecture
+2.2 parallel computer architecture,contains,graphic processing units (GPUs)
+2.2 parallel computer architecture,contains,Sun Microsystems
+2.2 parallel computer architecture,contains,vector processing
+2.2 parallel computer architecture,contains,companies aimed to support
+2.2 parallel computer architecture,contains,Reduced Instruction Set Computing (RISC)
+2.2 parallel computer architecture,contains,"Single Instruction, Multiple Data (SIMD)"
+2.2 parallel computer architecture,contains,Single Instruction Single Data (SISD)
+2.2 parallel computer architecture,contains,Supercomputers
+2.2 parallel computer architecture,contains,Task parallelism
+2.2 parallel computer architecture,contains,Titan (Cray XK7 system)
+2.2 parallel computer architecture,contains,Uniform Memory Access (UMA)
+2.3 distributed systems,contains,Access transparency
+2.3 distributed systems,contains,Concurrency transparency
+2.3 distributed systems,contains,Distributed systems
+2.3 distributed systems,contains,characteristics
+2.3 distributed systems,contains,defined
+2.3 distributed systems,contains,history
+2.3 distributed systems,contains,middleware
+2.3 distributed systems,contains,Failure transparency
+2.3 distributed systems,contains,Location transparency
+2.3 distributed systems,contains,Middleware
+2.3 distributed systems,contains,Migration transparency
+2.3 distributed systems,contains,Performance transparency
+2.3 distributed systems,contains,Remote procedure call (RPC)
+2.3 distributed systems,contains,Replication transparency
+2.3 distributed systems,contains,Scaling transparency
+2.4 global state of a process group,contains,Parallel and Distributed Systems
+2.4 global state of a process group,contains,global state
+2.4 global state of a process group,contains,of channels
+2.4 global state of a process group,contains,communication channel
+2.4 global state of a process group,contains,of distributed computation
+2.4 global state of a process group,contains,initial state
+2.4 global state of a process group,contains,lattice of
+2.4 global state of a process group,contains,number of paths
+2.4 global state of a process group,contains,process group
+2.4 global state of a process group,contains,protocol
+2.4 global state of a process group,contains,space-time
+2.4 global state of a process group,contains,in two-dimensional case
+2.5 communication protocols and process coordination,contains,Communication protocols and process coordination
+2.5 communication protocols and process coordination,contains,implementation
+2.5 communication protocols and process coordination,contains,precision of global time base
+2.5 communication protocols and process coordination,contains,presence of errors
+2.5 communication protocols and process coordination,contains,RTT estimation
+2.5 communication protocols and process coordination,contains,timestamps
+2.5 communication protocols and process coordination,contains,Congestion control
+2.5 communication protocols and process coordination,contains,Flow control
+2.5 communication protocols and process coordination,contains,Global predicate evaluation (GPE)
+2.5 communication protocols and process coordination,contains,clock rate
+2.5 communication protocols and process coordination,contains,error control mechanism
+2.5 communication protocols and process coordination,contains,major concerns
+2.5 communication protocols and process coordination,contains,process coordination
+2.5 communication protocols and process coordination,contains,timing concept
+2.5 communication protocols and process coordination,contains,problems
+2.5 communication protocols and process coordination,contains,Round-trip-time (RTT)
+2.5 communication protocols and process coordination,contains,Timestamps
+2.6 logical clocks,contains,Binary cause-effect relationship
+2.6 logical clocks,contains,Concurrent events
+2.6 logical clocks,contains,Logical clocks (LC)
+2.6 logical clocks,contains,concept
+2.6 logical clocks,contains,rules
+2.6 logical clocks,contains,binary cause-effect relationship
+2.6 logical clocks,contains,event sequences
+2.6 logical clocks,contains,System analysis phase
+2.6 logical clocks,contains,System specification phase
+2.7 message delivery rules; causal delivery,contains,Causal delivery
+2.7 message delivery rules; causal delivery,contains,Clock condition
+2.7 message delivery rules; causal delivery,contains,FIFO delivery
+2.7 message delivery rules; causal delivery,contains,processes
+2.7 message delivery rules; causal delivery,contains,Message delivery rules
+2.7 message delivery rules; causal delivery,contains,causal delivery violation
+2.7 message delivery rules; causal delivery,contains,channel-process interface
+2.7 message delivery rules; causal delivery,contains,clock conditions
+2.7 message delivery rules; causal delivery,contains,consistent message delivery
+2.7 message delivery rules; causal delivery,contains,"First in, first out (FIFO) delivery"
+2.7 message delivery rules; causal delivery,contains,Time stamp (T S(m))
+2.7 message delivery rules; causal delivery,contains,Strong clock condition
+2.8 runs and cuts; causal history,contains,Inconsistent and consistent cuts
+2.8 runs and cuts; causal history,contains,Runs and cuts
+2.8 runs and cuts; causal history,contains,Snapshot protocol of Chandy and Lamport
+2.9 concurrency,contains,Concurrency
+2.9 concurrency,contains,advantages
+2.9 concurrency,contains,challenges
+2.9 concurrency,contains,in embedded system
+2.9 concurrency,contains,software applications
+2.9 concurrency,contains,SPMD paradigm
+2.9 concurrency,contains,system design strategy
+2.9 concurrency,contains,thread activities
+2.9 concurrency,contains,Context switching
+2.9 concurrency,contains,Embedded systems
+2.9 concurrency,contains,Exception Handler (EH)
+2.9 concurrency,contains,Multilevel Memory Manager (MLMM)
+2.9 concurrency,contains,scaled speed-up
+2.9 concurrency,contains,Scheduler (S)
+2.9 concurrency,contains,Virtualization
+2.9 concurrency,contains,Virtual Memory Manager (VMM)
+2.10 atomic actions,contains,All-or-nothing action
+2.10 atomic actions,contains,post-commit phase
+2.10 atomic actions,contains,pre-commit phase
+2.10 atomic actions,contains,Atomic actions
+2.10 atomic actions,contains,all-or-nothing property
+2.10 atomic actions,contains,basic operations
+2.10 atomic actions,contains,before-or-after property
+2.10 atomic actions,contains,cell storage
+2.10 atomic actions,contains,compare-and-swap architecture
+2.10 atomic actions,contains,hardware support
+2.10 atomic actions,contains,journal storage
+2.10 atomic actions,contains,monitors
+2.10 atomic actions,contains,multistep operations
+2.10 atomic actions,contains,parallel and distributed applications
+2.10 atomic actions,contains,systematic approaches
+2.10 atomic actions,contains,Barrier synchronization
+2.10 atomic actions,contains,Before-or-after atomicity
+2.10 atomic actions,contains,Cell storage
+2.10 atomic actions,contains,Commit point
+2.10 atomic actions,contains,communication channels
+2.10 atomic actions,contains,Journal storage
+2.10 atomic actions,contains,Message Passing Interface (MPI)
+2.10 atomic actions,contains,Monitors
+2.10 atomic actions,contains,Semaphores
+2.10 atomic actions,contains,Storage models
+2.11 consensus protocols,contains,Consensus protocols
+2.11 consensus protocols,contains,Algorithms
+2.11 consensus protocols,contains,in distributed system
+2.11 consensus protocols,contains,"entities, role in"
+2.11 consensus protocols,contains,family of Paxos
+2.11 consensus protocols,contains,no fault-tolerancy
+2.11 consensus protocols,contains,request types
+2.11 consensus protocols,contains,services
+2.11 consensus protocols,contains,Paxos consensus algorithm flow
+2.11 consensus protocols,contains,Proposal preparation
+2.11 consensus protocols,contains,Proposal promise
+2.11 consensus protocols,contains,Quorum
+2.12 modeling concurrency with petri nets,contains,Asymmetric choice petri nets
+2.12 modeling concurrency with petri nets,contains,Asymmetric confusion
+2.12 modeling concurrency with petri nets,contains,Bipartite graph
+2.12 modeling concurrency with petri nets,contains,Confusion
+2.12 modeling concurrency with petri nets,contains,Enabled Transition
+2.12 modeling concurrency with petri nets,contains,Extended free choice
+2.12 modeling concurrency with petri nets,contains,Extended nets
+2.12 modeling concurrency with petri nets,contains,Firing rule
+2.12 modeling concurrency with petri nets,contains,Firing sequence
+2.12 modeling concurrency with petri nets,contains,Free Choice
+2.12 modeling concurrency with petri nets,contains,Incidence matrix
+2.12 modeling concurrency with petri nets,contains,Liveness
+2.12 modeling concurrency with petri nets,contains,Marked Graph
+2.12 modeling concurrency with petri nets,contains,Modeling concurrency with Petri nets
+2.12 modeling concurrency with petri nets,contains,Modified Transition Enabling Rule for Extended Nets
+2.12 modeling concurrency with petri nets,contains,Ordinary Net
+2.12 modeling concurrency with petri nets,contains,Petri nets
+2.12 modeling concurrency with petri nets,contains,bipartite graphs
+2.12 modeling concurrency with petri nets,contains,concurrent activities
+2.12 modeling concurrency with petri nets,contains,confusion
+2.12 modeling concurrency with petri nets,contains,defined
+2.12 modeling concurrency with petri nets,contains,in distributed system
+2.12 modeling concurrency with petri nets,contains,exclusion model
+2.12 modeling concurrency with petri nets,contains,marked graph
+2.12 modeling concurrency with petri nets,contains,model priorities
+2.12 modeling concurrency with petri nets,contains,system with two processes
+2.12 modeling concurrency with petri nets,contains,tokens in
+2.12 modeling concurrency with petri nets,contains,State Machine
+2.12 modeling concurrency with petri nets,contains,Stochastic Petri nets (SPNs)
+2.12 modeling concurrency with petri nets,contains,Symmetric confusion
+2.13 enforced modularity: the client-server paradigm,contains,Client-server paradigm
+2.13 enforced modularity: the client-server paradigm,contains,applications
+2.13 enforced modularity: the client-server paradigm,contains,back-end systems
+2.13 enforced modularity: the client-server paradigm,contains,communication on WWW
+2.13 enforced modularity: the client-server paradigm,contains,email service
+2.13 enforced modularity: the client-server paradigm,contains,front-end systems
+2.13 enforced modularity: the client-server paradigm,contains,"heterogeneity, systems"
+2.13 enforced modularity: the client-server paradigm,contains,HTTP tunneling
+2.13 enforced modularity: the client-server paradigm,contains,modularity concept
+2.13 enforced modularity: the client-server paradigm,contains,process architecture
+2.13 enforced modularity: the client-server paradigm,contains,proxy server
+2.13 enforced modularity: the client-server paradigm,contains,remote procedure call (RPC)
+2.13 enforced modularity: the client-server paradigm,contains,response time
+2.13 enforced modularity: the client-server paradigm,contains,security concerns
+2.13 enforced modularity: the client-server paradigm,contains,system ensembles
+2.13 enforced modularity: the client-server paradigm,contains,in WorldWideWeb
+2.13 enforced modularity: the client-server paradigm,contains,client-server paradigm
+2.13 enforced modularity: the client-server paradigm,contains,Enforced modularity
+2.13 enforced modularity: the client-server paradigm,contains,HyperText Transfer Protocol (HTTP)
+2.13 enforced modularity: the client-server paradigm,contains,Modularity
+2.13 enforced modularity: the client-server paradigm,contains,Remote procedure call (RPC)
+2.13 enforced modularity: the client-server paradigm,contains,Response time
+2.13 enforced modularity: the client-server paradigm,contains,Soft modularity
+2.13 enforced modularity: the client-server paradigm,contains,challenges
+2.13 enforced modularity: the client-server paradigm,contains,module implementation
+2.13 enforced modularity: the client-server paradigm,contains,Stochastic high-level Petri nets (SHLPNs)
+2.13 enforced modularity: the client-server paradigm,contains,System heterogeneity
+2.13 enforced modularity: the client-server paradigm,contains,Three-way handshake
+2.13 enforced modularity: the client-server paradigm,contains,Transport Control Protocol (TCP)
+2.13 enforced modularity: the client-server paradigm,contains,Web browser
+2.13 enforced modularity: the client-server paradigm,contains,Web page
+3.1 cloud computing at amazon,contains,Amazon Machine Image (AMI)
+3.1 cloud computing at amazon,contains,Amazon Web Services (AWS)
+3.1 cloud computing at amazon,contains,AutoScaling
+3.1 cloud computing at amazon,contains,Charges
+3.1 cloud computing at amazon,contains,CloudFormation
+3.1 cloud computing at amazon,contains,CloudWatch
+3.1 cloud computing at amazon,contains,Elastic Beanstalk
+3.1 cloud computing at amazon,contains,Elastic Block Store (EBS)
+3.1 cloud computing at amazon,contains,Evaluation
+3.1 cloud computing at amazon,contains,Simple DB
+3.1 cloud computing at amazon,contains,Simple Queue Service (SQS)
+3.1 cloud computing at amazon,contains,Virtual Private Cloud (VPC)
+3.1 cloud computing at amazon,contains,Amazon Web Services Licensing Agreement (AWSLA)
+3.1 cloud computing at amazon,contains,charges
+3.1 cloud computing at amazon,contains,evaluation
+3.1 cloud computing at amazon,contains,regions and availability zones
+3.1 cloud computing at amazon,contains,Autoscaling
+3.1 cloud computing at amazon,contains,Basic Monitoring
+3.1 cloud computing at amazon,contains,at Amazon
+3.1 cloud computing at amazon,contains,Cloud Formation
+3.1 cloud computing at amazon,contains,Cloud Front
+3.1 cloud computing at amazon,contains,Cloud infrastructure
+3.1 cloud computing at amazon,contains,delivery models
+3.1 cloud computing at amazon,contains,Infrastructure-as-a-Service (IaaS)
+3.1 cloud computing at amazon,contains,Platform-as-a-Service (PaaS)
+3.1 cloud computing at amazon,contains,Software-as-a-Service (SaaS)
+3.1 cloud computing at amazon,contains,IBMSmartCloud
+3.1 cloud computing at amazon,contains,open-source cloud computing platforms
+3.1 cloud computing at amazon,contains,Cloud Watch
+3.1 cloud computing at amazon,contains,Detailed Monitoring
+3.1 cloud computing at amazon,contains,DynamoDB
+3.1 cloud computing at amazon,contains,ElastiCache
+3.1 cloud computing at amazon,contains,Elastic Compute Cloud (EC2)
+3.1 cloud computing at amazon,contains,SOAP messages
+3.1 cloud computing at amazon,contains,VM import
+3.1 cloud computing at amazon,contains,Xen virtualization strategy
+3.1 cloud computing at amazon,contains,Elastic Load Balancer
+3.1 cloud computing at amazon,contains,Elastic Map Reduce (EMR)
+3.1 cloud computing at amazon,contains,ETag
+3.1 cloud computing at amazon,contains,Eucalyptus
+3.1 cloud computing at amazon,contains,Network address translation (NAT) mechanism
+3.1 cloud computing at amazon,contains,Nimbus
+3.1 cloud computing at amazon,contains,OpenNebula
+3.1 cloud computing at amazon,contains,OpenStack
+3.1 cloud computing at amazon,contains,Oracle Cloud
+3.1 cloud computing at amazon,contains,Simple Storage System (S3)
+3.1 cloud computing at amazon,contains,Amazon S3 SLA
+3.1 cloud computing at amazon,contains,ETag field
+3.1 cloud computing at amazon,contains,functions
+3.1 cloud computing at amazon,contains,object maintenance
+3.1 cloud computing at amazon,contains,parallel applications
+3.1 cloud computing at amazon,contains,supporting activities
+3.1 cloud computing at amazon,contains,Simple Workflow Service (SWF)
+3.1 cloud computing at amazon,contains,Virtual private network (VPN)
+3.2 cloud computing: the google perspective,contains,AppEngine
+3.2 cloud computing: the google perspective,contains,Chromebook
+3.2 cloud computing: the google perspective,contains,Cloud computing
+3.2 cloud computing: the google perspective,contains,Deep Web sources
+3.2 cloud computing: the google perspective,contains,Gmail
+3.2 cloud computing: the google perspective,contains,Google
+3.2 cloud computing: the google perspective,contains,cloud computing
+3.2 cloud computing: the google perspective,contains,crawlers
+3.2 cloud computing: the google perspective,contains,deep Web sources
+3.2 cloud computing: the google perspective,contains,structured data
+3.2 cloud computing: the google perspective,contains,Google base
+3.2 cloud computing: the google perspective,contains,Google calendar
+3.2 cloud computing: the google perspective,contains,Google co-op
+3.2 cloud computing: the google perspective,contains,Google docs
+3.2 cloud computing: the google perspective,contains,Google drive
+3.2 cloud computing: the google perspective,contains,Google Query Language (GQL)
+3.2 cloud computing: the google perspective,contains,"Platform-as-a-Service (PaaS) Google, using"
+3.3 microsoft windows azure and online services,contains,Azure and online services
+3.3 microsoft windows azure and online services,contains,architectural styles
+3.3 microsoft windows azure and online services,contains,Content delivery network (CDN)
+3.3 microsoft windows azure and online services,contains,Fabric controller
+3.3 microsoft windows azure and online services,contains,Google
+3.3 microsoft windows azure and online services,contains,data base management services (DBMSs)
+3.3 microsoft windows azure and online services,contains,Microsoft Windows
+3.3 microsoft windows azure and online services,contains,Azure services
+3.3 microsoft windows azure and online services,contains,cloud computing
+3.3 microsoft windows azure and online services,contains,online services
+3.3 microsoft windows azure and online services,contains,SQL Azure
+3.3 microsoft windows azure and online services,contains,Windows Azure
+3.3 microsoft windows azure and online services,contains,compute
+3.3 microsoft windows azure and online services,contains,fabric controller
+3.3 microsoft windows azure and online services,contains,storage
+3.4 open-source software platforms for private clouds,contains,Cloud controller
+3.4 open-source software platforms for private clouds,contains,Cluster controller
+3.4 open-source software platforms for private clouds,contains,Dashboard
+3.4 open-source software platforms for private clouds,contains,Dynamic Host Configuration Protocol (DHCP)
+3.4 open-source software platforms for private clouds,contains,Eucalyptus
+3.4 open-source software platforms for private clouds,contains,New Technology File System (NTFS)
+3.4 open-source software platforms for private clouds,contains,Nimbus
+3.4 open-source software platforms for private clouds,contains,Node controller
+3.4 open-source software platforms for private clouds,contains,OpenNebula
+3.4 open-source software platforms for private clouds,contains,Open-source software platforms
+3.4 open-source software platforms for private clouds,contains,infrastructure
+3.4 open-source software platforms for private clouds,contains,private clouds
+3.4 open-source software platforms for private clouds,contains,OpenStack
+3.4 open-source software platforms for private clouds,contains,Eucalyptus in
+3.4 open-source software platforms for private clouds,contains,Open-source software
+3.4 open-source software platforms for private clouds,contains,space support
+3.4 open-source software platforms for private clouds,contains,system components
+3.4 open-source software platforms for private clouds,contains,virtual machine construction
+3.4 open-source software platforms for private clouds,contains,Storage controller
+3.4 open-source software platforms for private clouds,contains,Storage service (Walrus)
+3.4 open-source software platforms for private clouds,contains,Virtual machines monitors (VMMs)
+3.5 cloud storage diversity and vendor lock-in,contains,Cloud storage diversity
+3.5 cloud storage diversity and vendor lock-in,contains,RAID-5 system
+3.5 cloud storage diversity and vendor lock-in,contains,risks
+3.5 cloud storage diversity and vendor lock-in,contains,vendor lock-up
+3.6 cloud computing interoperability: the intercloud,contains,Cloud interoperability
+3.6 cloud computing interoperability: the intercloud,contains,cloud service providers (CSPs)
+3.6 cloud computing interoperability: the intercloud,contains,defined
+3.6 cloud computing interoperability: the intercloud,contains,exchange
+3.6 cloud computing interoperability: the intercloud,contains,from network to clouds
+3.6 cloud computing interoperability: the intercloud,contains,ontological development
+3.6 cloud computing interoperability: the intercloud,contains,security concerns
+3.6 cloud computing interoperability: the intercloud,contains,storage standards
+3.6 cloud computing interoperability: the intercloud,contains,RACS system
+3.6 cloud computing interoperability: the intercloud,contains,scalable solutions
+3.6 cloud computing interoperability: the intercloud,contains,Domain Name Service (DNS)
+3.6 cloud computing interoperability: the intercloud,contains,Intercloud exchange
+3.6 cloud computing interoperability: the intercloud,contains,Redundant Array of Cloud Storage (RACS)
+3.6 cloud computing interoperability: the intercloud,contains,Simple Storage System (S3)
+3.6 cloud computing interoperability: the intercloud,contains,cloud storage diversity
+3.7 energy use and ecological impact of large-scale data centers,contains,Cloud interoperability
+3.7 energy use and ecological impact of large-scale data centers,contains,Public Key Infrastructure (PKI)
+3.7 energy use and ecological impact of large-scale data centers,contains,trust indexes
+3.7 energy use and ecological impact of large-scale data centers,contains,Data intensity
+3.7 energy use and ecological impact of large-scale data centers,contains,Dynamic random access memory (DRAM)
+3.7 energy use and ecological impact of large-scale data centers,contains,Energy-proportional systems
+3.7 energy use and ecological impact of large-scale data centers,contains,InfiniBand
+3.7 energy use and ecological impact of large-scale data centers,contains,Key Management Interoperability Protocol (KMIP)
+3.7 energy use and ecological impact of large-scale data centers,contains,Large-scale data centers
+3.7 energy use and ecological impact of large-scale data centers,contains,data migration
+3.7 energy use and ecological impact of large-scale data centers,contains,energy cost
+3.7 energy use and ecological impact of large-scale data centers,contains,energy proportional system
+3.7 energy use and ecological impact of large-scale data centers,contains,energy reduction
+3.7 energy use and ecological impact of large-scale data centers,contains,"idle system, power consumption"
+3.7 energy use and ecological impact of large-scale data centers,contains,operating efficiency
+3.8 service- and compliance-level agreements,contains,Service- and compliance-level agreements
+3.8 service- and compliance-level agreements,contains,Service-level agreement (SLA)
+3.8 service- and compliance-level agreements,contains,area of service
+3.8 service- and compliance-level agreements,contains,objectives
+3.8 service- and compliance-level agreements,contains,recording
+3.9 responsibility sharing between user and cloud service provider,contains,Compliant Cloud Computing (C3)
+3.9 responsibility sharing between user and cloud service provider,contains,Service-level agreement (SLA)
+3.9 responsibility sharing between user and cloud service provider,contains,common metrics
+3.9 responsibility sharing between user and cloud service provider,contains,compliance concept
+3.9 responsibility sharing between user and cloud service provider,contains,management phases
+3.9 responsibility sharing between user and cloud service provider,contains,User and cloud service provider
+3.10 user experience,contains,user experience
+3.10 user experience,contains,Distributed denial-of-service attack (DDoS)
+3.10 user experience,contains,User experience
+3.11 software licensing,contains,software licensing
+3.11 software licensing,contains,Software licensing
+3.12 further reading,contains,SmartLM
+3.12 further reading,contains,WS-Agreement Negotiation protocol
+4.1 challenges for cloud computing,contains,challenges
+4.1 challenges for cloud computing,contains,node failures
+4.1 challenges for cloud computing,contains,reliability
+4.1 challenges for cloud computing,contains,Data storage
+4.1 challenges for cloud computing,contains,Security isolation
+4.2 existing cloud applications and new application opportunities,contains,data processing applications
+4.2 existing cloud applications and new application opportunities,contains,existing cloud applications
+4.2 existing cloud applications and new application opportunities,contains,batch processing systems
+4.2 existing cloud applications and new application opportunities,contains,processing pipelines
+4.2 existing cloud applications and new application opportunities,contains,Data mining
+4.2 existing cloud applications and new application opportunities,contains,Data processing applications
+4.2 existing cloud applications and new application opportunities,contains,types
+4.2 existing cloud applications and new application opportunities,contains,Document processing
+4.2 existing cloud applications and new application opportunities,contains,Image processing
+4.2 existing cloud applications and new application opportunities,contains,Indexing
+4.2 existing cloud applications and new application opportunities,contains,Video transcoding
+4.3 architectural styles for cloud applications,contains,architectural styles
+4.3 architectural styles for cloud applications,contains,Common Object Request Broker Architecture (CORBA)
+4.3 architectural styles for cloud applications,contains,Extensibility
+4.3 architectural styles for cloud applications,contains,Neutrality
+4.3 architectural styles for cloud applications,contains,Object Request Broker (ORB)
+4.3 architectural styles for cloud applications,contains,Stateless server
+4.4 workflows: coordination of multiple activities,contains,AND split pattern
+4.4 workflows: coordination of multiple activities,contains,Anticipated exceptions
+4.4 workflows: coordination of multiple activities,contains,workflows
+4.4 workflows: coordination of multiple activities,contains,Composite task
+4.4 workflows: coordination of multiple activities,contains,Create/Read/Update/Delete (CRUD) operations
+4.4 workflows: coordination of multiple activities,contains,Dynamic workflows
+4.4 workflows: coordination of multiple activities,contains,Enactment engine
+4.4 workflows: coordination of multiple activities,contains,Explicit AND split
+4.4 workflows: coordination of multiple activities,contains,Extensible Markup Language (XML)
+4.4 workflows: coordination of multiple activities,contains,Fork routing task
+4.4 workflows: coordination of multiple activities,contains,Implicit AND split
+4.4 workflows: coordination of multiple activities,contains,Join routing task
+4.4 workflows: coordination of multiple activities,contains,Primitive task
+4.4 workflows: coordination of multiple activities,contains,Replanning
+4.4 workflows: coordination of multiple activities,contains,Representational State Transfer (REST)
+4.4 workflows: coordination of multiple activities,contains,Routing task
+4.4 workflows: coordination of multiple activities,contains,Simple Object Access Protocol (SOAP)
+4.4 workflows: coordination of multiple activities,contains,Strong coordination models
+4.4 workflows: coordination of multiple activities,contains,Synchronization pattern
+4.4 workflows: coordination of multiple activities,contains,Weak coordination models
+4.4 workflows: coordination of multiple activities,contains,Web Services Description Language (WSDL)
+4.4 workflows: coordination of multiple activities,contains,Workflow definition language (WFDL)
+4.4 workflows: coordination of multiple activities,contains,Workflow pattern
+4.4 workflows: coordination of multiple activities,contains,Workflow verification
+4.5 coordination based on a state machine model: the zookeeper,contains,coordination
+4.5 coordination based on a state machine model: the zookeeper,contains,ZooKeeper
+4.5 coordination based on a state machine model: the zookeeper,contains,service guarantees
+4.6 the mapreduce programming model,contains,Divisible Load Theory (DLT)
+4.6 the mapreduce programming model,contains,Map Reduce programming model
+4.6 the mapreduce programming model,contains,application programming interface (API)
+4.7 a case study: the greptheweb application,contains,Apache Hadoop
+4.7 a case study: the greptheweb application,contains,GrepTheWeb application
+4.7 a case study: the greptheweb application,contains,the processing phase
+4.7 a case study: the greptheweb application,contains,the startup phase
+4.7 a case study: the greptheweb application,contains,Hadoop Map Reduce
+4.8 clouds for science and engineering,contains,science and engineering applications
+4.8 clouds for science and engineering,contains,Clouds for science and engineering
+4.8 clouds for science and engineering,contains,the cleanup phase
+4.8 clouds for science and engineering,contains,the monitoring phase
+4.8 clouds for science and engineering,contains,the shutdown phase
+4.8 clouds for science and engineering,contains,user interactions with system
+4.9 high-performance computing on a cloud,contains,Carver
+4.9 high-performance computing on a cloud,contains,high-performance computing
+4.9 high-performance computing on a cloud,contains,eScience
+4.9 high-performance computing on a cloud,contains,metadata
+4.9 high-performance computing on a cloud,contains,Community Atmosphere Mode (CAM)
+4.9 high-performance computing on a cloud,contains,Community Climate System Model (CCSM)
+4.9 high-performance computing on a cloud,contains,Distributed Data Interface (DDI)
+4.9 high-performance computing on a cloud,contains,Fast Fourier Transform (FFT) algorithm
+4.9 high-performance computing on a cloud,contains,Fortran 90 code
+4.9 high-performance computing on a cloud,contains,General Atomic andMolecular Electronic Structure System (GAMESS)
+4.9 high-performance computing on a cloud,contains,High-performance computing challenge (HPCC)
+4.9 high-performance computing on a cloud,contains,High-performance computing on cloud
+4.9 high-performance computing on a cloud,contains,Lawrencium
+4.9 high-performance computing on a cloud,contains,MAESTRO
+4.9 high-performance computing on a cloud,contains,MIMD Lattice Computation (MILC)
+4.9 high-performance computing on a cloud,contains,(NERSC)
+4.9 high-performance computing on a cloud,contains,Quantum Chromo Dynamics (QCD)
+4.9 high-performance computing on a cloud,contains,Same program multiple data (SPMD)
+4.10 cloud computing for biology research,contains,Biology research
+4.10 cloud computing for biology research,contains,for biology research
+4.10 cloud computing for biology research,contains,Load imbalance
+4.10 cloud computing for biology research,contains,National Center for Biotechnology Information (NCBI)
+"4.11 social computing, digital content, and cloud computing",contains,Berkeley Open Infrastructure for Network Computing (BOINC)
+"4.11 social computing, digital content, and cloud computing",contains,Case-based reasoning (CBR)
+"4.11 social computing, digital content, and cloud computing",contains,digital contents
+"4.11 social computing, digital content, and cloud computing",contains,social computing
+"4.11 social computing, digital content, and cloud computing",contains,Facebook JavaScript (FBJS)
+"4.11 social computing, digital content, and cloud computing",contains,Facebook markup language (FBML)
+"4.11 social computing, digital content, and cloud computing",contains,Mashup Container
+"4.11 social computing, digital content, and cloud computing",contains,Social intelligence
+"4.11 social computing, digital content, and cloud computing",contains,Social networks
+5.1 virtualization,contains,Application binary interface (ABI)
+5.1 virtualization,contains,Application programming interface (API)
+5.1 virtualization,contains,Instruction set architecture (ISA)
+5.1 virtualization,contains,Virtualization
+5.1 virtualization,contains,aggregation
+5.1 virtualization,contains,emulation
+5.1 virtualization,contains,multiplexing and emulation
+5.2 layering and virtualization,contains,Application binary interface (ABI)
+5.2 layering and virtualization,contains,Application program interface (API)
+5.2 layering and virtualization,contains,Dynamic binary translation
+5.2 layering and virtualization,contains,Hardware costs
+5.2 layering and virtualization,contains,High-level language (HLL) code
+5.2 layering and virtualization,contains,Instruction set architecture (ISA)
+5.2 layering and virtualization,contains,Layering and virtualization
+5.2 layering and virtualization,contains,Performance penalty
+5.2 layering and virtualization,contains,User convenience
+5.2 layering and virtualization,contains,layering
+5.2 layering and virtualization,contains,side effects
+5.4 virtual machines,contains,Memory virtualization
+5.4 virtual machines,contains,Operating system-level virtualization
+5.4 virtual machines,contains,Virtual machine (VM)
+5.4 virtual machines,contains,monitors
+5.4 virtual machines,contains,Virtual machines monitors (VMMs)
+5.5 performance and security isolation,contains,Performance isolation
+5.5 performance and security isolation,contains,Processor emulation
+5.5 performance and security isolation,contains,Processor virtualization
+5.5 performance and security isolation,contains,performance and security isolation
+5.6 full virtualization and paravirtualization,contains,Binary translation
+5.6 full virtualization and paravirtualization,contains,Cache isolation
+5.6 full virtualization and paravirtualization,contains,Full virtualization and paravirtualization
+5.6 full virtualization and paravirtualization,contains,Memory management unit (MMU)
+5.6 full virtualization and paravirtualization,contains,Paravirtualization
+5.6 full virtualization and paravirtualization,contains,VMware EX Server
+5.7 hardware support for virtualization,contains,Address space compression
+5.7 hardware support for virtualization,contains,Guest system calls
+5.7 hardware support for virtualization,contains,Interrupt virtualization
+5.7 hardware support for virtualization,contains,Nonfaulting access to privileged state
+5.7 hardware support for virtualization,contains,Ring aliasing
+5.7 hardware support for virtualization,contains,Ring compression
+5.7 hardware support for virtualization,contains,Ring deprivileging
+5.7 hardware support for virtualization,contains,hardware support
+5.7 hardware support for virtualization,contains,VMX nonroot
+5.7 hardware support for virtualization,contains,VMX root
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Access control lists (ACLs)
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Borrowed Virtual Time (BVT) algorithm
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Dom0
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Qemu
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Toolstack
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Translation look-aside buffer (TLB)
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Virtual firewall-router (VFR)
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Virtual network interfaces (VIFs)
+"5.8 case study: xen, a vmm based on paravirtualization",contains,Xen
+"5.8 case study: xen, a vmm based on paravirtualization",contains,XenStore
+5.9 optimization of network virtualization in xen 2.0,contains,Network interface card (NIC)
+5.9 optimization of network virtualization in xen 2.0,contains,"Network virtualization, optimization of"
+5.9 optimization of network virtualization in xen 2.0,contains,Universal Serial Bus (USB)
+5.9 optimization of network virtualization in xen 2.0,contains,Xen 2.0
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,contains,CPU virtualization
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,contains,Current privilege level (CPL)
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,contains,Itanium
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,contains,Memory virtualization
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,contains,Metaphysical addressing
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,contains,Privilege leaking
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,contains,Processor Abstraction Layer (PAL)
+5.10 vblades: paravirtualization targeting an x86-64 itanium processor,contains,vBlades
+5.11 a performance comparison of virtual machines,contains,OpenVZ system
+5.11 a performance comparison of virtual machines,contains,performance comparison
+5.11 a performance comparison of virtual machines,contains,Virtual machines comparisons
+5.12 the darker side of virtualization,contains,limitations
+5.12 the darker side of virtualization,contains,Virtual machine-based rootkit (VMBR)
+5.13 software fault isolation,contains,Binary code generation rules
+6.1 policies and mechanisms for resource management,contains,Capacity allocation
+6.1 policies and mechanisms for resource management,contains,Control theory
+6.1 policies and mechanisms for resource management,contains,Dynamic Voltage and Frequency Scaling (DVFS)
+6.1 policies and mechanisms for resource management,contains,Energy optimization
+6.1 policies and mechanisms for resource management,contains,Load balancing
+6.1 policies and mechanisms for resource management,contains,"Resource management, policies and mechanisms"
+6.1 policies and mechanisms for resource management,contains,classification
+6.1 policies and mechanisms for resource management,contains,implementation
+6.2 applications of control theory to task scheduling on a cloud,contains,applications
+6.2 applications of control theory to task scheduling on a cloud,contains,principles
+6.2 applications of control theory to task scheduling on a cloud,contains,single server system
+6.2 applications of control theory to task scheduling on a cloud,contains,Lagrange multiplier
+6.2 applications of control theory to task scheduling on a cloud,contains,Machine learning techniques
+6.2 applications of control theory to task scheduling on a cloud,contains,Market-oriented/economic mechanisms
+6.2 applications of control theory to task scheduling on a cloud,contains,interactive vs noninteractive workloads
+6.2 applications of control theory to task scheduling on a cloud,contains,Utility-based approaches
+6.3 stability of a two-level resource allocation architecture,contains,instability
+6.3 stability of a two-level resource allocation architecture,contains,resource allocation
+6.3 stability of a two-level resource allocation architecture,contains,Feasible state
+6.4 feedback control based on dynamic thresholds,contains,Control granularity
+6.4 feedback control based on dynamic thresholds,contains,Controllers
+6.4 feedback control based on dynamic thresholds,contains,application controllers
+6.4 feedback control based on dynamic thresholds,contains,cloud controllers
+6.4 feedback control based on dynamic thresholds,contains,thresholds
+6.4 feedback control based on dynamic thresholds,contains,Fine control
+6.4 feedback control based on dynamic thresholds,contains,Integral control
+6.4 feedback control based on dynamic thresholds,contains,Proportional thresholding
+6.4 feedback control based on dynamic thresholds,contains,Thresholds
+6.5 coordination of specialized autonomic performance managers,contains,Autonomic performance managers coordination
+6.5 coordination of specialized autonomic performance managers,contains,approach
+6.5 coordination of specialized autonomic performance managers,contains,Dynamic voltage scaling (DVS)
+6.5 coordination of specialized autonomic performance managers,contains,Power manager
+6.5 coordination of specialized autonomic performance managers,contains,Service-level agreement (SLA)
+6.5 coordination of specialized autonomic performance managers,contains,autonomic performance managers
+6.6 a utility-based model for cloud-based web services,contains,experiments
+6.6 a utility-based model for cloud-based web services,contains,"Cloud-based Web services, utility-based model"
+6.6 a utility-based model for cloud-based web services,contains,goals
+6.6 a utility-based model for cloud-based web services,contains,optimization problem
+6.6 a utility-based model for cloud-based web services,contains,utility function
+6.6 a utility-based model for cloud-based web services,contains,WebSphere Extended Deployment (WXD)
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,Ascending clock auction (ASCA)
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,Auctioning algorithms
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,Clock proxy auction
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,nine constraints
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,resource bundling
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,ASCA algorithm
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,combinatorial auctions
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,pricing and allocation algorithms
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,Periodic auctions
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,Resource bundling
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,the ASCA combinatorial auction algorithm
+6.7 resource bundling: combinatorial auctions for cloud resources,contains,Simultaneous clock auction
+6.8 scheduling algorithms for computing clouds,contains,algorithms
+6.8 scheduling algorithms for computing clouds,contains,Earliest deadline first (EDF)
+6.8 scheduling algorithms for computing clouds,contains,Rate-based earliest deadline (RBED)
+6.8 scheduling algorithms for computing clouds,contains,Rate monotonic algorithms (RMA)
+6.8 scheduling algorithms for computing clouds,contains,Resource allocation/dispatching (RAD)
+6.8 scheduling algorithms for computing clouds,contains,Scheduling algorithms for computing clouds
+6.8 scheduling algorithms for computing clouds,contains,best-effort policies
+6.8 scheduling algorithms for computing clouds,contains,max-min fairness criterion
+6.8 scheduling algorithms for computing clouds,contains,multimedia applications
+6.8 scheduling algorithms for computing clouds,contains,non preemptive
+6.8 scheduling algorithms for computing clouds,contains,preemptive
+6.8 scheduling algorithms for computing clouds,contains,time-slice
+6.9 fair queuing,contains,fair queing
+6.9 fair queuing,contains,Fair queuing
+6.9 fair queuing,contains,bandwidth
+6.9 fair queuing,contains,bit-by-bit round-robin (BR) strategy
+6.9 fair queuing,contains,buffer space
+6.9 fair queuing,contains,fair queuing (FQ) algorithm
+6.9 fair queuing,contains,timing
+6.10 start-time fair queuing,contains,start-time fair queuing (SFQ) algorithm
+6.10 start-time fair queuing,contains,packet transmission
+6.10 start-time fair queuing,contains,Start-time fair queuing
+6.10 start-time fair queuing,contains,scheduler
+6.10 start-time fair queuing,contains,scheduling decisions
+6.10 start-time fair queuing,contains,SFQ tree
+6.11 borrowed virtual time,contains,Borrowed Virtual Time (BVT) algorithm
+6.11 borrowed virtual time,contains,context switches
+6.11 borrowed virtual time,contains,real time
+6.12 cloud scheduling subject to deadlines,contains,Absolute deadline
+6.12 cloud scheduling subject to deadlines,contains,Cloud scheduling
+6.12 cloud scheduling subject to deadlines,contains,equal partitioning rule (EPR)
+6.12 cloud scheduling subject to deadlines,contains,optimal partitioning rule (OPR)
+6.12 cloud scheduling subject to deadlines,contains,parameters used
+6.12 cloud scheduling subject to deadlines,contains,scheduling policies
+6.12 cloud scheduling subject to deadlines,contains,system model
+6.12 cloud scheduling subject to deadlines,contains,task characterization and deadlines
+6.12 cloud scheduling subject to deadlines,contains,timing diagram
+6.12 cloud scheduling subject to deadlines,contains,Hard deadlines
+6.12 cloud scheduling subject to deadlines,contains,Relative deadline
+6.12 cloud scheduling subject to deadlines,contains,Soft deadlines
+6.13 scheduling mapreduce applications subject to deadlines,contains,MapReduce applications
+6.13 scheduling mapreduce applications subject to deadlines,contains,MapReduce applications subject to deadlines scheduling
+6.13 scheduling mapreduce applications subject to deadlines,contains,open-source implementation
+6.13 scheduling mapreduce applications subject to deadlines,contains,parameters used
+6.14 resource management and dynamic application scaling,contains,dynamic application scaling
+6.14 resource management and dynamic application scaling,contains,Federal Emergency Management Agency (FEMA)
+6.14 resource management and dynamic application scaling,contains,Horizontal scaling
+6.14 resource management and dynamic application scaling,contains,Resource management and dynamic application scaling
+6.14 resource management and dynamic application scaling,contains,Vertical scaling
+6.15 further reading,contains,Automatic VM scaling
+6.15 further reading,contains,Non scalable/single-load balancers
+7.1 packet-switched networks,contains,Datagram
+7.1 packet-switched networks,contains,Network architecture
+7.1 packet-switched networks,contains,packet-switched networks
+7.1 packet-switched networks,contains,Packet-switched networks
+7.1 packet-switched networks,contains,Protocol stacks
+7.2 the internet,contains,Border Gateway Routing (BGP) protocols
+7.2 the internet,contains,Domain Name Service (DNS)
+7.2 the internet,contains,Hourglass network architecture
+7.2 the internet,contains,The Internet
+7.2 the internet,contains,Internet Protocol television (IPTV)
+7.2 the internet,contains,Internet
+7.2 the internet,contains,TCP (transport control protocol)
+7.2 the internet,contains,overlay network
+7.2 the internet,contains,Retransmission timeout (RTO)
+7.2 the internet,contains,Round-trip-time (RTT)
+7.2 the internet,contains,TCP congestion control policies
+7.2 the internet,contains,Transport Control Protocol (TCP)
+7.2 the internet,contains,Trivial File Transfer Protocol (TFTP)
+7.2 the internet,contains,User Datagram Protocol (UDP)
+7.2 the internet,contains,Voice-over-Internet Protocol (VoIP)
+7.3 internet migration to ipv6,contains,Internet migration to IPv6
+7.3 internet migration to ipv6,contains,"IPv4 and IPv6, differences"
+7.3 internet migration to ipv6,contains,mandatory support for network security
+7.3 internet migration to ipv6,contains,multicasting
+7.3 internet migration to ipv6,contains,stateless address autoconfiguration (SLAAC)
+7.3 internet migration to ipv6,contains,migration to IPv6
+7.4 the transformation of the internet,contains,Internet exchange point (IXP)
+7.4 the transformation of the internet,contains,Internet transformation
+7.4 the transformation of the internet,contains,transformation
+7.4 the transformation of the internet,contains,Point-of-presence (POP)
+7.4 the transformation of the internet,contains,Tier 1 network
+7.4 the transformation of the internet,contains,Tier 2 network
+7.4 the transformation of the internet,contains,Tier 3 network
+7.5 web access and the tcp congestion control window,contains,web access
+7.5 web access and the tcp congestion control window,contains,Web access and TCP congestion control window
+7.5 web access and the tcp congestion control window,contains,Web statistics
+7.6 network resource management,contains,Class-based queuing (CBQ) method
+7.6 network resource management,contains,Hierarchical token buckets (HTB)
+7.6 network resource management,contains,Network resource management
+7.7 interconnection networks for computer clouds,contains,Black Widow topology
+7.7 interconnection networks for computer clouds,contains,Fat tree
+7.7 interconnection networks for computer clouds,contains,Folded Clos topology
+7.7 interconnection networks for computer clouds,contains,HTB packet schedule
+7.7 interconnection networks for computer clouds,contains,InfiniBand
+7.7 interconnection networks for computer clouds,contains,Interconnection networks for computer clouds
+7.7 interconnection networks for computer clouds,contains,interconnection
+7.7 interconnection networks for computer clouds,contains,Routers
+7.7 interconnection networks for computer clouds,contains,Warehouse-scale computer (WSC)
+7.8 storage area networks,contains,FibreChannel over IP (FCIP)
+7.8 storage area networks,contains,storage area network (SAN)
+7.8 storage area networks,contains,Storage area network (SAN)
+7.8 storage area networks,contains,Tunneling
+7.9 content-delivery networks,contains,Akamai
+7.9 content-delivery networks,contains,Cache Array Routing Protocol (CARP)
+7.9 content-delivery networks,contains,design and policy decisions
+7.9 content-delivery networks,contains,network resource management
+7.9 content-delivery networks,contains,Coral
+7.9 content-delivery networks,contains,Globule
+7.9 content-delivery networks,contains,Hypertext Caching Protocol (HTCP)
+7.9 content-delivery networks,contains,Internet Cache Protocol (ICP)
+7.9 content-delivery networks,contains,Live media
+7.9 content-delivery networks,contains,Network Element Control Protocol (NECP)
+7.9 content-delivery networks,contains,content delivery network (CDN)
+7.9 content-delivery networks,contains,Storage area network (SAN)
+7.9 content-delivery networks,contains,Web Cache Coordination Protocol (WCCP)
+7.10 overlay networks and small-world networks,contains,Degree of the vertex
+7.10 overlay networks and small-world networks,contains,small-world networks
+7.10 overlay networks and small-world networks,contains,Overlay networks
+7.10 overlay networks and small-world networks,contains,Scale-free networks
+7.10 overlay networks and small-world networks,contains,Small-World Networks
+7.10 overlay networks and small-world networks,contains,Storage area network (SAN)
+7.11 scale-free networks,contains,Biased Random Walks
+7.11 scale-free networks,contains,Giant connected component (GCC)
+7.11 scale-free networks,contains,scale-free networks
+7.11 scale-free networks,contains,biased randomwalks
+7.11 scale-free networks,contains,power-law degree distribution
+7.11 scale-free networks,contains,Power-law distribution
+7.11 scale-free networks,contains,Storage area network (SAN)
+7.12 epidemic algorithms,contains,Degree of a Power-Law Network Estimation
+7.12 epidemic algorithms,contains,Epidemic algorithms
+7.12 epidemic algorithms,contains,infective
+7.12 epidemic algorithms,contains,recovered
+7.12 epidemic algorithms,contains,susceptible-infective (SI)
+7.12 epidemic algorithms,contains,epidemic algorithms
+7.12 epidemic algorithms,contains,Storage area network (SAN)
+7.12 epidemic algorithms,contains,Trace distance
+7.13 further reading,contains,Storage area network (SAN)
+7.14 history notes,contains,Storage area network (SAN)
+8.1 the evolution of storage technology,contains,Dynamic random access memory (DRAM)
+8.1 the evolution of storage technology,contains,Storage area network (SAN)
+8.1 the evolution of storage technology,contains,evolution
+"8.2 storage models, file systems, and databases",contains,Andrew File System (AFS)
+"8.2 storage models, file systems, and databases",contains,Cell storage
+"8.2 storage models, file systems, and databases",contains,Data base management system (DBMS)
+"8.2 storage models, file systems, and databases",contains,Google File System (GFS)
+"8.2 storage models, file systems, and databases",contains,Journal storage
+"8.2 storage models, file systems, and databases",contains,Megastore
+"8.2 storage models, file systems, and databases",contains,Network File System (NFS)
+"8.2 storage models, file systems, and databases",contains,Parallel file systems (PFSs)
+"8.2 storage models, file systems, and databases",contains,Storage area network (SAN)
+"8.2 storage models, file systems, and databases",contains,Storage models
+"8.2 storage models, file systems, and databases",contains,databases
+"8.2 storage models, file systems, and databases",contains,model
+8.3 distributed file systems: the precursors,contains,Andrew File System (AFS)
+8.3 distributed file systems: the precursors,contains,Distributed file systems
+8.3 distributed file systems: the precursors,contains,Andrew file system (AFS)
+8.3 distributed file systems: the precursors,contains,Network file system (NFS)
+8.3 distributed file systems: the precursors,contains,Sprite network file system (SFS)
+8.3 distributed file systems: the precursors,contains,NFS client/server interaction
+8.3 distributed file systems: the precursors,contains,Remote File System (RFS)
+8.3 distributed file systems: the precursors,contains,Remote procedure call (RPC)
+8.3 distributed file systems: the precursors,contains,"Several Network File Systems, comparison"
+8.3 distributed file systems: the precursors,contains,Sprite Network File System (SFS)
+8.3 distributed file systems: the precursors,contains,Unix File System
+8.3 distributed file systems: the precursors,contains,Vice
+8.4 general parallel file system,contains,Byte-range tokens
+8.4 general parallel file system,contains,General Parallel File System (GPFS)
+8.4 general parallel file system,contains,Lock granularity
+8.4 general parallel file system,contains,general parallel file system
+8.5 google file system,contains,Chunks
+8.5 google file system,contains,Google File System (GFS)
+8.6 apache hadoop,contains,Apache Hadoop
+8.6 apache hadoop,contains,CloudStore
+8.6 apache hadoop,contains,Hadoop file system (HDFS)
+8.7 locks and chubby: a locking service,contains,Advisory lock
+8.7 locks and chubby: a locking service,contains,Chubby replica architecture
+8.7 locks and chubby: a locking service,contains,Course-grained locks
+8.7 locks and chubby: a locking service,contains,Fine-grained locks
+8.7 locks and chubby: a locking service,contains,Locks and Chubby
+8.7 locks and chubby: a locking service,contains,Mandatory locks
+8.7 locks and chubby: a locking service,contains,locks and chubby
+8.8 transaction processing and nosql databases,contains,Data replication
+8.8 transaction processing and nosql databases,contains,Master/slave replication
+8.8 transaction processing and nosql databases,contains,Memcached system
+8.8 transaction processing and nosql databases,contains,“Soft-state” approach
+8.8 transaction processing and nosql databases,contains,online transaction processing (OLTP)
+8.8 transaction processing and nosql databases,contains,Transaction processing and NoSQL databases
+8.9 bigtable,contains,BigTable
+8.9 bigtable,contains,Bigtable
+8.10 megastore,contains,Google Analytics
+8.10 megastore,contains,Megastore
+8.10 megastore,contains,Multi-version concurrency control (MVCC)
+8.11 history notes,contains,history
+8.11 history notes,contains,Write transaction
+9.1 cloud security risks,contains,Abuse of the cloud
+9.1 cloud security risks,contains,Account or service hijacking
+9.1 cloud security risks,contains,"Cloud computing environment, attacks"
+9.1 cloud security risks,contains,Cloud security
+9.1 cloud security risks,contains,risks
+9.1 cloud security risks,contains,Cloud Security Alliance (CSA) report in 2010
+9.1 cloud security risks,contains,Cloud services availability
+9.1 cloud security risks,contains,Cross-site scripting
+9.1 cloud security risks,contains,Data loss or leakage
+9.1 cloud security risks,contains,Distributed denial-of-service attack (DDoS)
+9.1 cloud security risks,contains,Federal Information Processing Standard (FIPS)
+9.1 cloud security risks,contains,Federal Information Security Management Act (FISMA)
+9.1 cloud security risks,contains,National Institute of Standards (NIST)
+9.1 cloud security risks,contains,Phishing
+9.1 cloud security risks,contains,Shared technology
+9.1 cloud security risks,contains,SQL injection
+9.1 cloud security risks,contains,Third-party control
+9.1 cloud security risks,contains,Traditional threats
+9.2 security: the top concern for cloud users,contains,Autonomic computing
+9.2 security: the top concern for cloud users,contains,Cloud security
+9.2 security: the top concern for cloud users,contains,"contract, user and CSP"
+9.2 security: the top concern for cloud users,contains,user concerns
+9.2 security: the top concern for cloud users,contains,Cloud service provider (CSP)
+9.2 security: the top concern for cloud users,contains,"User and CSP, contrast"
+9.3 privacy and privacy impact assessment,contains,Cloud security
+9.3 privacy and privacy impact assessment,contains,"legislation, information practices"
+9.3 privacy and privacy impact assessment,contains,privacy
+9.3 privacy and privacy impact assessment,contains,Dynamic provisioning
+9.3 privacy and privacy impact assessment,contains,Privacy and privacy impact assessment
+9.3 privacy and privacy impact assessment,contains,Privacy concerns
+9.3 privacy and privacy impact assessment,contains,"Universal Declaration of Human Rights, Article 12"
+9.4 trust,contains,Cloud security
+9.4 trust,contains,privacy impact assesment (PIA) tool
+9.4 trust,contains,trust
+9.4 trust,contains,Credentials
+9.4 trust,contains,Privacy impact assesment (PIA)
+9.4 trust,contains,Trust
+9.4 trust,contains,calculus-based trust
+9.4 trust,contains,deterrence-based trust
+9.4 trust,contains,dynamic trust
+9.4 trust,contains,interdependence
+9.4 trust,contains,persistent trust
+9.4 trust,contains,policies and reputation
+9.4 trust,contains,relational trust
+9.4 trust,contains,risk
+9.5 operating system security,contains,Closed-box platforms
+9.5 operating system security,contains,Cloud security
+9.5 operating system security,contains,operating system (OS)
+9.5 operating system security,contains,VM models
+9.5 operating system security,contains,Java SecurityManager
+9.5 operating system security,contains,Java Virtual Machine (JVM)
+9.5 operating system security,contains,Mandatory security
+9.5 operating system security,contains,Open-box platforms
+9.5 operating system security,contains,Operating systems
+9.5 operating system security,contains,Operating system security
+9.5 operating system security,contains,Trusted applications
+9.5 operating system security,contains,Trusted-path mechanism
+9.5 operating system security,contains,Virtual machine security
+9.6 virtual machine security,contains,Virtual machine security
+9.7 security of virtualization,contains,Cloud security
+9.7 security of virtualization,contains,VM-based threats
+9.7 security of virtualization,contains,VMM-based threats
+9.7 security of virtualization,contains,virtualization
+9.7 security of virtualization,contains,NIST project
+9.7 security of virtualization,contains,Nonces
+9.7 security of virtualization,contains,S/KEY password system
+9.7 security of virtualization,contains,security of
+9.7 security of virtualization,contains,implications
+9.7 security of virtualization,contains,undesirable effects
+9.8 security risks posed by shared images,contains,Bundling
+9.8 security risks posed by shared images,contains,Cloud security
+9.8 security risks posed by shared images,contains,"shared images, risks of"
+9.8 security risks posed by shared images,contains,Firepass
+9.8 security risks posed by shared images,contains,Loopback files
+9.8 security risks posed by shared images,contains,Man-in-the middle attacks
+9.8 security risks posed by shared images,contains,NMap tool
+9.8 security risks posed by shared images,contains,Passphrase
+9.8 security risks posed by shared images,contains,Security risks posed by shared images
+9.8 security risks posed by shared images,contains,Linux AMI
+9.8 security risks posed by shared images,contains,privacy risks
+9.8 security risks posed by shared images,contains,software vulnerability
+9.8 security risks posed by shared images,contains,types
+9.8 security risks posed by shared images,contains,unsolicited connections
+9.8 security risks posed by shared images,contains,Trojan
+9.9 security risks posed by a management os,contains,Dom0
+9.9 security risks posed by a management os,contains,Input/output memory management unit (IOMMU)
+9.9 security risks posed by a management os,contains,Security risks posed by management OS
+9.9 security risks posed by a management os,contains,Trusted computer base (TCB)
+9.10 xoar: breaking the monolithic design of the tcb,contains,Cloud security
+9.10 xoar: breaking the monolithic design of the tcb,contains,"Xoar, design goals"
+9.10 xoar: breaking the monolithic design of the tcb,contains,Copy-on-write mechanism
+9.10 xoar: breaking the monolithic design of the tcb,contains,XenStore
+9.10 xoar: breaking the monolithic design of the tcb,contains,Xoar
+9.11 a trusted virtual machine monitor,contains,Cloud security
+9.11 a trusted virtual machine monitor,contains,trusted virtual machine monitor (TVMM)
+9.11 a trusted virtual machine monitor,contains,Trusted virtual machine monitor (TVMM)
+10.1 complex systems,contains,Complex systems
+10.1 complex systems,contains,complexity of simulation
+10.1 complex systems,contains,interaction
+10.2 abstraction and physical reality,contains,Abstraction and physical reality
+10.2 abstraction and physical reality,contains,possible elements
+10.2 abstraction and physical reality,contains,homogeneous and heterogeneous systems
+10.2 abstraction and physical reality,contains,Interpreter
+10.3 quantifying complexity,contains,cyberphysical systems
+10.3 quantifying complexity,contains,embedded systems
+10.3 quantifying complexity,contains,sociotechnical systems
+10.3 quantifying complexity,contains,Critical slowing
+10.3 quantifying complexity,contains,Quantifying complexity
+10.3 quantifying complexity,contains,complexity measurement
+10.3 quantifying complexity,contains,excess entropy
+10.3 quantifying complexity,contains,macroscopic and microscopic properties
+10.3 quantifying complexity,contains,relative predictive efficiency
+10.3 quantifying complexity,contains,statistical complexity
+10.3 quantifying complexity,contains,von Neumann entropy
+10.4 emergence and self-organization,contains,emergence and self-organization
+10.4 emergence and self-organization,contains,Emergence and self-organization
+10.4 emergence and self-organization,contains,Incommensurate scaling
+10.4 emergence and self-organization,contains,Kolmogorov complexity
+10.4 emergence and self-organization,contains,Self-Organization and Complexity Attributes
+10.5 composability bounds and scalability,contains,Composability bounds and scalability
+10.5 composability bounds and scalability,contains,computer clouds
+10.5 composability bounds and scalability,contains,Internet
+10.5 composability bounds and scalability,contains,limits of
+10.5 composability bounds and scalability,contains,threshold voltage
+10.5 composability bounds and scalability,contains,phase transition
+10.5 composability bounds and scalability,contains,scale-free organization
+"10.6 modularity, layering, and hierarchy",contains,hierarchy
+"10.6 modularity, layering, and hierarchy",contains,layering
+"10.6 modularity, layering, and hierarchy",contains,modularity
+"10.6 modularity, layering, and hierarchy",contains,"Google BigTable, implementation"
+"10.6 modularity, layering, and hierarchy",contains,scaling
+"10.6 modularity, layering, and hierarchy",contains,Layering and hierarchy
+"10.6 modularity, layering, and hierarchy",contains,application layer
+"10.6 modularity, layering, and hierarchy",contains,communication protocols
+"10.6 modularity, layering, and hierarchy",contains,data link layer
+"10.6 modularity, layering, and hierarchy",contains,functional components
+"10.6 modularity, layering, and hierarchy",contains,network layer
+"10.6 modularity, layering, and hierarchy",contains,physical layer
+"10.6 modularity, layering, and hierarchy",contains,transport layer
+"10.6 modularity, layering, and hierarchy",contains,Media Access Control (MAC)
+"10.6 modularity, layering, and hierarchy",contains,Modularity
+"10.6 modularity, layering, and hierarchy",contains,Societal scaling
+10.7 more on the complexity of computing and communication systems,contains,communication systems
+10.7 more on the complexity of computing and communication systems,contains,"Computing and communication systems, complexity"
+10.7 more on the complexity of computing and communication systems,contains,characteristics
+10.7 more on the complexity of computing and communication systems,contains,specific factors
+10.7 more on the complexity of computing and communication systems,contains,Mean time to failure (MTTF)
+10.8 systems of systems: challenges and solutions,contains,challenges and solutions
+10.8 systems of systems: challenges and solutions,contains,Hardware trojan horses (HTH)
+10.8 systems of systems: challenges and solutions,contains,Systems of systems (SoS)
+10.8 systems of systems: challenges and solutions,contains,attributes
+10.8 systems of systems: challenges and solutions,contains,collaborative systems
+10.8 systems of systems: challenges and solutions,contains,direct system
+10.8 systems of systems: challenges and solutions,contains,virtual systems
+11.1 amazon web services: ec2 instances,contains,Amazon Elastic Block Storage (EBS)
+11.1 amazon web services: ec2 instances,contains,EC2 instance
+11.1 amazon web services: ec2 instances,contains,RunInstance API
+11.1 amazon web services: ec2 instances,contains,Application development
+11.1 amazon web services: ec2 instances,contains,EC2 instances
+11.1 amazon web services: ec2 instances,contains,Cloud computing paradigms
+11.2 connecting clients to cloud instances through firewalls,contains,from Amazon Management Console
+11.2 connecting clients to cloud instances through firewalls,contains,Application development
+11.2 connecting clients to cloud instances through firewalls,contains,firewalls connections
+11.2 connecting clients to cloud instances through firewalls,contains,Avast antivirus software
+11.2 connecting clients to cloud instances through firewalls,contains,Avast network shield
+11.2 connecting clients to cloud instances through firewalls,contains,Avast Web shield
+11.2 connecting clients to cloud instances through firewalls,contains,Denial-of-service (DOS) attacks
+11.2 connecting clients to cloud instances through firewalls,contains,Firewall Rule Setting
+11.2 connecting clients to cloud instances through firewalls,contains,Firewalls
+11.2 connecting clients to cloud instances through firewalls,contains,FORWARD rule
+11.2 connecting clients to cloud instances through firewalls,contains,INPUT rule
+11.2 connecting clients to cloud instances through firewalls,contains,Instance Action pull-down menu
+11.2 connecting clients to cloud instances through firewalls,contains,Iptables command
+11.2 connecting clients to cloud instances through firewalls,contains,Network address translation (NAT) mechanism
+11.2 connecting clients to cloud instances through firewalls,contains,Packet filtering
+11.2 connecting clients to cloud instances through firewalls,contains,Sudo command
+11.3 security rules for application and transport layer protocols in ec2,contains,Amazon’s EC2
+11.3 security rules for application and transport layer protocols in ec2,contains,security rules
+11.3 security rules for application and transport layer protocols in ec2,contains,AWS security
+11.3 security rules for application and transport layer protocols in ec2,contains,Domain Name Service (DNS)
+11.3 security rules for application and transport layer protocols in ec2,contains,EC2 Request Instance Wizard
+11.3 security rules for application and transport layer protocols in ec2,contains,Identity and Access Management (IAM)
+11.3 security rules for application and transport layer protocols in ec2,contains,Security rules in EC2
+11.4 how to launch an ec2 linux instance and connect to it,contains,Linux connections
+11.4 how to launch an ec2 linux instance and connect to it,contains,"EC2 Linux instance, launch"
+11.5 how to use s3 in java,contains,Application development
+11.5 how to use s3 in java,contains,S3 in java
+11.5 how to use s3 in java,contains,InputStream
+11.5 how to use s3 in java,contains,S3 use in java
+11.6 how to manage sqs services in c#,contains,Application development
+11.6 how to manage sqs services in c#,contains,SQS services in C#
+11.6 how to manage sqs services in c#,contains,SQS services management in C#
+11.7 how to install the simple notification service on ubuntu 10.04,contains,Application development
+11.7 how to install the simple notification service on ubuntu 10.04,contains,simple notification service on Ubuntu 10.04
+11.7 how to install the simple notification service on ubuntu 10.04,contains,Simple Notification Service installation on Ubuntu 10.04
+11.7 how to install the simple notification service on ubuntu 10.04,contains,Ubuntu
+11.8 how to create an ec2 placement group and use mpi,contains,placement group and use MPI
+11.8 how to create an ec2 placement group and use mpi,contains,EC2 Placement Group creation and use MPI
+11.8 how to create an ec2 placement group and use mpi,contains,Hardware virtual machine (HVM)
+11.8 how to create an ec2 placement group and use mpi,contains,Paravirtual machine (PVM) image
+11.8 how to create an ec2 placement group and use mpi,contains,Same program multiple data (SPMD)
+11.9 how to install hadoop on eclipse on a windows system,contains,Apache Hadoop
+11.9 how to install hadoop on eclipse on a windows system,contains,Application development
+11.9 how to install hadoop on eclipse on a windows system,contains,Hadoop installation
+11.9 how to install hadoop on eclipse on a windows system,contains,Cygwin
+11.9 how to install hadoop on eclipse on a windows system,contains,Download hadoop
+11.9 how to install hadoop on eclipse on a windows system,contains,Eclipse
+11.9 how to install hadoop on eclipse on a windows system,contains,Hadoop installation on Eclipse on windows system
+11.9 how to install hadoop on eclipse on a windows system,contains,Prerequisites
+11.9 how to install hadoop on eclipse on a windows system,contains,SSH Installation
+11.9 how to install hadoop on eclipse on a windows system,contains,Unpack hadoop
+11.10 cloud-based simulation of a distributed trust algorithm,contains,Application development
+11.10 cloud-based simulation of a distributed trust algorithm,contains,distributed trust algorithm
+11.10 cloud-based simulation of a distributed trust algorithm,contains,Cognitive Radio Networks (CRNs)
+11.10 cloud-based simulation of a distributed trust algorithm,contains,simulation
+11.10 cloud-based simulation of a distributed trust algorithm,contains,trust
+11.10 cloud-based simulation of a distributed trust algorithm,contains,Cloud-based simulation
+11.10 cloud-based simulation of a distributed trust algorithm,contains,CRN
+11.10 cloud-based simulation of a distributed trust algorithm,contains,distributed algorithm for trust management
+11.10 cloud-based simulation of a distributed trust algorithm,contains,distributed trust algorithm simulation
+11.10 cloud-based simulation of a distributed trust algorithm,contains,Cognitive radio networks (CRNs)
+11.10 cloud-based simulation of a distributed trust algorithm,contains,primary nodes/devices
+11.10 cloud-based simulation of a distributed trust algorithm,contains,secondary nodes/devices
+11.11 a trust management service,contains,historical information
+11.11 a trust management service,contains,Trust management service
+11.11 a trust management service,contains,advantages
+11.11 a trust management service,contains,An Algorithm for Trust Evaluation
+11.11 a trust management service,contains,average trust function
+11.11 a trust management service,contains,benefits
+11.11 a trust management service,contains,CR layout
+11.11 a trust management service,contains,History-Based Algorithm simulation
+11.11 a trust management service,contains,mobile devices
+11.11 a trust management service,contains,model assumptions
+11.12 a cloud service for adaptive data streaming,contains,Adaptive audio streaming
+11.12 a cloud service for adaptive data streaming,contains,"Adaptive data streaming, cloud service"
+11.12 a cloud service for adaptive data streaming,contains,Application development
+11.12 a cloud service for adaptive data streaming,contains,adaptive data streaming
+11.12 a cloud service for adaptive data streaming,contains,Data streaming
+11.12 a cloud service for adaptive data streaming,contains,EC2 c1.medium Platform
+11.12 a cloud service for adaptive data streaming,contains,average conversion time
+11.12 a cloud service for adaptive data streaming,contains,conversion Time in Seconds
+11.12 a cloud service for adaptive data streaming,contains,EC2 t1.micro Server Platform
+11.12 a cloud service for adaptive data streaming,contains,VM import
+11.13 cloud-based optimal fpga synthesis,contains,Application development
+11.13 cloud-based optimal fpga synthesis,contains,optimal FPGA synthesis
+11.13 cloud-based optimal fpga synthesis,contains,Application-specific integrated circuit (ASIC)
+11.13 cloud-based optimal fpga synthesis,contains,Cloud-based optimal FPGA synthesis
+11.13 cloud-based optimal fpga synthesis,contains,Register-transfer level (RTL)

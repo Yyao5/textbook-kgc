@@ -1,0 +1,39 @@
+,source,edge,target
+0,monitor,introduces,significant network communication
+1,CPU  utilization,reported,100 Mbps network
+2,native  VMM,executes,larger  instructions
+4,overheads,reported for other,particular  Xen
+6,we,examine,basic  network
+8,privileged  operations,executed,I
+9,driver domain,refer to,guest domain
+12,native network interface which,called,also network adapter
+14,precisely guest OS,uses,back driver domain
+15,guest domain,communicates with,driver domain
+20,it,added to,table
+22,bridge,uses,rather broadcast packet
+24,bridge,performs,multiplexing driver demultiplexing
+25,packets,have,different  VMM
+27,Similarly  packets,have,single network adaptor
+29,Xen,supports,address translation
+30,Table,shows,well Xen optimizations
+32,optimization,discussed in,i
+33,Next  we,examine,virtual optimization interface
+35,interface,provides,low level network primitives
+36,design,supports,e.g. scatter gather DMA
+39,features,supported,optimized  Figure
+41,data packet,allocated in,new  page
+42,physical  page,remapped into,target domain
+43,physical  page,remapped to,guest domain
+46,when network bridge,needs,only MAC packet
+49,optimized  implementation,based on,out packet MAC header
+50,strategy,contributed to,nonoptimized data version
+51,optimization,covers virtual,virtual  memory
+52,memory,takes,Pentium Pentium processors
+53,superpage,increases,the
+54,physical address translation mechanism,covers,physical  pages
+55,mechanism,maps,contiguous  pages
+56,This,helps,TLB
+57,Obviously  pages,belong to,same guest OS
+59,only guest that,allocate,rather superpage mapping
+60,that,forces,the
+62,version,uses,special memory problem

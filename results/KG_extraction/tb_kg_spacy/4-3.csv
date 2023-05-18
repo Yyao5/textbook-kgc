@@ -1,0 +1,48 @@
+,source,edge,target
+0,computing,based on,client server Section
+1,majority,take,request response clients
+2,server,require,first  server
+4,Instead  client,views,independent client transaction
+5,server,overhead for,consecutive  requests
+6,client,have,server
+8,client,receives,a
+10,that,resend,request
+13,server,interact with,available storage server
+15,server,responds to,past HTTP client
+16,client,sends,requests
+18,HTTP,uses,Transport Control Protocol
+19,malicious Web clients,ensures reliable,TCP connection
+20,malicious  clients,servers to,denial  attacks
+21,running,communicate,different programming languages
+22,system,use,Big  Endian
+23,Second communication channel,transmits,a
+24,thus data structure,serialized at,sending receiving site
+25,considerations,analyzed before,architectural  application
+26,neutrality,refers to,different protocol stack
+28,SOAP,see,also transport vehicles
+30,Extensibility,refers to,such  security
+31,Independence,refers to,different programming styles
+32,often application clients,communicate,other  communication
+35,applications,use,RPC call
+37,stub,performs,two data structures
+38,ORB,transforms,byte byte network
+41,ORB,maps,internally receiving process
+45,representation,mapped to,then programming C
+46,applications,pass,value
+48,protocol message format,based on,Extensible Markup Language
+49,SOAP,uses,recently UDP transport protocols
+50,SOAP,stacked above other,such application layer HTTP
+51,model,based on,senders
+52,Language,introduced,networked  application
+54,definition,include,particular port binding
+55,abstractions,mapped to concrete,concrete network endpoints
+57,REST,supports,stateless client servers
+60,REST,uses,always  four
+62,HTTP,uses,data
+65,REST system,sends,specific client case
+66,version,consists of,more  XML
+67,server,responds with,individual
+68,REST,justifies,statement
+69,REST,is easier,debug
+71,e.g. self WSDL,supported by,code
+72,e.g.  WSDL,generate,code

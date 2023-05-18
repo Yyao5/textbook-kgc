@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 6.5px Helvetica; color: #808080}
+  </style>
+</head>
+<body>
+<p class="p1">Now let’s briefly analyze the design of a trusted virtual machine monitor (TVMM) called <span class="s1">Terra </span>[<span class="s2">131</span>].</p>
+<p class="p1">The novel ideas of this design are:</p>
+<p class="p1">• The TVMM should support not only traditional operating systems, by exporting the hardware abstraction</p>
+<p class="p1">for open-box platforms, but also the abstractions for closed-box platforms discussed in Section</p>
+<p class="p1"><span class="s2">9.5</span>. Note that the VM abstraction for a closed-box platform does not allow the contents of the system</p>
+<p class="p1">to be either manipulated or inspected by the platform owner.</p>
+<p class="p1">• An application should be allowed to build its software stack based on its needs.Applications requiring</p>
+<p class="p1">a very high level of security, e.g., financial applications and electronic voting systems, should run</p>
+<p class="p1">under a very thin OS supporting only the functionality required by the application and the ability to</p>
+<p class="p1">boot. At the other end of the spectrum are applications demanding low information assurance<span class="s3">23 </span>but</p>
+<p class="p1">a rich set of OS features; such applications need a commodity operating system.</p>
+<p class="p1">• Support additional capabilities to enhance system assurance:</p>
+<p class="p1"><span class="s4">• </span>Provide trusted paths from a user to an application.We saw in Section <span class="s2">9.5 </span>that such a path allows</p>
+<p class="p1">a human user to determine with certainty the identity of the VM it is interacting with and, at the</p>
+<p class="p1">same time, allows the VM to verify the identity of the human user.</p>
+<p class="p1"><span class="s4">• </span>Support attestation, which is the ability of an application running in a closed box to gain trust</p>
+<p class="p1">from a remote party by cryptographically identifying itself.</p>
+<p class="p1"><span class="s4">• </span>Provide airtight isolation guarantees for the TVMM by denying the platform administrator root</p>
+<p class="p1">access.</p>
+<p class="p1">The management VM is selected by the owner of the platform but makes a distinction between a</p>
+<p class="p1"><span class="s1">platform owner </span>and a <span class="s1">platform user</span>. The management VM formulates limits to the number of guest</p>
+<p class="p1">VMs running on the platform, denies access to guest VMs that are deemed unsuitable to run, and grants</p>
+<p class="p1">access to I/O devices to running VMs and limits their CPU, memory, and disk usage. Guest VMs expose</p>
+<p class="p1">a raw hardware interface, including virtual network interfaces to virtual devices. The TVMM runs at the</p>
+<p class="p1">highest privilege level and is secure even from the actions of the platform owner; it provides application</p>
+<p class="p1">developers with the semantics of a closed-box platform.</p>
+<p class="p1">A significant challenge to the security of a TVMM comes from the device drivers used by different</p>
+<p class="p1">VMs running on the platform. Device drivers are large or very large software components, especially</p>
+<p class="p1">the drivers for high-end wireless cards and video cards. There is also a large variety of such drivers,</p>
+<p class="p1">many hastily written to accommodate new hardware features. Typically, the device drivers are the</p>
+<p class="p1">lowest-quality software components found in the kernel of an operating system; thus, they pose the</p>
+<p class="p1">highest security risks. To protect a TVMM, the device drivers should not be allowed to access sensitive</p>
+<p class="p1">information and their memory access should be limited by different hardware protection mechanisms.</p>
+<p class="p1">Malicious I/O devices can use different hardware capabilities, such as DMA, to modify the kernel.</p>
+</body>
+</html>

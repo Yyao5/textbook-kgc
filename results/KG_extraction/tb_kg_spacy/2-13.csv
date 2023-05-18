@@ -1,0 +1,78 @@
+,source,edge,target
+0,system,made of,defined  functions
+1,Modularity,supports,development system
+5,We,distinguish soft,enforced  modularity
+6,former  that,means,shared procedure call convention
+8,caller,saves,transfer registers
+10,callee,loads,stack
+11,caller,adjusts,stack processing
+13,modularity,hides,many  advantages
+16,long module interfaces,replaced with,other  modules
+17,modules,written,different programming languages
+19,Softmodularity,presents,challenges
+20,call,increases,infinite  loop
+23,caller,use,stack
+25,language,enforce soft,soft  modularity
+27,instances classes,reject,data types
+28,safety,allow,class instances
+29,different time modules,affected by,different programming languages
+31,themodules,means,only  messages
+34,where  clients,leads to,robust  design
+35,modules,have,state information
+37,then  clients,fail,even  server
+41,when sequence messages,makes,Transport Control Protocol
+42,when sequence messages,guess,sequence segments
+44,back end that,consists,requests
+45,that,dispatches,the
+46,architecture,exploits,computer cloud infrastructure
+47,paradigm,allows,such operating Linux
+50,client,use multiple,multiple  servers
+51,heterogeneity,creates,outweigh heterogeneity appeal
+52,vice data heterogeneity,adds,canonical data representation
+53,heterogeneity,require,one data another
+55,also response servers,is,lower  workload
+57,former,impose,any
+58,network,communicate through,network
+60,Communication,adds additional,additional response time
+61,major  traffic,becomes,client
+62,traffic,can,client
+63,RPC,used for,often server systems interactions
+64,standard,described in,RFC
+66,process,use special,111 service lookup
+68,RPCmessages,identify,RPC port
+70,RPCs,reduce,due communication delays
+74,server,end,request
+78,sender,sets,time out
+79,error code,delivered to,caller
+81,time messages,require,order
+84,sender,implements,once  server
+85,spectrum,attests to,modern computing landscape
+86,TheWorldWideWeb,illustrates,client server TheWorldWideWeb society
+87,users,allows,digital  format
+89,page,created,description language
+90,information,encoded,e.g. Web audio
+93,client,pulls,server
+94,pages,created,fly
+95,others,fetched from,disk
+96,Web server,called,Transport Control clients
+97,server,communicate,Transport Control Protocol
+98,Figure,shows,2.22  the
+99,when  client,sends,HTTP request
+100,server,constructs,page
+101,then  server,requests,disk
+104,client,provides,special SYN control bit
+105,Then  server,acknowledges,initial sequence number
+106,Finally  client,sends,own acknowledgment ACK
+108,initial  acknowledgment,is,client
+109,acknowledgment,reaches,the
+112,server residence RTT,consists of several,response
+113,RTT,depends on,network latency
+114,transmission time,determined by,network bandwidth
+115,server residence time,depends,server load
+116,Often  client,communicate,proxy  Figure
+118,servers,provide multiple,multiple
+119,servers,filter,filtering client rules
+121,server,redirect,loaded  server
+122,proxy,act as,forward  server
+125,Tunneling,means,network protocol
+126,HTTP,acts,case

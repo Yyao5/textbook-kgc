@@ -1,0 +1,30 @@
+,source,edge,target
+0,function,relates,service
+2,agreement,specifies,specific performance metrics
+3,Sometimes  quality,translates,services
+4,when  SLA,specifies,explicitly  this
+5,when performance metrics,shows,6.4  case
+7,lower  reward,corresponds to,< R R1
+8,instead  provider,pays,small
+10,which,captures,this
+11,quadratic  we,approximated by,Section
+13,we,discuss,autonomic  management
+16,cloud,assume,k Nk applications
+17,cloud,providing,different
+18,k ∈ K,call,linear utility form
+23,delay that,see,next  Figure
+24,class,πk,k probability πk
+26,single  that,assume,DVFS supply model
+27,that,runs at,discrete supply voltages
+29,problem,involves,five
+30,A,reflect,revenues
+35,variables,listed,optimization Table
+36,parameters,shown in,Table
+38,traffic,equals,predicted class k class
+40,more  i,allocated,workload
+41,I,⇒,i
+42,i,runs at,one  frequency
+43,Nk,assigned to active,active  servers
+44,requests,run on,i
+45,corresponding application tier,assigned,i
+49,decision approach,make,realistic resource management strategy

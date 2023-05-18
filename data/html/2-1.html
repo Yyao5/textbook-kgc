@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 10.0px Times}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {color: #000066}
+    span.s5 {font: 7.5px Times}
+    span.s6 {font: 7.5px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">As demonstrated by nature, the ability to work in parallel as a group represents a very efficient way</p>
+<p class="p1">to reach a common target; human beings have learned to aggregate themselves and to assemble</p>
+<p class="p1">man-made devices in organizations in which each entity may have modest ability, but a network of entities can organize themselves to accomplish goals that an individual entity cannot. Thus, we should</p>
+<p class="p1">not be surprised that the thought that individual systems should work in concert to solve complex</p>
+<p class="p1">applications was formulated early on in the computer age.</p>
+<p class="p1">Parallel computing allows us to solve large problems by splitting them into smaller ones and solving</p>
+<p class="p1">them concurrently. Parallel computing was considered for many years the “holy grail” for solving</p>
+<p class="p1">data-intensive problems encountered in many areas of science, engineering, and enterprise computing;</p>
+<p class="p1">it required major advances in several areas, including algorithms, programming languages and environments,</p>
+<p class="p1">performance monitoring, computer architecture, interconnection networks, and last but not</p>
+<p class="p1">least, solid-state technologies.</p>
+<p class="p1">Parallel hardware and software systems allow us to solve problems demanding more resources than</p>
+<p class="p1">those provided by a single system and, at the same time, to reduce the time required to obtain a solution.</p>
+<p class="p1">The speed-up measures the effectiveness of parallelization; in the general case the <span class="s1">speed-up </span>of the</p>
+<p class="p1">parallel computation is defined as</p>
+<p class="p2">S(N) = T (<span class="s2">1</span>)</p>
+<p class="p2">T (N)</p>
+<p class="p1"><span class="s1">, </span>(2.1)</p>
+<p class="p1">with <span class="s1">T (</span>1<span class="s1">) </span>the execution time of the sequential computation and <span class="s1">T (N) </span>the execution timewhen <span class="s1">N </span>parallel</p>
+<p class="p1">computations are carried out. Amdahl’s Law<span class="s3">1 </span>gives the potential speed-up of a parallel computation; it</p>
+<p class="p1">states that the portion of the computation that cannot be parallelized determines the overall speed-up.</p>
+<p class="p1">If <span class="s1">α </span>is the fraction of running time a sequential program spends on nonparallelizable segments of the</p>
+<p class="p1">computation, then</p>
+<p class="p2">S = <span class="s2">1</span></p>
+<p class="p2">α</p>
+<p class="p1"><span class="s1">. </span>(2.2)</p>
+<p class="p1">To prove this result, call <span class="s1">σ </span>the sequential time and <span class="s1">π </span>the parallel time and start from the definitions</p>
+<p class="p2"><span class="s2">of </span>T (<span class="s2">1</span>), T (N)<span class="s2">, and </span>α<span class="s2">:</span></p>
+<p class="p2">T (<span class="s2">1</span>) = σ + π, T (N) = σ + π</p>
+<p class="p2">N</p>
+<p class="p2">, <span class="s2">and </span>α = σ</p>
+<p class="p2">σ + π</p>
+<p class="p1"><span class="s1">. </span>(2.3)</p>
+<p class="p1">Then</p>
+<p class="p2">S = T (<span class="s2">1</span>)</p>
+<p class="p2">T (N)</p>
+<p class="p2">= σ + π</p>
+<p class="p2">σ + π/N</p>
+<p class="p2">= <span class="s2">1 </span>+ π/σ</p>
+<p class="p2"><span class="s2">1 </span>+ (π/σ )   (<span class="s2">1</span>/N)</p>
+<p class="p1"><span class="s1">. </span>(2.4)</p>
+<p class="p1">But</p>
+<p class="p2">π/σ = <span class="s2">1 </span>− α</p>
+<p class="p2">α</p>
+<p class="p1"><span class="s1">. </span>(2.5)</p>
+<p class="p1">Thus, for large <span class="s1">N</span></p>
+<p class="p2">S = <span class="s2">1 </span>+ (<span class="s2">1 </span>− α)/α</p>
+<p class="p2"><span class="s2">1 </span>+ (<span class="s2">1 </span>− α)/(Nα)</p>
+<p class="p2">= <span class="s2">1</span></p>
+<p class="p2">α + (<span class="s2">1 </span>− α)/N</p>
+<p class="p2">≈ <span class="s2">1</span></p>
+<p class="p2">α</p>
+<p class="p1"><span class="s1">. </span>(2.6)</p>
+<p class="p1">Amdahl’s law applies to a <span class="s1">fixed problem size</span>; in this case the amount of work assigned to each one of</p>
+<p class="p1">the parallel processes decreases when the number of processes increases, and this affects the efficiency</p>
+<p class="p1">of the parallel execution.<span class="Apple-converted-space"> </span></p>
+<p class="p1">When the problem size is allowed to change, Gustafson’s Law gives the <span class="s1">scaled speed-up </span>with <span class="s1">N</span></p>
+<p class="p1">parallel processes as</p>
+<p class="p2">S(N) = N − α(N − <span class="s2">1</span>). <span class="s2">(2.7)</span></p>
+<p class="p1">As before, we call <span class="s1">σ </span>the sequential time; now <span class="s1">π </span>is the <span class="s1">fixed parallel time per process</span>; <span class="s1">α </span>is given by</p>
+<p class="p1">Equation <span class="s4">2.3</span>. The sequential execution time, <span class="s1">T (</span>1<span class="s1">)</span>, and the parallel execution time with <span class="s1">N </span>parallel</p>
+<p class="p1">processes, <span class="s1">T (N)</span>, are</p>
+<p class="p2">T (<span class="s2">1</span>) = σ + Nπ <span class="s2">and </span>T (N) = σ + π. <span class="s2">(2.8)</span></p>
+<p class="p1">Then the scaled speed-up is</p>
+<p class="p2">S(N) = T (<span class="s2">1</span>)</p>
+<p class="p2">T (N)</p>
+<p class="p2">= σ + Nπ</p>
+<p class="p2">σ + π</p>
+<p class="p2">= σ</p>
+<p class="p2">σ + π</p>
+<p class="p2">+ Nπ</p>
+<p class="p2">σ + π</p>
+<p class="p2">= α + N(<span class="s2">1 </span>− α) = N − α(N − <span class="s2">1</span>). <span class="s2">(2.9)</span></p>
+<p class="p1">Amdahl’s Law expressed by Equation <span class="s4">2.2 </span>and the <span class="s1">scaled speed-up </span>given by Equation <span class="s4">2.7 </span>assume that</p>
+<p class="p1">all processes are assigned the same amount of work. The scaled speed-up assumes that the amount</p>
+<p class="p1">of work assigned to each process is the same, regardless of the problem size. Then, to maintain the</p>
+<p class="p1">same execution time, the number of parallel processes must increase with the problem size. The scaled</p>
+<p class="p1">speed-up captures the essence of efficiency, namely that the limitations of the sequential part of a code</p>
+<p class="p1">can be balanced by increasing the problem size.</p>
+<p class="p1">Coordination of concurrent computations could be quite challenging and involves overhead, which</p>
+<p class="p1">ultimately reduces the speed-up of parallel computations. Often the parallel computation involves multiple</p>
+<p class="p1">stages, and all concurrent activities must finish one stage before starting the execution of the next</p>
+<p class="p1">one; this <span class="s1">barrier synchronization </span>further reduces the speed-up.</p>
+<p class="p1">The subtasks of a parallel program are called <span class="s1">processes</span>, whereas <span class="s1">threads </span>are lightweight subtasks.</p>
+<p class="p1">Concurrent execution could be very challenging (e.g., it could lead to <span class="s1">race conditions</span>, an undesirable</p>
+<p class="p1">effect in which the results of concurrent execution depend on the sequence of events). Often, shared</p>
+<p class="p1">resources must be protected by <span class="s1">locks </span>to ensure serial access. Another potential problem for concurrent</p>
+<p class="p1">execution of multiple processes or threads is the presence of deadlocks; a <span class="s1">deadlock </span>occurs when processes</p>
+<p class="p1">or threads competing with one another for resources are forced to wait for additional resources</p>
+<p class="p1">held by other processes or threads and none of the processes or threads can finish. The four <span class="s1">Coffman</span></p>
+<p class="p1"><span class="s1">conditions </span>must hold simultaneously for a deadlock to occur:</p>
+<p class="p1"><span class="s1">1. Mutual exclusion. </span>At least one resource must be nonsharable, and only one process/thread may use</p>
+<p class="p1">the resource at any given time.</p>
+<p class="p1"><span class="s1">2. Hold and wait. </span>At least one process/thread must hold one or more resources and wait for others.</p>
+<p class="p1"><span class="s1">3. No preemption. </span>The scheduler or a monitor should not be able to force a process/thread holding a</p>
+<p class="p1">resource to relinquish it.</p>
+<p class="p1"><span class="s1">4. Circular wait. </span>Given the set of <span class="s1">n </span>processes/threads <span class="s1">{P</span><span class="s5">1</span><span class="s1">, P</span><span class="s5">2</span><span class="s1">, P</span><span class="s5">3</span><span class="s1">, . . . , P</span><span class="s6">n</span><span class="s1">}, P</span><span class="s5">1 </span>should wait for a</p>
+<p class="p1">resource held by <span class="s1">P</span><span class="s5">2</span><span class="s1">, P</span><span class="s5">2 </span>should wait for a resource held by <span class="s1">P</span><span class="s5">3</span>, and so on and <span class="s1">P</span><span class="s6">n </span>should wait</p>
+<p class="p1">for a resource held by <span class="s1">P</span><span class="s5">1</span>.</p>
+<p class="p1">There are other potential problems related to concurrency. When two or more processes or threads</p>
+<p class="p1">continually change their state in response to changes in the other processes, we have a <span class="s1">livelock </span>condition;</p>
+<p class="p1">the result is that none of the processes can complete its execution. Very often processes/threads running</p>
+<p class="p1">concurrently are assigned priorities and scheduled based on these priorities. <span class="s1">Priority inversion </span>occurs</p>
+<p class="p1">when a higher-priority process or task is indirectly preempted by a lower-priority one.</p>
+<p class="p1">Concurrent processes/tasks can communicate using messages or shared memory. Multicore processors</p>
+<p class="p1">sometimes use shared memory, but the shared memory is seldom used in modern supercomputers</p>
+<p class="p1">because shared-memory systems are not scalable. Message passing is the communication method used</p>
+<p class="p1">exclusively in large-scale distributed systems, and our discussion is restricted to this communication</p>
+<p class="p1">paradigm.</p>
+<p class="p1">Shared memory is extensively used by the system software; the stack is an example of shared memory</p>
+<p class="p1">used to save the state of a process or thread. The kernel of an operating system uses control structures</p>
+<p class="p1">such as processor and core tables for multiprocessor and multicore system management, process and</p>
+<p class="p1">thread tables for process/thread management, page tables for virtual memory management, and so</p>
+<p class="p1">on. Multiple application threads running on a multicore processor often communicate via the shared</p>
+<p class="p1">memory of the system. Debugging amessage-passing application is considerably easier than debugging</p>
+<p class="p1">a shared memory application.</p>
+<p class="p1">We distinguish <span class="s1">fine-grain </span>from <span class="s1">coarse-grain </span>parallelism; in the former case relatively small blocks</p>
+<p class="p1">of the code can be executed in parallel without the need to communicate or synchronize with other</p>
+<p class="p1">threads or processes, while in the latter case large blocks of code can be executed in parallel. The speedup</p>
+<p class="p1">of applications displaying fine-grain parallelism is considerably lower than that of coarse-grained</p>
+<p class="p1">applications; indeed, the processor speed is orders of magnitude higher than the communication speed,</p>
+<p class="p1">even on systems with a fast interconnect.</p>
+<p class="p1">In many cases, discovering parallelism is quite challenging, and the development of parallel algorithms</p>
+<p class="p1">requires a considerable effort. For example, many numerical analysis problems, such as solving</p>
+<p class="p1">large systems of linear equations or solving systems of partial differential equations (PDEs), requires</p>
+<p class="p1">algorithms based on domain decomposition methods.</p>
+<p class="p1"><span class="s1">Data parallelism </span>is based on partitioning the data into several blocks and running multiple copies of</p>
+<p class="p1">the same program concurrently, each running on a different data block – thus the name of the paradigm,</p>
+<p class="p1">Same Program Multiple Data (SPMD).</p>
+<p class="p1">Decomposition of a large problem into a set of smaller problems that can be solved concurrently is</p>
+<p class="p1">sometimes trivial. For example, assume that we want to manipulate the display of a three-dimensional</p>
+<p class="p1">object represented as a <span class="s1">3D </span>lattice of <span class="s1">(n   n   n) </span>points; to rotate the image we would apply the</p>
+<p class="p1">same transformation to each one of the <span class="s1">n</span><span class="s5">3 </span>points. Such a transformation can be done by a geometric</p>
+<p class="p1">engine, a hardware component that can carry out the transformation of a subset of <span class="s1">n</span><span class="s5">3 </span>points</p>
+<p class="p1">concurrently.</p>
+<p class="p1">Suppose that we want to search for the occurrence of an object in a set of <span class="s1">n </span>images, or of a string</p>
+<p class="p1">of characters in <span class="s1">n </span>records; such a search can be conducted in parallel. In all these instances the time</p>
+<p class="p1">required to carry out the computational task using <span class="s1">N </span>processing elements is reduced by a factor of <span class="s1">N</span>.</p>
+<p class="p1">A very appealing class of applications of cloud computing is numerical simulations of complex</p>
+<p class="p1">systems that require an optimal design; in such instances multiple design alternatives must be compared</p>
+<p class="p1">and optimal ones selected based on several optimization criteria. Consider for example the design of</p>
+<p class="p1">a circuit using field programmable gate arrays (FPGAs). An FPGA is an integrated circuit designed</p>
+<p class="p1">to be configured by the customer using a hardware description language (HDL), similar to that used</p>
+<p class="p1">for an application-specific integrated circuit (ASIC). Because multiple choices for the placement of</p>
+<p class="p1">components and for interconnecting them exist, the designer could run concurrently <span class="s1">N </span>versions of the</p>
+<p class="p1">design choices and choose the one with the best performance, such as minimum power consumption.</p>
+<p class="p1">Alternative optimization objectives could be to reduce cross-talk among the wires or to minimize the overall noise. Each alternative configuration requires hours ormaybe days of computing; hence, running</p>
+<p class="p1">them concurrently reduces the design time considerably.</p>
+<p class="p1">The list of companies that aimed to support parallel computing and ended up as casualties of this</p>
+<p class="p1">effort is long and includes names such as Ardent, Convex, Encore, Floating Point Systems, Inmos,</p>
+<p class="p1">Kendall Square Research, MasPar, nCube, Sequent, Tandem, and Thinking Machines. The difficulties</p>
+<p class="p1">of developing newprogramming models and the effort to design programming environments for parallel</p>
+<p class="p1">applications added to the challenges faced by all these companies.</p>
+<p class="p1">From the very beginning itwas clear that parallel computing requires specialized hardware and system</p>
+<p class="p1">software. It was also clear that the interconnection fabric was critical for the performance of parallel</p>
+<p class="p1">computing systems.We nowtake a closer look at parallelism at different levels and themeans to exploit it.</p>
+</body>
+</html>

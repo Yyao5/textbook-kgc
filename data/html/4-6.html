@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 10.0px Courier}
+    span.s5 {font: 7.5px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A main advantage of cloud computing is elasticity – the ability to use as many servers as necessary to</p>
+<p class="p1">optimally respond to the cost and the timing constraints of an application. In the case of transaction</p>
+<p class="p1">processing systems, typically a front-end system distributes the incoming transactions to a number</p>
+<p class="p1">of back-end systems and attempts to balance the load among them. As the workload increases, new</p>
+<p class="p1">back-end systems are added to the pool.</p>
+<p class="p1">For data-intensive batch applications, partitioning the workload is not always trivial. Only in some</p>
+<p class="p1">cases can the data be partitioned into blocks of arbitrary size and processed in parallel by servers in the</p>
+<p class="p1">cloud. We distinguish two types of divisible workloads:</p>
+<p class="p1">• <span class="s1">Modularly divisible</span>. The workload partitioning is defined a priori.</p>
+<p class="p1">• <span class="s1">Arbitrarily divisible</span>. The workload can be partitioned into an arbitrarily large number of smaller</p>
+<p class="p1">workloads of equal or very close size.</p>
+<p class="p1">Many realistic applications in physics, biology, and other areas of computational science and engineering</p>
+<p class="p1">obey the arbitrarily divisible load-sharing model. The Divisible Load Theory (DLT) is analyzed in the</p>
+<p class="p1">literature (see Section <span class="s2">4.12</span>).</p>
+<p class="p1"><span class="s1">MapReduce </span>is based on a very simple idea for parallel processing of data-intensive applications</p>
+<p class="p1">supporting arbitrarily divisible load sharing. First, split the data into blocks, assign each block to</p>
+<p class="p1">an instance or process, and run these instances in parallel. Once all the instances have finished, the</p>
+<p class="p1">computations assigned to them start the second phase: Merge the partial results produced by individual instances. The so-called same program, multiple data (SPMD) paradigm, used since the early days of</p>
+<p class="p1">parallel computing, is based on the same idea but assumes that a <span class="s1">master </span>instance partitions the data and</p>
+<p class="p1">gathers the partial results.</p>
+<p class="p1"><span class="s1">MapReduce </span>is a programming model inspired by the <span class="s1">Map </span>and the <span class="s1">Reduce </span>primitives of the LISP</p>
+<p class="p1">programming language. It was conceived for processing and generating large data sets on computing</p>
+<p class="p1">clusters [<span class="s2">100</span>]. As a result of the computation, a set of input <span class="s1">&lt;key, value&gt; </span>pairs is transformed into a</p>
+<p class="p1">set of output <span class="s1">&lt;key, value&gt; </span>pairs.</p>
+<p class="p1">Numerous applications can be easily implemented using this model. For example, one can process</p>
+<p class="p1">logs of Web page requests and count the URL access frequency. The <span class="s1">Map </span>function outputs the</p>
+<p class="p1">pairs <span class="s1">&lt;URL, </span>1<span class="s1">&gt; </span>and the <span class="s1">Reduce </span>function produces the pairs <span class="s1">&lt;URL, totalcount&gt;</span>. Another trivial</p>
+<p class="p1">example is <span class="s1">distributed sort </span>when the map function extracts the key from each record and produces a</p>
+<p class="p1"><span class="s1">&lt;key, record&gt; </span>pair and the <span class="s1">Reduce </span>function outputs these pairs unchanged. The following example</p>
+<p class="p1">[<span class="s2">100</span>] shows the two user-defined functions for an application that counts the number of occurrences of</p>
+<p class="p1">each word in a set of documents.</p>
+<p class="p2">map(String key, String value):</p>
+<p class="p2">//key: document name; value: document contents</p>
+<p class="p2">for each word w in value:</p>
+<p class="p2">EmitIntermediate (w, "1");</p>
+<p class="p2">reduce (String key, Iterator values):</p>
+<p class="p2">// key: a word; values: a list of counts</p>
+<p class="p2">int result = 0;</p>
+<p class="p2">for each v in values:</p>
+<p class="p2">result += ParseInt (v);</p>
+<p class="p2">Emit (AsString (result));</p>
+<p class="p1">Call <span class="s1">M </span>and <span class="s1">R </span>the number of <span class="s1">Map </span>and <span class="s1">Reduce </span>tasks, respectively, and <span class="s1">N </span>the number of systems used</p>
+<p class="p1">by the <span class="s1">MapReduce</span>. When a user program invokes the <span class="s1">MapReduce function</span>, the following sequence of</p>
+<p class="p1">actions take place (see Figure <span class="s2">4.6</span>):</p>
+<p class="p1"><span class="s1">1. </span>The run-time library splits the input files into <span class="s1">M splits </span>of 16 to 64 MB each, identifies a number <span class="s1">N </span>of</p>
+<p class="p1">systems to run, and starts multiple copies of the program, one of the system being a <span class="s1">master </span>and the</p>
+<p class="p1">others <span class="s1">workers. </span>The <span class="s1">master </span>assigns to each idle system either a <span class="s1">Map </span>or a <span class="s1">Reduce </span>task. The <span class="s1">master</span></p>
+<p class="p1">makes<span class="s1">O(M+R) </span>scheduling decisions and keeps<span class="s1">O(M R) </span>worker state vectors in memory. These</p>
+<p class="p1">considerations limit the size of <span class="s1">M </span>and <span class="s1">R</span>; at the same time, efficiency considerations require that</p>
+<p class="p3">M, R   N<span class="s3">.</span></p>
+<p class="p1"><span class="s1">2. </span>A worker being assigned a <span class="s1">Map </span>task reads the corresponding input split, parses<span class="s1">&lt;key, value&gt;</span>pairs,</p>
+<p class="p1">and passes each pair to a user-defined <span class="s1">Map </span>function. The intermediate<span class="s1">&lt;key, value&gt;</span>pairs produced</p>
+<p class="p1">by the <span class="s1">Map </span>function are buffered in memory before being written to a local disk and partitioned into</p>
+<p class="p1"><span class="s1">R </span>regions by the partitioning function.</p>
+<p class="p1"><span class="s1">3. </span>The locations of these buffered pairs on the local disk are passed back to the <span class="s1">master</span>, who is responsible</p>
+<p class="p1">for forwarding these locations to the <span class="s1">Reduce </span>workers. A <span class="s1">Reduce </span>worker uses remote procedure</p>
+<p class="p1">calls to <span class="s4">read </span>the buffered data from the local disks of the <span class="s1">Map </span>workers; after reading all the intermediate data, it sorts it by the intermediate keys. For each unique intermediate key, the key</p>
+<p class="p1">and the corresponding set of intermediate values are passed to a user-defined <span class="s1">Reduce </span>function. The</p>
+<p class="p1">output of the <span class="s1">Reduce </span>function is appended to a final output file.</p>
+<p class="p1"><span class="s1">4. </span>When all <span class="s1">Map </span>and <span class="s1">Reduce </span>tasks have been completed, the <span class="s1">master </span>wakes up the user program.</p>
+<p class="p1">The system is fault tolerant. For each <span class="s1">Map </span>and <span class="s1">Reduce </span>task, the <span class="s1">master </span>stores the state (idle, in progress,</p>
+<p class="p1">or completed) and the identity of the worker machine. The <span class="s1">master </span>pings every worker periodically</p>
+<p class="p1">and marks the worker as failed if it does not respond. A task in progress on a failed worker is reset</p>
+<p class="p1">to idle and becomes eligible for rescheduling. The <span class="s1">master </span>writes periodic checkpoints of its control data structures and, if the task fails, it can be restarted from the last checkpoint. The data is stored using</p>
+<p class="p1">GFS, the Google File System, discussed in Section 8.5.</p>
+<p class="p1">An environment for experimenting with <span class="s1">MapReduce </span>is described in [<span class="s2">100</span>]: The computers are typically</p>
+<p class="p1">dual-processor <span class="s1">x86 </span>running <span class="s1">Linux</span>, with 2–4 GB of memory per machine and commodity networking</p>
+<p class="p1">hardware typically 100–1,000 Mbps. A cluster consists of hundreds or thousands of machines.</p>
+<p class="p1">Data is stored on IDE<span class="s5">7 </span>disks attached directly to individual machines. The file system uses replication</p>
+<p class="p1">to provide availability and reliability with unreliable hardware. To minimize network bandwidth, the</p>
+<p class="p1">input data is stored on the local disks of each system.</p>
+</body>
+</html>

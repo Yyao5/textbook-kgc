@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Courier}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 10.0px Courier}
+    span.s5 {font: 7.5px Times}
+    span.s6 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">To understand the impact of computer architecture on the ability to efficiently virtualize a given architecture,</p>
+<p class="p1">we discuss some of the findings of the <span class="s1">vBlades </span>project at HP-Laboratories [<span class="s2">228</span>]. The goal of</p>
+<p class="p1">the <span class="s1">vBlades </span>project was to create a VMM for the <span class="s1">Itanium </span>family of <span class="s1">IA64 </span>Intel processors,<span class="s3">14 </span>capable of</p>
+<p class="p1">supporting the execution of multiple operating systems in isolated protection domains with security and</p>
+<p class="p1">privacy enforced by the hardware. The VMM was also expected to support optimal server utilization</p>
+<p class="p1">and allow comprehensive measurement and monitoring for detailed performance analysis.</p>
+<p class="p1">The discussion in Section <span class="s2">5.4 </span>shows that to be fully virtualizable, the ISA of a processormust conform</p>
+<p class="p1">to a set of requirements, but unfortunately the <span class="s1">IA64 </span>architecture does not meet these requirements,</p>
+<p class="p1">and that fact made the <span class="s1">vBlades </span>project more challenging. We first review the features of the <span class="s1">Itanium</span></p>
+<p class="p1">processor that are important for virtualization, starting with the observation that the hardware supports</p>
+<p class="p1">four <span class="s1">privilege rings</span>, PL0, PL1, PL2, and PL3. Privileged instructions can only be executed by the</p>
+<p class="p1">kernel running at level PL0, whereas applications run at level PL3 and can only execute nonprivileged</p>
+<p class="p1">instructions; PL2 and PL4 rings are generally not used. The VMMuses <span class="s1">ring compression </span>and runs itself</p>
+<p class="p1">at PL0 and PL1 while forcing a guest OS to run at PL2. A first problem, called <span class="s1">privilege leaking</span>, is that</p>
+<p class="p1">several nonprivileged instructions allow an application to determine the current privilege level (CPL);</p>
+<p class="p1">thus, a guest OS may not accept to boot or run or may itself attempt to make use of all four privilege</p>
+<p class="p1">rings.</p>
+<p class="p1"><span class="s1">Itanium</span>was selected because of its multiple functional units and multithreading support. The <span class="s1">Itanium</span></p>
+<p class="p1">processor has 30 functional units: six general-purpose ALUs, two integer units, one shift unit, four data</p>
+<p class="p1">cache units, six multimedia units, two parallel shift units, one parallel multiply, one population count,</p>
+<p class="p1">three branch units, two 82-bit floating-point multiply-accumulate units, and two SIMD floating-point</p>
+<p class="p1">multiply-accumulate units. A 128-bit instruction word contains three instructions; the fetch mechanism</p>
+<p class="p1">can <span class="s4">read </span>up to two instruction words per clock from the L1 cache into the pipeline. Each unit can</p>
+<p class="p1">execute a particular subset of the instruction set.</p>
+<p class="p1">The hardware supports 64-bit addressing; it has 32 64-bit general-purpose registers numbered from</p>
+<p class="p1">R0 to R31 and 96 automatically renumbered registers, R32 through R127, used by procedure calls.When</p>
+<p class="p1">a procedure is entered, the <span class="s4">alloc </span>instruction specifies the registers the procedure can access by setting</p>
+<p class="p1">the bits of a 7-bit field that controls the register usage. An illegal <span class="s4">read </span>operation from such a register out</p>
+<p class="p1">of range returns a zero value, whereas an illegal <span class="s4">write </span>operation to it is trapped as an illegal instruction.</p>
+<p class="p1">The <span class="s1">Itanium </span>processor supports isolation of the address spaces of different processes with eight</p>
+<p class="p1">privileged <span class="s1">region </span>registers. The <span class="s1">Processor Abstraction Layer (PAL) </span>firmware allows the caller to set the values in the region register. The VMM intercepts the privileged instruction issued by the guest OS to</p>
+<p class="p1">its PAL and partitions the set of address spaces among the guest OSs to ensure isolation. Each guest is</p>
+<p class="p1">limited to 2<span class="s5">18 </span>address spaces.</p>
+<p class="p1">The hardware has an <span class="s1">IVA register </span>to maintain the address of the <span class="s1">interruption vector table</span>. The</p>
+<p class="p1">entries in this table control both the interrupt delivery and the interrupt state collection. Different types</p>
+<p class="p1">of interrupts activate different interrupt handlers pointed from this table, provided that the particular</p>
+<p class="p1">interrupt is not disabled. Each guest OS maintains its own version of this vector table and has its own</p>
+<p class="p1">IVA register. The hypervisor uses the guest OS IVA register to give control to the guest interrupt handler</p>
+<p class="p1">when an interrupt occurs.</p>
+<p class="p1">First, let’s discuss <span class="s1">CPU virtualization</span>.When a guest OS attempts to execute a privileged instruction,</p>
+<p class="p1">the VMM traps and emulates the instruction. For example, when the guest OS uses the <span class="s4">rsm psr.i</span></p>
+<p class="p1">instruction to turn off delivery of a certain type of interrupt, the VMM does not disable the interrupt</p>
+<p class="p1">but records the fact that interrupts of that type should not be delivered to the guest OS, and in this case</p>
+<p class="p1">the interrupt should be masked. There is a slight complication related to the fact that the <span class="s1">Itanium </span>does</p>
+<p class="p1">not have an instruction register (IR) and the VMM has to use state information to determine whether</p>
+<p class="p1">an instruction is privileged. Another complication is caused by the <span class="s1">register stack engine (RSE)</span>, which</p>
+<p class="p1">operates concurrently with the processor and may attempt to accessmemory (load or store) and generate</p>
+<p class="p1">a page fault. Normally, the problem is solved by setting up a bit indicating that the fault is due to RSE</p>
+<p class="p1">and, at the same time, the RSE operations are disabled. The handling of this problem by the VMM is</p>
+<p class="p1">more intricate.</p>
+<p class="p1">A number of <span class="s1">privileged-sensitive </span>instructions behave differently as a function of the privilege level.</p>
+<p class="p1">The VMM replaces each one of them with a privileged instruction during the dynamic transformation</p>
+<p class="p1">of the instruction stream. Among the instructions in this category are:</p>
+<p class="p1">• <span class="s4">cover</span>, which saves stack information into a privileged register. The VMM replaces it with a</p>
+<p class="p1"><span class="s4">break.b </span>instruction.</p>
+<p class="p1">• <span class="s4">thash </span>and <span class="s4">ttag</span>, which access data from privileged virtual memory control structures and have</p>
+<p class="p1">two registers as arguments. The VMMtakes advantage of the fact that an illegal <span class="s4">read </span>returns a zero</p>
+<p class="p1">and an illegal <span class="s4">write </span>to a register in the range 32 to 127 is trapped and translates these instructions</p>
+<p class="p1">as:</p>
+<p class="p2">thash Rx=Ry –&gt; tpa Rx=R(y+64) <span class="s6">and </span>ttag Rx=Ry –&gt; tak Rx=R(y+64)<span class="s6">, where</span></p>
+<p class="p3"><span class="s6">0 </span>  y   <span class="s6">64.</span></p>
+<p class="p1">• Access to performance data from performance data registers is controlled by a bit in the <span class="s1">processor</span></p>
+<p class="p1"><span class="s1">status register </span>with the <span class="s4">PSR.sp </span>instruction.</p>
+<p class="p1"><span class="s1">Memory virtualization </span>is guided by the realization that a VMM should not be involved in most</p>
+<p class="p1">memory <span class="s4">read </span>and <span class="s4">write </span>operations to prevent a significant degradation of performance, but at the</p>
+<p class="p1">same time the VMM should exercise tight control and prevent a guest OS from acting maliciously. The</p>
+<p class="p1"><span class="s1">vBlades </span>VMM does not allow a guest OS to access the memory directly. It inserts an additional layer of</p>
+<p class="p1">indirection called <span class="s1">metaphysical addressing </span>between virtual and real addressing. A guest OS is placed</p>
+<p class="p1">in metaphysical addressing mode. If the address is virtual, the VMM first checks to see whether the</p>
+<p class="p1">guest OS is allowed to access that address and, if it is, it provides the regular address translation. If</p>
+<p class="p1">the address is physical the VMM is not involved. The hardware distinguishes between virtual and real</p>
+<p class="p1">addresses using bits in the processor status register.</p>
+</body>
+</html>

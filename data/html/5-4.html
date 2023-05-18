@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 10.0px Times}
+    span.s4 {font: 10.0px Times; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">A <span class="s1">virtual machine (VM) </span>is an isolated environment that appears to be a whole computer but actually</p>
+<p class="p1">only has access to a portion of the computer resources. Each VM appears to be running on the bare</p>
+<p class="p1">hardware, giving the appearance of multiple instances of the same computer, though all are supported by</p>
+<p class="p1">a single physical system. Virtual machines have been around since the early 1970s, when IBM released</p>
+<p class="p1">its VM/370 operating system.</p>
+<p class="p1">We distinguish two types of VM: process and system VMs [see Figure <span class="s2">5.3</span>(a)]. A <span class="s1">process VM </span>is a</p>
+<p class="p1">virtual platform created for an individual process and destroyed once the process terminates. Virtually</p>
+<p class="p1">all operating systems provide a process VM for each one of the applications running, but the more</p>
+<p class="p1">interesting process VMs are those that support binaries compiled on a different instruction set. A <span class="s1">system</span></p>
+<p class="p1"><span class="s1">VM </span>supports an operating system together with many user processes. When the VM runs under the</p>
+<p class="p1">control of a normal OS and provides a platform-independent host for a single application, we have an</p>
+<p class="p1"><span class="s1">application virtual machine </span>(e.g., Java Virtual Machine [JVM]).</p>
+<p class="p1">A literature search reveals the existence of some 60 different virtual machines, many created by the</p>
+<p class="p1">large software companies; Table <span class="s2">5.1 </span>lists a subset of them.</p>
+<p class="p1">A <span class="s1">system virtual machine </span>provides a complete system; each VM can run its ownOS, which in turn can</p>
+<p class="p1">run multiple applications. Systems such as <span class="s1">Linux Vserver </span>[<span class="s2">214</span>], <span class="s1">OpenVZ </span>(Open VirtualiZation) [<span class="s2">274</span>],</p>
+<p class="p2">FreeBSD Jails <span class="s3">[</span><span class="s4">124</span><span class="s3">], and </span>Solaris Zones <span class="s3">[</span><span class="s4">296</span><span class="s3">], based on </span>Linux, FreeBSD<span class="s3">, and </span>Solaris<span class="s3">, respectively,</span></p>
+<p class="p2"><span class="s3">implement </span>operating system-level virtualization technologies<span class="s3">.</span></p>
+<p class="p1">Operating system-level virtualization allows a physical server to run multiple isolated operating</p>
+<p class="p1">system instances, subject to several constraints; the instances are known as containers, virtual private</p>
+<p class="p1">servers (VPSs), or virtual environments (VEs). For example, <span class="s1">OpenVZ </span>requires both the host and the</p>
+<p class="p1">guest OS to be <span class="s1">Linux </span>distributions. These systems claim performance advantages over the systems based on a VMM such as <span class="s1">Xen </span>or <span class="s1">VMware</span>; according to [<span class="s2">274</span>], there is only a 1% to 3% performance penalty</p>
+<p class="p1">for <span class="s1">OpenVZ </span>compared to a stand-alone <span class="s1">Linux </span>server. <span class="s1">OpenVZ </span>is licensed under the GPL version 2.</p>
+<p class="p1">Recall that a VMM allows several virtual machines to share a system. Several organizations of the</p>
+<p class="p1">software stack are possible:</p>
+<p class="p1">• <span class="s1">Traditional. VM also called a “bare metal” VMM. </span>A thin software layer that runs directly on the</p>
+<p class="p1">host machine hardware; its main advantage is performance [see Figure <span class="s2">5.3</span>(b)]. Examples: <span class="s1">VMWare</span></p>
+<p class="p2">ESX, ESXi <span class="s3">Servers, </span>Xen<span class="s3">, </span>OS370<span class="s3">, and </span>Denali<span class="s3">.</span></p>
+<p class="p1">• <span class="s1">Hybrid. </span>The VMM shares the hardware with the existing OS [see Figure <span class="s2">5.3</span>(c)]. Example: <span class="s1">VMWare</span></p>
+<p class="p2">Workstation<span class="s3">.</span></p>
+<p class="p1">• <span class="s1">Hosted. </span>The VM runs on top of an existing OS [see Figure <span class="s2">5.3</span>(d)]. The main advantage of this</p>
+<p class="p1">approach is that the VM is easier to build and install. Another advantage of this solution is that the</p>
+<p class="p1">VMM could use several components of the host OS, such as the scheduler, the pager, and the I/O</p>
+<p class="p1">drivers, rather than providing its own. A price to pay for this simplicity is the increased overhead and</p>
+<p class="p1">associated performance penalty; indeed, the I/O operations, page faults, and scheduling requests</p>
+<p class="p1">from a guest OS are not handled directly by the VMM. Instead, they are passed to the host OS.</p>
+<p class="p1">Performance as well as the challenges to support complete isolation of VMs make this solution less</p>
+<p class="p1">attractive for servers in a cloud computing environment. Example: User-mode <span class="s1">Linux</span>.</p>
+<p class="p1">A semantic gap exists between the added services and the virtual machine. As pointed out in [<span class="s2">79</span>],</p>
+<p class="p1">services provided by the virtual machine “operate below the abstractions provided by the guest operating</p>
+<p class="p1">system <span class="s1">. . . </span>. It is difficult to provide a service that checks file system integrity without the knowledge</p>
+<p class="p1">of on-disk structure.”</p>
+<p class="p1">The VMMs discussed next manage the resource sharing among the VMs sharing a physical system.</p>
+</body>
+</html>

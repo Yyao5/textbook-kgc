@@ -1,0 +1,49 @@
+,source,edge,target
+1,we,discuss,HP Laboratories
+3,VMM,expected,detailed performance analysis
+5,vBlades project,shows,requirements
+6,ISA,conform,requirements
+7,unfortunately IA64 architecture,meet,requirements
+8,hardware,review,four privilege rings
+9,nonprivileged  PL2,used,nonprivileged  instructions
+10,applications,run at,PL3
+14,OS,accept,four privilege rings
+15,nonprivileged  instructions,allow,an
+18,Itaniumwas,selected because,functional  units
+19,processor,has,functional  units
+20,word,contains,three
+21,fetch mechanism,read,two L1 pipeline
+22,unit,execute,particular  instruction
+24,hardware,has,renumbered procedure calls
+26,7 bit that,specifies,register usage
+28,illegal write operation,returns,illegal  instruction
+29,illegal write operation,trapped,value
+30,processor,supports,privileged region registers
+31,caller,allows,region
+33,VMM,intercepts,privileged guest isolation
+36,hardware,has,interruption vector table
+38,particular  interrupt,activate different,interrupt  table
+39,own vector OS,maintains,IVA
+40,when guest interrupt,uses,guest interrupt guest handler
+42,First  ’s,let,CPU virtualization
+44,When guest OS,attempts,privileged VMM instruction
+46,certain  VMM,disable,interrupt
+47,when guest OS,uses,rsm
+48,interrupts,fact,guest OS
+49,interrupt,masked,case
+51,register stack which,caused by,accessmemory page fault
+52,same RSE operations,solved by,same  time
+54,number,behave,differently privilege level
+55,VMM,replaces,dynamic instruction stream
+56,which,saves,stack information
+57,VMM,replaces,break.b instruction
+58,which,access,virtual memory control structures
+60,illegal  read,trapped,32  127
+62,Access,controlled by,PSR.sp instruction
+63,VMM,guided by,significant memory performance
+64,same  VMM,exercise tight,tight guest OS
+66,guest OS,allow,memory
+68,OS,inserts,virtual  addressing
+69,OS,placed,metaphysical addressing mode
+70,translation,provides,regular address translation
+73,distinguishes,using,virtual processor status

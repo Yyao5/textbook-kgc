@@ -1,0 +1,17 @@
+,source,edge,target
+0,process pi,maps,positive  integers
+2,time message,stamps,logical  time
+3,message,sent with,logical  clock
+4,rules,specified by,following  relationship
+6,modified space time events,illustrated in,logical clock value
+9,Messages,shown,processes
+10,communication events,marked on,diagrams
+11,sequentially  process,labels local,logical clock Equation
+12,sequentially  process,events,logical clock value
+13,process,receives,a
+15,logical  clocks,follows,global  events
+16,logical  clocks,allow,global
+21,logical message m2,labels,logical clock time
+23,j -th event,is,process pi
+24,clocks,lack,important  property
+28,e3,are consecutive,However process p3

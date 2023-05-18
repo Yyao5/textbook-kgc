@@ -1,0 +1,49 @@
+,source,edge,target
+0,Xen,seen,negatively  performance
+1,Xen,introduces additional,additional  overhead
+3,plain vanilla Linux,compare,base  system
+5,First  we,take,closer OS level virtualization
+6,OpenVZ,uses,patched Linux kernel
+8,lack,compensated by lower,lower  overhead
+9,more  memory,used by,virtual  others
+11,system,uses,common file system
+13,one,needs,virtual  VM
+16,OpenVZ,has,two  level
+17,fair share scheduler,allocates CPU,CPU time
+19,scheduler,has,also  two
+20,container,has,I O priority
+21,scheduler,distributes,the
+22,discussion,focused,281
+24,experimental  load,is ample,significantly system time
+26,series,illustrates,clearly CPU fact
+29,phenomenon,justifies,threads operating system
+31,load,tends,average resource utilization
+33,user,starts,individual  items
+37,session,requires,the
+38,increased  load,means,increased  threads
+40,that,reports,L2 cache binary
+42,that,allow,the
+43,setups,shown in,different  Figure
+44,two  tiers,run on,single  Linux
+46,throughput,increases,linearly  workload
+47,slightly OpenVZ time,increases,600 Xen system
+50,DB consumption,represents,1–4  load
+51,times Xen application domain,shows,times  more
+54,Xen Dom0,has,times  more
+55,domain,has,9  times
+56,base system,run,Linux
+57,directly  Xen,compared,modified Linux kernel
+58,Xen,runs,modified  Linux
+59,respectively L2 cache,invoked,32  %
+61,procedure evtchn_do_upcall,invoked,event
+63,Most,misses in,32 base %
+69,figure,refers to,user space
+70,group,uses,three DB systems
+72,throughput,increases,linearly  workload
+73,600 Xen %,increases,first  experiments
+76,times base 3.5,misses for,larger User Domain
+77,group,uses,two DB servers
+78,throughput,increases,800  threads
+79,relatively  OpenVZ,remains,times  Xen
+80,OpenVZ,for,increases
+82,hosting,is,same  server

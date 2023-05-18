@@ -1,0 +1,25 @@
+,source,edge,target
+1,thus  we,analyze,models
+2,where system VM VMM,restricted to,hardware
+4,services,provided by,typically  Figure
+8,security,affected,entire  system
+10,VM technology,provides,virtual  machines
+11,Indeed  VMM,controls,thus memory isolation
+13,VMM,sees,raw operating system
+14,security services,operate at,logical  level
+15,VMM,has,same  hardware
+16,state,saved,virtual  VMM
+19,cloned  replication,support,cloned  system
+22,We,clone,dangerous running applications
+27,such  files,have,cryptographic  keys
+31,thus  we,expect,better  virtualization
+33,such host operating VMM,includes,privileged  operations
+34,virtual  system,requires more,such CPU cycles
+37,VMM,means,guest VMs
+38,VMM,has,the
+39,VMM,means,privileged  guest
+41,paper,discusses,such intrusion prevention SVFS
+43,Terra,uses,virtual partition machines
+44,group,identified,based theNIST threats
+51,users,create insecure,existing  VMs
+55,Sections,discuss in,various  virtualization

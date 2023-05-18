@@ -1,0 +1,40 @@
+,source,edge,target
+0,services,based on online,tight latency constraints
+1,Moreover  applications,have,large data users
+5,online time that,take,applications business models
+7,search,motivated by,rather  latency
+8,multiple  transactions,allows multiple,same response time
+10,transactions,occur at,same  time
+11,conversion,seems,key value databases
+12,that,store meaningful,extensions
+16,system,based on,many hash servers
+17,system,based on,several operating Linux
+18,servers,maintain,associative  array
+19,clients,allows,API
+20,clients,add,array
+22,system,uses,cache replacement strategy
+23,where  systems,is,primary  storage
+24,stores,designed,basic support primitives
+28,Systems,discussed in,such  Section
+29,very  277,see,traditional  databases
+30,277,provide less,less
+31,systems,discussed in,Tokyo 66
+32,data,allows,specific application developer
+33,when  transaction,ensure,instead  time
+34,philosophy7  tenets,increase,response scalability
+39,overhead,has,traditional ACID transactions
+43,only  log,completed,database
+44,traditional  databases,require,transaction
+47,transactions,lock,record
+48,this,requires,lock table
+52,Today OLTP databases,exploit,past computer decades
+54,Logless,replace,traditional cloud applications
+55,many power companies,established multiple,geographic data regions
+56,Thus data replication,done over,wide area network
+57,soon log operation,replicates,log record
+59,second  master,wait for,slaves
+60,groups,enjoy shorter,master slave configurations
+61,that,initiate,mutations
+63,Sometimes data management ecosystem,integrates multiple,cloud computing multiple
+64,Oracle,integrates,8.6 theOracle Exadata
+65,approach,is,eventual ACID partitions

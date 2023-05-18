@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">Concurrency </span>means that several activities are executed simultaneously. Concurrency allows us to reduce</p>
+<p class="p1">the execution time of a data-intensive problem, as discussed in Section <span class="s2">2.1</span>. To exploit concurrency, often we have to take a fresh look at the problem and design a parallel algorithm. In other instances we can</p>
+<p class="p1">still use the sequential algorithm in the context of the SPMD paradigm.</p>
+<p class="p1">Concurrency is a critical element of the design of system software. The kernel of an operating system</p>
+<p class="p1">exploits concurrency for virtualization of system resources such as the processor and the memory.</p>
+<p class="p1"><span class="s1">Virtualization</span>, covered in depth in Section 5.1, is a system design strategy with a broad range of</p>
+<p class="p1">objectives, including:</p>
+<p class="p1">• Hiding latency and performance enhancement (e.g., schedule a ready-to-run thread when the current</p>
+<p class="p1">thread is waiting for the completion of an I/O operation).</p>
+<p class="p1">• Avoiding limitations imposed by the physical resources (e.g., allow an application to run in a virtual</p>
+<p class="p1">address space of a standard size rather than be restricted by the physical memory available on a</p>
+<p class="p1">system).</p>
+<p class="p1">• Enhancing reliability and performance, as in the case of RAID systems mentioned in Section 3.5.</p>
+<p class="p1">Sometimes concurrency is used to describe activities that appear to be executed simultaneously,</p>
+<p class="p1">though only one of them may be active at any given time, as in the case of processor virtualization,</p>
+<p class="p1">when multiple threads appear to run concurrently on a single processor. A thread can be suspended</p>
+<p class="p1">due to an external event and a context switch to a different thread takes place. The state of the first</p>
+<p class="p1">thread is saved and the state of another thread ready to proceed is loaded and the thread is activated.</p>
+<p class="p1">The suspended thread will be reactivated at a later point in time.</p>
+<p class="p1">Dealing with some of the effects of concurrency can be very challenging. Context switching could</p>
+<p class="p1">involve multiple components of an OS kernel, including the Virtual Memory Manager (VMM), the</p>
+<p class="p1">Exception Handler (EH), the Scheduler (S), and the Multilevel Memory Manager (MLMM). When a</p>
+<p class="p1">page fault occurs during the fetching of the next instruction, multiple context switches are necessary,</p>
+<p class="p1">as shown in Figure <span class="s2">2.11</span>.</p>
+<p class="p1">Concurrency is often motivated by the desire to enhance system performance. For example, in a</p>
+<p class="p1">pipelined computer architecture, multiple instructions are in different phases of execution at any given</p>
+<p class="p1">time. Once the pipeline is full, a result is produced at every pipeline cycle; an <span class="s1">n</span>-stage pipeline could</p>
+<p class="p1">potentially lead to a speed-up by a factor of <span class="s1">n</span>. There is always a price to pay for increased performance,</p>
+<p class="p1">and in this example it is design complexity and cost. An <span class="s1">n</span>-stage pipeline requires <span class="s1">n </span>execution units, one</p>
+<p class="p1">for each stage, as well as a coordination unit. It also requires careful timing analysis in order to achieve</p>
+<p class="p1">the full speed-up.</p>
+<p class="p1">This example shows that the management and coordination of the concurrent activities increase the</p>
+<p class="p1">complexity of a system. The interaction between pipelining and virtual memory further complicates</p>
+<p class="p1">the functions of the kernel; indeed, one of the instructions in the pipeline could be interrupted due to a</p>
+<p class="p1">page fault, and the handling of this case requires special precautions, since the state of the processor is</p>
+<p class="p1">difficult to define.</p>
+<p class="p1">In the early days of computing, concurrency was analyzed mostly in the context of the system software;</p>
+<p class="p1">nowadays concurrency is a ubiquitous feature ofmany applications. <span class="s1">Embedded systems </span>are a class</p>
+<p class="p1">of concurrent systems used not only by the critical infrastructure but also by the most diverse systems,</p>
+<p class="p1">from ignition in a car to oil processing in a refinery, from smartmeters to coffeemakers. Embedded controllers</p>
+<p class="p1">for reactive real-time applications are implemented as mixed software/hardware systems [<span class="s2">294</span>].</p>
+<p class="p1">Concurrency is exploited by application software to speed up a computation and to allow a number</p>
+<p class="p1">of clients to access a service. Parallel applications partition the workload and distribute it to multiple threads running concurrently. Distributed applications, including transaction management systems and</p>
+<p class="p1">applications based on the client-server paradigm discussed in Section <span class="s2">2.13</span>, use concurrency extensively</p>
+<p class="p1">to improve the response time. For example, a Web server spawns a new thread when a new request</p>
+<p class="p1">is received; thus, multiple server threads run concurrently. A main attraction for hosting Web-based applications is the cloud elasticity – the ability of a service running on a cloud to acquire resources as</p>
+<p class="p1">needed and to pay for these resources as they are consumed.</p>
+<p class="p1">Communication channels allow concurrent activities to work in concert and to coordinate. Communication</p>
+<p class="p1">protocols allow us to transform noisy and unreliable channels into reliable ones that deliver</p>
+<p class="p1">messages in order. As mentioned earlier, concurrent activities communicate with one another via shared</p>
+<p class="p1">memory or viamessage passing. Multiple instances of a cloud application, a server and the clients of the</p>
+<p class="p1">service it provides, and many other applications communicate via message passing. TheMessage Passing</p>
+<p class="p1">Interface (MPI) supports both synchronous and asynchronous communication, and it is often used</p>
+<p class="p1">by parallel and distributed applications.Message passing enforces modularity, aswe see in Section <span class="s2">2.13</span>,</p>
+<p class="p1">and prevents the communicating activities from <span class="s1">sharing their fate</span>; a server could fail without affecting</p>
+<p class="p1">the clients that did not use the service during the period the server was unavailable.</p>
+<p class="p1">The communication patterns in the case of a parallel application are more structured, whereas patterns</p>
+<p class="p1">of communication for concurrent activities of a distributed application are more dynamic and</p>
+<p class="p1">unstructured. Barrier synchronization requires the threads running concurrently to wait until all of them</p>
+<p class="p1">have completed the current task before proceeding to the next. Sometimes one of the activities, a coordinator,</p>
+<p class="p1">mediates communication among concurrent activities; in other instances individual threads</p>
+<p class="p1">communicate directly with one another.</p>
+</body>
+</html>

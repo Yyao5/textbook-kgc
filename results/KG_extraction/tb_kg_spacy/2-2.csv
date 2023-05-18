@@ -1,0 +1,38 @@
+,source,edge,target
+0,parallel computer parallelism,starts with,different  levels
+1,number,called,32 bit 2004
+3,This,reduced,significant performance improvement
+4,also address instructions,increased,larger address space
+6,computers,use multi,multi stage processing execution
+8,instruction,completed at,clock cycle
+9,pipeline,consists of,five Set stages2
+10,architecture,have,much  large
+11,4  processor,has,35 stage pipeline
+12,loops,processed in,parallel
+13,that,decomposed into,tasks
+15,individual  processors,run,different input data
+16,dependencies,cause different,individual  tasks
+17,Michael Flynn,proposed,control computer instruction
+18,SIMD architecture,supports,vector processing
+20,operations,carried,individual vector components
+22,pairs,added,vector elements
+23,Microsystems,introduced,SIMD
+25,IBM,added,then POWER architecture
+28,GPUs,used in,embedded  systems
+30,different  processors,executing different,different  data
+31,processors,share,common  MIMD
+32,we,distinguish several,several  systems
+33,system,have,distributed
+34,processors,communicate with,such interconnection hypercube
+35,some,use,traditional  processors
+36,supercomputers,derive,rather processor speed
+37,supercomputers,consist of,fast custom interconnects
+39,system,has,16.32 Lawrence LivermoreNational power
+42,recently Cray XK7 system,coronated as,fastest Ridge National world
+43,Titan,has,"560,640"
+44,supercomputer,achieved,17.59 Linpack benchmark
+45,systems,powered,500  www.top500.org
+46,three,use,4  interconnect
+47,wide area networks,triggered by,individual networks multiprocessors
+48,wide area networks,allowed individual,individual networks multiprocessors
+50,systems,used for scientific,parallel programming processing

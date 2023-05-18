@@ -1,0 +1,6 @@
+,source,edge,target
+0,multiple  components,communicate with,SQS
+1,example  use,presented in,message Section
+2,Figure,shows,given  SQS
+3,steps,1,C #
+8,AppSettings,AmazonSQS,sqs  AWSClientFactory

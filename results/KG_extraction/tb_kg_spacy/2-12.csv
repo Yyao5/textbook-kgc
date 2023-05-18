@@ -1,0 +1,88 @@
+,source,edge,target
+0,Carl Adam Petri,291,graphs
+1,two  arcs,connect,other  class
+2,P name place nets,used for,bipartite  graphs
+3,Arcs,connect,one  places
+5,tokens,adds,output Figure
+6,tokens,transition,output
+8,nets,model different,distributed  system
+9,transition,model,computational  packet
+10,distribution,called,given  system
+14,nets,model concurrent,concurrent  activities
+15,only  one,conflict,transitions
+18,we,end,situation
+19,same  transitions,means,one
+20,t2 one,disabled,t1 t3
+21,t1,occurs,t3 Figure
+22,graph,model,transitions Figure
+24,only  conditions,fire,p3
+25,nets,used,priorities
+27,net,models,Figure system
+28,process,has,higher  t1
+29,transition t2,fire,second  process
+33,net,models,shared memory environment
+34,same n process,read at,same n time
+35,subset,read at,same n time
+39,initialization  t3,allowed,write
+42,Indeed  p3,have at,most  one
+44,shared n tokens,consumed,p2
+46,we,switch to,formal  presentation
+48,function,describes,necessary  transition
+49,PNs,describe,static
+50,places,contain,tokens
+51,distribution,defines,PN
+52,behavior,described by,together  net
+54,•p j,denoted,p j•
+55,Figure,shows,three  places
+56,preset,consists of,one •t1 place
+57,t4 •p4 postset,consists of,p1
+59,ti ∈ t,enabled,initial  N
+60,only  each,contain,input token
+64,transitionmust,enabled in,order
+66,one input token,means,token output changes
+67,one input token,removed,token output places
+68,token,added to,token output places
+69,Thus  firing,changes,marked transition net
+70,ti,changes,marked  net
+72,sequence,called,only markings s1
+74,that,denoted as,σ(s0
+76,algorithms,require exponential,exponential  time
+77,it,said,initialmarking
+78,absence,guaranteed by,absence
+79,ti,represents,w input place
+80,1 j -th entry,written as,place
+81,entry,denotes,the
+84,inhibitor arc,prevents,transition
+85,only  process,activated,transition t2
+87,one inhibitor place,enabled,token
+88,one,connected with,one inhibitor arc
+89,place,holds,a
+90,2.19  place,enabled,token
+91,place,holds,p2  a
+92,Petri  nets,partitioned in several,several  classes
+93,State machines,used,finite state concurrency
+96,Marked  graphs,model,choice
+97,Free choice nets,model,confusion
+98,free choice nets,model,inhibitor arcs
+100,Asymmetric choice nets,model asymmetric,asymmetric  confusion
+101,output flow transitions,based on,input places
+102,relationships,illustrated in,Petri  Figure
+103,transitions,have,one state incoming
+104,constraint,limits,state machine
+105,transitions,have,so input arc presets
+106,tuple  possiblemarkings,has,0  places
+107,marked  place,has,only  one
+108,marked  graphs,allow,choice
+110,=,|•,ti| =
+111,share,share,transitions presets
+112,two  transitions,share,input place
+113,two choice transitions,share,only input places
+114,extensions,proposed,Petri  nets
+115,Petri  nets,allow,thus PNs analysis
+118,extensions,proposed,random performance transition
+120,transition,elapses between,time
+121,model,allows,service transition
+123,performance analysis,limited,generally state models
+124,nets,introduced in,1988
+125,corresponding  aggregation,allow easy,Markov domain
+126,aggregation,reduce,one state system

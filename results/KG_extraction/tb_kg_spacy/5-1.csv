@@ -1,0 +1,18 @@
+,source,edge,target
+0,Virtualization,simulates,physical  means
+3,processor,multiplexed among,processes
+5,number,aggregated into,physical RAID disk
+7,physical  disk,emulates,random access memory
+8,real  TCP,emulates,reliable bit pipe
+9,Virtual  address,emulates,real
+10,one resources which,abstracts,system
+15,Virtualization,used,late  1950s
+16,memory,implemented on,first United 1959
+17,watchful  which,interacts with,privileged guest hardware
+19,VMM,control,physical O disk
+20,services,added without,operating system
+22,user,submit,Amazon Machine applications
+23,user,choose,many management AWS
+27,privileged  operations,trapped,VM
+28,increased  overhead,has,negative  performance
+29,cost,is,VM

@@ -1,0 +1,25 @@
+,source,edge,target
+0,access,provided,cloud
+1,thus  we,start,important  concept
+6,which,consists of,necessary datagram network
+8,where end user systems,has,bandwidth communication channels
+9,architecture,describes,protocol communication
+10,We,use,such network phone
+12,e.g.  layer,means,adjacent  layers
+15,e.g.  layer,communicate with,adjacent  layers
+17,this,justifies,term protocol Figure
+19,Physically sender data,flows down,application layer
+20,streams,pushed through,electrical communication signals
+21,bits,reach,a
+22,bits,passed,then network layer
+23,where  packet,decides,local area router
+25,Then data link layer,encapsulates,next communication hop
+26,then bit stream,passed to,physical  Figure
+27,receiving data,flows,upward application layer
+28,protocol,communicates,logically protocol system
+29,transport hostB.On,communicates with,transport receiver
+30,up application layer,encapsulates,sending network layer
+31,that,information as,only information peer
+32,data unit,carries,decapsulation
+34,layer,includes,sending data link network
+35,network layer payload,includes,transport layer application layer header

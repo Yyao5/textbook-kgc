@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.5px Helvetica}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {color: #000066}
+    span.s3 {font: 7.5px Helvetica}
+    span.s4 {font: 7.5px Times}
+    span.s5 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Computing and communication on a cloud are intimately related. Therefore, it should be no surprise</p>
+<p class="p1">that the first algorithm we discuss can be used for scheduling packet transmission as well as threads.</p>
+<p class="p1">Interconnection networks allow cloud servers to communicate with one another and with users. These</p>
+<p class="p1">networks consist of communication links of limited bandwidth and switches/routers/gateways of limited</p>
+<p class="p1">capacity. When the load exceeds its capacity, a switch starts dropping packets because it has limited</p>
+<p class="p1">input buffers for the switching fabric and for the outgoing links, as well as limited CPU cycles.</p>
+<p class="p1">A switch must handle multiple flows and pairs of source-destination endpoints of the traffic. Thus, a</p>
+<p class="p1">scheduling algorithm has to manage several quantities at the same time: the <span class="s1">bandwidth</span>, the amount of</p>
+<p class="p1">data each flow is allowed to transport; the <span class="s1">timing </span>when the packets of individual flows are transmitted;</p>
+<p class="p1">and the <span class="s1">buffer space </span>allocated to each flow. A first strategy to avoid network congestion is to use a FCFS</p>
+<p class="p1">scheduling algorithm. The advantage of the FCFS algorithm is a simple management of the three quantities:</p>
+<p class="p1">bandwidth, timing, and buffer space. Nevertheless, the FCFS algorithm does not guarantee fairness;</p>
+<p class="p1">greedy flow sources can transmit at a higher rate and benefit from a larger share of the bandwidth.</p>
+<p class="p1">To address this problem, a fair queuing algorithm proposed in [<span class="s2">252</span>] requires that separate queues, one</p>
+<p class="p1">per flow, be maintained by a switch and that the queues be serviced in a round-robin manner. This algorithm</p>
+<p class="p1">guarantees the fairness of buffer space management, but does not guarantee fairness of bandwidth</p>
+<p class="p1">allocation. Indeed, a flow transporting large packets will benefit from a larger bandwidth (see Figure <span class="s2">6.8</span>).</p>
+<p class="p1">The <span class="s1">fair queuing (FQ) </span>algorithm in [<span class="s2">102</span>] proposes a solution to this problem. First, it introduces</p>
+<p class="p1">a <span class="s1">bit-by-bit round-robin (BR) </span>strategy; as the name implies, in this rather impractical scheme a single</p>
+<p class="p1">bit from each queue is transmitted and the queues are visited in a round-robin fashion. Let <span class="s1">R(t) </span>be the</p>
+<p class="p1">number of rounds of the BR algorithm up to time <span class="s1">t </span>and <span class="s1">N</span><span class="s3">active</span><span class="s1">(t) </span>be the number of active flows through</p>
+<p class="p1">the switch. Call <span class="s1">t</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>the time when the packet <span class="s1">i </span>of flow <span class="s1">a</span>, of size <span class="s1">P</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>bits arrives, and call <span class="s1">S</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>and <span class="s1">F</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>the</p>
+<p class="p1">values of <span class="s1">R(t) </span>when the first and the last bit, respectively, of the packet <span class="s1">i </span>of flow <span class="s1">a </span>are transmitted. Then,</p>
+<p class="p2"><span class="s1">F</span>a</p>
+<p class="p2">i</p>
+<p class="p3">= S<span class="s3">a</span></p>
+<p class="p2">i</p>
+<p class="p3">+ P<span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>and <span class="s1">S</span><span class="s3">a</span></p>
+<p class="p2">i</p>
+<p class="p1"><span class="s1">= </span>max</p>
+<p class="p3"> </p>
+<p class="p2"><span class="s1">F</span>a</p>
+<p class="p3"><span class="s3">i−</span><span class="s4">1</span>, R</p>
+<p class="p3"> </p>
+<p class="p2"><span class="s1">t</span>a</p>
+<p class="p2">i</p>
+<p class="p3"> </p>
+<p class="p1"><span class="s1">. </span>(6.28)</p>
+<p class="p1">The quantities <span class="s1">R(t)</span>, <span class="s1">N</span><span class="s3">active</span><span class="s1">(t)</span>, <span class="s1">S</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>, and <span class="s1">F</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>depend only on the arrival time of the packets, <span class="s1">t</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>, and not</p>
+<p class="p1">on their transmission time, provided that a flow <span class="s1">a </span>is active as long as</p>
+<p class="p3">R(t)   F<span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>when <span class="s1">i = </span>max</p>
+<p class="p3"> </p>
+<p class="p3">j |t<span class="s3">a</span></p>
+<p class="p3"><span class="s3">i </span>  t</p>
+<p class="p3"> </p>
+<p class="p1"><span class="s1">. </span>(6.29)</p>
+<p class="p1">The authors of [<span class="s2">102</span>] use for packet-by-packet transmission time the following nonpreemptive scheduling</p>
+<p class="p3"><span class="s5">rule, which emulates the BR strategy: </span>The next packet to be transmitted is the one with the smallest</p>
+<p class="p2"><span class="s1">F</span>a</p>
+<p class="p1"><span class="s3">i </span><span class="s1">. </span>A preemptive version of the algorithm requires that the transmission of the current packet be</p>
+<p class="p1">interrupted as soon as one with a shorter finishing time, <span class="s1">F</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>, arrives.</p>
+<p class="p1">A fair allocation of the bandwidth does not have an effect on the timing of the transmission. A possible</p>
+<p class="p1">strategy is to allow less delay for the flows using less than their fair share of the bandwidth. The same</p>
+<p class="p1">paper [<span class="s2">102</span>] proposes the introduction of a quantity called the <span class="s1">bid</span>, <span class="s1">B</span><span class="s3">a</span></p>
+<p class="p1"><span class="s3">i </span>, and scheduling the packet</p>
+<p class="p1">transmission based on its value. The bid is defined as</p>
+<p class="p2"><span class="s1">B</span>a</p>
+<p class="p2">i</p>
+<p class="p3">= P<span class="s3">a</span></p>
+<p class="p2">i</p>
+<p class="p1"><span class="s1">+ </span>max</p>
+<p class="p3"> </p>
+<p class="p2"><span class="s1">F</span>a</p>
+<p class="p2">i−<span class="s4">1</span><span class="s1">,</span></p>
+<p class="p3"> </p>
+<p class="p3">R</p>
+<p class="p3"> </p>
+<p class="p2"><span class="s1">t</span>a</p>
+<p class="p2">i</p>
+<p class="p3"> </p>
+<p class="p3">− δ</p>
+<p class="p3"> </p>
+<p class="p1"><span class="s1">, </span>(6.30)</p>
+<p class="p1">with <span class="s1">δ </span>a nonnegative parameter. The properties of the FQ algorithm, as well as the implementation of</p>
+<p class="p1">a nonpreemptive version of the algorithms, are analyzed in [<span class="s2">102</span>].</p>
+</body>
+</html>

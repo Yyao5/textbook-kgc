@@ -1,0 +1,53 @@
+,source,edge,target
+0,model,describes,the
+1,data model,captures,logical data database
+2,models,used,storage
+3,same  object,assumes,one  cell
+4,storage,consists of,same  size
+6,model,reflects,physical
+7,primary  memory,organized as,memory cells
+8,device,organized in,e.g.  unit
+13,entire cell history,consists of,current  value
+14,new journal ii,read,the
+16,iv,commit,action
+18,cell i,read,a
+19,ii,write,a
+21,storage log,contains,cell storage
+22,information,forms,data log
+23,log,provides,authoritative
+25,we,need,last  record
+26,action,records,previous data Figure
+29,larger cell storage,kept,write time cache
+30,storage,resides,nonvolatile  memory
+32,applications,support online,online transaction transactions
+35,transfer,requires,one  another
+38,steps,fail during,correctness
+39,ensure,be,correctness
+40,actions,means,regardless  order
+41,actions,guaranteed,one  another
+43,transactions,processed in,which
+45,processing  system,supports,Section
+47,system,consists of,directories
+48,directory,provides,files
+49,high performance systems,choose among,three file system
+52,Advances,allow,networking  the
+53,two,connected by,SAN
+54,additional cloud servers,offer additional,nondisruptive storage configuration
+56,Moreover  storage,pooled,SAN
+58,pooling,requires additional,centralized storage system
+60,node,have,Fibre Channel
+62,computational metadata that,serve,I  O
+63,rather application that,interact,database
+64,that,called,database
+65,that,controls,the
+68,DBMS,supports,dedicated database applications
+69,models,reflect,popular NoSQL period
+70,applications,demand,short application market
+71,same cloud applications,require low,consistent  data
+75,NoSQL model,support,traditional query databases
+77,NoSQL,guarantees,single data item
+78,when  structure,require,relational
+79,types,emerged in,few NoSQL years
+80,we,recognize several,key value stores
+83,replicas,requires,one
+85,replicated consensus objects,contains,depth consensus algorithm

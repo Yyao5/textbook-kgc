@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Helvetica}
+    span.s1 {color: #000066}
+    span.s2 {font: 10.0px Helvetica}
+    span.s3 {font: 7.5px Times; color: #000066}
+    span.s4 {font: 10.0px Times}
+  </style>
+</head>
+<body>
+<p class="p1">Consensus is a pervasive problem in many areas of human endeavor; consensus is the process of agreeing</p>
+<p class="p1">to one of several alternatives proposed by a number of agents. We restrict our discussion to the case</p>
+<p class="p1">of a distributed system when the agents are a set of processes expected to reach consensus on a single</p>
+<p class="p1">proposed value.</p>
+<p class="p1">No fault-tolerant consensus protocol can guarantee progress [<span class="s1">123</span>], but protocols that guarantee</p>
+<p class="p1">freedom from inconsistencies (safety) have been developed. A family of protocols to reach consensus</p>
+<p class="p1">based on a finite state machine approach is called <span class="s2">Paxos</span>.<span class="s3">5</span></p>
+<p class="p1">A fair number of contributions to the family of Paxos protocols are discussed in the literature. Leslie</p>
+<p class="p1">Lamport has proposed several versions of the protocol, including <span class="s2">Disk Paxos, Cheap Paxos, Fast Paxos,</span></p>
+<p class="p2">Vertical Paxos, Stoppable Paxos, Byzantizing Paxos by Refinement, Generalized Consensus and Paxos<span class="s4">,</span></p>
+<p class="p1">and <span class="s2">Leaderless Byzantine Paxos</span>. He has also published a paper on the fictional part-time parliament in</p>
+<p class="p1">Paxos [<span class="s1">206</span>] and a layman’s dissection of the protocol [<span class="s1">207</span>].</p>
+<p class="p1">The <span class="s2">consensus service </span>consists of a set of <span class="s2">n </span>processes. <span class="s2">Clients </span>send requests to processes and propose a</p>
+<p class="p1">value andwait for a response; the goal is to get the set of processes to reach consensus on a single proposed</p>
+<p class="p1">value. The <span class="s2">basic Paxos </span>protocol is based on several assumptions about the processors and the network:</p>
+<p class="p1">• The processes run on processors and communicate through a network; the processors and the network</p>
+<p class="p1">may experience failures, but not Byzantine failures.<span class="s3">6</span></p>
+<p class="p1">• The processors: (i) operate at arbitrary speeds; (ii) have stable storage and may rejoin the protocol</p>
+<p class="p1">after a failure; and (iii) can send messages to any other processor.</p>
+<p class="p1">• The network: (i) may lose, reorder, or duplicate messages; (ii) sends messages are asynchronously</p>
+<p class="p1">that may take arbitrarily long times to reach the destination.</p>
+<p class="p1">The <span class="s2">basic Paxos </span>considers several types of entities: (a) <span class="s2">client, </span>an agent that issues a request and waits</p>
+<p class="p1">for a response; (b) <span class="s2">proposer, </span>an agent with the mission to advocate a request from a client, convince</p>
+<p class="p1">the acceptors to agree on the value proposed by a client, and act as a coordinator to move the protocol</p>
+<p class="p1">forward in case of conflicts; (c) <span class="s2">acceptor</span>, an agent acting as the fault-tolerant “memory” of the protocol;</p>
+<p class="p1">(d) <span class="s2">learner, </span>an agent acting as the replication factor of then protocol and taking action once a request</p>
+<p class="p1">has been agreed upon; and finally, (e) the <span class="s2">leader, </span>a distinguished proposer.</p>
+<p class="p1">A <span class="s2">quorum </span>is a subset of all acceptors. A proposal has a proposal number <span class="s2">pn </span>and contains a value <span class="s2">v</span>.</p>
+<p class="p1">Several types of requests flow through the system: <span class="s2">prepare, accept</span>.</p>
+<p class="p1">In a typical deployment of an algorithm, an entity plays three roles: proposer, acceptor, and learner.</p>
+<p class="p1">Then the flow of messages can be described as follows [<span class="s1">207</span>]: “Clients send messages to a leader; during</p>
+<p class="p1">normal operations the leader receives the client’s command, assigns it a newcommand number <span class="s2">i </span>, and then</p>
+<p class="p1">begins the <span class="s2">i </span>-th instance of the consensus algorithm by sending messages to a set of acceptor processes.”</p>
+<p class="p1">By merging the roles, the protocol “collapses” into an efficient client/master/replica-style protocol.</p>
+<p class="p1">A proposal consists of a pair, a unique proposal number and a proposed value, <span class="s2">(pn, v)</span>; multiple</p>
+<p class="p1">proposals may propose the same value <span class="s2">v</span>. A value is chosen if a simple majority of acceptors have</p>
+<p class="p1">accepted it.We need to guarantee that at most one value can be chosen; otherwise there is no consensus.</p>
+<p class="p1">The two phases of the algorithm are described here.</p>
+<p class="p2">Phase I</p>
+<p class="p1"><span class="s2">1. Proposal preparation: </span>A proposer (the leader) sends a proposal <span class="s2">(pn = k, v)</span>. The proposer</p>
+<p class="p1">chooses a proposal number <span class="s2">pn = k </span>and sends a <span class="s2">prepare message </span>to a majority of acceptors</p>
+<p class="p1">requesting:</p>
+<p class="p1"><span class="s2">a. </span>that a proposal with <span class="s2">pn &lt; k </span>should not be accepted;</p>
+<p class="p1"><span class="s2">b. </span>the <span class="s2">pn &lt; k </span>of the highest number proposal already accepted by each acceptor.</p>
+<p class="p1"><span class="s2">2. Proposal promise: </span>An acceptor must remember the highest proposal number it has ever</p>
+<p class="p1">accepted as well as the highest proposal number it has ever responded to. The acceptor can</p>
+<p class="p1">accept a proposal with <span class="s2">pn = k </span>if and only if it has not responded to a prepare request with</p>
+<p class="p1"><span class="s2">pn &gt; k</span>; if it has already replied to a prepare request for a proposal with <span class="s2">pn &gt; k</span>, then it</p>
+<p class="p1">should not reply. Lost messages are treated as an acceptor that chooses not to respond.</p>
+<p class="p2">Phase II</p>
+<p class="p1"><span class="s2">1. Accept request: </span>If the majority of acceptors respond, the proposer chooses the value <span class="s2">v </span>of the</p>
+<p class="p1">proposal as follows:</p>
+<p class="p1"><span class="s2">a. </span>the value <span class="s2">v </span>of the highest proposal number selected from all the responses;</p>
+<p class="p1"><span class="s2">b. </span>an arbitrary value if no proposal was issued by any of the proposers.</p>
+<p class="p1">The proposer sends an <span class="s2">accept request </span>message to a quorum of acceptors including <span class="s2">(pn = k, v)</span>.</p>
+<p class="p1"><span class="s2">2. Accept: </span>If an acceptor receives an <span class="s2">accept message </span>for a proposal with the proposal number</p>
+<p class="p1"><span class="s2">pn = k</span>, itmust accept it if and only if it has not already promised to consider proposals with a</p>
+<p class="p1"><span class="s2">pn &gt; k</span>. If it accepts the proposal, it should register the value <span class="s2">v </span>and send an <span class="s2">accept </span>message to</p>
+<p class="p1">the proposer and to every learner; if it does not accept the proposal, it should ignore the request.</p>
+<p class="p1">The following properties of the algorithm are important to showits correctness: (1)Aproposal number</p>
+<p class="p1">is unique; (2) any two sets of acceptors have at least one acceptor in common; and (3) the value sent out</p>
+<p class="p1">in Phase II of the algorithm is the value of the highest numbered proposal of all the responses in Phase I.</p>
+<p class="p1">Figure <span class="s1">2.15 </span>illustrates the flowofmessages for the consensus protocol.Adetailed analysis of themessage</p>
+<p class="p1">flows for different failure scenarios and of the properties of the protocol can be found in [<span class="s1">207</span>].We</p>
+<p class="p1">onlymention that the protocol defines three safety properties: (1) nontriviality, the only values that can be</p>
+<p class="p1">learned are proposed values; (2) consistency, at most one value can be learned; and (3) liveness, if a value <span class="s2">v </span>has been proposed, eventually every learner will learn some value, provided that sufficient processors</p>
+<p class="p1">remain non-faulty. Figure <span class="s1">2.16 </span>shows the message exchange when there are three actors involved.</p>
+<p class="p1">In Section 4.5 we present a consensus service, the <span class="s2">ZooKeeper</span>, based on the Paxos protocol. In</p>
+<p class="p1">Section 8.7 we discuss <span class="s2">Chubby</span>, a locking service based on the algorithm.</p>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Times}
+    span.s1 {font: 10.0px Helvetica}
+    span.s2 {font: 7.5px Times; color: #000066}
+    span.s3 {font: 10.0px Courier}
+    span.s4 {font: 7.5px Times}
+    span.s5 {font: 7.5px Helvetica}
+    span.s6 {font: 10.0px Courier; color: #000066}
+  </style>
+</head>
+<body>
+<p class="p1">Our discussion of parallel computer architectures starts with the recognition that parallelism at different</p>
+<p class="p1">levels can be exploited. These levels are:</p>
+<p class="p1">• <span class="s1">Bit-level parallelism. </span>The number of bits processed per clock cycle, often called a word size, has</p>
+<p class="p1">increased gradually from 4-bit processors to 8-bit, 16-bit, 32-bit, and, since 2004, 64-bit. This has</p>
+<p class="p1">reduced the number of instructions required to process larger operands and allowed a significant</p>
+<p class="p1">performance improvement. During this evolutionary process the number of address bits has also</p>
+<p class="p1">increased, allowing instructions to reference a larger address space.</p>
+<p class="p1">• <span class="s1">Instruction-level parallelism. </span>Today’s computers use multi-stage processing pipelines to speed</p>
+<p class="p1">up execution. Once an <span class="s1">n</span>-stage pipeline is full, an instruction is completed at every clock cycle.</p>
+<p class="p1">A “classic” pipeline of a Reduced Instruction Set Computing (RISC) architecture consists of five</p>
+<p class="p1">stages<span class="s2">2</span>: instruction fetch, instruction decode, instruction execution, memory access, and <span class="s3">write</span></p>
+<p class="p1">back. A Complex Instruction Set Computing (CISC) architecture could have a much large number</p>
+<p class="p1">of pipelines stages; for example, an Intel Pentium 4 processor has a 35-stage pipeline.</p>
+<p class="p1">• <span class="s1">Data parallelism or loop parallelism. </span>The program loops can be processed in parallel.</p>
+<p class="p1">• <span class="s1">Task parallelism. </span>The problem can be decomposed into tasks that can be carried out concurrently.</p>
+<p class="p1">A widely used type of task parallelism is the Same Program Multiple Data (SPMD) paradigm. As</p>
+<p class="p1">the name suggests, individual processors run the same program but on different segments of the</p>
+<p class="p1">input data. Data dependencies cause different flows of control in individual tasks.</p>
+<p class="p1">In 1966 Michael Flynn proposed a classification of computer architectures based on the number</p>
+<p class="p1">of <span class="s1">concurrent control/instruction </span>and <span class="s1">data streams</span>: Single Instruction, Single Data (SISD), Single</p>
+<p class="p1">Instruction, Multiple Data (SIMD), and (Multiple Instructions, Multiple Data (MIMD).<span class="s2">3</span></p>
+<p class="p1">The SIMD architecture supports vector processing. When an SIMD instruction is issued, the operations</p>
+<p class="p1">on individual vector components are carried out concurrently. For example, to add two vectors <span class="s1">(a</span><span class="s4">1</span><span class="s1">, a</span><span class="s4">2</span><span class="s1">, . . . , a</span><span class="s4">50</span><span class="s1">) </span>and <span class="s1">(b</span><span class="s4">1</span><span class="s1">, b</span><span class="s4">2</span><span class="s1">, . . . , b</span><span class="s4">50</span><span class="s1">)</span>, all 50 pairs of vector elements are added concurrently and all</p>
+<p class="p1">the sums <span class="s1">(a</span><span class="s5">i </span><span class="s1">+ b</span><span class="s5">i </span><span class="s1">), </span>1 <span class="s1">  i   </span>50 are available at the same time.</p>
+<p class="p1">The first use of SIMD instructions was in vector supercomputers such as the CDC Star-100 and the</p>
+<p class="p1">Texas Instruments ASC in the early 1970s. Vector processing was especially popularized by Cray in</p>
+<p class="p1">the 1970s and 1980s by attached vector processors such as those produced by the FPS (Floating Point</p>
+<p class="p1">Systems), and by supercomputers such as the Thinking Machines CM-1 and CM-2. Sun Microsystems</p>
+<p class="p1">introduced SIMD integer instructions in its VIS instruction set extensions in 1995 in its UltraSPARC</p>
+<p class="p1">I microprocessor; the first widely deployed SIMD for gaming was Intel’s MMX extensions to the <span class="s1">x86</span></p>
+<p class="p1">architecture. IBM and Motorola then added AltiVec to the POWER architecture, and there have been</p>
+<p class="p1">several extensions to the SIMD instruction sets for both architectures.</p>
+<p class="p1">The desire to support real-time graphics with vectors of two, three, or four dimensions led to the</p>
+<p class="p1">development of graphic processing units (GPUs). GPUs are very efficient at manipulating computer</p>
+<p class="p1">graphics, and their highly parallel structures based on SIMD execution support parallel processing of</p>
+<p class="p1">large blocks of data. GPUs produced by Intel, Nvidia, and AMD/ATI are used in embedded systems,</p>
+<p class="p1">mobile phones, personal computers, workstations, and game consoles.</p>
+<p class="p1">An MIMD architecture refers to a system with several processors that function asynchronously and</p>
+<p class="p1">independently; at any time, different processors may be executing different instructions on different</p>
+<p class="p1">data. The processors can share a common memory of an MIMD, and we distinguish several types of</p>
+<p class="p1">systems: Uniform Memory Access (UMA), Cache Only Memory Access (COMA), and Non-Uniform</p>
+<p class="p1">Memory Access (NUMA).</p>
+<p class="p1">An MIMD system could have a distributed memory; in this case the processors and the memory</p>
+<p class="p1">communicate with one another using an interconnection network, such as a hypercube, a <span class="s3">2D </span>torus,</p>
+<p class="p1">a <span class="s3">3D </span>torus, an omega network, or another network topology. Today most supercomputers are MIMD</p>
+<p class="p1">machines, and some use GPUs instead of traditional processors. Multicore processors with multiple</p>
+<p class="p1">processing units are now ubiquitous.</p>
+<p class="p1">Modern supercomputers derive their power from architecture and parallelism rather than the increase</p>
+<p class="p1">of processor speed. The supercomputers of today consist of a very large number of processors and cores</p>
+<p class="p1">communicating via very fast custom interconnects. In mid-2012 the most powerful supercomputer was</p>
+<p class="p1">a <span class="s1">Linux</span>-based IBM Sequoia-BlueGene/Q system powered by Power BQC 16-core processors running at</p>
+<p class="p1">1.6 GHz. The system, installed at Lawrence LivermoreNational Laboratory and called Jaguar, has a total</p>
+<p class="p1">of 1,572,864 cores and 1,572,864 GB of memory, achieves a sustainable speed of 16.32 petaFLOPS,</p>
+<p class="p1">and consumes 7.89MW of power.</p>
+<p class="p1">More recently, a Cray XK7 system called Titan, installed at the Oak Ridge National Laboratory</p>
+<p class="p1">(ORNL) in Tennessee, was coronated as the fastest supercomputer in the world. Titan has 560,640</p>
+<p class="p1">processors, including 261,632 Nvidia K20x accelerator cores; it achieved a speed of 17.59 petaFLOPS</p>
+<p class="p1">on the Linpack benchmark. Several most powerful systems listed in the “Top 500 supercomputers” (see</p>
+<p class="p1"><span class="s6">www.top500.org</span>) are powered by the Nvidia 2050 GPU; three of the top 10 use an InfiniBand <span class="s2">4</span></p>
+<p class="p1">interconnect.</p>
+<p class="p1">The next natural step was triggered by advances in communication networks when low-latency and</p>
+<p class="p1">high-bandwidth wide area networks (WANs) allowed individual systems, many of them multiprocessors, to be geographically separated. Large-scale distributed systems were first used for scientific and engineering</p>
+<p class="p1">applications and took advantage of the advancements in system software, programming models,</p>
+<p class="p1">tools, and algorithms developed for parallel processing.</p>
+</body>
+</html>
